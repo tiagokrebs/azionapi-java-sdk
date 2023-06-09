@@ -2,7 +2,7 @@
 
 Edge Application
 - API version: 1.0.0
-  - Build date: 2023-06-02T20:21:41.188342Z[GMT]
+  - Build date: 2023-06-09T21:49:05.053927Z[GMT]
 
 ## Welcome to the Azion API!
 
@@ -247,11 +247,11 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.azionapi.net");
     
-    // Configure API key authorization: JWT
-    ApiKeyAuth JWT = (ApiKeyAuth) defaultClient.getAuthentication("JWT");
-    JWT.setApiKey("YOUR API KEY");
+    // Configure API key authorization: tokenAuth
+    ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
+    tokenAuth.setApiKey("YOUR API KEY");
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //JWT.setApiKeyPrefix("Token");
+    //tokenAuth.setApiKeyPrefix("Token");
 
     EdgeApplicationsCacheSettingsApi apiInstance = new EdgeApplicationsCacheSettingsApi(defaultClient);
     Long edgeApplicationId = 56L; // Long | 
@@ -382,8 +382,8 @@ Class | Method | HTTP request | Description
 
 
 Authentication schemes defined for the API:
-<a id="JWT"></a>
-### JWT
+<a id="tokenAuth"></a>
+### tokenAuth
 
 - **Type**: API key
 - **API key parameter name**: Authorization

@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * PutEdgeFunctionRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-02T20:21:44.835808Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-09T21:49:08.823953Z[GMT]")
 public class PutEdgeFunctionRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

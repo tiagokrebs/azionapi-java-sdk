@@ -54,7 +54,7 @@ import org.openapitools.client.JSON;
 /**
  * ListEdgeFunctionResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-02T20:21:44.835808Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-09T21:49:08.823953Z[GMT]")
 public class ListEdgeFunctionResponse {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)

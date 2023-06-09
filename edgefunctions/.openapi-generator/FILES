@@ -1,6 +1,5 @@
 .github/workflows/maven.yml
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -55,14 +54,3 @@ src/main/java/org/openapitools/client/model/ListEdgeFunctionResponse.java
 src/main/java/org/openapitools/client/model/PatchEdgeFunctionRequest.java
 src/main/java/org/openapitools/client/model/PutEdgeFunctionRequest.java
 src/main/java/org/openapitools/client/model/Results.java
-src/test/java/org/openapitools/client/api/EdgeFunctionsApiTest.java
-src/test/java/org/openapitools/client/model/BadRequestResponseTest.java
-src/test/java/org/openapitools/client/model/CreateEdgeFunctionRequestTest.java
-src/test/java/org/openapitools/client/model/EdgeFunctionResponseTest.java
-src/test/java/org/openapitools/client/model/ErrorModelTest.java
-src/test/java/org/openapitools/client/model/ErrorResponseTest.java
-src/test/java/org/openapitools/client/model/LinksTest.java
-src/test/java/org/openapitools/client/model/ListEdgeFunctionResponseTest.java
-src/test/java/org/openapitools/client/model/PatchEdgeFunctionRequestTest.java
-src/test/java/org/openapitools/client/model/PutEdgeFunctionRequestTest.java
-src/test/java/org/openapitools/client/model/ResultsTest.java
