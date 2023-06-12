@@ -33,11 +33,11 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.azionapi.net");
     
-    // Configure API key authorization: JWT
-    ApiKeyAuth JWT = (ApiKeyAuth) defaultClient.getAuthentication("JWT");
-    JWT.setApiKey("YOUR API KEY");
+    // Configure API key authorization: tokenAuth
+    ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
+    tokenAuth.setApiKey("YOUR API KEY");
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //JWT.setApiKeyPrefix("Token");
+    //tokenAuth.setApiKeyPrefix("Token");
 
     EdgeApplicationsMainSettingsApi apiInstance = new EdgeApplicationsMainSettingsApi(defaultClient);
     Long page = 56L; // Long | 
@@ -77,7 +77,7 @@ public class Example {
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -115,11 +115,11 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.azionapi.net");
     
-    // Configure API key authorization: JWT
-    ApiKeyAuth JWT = (ApiKeyAuth) defaultClient.getAuthentication("JWT");
-    JWT.setApiKey("YOUR API KEY");
+    // Configure API key authorization: tokenAuth
+    ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
+    tokenAuth.setApiKey("YOUR API KEY");
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //JWT.setApiKeyPrefix("Token");
+    //tokenAuth.setApiKeyPrefix("Token");
 
     EdgeApplicationsMainSettingsApi apiInstance = new EdgeApplicationsMainSettingsApi(defaultClient);
     String id = "id_example"; // String | The id of the edge application that you plan to delete.
@@ -150,7 +150,7 @@ null (empty response body)
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -188,11 +188,11 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.azionapi.net");
     
-    // Configure API key authorization: JWT
-    ApiKeyAuth JWT = (ApiKeyAuth) defaultClient.getAuthentication("JWT");
-    JWT.setApiKey("YOUR API KEY");
+    // Configure API key authorization: tokenAuth
+    ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
+    tokenAuth.setApiKey("YOUR API KEY");
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //JWT.setApiKeyPrefix("Token");
+    //tokenAuth.setApiKeyPrefix("Token");
 
     EdgeApplicationsMainSettingsApi apiInstance = new EdgeApplicationsMainSettingsApi(defaultClient);
     String id = "id_example"; // String | 
@@ -224,7 +224,7 @@ public class Example {
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -262,11 +262,11 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.azionapi.net");
     
-    // Configure API key authorization: JWT
-    ApiKeyAuth JWT = (ApiKeyAuth) defaultClient.getAuthentication("JWT");
-    JWT.setApiKey("YOUR API KEY");
+    // Configure API key authorization: tokenAuth
+    ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
+    tokenAuth.setApiKey("YOUR API KEY");
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //JWT.setApiKeyPrefix("Token");
+    //tokenAuth.setApiKeyPrefix("Token");
 
     EdgeApplicationsMainSettingsApi apiInstance = new EdgeApplicationsMainSettingsApi(defaultClient);
     String id = "id_example"; // String | 
@@ -302,7 +302,7 @@ public class Example {
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -340,11 +340,11 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.azionapi.net");
     
-    // Configure API key authorization: JWT
-    ApiKeyAuth JWT = (ApiKeyAuth) defaultClient.getAuthentication("JWT");
-    JWT.setApiKey("YOUR API KEY");
+    // Configure API key authorization: tokenAuth
+    ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
+    tokenAuth.setApiKey("YOUR API KEY");
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //JWT.setApiKeyPrefix("Token");
+    //tokenAuth.setApiKeyPrefix("Token");
 
     EdgeApplicationsMainSettingsApi apiInstance = new EdgeApplicationsMainSettingsApi(defaultClient);
     String id = "id_example"; // String | The Id of the edge application to be overwritten. 
@@ -380,7 +380,7 @@ public class Example {
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -418,11 +418,11 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.azionapi.net");
     
-    // Configure API key authorization: JWT
-    ApiKeyAuth JWT = (ApiKeyAuth) defaultClient.getAuthentication("JWT");
-    JWT.setApiKey("YOUR API KEY");
+    // Configure API key authorization: tokenAuth
+    ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
+    tokenAuth.setApiKey("YOUR API KEY");
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //JWT.setApiKeyPrefix("Token");
+    //tokenAuth.setApiKeyPrefix("Token");
 
     EdgeApplicationsMainSettingsApi apiInstance = new EdgeApplicationsMainSettingsApi(defaultClient);
     String accept = "application/json; version=3"; // String | 
@@ -456,7 +456,7 @@ public class Example {
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 

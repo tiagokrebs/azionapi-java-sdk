@@ -22,7 +22,6 @@ Delete a version. A version is just um path prefix/sub-namespace for a set of fi
 import org.openapitools.client.ApiClient;
 import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.DefaultApi;
 
@@ -30,12 +29,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://storage-api.azion.com");
-    
-    // Configure API key authorization: authToken
-    ApiKeyAuth authToken = (ApiKeyAuth) defaultClient.getAuthentication("authToken");
-    authToken.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //authToken.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String versionId = "versionId_example"; // String | The version identifier
@@ -64,7 +57,7 @@ null (empty response body)
 
 ### Authorization
 
-[authToken](../README.md#authToken)
+No authorization required
 
 ### HTTP request headers
 
@@ -90,7 +83,6 @@ Upload file and transfer to remote storage
 import org.openapitools.client.ApiClient;
 import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.DefaultApi;
 
@@ -98,12 +90,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://storage-api.azion.com");
-    
-    // Configure API key authorization: authToken
-    ApiKeyAuth authToken = (ApiKeyAuth) defaultClient.getAuthentication("authToken");
-    authToken.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //authToken.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String xAzionStaticPath = "xAzionStaticPath_example"; // String | Required in order to get the path and file name. i.e.: assets/css/main.css
@@ -137,7 +123,7 @@ public class Example {
 
 ### Authorization
 
-[authToken](../README.md#authToken)
+No authorization required
 
 ### HTTP request headers
 

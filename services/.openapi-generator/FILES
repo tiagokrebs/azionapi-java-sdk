@@ -1,6 +1,5 @@
 .github/workflows/maven.yml
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -55,14 +54,3 @@ src/main/java/org/openapitools/client/model/ServiceResponseWithTotals.java
 src/main/java/org/openapitools/client/model/UpdateResourceRequest.java
 src/main/java/org/openapitools/client/model/UpdateServiceRequest.java
 src/main/java/org/openapitools/client/model/Variable.java
-src/test/java/org/openapitools/client/api/DefaultApiTest.java
-src/test/java/org/openapitools/client/model/CreateResourceRequestTest.java
-src/test/java/org/openapitools/client/model/CreateServiceRequestTest.java
-src/test/java/org/openapitools/client/model/ResourceDetailTest.java
-src/test/java/org/openapitools/client/model/ResourceResponseTest.java
-src/test/java/org/openapitools/client/model/ResourceResponseWithTotalTest.java
-src/test/java/org/openapitools/client/model/ServiceResponseTest.java
-src/test/java/org/openapitools/client/model/ServiceResponseWithTotalsTest.java
-src/test/java/org/openapitools/client/model/UpdateResourceRequestTest.java
-src/test/java/org/openapitools/client/model/UpdateServiceRequestTest.java
-src/test/java/org/openapitools/client/model/VariableTest.java

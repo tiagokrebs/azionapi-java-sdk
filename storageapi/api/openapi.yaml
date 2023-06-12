@@ -7,6 +7,8 @@ servers:
   url: https://storage-api.azion.com
 - description: stage
   url: https://stage-storage-api.azion.com
+security:
+- tokenAuth: []
 paths:
   /storage/{version_id}:
     post:
@@ -40,8 +42,6 @@ paths:
             application/json:
               schema: {}
           description: ""
-      security:
-      - authToken: []
       x-content-type: b2/x-auto
       x-accepts: application/json
   /storage/{version_id}/delete:
@@ -61,8 +61,6 @@ paths:
       responses:
         "204":
           description: The resource was deleted successfully.
-      security:
-      - authToken: []
       x-accepts: application/json
 components:
   responses:
