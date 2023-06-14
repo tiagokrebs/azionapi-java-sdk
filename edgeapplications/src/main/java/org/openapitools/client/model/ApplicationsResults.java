@@ -21,6 +21,8 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import org.openapitools.client.model.ApplicationOrigins;
 
 import com.google.gson.Gson;
@@ -51,23 +53,35 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationsResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-09T21:49:05.053927Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-14T13:02:09.169623Z[GMT]")
 public class ApplicationsResults {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private Long id;
 
-  public static final String SERIALIZED_NAME_NEXT = "next";
-  @SerializedName(SERIALIZED_NAME_NEXT)
-  private String next;
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
+
+  public static final String SERIALIZED_NAME_DEBUG_RULES = "debug_rules";
+  @SerializedName(SERIALIZED_NAME_DEBUG_RULES)
+  private String debugRules;
+
+  public static final String SERIALIZED_NAME_LAST_EDITOR = "last_editor";
+  @SerializedName(SERIALIZED_NAME_LAST_EDITOR)
+  private String lastEditor;
+
+  public static final String SERIALIZED_NAME_LAST_MODIFIED = "last_modified";
+  @SerializedName(SERIALIZED_NAME_LAST_MODIFIED)
+  private String lastModified;
 
   public static final String SERIALIZED_NAME_ACTIVE = "active";
   @SerializedName(SERIALIZED_NAME_ACTIVE)
   private Boolean active;
 
-  public static final String SERIALIZED_NAME_LINKS = "links";
-  @SerializedName(SERIALIZED_NAME_LINKS)
-  private ApplicationOrigins links;
+  public static final String SERIALIZED_NAME_ORIGINS = "origins";
+  @SerializedName(SERIALIZED_NAME_ORIGINS)
+  private List<ApplicationOrigins> origins;
 
   public ApplicationsResults() {
   }
@@ -93,24 +107,87 @@ public class ApplicationsResults {
   }
 
 
-  public ApplicationsResults next(String next) {
+  public ApplicationsResults name(String name) {
     
-    this.next = next;
+    this.name = name;
     return this;
   }
 
    /**
-   * Get next
-   * @return next
+   * Get name
+   * @return name
   **/
-  @javax.annotation.Nonnull
-  public String getNext() {
-    return next;
+  @javax.annotation.Nullable
+  public String getName() {
+    return name;
   }
 
 
-  public void setNext(String next) {
-    this.next = next;
+  public void setName(String name) {
+    this.name = name;
+  }
+
+
+  public ApplicationsResults debugRules(String debugRules) {
+    
+    this.debugRules = debugRules;
+    return this;
+  }
+
+   /**
+   * Get debugRules
+   * @return debugRules
+  **/
+  @javax.annotation.Nullable
+  public String getDebugRules() {
+    return debugRules;
+  }
+
+
+  public void setDebugRules(String debugRules) {
+    this.debugRules = debugRules;
+  }
+
+
+  public ApplicationsResults lastEditor(String lastEditor) {
+    
+    this.lastEditor = lastEditor;
+    return this;
+  }
+
+   /**
+   * Get lastEditor
+   * @return lastEditor
+  **/
+  @javax.annotation.Nullable
+  public String getLastEditor() {
+    return lastEditor;
+  }
+
+
+  public void setLastEditor(String lastEditor) {
+    this.lastEditor = lastEditor;
+  }
+
+
+  public ApplicationsResults lastModified(String lastModified) {
+    
+    this.lastModified = lastModified;
+    return this;
+  }
+
+   /**
+   * Get lastModified
+   * @return lastModified
+  **/
+  @javax.annotation.Nullable
+  public String getLastModified() {
+    return lastModified;
+  }
+
+
+  public void setLastModified(String lastModified) {
+    this.lastModified = lastModified;
   }
 
 
@@ -135,24 +212,32 @@ public class ApplicationsResults {
   }
 
 
-  public ApplicationsResults links(ApplicationOrigins links) {
+  public ApplicationsResults origins(List<ApplicationOrigins> origins) {
     
-    this.links = links;
+    this.origins = origins;
+    return this;
+  }
+
+  public ApplicationsResults addOriginsItem(ApplicationOrigins originsItem) {
+    if (this.origins == null) {
+      this.origins = new ArrayList<>();
+    }
+    this.origins.add(originsItem);
     return this;
   }
 
    /**
-   * Get links
-   * @return links
+   * Get origins
+   * @return origins
   **/
   @javax.annotation.Nullable
-  public ApplicationOrigins getLinks() {
-    return links;
+  public List<ApplicationOrigins> getOrigins() {
+    return origins;
   }
 
 
-  public void setLinks(ApplicationOrigins links) {
-    this.links = links;
+  public void setOrigins(List<ApplicationOrigins> origins) {
+    this.origins = origins;
   }
 
 
@@ -167,14 +252,17 @@ public class ApplicationsResults {
     }
     ApplicationsResults applicationsResults = (ApplicationsResults) o;
     return Objects.equals(this.id, applicationsResults.id) &&
-        Objects.equals(this.next, applicationsResults.next) &&
+        Objects.equals(this.name, applicationsResults.name) &&
+        Objects.equals(this.debugRules, applicationsResults.debugRules) &&
+        Objects.equals(this.lastEditor, applicationsResults.lastEditor) &&
+        Objects.equals(this.lastModified, applicationsResults.lastModified) &&
         Objects.equals(this.active, applicationsResults.active) &&
-        Objects.equals(this.links, applicationsResults.links);
+        Objects.equals(this.origins, applicationsResults.origins);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, next, active, links);
+    return Objects.hash(id, name, debugRules, lastEditor, lastModified, active, origins);
   }
 
   @Override
@@ -182,9 +270,12 @@ public class ApplicationsResults {
     StringBuilder sb = new StringBuilder();
     sb.append("class ApplicationsResults {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    next: ").append(toIndentedString(next)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    debugRules: ").append(toIndentedString(debugRules)).append("\n");
+    sb.append("    lastEditor: ").append(toIndentedString(lastEditor)).append("\n");
+    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    sb.append("    origins: ").append(toIndentedString(origins)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -208,13 +299,15 @@ public class ApplicationsResults {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("id");
-    openapiFields.add("next");
+    openapiFields.add("name");
+    openapiFields.add("debug_rules");
+    openapiFields.add("last_editor");
+    openapiFields.add("last_modified");
     openapiFields.add("active");
-    openapiFields.add("links");
+    openapiFields.add("origins");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("next");
   }
 
  /**
@@ -237,19 +330,31 @@ public class ApplicationsResults {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ApplicationsResults` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("debug_rules") != null && !jsonObj.get("debug_rules").isJsonNull()) && !jsonObj.get("debug_rules").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `debug_rules` to be a primitive type in the JSON string but got `%s`", jsonObj.get("debug_rules").toString()));
+      }
+      if ((jsonObj.get("last_editor") != null && !jsonObj.get("last_editor").isJsonNull()) && !jsonObj.get("last_editor").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `last_editor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_editor").toString()));
+      }
+      if ((jsonObj.get("last_modified") != null && !jsonObj.get("last_modified").isJsonNull()) && !jsonObj.get("last_modified").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `last_modified` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_modified").toString()));
+      }
+      if (jsonObj.get("origins") != null && !jsonObj.get("origins").isJsonNull()) {
+        JsonArray jsonArrayorigins = jsonObj.getAsJsonArray("origins");
+        if (jsonArrayorigins != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("origins").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `origins` to be an array in the JSON string but got `%s`", jsonObj.get("origins").toString()));
+          }
 
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : ApplicationsResults.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+          // validate the optional field `origins` (array)
+          for (int i = 0; i < jsonArrayorigins.size(); i++) {
+            ApplicationOrigins.validateJsonObject(jsonArrayorigins.get(i).getAsJsonObject());
+          };
         }
-      }
-      if (!jsonObj.get("next").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `next` to be a primitive type in the JSON string but got `%s`", jsonObj.get("next").toString()));
-      }
-      // validate the optional field `links`
-      if (jsonObj.get("links") != null && !jsonObj.get("links").isJsonNull()) {
-        ApplicationOrigins.validateJsonObject(jsonObj.getAsJsonObject("links"));
       }
   }
 

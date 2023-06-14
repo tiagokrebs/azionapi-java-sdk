@@ -10,8 +10,8 @@
 |**id** | **Long** |  |  |
 |**name** | **String** |  |  |
 |**deliveryProtocol** | **String** |  |  |
-|**httpPort** | **ModelInterface** |  |  |
-|**httpsPort** | **ModelInterface** |  |  |
+|**httpPort** | **Object** |  |  |
+|**httpsPort** | **Object** |  |  |
 |**minimumTlsVersion** | **String** |  |  |
 |**active** | **Boolean** |  |  |
 |**applicationAcceleration** | **Boolean** |  |  |

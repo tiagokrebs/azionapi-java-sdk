@@ -9,8 +9,8 @@
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** |  |  |
 |**deliveryProtocol** | **String** |  |  [optional] |
-|**httpPort** | **ModelInterface** |  |  [optional] |
-|**httpsPort** | **ModelInterface** |  |  [optional] |
+|**httpPort** | **Object** |  |  [optional] |
+|**httpsPort** | **Object** |  |  [optional] |
 |**minimumTlsVersion** | **String** |  |  [optional] |
 |**active** | **Boolean** |  |  [optional] |
 |**applicationAcceleration** | **Boolean** |  |  [optional] |

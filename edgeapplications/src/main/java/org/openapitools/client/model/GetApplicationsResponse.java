@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.ApplicationLinks;
-import org.openapitools.client.model.ApplicationResults;
+import org.openapitools.client.model.ApplicationsResults;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -54,7 +54,7 @@ import org.openapitools.client.JSON;
 /**
  * GetApplicationsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-09T21:49:05.053927Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-14T13:02:09.169623Z[GMT]")
 public class GetApplicationsResponse {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
@@ -74,7 +74,7 @@ public class GetApplicationsResponse {
 
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
-  private List<ApplicationResults> results = new ArrayList<>();
+  private List<ApplicationsResults> results = new ArrayList<>();
 
   public GetApplicationsResponse() {
   }
@@ -163,13 +163,13 @@ public class GetApplicationsResponse {
   }
 
 
-  public GetApplicationsResponse results(List<ApplicationResults> results) {
+  public GetApplicationsResponse results(List<ApplicationsResults> results) {
     
     this.results = results;
     return this;
   }
 
-  public GetApplicationsResponse addResultsItem(ApplicationResults resultsItem) {
+  public GetApplicationsResponse addResultsItem(ApplicationsResults resultsItem) {
     if (this.results == null) {
       this.results = new ArrayList<>();
     }
@@ -182,12 +182,12 @@ public class GetApplicationsResponse {
    * @return results
   **/
   @javax.annotation.Nonnull
-  public List<ApplicationResults> getResults() {
+  public List<ApplicationsResults> getResults() {
     return results;
   }
 
 
-  public void setResults(List<ApplicationResults> results) {
+  public void setResults(List<ApplicationsResults> results) {
     this.results = results;
   }
 
@@ -297,7 +297,7 @@ public class GetApplicationsResponse {
       JsonArray jsonArrayresults = jsonObj.getAsJsonArray("results");
       // validate the required field `results` (array)
       for (int i = 0; i < jsonArrayresults.size(); i++) {
-        ApplicationResults.validateJsonObject(jsonArrayresults.get(i).getAsJsonObject());
+        ApplicationsResults.validateJsonObject(jsonArrayresults.get(i).getAsJsonObject());
       };
   }
 

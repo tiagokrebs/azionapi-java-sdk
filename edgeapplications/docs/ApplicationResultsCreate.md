@@ -11,8 +11,8 @@
 |**name** | **String** |  |  |
 |**active** | **Boolean** |  |  |
 |**deliveryProtocol** | **String** |  |  |
-|**httpPort** | **ModelInterface** |  |  |
-|**httpsPort** | **ModelInterface** |  |  |
+|**httpPort** | **Object** |  |  |
+|**httpsPort** | **Object** |  |  |
 |**minimumTlsVersion** | **String** |  |  |
 |**applicationAcceleration** | **Boolean** |  |  |
 |**caching** | **Boolean** |  |  |
