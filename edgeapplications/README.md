@@ -2,7 +2,7 @@
 
 Edge Application
 - API version: 1.0.0
-  - Build date: 2023-06-14T13:02:09.169623Z[GMT]
+  - Build date: 2023-06-14T16:41:48.212222Z[GMT]
 
 ## Welcome to the Azion API!
 

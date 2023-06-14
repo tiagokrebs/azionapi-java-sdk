@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**id** | **Long** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
-|**debugRules** | **String** |  |  [optional] |
+|**debugRules** | **Boolean** |  |  [optional] |
 |**lastEditor** | **String** |  |  [optional] |
 |**lastModified** | **String** |  |  [optional] |
 |**active** | **Boolean** |  |  [optional] |
