@@ -1,6 +1,5 @@
 .github/workflows/maven.yml
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -49,11 +48,3 @@ src/main/java/org/openapitools/client/model/DomainResponseWithResults.java
 src/main/java/org/openapitools/client/model/DomainResults.java
 src/main/java/org/openapitools/client/model/PutDomainRequest.java
 src/main/java/org/openapitools/client/model/UpdateDomainRequest.java
-src/test/java/org/openapitools/client/api/DomainsApiTest.java
-src/test/java/org/openapitools/client/model/CreateDomainRequestTest.java
-src/test/java/org/openapitools/client/model/DomainLinksTest.java
-src/test/java/org/openapitools/client/model/DomainResponseWithResultTest.java
-src/test/java/org/openapitools/client/model/DomainResponseWithResultsTest.java
-src/test/java/org/openapitools/client/model/DomainResultsTest.java
-src/test/java/org/openapitools/client/model/PutDomainRequestTest.java
-src/test/java/org/openapitools/client/model/UpdateDomainRequestTest.java

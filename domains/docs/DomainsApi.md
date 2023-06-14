@@ -243,7 +243,7 @@ public class Example {
 
 <a id="getDomains"></a>
 # **getDomains**
-> DomainResponseWithResults getDomains(accept)
+> DomainResponseWithResults getDomains(page, pageSize, sort, orderBy, accept)
 
 /domains
 
@@ -271,9 +271,13 @@ public class Example {
     //tokenAuth.setApiKeyPrefix("Token");
 
     DomainsApi apiInstance = new DomainsApi(defaultClient);
+    Long page = 56L; // Long | 
+    Long pageSize = 56L; // Long | 
+    String sort = "sort_example"; // String | 
+    String orderBy = "orderBy_example"; // String | 
     String accept = "application/json; version=3"; // String | 
     try {
-      DomainResponseWithResults result = apiInstance.getDomains(accept);
+      DomainResponseWithResults result = apiInstance.getDomains(page, pageSize, sort, orderBy, accept);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DomainsApi#getDomains");
@@ -290,6 +294,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
+| **page** | **Long**|  | [optional] |
+| **pageSize** | **Long**|  | [optional] |
+| **sort** | **String**|  | [optional] |
+| **orderBy** | **String**|  | [optional] |
 | **accept** | **String**|  | [optional] |
 
 ### Return type
