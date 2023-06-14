@@ -1,9 +1,12 @@
 openapi: 3.0.3
 info:
-  title: ""
-  version: 0.0.0
+  title: Variables
+  version: 0.1.0
 servers:
-- url: /
+- url: https://stage-variables.azion.com
+tags:
+- description: TDB
+  name: Variables
 paths:
   /api/schema:
     get:
@@ -152,7 +155,7 @@ paths:
       - tokenAuth: []
       - {}
       tags:
-      - api
+      - Variables
       x-accepts: application/json
   /api/variables:
     get:
@@ -170,7 +173,7 @@ paths:
       security:
       - tokenAuth: []
       tags:
-      - api
+      - Variables
       x-accepts: application/json
     post:
       description: Create a new Variable. <br><ul><li>If the attribute "secret" is
@@ -195,12 +198,6 @@ paths:
                   secret: true
             schema:
               $ref: '#/components/schemas/VariableCreate'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/VariableCreate'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/VariableCreate'
         required: true
       responses:
         "201":
@@ -209,10 +206,18 @@ paths:
               schema:
                 $ref: '#/components/schemas/VariableGet'
           description: ""
+        "400":
+          description: Bad Request
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error
       security:
       - tokenAuth: []
       tags:
-      - api
+      - Variables
       x-content-type: application/json
       x-accepts: application/json
   /api/variables/{uuid}:
@@ -231,10 +236,18 @@ paths:
       responses:
         "204":
           description: No response body
+        "400":
+          description: Bad Request
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error
       security:
       - tokenAuth: []
       tags:
-      - api
+      - Variables
       x-accepts: application/json
     get:
       description: Retrieve all data for a Variable by it's UUID
@@ -255,10 +268,18 @@ paths:
               schema:
                 $ref: '#/components/schemas/Variable'
           description: ""
+        "400":
+          description: Bad Request
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error
       security:
       - tokenAuth: []
       tags:
-      - api
+      - Variables
       x-accepts: application/json
     put:
       description: Update variable attributes by it's UUID. Keep the Variable UUID
@@ -304,10 +325,18 @@ paths:
               schema:
                 $ref: '#/components/schemas/VariableGet'
           description: ""
+        "400":
+          description: Bad Request
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error
       security:
       - tokenAuth: []
       tags:
-      - api
+      - Variables
       x-content-type: application/json
       x-accepts: application/json
 components:
@@ -328,8 +357,11 @@ components:
           type: string
         key:
           maxLength: 100
+          minLength: 1
           type: string
         value:
+          maxLength: 32768
+          minLength: 1
           type: string
         secret:
           readOnly: true
@@ -360,8 +392,11 @@ components:
       properties:
         key:
           maxLength: 100
+          minLength: 1
           type: string
         value:
+          maxLength: 32768
+          minLength: 1
           type: string
         secret:
           type: boolean
@@ -385,11 +420,14 @@ components:
           type: string
         key:
           maxLength: 100
+          minLength: 1
           type: string
         value:
           description: |-
             Given the *incoming* primitive data, return the value for this field
             that should be validated and transformed to a native value.
+          maxLength: 32768
+          minLength: 1
           readOnly: true
           type: string
         secret:
