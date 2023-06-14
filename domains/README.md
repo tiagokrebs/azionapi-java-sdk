@@ -2,7 +2,7 @@
 
 Domain
 - API version: 1.0.0
-  - Build date: 2023-06-09T21:49:02.039120Z[GMT]
+  - Build date: 2023-06-14T17:56:51.242366Z[GMT]
 
 ## Welcome to the Azion API!
 

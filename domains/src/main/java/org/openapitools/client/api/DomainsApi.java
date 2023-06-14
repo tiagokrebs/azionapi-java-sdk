@@ -530,6 +530,10 @@ public class DomainsApi {
     }
     /**
      * Build call for getDomains
+     * @param page  (optional)
+     * @param pageSize  (optional)
+     * @param sort  (optional)
+     * @param orderBy  (optional)
      * @param accept  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -544,7 +548,7 @@ public class DomainsApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDomainsCall(String accept, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getDomainsCall(Long page, Long pageSize, String sort, String orderBy, String accept, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -568,6 +572,22 @@ public class DomainsApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (page != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page_size", pageSize));
+        }
+
+        if (sort != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
+        }
+
+        if (orderBy != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("order_by", orderBy));
+        }
 
         if (accept != null) {
             localVarHeaderParams.put("Accept", localVarApiClient.parameterToString(accept));
@@ -593,14 +613,18 @@ public class DomainsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getDomainsValidateBeforeCall(String accept, final ApiCallback _callback) throws ApiException {
-        return getDomainsCall(accept, _callback);
+    private okhttp3.Call getDomainsValidateBeforeCall(Long page, Long pageSize, String sort, String orderBy, String accept, final ApiCallback _callback) throws ApiException {
+        return getDomainsCall(page, pageSize, sort, orderBy, accept, _callback);
 
     }
 
     /**
      * /domains
      * It returns the list of domains of an account.
+     * @param page  (optional)
+     * @param pageSize  (optional)
+     * @param sort  (optional)
+     * @param orderBy  (optional)
      * @param accept  (optional)
      * @return DomainResponseWithResults
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -614,14 +638,18 @@ public class DomainsApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public DomainResponseWithResults getDomains(String accept) throws ApiException {
-        ApiResponse<DomainResponseWithResults> localVarResp = getDomainsWithHttpInfo(accept);
+    public DomainResponseWithResults getDomains(Long page, Long pageSize, String sort, String orderBy, String accept) throws ApiException {
+        ApiResponse<DomainResponseWithResults> localVarResp = getDomainsWithHttpInfo(page, pageSize, sort, orderBy, accept);
         return localVarResp.getData();
     }
 
     /**
      * /domains
      * It returns the list of domains of an account.
+     * @param page  (optional)
+     * @param pageSize  (optional)
+     * @param sort  (optional)
+     * @param orderBy  (optional)
      * @param accept  (optional)
      * @return ApiResponse&lt;DomainResponseWithResults&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -635,8 +663,8 @@ public class DomainsApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DomainResponseWithResults> getDomainsWithHttpInfo(String accept) throws ApiException {
-        okhttp3.Call localVarCall = getDomainsValidateBeforeCall(accept, null);
+    public ApiResponse<DomainResponseWithResults> getDomainsWithHttpInfo(Long page, Long pageSize, String sort, String orderBy, String accept) throws ApiException {
+        okhttp3.Call localVarCall = getDomainsValidateBeforeCall(page, pageSize, sort, orderBy, accept, null);
         Type localVarReturnType = new TypeToken<DomainResponseWithResults>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -644,6 +672,10 @@ public class DomainsApi {
     /**
      * /domains (asynchronously)
      * It returns the list of domains of an account.
+     * @param page  (optional)
+     * @param pageSize  (optional)
+     * @param sort  (optional)
+     * @param orderBy  (optional)
      * @param accept  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -658,9 +690,9 @@ public class DomainsApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDomainsAsync(String accept, final ApiCallback<DomainResponseWithResults> _callback) throws ApiException {
+    public okhttp3.Call getDomainsAsync(Long page, Long pageSize, String sort, String orderBy, String accept, final ApiCallback<DomainResponseWithResults> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getDomainsValidateBeforeCall(accept, _callback);
+        okhttp3.Call localVarCall = getDomainsValidateBeforeCall(page, pageSize, sort, orderBy, accept, _callback);
         Type localVarReturnType = new TypeToken<DomainResponseWithResults>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
