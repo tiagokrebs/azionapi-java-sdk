@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationsResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-14T13:02:09.169623Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-14T16:41:48.212222Z[GMT]")
 public class ApplicationsResults {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -65,7 +65,7 @@ public class ApplicationsResults {
 
   public static final String SERIALIZED_NAME_DEBUG_RULES = "debug_rules";
   @SerializedName(SERIALIZED_NAME_DEBUG_RULES)
-  private String debugRules;
+  private Boolean debugRules;
 
   public static final String SERIALIZED_NAME_LAST_EDITOR = "last_editor";
   @SerializedName(SERIALIZED_NAME_LAST_EDITOR)
@@ -128,7 +128,7 @@ public class ApplicationsResults {
   }
 
 
-  public ApplicationsResults debugRules(String debugRules) {
+  public ApplicationsResults debugRules(Boolean debugRules) {
     
     this.debugRules = debugRules;
     return this;
@@ -139,12 +139,12 @@ public class ApplicationsResults {
    * @return debugRules
   **/
   @javax.annotation.Nullable
-  public String getDebugRules() {
+  public Boolean getDebugRules() {
     return debugRules;
   }
 
 
-  public void setDebugRules(String debugRules) {
+  public void setDebugRules(Boolean debugRules) {
     this.debugRules = debugRules;
   }
 
@@ -332,9 +332,6 @@ public class ApplicationsResults {
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("debug_rules") != null && !jsonObj.get("debug_rules").isJsonNull()) && !jsonObj.get("debug_rules").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `debug_rules` to be a primitive type in the JSON string but got `%s`", jsonObj.get("debug_rules").toString()));
       }
       if ((jsonObj.get("last_editor") != null && !jsonObj.get("last_editor").isJsonNull()) && !jsonObj.get("last_editor").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `last_editor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_editor").toString()));

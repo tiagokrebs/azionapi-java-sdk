@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-14T13:02:09.169623Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-14T16:41:48.212222Z[GMT]")
 public class ApplicationResults {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -60,13 +60,17 @@ public class ApplicationResults {
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String SERIALIZED_NAME_NEXT = "next";
-  @SerializedName(SERIALIZED_NAME_NEXT)
-  private String next;
-
   public static final String SERIALIZED_NAME_ACTIVE = "active";
   @SerializedName(SERIALIZED_NAME_ACTIVE)
   private Boolean active;
+
+  public static final String SERIALIZED_NAME_DEBUG_RULES = "debug_rules";
+  @SerializedName(SERIALIZED_NAME_DEBUG_RULES)
+  private Boolean debugRules;
+
+  public static final String SERIALIZED_NAME_HTTP3 = "http3";
+  @SerializedName(SERIALIZED_NAME_HTTP3)
+  private Boolean http3;
 
   public static final String SERIALIZED_NAME_DELIVERY_PROTOCOL = "delivery_protocol";
   @SerializedName(SERIALIZED_NAME_DELIVERY_PROTOCOL)
@@ -169,27 +173,6 @@ public class ApplicationResults {
   }
 
 
-  public ApplicationResults next(String next) {
-    
-    this.next = next;
-    return this;
-  }
-
-   /**
-   * Get next
-   * @return next
-  **/
-  @javax.annotation.Nullable
-  public String getNext() {
-    return next;
-  }
-
-
-  public void setNext(String next) {
-    this.next = next;
-  }
-
-
   public ApplicationResults active(Boolean active) {
     
     this.active = active;
@@ -208,6 +191,48 @@ public class ApplicationResults {
 
   public void setActive(Boolean active) {
     this.active = active;
+  }
+
+
+  public ApplicationResults debugRules(Boolean debugRules) {
+    
+    this.debugRules = debugRules;
+    return this;
+  }
+
+   /**
+   * Get debugRules
+   * @return debugRules
+  **/
+  @javax.annotation.Nonnull
+  public Boolean getDebugRules() {
+    return debugRules;
+  }
+
+
+  public void setDebugRules(Boolean debugRules) {
+    this.debugRules = debugRules;
+  }
+
+
+  public ApplicationResults http3(Boolean http3) {
+    
+    this.http3 = http3;
+    return this;
+  }
+
+   /**
+   * Get http3
+   * @return http3
+  **/
+  @javax.annotation.Nonnull
+  public Boolean getHttp3() {
+    return http3;
+  }
+
+
+  public void setHttp3(Boolean http3) {
+    this.http3 = http3;
   }
 
 
@@ -517,8 +542,9 @@ public class ApplicationResults {
     ApplicationResults applicationResults = (ApplicationResults) o;
     return Objects.equals(this.id, applicationResults.id) &&
         Objects.equals(this.name, applicationResults.name) &&
-        Objects.equals(this.next, applicationResults.next) &&
         Objects.equals(this.active, applicationResults.active) &&
+        Objects.equals(this.debugRules, applicationResults.debugRules) &&
+        Objects.equals(this.http3, applicationResults.http3) &&
         Objects.equals(this.deliveryProtocol, applicationResults.deliveryProtocol) &&
         Objects.equals(this.httpPort, applicationResults.httpPort) &&
         Objects.equals(this.httpsPort, applicationResults.httpsPort) &&
@@ -537,7 +563,7 @@ public class ApplicationResults {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, next, active, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, l2Caching, loadBalancer, rawLogs, webApplicationFirewall);
+    return Objects.hash(id, name, active, debugRules, http3, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, l2Caching, loadBalancer, rawLogs, webApplicationFirewall);
   }
 
   @Override
@@ -546,8 +572,9 @@ public class ApplicationResults {
     sb.append("class ApplicationResults {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    next: ").append(toIndentedString(next)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
+    sb.append("    debugRules: ").append(toIndentedString(debugRules)).append("\n");
+    sb.append("    http3: ").append(toIndentedString(http3)).append("\n");
     sb.append("    deliveryProtocol: ").append(toIndentedString(deliveryProtocol)).append("\n");
     sb.append("    httpPort: ").append(toIndentedString(httpPort)).append("\n");
     sb.append("    httpsPort: ").append(toIndentedString(httpsPort)).append("\n");
@@ -586,8 +613,9 @@ public class ApplicationResults {
     openapiFields = new HashSet<String>();
     openapiFields.add("id");
     openapiFields.add("name");
-    openapiFields.add("next");
     openapiFields.add("active");
+    openapiFields.add("debug_rules");
+    openapiFields.add("http3");
     openapiFields.add("delivery_protocol");
     openapiFields.add("http_port");
     openapiFields.add("https_port");
@@ -608,6 +636,8 @@ public class ApplicationResults {
     openapiRequiredFields.add("id");
     openapiRequiredFields.add("name");
     openapiRequiredFields.add("active");
+    openapiRequiredFields.add("debug_rules");
+    openapiRequiredFields.add("http3");
     openapiRequiredFields.add("delivery_protocol");
     openapiRequiredFields.add("http_port");
     openapiRequiredFields.add("https_port");
@@ -653,9 +683,6 @@ public class ApplicationResults {
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("next") != null && !jsonObj.get("next").isJsonNull()) && !jsonObj.get("next").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `next` to be a primitive type in the JSON string but got `%s`", jsonObj.get("next").toString()));
       }
       if (!jsonObj.get("delivery_protocol").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `delivery_protocol` to be a primitive type in the JSON string but got `%s`", jsonObj.get("delivery_protocol").toString()));
