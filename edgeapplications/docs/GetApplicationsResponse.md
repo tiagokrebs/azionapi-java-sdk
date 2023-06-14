@@ -11,7 +11,7 @@
 |**totalPages** | **Long** |  |  |
 |**schemaVersion** | **Long** |  |  |
 |**links** | [**ApplicationLinks**](ApplicationLinks.md) |  |  |
-|**results** | [**List&lt;ApplicationResults&gt;**](ApplicationResults.md) |  |  |
+|**results** | [**List&lt;ApplicationsResults&gt;**](ApplicationsResults.md) |  |  |
 
 
 

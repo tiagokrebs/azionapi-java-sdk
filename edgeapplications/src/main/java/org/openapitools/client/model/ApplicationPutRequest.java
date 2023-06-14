@@ -21,7 +21,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import org.openapitools.client.model.ModelInterface;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationPutRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-09T21:49:05.053927Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-14T13:02:09.169623Z[GMT]")
 public class ApplicationPutRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -63,11 +63,11 @@ public class ApplicationPutRequest {
 
   public static final String SERIALIZED_NAME_HTTP_PORT = "http_port";
   @SerializedName(SERIALIZED_NAME_HTTP_PORT)
-  private ModelInterface httpPort = null;
+  private Object httpPort = null;
 
   public static final String SERIALIZED_NAME_HTTPS_PORT = "https_port";
   @SerializedName(SERIALIZED_NAME_HTTPS_PORT)
-  private ModelInterface httpsPort = null;
+  private Object httpsPort = null;
 
   public static final String SERIALIZED_NAME_MINIMUM_TLS_VERSION = "minimum_tls_version";
   @SerializedName(SERIALIZED_NAME_MINIMUM_TLS_VERSION)
@@ -162,7 +162,7 @@ public class ApplicationPutRequest {
   }
 
 
-  public ApplicationPutRequest httpPort(ModelInterface httpPort) {
+  public ApplicationPutRequest httpPort(Object httpPort) {
     
     this.httpPort = httpPort;
     return this;
@@ -173,17 +173,17 @@ public class ApplicationPutRequest {
    * @return httpPort
   **/
   @javax.annotation.Nullable
-  public ModelInterface getHttpPort() {
+  public Object getHttpPort() {
     return httpPort;
   }
 
 
-  public void setHttpPort(ModelInterface httpPort) {
+  public void setHttpPort(Object httpPort) {
     this.httpPort = httpPort;
   }
 
 
-  public ApplicationPutRequest httpsPort(ModelInterface httpsPort) {
+  public ApplicationPutRequest httpsPort(Object httpsPort) {
     
     this.httpsPort = httpsPort;
     return this;
@@ -194,12 +194,12 @@ public class ApplicationPutRequest {
    * @return httpsPort
   **/
   @javax.annotation.Nullable
-  public ModelInterface getHttpsPort() {
+  public Object getHttpsPort() {
     return httpsPort;
   }
 
 
-  public void setHttpsPort(ModelInterface httpsPort) {
+  public void setHttpsPort(Object httpsPort) {
     this.httpsPort = httpsPort;
   }
 
@@ -484,9 +484,20 @@ public class ApplicationPutRequest {
         Objects.equals(this.webApplicationFirewall, applicationPutRequest.webApplicationFirewall);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(name, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, active, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, l2Caching, loadBalancer, rawLogs, webApplicationFirewall);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

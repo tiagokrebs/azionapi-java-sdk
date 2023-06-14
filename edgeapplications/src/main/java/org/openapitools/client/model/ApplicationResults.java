@@ -21,7 +21,6 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import org.openapitools.client.model.ModelInterface;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-09T21:49:05.053927Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-14T13:02:09.169623Z[GMT]")
 public class ApplicationResults {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -75,11 +74,11 @@ public class ApplicationResults {
 
   public static final String SERIALIZED_NAME_HTTP_PORT = "http_port";
   @SerializedName(SERIALIZED_NAME_HTTP_PORT)
-  private ModelInterface httpPort = null;
+  private Object httpPort = null;
 
   public static final String SERIALIZED_NAME_HTTPS_PORT = "https_port";
   @SerializedName(SERIALIZED_NAME_HTTPS_PORT)
-  private ModelInterface httpsPort = null;
+  private Object httpsPort = null;
 
   public static final String SERIALIZED_NAME_MINIMUM_TLS_VERSION = "minimum_tls_version";
   @SerializedName(SERIALIZED_NAME_MINIMUM_TLS_VERSION)
@@ -233,7 +232,7 @@ public class ApplicationResults {
   }
 
 
-  public ApplicationResults httpPort(ModelInterface httpPort) {
+  public ApplicationResults httpPort(Object httpPort) {
     
     this.httpPort = httpPort;
     return this;
@@ -243,18 +242,18 @@ public class ApplicationResults {
    * Get httpPort
    * @return httpPort
   **/
-  @javax.annotation.Nonnull
-  public ModelInterface getHttpPort() {
+  @javax.annotation.Nullable
+  public Object getHttpPort() {
     return httpPort;
   }
 
 
-  public void setHttpPort(ModelInterface httpPort) {
+  public void setHttpPort(Object httpPort) {
     this.httpPort = httpPort;
   }
 
 
-  public ApplicationResults httpsPort(ModelInterface httpsPort) {
+  public ApplicationResults httpsPort(Object httpsPort) {
     
     this.httpsPort = httpsPort;
     return this;
@@ -264,13 +263,13 @@ public class ApplicationResults {
    * Get httpsPort
    * @return httpsPort
   **/
-  @javax.annotation.Nonnull
-  public ModelInterface getHttpsPort() {
+  @javax.annotation.Nullable
+  public Object getHttpsPort() {
     return httpsPort;
   }
 
 
-  public void setHttpsPort(ModelInterface httpsPort) {
+  public void setHttpsPort(Object httpsPort) {
     this.httpsPort = httpsPort;
   }
 
