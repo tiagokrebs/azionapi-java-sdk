@@ -13,7 +13,7 @@ on:
 
 jobs:
   build:
-    name: Build 
+    name: Build Variables
     runs-on: ubuntu-latest
     strategy:
       matrix:
