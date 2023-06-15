@@ -2425,6 +2425,7 @@ components:
           active: true
           debug_rules: true
           http3: true
+          supported_ciphers: supported_ciphers
           delivery_protocol: delivery_protocol
           edge_firewall: true
           caching: true
@@ -2458,6 +2459,7 @@ components:
         raw_logs: true
         active: true
         http3: true
+        supported_ciphers: supported_ciphers
         debug_rules: true
         delivery_protocol: delivery_protocol
         edge_firewall: true
@@ -2484,6 +2486,8 @@ components:
           type: boolean
         http3:
           type: boolean
+        supported_ciphers:
+          type: string
         delivery_protocol:
           type: string
         http_port: {}
@@ -2529,6 +2533,7 @@ components:
       - minimum_tls_version
       - name
       - raw_logs
+      - supported_ciphers
       - web_application_firewall
       type: object
     CreateApplicationRequest:
@@ -2583,6 +2588,9 @@ components:
           device_detection: true
           raw_logs: true
           active: true
+          http3: true
+          supported_ciphers: supported_ciphers
+          debug_rules: true
           delivery_protocol: delivery_protocol
           edge_firewall: true
           caching: true
@@ -2614,6 +2622,9 @@ components:
         device_detection: true
         raw_logs: true
         active: true
+        http3: true
+        supported_ciphers: supported_ciphers
+        debug_rules: true
         delivery_protocol: delivery_protocol
         edge_firewall: true
         caching: true
@@ -2634,6 +2645,12 @@ components:
           type: string
         active:
           type: boolean
+        debug_rules:
+          type: boolean
+        http3:
+          type: boolean
+        supported_ciphers:
+          type: string
         delivery_protocol:
           type: string
         http_port: {}
@@ -2662,10 +2679,12 @@ components:
       - active
       - application_acceleration
       - caching
+      - debug_rules
       - delivery_protocol
       - device_detection
       - edge_firewall
       - edge_functions
+      - http3
       - http_port
       - https_port
       - id
@@ -2674,6 +2693,7 @@ components:
       - minimum_tls_version
       - name
       - raw_logs
+      - supported_ciphers
       - web_application_firewall
       type: object
     ApplicationUpdateRequest:
@@ -2685,6 +2705,7 @@ components:
         device_detection: true
         raw_logs: true
         active: true
+        debug_rules: false
         delivery_protocol: delivery_protocol
         edge_firewall: true
         caching: true
@@ -2707,6 +2728,8 @@ components:
         minimum_tls_version:
           type: string
         active:
+          type: boolean
+        debug_rules:
           type: boolean
         application_acceleration:
           type: boolean
@@ -2740,6 +2763,9 @@ components:
           device_detection: true
           raw_logs: true
           active: true
+          debug_rules: true
+          http3: true
+          supported_ciphers: all
           delivery_protocol: delivery_protocol
           edge_firewall: true
           caching: true
@@ -2772,6 +2798,9 @@ components:
         device_detection: true
         raw_logs: true
         active: true
+        http3: true
+        supported_ciphers: supported_ciphers
+        debug_rules: true
         delivery_protocol: delivery_protocol
         edge_firewall: true
         caching: true
@@ -2799,6 +2828,12 @@ components:
           type: string
         active:
           type: boolean
+        debug_rules:
+          type: boolean
+        http3:
+          type: boolean
+        supported_ciphers:
+          type: string
         application_acceleration:
           type: boolean
         caching:
@@ -2823,10 +2858,12 @@ components:
       - active
       - application_acceleration
       - caching
+      - debug_rules
       - delivery_protocol
       - device_detection
       - edge_firewall
       - edge_functions
+      - http3
       - http_port
       - https_port
       - id
@@ -2836,6 +2873,7 @@ components:
       - minimum_tls_version
       - name
       - raw_logs
+      - supported_ciphers
       - web_application_firewall
       type: object
     ApplicationPutRequest:

@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationResultsCreate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-14T16:41:48.212222Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-15T17:37:21.667713Z[GMT]")
 public class ApplicationResultsCreate {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -63,6 +63,18 @@ public class ApplicationResultsCreate {
   public static final String SERIALIZED_NAME_ACTIVE = "active";
   @SerializedName(SERIALIZED_NAME_ACTIVE)
   private Boolean active;
+
+  public static final String SERIALIZED_NAME_DEBUG_RULES = "debug_rules";
+  @SerializedName(SERIALIZED_NAME_DEBUG_RULES)
+  private Boolean debugRules;
+
+  public static final String SERIALIZED_NAME_HTTP3 = "http3";
+  @SerializedName(SERIALIZED_NAME_HTTP3)
+  private Boolean http3;
+
+  public static final String SERIALIZED_NAME_SUPPORTED_CIPHERS = "supported_ciphers";
+  @SerializedName(SERIALIZED_NAME_SUPPORTED_CIPHERS)
+  private String supportedCiphers;
 
   public static final String SERIALIZED_NAME_DELIVERY_PROTOCOL = "delivery_protocol";
   @SerializedName(SERIALIZED_NAME_DELIVERY_PROTOCOL)
@@ -179,6 +191,69 @@ public class ApplicationResultsCreate {
 
   public void setActive(Boolean active) {
     this.active = active;
+  }
+
+
+  public ApplicationResultsCreate debugRules(Boolean debugRules) {
+    
+    this.debugRules = debugRules;
+    return this;
+  }
+
+   /**
+   * Get debugRules
+   * @return debugRules
+  **/
+  @javax.annotation.Nonnull
+  public Boolean getDebugRules() {
+    return debugRules;
+  }
+
+
+  public void setDebugRules(Boolean debugRules) {
+    this.debugRules = debugRules;
+  }
+
+
+  public ApplicationResultsCreate http3(Boolean http3) {
+    
+    this.http3 = http3;
+    return this;
+  }
+
+   /**
+   * Get http3
+   * @return http3
+  **/
+  @javax.annotation.Nonnull
+  public Boolean getHttp3() {
+    return http3;
+  }
+
+
+  public void setHttp3(Boolean http3) {
+    this.http3 = http3;
+  }
+
+
+  public ApplicationResultsCreate supportedCiphers(String supportedCiphers) {
+    
+    this.supportedCiphers = supportedCiphers;
+    return this;
+  }
+
+   /**
+   * Get supportedCiphers
+   * @return supportedCiphers
+  **/
+  @javax.annotation.Nonnull
+  public String getSupportedCiphers() {
+    return supportedCiphers;
+  }
+
+
+  public void setSupportedCiphers(String supportedCiphers) {
+    this.supportedCiphers = supportedCiphers;
   }
 
 
@@ -468,6 +543,9 @@ public class ApplicationResultsCreate {
     return Objects.equals(this.id, applicationResultsCreate.id) &&
         Objects.equals(this.name, applicationResultsCreate.name) &&
         Objects.equals(this.active, applicationResultsCreate.active) &&
+        Objects.equals(this.debugRules, applicationResultsCreate.debugRules) &&
+        Objects.equals(this.http3, applicationResultsCreate.http3) &&
+        Objects.equals(this.supportedCiphers, applicationResultsCreate.supportedCiphers) &&
         Objects.equals(this.deliveryProtocol, applicationResultsCreate.deliveryProtocol) &&
         Objects.equals(this.httpPort, applicationResultsCreate.httpPort) &&
         Objects.equals(this.httpsPort, applicationResultsCreate.httpsPort) &&
@@ -485,7 +563,7 @@ public class ApplicationResultsCreate {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, active, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, loadBalancer, rawLogs, webApplicationFirewall);
+    return Objects.hash(id, name, active, debugRules, http3, supportedCiphers, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, loadBalancer, rawLogs, webApplicationFirewall);
   }
 
   @Override
@@ -495,6 +573,9 @@ public class ApplicationResultsCreate {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
+    sb.append("    debugRules: ").append(toIndentedString(debugRules)).append("\n");
+    sb.append("    http3: ").append(toIndentedString(http3)).append("\n");
+    sb.append("    supportedCiphers: ").append(toIndentedString(supportedCiphers)).append("\n");
     sb.append("    deliveryProtocol: ").append(toIndentedString(deliveryProtocol)).append("\n");
     sb.append("    httpPort: ").append(toIndentedString(httpPort)).append("\n");
     sb.append("    httpsPort: ").append(toIndentedString(httpsPort)).append("\n");
@@ -533,6 +614,9 @@ public class ApplicationResultsCreate {
     openapiFields.add("id");
     openapiFields.add("name");
     openapiFields.add("active");
+    openapiFields.add("debug_rules");
+    openapiFields.add("http3");
+    openapiFields.add("supported_ciphers");
     openapiFields.add("delivery_protocol");
     openapiFields.add("http_port");
     openapiFields.add("https_port");
@@ -552,6 +636,9 @@ public class ApplicationResultsCreate {
     openapiRequiredFields.add("id");
     openapiRequiredFields.add("name");
     openapiRequiredFields.add("active");
+    openapiRequiredFields.add("debug_rules");
+    openapiRequiredFields.add("http3");
+    openapiRequiredFields.add("supported_ciphers");
     openapiRequiredFields.add("delivery_protocol");
     openapiRequiredFields.add("http_port");
     openapiRequiredFields.add("https_port");
@@ -596,6 +683,9 @@ public class ApplicationResultsCreate {
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if (!jsonObj.get("supported_ciphers").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `supported_ciphers` to be a primitive type in the JSON string but got `%s`", jsonObj.get("supported_ciphers").toString()));
       }
       if (!jsonObj.get("delivery_protocol").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `delivery_protocol` to be a primitive type in the JSON string but got `%s`", jsonObj.get("delivery_protocol").toString()));

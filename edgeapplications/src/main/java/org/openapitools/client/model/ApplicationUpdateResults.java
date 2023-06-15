@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationUpdateResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-14T16:41:48.212222Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-15T17:37:21.667713Z[GMT]")
 public class ApplicationUpdateResults {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -79,6 +79,18 @@ public class ApplicationUpdateResults {
   public static final String SERIALIZED_NAME_ACTIVE = "active";
   @SerializedName(SERIALIZED_NAME_ACTIVE)
   private Boolean active;
+
+  public static final String SERIALIZED_NAME_DEBUG_RULES = "debug_rules";
+  @SerializedName(SERIALIZED_NAME_DEBUG_RULES)
+  private Boolean debugRules;
+
+  public static final String SERIALIZED_NAME_HTTP3 = "http3";
+  @SerializedName(SERIALIZED_NAME_HTTP3)
+  private Boolean http3;
+
+  public static final String SERIALIZED_NAME_SUPPORTED_CIPHERS = "supported_ciphers";
+  @SerializedName(SERIALIZED_NAME_SUPPORTED_CIPHERS)
+  private String supportedCiphers;
 
   public static final String SERIALIZED_NAME_APPLICATION_ACCELERATION = "application_acceleration";
   @SerializedName(SERIALIZED_NAME_APPLICATION_ACCELERATION)
@@ -267,6 +279,69 @@ public class ApplicationUpdateResults {
 
   public void setActive(Boolean active) {
     this.active = active;
+  }
+
+
+  public ApplicationUpdateResults debugRules(Boolean debugRules) {
+    
+    this.debugRules = debugRules;
+    return this;
+  }
+
+   /**
+   * Get debugRules
+   * @return debugRules
+  **/
+  @javax.annotation.Nonnull
+  public Boolean getDebugRules() {
+    return debugRules;
+  }
+
+
+  public void setDebugRules(Boolean debugRules) {
+    this.debugRules = debugRules;
+  }
+
+
+  public ApplicationUpdateResults http3(Boolean http3) {
+    
+    this.http3 = http3;
+    return this;
+  }
+
+   /**
+   * Get http3
+   * @return http3
+  **/
+  @javax.annotation.Nonnull
+  public Boolean getHttp3() {
+    return http3;
+  }
+
+
+  public void setHttp3(Boolean http3) {
+    this.http3 = http3;
+  }
+
+
+  public ApplicationUpdateResults supportedCiphers(String supportedCiphers) {
+    
+    this.supportedCiphers = supportedCiphers;
+    return this;
+  }
+
+   /**
+   * Get supportedCiphers
+   * @return supportedCiphers
+  **/
+  @javax.annotation.Nonnull
+  public String getSupportedCiphers() {
+    return supportedCiphers;
+  }
+
+
+  public void setSupportedCiphers(String supportedCiphers) {
+    this.supportedCiphers = supportedCiphers;
   }
 
 
@@ -497,6 +572,9 @@ public class ApplicationUpdateResults {
         Objects.equals(this.httpsPort, applicationUpdateResults.httpsPort) &&
         Objects.equals(this.minimumTlsVersion, applicationUpdateResults.minimumTlsVersion) &&
         Objects.equals(this.active, applicationUpdateResults.active) &&
+        Objects.equals(this.debugRules, applicationUpdateResults.debugRules) &&
+        Objects.equals(this.http3, applicationUpdateResults.http3) &&
+        Objects.equals(this.supportedCiphers, applicationUpdateResults.supportedCiphers) &&
         Objects.equals(this.applicationAcceleration, applicationUpdateResults.applicationAcceleration) &&
         Objects.equals(this.caching, applicationUpdateResults.caching) &&
         Objects.equals(this.deviceDetection, applicationUpdateResults.deviceDetection) &&
@@ -511,7 +589,7 @@ public class ApplicationUpdateResults {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, active, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, l2Caching, loadBalancer, rawLogs, webApplicationFirewall);
+    return Objects.hash(id, name, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, active, debugRules, http3, supportedCiphers, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, l2Caching, loadBalancer, rawLogs, webApplicationFirewall);
   }
 
   @Override
@@ -525,6 +603,9 @@ public class ApplicationUpdateResults {
     sb.append("    httpsPort: ").append(toIndentedString(httpsPort)).append("\n");
     sb.append("    minimumTlsVersion: ").append(toIndentedString(minimumTlsVersion)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
+    sb.append("    debugRules: ").append(toIndentedString(debugRules)).append("\n");
+    sb.append("    http3: ").append(toIndentedString(http3)).append("\n");
+    sb.append("    supportedCiphers: ").append(toIndentedString(supportedCiphers)).append("\n");
     sb.append("    applicationAcceleration: ").append(toIndentedString(applicationAcceleration)).append("\n");
     sb.append("    caching: ").append(toIndentedString(caching)).append("\n");
     sb.append("    deviceDetection: ").append(toIndentedString(deviceDetection)).append("\n");
@@ -564,6 +645,9 @@ public class ApplicationUpdateResults {
     openapiFields.add("https_port");
     openapiFields.add("minimum_tls_version");
     openapiFields.add("active");
+    openapiFields.add("debug_rules");
+    openapiFields.add("http3");
+    openapiFields.add("supported_ciphers");
     openapiFields.add("application_acceleration");
     openapiFields.add("caching");
     openapiFields.add("device_detection");
@@ -584,6 +668,9 @@ public class ApplicationUpdateResults {
     openapiRequiredFields.add("https_port");
     openapiRequiredFields.add("minimum_tls_version");
     openapiRequiredFields.add("active");
+    openapiRequiredFields.add("debug_rules");
+    openapiRequiredFields.add("http3");
+    openapiRequiredFields.add("supported_ciphers");
     openapiRequiredFields.add("application_acceleration");
     openapiRequiredFields.add("caching");
     openapiRequiredFields.add("device_detection");
@@ -631,6 +718,9 @@ public class ApplicationUpdateResults {
       }
       if (!jsonObj.get("minimum_tls_version").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `minimum_tls_version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("minimum_tls_version").toString()));
+      }
+      if (!jsonObj.get("supported_ciphers").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `supported_ciphers` to be a primitive type in the JSON string but got `%s`", jsonObj.get("supported_ciphers").toString()));
       }
   }
 

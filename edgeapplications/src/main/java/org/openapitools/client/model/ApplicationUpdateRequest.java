@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationUpdateRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-14T16:41:48.212222Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-15T17:37:21.667713Z[GMT]")
 public class ApplicationUpdateRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -76,6 +76,10 @@ public class ApplicationUpdateRequest {
   public static final String SERIALIZED_NAME_ACTIVE = "active";
   @SerializedName(SERIALIZED_NAME_ACTIVE)
   private Boolean active;
+
+  public static final String SERIALIZED_NAME_DEBUG_RULES = "debug_rules";
+  @SerializedName(SERIALIZED_NAME_DEBUG_RULES)
+  private Boolean debugRules;
 
   public static final String SERIALIZED_NAME_APPLICATION_ACCELERATION = "application_acceleration";
   @SerializedName(SERIALIZED_NAME_APPLICATION_ACCELERATION)
@@ -243,6 +247,27 @@ public class ApplicationUpdateRequest {
 
   public void setActive(Boolean active) {
     this.active = active;
+  }
+
+
+  public ApplicationUpdateRequest debugRules(Boolean debugRules) {
+    
+    this.debugRules = debugRules;
+    return this;
+  }
+
+   /**
+   * Get debugRules
+   * @return debugRules
+  **/
+  @javax.annotation.Nullable
+  public Boolean getDebugRules() {
+    return debugRules;
+  }
+
+
+  public void setDebugRules(Boolean debugRules) {
+    this.debugRules = debugRules;
   }
 
 
@@ -472,6 +497,7 @@ public class ApplicationUpdateRequest {
         Objects.equals(this.httpsPort, applicationUpdateRequest.httpsPort) &&
         Objects.equals(this.minimumTlsVersion, applicationUpdateRequest.minimumTlsVersion) &&
         Objects.equals(this.active, applicationUpdateRequest.active) &&
+        Objects.equals(this.debugRules, applicationUpdateRequest.debugRules) &&
         Objects.equals(this.applicationAcceleration, applicationUpdateRequest.applicationAcceleration) &&
         Objects.equals(this.caching, applicationUpdateRequest.caching) &&
         Objects.equals(this.deviceDetection, applicationUpdateRequest.deviceDetection) &&
@@ -490,7 +516,7 @@ public class ApplicationUpdateRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, active, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, l2Caching, loadBalancer, rawLogs, webApplicationFirewall);
+    return Objects.hash(name, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, active, debugRules, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, l2Caching, loadBalancer, rawLogs, webApplicationFirewall);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -510,6 +536,7 @@ public class ApplicationUpdateRequest {
     sb.append("    httpsPort: ").append(toIndentedString(httpsPort)).append("\n");
     sb.append("    minimumTlsVersion: ").append(toIndentedString(minimumTlsVersion)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
+    sb.append("    debugRules: ").append(toIndentedString(debugRules)).append("\n");
     sb.append("    applicationAcceleration: ").append(toIndentedString(applicationAcceleration)).append("\n");
     sb.append("    caching: ").append(toIndentedString(caching)).append("\n");
     sb.append("    deviceDetection: ").append(toIndentedString(deviceDetection)).append("\n");
@@ -548,6 +575,7 @@ public class ApplicationUpdateRequest {
     openapiFields.add("https_port");
     openapiFields.add("minimum_tls_version");
     openapiFields.add("active");
+    openapiFields.add("debug_rules");
     openapiFields.add("application_acceleration");
     openapiFields.add("caching");
     openapiFields.add("device_detection");

@@ -14,6 +14,9 @@
 |**httpsPort** | **Object** |  |  |
 |**minimumTlsVersion** | **String** |  |  |
 |**active** | **Boolean** |  |  |
+|**debugRules** | **Boolean** |  |  |
+|**http3** | **Boolean** |  |  |
+|**supportedCiphers** | **String** |  |  |
 |**applicationAcceleration** | **Boolean** |  |  |
 |**caching** | **Boolean** |  |  |
 |**deviceDetection** | **Boolean** |  |  |
