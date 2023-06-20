@@ -4,84 +4,12 @@ All URIs are relative to *https://stage-variables.azion.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**apiSchemaRetrieve**](VariablesApi.md#apiSchemaRetrieve) | **GET** /api/schema |  |
 | [**apiVariablesCreate**](VariablesApi.md#apiVariablesCreate) | **POST** /api/variables |  |
 | [**apiVariablesDestroy**](VariablesApi.md#apiVariablesDestroy) | **DELETE** /api/variables/{uuid} |  |
 | [**apiVariablesList**](VariablesApi.md#apiVariablesList) | **GET** /api/variables |  |
 | [**apiVariablesRetrieve**](VariablesApi.md#apiVariablesRetrieve) | **GET** /api/variables/{uuid} |  |
 | [**apiVariablesUpdate**](VariablesApi.md#apiVariablesUpdate) | **PUT** /api/variables/{uuid} |  |
 
-
-<a id="apiSchemaRetrieve"></a>
-# **apiSchemaRetrieve**
-> Map&lt;String, Object&gt; apiSchemaRetrieve(format, lang)
-
-
-
-OpenApi3 schema for this API. Format can be selected via content negotiation.  - YAML: application/vnd.oai.openapi - JSON: application/vnd.oai.openapi+json
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.VariablesApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://stage-variables.azion.com");
-    
-    // Configure API key authorization: tokenAuth
-    ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
-    tokenAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //tokenAuth.setApiKeyPrefix("Token");
-
-    VariablesApi apiInstance = new VariablesApi(defaultClient);
-    String format = "json"; // String | 
-    String lang = "af"; // String | 
-    try {
-      Map<String, Object> result = apiInstance.apiSchemaRetrieve(format, lang);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling VariablesApi#apiSchemaRetrieve");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **format** | **String**|  | [optional] [enum: json, yaml] |
-| **lang** | **String**|  | [optional] [enum: af, ar, ar-dz, ast, az, be, bg, bn, br, bs, ca, cs, cy, da, de, dsb, el, en, en-au, en-gb, eo, es, es-ar, es-co, es-mx, es-ni, es-ve, et, eu, fa, fi, fr, fy, ga, gd, gl, he, hi, hr, hsb, hu, hy, ia, id, ig, io, is, it, ja, ka, kab, kk, km, kn, ko, ky, lb, lt, lv, mk, ml, mn, mr, my, nb, ne, nl, nn, os, pa, pl, pt, pt-br, ro, ru, sk, sl, sq, sr, sr-latn, sv, sw, ta, te, tg, th, tk, tr, tt, udm, uk, ur, uz, vi, zh-hans, zh-hant] |
-
-### Return type
-
-**Map&lt;String, Object&gt;**
-
-### Authorization
-
-[tokenAuth](../README.md#tokenAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/vnd.oai.openapi, application/yaml, application/vnd.oai.openapi+json, application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** |  |  -  |
 
 <a id="apiVariablesCreate"></a>
 # **apiVariablesCreate**
@@ -435,7 +363,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** |  |  -  |
+| **200** |  |  -  |
 | **400** | Bad Request |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
