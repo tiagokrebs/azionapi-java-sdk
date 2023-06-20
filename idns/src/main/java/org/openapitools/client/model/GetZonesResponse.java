@@ -54,7 +54,7 @@ import org.openapitools.client.JSON;
 /**
  * Object returned by get zones
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-09T21:49:14.774938Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-20T17:29:01.723870Z[GMT]")
 public class GetZonesResponse {
   public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
   @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)

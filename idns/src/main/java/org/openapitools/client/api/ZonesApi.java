@@ -370,6 +370,7 @@ public class ZonesApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
+            "application/json",
             "application/json; version=3"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
