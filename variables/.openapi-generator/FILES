@@ -40,4 +40,3 @@ src/main/java/org/openapitools/client/model/AbstractOpenApiSchema.java
 src/main/java/org/openapitools/client/model/Variable.java
 src/main/java/org/openapitools/client/model/VariableCreate.java
 src/main/java/org/openapitools/client/model/VariableGet.java
-src/test/java/org/openapitools/client/api/VariablesApiTest.java
