@@ -2,7 +2,7 @@
 
 Intelligent DNS
 - API version: 3.0.0
-  - Build date: 2023-06-09T21:49:14.774938Z[GMT]
+  - Build date: 2023-06-20T17:29:01.723870Z[GMT]
 
 Azion Intelligent DNS API
 

@@ -24,7 +24,7 @@ paths:
       responses:
         "200":
           content:
-            application/json; version=3:
+            application/json:
               schema:
                 $ref: '#/components/schemas/GetZonesResponse'
           description: Zones collection retrieved
@@ -37,7 +37,7 @@ paths:
       summary: Get a collection of Intelligent DNS zones
       tags:
       - Zones
-      x-accepts: application/json; version=3
+      x-accepts: application/json
     post:
       operationId: postZone
       requestBody:
