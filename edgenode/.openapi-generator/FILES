@@ -1,6 +1,5 @@
 .github/workflows/maven.yml
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -67,20 +66,3 @@ src/main/java/org/openapitools/client/model/UnauthorizedEdgeNodeInfo.java
 src/main/java/org/openapitools/client/model/UpdateEdgeNodeResponse.java
 src/main/java/org/openapitools/client/model/UpdateServiceBindRequest.java
 src/main/java/org/openapitools/client/model/Variable.java
-src/test/java/org/openapitools/client/api/DefaultApiTest.java
-src/test/java/org/openapitools/client/model/AuthorizeEdgeNodesRequestTest.java
-src/test/java/org/openapitools/client/model/AuthorizeEdgeNodesResponseTest.java
-src/test/java/org/openapitools/client/model/EdgeNodeDetailResponseTest.java
-src/test/java/org/openapitools/client/model/EdgeNodeModulesTest.java
-src/test/java/org/openapitools/client/model/EdgeNodeResponseTest.java
-src/test/java/org/openapitools/client/model/EdgeNodeResponseWithTotalTest.java
-src/test/java/org/openapitools/client/model/NodeGroupResponseTest.java
-src/test/java/org/openapitools/client/model/NodeGroupTest.java
-src/test/java/org/openapitools/client/model/ServiceBindDetailResponseTest.java
-src/test/java/org/openapitools/client/model/ServiceBindRequestTest.java
-src/test/java/org/openapitools/client/model/ServiceResponseTest.java
-src/test/java/org/openapitools/client/model/ServiceResponseWithTotalTest.java
-src/test/java/org/openapitools/client/model/UnauthorizedEdgeNodeInfoTest.java
-src/test/java/org/openapitools/client/model/UpdateEdgeNodeResponseTest.java
-src/test/java/org/openapitools/client/model/UpdateServiceBindRequestTest.java
-src/test/java/org/openapitools/client/model/VariableTest.java

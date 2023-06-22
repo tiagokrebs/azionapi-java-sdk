@@ -11,6 +11,7 @@
 |**code** | **String** |  |  [optional] |
 |**jsonArgs** | **Object** |  |  [optional] |
 |**active** | **Boolean** |  |  [optional] |
+|**isProprietaryCode** | **Boolean** |  |  [optional] |
 
 
 

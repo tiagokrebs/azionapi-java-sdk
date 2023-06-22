@@ -22,6 +22,7 @@ List all user Network Lists
 import org.openapitools.client.ApiClient;
 import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.DefaultApi;
 
@@ -29,6 +30,12 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.azionapi.net");
+    
+    // Configure API key authorization: tokenAuth
+    ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
+    tokenAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //tokenAuth.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     Integer page = 56; // Integer | 
@@ -58,7 +65,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -82,6 +89,7 @@ Create a Network Lists
 import org.openapitools.client.ApiClient;
 import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.DefaultApi;
 
@@ -89,6 +97,12 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.azionapi.net");
+    
+    // Configure API key authorization: tokenAuth
+    ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
+    tokenAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //tokenAuth.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     CreateNetworkListsRequest createNetworkListsRequest = new CreateNetworkListsRequest(); // CreateNetworkListsRequest | 
@@ -117,7 +131,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -143,6 +157,7 @@ Retrieve a Network Lists set by uuid
 import org.openapitools.client.ApiClient;
 import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.DefaultApi;
 
@@ -150,6 +165,12 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.azionapi.net");
+    
+    // Configure API key authorization: tokenAuth
+    ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
+    tokenAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //tokenAuth.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String uuid = "uuid_example"; // String | 
@@ -179,7 +200,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -203,6 +224,7 @@ Overwrite some Network Lists attributes
 import org.openapitools.client.ApiClient;
 import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.DefaultApi;
 
@@ -210,6 +232,12 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api.azionapi.net");
+    
+    // Configure API key authorization: tokenAuth
+    ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
+    tokenAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //tokenAuth.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String uuid = "uuid_example"; // String | 
@@ -241,7 +269,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 

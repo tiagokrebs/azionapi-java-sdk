@@ -9,7 +9,6 @@ docs/BadRequestResponse.md
 docs/CreateEdgeFunctionRequest.md
 docs/EdgeFunctionResponse.md
 docs/EdgeFunctionsApi.md
-docs/ErrorModel.md
 docs/ErrorResponse.md
 docs/Links.md
 docs/ListEdgeFunctionResponse.md
@@ -47,7 +46,6 @@ src/main/java/org/openapitools/client/model/AbstractOpenApiSchema.java
 src/main/java/org/openapitools/client/model/BadRequestResponse.java
 src/main/java/org/openapitools/client/model/CreateEdgeFunctionRequest.java
 src/main/java/org/openapitools/client/model/EdgeFunctionResponse.java
-src/main/java/org/openapitools/client/model/ErrorModel.java
 src/main/java/org/openapitools/client/model/ErrorResponse.java
 src/main/java/org/openapitools/client/model/Links.java
 src/main/java/org/openapitools/client/model/ListEdgeFunctionResponse.java

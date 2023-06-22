@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** |  |  [optional] |
 |**userAgent** | **String** |  |  |
+|**addresses** | **String** |  |  |
 
 
 

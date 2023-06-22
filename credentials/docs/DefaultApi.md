@@ -1,6 +1,6 @@
 # DefaultApi
 
-All URIs are relative to *http://localhost:3007*
+All URIs are relative to *https://api.azionapi.net*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -30,7 +30,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:3007");
+    defaultClient.setBasePath("https://api.azionapi.net");
     
     // Configure API key authorization: tokenAuth
     ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
@@ -101,7 +101,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:3007");
+    defaultClient.setBasePath("https://api.azionapi.net");
     
     // Configure API key authorization: tokenAuth
     ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
@@ -171,7 +171,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:3007");
+    defaultClient.setBasePath("https://api.azionapi.net");
     
     // Configure API key authorization: tokenAuth
     ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
@@ -248,7 +248,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:3007");
+    defaultClient.setBasePath("https://api.azionapi.net");
     
     // Configure API key authorization: tokenAuth
     ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
@@ -318,7 +318,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:3007");
+    defaultClient.setBasePath("https://api.azionapi.net");
     
     // Configure API key authorization: tokenAuth
     ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");

@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**schemaVersion** | **Long** |  |  |
-|**results** | **DomainResults** |  |  |
+|**results** | [**DomainResults**](DomainResults.md) |  |  |
 
 
 
