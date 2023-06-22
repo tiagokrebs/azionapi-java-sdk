@@ -1,6 +1,6 @@
 # DefaultApi
 
-All URIs are relative to *http://localhost:3002*
+All URIs are relative to *http://bff.azion.net:3002*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -9,8 +9,8 @@ All URIs are relative to *http://localhost:3002*
 | [**getResource**](DefaultApi.md#getResource) | **GET** /edge_services/{serviceId}/resources/{resourceId} | Return Service Resource by ID |
 | [**getResources**](DefaultApi.md#getResources) | **GET** /edge_services/{serviceId}/resources | Return Service Resources by page |
 | [**getService**](DefaultApi.md#getService) | **GET** /edge_services/{id} | Return Service by ID |
-| [**getServices**](DefaultApi.md#getServices) | **GET** /edge_services/ | Return Services by page |
-| [**newService**](DefaultApi.md#newService) | **POST** /edge_services/ | Create Service |
+| [**getServices**](DefaultApi.md#getServices) | **GET** /edge_services | Return Services by page |
+| [**newService**](DefaultApi.md#newService) | **POST** /edge_services | Create Service |
 | [**patchService**](DefaultApi.md#patchService) | **PATCH** /edge_services/{id} | Update Service by ID |
 | [**patchServiceResource**](DefaultApi.md#patchServiceResource) | **PATCH** /edge_services/{serviceId}/resources/{resourceId} | Update Service Resource by ID |
 | [**postResource**](DefaultApi.md#postResource) | **POST** /edge_services/{serviceId}/resources | Create Service Resource |
@@ -35,7 +35,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:3002");
+    defaultClient.setBasePath("http://bff.azion.net:3002");
     
     // Configure API key authorization: tokenAuth
     ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
@@ -108,7 +108,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:3002");
+    defaultClient.setBasePath("http://bff.azion.net:3002");
     
     // Configure API key authorization: tokenAuth
     ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
@@ -179,7 +179,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:3002");
+    defaultClient.setBasePath("http://bff.azion.net:3002");
     
     // Configure API key authorization: tokenAuth
     ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
@@ -234,7 +234,7 @@ public class Example {
 
 <a id="getResources"></a>
 # **getResources**
-> ResourceResponseWithTotal getResources(serviceId, page, pageSize, filter, orderBy, sort)
+> Object getResources(serviceId, page, pageSize, filter, orderBy, sort)
 
 Return Service Resources by page
 
@@ -251,7 +251,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:3002");
+    defaultClient.setBasePath("http://bff.azion.net:3002");
     
     // Configure API key authorization: tokenAuth
     ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
@@ -267,7 +267,7 @@ public class Example {
     String orderBy = "orderBy_example"; // String | 
     String sort = "sort_example"; // String | 
     try {
-      ResourceResponseWithTotal result = apiInstance.getResources(serviceId, page, pageSize, filter, orderBy, sort);
+      Object result = apiInstance.getResources(serviceId, page, pageSize, filter, orderBy, sort);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#getResources");
@@ -293,7 +293,7 @@ public class Example {
 
 ### Return type
 
-[**ResourceResponseWithTotal**](ResourceResponseWithTotal.md)
+**Object**
 
 ### Authorization
 
@@ -331,7 +331,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:3002");
+    defaultClient.setBasePath("http://bff.azion.net:3002");
     
     // Configure API key authorization: tokenAuth
     ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
@@ -403,7 +403,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:3002");
+    defaultClient.setBasePath("http://bff.azion.net:3002");
     
     // Configure API key authorization: tokenAuth
     ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
@@ -480,7 +480,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:3002");
+    defaultClient.setBasePath("http://bff.azion.net:3002");
     
     // Configure API key authorization: tokenAuth
     ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
@@ -551,7 +551,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:3002");
+    defaultClient.setBasePath("http://bff.azion.net:3002");
     
     // Configure API key authorization: tokenAuth
     ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
@@ -625,7 +625,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:3002");
+    defaultClient.setBasePath("http://bff.azion.net:3002");
     
     // Configure API key authorization: tokenAuth
     ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
@@ -701,7 +701,7 @@ import org.openapitools.client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:3002");
+    defaultClient.setBasePath("http://bff.azion.net:3002");
     
     // Configure API key authorization: tokenAuth
     ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");

@@ -1,6 +1,5 @@
 .github/workflows/maven.yml
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -41,7 +40,3 @@ src/main/java/org/openapitools/client/model/AbstractOpenApiSchema.java
 src/main/java/org/openapitools/client/model/PurgeCacheKeyRequest.java
 src/main/java/org/openapitools/client/model/PurgeUrlRequest.java
 src/main/java/org/openapitools/client/model/PurgeWildcardRequest.java
-src/test/java/org/openapitools/client/api/RealTimePurgeApiTest.java
-src/test/java/org/openapitools/client/model/PurgeCacheKeyRequestTest.java
-src/test/java/org/openapitools/client/model/PurgeUrlRequestTest.java
-src/test/java/org/openapitools/client/model/PurgeWildcardRequestTest.java

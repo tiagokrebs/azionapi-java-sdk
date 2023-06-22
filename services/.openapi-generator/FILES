@@ -10,7 +10,6 @@ docs/CreateServiceRequest.md
 docs/DefaultApi.md
 docs/ResourceDetail.md
 docs/ResourceResponse.md
-docs/ResourceResponseWithTotal.md
 docs/ServiceResponse.md
 docs/ServiceResponseWithTotals.md
 docs/UpdateResourceRequest.md
@@ -48,7 +47,6 @@ src/main/java/org/openapitools/client/model/CreateResourceRequest.java
 src/main/java/org/openapitools/client/model/CreateServiceRequest.java
 src/main/java/org/openapitools/client/model/ResourceDetail.java
 src/main/java/org/openapitools/client/model/ResourceResponse.java
-src/main/java/org/openapitools/client/model/ResourceResponseWithTotal.java
 src/main/java/org/openapitools/client/model/ServiceResponse.java
 src/main/java/org/openapitools/client/model/ServiceResponseWithTotals.java
 src/main/java/org/openapitools/client/model/UpdateResourceRequest.java

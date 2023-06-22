@@ -1,6 +1,5 @@
 .github/workflows/maven.yml
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -10,7 +9,6 @@ docs/BadRequestResponse.md
 docs/CreateNetworkListsRequest.md
 docs/DefaultApi.md
 docs/ErrorModel.md
-docs/ErrorResponse.md
 docs/Links.md
 docs/ListNetworkListsResponse.md
 docs/NetworkLists.md
@@ -47,19 +45,8 @@ src/main/java/org/openapitools/client/model/AbstractOpenApiSchema.java
 src/main/java/org/openapitools/client/model/BadRequestResponse.java
 src/main/java/org/openapitools/client/model/CreateNetworkListsRequest.java
 src/main/java/org/openapitools/client/model/ErrorModel.java
-src/main/java/org/openapitools/client/model/ErrorResponse.java
 src/main/java/org/openapitools/client/model/Links.java
 src/main/java/org/openapitools/client/model/ListNetworkListsResponse.java
 src/main/java/org/openapitools/client/model/NetworkLists.java
 src/main/java/org/openapitools/client/model/NetworkListsResponse.java
 src/main/java/org/openapitools/client/model/UpdateNetworkListsRequest.java
-src/test/java/org/openapitools/client/api/DefaultApiTest.java
-src/test/java/org/openapitools/client/model/BadRequestResponseTest.java
-src/test/java/org/openapitools/client/model/CreateNetworkListsRequestTest.java
-src/test/java/org/openapitools/client/model/ErrorModelTest.java
-src/test/java/org/openapitools/client/model/ErrorResponseTest.java
-src/test/java/org/openapitools/client/model/LinksTest.java
-src/test/java/org/openapitools/client/model/ListNetworkListsResponseTest.java
-src/test/java/org/openapitools/client/model/NetworkListsResponseTest.java
-src/test/java/org/openapitools/client/model/NetworkListsTest.java
-src/test/java/org/openapitools/client/model/UpdateNetworkListsRequestTest.java

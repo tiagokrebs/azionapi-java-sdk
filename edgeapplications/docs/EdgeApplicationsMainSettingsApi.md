@@ -14,7 +14,7 @@ All URIs are relative to *https://api.azionapi.net*
 
 <a id="edgeApplicationsGet"></a>
 # **edgeApplicationsGet**
-> GetApplicationsResponse edgeApplicationsGet(page, pageSize, filter, orderBy, sort, accept)
+> Object edgeApplicationsGet(page, pageSize, filter, orderBy, sort, accept)
 
 /edge_applications
 
@@ -47,7 +47,7 @@ public class Example {
     String sort = "sort_example"; // String | 
     String accept = "application/json; version=3"; // String | 
     try {
-      GetApplicationsResponse result = apiInstance.edgeApplicationsGet(page, pageSize, filter, orderBy, sort, accept);
+      Object result = apiInstance.edgeApplicationsGet(page, pageSize, filter, orderBy, sort, accept);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EdgeApplicationsMainSettingsApi#edgeApplicationsGet");
@@ -73,7 +73,7 @@ public class Example {
 
 ### Return type
 
-[**GetApplicationsResponse**](GetApplicationsResponse.md)
+**Object**
 
 ### Authorization
 

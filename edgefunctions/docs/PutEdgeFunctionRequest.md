@@ -13,6 +13,7 @@
 |**active** | **Boolean** |  |  [optional] |
 |**initiatorType** | **String** |  |  [optional] |
 |**language** | **String** |  |  [optional] |
+|**isProprietaryCode** | **Boolean** |  |  [optional] |
 
 
 

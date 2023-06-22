@@ -18,6 +18,7 @@
 |**lastEditor** | **String** |  |  [optional] |
 |**modified** | **String** |  |  [optional] |
 |**referenceCount** | **Long** |  |  [optional] |
+|**isProprietaryCode** | **Boolean** |  |  [optional] |
 
 
 

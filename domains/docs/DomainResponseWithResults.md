@@ -10,7 +10,7 @@
 |**count** | **Long** |  |  |
 |**totalPages** | **Long** |  |  |
 |**schemaVersion** | **Long** |  |  |
-|**links** | **DomainLinks** |  |  |
+|**links** | [**DomainLinks**](DomainLinks.md) |  |  |
 |**results** | [**List&lt;DomainResults&gt;**](DomainResults.md) |  |  |
 
 
