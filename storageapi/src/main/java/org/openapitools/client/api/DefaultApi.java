@@ -141,7 +141,7 @@ public class DefaultApi {
     }
 
     /**
-     * /domains/:version_id
+     * /storage/:version_id/delete
      * Delete a version. A version is just um path prefix/sub-namespace for a set of files.
      * @param versionId The version identifier (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -156,7 +156,7 @@ public class DefaultApi {
     }
 
     /**
-     * /domains/:version_id
+     * /storage/:version_id/delete
      * Delete a version. A version is just um path prefix/sub-namespace for a set of files.
      * @param versionId The version identifier (required)
      * @return ApiResponse&lt;Void&gt;
@@ -173,7 +173,7 @@ public class DefaultApi {
     }
 
     /**
-     * /domains/:version_id (asynchronously)
+     * /storage/:version_id/delete (asynchronously)
      * Delete a version. A version is just um path prefix/sub-namespace for a set of files.
      * @param versionId The version identifier (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -195,6 +195,7 @@ public class DefaultApi {
      * Build call for storageVersionIdPost
      * @param xAzionStaticPath Required in order to get the path and file name. i.e.: assets/css/main.css (required)
      * @param versionId  (required)
+     * @param contentType The content type of the file (Example: text/plain). (optional, default to b2/x-auto)
      * @param body  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -205,7 +206,7 @@ public class DefaultApi {
         <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call storageVersionIdPostCall(String xAzionStaticPath, String versionId, File body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call storageVersionIdPostCall(String xAzionStaticPath, String versionId, String contentType, File body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -231,6 +232,10 @@ public class DefaultApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (contentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarApiClient.parameterToString(contentType));
+        }
+
         if (xAzionStaticPath != null) {
             localVarHeaderParams.put("X-Azion-Static-Path", localVarApiClient.parameterToString(xAzionStaticPath));
         }
@@ -244,7 +249,7 @@ public class DefaultApi {
         }
 
         final String[] localVarContentTypes = {
-            "b2/x-auto"
+            "application/octet-stream"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -256,7 +261,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call storageVersionIdPostValidateBeforeCall(String xAzionStaticPath, String versionId, File body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call storageVersionIdPostValidateBeforeCall(String xAzionStaticPath, String versionId, String contentType, File body, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'xAzionStaticPath' is set
         if (xAzionStaticPath == null) {
             throw new ApiException("Missing the required parameter 'xAzionStaticPath' when calling storageVersionIdPost(Async)");
@@ -267,15 +272,16 @@ public class DefaultApi {
             throw new ApiException("Missing the required parameter 'versionId' when calling storageVersionIdPost(Async)");
         }
 
-        return storageVersionIdPostCall(xAzionStaticPath, versionId, body, _callback);
+        return storageVersionIdPostCall(xAzionStaticPath, versionId, contentType, body, _callback);
 
     }
 
     /**
-     * /domains/:version_id
+     * /storage/:version_id
      * Upload file and transfer to remote storage
      * @param xAzionStaticPath Required in order to get the path and file name. i.e.: assets/css/main.css (required)
      * @param versionId  (required)
+     * @param contentType The content type of the file (Example: text/plain). (optional, default to b2/x-auto)
      * @param body  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -285,16 +291,17 @@ public class DefaultApi {
         <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public Object storageVersionIdPost(String xAzionStaticPath, String versionId, File body) throws ApiException {
-        ApiResponse<Object> localVarResp = storageVersionIdPostWithHttpInfo(xAzionStaticPath, versionId, body);
+    public Object storageVersionIdPost(String xAzionStaticPath, String versionId, String contentType, File body) throws ApiException {
+        ApiResponse<Object> localVarResp = storageVersionIdPostWithHttpInfo(xAzionStaticPath, versionId, contentType, body);
         return localVarResp.getData();
     }
 
     /**
-     * /domains/:version_id
+     * /storage/:version_id
      * Upload file and transfer to remote storage
      * @param xAzionStaticPath Required in order to get the path and file name. i.e.: assets/css/main.css (required)
      * @param versionId  (required)
+     * @param contentType The content type of the file (Example: text/plain). (optional, default to b2/x-auto)
      * @param body  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -304,17 +311,18 @@ public class DefaultApi {
         <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> storageVersionIdPostWithHttpInfo(String xAzionStaticPath, String versionId, File body) throws ApiException {
-        okhttp3.Call localVarCall = storageVersionIdPostValidateBeforeCall(xAzionStaticPath, versionId, body, null);
+    public ApiResponse<Object> storageVersionIdPostWithHttpInfo(String xAzionStaticPath, String versionId, String contentType, File body) throws ApiException {
+        okhttp3.Call localVarCall = storageVersionIdPostValidateBeforeCall(xAzionStaticPath, versionId, contentType, body, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * /domains/:version_id (asynchronously)
+     * /storage/:version_id (asynchronously)
      * Upload file and transfer to remote storage
      * @param xAzionStaticPath Required in order to get the path and file name. i.e.: assets/css/main.css (required)
      * @param versionId  (required)
+     * @param contentType The content type of the file (Example: text/plain). (optional, default to b2/x-auto)
      * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -325,9 +333,9 @@ public class DefaultApi {
         <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call storageVersionIdPostAsync(String xAzionStaticPath, String versionId, File body, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call storageVersionIdPostAsync(String xAzionStaticPath, String versionId, String contentType, File body, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = storageVersionIdPostValidateBeforeCall(xAzionStaticPath, versionId, body, _callback);
+        okhttp3.Call localVarCall = storageVersionIdPostValidateBeforeCall(xAzionStaticPath, versionId, contentType, body, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
