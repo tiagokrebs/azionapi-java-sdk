@@ -4,15 +4,15 @@ All URIs are relative to *https://storage-api.azion.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**deleteVersion**](DefaultApi.md#deleteVersion) | **DELETE** /storage/{version_id}/delete | /domains/:version_id |
-| [**storageVersionIdPost**](DefaultApi.md#storageVersionIdPost) | **POST** /storage/{version_id} | /domains/:version_id |
+| [**deleteVersion**](DefaultApi.md#deleteVersion) | **DELETE** /storage/{version_id}/delete | /storage/:version_id/delete |
+| [**storageVersionIdPost**](DefaultApi.md#storageVersionIdPost) | **POST** /storage/{version_id} | /storage/:version_id |
 
 
 <a id="deleteVersion"></a>
 # **deleteVersion**
 > deleteVersion(versionId)
 
-/domains/:version_id
+/storage/:version_id/delete
 
 Delete a version. A version is just um path prefix/sub-namespace for a set of files.
 
@@ -78,9 +78,9 @@ null (empty response body)
 
 <a id="storageVersionIdPost"></a>
 # **storageVersionIdPost**
-> Object storageVersionIdPost(xAzionStaticPath, versionId, body)
+> Object storageVersionIdPost(xAzionStaticPath, versionId, contentType, body)
 
-/domains/:version_id
+/storage/:version_id
 
 Upload file and transfer to remote storage
 
@@ -108,9 +108,10 @@ public class Example {
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String xAzionStaticPath = "xAzionStaticPath_example"; // String | Required in order to get the path and file name. i.e.: assets/css/main.css
     String versionId = "versionId_example"; // String | 
+    String contentType = "b2/x-auto"; // String | The content type of the file (Example: text/plain).
     File body = new File("/path/to/file"); // File | 
     try {
-      Object result = apiInstance.storageVersionIdPost(xAzionStaticPath, versionId, body);
+      Object result = apiInstance.storageVersionIdPost(xAzionStaticPath, versionId, contentType, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#storageVersionIdPost");
@@ -129,6 +130,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **xAzionStaticPath** | **String**| Required in order to get the path and file name. i.e.: assets/css/main.css | |
 | **versionId** | **String**|  | |
+| **contentType** | **String**| The content type of the file (Example: text/plain). | [optional] [default to b2/x-auto] |
 | **body** | **File**|  | [optional] |
 
 ### Return type
@@ -141,7 +143,7 @@ public class Example {
 
 ### HTTP request headers
 
- - **Content-Type**: b2/x-auto
+ - **Content-Type**: application/octet-stream
  - **Accept**: application/json
 
 ### HTTP response details

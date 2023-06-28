@@ -15,6 +15,15 @@ paths:
     post:
       description: Upload file and transfer to remote storage
       parameters:
+      - description: "The content type of the file (Example: text/plain)."
+        explode: false
+        in: header
+        name: Content-Type
+        required: false
+        schema:
+          default: b2/x-auto
+          type: string
+        style: simple
       - description: "Required in order to get the path and file name. i.e.: assets/css/main.css"
         explode: false
         in: header
@@ -33,7 +42,7 @@ paths:
         style: simple
       requestBody:
         content:
-          b2/x-auto:
+          application/octet-stream:
             schema:
               format: binary
               type: string
@@ -43,8 +52,8 @@ paths:
             application/json:
               schema: {}
           description: ""
-      summary: /domains/:version_id
-      x-content-type: b2/x-auto
+      summary: /storage/:version_id
+      x-content-type: application/octet-stream
       x-accepts: application/json
   /storage/{version_id}/delete:
     delete:
@@ -63,7 +72,7 @@ paths:
       responses:
         "204":
           description: The resource was deleted successfully.
-      summary: /domains/:version_id
+      summary: /storage/:version_id/delete
       x-accepts: application/json
 components:
   responses:
