@@ -34,6 +34,7 @@ import org.openapitools.client.model.ApplicationUpdateResponse;
 import org.openapitools.client.model.CreateApplicationRequest;
 import org.openapitools.client.model.CreateApplicationResult;
 import org.openapitools.client.model.GetApplicationResponse;
+import org.openapitools.client.model.GetApplicationsResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -184,7 +185,7 @@ public class EdgeApplicationsMainSettingsApi {
      * @param orderBy  (optional)
      * @param sort  (optional)
      * @param accept  (optional)
-     * @return Object
+     * @return GetApplicationsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -197,8 +198,8 @@ public class EdgeApplicationsMainSettingsApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object edgeApplicationsGet(Long page, Long pageSize, String filter, String orderBy, String sort, String accept) throws ApiException {
-        ApiResponse<Object> localVarResp = edgeApplicationsGetWithHttpInfo(page, pageSize, filter, orderBy, sort, accept);
+    public GetApplicationsResponse edgeApplicationsGet(Long page, Long pageSize, String filter, String orderBy, String sort, String accept) throws ApiException {
+        ApiResponse<GetApplicationsResponse> localVarResp = edgeApplicationsGetWithHttpInfo(page, pageSize, filter, orderBy, sort, accept);
         return localVarResp.getData();
     }
 
@@ -211,7 +212,7 @@ public class EdgeApplicationsMainSettingsApi {
      * @param orderBy  (optional)
      * @param sort  (optional)
      * @param accept  (optional)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;GetApplicationsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -224,9 +225,9 @@ public class EdgeApplicationsMainSettingsApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> edgeApplicationsGetWithHttpInfo(Long page, Long pageSize, String filter, String orderBy, String sort, String accept) throws ApiException {
+    public ApiResponse<GetApplicationsResponse> edgeApplicationsGetWithHttpInfo(Long page, Long pageSize, String filter, String orderBy, String sort, String accept) throws ApiException {
         okhttp3.Call localVarCall = edgeApplicationsGetValidateBeforeCall(page, pageSize, filter, orderBy, sort, accept, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetApplicationsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -253,10 +254,10 @@ public class EdgeApplicationsMainSettingsApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call edgeApplicationsGetAsync(Long page, Long pageSize, String filter, String orderBy, String sort, String accept, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call edgeApplicationsGetAsync(Long page, Long pageSize, String filter, String orderBy, String sort, String accept, final ApiCallback<GetApplicationsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = edgeApplicationsGetValidateBeforeCall(page, pageSize, filter, orderBy, sort, accept, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetApplicationsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

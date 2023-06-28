@@ -19,7 +19,3 @@ hs_err_pid*
 target
 .gradle
 build
-go.mod
-go.sum
-go.mod
-go.sum
