@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * UpdateDeviceGroupsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-28T18:27:45.238194Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-29T19:24:41.875462Z[GMT]")
 public class UpdateDeviceGroupsRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
