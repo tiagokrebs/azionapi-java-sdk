@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationsResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-28T18:27:45.238194Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-29T19:24:41.875462Z[GMT]")
 public class ApplicationsResults {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -81,7 +81,7 @@ public class ApplicationsResults {
 
   public static final String SERIALIZED_NAME_ORIGINS = "origins";
   @SerializedName(SERIALIZED_NAME_ORIGINS)
-  private List<ApplicationOrigins> origins;
+  private List<ApplicationOrigins> origins = new ArrayList<>();
 
   public ApplicationsResults() {
   }
@@ -96,7 +96,7 @@ public class ApplicationsResults {
    * Get id
    * @return id
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Long getId() {
     return id;
   }
@@ -117,7 +117,7 @@ public class ApplicationsResults {
    * Get name
    * @return name
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
@@ -138,7 +138,7 @@ public class ApplicationsResults {
    * Get debugRules
    * @return debugRules
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getDebugRules() {
     return debugRules;
   }
@@ -159,7 +159,7 @@ public class ApplicationsResults {
    * Get lastEditor
    * @return lastEditor
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getLastEditor() {
     return lastEditor;
   }
@@ -180,7 +180,7 @@ public class ApplicationsResults {
    * Get lastModified
    * @return lastModified
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getLastModified() {
     return lastModified;
   }
@@ -201,7 +201,7 @@ public class ApplicationsResults {
    * Get active
    * @return active
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getActive() {
     return active;
   }
@@ -230,7 +230,7 @@ public class ApplicationsResults {
    * Get origins
    * @return origins
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public List<ApplicationOrigins> getOrigins() {
     return origins;
   }
@@ -308,6 +308,13 @@ public class ApplicationsResults {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("id");
+    openapiRequiredFields.add("name");
+    openapiRequiredFields.add("debug_rules");
+    openapiRequiredFields.add("last_editor");
+    openapiRequiredFields.add("last_modified");
+    openapiRequiredFields.add("active");
+    openapiRequiredFields.add("origins");
   }
 
  /**
@@ -330,29 +337,32 @@ public class ApplicationsResults {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ApplicationsResults` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("last_editor") != null && !jsonObj.get("last_editor").isJsonNull()) && !jsonObj.get("last_editor").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `last_editor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_editor").toString()));
-      }
-      if ((jsonObj.get("last_modified") != null && !jsonObj.get("last_modified").isJsonNull()) && !jsonObj.get("last_modified").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `last_modified` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_modified").toString()));
-      }
-      if (jsonObj.get("origins") != null && !jsonObj.get("origins").isJsonNull()) {
-        JsonArray jsonArrayorigins = jsonObj.getAsJsonArray("origins");
-        if (jsonArrayorigins != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("origins").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `origins` to be an array in the JSON string but got `%s`", jsonObj.get("origins").toString()));
-          }
 
-          // validate the optional field `origins` (array)
-          for (int i = 0; i < jsonArrayorigins.size(); i++) {
-            ApplicationOrigins.validateJsonObject(jsonArrayorigins.get(i).getAsJsonObject());
-          };
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ApplicationsResults.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
         }
       }
+      if (!jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if (!jsonObj.get("last_editor").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `last_editor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_editor").toString()));
+      }
+      if (!jsonObj.get("last_modified").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `last_modified` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_modified").toString()));
+      }
+      // ensure the json data is an array
+      if (!jsonObj.get("origins").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `origins` to be an array in the JSON string but got `%s`", jsonObj.get("origins").toString()));
+      }
+
+      JsonArray jsonArrayorigins = jsonObj.getAsJsonArray("origins");
+      // validate the required field `origins` (array)
+      for (int i = 0; i < jsonArrayorigins.size(); i++) {
+        ApplicationOrigins.validateJsonObject(jsonArrayorigins.get(i).getAsJsonObject());
+      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
