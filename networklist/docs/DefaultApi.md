@@ -76,6 +76,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A list of Network Lists |  -  |
+| **404** | Not Found |  -  |
 
 <a id="networkListsPost"></a>
 # **networkListsPost**
@@ -136,13 +137,14 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/json, text/html
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Network Lists created |  -  |
 | **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
 <a id="networkListsUuidGet"></a>
@@ -205,12 +207,14 @@ public class Example {
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, text/html
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A Network Lists object |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
 
 <a id="networkListsUuidPut"></a>
 # **networkListsUuidPut**
@@ -274,12 +278,13 @@ public class Example {
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/json, text/html
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successfully updated |  -  |
 | **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
