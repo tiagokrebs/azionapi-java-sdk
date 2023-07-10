@@ -108,7 +108,7 @@ public class VariablesApi {
         Object localVarPostBody = variableCreate;
 
         // create path and map variables
-        String localVarPath = "/api/variables";
+        String localVarPath = "/variables";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -148,7 +148,7 @@ public class VariablesApi {
     }
 
     /**
-     * /api/variables
+     * /variables
      * Create a new Variable. &lt;br&gt;&lt;ul&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is informed with value \&quot;true\&quot; in request payload the Variable value will be secret and no longer viewable after creation.&lt;/li&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is not informed the Variable value will be considered as not secret by default.&lt;/li&gt;&lt;/ul&gt;
      * @param variableCreate  (required)
      * @return VariableGet
@@ -169,7 +169,7 @@ public class VariablesApi {
     }
 
     /**
-     * /api/variables
+     * /variables
      * Create a new Variable. &lt;br&gt;&lt;ul&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is informed with value \&quot;true\&quot; in request payload the Variable value will be secret and no longer viewable after creation.&lt;/li&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is not informed the Variable value will be considered as not secret by default.&lt;/li&gt;&lt;/ul&gt;
      * @param variableCreate  (required)
      * @return ApiResponse&lt;VariableGet&gt;
@@ -191,7 +191,7 @@ public class VariablesApi {
     }
 
     /**
-     * /api/variables (asynchronously)
+     * /variables (asynchronously)
      * Create a new Variable. &lt;br&gt;&lt;ul&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is informed with value \&quot;true\&quot; in request payload the Variable value will be secret and no longer viewable after creation.&lt;/li&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is not informed the Variable value will be considered as not secret by default.&lt;/li&gt;&lt;/ul&gt;
      * @param variableCreate  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -247,7 +247,7 @@ public class VariablesApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/variables/{uuid}"
+        String localVarPath = "/variables/{uuid}"
             .replace("{" + "uuid" + "}", localVarApiClient.escapeString(uuid.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -286,7 +286,7 @@ public class VariablesApi {
     }
 
     /**
-     * /api/variables/:uuid
+     * /variables/:uuid
      * Delete a Variable by it&#39;s UUID
      * @param uuid  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -305,7 +305,7 @@ public class VariablesApi {
     }
 
     /**
-     * /api/variables/:uuid
+     * /variables/:uuid
      * Delete a Variable by it&#39;s UUID
      * @param uuid  (required)
      * @return ApiResponse&lt;Void&gt;
@@ -326,7 +326,7 @@ public class VariablesApi {
     }
 
     /**
-     * /api/variables/:uuid (asynchronously)
+     * /variables/:uuid (asynchronously)
      * Delete a Variable by it&#39;s UUID
      * @param uuid  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -357,6 +357,7 @@ public class VariablesApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call apiVariablesListCall(final ApiCallback _callback) throws ApiException {
@@ -376,7 +377,7 @@ public class VariablesApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/variables";
+        String localVarPath = "/variables";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -410,7 +411,7 @@ public class VariablesApi {
     }
 
     /**
-     * /api/variables
+     * /variables
      * List all user&#39;s Variables.
      * @return List&lt;Variable&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -418,6 +419,7 @@ public class VariablesApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
     public List<Variable> apiVariablesList() throws ApiException {
@@ -426,7 +428,7 @@ public class VariablesApi {
     }
 
     /**
-     * /api/variables
+     * /variables
      * List all user&#39;s Variables.
      * @return ApiResponse&lt;List&lt;Variable&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -434,6 +436,7 @@ public class VariablesApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<List<Variable>> apiVariablesListWithHttpInfo() throws ApiException {
@@ -443,7 +446,7 @@ public class VariablesApi {
     }
 
     /**
-     * /api/variables (asynchronously)
+     * /variables (asynchronously)
      * List all user&#39;s Variables.
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -452,6 +455,7 @@ public class VariablesApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call apiVariablesListAsync(final ApiCallback<List<Variable>> _callback) throws ApiException {
@@ -494,7 +498,7 @@ public class VariablesApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/variables/{uuid}"
+        String localVarPath = "/variables/{uuid}"
             .replace("{" + "uuid" + "}", localVarApiClient.escapeString(uuid.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -534,7 +538,7 @@ public class VariablesApi {
     }
 
     /**
-     * /api/variables/:uuid
+     * /variables/:uuid
      * Retrieve all data for a Variable by it&#39;s UUID
      * @param uuid  (required)
      * @return Variable
@@ -555,7 +559,7 @@ public class VariablesApi {
     }
 
     /**
-     * /api/variables/:uuid
+     * /variables/:uuid
      * Retrieve all data for a Variable by it&#39;s UUID
      * @param uuid  (required)
      * @return ApiResponse&lt;Variable&gt;
@@ -577,7 +581,7 @@ public class VariablesApi {
     }
 
     /**
-     * /api/variables/:uuid (asynchronously)
+     * /variables/:uuid (asynchronously)
      * Retrieve all data for a Variable by it&#39;s UUID
      * @param uuid  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -634,7 +638,7 @@ public class VariablesApi {
         Object localVarPostBody = variableCreate;
 
         // create path and map variables
-        String localVarPath = "/api/variables/{uuid}"
+        String localVarPath = "/variables/{uuid}"
             .replace("{" + "uuid" + "}", localVarApiClient.escapeString(uuid.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -682,7 +686,7 @@ public class VariablesApi {
     }
 
     /**
-     * /api/variables/:uuid
+     * /variables/:uuid
      * Update variable attributes by it&#39;s UUID. Keep the Variable UUID but overwrite all editable attributes.
      * @param uuid  (required)
      * @param variableCreate  (required)
@@ -704,7 +708,7 @@ public class VariablesApi {
     }
 
     /**
-     * /api/variables/:uuid
+     * /variables/:uuid
      * Update variable attributes by it&#39;s UUID. Keep the Variable UUID but overwrite all editable attributes.
      * @param uuid  (required)
      * @param variableCreate  (required)
@@ -727,7 +731,7 @@ public class VariablesApi {
     }
 
     /**
-     * /api/variables/:uuid (asynchronously)
+     * /variables/:uuid (asynchronously)
      * Update variable attributes by it&#39;s UUID. Keep the Variable UUID but overwrite all editable attributes.
      * @param uuid  (required)
      * @param variableCreate  (required)

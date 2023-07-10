@@ -60,10 +60,10 @@ import org.openapitools.client.auth.ApiKeyAuth;
  */
 public class ApiClient {
 
-    private String basePath = "https://stage-variables.azion.com";
+    private String basePath = "https://stage-api.azion.net/variables";
     protected List<ServerConfiguration> servers = new ArrayList<ServerConfiguration>(Arrays.asList(
     new ServerConfiguration(
-      "https://stage-variables.azion.com",
+      "https://stage-api.azion.net/variables",
       "Stage",
       new HashMap<String, ServerVariable>()
     )
@@ -157,7 +157,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g https://stage-variables.azion.com
+     * @param basePath Base path of the URL (e.g https://stage-api.azion.net/variables
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {
