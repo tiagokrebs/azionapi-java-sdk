@@ -2,7 +2,7 @@
 
 Personal Tokens - OpenAPI
 - API version: 1.0.0
-  - Build date: 2023-07-13T14:14:09.238161Z[GMT]
+  - Build date: 2023-07-14T19:12:06.817083Z[GMT]
 
 The Personal Tokens API allows you to manage your existing personal tokens.
 
@@ -100,12 +100,12 @@ public class Example {
     //tokenAuth.setApiKeyPrefix("Token");
 
     PersonalTokenApi apiInstance = new PersonalTokenApi(defaultClient);
-    UUID personalTokenId = UUID.randomUUID(); // UUID | 
+    CreatePersonalTokenRequest createPersonalTokenRequest = new CreatePersonalTokenRequest(); // CreatePersonalTokenRequest | 
     try {
-      PersonalTokenResponseGet result = apiInstance.getPersonalToken(personalTokenId);
+      CreatePersonalTokenResponse result = apiInstance.createPersonalToken(createPersonalTokenRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PersonalTokenApi#getPersonalToken");
+      System.err.println("Exception when calling PersonalTokenApi#createPersonalToken");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -122,12 +122,16 @@ All URIs are relative to *https://api.azionapi.net*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*PersonalTokenApi* | [**createPersonalToken**](docs/PersonalTokenApi.md#createPersonalToken) | **POST** /iam/personal_tokens | Create a new personal token
+*PersonalTokenApi* | [**deletePersonalToken**](docs/PersonalTokenApi.md#deletePersonalToken) | **DELETE** /iam/personal_tokens/{personalTokenId} | Delete a personal token by id
 *PersonalTokenApi* | [**getPersonalToken**](docs/PersonalTokenApi.md#getPersonalToken) | **GET** /iam/personal_tokens/{personalTokenId} | Get a personal token info
 *PersonalTokenApi* | [**listPersonalToken**](docs/PersonalTokenApi.md#listPersonalToken) | **GET** /iam/personal_tokens | List all existing personal token
 
 
 ## Documentation for Models
 
+ - [CreatePersonalTokenRequest](docs/CreatePersonalTokenRequest.md)
+ - [CreatePersonalTokenResponse](docs/CreatePersonalTokenResponse.md)
  - [PersonalTokenResponseGet](docs/PersonalTokenResponseGet.md)
  - [PersonalTokenResponseWithResults](docs/PersonalTokenResponseWithResults.md)
  - [PersonalTokenResponseWithResultsLinks](docs/PersonalTokenResponseWithResultsLinks.md)

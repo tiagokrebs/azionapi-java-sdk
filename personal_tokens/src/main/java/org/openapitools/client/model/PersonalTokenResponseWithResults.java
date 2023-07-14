@@ -54,7 +54,7 @@ import org.openapitools.client.JSON;
 /**
  * PersonalTokenResponseWithResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-13T14:14:09.238161Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-14T19:12:06.817083Z[GMT]")
 public class PersonalTokenResponseWithResults {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
