@@ -4146,6 +4146,9 @@ components:
       properties:
         name:
           type: string
+        description:
+          maxLength: 1000
+          type: string
         criteria:
           items:
             items:
@@ -4189,6 +4192,9 @@ components:
         name: name
       properties:
         name:
+          type: string
+        description:
+          maxLength: 1000
           type: string
         criteria:
           items:
@@ -4277,6 +4283,8 @@ components:
           format: int64
           type: integer
         name:
+          type: string
+        description:
           type: string
         phase:
           type: string

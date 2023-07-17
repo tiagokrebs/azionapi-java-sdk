@@ -54,7 +54,7 @@ import org.openapitools.client.JSON;
 /**
  * RulesEngineResultResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-29T19:24:41.875462Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-17T13:49:11.625986Z[GMT]")
 public class RulesEngineResultResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -63,6 +63,10 @@ public class RulesEngineResultResponse {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  private String description;
 
   public static final String SERIALIZED_NAME_PHASE = "phase";
   @SerializedName(SERIALIZED_NAME_PHASE)
@@ -126,6 +130,27 @@ public class RulesEngineResultResponse {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  public RulesEngineResultResponse description(String description) {
+    
+    this.description = description;
+    return this;
+  }
+
+   /**
+   * Get description
+   * @return description
+  **/
+  @javax.annotation.Nullable
+  public String getDescription() {
+    return description;
+  }
+
+
+  public void setDescription(String description) {
+    this.description = description;
   }
 
 
@@ -262,6 +287,7 @@ public class RulesEngineResultResponse {
     RulesEngineResultResponse rulesEngineResultResponse = (RulesEngineResultResponse) o;
     return Objects.equals(this.id, rulesEngineResultResponse.id) &&
         Objects.equals(this.name, rulesEngineResultResponse.name) &&
+        Objects.equals(this.description, rulesEngineResultResponse.description) &&
         Objects.equals(this.phase, rulesEngineResultResponse.phase) &&
         Objects.equals(this.behaviors, rulesEngineResultResponse.behaviors) &&
         Objects.equals(this.criteria, rulesEngineResultResponse.criteria) &&
@@ -271,7 +297,7 @@ public class RulesEngineResultResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, phase, behaviors, criteria, isActive, order);
+    return Objects.hash(id, name, description, phase, behaviors, criteria, isActive, order);
   }
 
   @Override
@@ -280,6 +306,7 @@ public class RulesEngineResultResponse {
     sb.append("class RulesEngineResultResponse {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    phase: ").append(toIndentedString(phase)).append("\n");
     sb.append("    behaviors: ").append(toIndentedString(behaviors)).append("\n");
     sb.append("    criteria: ").append(toIndentedString(criteria)).append("\n");
@@ -309,6 +336,7 @@ public class RulesEngineResultResponse {
     openapiFields = new HashSet<String>();
     openapiFields.add("id");
     openapiFields.add("name");
+    openapiFields.add("description");
     openapiFields.add("phase");
     openapiFields.add("behaviors");
     openapiFields.add("criteria");
@@ -354,6 +382,9 @@ public class RulesEngineResultResponse {
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if (!jsonObj.get("phase").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `phase` to be a primitive type in the JSON string but got `%s`", jsonObj.get("phase").toString()));
