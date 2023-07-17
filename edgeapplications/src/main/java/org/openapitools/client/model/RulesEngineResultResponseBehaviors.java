@@ -21,7 +21,6 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * RulesEngineResultResponseBehaviors
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-17T13:49:11.625986Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-17T17:49:22.152078Z[GMT]")
 public class RulesEngineResultResponseBehaviors {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -59,7 +58,7 @@ public class RulesEngineResultResponseBehaviors {
 
   public static final String SERIALIZED_NAME_TARGET = "target";
   @SerializedName(SERIALIZED_NAME_TARGET)
-  private Object target = null;
+  private String target;
 
   public RulesEngineResultResponseBehaviors() {
   }
@@ -85,7 +84,7 @@ public class RulesEngineResultResponseBehaviors {
   }
 
 
-  public RulesEngineResultResponseBehaviors target(Object target) {
+  public RulesEngineResultResponseBehaviors target(String target) {
     
     this.target = target;
     return this;
@@ -96,12 +95,12 @@ public class RulesEngineResultResponseBehaviors {
    * @return target
   **/
   @javax.annotation.Nullable
-  public Object getTarget() {
+  public String getTarget() {
     return target;
   }
 
 
-  public void setTarget(Object target) {
+  public void setTarget(String target) {
     this.target = target;
   }
 
@@ -120,20 +119,9 @@ public class RulesEngineResultResponseBehaviors {
         Objects.equals(this.target, rulesEngineResultResponseBehaviors.target);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(name, target);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -201,6 +189,9 @@ public class RulesEngineResultResponseBehaviors {
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("target") != null && !jsonObj.get("target").isJsonNull()) && !jsonObj.get("target").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `target` to be a primitive type in the JSON string but got `%s`", jsonObj.get("target").toString()));
       }
   }
 
