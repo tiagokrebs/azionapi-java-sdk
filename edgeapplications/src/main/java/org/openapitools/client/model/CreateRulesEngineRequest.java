@@ -54,11 +54,15 @@ import org.openapitools.client.JSON;
 /**
  * CreateRulesEngineRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-29T19:24:41.875462Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-17T13:49:11.625986Z[GMT]")
 public class CreateRulesEngineRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  private String description;
 
   public static final String SERIALIZED_NAME_CRITERIA = "criteria";
   @SerializedName(SERIALIZED_NAME_CRITERIA)
@@ -89,6 +93,27 @@ public class CreateRulesEngineRequest {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  public CreateRulesEngineRequest description(String description) {
+    
+    this.description = description;
+    return this;
+  }
+
+   /**
+   * Get description
+   * @return description
+  **/
+  @javax.annotation.Nullable
+  public String getDescription() {
+    return description;
+  }
+
+
+  public void setDescription(String description) {
+    this.description = description;
   }
 
 
@@ -161,13 +186,14 @@ public class CreateRulesEngineRequest {
     }
     CreateRulesEngineRequest createRulesEngineRequest = (CreateRulesEngineRequest) o;
     return Objects.equals(this.name, createRulesEngineRequest.name) &&
+        Objects.equals(this.description, createRulesEngineRequest.description) &&
         Objects.equals(this.criteria, createRulesEngineRequest.criteria) &&
         Objects.equals(this.behaviors, createRulesEngineRequest.behaviors);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, criteria, behaviors);
+    return Objects.hash(name, description, criteria, behaviors);
   }
 
   @Override
@@ -175,6 +201,7 @@ public class CreateRulesEngineRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateRulesEngineRequest {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    criteria: ").append(toIndentedString(criteria)).append("\n");
     sb.append("    behaviors: ").append(toIndentedString(behaviors)).append("\n");
     sb.append("}");
@@ -200,6 +227,7 @@ public class CreateRulesEngineRequest {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("name");
+    openapiFields.add("description");
     openapiFields.add("criteria");
     openapiFields.add("behaviors");
 
@@ -239,6 +267,9 @@ public class CreateRulesEngineRequest {
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("criteria") == null) {
