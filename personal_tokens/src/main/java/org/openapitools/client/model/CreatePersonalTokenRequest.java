@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
-import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -51,21 +50,13 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * PersonalTokenResponseGet
+ * CreatePersonalTokenRequest
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-14T19:12:06.817083Z[GMT]")
-public class PersonalTokenResponseGet {
-  public static final String SERIALIZED_NAME_UUID = "uuid";
-  @SerializedName(SERIALIZED_NAME_UUID)
-  private UUID uuid;
-
+public class CreatePersonalTokenRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
-
-  public static final String SERIALIZED_NAME_CREATED = "created";
-  @SerializedName(SERIALIZED_NAME_CREATED)
-  private OffsetDateTime created;
 
   public static final String SERIALIZED_NAME_EXPIRES_AT = "expires_at";
   @SerializedName(SERIALIZED_NAME_EXPIRES_AT)
@@ -75,31 +66,10 @@ public class PersonalTokenResponseGet {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description;
 
-  public PersonalTokenResponseGet() {
+  public CreatePersonalTokenRequest() {
   }
 
-  public PersonalTokenResponseGet uuid(UUID uuid) {
-    
-    this.uuid = uuid;
-    return this;
-  }
-
-   /**
-   * Get uuid
-   * @return uuid
-  **/
-  @javax.annotation.Nullable
-  public UUID getUuid() {
-    return uuid;
-  }
-
-
-  public void setUuid(UUID uuid) {
-    this.uuid = uuid;
-  }
-
-
-  public PersonalTokenResponseGet name(String name) {
+  public CreatePersonalTokenRequest name(String name) {
     
     this.name = name;
     return this;
@@ -120,28 +90,7 @@ public class PersonalTokenResponseGet {
   }
 
 
-  public PersonalTokenResponseGet created(OffsetDateTime created) {
-    
-    this.created = created;
-    return this;
-  }
-
-   /**
-   * Get created
-   * @return created
-  **/
-  @javax.annotation.Nullable
-  public OffsetDateTime getCreated() {
-    return created;
-  }
-
-
-  public void setCreated(OffsetDateTime created) {
-    this.created = created;
-  }
-
-
-  public PersonalTokenResponseGet expiresAt(OffsetDateTime expiresAt) {
+  public CreatePersonalTokenRequest expiresAt(OffsetDateTime expiresAt) {
     
     this.expiresAt = expiresAt;
     return this;
@@ -162,7 +111,7 @@ public class PersonalTokenResponseGet {
   }
 
 
-  public PersonalTokenResponseGet description(String description) {
+  public CreatePersonalTokenRequest description(String description) {
     
     this.description = description;
     return this;
@@ -192,12 +141,10 @@ public class PersonalTokenResponseGet {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PersonalTokenResponseGet personalTokenResponseGet = (PersonalTokenResponseGet) o;
-    return Objects.equals(this.uuid, personalTokenResponseGet.uuid) &&
-        Objects.equals(this.name, personalTokenResponseGet.name) &&
-        Objects.equals(this.created, personalTokenResponseGet.created) &&
-        Objects.equals(this.expiresAt, personalTokenResponseGet.expiresAt) &&
-        Objects.equals(this.description, personalTokenResponseGet.description);
+    CreatePersonalTokenRequest createPersonalTokenRequest = (CreatePersonalTokenRequest) o;
+    return Objects.equals(this.name, createPersonalTokenRequest.name) &&
+        Objects.equals(this.expiresAt, createPersonalTokenRequest.expiresAt) &&
+        Objects.equals(this.description, createPersonalTokenRequest.description);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -206,7 +153,7 @@ public class PersonalTokenResponseGet {
 
   @Override
   public int hashCode() {
-    return Objects.hash(uuid, name, created, expiresAt, description);
+    return Objects.hash(name, expiresAt, description);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -219,10 +166,8 @@ public class PersonalTokenResponseGet {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PersonalTokenResponseGet {\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+    sb.append("class CreatePersonalTokenRequest {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("}");
@@ -247,9 +192,7 @@ public class PersonalTokenResponseGet {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("uuid");
     openapiFields.add("name");
-    openapiFields.add("created");
     openapiFields.add("expires_at");
     openapiFields.add("description");
 
@@ -261,24 +204,21 @@ public class PersonalTokenResponseGet {
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to PersonalTokenResponseGet
+  * @throws IOException if the JSON Object is invalid with respect to CreatePersonalTokenRequest
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (!PersonalTokenResponseGet.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PersonalTokenResponseGet is not found in the empty JSON string", PersonalTokenResponseGet.openapiRequiredFields.toString()));
+        if (!CreatePersonalTokenRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in CreatePersonalTokenRequest is not found in the empty JSON string", CreatePersonalTokenRequest.openapiRequiredFields.toString()));
         }
       }
 
       Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
-        if (!PersonalTokenResponseGet.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `PersonalTokenResponseGet` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        if (!CreatePersonalTokenRequest.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CreatePersonalTokenRequest` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
-      }
-      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
@@ -292,22 +232,22 @@ public class PersonalTokenResponseGet {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!PersonalTokenResponseGet.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'PersonalTokenResponseGet' and its subtypes
+       if (!CreatePersonalTokenRequest.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'CreatePersonalTokenRequest' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<PersonalTokenResponseGet> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(PersonalTokenResponseGet.class));
+       final TypeAdapter<CreatePersonalTokenRequest> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(CreatePersonalTokenRequest.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<PersonalTokenResponseGet>() {
+       return (TypeAdapter<T>) new TypeAdapter<CreatePersonalTokenRequest>() {
            @Override
-           public void write(JsonWriter out, PersonalTokenResponseGet value) throws IOException {
+           public void write(JsonWriter out, CreatePersonalTokenRequest value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public PersonalTokenResponseGet read(JsonReader in) throws IOException {
+           public CreatePersonalTokenRequest read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              return thisAdapter.fromJsonTree(jsonObj);
@@ -318,18 +258,18 @@ public class PersonalTokenResponseGet {
   }
 
  /**
-  * Create an instance of PersonalTokenResponseGet given an JSON string
+  * Create an instance of CreatePersonalTokenRequest given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of PersonalTokenResponseGet
-  * @throws IOException if the JSON string is invalid with respect to PersonalTokenResponseGet
+  * @return An instance of CreatePersonalTokenRequest
+  * @throws IOException if the JSON string is invalid with respect to CreatePersonalTokenRequest
   */
-  public static PersonalTokenResponseGet fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, PersonalTokenResponseGet.class);
+  public static CreatePersonalTokenRequest fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, CreatePersonalTokenRequest.class);
   }
 
  /**
-  * Convert an instance of PersonalTokenResponseGet to an JSON string
+  * Convert an instance of CreatePersonalTokenRequest to an JSON string
   *
   * @return JSON string
   */

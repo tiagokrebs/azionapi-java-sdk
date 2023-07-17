@@ -1,6 +1,6 @@
 
 
-# PersonalTokenResponseGet
+# CreatePersonalTokenResponse
 
 
 ## Properties
@@ -9,6 +9,8 @@
 |------------ | ------------- | ------------- | -------------|
 |**uuid** | **UUID** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
+|**key** | **String** |  |  [optional] |
+|**userId** | **BigDecimal** |  |  [optional] |
 |**created** | **OffsetDateTime** |  |  [optional] |
 |**expiresAt** | **OffsetDateTime** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
