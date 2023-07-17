@@ -4139,9 +4139,9 @@ components:
             operator: operator
         behaviors:
         - name: name
-          target: ""
+          target: target
         - name: name
-          target: ""
+          target: target
         name: name
       properties:
         name:
@@ -4186,9 +4186,9 @@ components:
             operator: operator
         behaviors:
         - name: name
-          target: ""
+          target: target
         - name: name
-          target: ""
+          target: target
         name: name
       properties:
         name:
@@ -4233,9 +4233,9 @@ components:
             operator: operator
         behaviors:
         - name: name
-          target: ""
+          target: target
         - name: name
-          target: ""
+          target: target
         name: name
       properties:
         name:
@@ -4257,7 +4257,7 @@ components:
         is_active: true
         behavior:
         - name: name
-          target: ""
+          target: target
         criteria:
         - - conditional: conditional
             variable: variable
@@ -4337,11 +4337,12 @@ components:
       additionalProperties: false
       example:
         name: name
-        target: ""
+        target: target
       properties:
         name:
           type: string
-        target: {}
+        target:
+          type: string
       required:
       - name
       type: object
@@ -4359,7 +4360,7 @@ components:
           is_active: true
           behavior:
           - name: name
-            target: ""
+            target: target
           criteria:
           - - conditional: conditional
               variable: variable
@@ -4384,7 +4385,7 @@ components:
           is_active: true
           behavior:
           - name: name
-            target: ""
+            target: target
           criteria:
           - - conditional: conditional
               variable: variable
@@ -4437,7 +4438,7 @@ components:
           is_active: true
           behavior:
           - name: name
-            target: ""
+            target: target
           criteria:
           - - conditional: conditional
               variable: variable
@@ -4526,11 +4527,12 @@ components:
     RulesEngineResultResponse_behaviors:
       example:
         name: name
-        target: ""
+        target: target
       properties:
         name:
           type: string
-        target: {}
+        target:
+          type: string
       required:
       - name
       type: object
