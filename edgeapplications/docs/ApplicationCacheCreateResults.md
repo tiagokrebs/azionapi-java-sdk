@@ -22,6 +22,13 @@
 |**deviceGroup** | **List&lt;String&gt;** |  |  |
 |**enableCachingForPost** | **Boolean** |  |  |
 |**l2CachingEnabled** | **Boolean** |  |  |
+|**isSliceConfigurationEnabled** | **Boolean** |  |  [optional] |
+|**isSliceEdgeCachingEnabled** | **Boolean** |  |  [optional] |
+|**isSliceL2CachingEnabled** | **Boolean** |  |  [optional] |
+|**sliceConfigurationRange** | **Long** |  |  [optional] |
+|**enableCachingForOptions** | **Boolean** |  |  [optional] |
+|**enableStaleCache** | **Boolean** |  |  [optional] |
+|**l2Region** | **String** |  |  [optional] |
 
 
 

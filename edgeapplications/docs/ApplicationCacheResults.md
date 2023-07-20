@@ -22,6 +22,9 @@
 |**deviceGroup** | **List&lt;String&gt;** |  |  |
 |**enableCachingForPost** | **Boolean** |  |  |
 |**l2CachingEnabled** | **Boolean** |  |  |
+|**enableCachingForOptions** | **Boolean** |  |  |
+|**enableStaleCache** | **Boolean** |  |  |
+|**l2Region** | **String** |  |  |
 
 
 
