@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationCacheResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-17T17:49:22.152078Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-20T17:49:21.170536Z[GMT]")
 public class ApplicationCacheResults {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -113,6 +113,18 @@ public class ApplicationCacheResults {
   public static final String SERIALIZED_NAME_L2_CACHING_ENABLED = "l2_caching_enabled";
   @SerializedName(SERIALIZED_NAME_L2_CACHING_ENABLED)
   private Boolean l2CachingEnabled;
+
+  public static final String SERIALIZED_NAME_ENABLE_CACHING_FOR_OPTIONS = "enable_caching_for_options";
+  @SerializedName(SERIALIZED_NAME_ENABLE_CACHING_FOR_OPTIONS)
+  private Boolean enableCachingForOptions;
+
+  public static final String SERIALIZED_NAME_ENABLE_STALE_CACHE = "enable_stale_cache";
+  @SerializedName(SERIALIZED_NAME_ENABLE_STALE_CACHE)
+  private Boolean enableStaleCache;
+
+  public static final String SERIALIZED_NAME_L2_REGION = "l2_region";
+  @SerializedName(SERIALIZED_NAME_L2_REGION)
+  private String l2Region;
 
   public ApplicationCacheResults() {
   }
@@ -456,6 +468,69 @@ public class ApplicationCacheResults {
   }
 
 
+  public ApplicationCacheResults enableCachingForOptions(Boolean enableCachingForOptions) {
+    
+    this.enableCachingForOptions = enableCachingForOptions;
+    return this;
+  }
+
+   /**
+   * Get enableCachingForOptions
+   * @return enableCachingForOptions
+  **/
+  @javax.annotation.Nonnull
+  public Boolean getEnableCachingForOptions() {
+    return enableCachingForOptions;
+  }
+
+
+  public void setEnableCachingForOptions(Boolean enableCachingForOptions) {
+    this.enableCachingForOptions = enableCachingForOptions;
+  }
+
+
+  public ApplicationCacheResults enableStaleCache(Boolean enableStaleCache) {
+    
+    this.enableStaleCache = enableStaleCache;
+    return this;
+  }
+
+   /**
+   * Get enableStaleCache
+   * @return enableStaleCache
+  **/
+  @javax.annotation.Nonnull
+  public Boolean getEnableStaleCache() {
+    return enableStaleCache;
+  }
+
+
+  public void setEnableStaleCache(Boolean enableStaleCache) {
+    this.enableStaleCache = enableStaleCache;
+  }
+
+
+  public ApplicationCacheResults l2Region(String l2Region) {
+    
+    this.l2Region = l2Region;
+    return this;
+  }
+
+   /**
+   * Get l2Region
+   * @return l2Region
+  **/
+  @javax.annotation.Nonnull
+  public String getL2Region() {
+    return l2Region;
+  }
+
+
+  public void setL2Region(String l2Region) {
+    this.l2Region = l2Region;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -480,12 +555,15 @@ public class ApplicationCacheResults {
         Objects.equals(this.adaptiveDeliveryAction, applicationCacheResults.adaptiveDeliveryAction) &&
         Objects.equals(this.deviceGroup, applicationCacheResults.deviceGroup) &&
         Objects.equals(this.enableCachingForPost, applicationCacheResults.enableCachingForPost) &&
-        Objects.equals(this.l2CachingEnabled, applicationCacheResults.l2CachingEnabled);
+        Objects.equals(this.l2CachingEnabled, applicationCacheResults.l2CachingEnabled) &&
+        Objects.equals(this.enableCachingForOptions, applicationCacheResults.enableCachingForOptions) &&
+        Objects.equals(this.enableStaleCache, applicationCacheResults.enableStaleCache) &&
+        Objects.equals(this.l2Region, applicationCacheResults.l2Region);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, browserCacheSettings, browserCacheSettingsMaximumTtl, cdnCacheSettings, cdnCacheSettingsMaximumTtl, cacheByQueryString, queryStringFields, enableQueryStringSort, cacheByCookies, cookieNames, adaptiveDeliveryAction, deviceGroup, enableCachingForPost, l2CachingEnabled);
+    return Objects.hash(id, name, browserCacheSettings, browserCacheSettingsMaximumTtl, cdnCacheSettings, cdnCacheSettingsMaximumTtl, cacheByQueryString, queryStringFields, enableQueryStringSort, cacheByCookies, cookieNames, adaptiveDeliveryAction, deviceGroup, enableCachingForPost, l2CachingEnabled, enableCachingForOptions, enableStaleCache, l2Region);
   }
 
   @Override
@@ -507,6 +585,9 @@ public class ApplicationCacheResults {
     sb.append("    deviceGroup: ").append(toIndentedString(deviceGroup)).append("\n");
     sb.append("    enableCachingForPost: ").append(toIndentedString(enableCachingForPost)).append("\n");
     sb.append("    l2CachingEnabled: ").append(toIndentedString(l2CachingEnabled)).append("\n");
+    sb.append("    enableCachingForOptions: ").append(toIndentedString(enableCachingForOptions)).append("\n");
+    sb.append("    enableStaleCache: ").append(toIndentedString(enableStaleCache)).append("\n");
+    sb.append("    l2Region: ").append(toIndentedString(l2Region)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -544,6 +625,9 @@ public class ApplicationCacheResults {
     openapiFields.add("device_group");
     openapiFields.add("enable_caching_for_post");
     openapiFields.add("l2_caching_enabled");
+    openapiFields.add("enable_caching_for_options");
+    openapiFields.add("enable_stale_cache");
+    openapiFields.add("l2_region");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -562,6 +646,9 @@ public class ApplicationCacheResults {
     openapiRequiredFields.add("device_group");
     openapiRequiredFields.add("enable_caching_for_post");
     openapiRequiredFields.add("l2_caching_enabled");
+    openapiRequiredFields.add("enable_caching_for_options");
+    openapiRequiredFields.add("enable_stale_cache");
+    openapiRequiredFields.add("l2_region");
   }
 
  /**
@@ -626,6 +713,9 @@ public class ApplicationCacheResults {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("device_group").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `device_group` to be an array in the JSON string but got `%s`", jsonObj.get("device_group").toString()));
+      }
+      if (!jsonObj.get("l2_region").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `l2_region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("l2_region").toString()));
       }
   }
 
