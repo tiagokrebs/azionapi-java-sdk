@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationInstanceResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-20T17:49:21.170536Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-24T20:34:56.993378Z[GMT]")
 public class ApplicationInstanceResults {
   public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
   @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)
