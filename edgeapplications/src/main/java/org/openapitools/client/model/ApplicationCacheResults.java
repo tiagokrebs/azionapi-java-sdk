@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationCacheResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-20T17:49:21.170536Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-24T20:34:56.993378Z[GMT]")
 public class ApplicationCacheResults {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -113,6 +113,22 @@ public class ApplicationCacheResults {
   public static final String SERIALIZED_NAME_L2_CACHING_ENABLED = "l2_caching_enabled";
   @SerializedName(SERIALIZED_NAME_L2_CACHING_ENABLED)
   private Boolean l2CachingEnabled;
+
+  public static final String SERIALIZED_NAME_IS_SLICE_CONFIGURATION_ENABLED = "is_slice_configuration_enabled";
+  @SerializedName(SERIALIZED_NAME_IS_SLICE_CONFIGURATION_ENABLED)
+  private Boolean isSliceConfigurationEnabled;
+
+  public static final String SERIALIZED_NAME_IS_SLICE_EDGE_CACHING_ENABLED = "is_slice_edge_caching_enabled";
+  @SerializedName(SERIALIZED_NAME_IS_SLICE_EDGE_CACHING_ENABLED)
+  private Boolean isSliceEdgeCachingEnabled;
+
+  public static final String SERIALIZED_NAME_IS_SLICE_L2_CACHING_ENABLED = "is_slice_l2_caching_enabled";
+  @SerializedName(SERIALIZED_NAME_IS_SLICE_L2_CACHING_ENABLED)
+  private Boolean isSliceL2CachingEnabled;
+
+  public static final String SERIALIZED_NAME_SLICE_CONFIGURATION_RANGE = "slice_configuration_range";
+  @SerializedName(SERIALIZED_NAME_SLICE_CONFIGURATION_RANGE)
+  private Boolean sliceConfigurationRange;
 
   public static final String SERIALIZED_NAME_ENABLE_CACHING_FOR_OPTIONS = "enable_caching_for_options";
   @SerializedName(SERIALIZED_NAME_ENABLE_CACHING_FOR_OPTIONS)
@@ -468,6 +484,90 @@ public class ApplicationCacheResults {
   }
 
 
+  public ApplicationCacheResults isSliceConfigurationEnabled(Boolean isSliceConfigurationEnabled) {
+    
+    this.isSliceConfigurationEnabled = isSliceConfigurationEnabled;
+    return this;
+  }
+
+   /**
+   * Get isSliceConfigurationEnabled
+   * @return isSliceConfigurationEnabled
+  **/
+  @javax.annotation.Nullable
+  public Boolean getIsSliceConfigurationEnabled() {
+    return isSliceConfigurationEnabled;
+  }
+
+
+  public void setIsSliceConfigurationEnabled(Boolean isSliceConfigurationEnabled) {
+    this.isSliceConfigurationEnabled = isSliceConfigurationEnabled;
+  }
+
+
+  public ApplicationCacheResults isSliceEdgeCachingEnabled(Boolean isSliceEdgeCachingEnabled) {
+    
+    this.isSliceEdgeCachingEnabled = isSliceEdgeCachingEnabled;
+    return this;
+  }
+
+   /**
+   * Get isSliceEdgeCachingEnabled
+   * @return isSliceEdgeCachingEnabled
+  **/
+  @javax.annotation.Nullable
+  public Boolean getIsSliceEdgeCachingEnabled() {
+    return isSliceEdgeCachingEnabled;
+  }
+
+
+  public void setIsSliceEdgeCachingEnabled(Boolean isSliceEdgeCachingEnabled) {
+    this.isSliceEdgeCachingEnabled = isSliceEdgeCachingEnabled;
+  }
+
+
+  public ApplicationCacheResults isSliceL2CachingEnabled(Boolean isSliceL2CachingEnabled) {
+    
+    this.isSliceL2CachingEnabled = isSliceL2CachingEnabled;
+    return this;
+  }
+
+   /**
+   * Get isSliceL2CachingEnabled
+   * @return isSliceL2CachingEnabled
+  **/
+  @javax.annotation.Nullable
+  public Boolean getIsSliceL2CachingEnabled() {
+    return isSliceL2CachingEnabled;
+  }
+
+
+  public void setIsSliceL2CachingEnabled(Boolean isSliceL2CachingEnabled) {
+    this.isSliceL2CachingEnabled = isSliceL2CachingEnabled;
+  }
+
+
+  public ApplicationCacheResults sliceConfigurationRange(Boolean sliceConfigurationRange) {
+    
+    this.sliceConfigurationRange = sliceConfigurationRange;
+    return this;
+  }
+
+   /**
+   * Get sliceConfigurationRange
+   * @return sliceConfigurationRange
+  **/
+  @javax.annotation.Nullable
+  public Boolean getSliceConfigurationRange() {
+    return sliceConfigurationRange;
+  }
+
+
+  public void setSliceConfigurationRange(Boolean sliceConfigurationRange) {
+    this.sliceConfigurationRange = sliceConfigurationRange;
+  }
+
+
   public ApplicationCacheResults enableCachingForOptions(Boolean enableCachingForOptions) {
     
     this.enableCachingForOptions = enableCachingForOptions;
@@ -556,6 +656,10 @@ public class ApplicationCacheResults {
         Objects.equals(this.deviceGroup, applicationCacheResults.deviceGroup) &&
         Objects.equals(this.enableCachingForPost, applicationCacheResults.enableCachingForPost) &&
         Objects.equals(this.l2CachingEnabled, applicationCacheResults.l2CachingEnabled) &&
+        Objects.equals(this.isSliceConfigurationEnabled, applicationCacheResults.isSliceConfigurationEnabled) &&
+        Objects.equals(this.isSliceEdgeCachingEnabled, applicationCacheResults.isSliceEdgeCachingEnabled) &&
+        Objects.equals(this.isSliceL2CachingEnabled, applicationCacheResults.isSliceL2CachingEnabled) &&
+        Objects.equals(this.sliceConfigurationRange, applicationCacheResults.sliceConfigurationRange) &&
         Objects.equals(this.enableCachingForOptions, applicationCacheResults.enableCachingForOptions) &&
         Objects.equals(this.enableStaleCache, applicationCacheResults.enableStaleCache) &&
         Objects.equals(this.l2Region, applicationCacheResults.l2Region);
@@ -563,7 +667,7 @@ public class ApplicationCacheResults {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, browserCacheSettings, browserCacheSettingsMaximumTtl, cdnCacheSettings, cdnCacheSettingsMaximumTtl, cacheByQueryString, queryStringFields, enableQueryStringSort, cacheByCookies, cookieNames, adaptiveDeliveryAction, deviceGroup, enableCachingForPost, l2CachingEnabled, enableCachingForOptions, enableStaleCache, l2Region);
+    return Objects.hash(id, name, browserCacheSettings, browserCacheSettingsMaximumTtl, cdnCacheSettings, cdnCacheSettingsMaximumTtl, cacheByQueryString, queryStringFields, enableQueryStringSort, cacheByCookies, cookieNames, adaptiveDeliveryAction, deviceGroup, enableCachingForPost, l2CachingEnabled, isSliceConfigurationEnabled, isSliceEdgeCachingEnabled, isSliceL2CachingEnabled, sliceConfigurationRange, enableCachingForOptions, enableStaleCache, l2Region);
   }
 
   @Override
@@ -585,6 +689,10 @@ public class ApplicationCacheResults {
     sb.append("    deviceGroup: ").append(toIndentedString(deviceGroup)).append("\n");
     sb.append("    enableCachingForPost: ").append(toIndentedString(enableCachingForPost)).append("\n");
     sb.append("    l2CachingEnabled: ").append(toIndentedString(l2CachingEnabled)).append("\n");
+    sb.append("    isSliceConfigurationEnabled: ").append(toIndentedString(isSliceConfigurationEnabled)).append("\n");
+    sb.append("    isSliceEdgeCachingEnabled: ").append(toIndentedString(isSliceEdgeCachingEnabled)).append("\n");
+    sb.append("    isSliceL2CachingEnabled: ").append(toIndentedString(isSliceL2CachingEnabled)).append("\n");
+    sb.append("    sliceConfigurationRange: ").append(toIndentedString(sliceConfigurationRange)).append("\n");
     sb.append("    enableCachingForOptions: ").append(toIndentedString(enableCachingForOptions)).append("\n");
     sb.append("    enableStaleCache: ").append(toIndentedString(enableStaleCache)).append("\n");
     sb.append("    l2Region: ").append(toIndentedString(l2Region)).append("\n");
@@ -625,6 +733,10 @@ public class ApplicationCacheResults {
     openapiFields.add("device_group");
     openapiFields.add("enable_caching_for_post");
     openapiFields.add("l2_caching_enabled");
+    openapiFields.add("is_slice_configuration_enabled");
+    openapiFields.add("is_slice_edge_caching_enabled");
+    openapiFields.add("is_slice_l2_caching_enabled");
+    openapiFields.add("slice_configuration_range");
     openapiFields.add("enable_caching_for_options");
     openapiFields.add("enable_stale_cache");
     openapiFields.add("l2_region");
