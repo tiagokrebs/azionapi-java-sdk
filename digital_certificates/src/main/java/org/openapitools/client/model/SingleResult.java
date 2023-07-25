@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * SingleResult
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-19T11:50:53.264275Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-25T16:02:17.625800Z[GMT]")
 public class SingleResult {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -65,6 +66,10 @@ public class SingleResult {
   public static final String SERIALIZED_NAME_SUBJECT_NAME = "subject_name";
   @SerializedName(SERIALIZED_NAME_SUBJECT_NAME)
   private List<String> subjectName;
+
+  public static final String SERIALIZED_NAME_ISSUER = "issuer";
+  @SerializedName(SERIALIZED_NAME_ISSUER)
+  private String issuer;
 
   public static final String SERIALIZED_NAME_VALIDITY = "validity";
   @SerializedName(SERIALIZED_NAME_VALIDITY)
@@ -128,6 +133,18 @@ public class SingleResult {
   public static final String SERIALIZED_NAME_MANAGED = "managed";
   @SerializedName(SERIALIZED_NAME_MANAGED)
   private Boolean managed;
+
+  public static final String SERIALIZED_NAME_CSR = "csr";
+  @SerializedName(SERIALIZED_NAME_CSR)
+  private String csr;
+
+  public static final String SERIALIZED_NAME_CERTIFICATE_CONTENT = "certificate_content";
+  @SerializedName(SERIALIZED_NAME_CERTIFICATE_CONTENT)
+  private String certificateContent;
+
+  public static final String SERIALIZED_NAME_AZION_INFORMATION = "azion_information";
+  @SerializedName(SERIALIZED_NAME_AZION_INFORMATION)
+  private String azionInformation;
 
   public SingleResult() {
   }
@@ -200,6 +217,27 @@ public class SingleResult {
 
   public void setSubjectName(List<String> subjectName) {
     this.subjectName = subjectName;
+  }
+
+
+  public SingleResult issuer(String issuer) {
+    
+    this.issuer = issuer;
+    return this;
+  }
+
+   /**
+   * Get issuer
+   * @return issuer
+  **/
+  @javax.annotation.Nullable
+  public String getIssuer() {
+    return issuer;
+  }
+
+
+  public void setIssuer(String issuer) {
+    this.issuer = issuer;
   }
 
 
@@ -287,6 +325,69 @@ public class SingleResult {
   }
 
 
+  public SingleResult csr(String csr) {
+    
+    this.csr = csr;
+    return this;
+  }
+
+   /**
+   * Get csr
+   * @return csr
+  **/
+  @javax.annotation.Nullable
+  public String getCsr() {
+    return csr;
+  }
+
+
+  public void setCsr(String csr) {
+    this.csr = csr;
+  }
+
+
+  public SingleResult certificateContent(String certificateContent) {
+    
+    this.certificateContent = certificateContent;
+    return this;
+  }
+
+   /**
+   * Get certificateContent
+   * @return certificateContent
+  **/
+  @javax.annotation.Nullable
+  public String getCertificateContent() {
+    return certificateContent;
+  }
+
+
+  public void setCertificateContent(String certificateContent) {
+    this.certificateContent = certificateContent;
+  }
+
+
+  public SingleResult azionInformation(String azionInformation) {
+    
+    this.azionInformation = azionInformation;
+    return this;
+  }
+
+   /**
+   * Get azionInformation
+   * @return azionInformation
+  **/
+  @javax.annotation.Nullable
+  public String getAzionInformation() {
+    return azionInformation;
+  }
+
+
+  public void setAzionInformation(String azionInformation) {
+    this.azionInformation = azionInformation;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -300,15 +401,30 @@ public class SingleResult {
     return Objects.equals(this.id, singleResult.id) &&
         Objects.equals(this.name, singleResult.name) &&
         Objects.equals(this.subjectName, singleResult.subjectName) &&
+        Objects.equals(this.issuer, singleResult.issuer) &&
         Objects.equals(this.validity, singleResult.validity) &&
         Objects.equals(this.status, singleResult.status) &&
         Objects.equals(this.certificateType, singleResult.certificateType) &&
-        Objects.equals(this.managed, singleResult.managed);
+        Objects.equals(this.managed, singleResult.managed) &&
+        Objects.equals(this.csr, singleResult.csr) &&
+        Objects.equals(this.certificateContent, singleResult.certificateContent) &&
+        Objects.equals(this.azionInformation, singleResult.azionInformation);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, subjectName, validity, status, certificateType, managed);
+    return Objects.hash(id, name, subjectName, issuer, validity, status, certificateType, managed, csr, certificateContent, azionInformation);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -318,10 +434,14 @@ public class SingleResult {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    subjectName: ").append(toIndentedString(subjectName)).append("\n");
+    sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
     sb.append("    validity: ").append(toIndentedString(validity)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    certificateType: ").append(toIndentedString(certificateType)).append("\n");
     sb.append("    managed: ").append(toIndentedString(managed)).append("\n");
+    sb.append("    csr: ").append(toIndentedString(csr)).append("\n");
+    sb.append("    certificateContent: ").append(toIndentedString(certificateContent)).append("\n");
+    sb.append("    azionInformation: ").append(toIndentedString(azionInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -347,10 +467,14 @@ public class SingleResult {
     openapiFields.add("id");
     openapiFields.add("name");
     openapiFields.add("subject_name");
+    openapiFields.add("issuer");
     openapiFields.add("validity");
     openapiFields.add("status");
     openapiFields.add("certificate_type");
     openapiFields.add("managed");
+    openapiFields.add("csr");
+    openapiFields.add("certificate_content");
+    openapiFields.add("azion_information");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -383,6 +507,9 @@ public class SingleResult {
       if (jsonObj.get("subject_name") != null && !jsonObj.get("subject_name").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `subject_name` to be an array in the JSON string but got `%s`", jsonObj.get("subject_name").toString()));
       }
+      if ((jsonObj.get("issuer") != null && !jsonObj.get("issuer").isJsonNull()) && !jsonObj.get("issuer").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `issuer` to be a primitive type in the JSON string but got `%s`", jsonObj.get("issuer").toString()));
+      }
       if ((jsonObj.get("validity") != null && !jsonObj.get("validity").isJsonNull()) && !jsonObj.get("validity").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `validity` to be a primitive type in the JSON string but got `%s`", jsonObj.get("validity").toString()));
       }
@@ -391,6 +518,15 @@ public class SingleResult {
       }
       if ((jsonObj.get("certificate_type") != null && !jsonObj.get("certificate_type").isJsonNull()) && !jsonObj.get("certificate_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `certificate_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("certificate_type").toString()));
+      }
+      if ((jsonObj.get("csr") != null && !jsonObj.get("csr").isJsonNull()) && !jsonObj.get("csr").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `csr` to be a primitive type in the JSON string but got `%s`", jsonObj.get("csr").toString()));
+      }
+      if ((jsonObj.get("certificate_content") != null && !jsonObj.get("certificate_content").isJsonNull()) && !jsonObj.get("certificate_content").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `certificate_content` to be a primitive type in the JSON string but got `%s`", jsonObj.get("certificate_content").toString()));
+      }
+      if ((jsonObj.get("azion_information") != null && !jsonObj.get("azion_information").isJsonNull()) && !jsonObj.get("azion_information").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `azion_information` to be a primitive type in the JSON string but got `%s`", jsonObj.get("azion_information").toString()));
       }
   }
 

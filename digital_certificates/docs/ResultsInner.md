@@ -14,6 +14,8 @@
 |**status** | **String** |  |  [optional] |
 |**certificateType** | [**CertificateTypeEnum**](#CertificateTypeEnum) |  |  [optional] |
 |**managed** | **Boolean** |  |  [optional] |
+|**issuer** | **String** |  |  [optional] |
+|**azionInformation** | **String** |  |  [optional] |
 
 
 

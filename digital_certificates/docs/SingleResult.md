@@ -10,10 +10,14 @@
 |**id** | **Integer** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**subjectName** | **List&lt;String&gt;** |  |  [optional] |
+|**issuer** | **String** |  |  [optional] |
 |**validity** | **String** |  |  [optional] |
 |**status** | **String** |  |  [optional] |
 |**certificateType** | [**CertificateTypeEnum**](#CertificateTypeEnum) |  |  [optional] |
 |**managed** | **Boolean** |  |  [optional] |
+|**csr** | **String** |  |  [optional] |
+|**certificateContent** | **String** |  |  [optional] |
+|**azionInformation** | **String** |  |  [optional] |
 
 
 
