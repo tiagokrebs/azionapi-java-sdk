@@ -11,7 +11,7 @@
 |**totalPages** | **Integer** |  |  [optional] |
 |**schemaVersion** | **Integer** |  |  [optional] |
 |**links** | [**DC200ListLinks**](DC200ListLinks.md) |  |  [optional] |
-|**results** | **List&lt;List&lt;ResultsInner&gt;&gt;** |  |  [optional] |
+|**results** | [**List&lt;ResultsInner&gt;**](ResultsInner.md) |  |  [optional] |
 
 
 

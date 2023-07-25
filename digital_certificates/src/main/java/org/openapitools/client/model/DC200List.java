@@ -54,7 +54,7 @@ import org.openapitools.client.JSON;
 /**
  * DC200List
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-19T11:50:53.264275Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-25T16:02:17.625800Z[GMT]")
 public class DC200List {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
@@ -74,7 +74,7 @@ public class DC200List {
 
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
-  private List<List<ResultsInner>> results;
+  private List<ResultsInner> results;
 
   public DC200List() {
   }
@@ -163,13 +163,13 @@ public class DC200List {
   }
 
 
-  public DC200List results(List<List<ResultsInner>> results) {
+  public DC200List results(List<ResultsInner> results) {
     
     this.results = results;
     return this;
   }
 
-  public DC200List addResultsItem(List<ResultsInner> resultsItem) {
+  public DC200List addResultsItem(ResultsInner resultsItem) {
     if (this.results == null) {
       this.results = new ArrayList<>();
     }
@@ -182,12 +182,12 @@ public class DC200List {
    * @return results
   **/
   @javax.annotation.Nullable
-  public List<List<ResultsInner>> getResults() {
+  public List<ResultsInner> getResults() {
     return results;
   }
 
 
-  public void setResults(List<List<ResultsInner>> results) {
+  public void setResults(List<ResultsInner> results) {
     this.results = results;
   }
 
@@ -279,9 +279,19 @@ public class DC200List {
       if (jsonObj.get("links") != null && !jsonObj.get("links").isJsonNull()) {
         DC200ListLinks.validateJsonObject(jsonObj.getAsJsonObject("links"));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("results") != null && !jsonObj.get("results").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `results` to be an array in the JSON string but got `%s`", jsonObj.get("results").toString()));
+      if (jsonObj.get("results") != null && !jsonObj.get("results").isJsonNull()) {
+        JsonArray jsonArrayresults = jsonObj.getAsJsonArray("results");
+        if (jsonArrayresults != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("results").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `results` to be an array in the JSON string but got `%s`", jsonObj.get("results").toString()));
+          }
+
+          // validate the optional field `results` (array)
+          for (int i = 0; i < jsonArrayresults.size(); i++) {
+            ResultsInner.validateJsonObject(jsonArrayresults.get(i).getAsJsonObject());
+          };
+        }
       }
   }
 

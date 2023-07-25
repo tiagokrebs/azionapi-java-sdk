@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * ResultsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-19T11:50:53.264275Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-25T16:02:17.625800Z[GMT]")
 public class ResultsInner {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -128,6 +129,14 @@ public class ResultsInner {
   public static final String SERIALIZED_NAME_MANAGED = "managed";
   @SerializedName(SERIALIZED_NAME_MANAGED)
   private Boolean managed;
+
+  public static final String SERIALIZED_NAME_ISSUER = "issuer";
+  @SerializedName(SERIALIZED_NAME_ISSUER)
+  private String issuer;
+
+  public static final String SERIALIZED_NAME_AZION_INFORMATION = "azion_information";
+  @SerializedName(SERIALIZED_NAME_AZION_INFORMATION)
+  private String azionInformation;
 
   public ResultsInner() {
   }
@@ -287,6 +296,48 @@ public class ResultsInner {
   }
 
 
+  public ResultsInner issuer(String issuer) {
+    
+    this.issuer = issuer;
+    return this;
+  }
+
+   /**
+   * Get issuer
+   * @return issuer
+  **/
+  @javax.annotation.Nullable
+  public String getIssuer() {
+    return issuer;
+  }
+
+
+  public void setIssuer(String issuer) {
+    this.issuer = issuer;
+  }
+
+
+  public ResultsInner azionInformation(String azionInformation) {
+    
+    this.azionInformation = azionInformation;
+    return this;
+  }
+
+   /**
+   * Get azionInformation
+   * @return azionInformation
+  **/
+  @javax.annotation.Nullable
+  public String getAzionInformation() {
+    return azionInformation;
+  }
+
+
+  public void setAzionInformation(String azionInformation) {
+    this.azionInformation = azionInformation;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -303,12 +354,25 @@ public class ResultsInner {
         Objects.equals(this.validity, resultsInner.validity) &&
         Objects.equals(this.status, resultsInner.status) &&
         Objects.equals(this.certificateType, resultsInner.certificateType) &&
-        Objects.equals(this.managed, resultsInner.managed);
+        Objects.equals(this.managed, resultsInner.managed) &&
+        Objects.equals(this.issuer, resultsInner.issuer) &&
+        Objects.equals(this.azionInformation, resultsInner.azionInformation);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, subjectName, validity, status, certificateType, managed);
+    return Objects.hash(id, name, subjectName, validity, status, certificateType, managed, issuer, azionInformation);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -322,6 +386,8 @@ public class ResultsInner {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    certificateType: ").append(toIndentedString(certificateType)).append("\n");
     sb.append("    managed: ").append(toIndentedString(managed)).append("\n");
+    sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
+    sb.append("    azionInformation: ").append(toIndentedString(azionInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -351,6 +417,8 @@ public class ResultsInner {
     openapiFields.add("status");
     openapiFields.add("certificate_type");
     openapiFields.add("managed");
+    openapiFields.add("issuer");
+    openapiFields.add("azion_information");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -391,6 +459,12 @@ public class ResultsInner {
       }
       if ((jsonObj.get("certificate_type") != null && !jsonObj.get("certificate_type").isJsonNull()) && !jsonObj.get("certificate_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `certificate_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("certificate_type").toString()));
+      }
+      if ((jsonObj.get("issuer") != null && !jsonObj.get("issuer").isJsonNull()) && !jsonObj.get("issuer").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `issuer` to be a primitive type in the JSON string but got `%s`", jsonObj.get("issuer").toString()));
+      }
+      if ((jsonObj.get("azion_information") != null && !jsonObj.get("azion_information").isJsonNull()) && !jsonObj.get("azion_information").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `azion_information` to be a primitive type in the JSON string but got `%s`", jsonObj.get("azion_information").toString()));
       }
   }
 
