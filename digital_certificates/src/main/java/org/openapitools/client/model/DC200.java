@@ -51,15 +51,15 @@ import org.openapitools.client.JSON;
 /**
  * DC200
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-25T16:02:17.625800Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-26T13:50:12.318053Z[GMT]")
 public class DC200 {
   public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
   @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)
   private Integer schemaVersion;
 
-  public static final String SERIALIZED_NAME_RESULT = "result";
-  @SerializedName(SERIALIZED_NAME_RESULT)
-  private SingleResult result;
+  public static final String SERIALIZED_NAME_RESULTS = "results";
+  @SerializedName(SERIALIZED_NAME_RESULTS)
+  private SingleResult results;
 
   public DC200() {
   }
@@ -85,24 +85,24 @@ public class DC200 {
   }
 
 
-  public DC200 result(SingleResult result) {
+  public DC200 results(SingleResult results) {
     
-    this.result = result;
+    this.results = results;
     return this;
   }
 
    /**
-   * Get result
-   * @return result
+   * Get results
+   * @return results
   **/
   @javax.annotation.Nullable
-  public SingleResult getResult() {
-    return result;
+  public SingleResult getResults() {
+    return results;
   }
 
 
-  public void setResult(SingleResult result) {
-    this.result = result;
+  public void setResults(SingleResult results) {
+    this.results = results;
   }
 
 
@@ -117,12 +117,12 @@ public class DC200 {
     }
     DC200 DC200 = (DC200) o;
     return Objects.equals(this.schemaVersion, DC200.schemaVersion) &&
-        Objects.equals(this.result, DC200.result);
+        Objects.equals(this.results, DC200.results);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(schemaVersion, result);
+    return Objects.hash(schemaVersion, results);
   }
 
   @Override
@@ -130,7 +130,7 @@ public class DC200 {
     StringBuilder sb = new StringBuilder();
     sb.append("class DC200 {\n");
     sb.append("    schemaVersion: ").append(toIndentedString(schemaVersion)).append("\n");
-    sb.append("    result: ").append(toIndentedString(result)).append("\n");
+    sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,7 +154,7 @@ public class DC200 {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("schema_version");
-    openapiFields.add("result");
+    openapiFields.add("results");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -180,9 +180,9 @@ public class DC200 {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `DC200` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
-      // validate the optional field `result`
-      if (jsonObj.get("result") != null && !jsonObj.get("result").isJsonNull()) {
-        SingleResult.validateJsonObject(jsonObj.getAsJsonObject("result"));
+      // validate the optional field `results`
+      if (jsonObj.get("results") != null && !jsonObj.get("results").isJsonNull()) {
+        SingleResult.validateJsonObject(jsonObj.getAsJsonObject("results"));
       }
   }
 

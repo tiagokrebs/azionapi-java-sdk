@@ -28,7 +28,7 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.CreateCertificateRequest;
-import org.openapitools.client.model.DC201;
+import org.openapitools.client.model.DC200;
 import org.openapitools.client.model.DC400;
 import org.openapitools.client.model.DC403;
 
@@ -150,7 +150,7 @@ public class CreateDigitalCertificateApi {
      * Create a new digital certificate
      * 
      * @param createCertificateRequest  (required)
-     * @return DC201
+     * @return DC200
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -160,8 +160,8 @@ public class CreateDigitalCertificateApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public DC201 createCertificate(CreateCertificateRequest createCertificateRequest) throws ApiException {
-        ApiResponse<DC201> localVarResp = createCertificateWithHttpInfo(createCertificateRequest);
+    public DC200 createCertificate(CreateCertificateRequest createCertificateRequest) throws ApiException {
+        ApiResponse<DC200> localVarResp = createCertificateWithHttpInfo(createCertificateRequest);
         return localVarResp.getData();
     }
 
@@ -169,7 +169,7 @@ public class CreateDigitalCertificateApi {
      * Create a new digital certificate
      * 
      * @param createCertificateRequest  (required)
-     * @return ApiResponse&lt;DC201&gt;
+     * @return ApiResponse&lt;DC200&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -179,9 +179,9 @@ public class CreateDigitalCertificateApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DC201> createCertificateWithHttpInfo(CreateCertificateRequest createCertificateRequest) throws ApiException {
+    public ApiResponse<DC200> createCertificateWithHttpInfo(CreateCertificateRequest createCertificateRequest) throws ApiException {
         okhttp3.Call localVarCall = createCertificateValidateBeforeCall(createCertificateRequest, null);
-        Type localVarReturnType = new TypeToken<DC201>(){}.getType();
+        Type localVarReturnType = new TypeToken<DC200>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -200,10 +200,10 @@ public class CreateDigitalCertificateApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCertificateAsync(CreateCertificateRequest createCertificateRequest, final ApiCallback<DC201> _callback) throws ApiException {
+    public okhttp3.Call createCertificateAsync(CreateCertificateRequest createCertificateRequest, final ApiCallback<DC200> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createCertificateValidateBeforeCall(createCertificateRequest, _callback);
-        Type localVarReturnType = new TypeToken<DC201>(){}.getType();
+        Type localVarReturnType = new TypeToken<DC200>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

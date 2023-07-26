@@ -9,7 +9,7 @@ All URIs are relative to *https://api.azionapi.net*
 
 <a id="createCertificate"></a>
 # **createCertificate**
-> DC201 createCertificate(createCertificateRequest)
+> DC200 createCertificate(createCertificateRequest)
 
 Create a new digital certificate
 
@@ -37,7 +37,7 @@ public class Example {
     CreateDigitalCertificateApi apiInstance = new CreateDigitalCertificateApi(defaultClient);
     CreateCertificateRequest createCertificateRequest = new CreateCertificateRequest(); // CreateCertificateRequest | 
     try {
-      DC201 result = apiInstance.createCertificate(createCertificateRequest);
+      DC200 result = apiInstance.createCertificate(createCertificateRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CreateDigitalCertificateApi#createCertificate");
@@ -58,7 +58,7 @@ public class Example {
 
 ### Return type
 
-[**DC201**](DC201.md)
+[**DC200**](DC200.md)
 
 ### Authorization
 
