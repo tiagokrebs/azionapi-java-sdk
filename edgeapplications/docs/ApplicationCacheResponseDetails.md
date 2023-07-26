@@ -19,7 +19,7 @@
 |**cacheByCookies** | **String** |  |  |
 |**cookieNames** | **List&lt;String&gt;** |  |  |
 |**adaptiveDeliveryAction** | **String** |  |  [optional] |
-|**deviceGroup** | **List&lt;String&gt;** |  |  [optional] |
+|**deviceGroup** | **List&lt;Integer&gt;** |  |  [optional] |
 |**enableCachingForPost** | **Boolean** |  |  |
 |**enableCachingForOptions** | **Boolean** |  |  [optional] |
 |**l2CachingEnabled** | **Boolean** |  |  |

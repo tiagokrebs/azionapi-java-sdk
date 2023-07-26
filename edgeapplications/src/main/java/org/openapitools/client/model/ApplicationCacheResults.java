@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationCacheResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-24T20:34:56.993378Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-26T14:06:45.298986Z[GMT]")
 public class ApplicationCacheResults {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -104,7 +104,7 @@ public class ApplicationCacheResults {
 
   public static final String SERIALIZED_NAME_DEVICE_GROUP = "device_group";
   @SerializedName(SERIALIZED_NAME_DEVICE_GROUP)
-  private List<String> deviceGroup = new ArrayList<>();
+  private List<Integer> deviceGroup = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ENABLE_CACHING_FOR_POST = "enable_caching_for_post";
   @SerializedName(SERIALIZED_NAME_ENABLE_CACHING_FOR_POST)
@@ -128,7 +128,7 @@ public class ApplicationCacheResults {
 
   public static final String SERIALIZED_NAME_SLICE_CONFIGURATION_RANGE = "slice_configuration_range";
   @SerializedName(SERIALIZED_NAME_SLICE_CONFIGURATION_RANGE)
-  private Boolean sliceConfigurationRange;
+  private Long sliceConfigurationRange;
 
   public static final String SERIALIZED_NAME_ENABLE_CACHING_FOR_OPTIONS = "enable_caching_for_options";
   @SerializedName(SERIALIZED_NAME_ENABLE_CACHING_FOR_OPTIONS)
@@ -413,13 +413,13 @@ public class ApplicationCacheResults {
   }
 
 
-  public ApplicationCacheResults deviceGroup(List<String> deviceGroup) {
+  public ApplicationCacheResults deviceGroup(List<Integer> deviceGroup) {
     
     this.deviceGroup = deviceGroup;
     return this;
   }
 
-  public ApplicationCacheResults addDeviceGroupItem(String deviceGroupItem) {
+  public ApplicationCacheResults addDeviceGroupItem(Integer deviceGroupItem) {
     if (this.deviceGroup == null) {
       this.deviceGroup = new ArrayList<>();
     }
@@ -432,12 +432,12 @@ public class ApplicationCacheResults {
    * @return deviceGroup
   **/
   @javax.annotation.Nonnull
-  public List<String> getDeviceGroup() {
+  public List<Integer> getDeviceGroup() {
     return deviceGroup;
   }
 
 
-  public void setDeviceGroup(List<String> deviceGroup) {
+  public void setDeviceGroup(List<Integer> deviceGroup) {
     this.deviceGroup = deviceGroup;
   }
 
@@ -547,7 +547,7 @@ public class ApplicationCacheResults {
   }
 
 
-  public ApplicationCacheResults sliceConfigurationRange(Boolean sliceConfigurationRange) {
+  public ApplicationCacheResults sliceConfigurationRange(Long sliceConfigurationRange) {
     
     this.sliceConfigurationRange = sliceConfigurationRange;
     return this;
@@ -558,12 +558,12 @@ public class ApplicationCacheResults {
    * @return sliceConfigurationRange
   **/
   @javax.annotation.Nullable
-  public Boolean getSliceConfigurationRange() {
+  public Long getSliceConfigurationRange() {
     return sliceConfigurationRange;
   }
 
 
-  public void setSliceConfigurationRange(Boolean sliceConfigurationRange) {
+  public void setSliceConfigurationRange(Long sliceConfigurationRange) {
     this.sliceConfigurationRange = sliceConfigurationRange;
   }
 
