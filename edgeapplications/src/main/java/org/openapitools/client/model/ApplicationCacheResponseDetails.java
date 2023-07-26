@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationCacheResponseDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-24T20:34:56.993378Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-26T14:06:45.298986Z[GMT]")
 public class ApplicationCacheResponseDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -104,7 +104,7 @@ public class ApplicationCacheResponseDetails {
 
   public static final String SERIALIZED_NAME_DEVICE_GROUP = "device_group";
   @SerializedName(SERIALIZED_NAME_DEVICE_GROUP)
-  private List<String> deviceGroup;
+  private List<Integer> deviceGroup;
 
   public static final String SERIALIZED_NAME_ENABLE_CACHING_FOR_POST = "enable_caching_for_post";
   @SerializedName(SERIALIZED_NAME_ENABLE_CACHING_FOR_POST)
@@ -389,13 +389,13 @@ public class ApplicationCacheResponseDetails {
   }
 
 
-  public ApplicationCacheResponseDetails deviceGroup(List<String> deviceGroup) {
+  public ApplicationCacheResponseDetails deviceGroup(List<Integer> deviceGroup) {
     
     this.deviceGroup = deviceGroup;
     return this;
   }
 
-  public ApplicationCacheResponseDetails addDeviceGroupItem(String deviceGroupItem) {
+  public ApplicationCacheResponseDetails addDeviceGroupItem(Integer deviceGroupItem) {
     if (this.deviceGroup == null) {
       this.deviceGroup = new ArrayList<>();
     }
@@ -408,12 +408,12 @@ public class ApplicationCacheResponseDetails {
    * @return deviceGroup
   **/
   @javax.annotation.Nullable
-  public List<String> getDeviceGroup() {
+  public List<Integer> getDeviceGroup() {
     return deviceGroup;
   }
 
 
-  public void setDeviceGroup(List<String> deviceGroup) {
+  public void setDeviceGroup(List<Integer> deviceGroup) {
     this.deviceGroup = deviceGroup;
   }
 
