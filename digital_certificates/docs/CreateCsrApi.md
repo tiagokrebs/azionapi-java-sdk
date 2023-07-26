@@ -9,7 +9,7 @@ All URIs are relative to *https://api.azionapi.net*
 
 <a id="createCSR"></a>
 # **createCSR**
-> DC201 createCSR(createCSRRequest)
+> DC200 createCSR(createCSRRequest)
 
 Create an encrypted Certificate Request with Azion, which can then be sent for signing to a CA
 
@@ -37,7 +37,7 @@ public class Example {
     CreateCsrApi apiInstance = new CreateCsrApi(defaultClient);
     CreateCSRRequest createCSRRequest = new CreateCSRRequest(); // CreateCSRRequest | 
     try {
-      DC201 result = apiInstance.createCSR(createCSRRequest);
+      DC200 result = apiInstance.createCSR(createCSRRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CreateCsrApi#createCSR");
@@ -58,7 +58,7 @@ public class Example {
 
 ### Return type
 
-[**DC201**](DC201.md)
+[**DC200**](DC200.md)
 
 ### Authorization
 
