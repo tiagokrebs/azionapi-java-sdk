@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationCachePutRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-26T14:06:45.298986Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-26T17:54:30.941695Z[GMT]")
 public class ApplicationCachePutRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -94,6 +94,14 @@ public class ApplicationCachePutRequest {
   @SerializedName(SERIALIZED_NAME_COOKIE_NAMES)
   private List<String> cookieNames;
 
+  public static final String SERIALIZED_NAME_ADAPTIVE_DELIVERY_ACTION = "adaptive_delivery_action";
+  @SerializedName(SERIALIZED_NAME_ADAPTIVE_DELIVERY_ACTION)
+  private String adaptiveDeliveryAction;
+
+  public static final String SERIALIZED_NAME_DEVICE_GROUP = "device_group";
+  @SerializedName(SERIALIZED_NAME_DEVICE_GROUP)
+  private List<Integer> deviceGroup;
+
   public static final String SERIALIZED_NAME_ENABLE_CACHING_FOR_POST = "enable_caching_for_post";
   @SerializedName(SERIALIZED_NAME_ENABLE_CACHING_FOR_POST)
   private Boolean enableCachingForPost;
@@ -117,6 +125,18 @@ public class ApplicationCachePutRequest {
   public static final String SERIALIZED_NAME_SLICE_CONFIGURATION_RANGE = "slice_configuration_range";
   @SerializedName(SERIALIZED_NAME_SLICE_CONFIGURATION_RANGE)
   private Long sliceConfigurationRange;
+
+  public static final String SERIALIZED_NAME_ENABLE_CACHING_FOR_OPTIONS = "enable_caching_for_options";
+  @SerializedName(SERIALIZED_NAME_ENABLE_CACHING_FOR_OPTIONS)
+  private Boolean enableCachingForOptions;
+
+  public static final String SERIALIZED_NAME_ENABLE_STALE_CACHE = "enable_stale_cache";
+  @SerializedName(SERIALIZED_NAME_ENABLE_STALE_CACHE)
+  private Boolean enableStaleCache;
+
+  public static final String SERIALIZED_NAME_L2_REGION = "l2_region";
+  @SerializedName(SERIALIZED_NAME_L2_REGION)
+  private String l2Region;
 
   public ApplicationCachePutRequest() {
   }
@@ -347,6 +367,56 @@ public class ApplicationCachePutRequest {
   }
 
 
+  public ApplicationCachePutRequest adaptiveDeliveryAction(String adaptiveDeliveryAction) {
+    
+    this.adaptiveDeliveryAction = adaptiveDeliveryAction;
+    return this;
+  }
+
+   /**
+   * Get adaptiveDeliveryAction
+   * @return adaptiveDeliveryAction
+  **/
+  @javax.annotation.Nullable
+  public String getAdaptiveDeliveryAction() {
+    return adaptiveDeliveryAction;
+  }
+
+
+  public void setAdaptiveDeliveryAction(String adaptiveDeliveryAction) {
+    this.adaptiveDeliveryAction = adaptiveDeliveryAction;
+  }
+
+
+  public ApplicationCachePutRequest deviceGroup(List<Integer> deviceGroup) {
+    
+    this.deviceGroup = deviceGroup;
+    return this;
+  }
+
+  public ApplicationCachePutRequest addDeviceGroupItem(Integer deviceGroupItem) {
+    if (this.deviceGroup == null) {
+      this.deviceGroup = new ArrayList<>();
+    }
+    this.deviceGroup.add(deviceGroupItem);
+    return this;
+  }
+
+   /**
+   * Get deviceGroup
+   * @return deviceGroup
+  **/
+  @javax.annotation.Nullable
+  public List<Integer> getDeviceGroup() {
+    return deviceGroup;
+  }
+
+
+  public void setDeviceGroup(List<Integer> deviceGroup) {
+    this.deviceGroup = deviceGroup;
+  }
+
+
   public ApplicationCachePutRequest enableCachingForPost(Boolean enableCachingForPost) {
     
     this.enableCachingForPost = enableCachingForPost;
@@ -473,6 +543,69 @@ public class ApplicationCachePutRequest {
   }
 
 
+  public ApplicationCachePutRequest enableCachingForOptions(Boolean enableCachingForOptions) {
+    
+    this.enableCachingForOptions = enableCachingForOptions;
+    return this;
+  }
+
+   /**
+   * Get enableCachingForOptions
+   * @return enableCachingForOptions
+  **/
+  @javax.annotation.Nullable
+  public Boolean getEnableCachingForOptions() {
+    return enableCachingForOptions;
+  }
+
+
+  public void setEnableCachingForOptions(Boolean enableCachingForOptions) {
+    this.enableCachingForOptions = enableCachingForOptions;
+  }
+
+
+  public ApplicationCachePutRequest enableStaleCache(Boolean enableStaleCache) {
+    
+    this.enableStaleCache = enableStaleCache;
+    return this;
+  }
+
+   /**
+   * Get enableStaleCache
+   * @return enableStaleCache
+  **/
+  @javax.annotation.Nullable
+  public Boolean getEnableStaleCache() {
+    return enableStaleCache;
+  }
+
+
+  public void setEnableStaleCache(Boolean enableStaleCache) {
+    this.enableStaleCache = enableStaleCache;
+  }
+
+
+  public ApplicationCachePutRequest l2Region(String l2Region) {
+    
+    this.l2Region = l2Region;
+    return this;
+  }
+
+   /**
+   * Get l2Region
+   * @return l2Region
+  **/
+  @javax.annotation.Nullable
+  public String getL2Region() {
+    return l2Region;
+  }
+
+
+  public void setL2Region(String l2Region) {
+    this.l2Region = l2Region;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -493,17 +626,22 @@ public class ApplicationCachePutRequest {
         Objects.equals(this.enableQueryStringSort, applicationCachePutRequest.enableQueryStringSort) &&
         Objects.equals(this.cacheByCookies, applicationCachePutRequest.cacheByCookies) &&
         Objects.equals(this.cookieNames, applicationCachePutRequest.cookieNames) &&
+        Objects.equals(this.adaptiveDeliveryAction, applicationCachePutRequest.adaptiveDeliveryAction) &&
+        Objects.equals(this.deviceGroup, applicationCachePutRequest.deviceGroup) &&
         Objects.equals(this.enableCachingForPost, applicationCachePutRequest.enableCachingForPost) &&
         Objects.equals(this.l2CachingEnabled, applicationCachePutRequest.l2CachingEnabled) &&
         Objects.equals(this.isSliceConfigurationEnabled, applicationCachePutRequest.isSliceConfigurationEnabled) &&
         Objects.equals(this.isSliceEdgeCachingEnabled, applicationCachePutRequest.isSliceEdgeCachingEnabled) &&
         Objects.equals(this.isSliceL2CachingEnabled, applicationCachePutRequest.isSliceL2CachingEnabled) &&
-        Objects.equals(this.sliceConfigurationRange, applicationCachePutRequest.sliceConfigurationRange);
+        Objects.equals(this.sliceConfigurationRange, applicationCachePutRequest.sliceConfigurationRange) &&
+        Objects.equals(this.enableCachingForOptions, applicationCachePutRequest.enableCachingForOptions) &&
+        Objects.equals(this.enableStaleCache, applicationCachePutRequest.enableStaleCache) &&
+        Objects.equals(this.l2Region, applicationCachePutRequest.l2Region);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, browserCacheSettings, browserCacheSettingsMaximumTtl, cdnCacheSettings, cdnCacheSettingsMaximumTtl, cacheByQueryString, queryStringFields, enableQueryStringSort, cacheByCookies, cookieNames, enableCachingForPost, l2CachingEnabled, isSliceConfigurationEnabled, isSliceEdgeCachingEnabled, isSliceL2CachingEnabled, sliceConfigurationRange);
+    return Objects.hash(name, browserCacheSettings, browserCacheSettingsMaximumTtl, cdnCacheSettings, cdnCacheSettingsMaximumTtl, cacheByQueryString, queryStringFields, enableQueryStringSort, cacheByCookies, cookieNames, adaptiveDeliveryAction, deviceGroup, enableCachingForPost, l2CachingEnabled, isSliceConfigurationEnabled, isSliceEdgeCachingEnabled, isSliceL2CachingEnabled, sliceConfigurationRange, enableCachingForOptions, enableStaleCache, l2Region);
   }
 
   @Override
@@ -520,12 +658,17 @@ public class ApplicationCachePutRequest {
     sb.append("    enableQueryStringSort: ").append(toIndentedString(enableQueryStringSort)).append("\n");
     sb.append("    cacheByCookies: ").append(toIndentedString(cacheByCookies)).append("\n");
     sb.append("    cookieNames: ").append(toIndentedString(cookieNames)).append("\n");
+    sb.append("    adaptiveDeliveryAction: ").append(toIndentedString(adaptiveDeliveryAction)).append("\n");
+    sb.append("    deviceGroup: ").append(toIndentedString(deviceGroup)).append("\n");
     sb.append("    enableCachingForPost: ").append(toIndentedString(enableCachingForPost)).append("\n");
     sb.append("    l2CachingEnabled: ").append(toIndentedString(l2CachingEnabled)).append("\n");
     sb.append("    isSliceConfigurationEnabled: ").append(toIndentedString(isSliceConfigurationEnabled)).append("\n");
     sb.append("    isSliceEdgeCachingEnabled: ").append(toIndentedString(isSliceEdgeCachingEnabled)).append("\n");
     sb.append("    isSliceL2CachingEnabled: ").append(toIndentedString(isSliceL2CachingEnabled)).append("\n");
     sb.append("    sliceConfigurationRange: ").append(toIndentedString(sliceConfigurationRange)).append("\n");
+    sb.append("    enableCachingForOptions: ").append(toIndentedString(enableCachingForOptions)).append("\n");
+    sb.append("    enableStaleCache: ").append(toIndentedString(enableStaleCache)).append("\n");
+    sb.append("    l2Region: ").append(toIndentedString(l2Region)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -558,12 +701,17 @@ public class ApplicationCachePutRequest {
     openapiFields.add("enable_query_string_sort");
     openapiFields.add("cache_by_cookies");
     openapiFields.add("cookie_names");
+    openapiFields.add("adaptive_delivery_action");
+    openapiFields.add("device_group");
     openapiFields.add("enable_caching_for_post");
     openapiFields.add("l2_caching_enabled");
     openapiFields.add("is_slice_configuration_enabled");
     openapiFields.add("is_slice_edge_caching_enabled");
     openapiFields.add("is_slice_l2_caching_enabled");
     openapiFields.add("slice_configuration_range");
+    openapiFields.add("enable_caching_for_options");
+    openapiFields.add("enable_stale_cache");
+    openapiFields.add("l2_region");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -619,6 +767,16 @@ public class ApplicationCachePutRequest {
       // ensure the optional json data is an array if present
       if (jsonObj.get("cookie_names") != null && !jsonObj.get("cookie_names").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `cookie_names` to be an array in the JSON string but got `%s`", jsonObj.get("cookie_names").toString()));
+      }
+      if ((jsonObj.get("adaptive_delivery_action") != null && !jsonObj.get("adaptive_delivery_action").isJsonNull()) && !jsonObj.get("adaptive_delivery_action").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `adaptive_delivery_action` to be a primitive type in the JSON string but got `%s`", jsonObj.get("adaptive_delivery_action").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("device_group") != null && !jsonObj.get("device_group").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `device_group` to be an array in the JSON string but got `%s`", jsonObj.get("device_group").toString()));
+      }
+      if ((jsonObj.get("l2_region") != null && !jsonObj.get("l2_region").isJsonNull()) && !jsonObj.get("l2_region").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `l2_region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("l2_region").toString()));
       }
   }
 
