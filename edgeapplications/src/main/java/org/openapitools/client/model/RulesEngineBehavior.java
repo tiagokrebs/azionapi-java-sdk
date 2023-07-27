@@ -21,6 +21,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import org.openapitools.client.model.RulesEngineBehaviorTarget;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * RulesEngineBehavior
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-27T13:51:35.186584Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-27T19:52:50.547604Z[GMT]")
 public class RulesEngineBehavior {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -58,7 +59,7 @@ public class RulesEngineBehavior {
 
   public static final String SERIALIZED_NAME_TARGET = "target";
   @SerializedName(SERIALIZED_NAME_TARGET)
-  private String target;
+  private RulesEngineBehaviorTarget target;
 
   public RulesEngineBehavior() {
   }
@@ -84,7 +85,7 @@ public class RulesEngineBehavior {
   }
 
 
-  public RulesEngineBehavior target(String target) {
+  public RulesEngineBehavior target(RulesEngineBehaviorTarget target) {
     
     this.target = target;
     return this;
@@ -95,12 +96,12 @@ public class RulesEngineBehavior {
    * @return target
   **/
   @javax.annotation.Nullable
-  public String getTarget() {
+  public RulesEngineBehaviorTarget getTarget() {
     return target;
   }
 
 
-  public void setTarget(String target) {
+  public void setTarget(RulesEngineBehaviorTarget target) {
     this.target = target;
   }
 
@@ -190,8 +191,9 @@ public class RulesEngineBehavior {
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if ((jsonObj.get("target") != null && !jsonObj.get("target").isJsonNull()) && !jsonObj.get("target").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `target` to be a primitive type in the JSON string but got `%s`", jsonObj.get("target").toString()));
+      // validate the optional field `target`
+      if (jsonObj.get("target") != null && !jsonObj.get("target").isJsonNull()) {
+        RulesEngineBehaviorTarget.validateJsonObject(jsonObj.getAsJsonObject("target"));
       }
   }
 

@@ -60,6 +60,8 @@ docs/PatchDeviceGroupsRequest.md
 docs/PatchOriginsRequest.md
 docs/PatchRulesEngineRequest.md
 docs/RulesEngineBehavior.md
+docs/RulesEngineBehaviorTarget.md
+docs/RulesEngineBehaviorTargetOneOf.md
 docs/RulesEngineCriteria.md
 docs/RulesEngineIdResponse.md
 docs/RulesEngineResponse.md
@@ -150,6 +152,8 @@ src/main/java/org/openapitools/client/model/PatchDeviceGroupsRequest.java
 src/main/java/org/openapitools/client/model/PatchOriginsRequest.java
 src/main/java/org/openapitools/client/model/PatchRulesEngineRequest.java
 src/main/java/org/openapitools/client/model/RulesEngineBehavior.java
+src/main/java/org/openapitools/client/model/RulesEngineBehaviorTarget.java
+src/main/java/org/openapitools/client/model/RulesEngineBehaviorTargetOneOf.java
 src/main/java/org/openapitools/client/model/RulesEngineCriteria.java
 src/main/java/org/openapitools/client/model/RulesEngineIdResponse.java
 src/main/java/org/openapitools/client/model/RulesEngineResponse.java
@@ -158,3 +162,5 @@ src/main/java/org/openapitools/client/model/RulesEngineResultResponseBehaviors.j
 src/main/java/org/openapitools/client/model/UpdateDeviceGroupsRequest.java
 src/main/java/org/openapitools/client/model/UpdateOriginsRequest.java
 src/main/java/org/openapitools/client/model/UpdateRulesEngineRequest.java
+src/test/java/org/openapitools/client/model/RulesEngineBehaviorTargetOneOfTest.java
+src/test/java/org/openapitools/client/model/RulesEngineBehaviorTargetTest.java

@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** |  |  |
-|**target** | **String** |  |  [optional] |
+|**target** | [**RulesEngineBehaviorTarget**](RulesEngineBehaviorTarget.md) |  |  [optional] |
 
 
 
