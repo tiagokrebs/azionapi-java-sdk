@@ -84,6 +84,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **404** | Not found |  -  |
 | **0** | Unexpected error |  -  |
 
 <a id="edgeFunctionsIdDelete"></a>
@@ -219,6 +220,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **404** | Not found |  -  |
 | **0** | Unexpected error |  -  |
 
 <a id="edgeFunctionsIdPatch"></a>
