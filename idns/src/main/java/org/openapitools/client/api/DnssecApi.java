@@ -88,6 +88,7 @@ public class DnssecApi {
         <tr><td> 200 </td><td> DNSSEC status retrieved </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Error </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getZoneDnsSecCall(Integer zoneId, final ApiCallback _callback) throws ApiException {
@@ -158,6 +159,7 @@ public class DnssecApi {
         <tr><td> 200 </td><td> DNSSEC status retrieved </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Error </td><td>  -  </td></tr>
      </table>
      */
     public GetOrPatchDnsSecResponse getZoneDnsSec(Integer zoneId) throws ApiException {
@@ -177,6 +179,7 @@ public class DnssecApi {
         <tr><td> 200 </td><td> DNSSEC status retrieved </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Error </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GetOrPatchDnsSecResponse> getZoneDnsSecWithHttpInfo(Integer zoneId) throws ApiException {
@@ -198,6 +201,7 @@ public class DnssecApi {
         <tr><td> 200 </td><td> DNSSEC status retrieved </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Error </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getZoneDnsSecAsync(Integer zoneId, final ApiCallback<GetOrPatchDnsSecResponse> _callback) throws ApiException {
@@ -217,8 +221,10 @@ public class DnssecApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> DNSSEC status updated </td><td>  -  </td></tr>
         <tr><td> 201 </td><td> Zone updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Zone update error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call putZoneDnsSecCall(Integer zoneId, DnsSec dnsSec, final ApiCallback _callback) throws ApiException {
@@ -288,8 +294,10 @@ public class DnssecApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> DNSSEC status updated </td><td>  -  </td></tr>
         <tr><td> 201 </td><td> Zone updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Zone update error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
     public GetOrPatchDnsSecResponse putZoneDnsSec(Integer zoneId, DnsSec dnsSec) throws ApiException {
@@ -307,8 +315,10 @@ public class DnssecApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> DNSSEC status updated </td><td>  -  </td></tr>
         <tr><td> 201 </td><td> Zone updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Zone update error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GetOrPatchDnsSecResponse> putZoneDnsSecWithHttpInfo(Integer zoneId, DnsSec dnsSec) throws ApiException {
@@ -328,8 +338,10 @@ public class DnssecApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> DNSSEC status updated </td><td>  -  </td></tr>
         <tr><td> 201 </td><td> Zone updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Zone update error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call putZoneDnsSecAsync(Integer zoneId, DnsSec dnsSec, final ApiCallback<GetOrPatchDnsSecResponse> _callback) throws ApiException {

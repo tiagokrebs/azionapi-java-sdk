@@ -76,6 +76,7 @@ public class Example {
 | **200** | DNSSEC status retrieved |  -  |
 | **400** | Error |  -  |
 | **404** | Zone not found |  -  |
+| **500** | Error |  -  |
 
 <a id="putZoneDnsSec"></a>
 # **putZoneDnsSec**
@@ -144,6 +145,8 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **200** | DNSSEC status updated |  -  |
 | **201** | Zone updated |  -  |
 | **400** | Zone update error |  -  |
+| **404** | Zone not found |  -  |
 
