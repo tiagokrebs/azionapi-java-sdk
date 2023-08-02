@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationPutRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-27T19:52:50.547604Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-02T19:28:54.244256Z[GMT]")
 public class ApplicationPutRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -116,6 +116,18 @@ public class ApplicationPutRequest {
   public static final String SERIALIZED_NAME_WEB_APPLICATION_FIREWALL = "web_application_firewall";
   @SerializedName(SERIALIZED_NAME_WEB_APPLICATION_FIREWALL)
   private Boolean webApplicationFirewall;
+
+  public static final String SERIALIZED_NAME_DEBUG_RULES = "debug_rules";
+  @SerializedName(SERIALIZED_NAME_DEBUG_RULES)
+  private Boolean debugRules;
+
+  public static final String SERIALIZED_NAME_HTTP3 = "http3";
+  @SerializedName(SERIALIZED_NAME_HTTP3)
+  private Boolean http3;
+
+  public static final String SERIALIZED_NAME_SUPPORTED_CIPHERS = "supported_ciphers";
+  @SerializedName(SERIALIZED_NAME_SUPPORTED_CIPHERS)
+  private String supportedCiphers;
 
   public ApplicationPutRequest() {
   }
@@ -456,6 +468,69 @@ public class ApplicationPutRequest {
   }
 
 
+  public ApplicationPutRequest debugRules(Boolean debugRules) {
+    
+    this.debugRules = debugRules;
+    return this;
+  }
+
+   /**
+   * Get debugRules
+   * @return debugRules
+  **/
+  @javax.annotation.Nullable
+  public Boolean getDebugRules() {
+    return debugRules;
+  }
+
+
+  public void setDebugRules(Boolean debugRules) {
+    this.debugRules = debugRules;
+  }
+
+
+  public ApplicationPutRequest http3(Boolean http3) {
+    
+    this.http3 = http3;
+    return this;
+  }
+
+   /**
+   * Get http3
+   * @return http3
+  **/
+  @javax.annotation.Nullable
+  public Boolean getHttp3() {
+    return http3;
+  }
+
+
+  public void setHttp3(Boolean http3) {
+    this.http3 = http3;
+  }
+
+
+  public ApplicationPutRequest supportedCiphers(String supportedCiphers) {
+    
+    this.supportedCiphers = supportedCiphers;
+    return this;
+  }
+
+   /**
+   * Get supportedCiphers
+   * @return supportedCiphers
+  **/
+  @javax.annotation.Nullable
+  public String getSupportedCiphers() {
+    return supportedCiphers;
+  }
+
+
+  public void setSupportedCiphers(String supportedCiphers) {
+    this.supportedCiphers = supportedCiphers;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -481,7 +556,10 @@ public class ApplicationPutRequest {
         Objects.equals(this.l2Caching, applicationPutRequest.l2Caching) &&
         Objects.equals(this.loadBalancer, applicationPutRequest.loadBalancer) &&
         Objects.equals(this.rawLogs, applicationPutRequest.rawLogs) &&
-        Objects.equals(this.webApplicationFirewall, applicationPutRequest.webApplicationFirewall);
+        Objects.equals(this.webApplicationFirewall, applicationPutRequest.webApplicationFirewall) &&
+        Objects.equals(this.debugRules, applicationPutRequest.debugRules) &&
+        Objects.equals(this.http3, applicationPutRequest.http3) &&
+        Objects.equals(this.supportedCiphers, applicationPutRequest.supportedCiphers);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -490,7 +568,7 @@ public class ApplicationPutRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, active, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, l2Caching, loadBalancer, rawLogs, webApplicationFirewall);
+    return Objects.hash(name, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, active, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, l2Caching, loadBalancer, rawLogs, webApplicationFirewall, debugRules, http3, supportedCiphers);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -520,6 +598,9 @@ public class ApplicationPutRequest {
     sb.append("    loadBalancer: ").append(toIndentedString(loadBalancer)).append("\n");
     sb.append("    rawLogs: ").append(toIndentedString(rawLogs)).append("\n");
     sb.append("    webApplicationFirewall: ").append(toIndentedString(webApplicationFirewall)).append("\n");
+    sb.append("    debugRules: ").append(toIndentedString(debugRules)).append("\n");
+    sb.append("    http3: ").append(toIndentedString(http3)).append("\n");
+    sb.append("    supportedCiphers: ").append(toIndentedString(supportedCiphers)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -558,6 +639,9 @@ public class ApplicationPutRequest {
     openapiFields.add("load_balancer");
     openapiFields.add("raw_logs");
     openapiFields.add("web_application_firewall");
+    openapiFields.add("debug_rules");
+    openapiFields.add("http3");
+    openapiFields.add("supported_ciphers");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -599,6 +683,9 @@ public class ApplicationPutRequest {
       }
       if ((jsonObj.get("minimum_tls_version") != null && !jsonObj.get("minimum_tls_version").isJsonNull()) && !jsonObj.get("minimum_tls_version").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `minimum_tls_version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("minimum_tls_version").toString()));
+      }
+      if ((jsonObj.get("supported_ciphers") != null && !jsonObj.get("supported_ciphers").isJsonNull()) && !jsonObj.get("supported_ciphers").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `supported_ciphers` to be a primitive type in the JSON string but got `%s`", jsonObj.get("supported_ciphers").toString()));
       }
   }
 

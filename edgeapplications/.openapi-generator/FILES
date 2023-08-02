@@ -162,5 +162,3 @@ src/main/java/org/openapitools/client/model/RulesEngineResultResponseBehaviors.j
 src/main/java/org/openapitools/client/model/UpdateDeviceGroupsRequest.java
 src/main/java/org/openapitools/client/model/UpdateOriginsRequest.java
 src/main/java/org/openapitools/client/model/UpdateRulesEngineRequest.java
-src/test/java/org/openapitools/client/model/RulesEngineBehaviorTargetOneOfTest.java
-src/test/java/org/openapitools/client/model/RulesEngineBehaviorTargetTest.java

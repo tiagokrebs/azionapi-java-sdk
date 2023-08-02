@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationResultsCreate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-27T19:52:50.547604Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-02T19:28:54.244256Z[GMT]")
 public class ApplicationResultsCreate {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -127,6 +127,10 @@ public class ApplicationResultsCreate {
   public static final String SERIALIZED_NAME_WEB_APPLICATION_FIREWALL = "web_application_firewall";
   @SerializedName(SERIALIZED_NAME_WEB_APPLICATION_FIREWALL)
   private Boolean webApplicationFirewall;
+
+  public static final String SERIALIZED_NAME_L2_CACHING = "l2_caching";
+  @SerializedName(SERIALIZED_NAME_L2_CACHING)
+  private Boolean l2Caching;
 
   public ApplicationResultsCreate() {
   }
@@ -530,6 +534,27 @@ public class ApplicationResultsCreate {
   }
 
 
+  public ApplicationResultsCreate l2Caching(Boolean l2Caching) {
+    
+    this.l2Caching = l2Caching;
+    return this;
+  }
+
+   /**
+   * Get l2Caching
+   * @return l2Caching
+  **/
+  @javax.annotation.Nullable
+  public Boolean getL2Caching() {
+    return l2Caching;
+  }
+
+
+  public void setL2Caching(Boolean l2Caching) {
+    this.l2Caching = l2Caching;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -558,12 +583,13 @@ public class ApplicationResultsCreate {
         Objects.equals(this.imageOptimization, applicationResultsCreate.imageOptimization) &&
         Objects.equals(this.loadBalancer, applicationResultsCreate.loadBalancer) &&
         Objects.equals(this.rawLogs, applicationResultsCreate.rawLogs) &&
-        Objects.equals(this.webApplicationFirewall, applicationResultsCreate.webApplicationFirewall);
+        Objects.equals(this.webApplicationFirewall, applicationResultsCreate.webApplicationFirewall) &&
+        Objects.equals(this.l2Caching, applicationResultsCreate.l2Caching);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, active, debugRules, http3, supportedCiphers, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, loadBalancer, rawLogs, webApplicationFirewall);
+    return Objects.hash(id, name, active, debugRules, http3, supportedCiphers, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, loadBalancer, rawLogs, webApplicationFirewall, l2Caching);
   }
 
   @Override
@@ -589,6 +615,7 @@ public class ApplicationResultsCreate {
     sb.append("    loadBalancer: ").append(toIndentedString(loadBalancer)).append("\n");
     sb.append("    rawLogs: ").append(toIndentedString(rawLogs)).append("\n");
     sb.append("    webApplicationFirewall: ").append(toIndentedString(webApplicationFirewall)).append("\n");
+    sb.append("    l2Caching: ").append(toIndentedString(l2Caching)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -630,6 +657,7 @@ public class ApplicationResultsCreate {
     openapiFields.add("load_balancer");
     openapiFields.add("raw_logs");
     openapiFields.add("web_application_firewall");
+    openapiFields.add("l2_caching");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

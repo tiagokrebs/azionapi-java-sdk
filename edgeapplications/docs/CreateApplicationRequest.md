@@ -18,6 +18,12 @@
 |**cdnCacheSettings** | **String** |  |  [optional] |
 |**browserCacheSettingsMaximumTtl** | **Long** |  |  [optional] |
 |**cdnCacheSettingsMaximumTtl** | **Long** |  |  [optional] |
+|**debugRules** | **Boolean** |  |  [optional] |
+|**supportedCiphers** | **String** |  |  [optional] |
+|**httpPort** | **Object** |  |  [optional] |
+|**httpsPort** | **Object** |  |  [optional] |
+|**l2Caching** | **Boolean** |  |  [optional] |
+|**http3** | **Boolean** |  |  [optional] |
 
 
 

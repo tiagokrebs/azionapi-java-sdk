@@ -54,7 +54,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationCacheGetResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-27T19:52:50.547604Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-02T19:28:54.244256Z[GMT]")
 public class ApplicationCacheGetResponse {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
