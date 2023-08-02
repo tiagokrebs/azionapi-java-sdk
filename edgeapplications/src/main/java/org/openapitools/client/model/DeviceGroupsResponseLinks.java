@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * DeviceGroupsResponseLinks
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-02T19:28:54.244256Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-02T20:17:46.412201Z[GMT]")
 public class DeviceGroupsResponseLinks {
   public static final String SERIALIZED_NAME_PREVIOUS = "previous";
   @SerializedName(SERIALIZED_NAME_PREVIOUS)
