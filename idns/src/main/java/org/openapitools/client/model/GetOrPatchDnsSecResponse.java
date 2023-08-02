@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * Object returned by get zone DNSSEC
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-02T18:43:25.796492Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-02T18:57:15.513698Z[GMT]")
 public class GetOrPatchDnsSecResponse {
   public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
   @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)
