@@ -57,7 +57,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-27T19:52:50.547604Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-02T19:28:54.244256Z[GMT]")
 public class RulesEngineBehaviorTarget extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(RulesEngineBehaviorTarget.class.getName());
 

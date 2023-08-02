@@ -21,6 +21,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * CreateApplicationRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-27T19:52:50.547604Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-02T19:28:54.244256Z[GMT]")
 public class CreateApplicationRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -95,6 +96,30 @@ public class CreateApplicationRequest {
   public static final String SERIALIZED_NAME_CDN_CACHE_SETTINGS_MAXIMUM_TTL = "cdn_cache_settings_maximum_ttl";
   @SerializedName(SERIALIZED_NAME_CDN_CACHE_SETTINGS_MAXIMUM_TTL)
   private Long cdnCacheSettingsMaximumTtl;
+
+  public static final String SERIALIZED_NAME_DEBUG_RULES = "debug_rules";
+  @SerializedName(SERIALIZED_NAME_DEBUG_RULES)
+  private Boolean debugRules;
+
+  public static final String SERIALIZED_NAME_SUPPORTED_CIPHERS = "supported_ciphers";
+  @SerializedName(SERIALIZED_NAME_SUPPORTED_CIPHERS)
+  private String supportedCiphers;
+
+  public static final String SERIALIZED_NAME_HTTP_PORT = "http_port";
+  @SerializedName(SERIALIZED_NAME_HTTP_PORT)
+  private Object httpPort = null;
+
+  public static final String SERIALIZED_NAME_HTTPS_PORT = "https_port";
+  @SerializedName(SERIALIZED_NAME_HTTPS_PORT)
+  private Object httpsPort = null;
+
+  public static final String SERIALIZED_NAME_L2_CACHING = "l2_caching";
+  @SerializedName(SERIALIZED_NAME_L2_CACHING)
+  private Boolean l2Caching;
+
+  public static final String SERIALIZED_NAME_HTTP3 = "http3";
+  @SerializedName(SERIALIZED_NAME_HTTP3)
+  private Boolean http3;
 
   public CreateApplicationRequest() {
   }
@@ -330,6 +355,132 @@ public class CreateApplicationRequest {
   }
 
 
+  public CreateApplicationRequest debugRules(Boolean debugRules) {
+    
+    this.debugRules = debugRules;
+    return this;
+  }
+
+   /**
+   * Get debugRules
+   * @return debugRules
+  **/
+  @javax.annotation.Nullable
+  public Boolean getDebugRules() {
+    return debugRules;
+  }
+
+
+  public void setDebugRules(Boolean debugRules) {
+    this.debugRules = debugRules;
+  }
+
+
+  public CreateApplicationRequest supportedCiphers(String supportedCiphers) {
+    
+    this.supportedCiphers = supportedCiphers;
+    return this;
+  }
+
+   /**
+   * Get supportedCiphers
+   * @return supportedCiphers
+  **/
+  @javax.annotation.Nullable
+  public String getSupportedCiphers() {
+    return supportedCiphers;
+  }
+
+
+  public void setSupportedCiphers(String supportedCiphers) {
+    this.supportedCiphers = supportedCiphers;
+  }
+
+
+  public CreateApplicationRequest httpPort(Object httpPort) {
+    
+    this.httpPort = httpPort;
+    return this;
+  }
+
+   /**
+   * Get httpPort
+   * @return httpPort
+  **/
+  @javax.annotation.Nullable
+  public Object getHttpPort() {
+    return httpPort;
+  }
+
+
+  public void setHttpPort(Object httpPort) {
+    this.httpPort = httpPort;
+  }
+
+
+  public CreateApplicationRequest httpsPort(Object httpsPort) {
+    
+    this.httpsPort = httpsPort;
+    return this;
+  }
+
+   /**
+   * Get httpsPort
+   * @return httpsPort
+  **/
+  @javax.annotation.Nullable
+  public Object getHttpsPort() {
+    return httpsPort;
+  }
+
+
+  public void setHttpsPort(Object httpsPort) {
+    this.httpsPort = httpsPort;
+  }
+
+
+  public CreateApplicationRequest l2Caching(Boolean l2Caching) {
+    
+    this.l2Caching = l2Caching;
+    return this;
+  }
+
+   /**
+   * Get l2Caching
+   * @return l2Caching
+  **/
+  @javax.annotation.Nullable
+  public Boolean getL2Caching() {
+    return l2Caching;
+  }
+
+
+  public void setL2Caching(Boolean l2Caching) {
+    this.l2Caching = l2Caching;
+  }
+
+
+  public CreateApplicationRequest http3(Boolean http3) {
+    
+    this.http3 = http3;
+    return this;
+  }
+
+   /**
+   * Get http3
+   * @return http3
+  **/
+  @javax.annotation.Nullable
+  public Boolean getHttp3() {
+    return http3;
+  }
+
+
+  public void setHttp3(Boolean http3) {
+    this.http3 = http3;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -350,12 +501,29 @@ public class CreateApplicationRequest {
         Objects.equals(this.browserCacheSettings, createApplicationRequest.browserCacheSettings) &&
         Objects.equals(this.cdnCacheSettings, createApplicationRequest.cdnCacheSettings) &&
         Objects.equals(this.browserCacheSettingsMaximumTtl, createApplicationRequest.browserCacheSettingsMaximumTtl) &&
-        Objects.equals(this.cdnCacheSettingsMaximumTtl, createApplicationRequest.cdnCacheSettingsMaximumTtl);
+        Objects.equals(this.cdnCacheSettingsMaximumTtl, createApplicationRequest.cdnCacheSettingsMaximumTtl) &&
+        Objects.equals(this.debugRules, createApplicationRequest.debugRules) &&
+        Objects.equals(this.supportedCiphers, createApplicationRequest.supportedCiphers) &&
+        Objects.equals(this.httpPort, createApplicationRequest.httpPort) &&
+        Objects.equals(this.httpsPort, createApplicationRequest.httpsPort) &&
+        Objects.equals(this.l2Caching, createApplicationRequest.l2Caching) &&
+        Objects.equals(this.http3, createApplicationRequest.http3);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, applicationAcceleration, deliveryProtocol, originType, address, originProtocolPolicy, hostHeader, browserCacheSettings, cdnCacheSettings, browserCacheSettingsMaximumTtl, cdnCacheSettingsMaximumTtl);
+    return Objects.hash(name, applicationAcceleration, deliveryProtocol, originType, address, originProtocolPolicy, hostHeader, browserCacheSettings, cdnCacheSettings, browserCacheSettingsMaximumTtl, cdnCacheSettingsMaximumTtl, debugRules, supportedCiphers, httpPort, httpsPort, l2Caching, http3);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -373,6 +541,12 @@ public class CreateApplicationRequest {
     sb.append("    cdnCacheSettings: ").append(toIndentedString(cdnCacheSettings)).append("\n");
     sb.append("    browserCacheSettingsMaximumTtl: ").append(toIndentedString(browserCacheSettingsMaximumTtl)).append("\n");
     sb.append("    cdnCacheSettingsMaximumTtl: ").append(toIndentedString(cdnCacheSettingsMaximumTtl)).append("\n");
+    sb.append("    debugRules: ").append(toIndentedString(debugRules)).append("\n");
+    sb.append("    supportedCiphers: ").append(toIndentedString(supportedCiphers)).append("\n");
+    sb.append("    httpPort: ").append(toIndentedString(httpPort)).append("\n");
+    sb.append("    httpsPort: ").append(toIndentedString(httpsPort)).append("\n");
+    sb.append("    l2Caching: ").append(toIndentedString(l2Caching)).append("\n");
+    sb.append("    http3: ").append(toIndentedString(http3)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -406,6 +580,12 @@ public class CreateApplicationRequest {
     openapiFields.add("cdn_cache_settings");
     openapiFields.add("browser_cache_settings_maximum_ttl");
     openapiFields.add("cdn_cache_settings_maximum_ttl");
+    openapiFields.add("debug_rules");
+    openapiFields.add("supported_ciphers");
+    openapiFields.add("http_port");
+    openapiFields.add("https_port");
+    openapiFields.add("l2_caching");
+    openapiFields.add("http3");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -462,6 +642,9 @@ public class CreateApplicationRequest {
       }
       if ((jsonObj.get("cdn_cache_settings") != null && !jsonObj.get("cdn_cache_settings").isJsonNull()) && !jsonObj.get("cdn_cache_settings").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `cdn_cache_settings` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cdn_cache_settings").toString()));
+      }
+      if ((jsonObj.get("supported_ciphers") != null && !jsonObj.get("supported_ciphers").isJsonNull()) && !jsonObj.get("supported_ciphers").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `supported_ciphers` to be a primitive type in the JSON string but got `%s`", jsonObj.get("supported_ciphers").toString()));
       }
   }
 
