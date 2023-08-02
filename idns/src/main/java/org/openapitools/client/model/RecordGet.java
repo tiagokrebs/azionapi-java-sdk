@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * RecordGet
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-02T18:31:34.680648Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-02T18:43:25.796492Z[GMT]")
 public class RecordGet {
   public static final String SERIALIZED_NAME_RECORD_ID = "record_id";
   @SerializedName(SERIALIZED_NAME_RECORD_ID)
