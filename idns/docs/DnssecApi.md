@@ -75,6 +75,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | DNSSEC status retrieved |  -  |
 | **400** | Error |  -  |
+| **404** | Zone not found |  -  |
 
 <a id="putZoneDnsSec"></a>
 # **putZoneDnsSec**

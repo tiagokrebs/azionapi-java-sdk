@@ -225,6 +225,7 @@ public class RecordsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Zones collection retrieved </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getZoneRecordsCall(Integer zoneId, final ApiCallback _callback) throws ApiException {
@@ -294,6 +295,7 @@ public class RecordsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Zones collection retrieved </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
     public GetRecordsResponse getZoneRecords(Integer zoneId) throws ApiException {
@@ -312,6 +314,7 @@ public class RecordsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Zones collection retrieved </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GetRecordsResponse> getZoneRecordsWithHttpInfo(Integer zoneId) throws ApiException {
@@ -332,6 +335,7 @@ public class RecordsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Zones collection retrieved </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getZoneRecordsAsync(Integer zoneId, final ApiCallback<GetRecordsResponse> _callback) throws ApiException {
@@ -353,6 +357,7 @@ public class RecordsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Record added </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call postZoneRecordCall(Integer zoneId, RecordPostOrPut recordPostOrPut, final ApiCallback _callback) throws ApiException {
@@ -424,6 +429,7 @@ public class RecordsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Record added </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
     public PostOrPutRecordResponse postZoneRecord(Integer zoneId, RecordPostOrPut recordPostOrPut) throws ApiException {
@@ -443,6 +449,7 @@ public class RecordsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Record added </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<PostOrPutRecordResponse> postZoneRecordWithHttpInfo(Integer zoneId, RecordPostOrPut recordPostOrPut) throws ApiException {
@@ -464,6 +471,7 @@ public class RecordsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Record added </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call postZoneRecordAsync(Integer zoneId, RecordPostOrPut recordPostOrPut, final ApiCallback<PostOrPutRecordResponse> _callback) throws ApiException {
@@ -486,6 +494,7 @@ public class RecordsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Record updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Record update error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Record not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call putZoneRecordCall(Integer zoneId, Integer recordId, RecordPostOrPut recordPostOrPut, final ApiCallback _callback) throws ApiException {
@@ -564,6 +573,7 @@ public class RecordsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Record updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Record update error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Record not found </td><td>  -  </td></tr>
      </table>
      */
     public PostOrPutRecordResponse putZoneRecord(Integer zoneId, Integer recordId, RecordPostOrPut recordPostOrPut) throws ApiException {
@@ -584,6 +594,7 @@ public class RecordsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Record updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Record update error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Record not found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<PostOrPutRecordResponse> putZoneRecordWithHttpInfo(Integer zoneId, Integer recordId, RecordPostOrPut recordPostOrPut) throws ApiException {
@@ -606,6 +617,7 @@ public class RecordsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Record updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Record update error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Record not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call putZoneRecordAsync(Integer zoneId, Integer recordId, RecordPostOrPut recordPostOrPut, final ApiCallback<PostOrPutRecordResponse> _callback) throws ApiException {

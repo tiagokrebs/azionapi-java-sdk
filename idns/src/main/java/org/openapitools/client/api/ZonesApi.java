@@ -461,6 +461,7 @@ public class ZonesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Zone added </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call postZoneCall(Zone zone, final ApiCallback _callback) throws ApiException {
@@ -525,6 +526,7 @@ public class ZonesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Zone added </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
     public PostOrPutZoneResponse postZone(Zone zone) throws ApiException {
@@ -543,6 +545,7 @@ public class ZonesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Zone added </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<PostOrPutZoneResponse> postZoneWithHttpInfo(Zone zone) throws ApiException {
@@ -563,6 +566,7 @@ public class ZonesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Zone added </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call postZoneAsync(Zone zone, final ApiCallback<PostOrPutZoneResponse> _callback) throws ApiException {

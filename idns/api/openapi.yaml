@@ -55,6 +55,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorsResponse'
           description: Error
+        "404":
+          content:
+            application/json; version=3:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Zone not found
       summary: Add a new Intelligent DNS zone
       tags:
       - Zones
@@ -185,6 +191,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorsResponse'
           description: Error
+        "404":
+          content:
+            application/json; version=3:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Zone not found
       summary: Get a collection of Intelligent DNS zone records
       tags:
       - Records
@@ -227,6 +239,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorsResponse'
           description: Error
+        "404":
+          content:
+            application/json; version=3:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Zone not found
       summary: Create a new Intelligent DNS zone record
       tags:
       - Records
@@ -320,6 +338,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorsResponse'
           description: Record update error
+        "404":
+          content:
+            application/json; version=3:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Record not found
       summary: Update an Intelligent DNS zone record
       tags:
       - Records
@@ -351,6 +375,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorsResponse'
           description: Error
+        "404":
+          content:
+            application/json; version=3:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Zone not found
       summary: Retrieve the DNSSEC zone status
       tags:
       - DNSSEC
