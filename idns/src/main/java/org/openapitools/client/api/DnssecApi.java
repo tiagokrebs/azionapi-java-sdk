@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.DnsSec;
+import org.openapitools.client.model.ErrorResponse;
 import org.openapitools.client.model.ErrorsResponse;
 import org.openapitools.client.model.GetOrPatchDnsSecResponse;
 
@@ -86,6 +87,7 @@ public class DnssecApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> DNSSEC status retrieved </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getZoneDnsSecCall(Integer zoneId, final ApiCallback _callback) throws ApiException {
@@ -155,6 +157,7 @@ public class DnssecApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> DNSSEC status retrieved </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
     public GetOrPatchDnsSecResponse getZoneDnsSec(Integer zoneId) throws ApiException {
@@ -173,6 +176,7 @@ public class DnssecApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> DNSSEC status retrieved </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GetOrPatchDnsSecResponse> getZoneDnsSecWithHttpInfo(Integer zoneId) throws ApiException {
@@ -193,6 +197,7 @@ public class DnssecApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> DNSSEC status retrieved </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getZoneDnsSecAsync(Integer zoneId, final ApiCallback<GetOrPatchDnsSecResponse> _callback) throws ApiException {

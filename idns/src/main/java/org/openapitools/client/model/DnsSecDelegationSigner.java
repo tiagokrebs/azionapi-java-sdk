@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * DnsSecDelegationSigner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-22T21:01:51.485387Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-02T18:31:34.680648Z[GMT]")
 public class DnsSecDelegationSigner {
   public static final String SERIALIZED_NAME_DIGEST_TYPE = "digest_type";
   @SerializedName(SERIALIZED_NAME_DIGEST_TYPE)

@@ -147,6 +147,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Zones collection retrieved |  -  |
 | **400** | Error |  -  |
+| **404** | Zone not found |  -  |
 
 <a id="postZoneRecord"></a>
 # **postZoneRecord**
@@ -217,6 +218,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **201** | Record added |  -  |
 | **400** | Error |  -  |
+| **404** | Zone not found |  -  |
 
 <a id="putZoneRecord"></a>
 # **putZoneRecord**
@@ -289,4 +291,5 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Record updated |  -  |
 | **400** | Record update error |  -  |
+| **404** | Record not found |  -  |
 

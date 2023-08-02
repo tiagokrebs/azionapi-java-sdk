@@ -278,6 +278,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **201** | Zone added |  -  |
 | **400** | Error |  -  |
+| **404** | Zone not found |  -  |
 
 <a id="putZone"></a>
 # **putZone**
