@@ -12,6 +12,8 @@
 |**schemaVersion** | **Long** |  |  |
 |**links** | [**ApplicationLinks**](ApplicationLinks.md) |  |  |
 |**results** | [**List&lt;ApplicationsResults&gt;**](ApplicationsResults.md) |  |  |
+|**next** | **String** |  |  [optional] |
+|**previous** | **String** |  |  [optional] |
 
 
 

@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.ApplicationLinks;
 import org.openapitools.client.model.ApplicationsResults;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -54,7 +55,7 @@ import org.openapitools.client.JSON;
 /**
  * GetApplicationsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-02T20:17:46.412201Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-07T17:10:43.172754Z[GMT]")
 public class GetApplicationsResponse {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
@@ -75,6 +76,14 @@ public class GetApplicationsResponse {
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
   private List<ApplicationsResults> results = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_NEXT = "next";
+  @SerializedName(SERIALIZED_NAME_NEXT)
+  private String next;
+
+  public static final String SERIALIZED_NAME_PREVIOUS = "previous";
+  @SerializedName(SERIALIZED_NAME_PREVIOUS)
+  private String previous;
 
   public GetApplicationsResponse() {
   }
@@ -192,6 +201,48 @@ public class GetApplicationsResponse {
   }
 
 
+  public GetApplicationsResponse next(String next) {
+    
+    this.next = next;
+    return this;
+  }
+
+   /**
+   * Get next
+   * @return next
+  **/
+  @javax.annotation.Nullable
+  public String getNext() {
+    return next;
+  }
+
+
+  public void setNext(String next) {
+    this.next = next;
+  }
+
+
+  public GetApplicationsResponse previous(String previous) {
+    
+    this.previous = previous;
+    return this;
+  }
+
+   /**
+   * Get previous
+   * @return previous
+  **/
+  @javax.annotation.Nullable
+  public String getPrevious() {
+    return previous;
+  }
+
+
+  public void setPrevious(String previous) {
+    this.previous = previous;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -206,12 +257,25 @@ public class GetApplicationsResponse {
         Objects.equals(this.totalPages, getApplicationsResponse.totalPages) &&
         Objects.equals(this.schemaVersion, getApplicationsResponse.schemaVersion) &&
         Objects.equals(this.links, getApplicationsResponse.links) &&
-        Objects.equals(this.results, getApplicationsResponse.results);
+        Objects.equals(this.results, getApplicationsResponse.results) &&
+        Objects.equals(this.next, getApplicationsResponse.next) &&
+        Objects.equals(this.previous, getApplicationsResponse.previous);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(count, totalPages, schemaVersion, links, results);
+    return Objects.hash(count, totalPages, schemaVersion, links, results, next, previous);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -223,6 +287,8 @@ public class GetApplicationsResponse {
     sb.append("    schemaVersion: ").append(toIndentedString(schemaVersion)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
+    sb.append("    next: ").append(toIndentedString(next)).append("\n");
+    sb.append("    previous: ").append(toIndentedString(previous)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -250,6 +316,8 @@ public class GetApplicationsResponse {
     openapiFields.add("schema_version");
     openapiFields.add("links");
     openapiFields.add("results");
+    openapiFields.add("next");
+    openapiFields.add("previous");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -299,6 +367,12 @@ public class GetApplicationsResponse {
       for (int i = 0; i < jsonArrayresults.size(); i++) {
         ApplicationsResults.validateJsonObject(jsonArrayresults.get(i).getAsJsonObject());
       };
+      if ((jsonObj.get("next") != null && !jsonObj.get("next").isJsonNull()) && !jsonObj.get("next").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `next` to be a primitive type in the JSON string but got `%s`", jsonObj.get("next").toString()));
+      }
+      if ((jsonObj.get("previous") != null && !jsonObj.get("previous").isJsonNull()) && !jsonObj.get("previous").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `previous` to be a primitive type in the JSON string but got `%s`", jsonObj.get("previous").toString()));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

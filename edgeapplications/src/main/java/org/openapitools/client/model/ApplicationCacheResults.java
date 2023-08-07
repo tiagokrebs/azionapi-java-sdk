@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationCacheResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-02T20:17:46.412201Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-07T17:10:43.172754Z[GMT]")
 public class ApplicationCacheResults {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -84,7 +84,7 @@ public class ApplicationCacheResults {
 
   public static final String SERIALIZED_NAME_QUERY_STRING_FIELDS = "query_string_fields";
   @SerializedName(SERIALIZED_NAME_QUERY_STRING_FIELDS)
-  private List<String> queryStringFields = new ArrayList<>();
+  private List<String> queryStringFields;
 
   public static final String SERIALIZED_NAME_ENABLE_QUERY_STRING_SORT = "enable_query_string_sort";
   @SerializedName(SERIALIZED_NAME_ENABLE_QUERY_STRING_SORT)
@@ -96,7 +96,7 @@ public class ApplicationCacheResults {
 
   public static final String SERIALIZED_NAME_COOKIE_NAMES = "cookie_names";
   @SerializedName(SERIALIZED_NAME_COOKIE_NAMES)
-  private List<String> cookieNames = new ArrayList<>();
+  private List<String> cookieNames;
 
   public static final String SERIALIZED_NAME_ADAPTIVE_DELIVERY_ACTION = "adaptive_delivery_action";
   @SerializedName(SERIALIZED_NAME_ADAPTIVE_DELIVERY_ACTION)
@@ -310,7 +310,7 @@ public class ApplicationCacheResults {
    * Get queryStringFields
    * @return queryStringFields
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public List<String> getQueryStringFields() {
     return queryStringFields;
   }
@@ -381,7 +381,7 @@ public class ApplicationCacheResults {
    * Get cookieNames
    * @return cookieNames
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public List<String> getCookieNames() {
     return cookieNames;
   }
@@ -620,7 +620,7 @@ public class ApplicationCacheResults {
    * Get l2Region
    * @return l2Region
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getL2Region() {
     return l2Region;
   }
