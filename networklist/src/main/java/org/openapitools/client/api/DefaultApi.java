@@ -31,8 +31,8 @@ import org.openapitools.client.model.BadRequestResponse;
 import org.openapitools.client.model.CreateNetworkListsRequest;
 import org.openapitools.client.model.ErrorModel;
 import org.openapitools.client.model.ListNetworkListsResponse;
+import org.openapitools.client.model.NetworkListUuidResponse;
 import org.openapitools.client.model.NetworkListsResponse;
-import org.openapitools.client.model.UpdateNetworkListsRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -81,6 +81,9 @@ public class DefaultApi {
     /**
      * Build call for networkListsGet
      * @param page  (optional)
+     * @param pageSize  (optional)
+     * @param sort  (optional)
+     * @param orderBy  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -91,7 +94,7 @@ public class DefaultApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call networkListsGetCall(Integer page, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call networkListsGetCall(Integer page, Integer pageSize, String sort, String orderBy, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -120,6 +123,18 @@ public class DefaultApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
         }
 
+        if (pageSize != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page_size", pageSize));
+        }
+
+        if (sort != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
+        }
+
+        if (orderBy != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("order_by", orderBy));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -140,8 +155,8 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call networkListsGetValidateBeforeCall(Integer page, final ApiCallback _callback) throws ApiException {
-        return networkListsGetCall(page, _callback);
+    private okhttp3.Call networkListsGetValidateBeforeCall(Integer page, Integer pageSize, String sort, String orderBy, final ApiCallback _callback) throws ApiException {
+        return networkListsGetCall(page, pageSize, sort, orderBy, _callback);
 
     }
 
@@ -149,6 +164,9 @@ public class DefaultApi {
      * List all user Network Lists
      * 
      * @param page  (optional)
+     * @param pageSize  (optional)
+     * @param sort  (optional)
+     * @param orderBy  (optional)
      * @return ListNetworkListsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -158,8 +176,8 @@ public class DefaultApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ListNetworkListsResponse networkListsGet(Integer page) throws ApiException {
-        ApiResponse<ListNetworkListsResponse> localVarResp = networkListsGetWithHttpInfo(page);
+    public ListNetworkListsResponse networkListsGet(Integer page, Integer pageSize, String sort, String orderBy) throws ApiException {
+        ApiResponse<ListNetworkListsResponse> localVarResp = networkListsGetWithHttpInfo(page, pageSize, sort, orderBy);
         return localVarResp.getData();
     }
 
@@ -167,6 +185,9 @@ public class DefaultApi {
      * List all user Network Lists
      * 
      * @param page  (optional)
+     * @param pageSize  (optional)
+     * @param sort  (optional)
+     * @param orderBy  (optional)
      * @return ApiResponse&lt;ListNetworkListsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -176,8 +197,8 @@ public class DefaultApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListNetworkListsResponse> networkListsGetWithHttpInfo(Integer page) throws ApiException {
-        okhttp3.Call localVarCall = networkListsGetValidateBeforeCall(page, null);
+    public ApiResponse<ListNetworkListsResponse> networkListsGetWithHttpInfo(Integer page, Integer pageSize, String sort, String orderBy) throws ApiException {
+        okhttp3.Call localVarCall = networkListsGetValidateBeforeCall(page, pageSize, sort, orderBy, null);
         Type localVarReturnType = new TypeToken<ListNetworkListsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -186,6 +207,9 @@ public class DefaultApi {
      * List all user Network Lists (asynchronously)
      * 
      * @param page  (optional)
+     * @param pageSize  (optional)
+     * @param sort  (optional)
+     * @param orderBy  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -196,9 +220,9 @@ public class DefaultApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call networkListsGetAsync(Integer page, final ApiCallback<ListNetworkListsResponse> _callback) throws ApiException {
+    public okhttp3.Call networkListsGetAsync(Integer page, Integer pageSize, String sort, String orderBy, final ApiCallback<ListNetworkListsResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = networkListsGetValidateBeforeCall(page, _callback);
+        okhttp3.Call localVarCall = networkListsGetValidateBeforeCall(page, pageSize, sort, orderBy, _callback);
         Type localVarReturnType = new TypeToken<ListNetworkListsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -212,7 +236,7 @@ public class DefaultApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Network Lists created </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> A Network Lists object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
@@ -279,38 +303,41 @@ public class DefaultApi {
      * Create a Network Lists
      * 
      * @param createNetworkListsRequest  (required)
+     * @return NetworkListsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Network Lists created </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> A Network Lists object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public void networkListsPost(CreateNetworkListsRequest createNetworkListsRequest) throws ApiException {
-        networkListsPostWithHttpInfo(createNetworkListsRequest);
+    public NetworkListsResponse networkListsPost(CreateNetworkListsRequest createNetworkListsRequest) throws ApiException {
+        ApiResponse<NetworkListsResponse> localVarResp = networkListsPostWithHttpInfo(createNetworkListsRequest);
+        return localVarResp.getData();
     }
 
     /**
      * Create a Network Lists
      * 
      * @param createNetworkListsRequest  (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;NetworkListsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Network Lists created </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> A Network Lists object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> networkListsPostWithHttpInfo(CreateNetworkListsRequest createNetworkListsRequest) throws ApiException {
+    public ApiResponse<NetworkListsResponse> networkListsPostWithHttpInfo(CreateNetworkListsRequest createNetworkListsRequest) throws ApiException {
         okhttp3.Call localVarCall = networkListsPostValidateBeforeCall(createNetworkListsRequest, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<NetworkListsResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -323,16 +350,17 @@ public class DefaultApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Network Lists created </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> A Network Lists object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call networkListsPostAsync(CreateNetworkListsRequest createNetworkListsRequest, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call networkListsPostAsync(CreateNetworkListsRequest createNetworkListsRequest, final ApiCallback<NetworkListsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = networkListsPostValidateBeforeCall(createNetworkListsRequest, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        Type localVarReturnType = new TypeToken<NetworkListsResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
@@ -410,7 +438,7 @@ public class DefaultApi {
      * Retrieve a Network Lists set by uuid
      * 
      * @param uuid  (required)
-     * @return NetworkListsResponse
+     * @return NetworkListUuidResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -420,8 +448,8 @@ public class DefaultApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public NetworkListsResponse networkListsUuidGet(String uuid) throws ApiException {
-        ApiResponse<NetworkListsResponse> localVarResp = networkListsUuidGetWithHttpInfo(uuid);
+    public NetworkListUuidResponse networkListsUuidGet(String uuid) throws ApiException {
+        ApiResponse<NetworkListUuidResponse> localVarResp = networkListsUuidGetWithHttpInfo(uuid);
         return localVarResp.getData();
     }
 
@@ -429,7 +457,7 @@ public class DefaultApi {
      * Retrieve a Network Lists set by uuid
      * 
      * @param uuid  (required)
-     * @return ApiResponse&lt;NetworkListsResponse&gt;
+     * @return ApiResponse&lt;NetworkListUuidResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -439,9 +467,9 @@ public class DefaultApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<NetworkListsResponse> networkListsUuidGetWithHttpInfo(String uuid) throws ApiException {
+    public ApiResponse<NetworkListUuidResponse> networkListsUuidGetWithHttpInfo(String uuid) throws ApiException {
         okhttp3.Call localVarCall = networkListsUuidGetValidateBeforeCall(uuid, null);
-        Type localVarReturnType = new TypeToken<NetworkListsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<NetworkListUuidResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -460,17 +488,17 @@ public class DefaultApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call networkListsUuidGetAsync(String uuid, final ApiCallback<NetworkListsResponse> _callback) throws ApiException {
+    public okhttp3.Call networkListsUuidGetAsync(String uuid, final ApiCallback<NetworkListUuidResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = networkListsUuidGetValidateBeforeCall(uuid, _callback);
-        Type localVarReturnType = new TypeToken<NetworkListsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<NetworkListUuidResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for networkListsUuidPut
      * @param uuid  (required)
-     * @param updateNetworkListsRequest  (required)
+     * @param createNetworkListsRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -483,7 +511,7 @@ public class DefaultApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call networkListsUuidPutCall(String uuid, UpdateNetworkListsRequest updateNetworkListsRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call networkListsUuidPutCall(String uuid, CreateNetworkListsRequest createNetworkListsRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -497,7 +525,7 @@ public class DefaultApi {
             basePath = null;
         }
 
-        Object localVarPostBody = updateNetworkListsRequest;
+        Object localVarPostBody = createNetworkListsRequest;
 
         // create path and map variables
         String localVarPath = "/network_lists/{uuid}"
@@ -531,18 +559,18 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call networkListsUuidPutValidateBeforeCall(String uuid, UpdateNetworkListsRequest updateNetworkListsRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call networkListsUuidPutValidateBeforeCall(String uuid, CreateNetworkListsRequest createNetworkListsRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'uuid' is set
         if (uuid == null) {
             throw new ApiException("Missing the required parameter 'uuid' when calling networkListsUuidPut(Async)");
         }
 
-        // verify the required parameter 'updateNetworkListsRequest' is set
-        if (updateNetworkListsRequest == null) {
-            throw new ApiException("Missing the required parameter 'updateNetworkListsRequest' when calling networkListsUuidPut(Async)");
+        // verify the required parameter 'createNetworkListsRequest' is set
+        if (createNetworkListsRequest == null) {
+            throw new ApiException("Missing the required parameter 'createNetworkListsRequest' when calling networkListsUuidPut(Async)");
         }
 
-        return networkListsUuidPutCall(uuid, updateNetworkListsRequest, _callback);
+        return networkListsUuidPutCall(uuid, createNetworkListsRequest, _callback);
 
     }
 
@@ -550,8 +578,8 @@ public class DefaultApi {
      * Overwrite some Network Lists attributes
      * 
      * @param uuid  (required)
-     * @param updateNetworkListsRequest  (required)
-     * @return ListNetworkListsResponse
+     * @param createNetworkListsRequest  (required)
+     * @return NetworkListsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -562,8 +590,8 @@ public class DefaultApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ListNetworkListsResponse networkListsUuidPut(String uuid, UpdateNetworkListsRequest updateNetworkListsRequest) throws ApiException {
-        ApiResponse<ListNetworkListsResponse> localVarResp = networkListsUuidPutWithHttpInfo(uuid, updateNetworkListsRequest);
+    public NetworkListsResponse networkListsUuidPut(String uuid, CreateNetworkListsRequest createNetworkListsRequest) throws ApiException {
+        ApiResponse<NetworkListsResponse> localVarResp = networkListsUuidPutWithHttpInfo(uuid, createNetworkListsRequest);
         return localVarResp.getData();
     }
 
@@ -571,8 +599,8 @@ public class DefaultApi {
      * Overwrite some Network Lists attributes
      * 
      * @param uuid  (required)
-     * @param updateNetworkListsRequest  (required)
-     * @return ApiResponse&lt;ListNetworkListsResponse&gt;
+     * @param createNetworkListsRequest  (required)
+     * @return ApiResponse&lt;NetworkListsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -583,9 +611,9 @@ public class DefaultApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListNetworkListsResponse> networkListsUuidPutWithHttpInfo(String uuid, UpdateNetworkListsRequest updateNetworkListsRequest) throws ApiException {
-        okhttp3.Call localVarCall = networkListsUuidPutValidateBeforeCall(uuid, updateNetworkListsRequest, null);
-        Type localVarReturnType = new TypeToken<ListNetworkListsResponse>(){}.getType();
+    public ApiResponse<NetworkListsResponse> networkListsUuidPutWithHttpInfo(String uuid, CreateNetworkListsRequest createNetworkListsRequest) throws ApiException {
+        okhttp3.Call localVarCall = networkListsUuidPutValidateBeforeCall(uuid, createNetworkListsRequest, null);
+        Type localVarReturnType = new TypeToken<NetworkListsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -593,7 +621,7 @@ public class DefaultApi {
      * Overwrite some Network Lists attributes (asynchronously)
      * 
      * @param uuid  (required)
-     * @param updateNetworkListsRequest  (required)
+     * @param createNetworkListsRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -606,10 +634,10 @@ public class DefaultApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call networkListsUuidPutAsync(String uuid, UpdateNetworkListsRequest updateNetworkListsRequest, final ApiCallback<ListNetworkListsResponse> _callback) throws ApiException {
+    public okhttp3.Call networkListsUuidPutAsync(String uuid, CreateNetworkListsRequest createNetworkListsRequest, final ApiCallback<NetworkListsResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = networkListsUuidPutValidateBeforeCall(uuid, updateNetworkListsRequest, _callback);
-        Type localVarReturnType = new TypeToken<ListNetworkListsResponse>(){}.getType();
+        okhttp3.Call localVarCall = networkListsUuidPutValidateBeforeCall(uuid, createNetworkListsRequest, _callback);
+        Type localVarReturnType = new TypeToken<NetworkListsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

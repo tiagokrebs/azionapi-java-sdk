@@ -50,10 +50,10 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * NetworkLists
+ * NetworkListResponseEntry
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-14T14:52:39.395602Z[GMT]")
-public class NetworkLists {
+public class NetworkListResponseEntry {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private Long id;
@@ -74,18 +74,14 @@ public class NetworkLists {
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String SERIALIZED_NAME_COUNTRY_LIST = "country_list";
-  @SerializedName(SERIALIZED_NAME_COUNTRY_LIST)
-  private List<String> countryList;
+  public static final String SERIALIZED_NAME_ITEMS_VALUES = "items_values";
+  @SerializedName(SERIALIZED_NAME_ITEMS_VALUES)
+  private List<String> itemsValues;
 
-  public static final String SERIALIZED_NAME_IP_LIST = "ip_list";
-  @SerializedName(SERIALIZED_NAME_IP_LIST)
-  private List<String> ipList;
-
-  public NetworkLists() {
+  public NetworkListResponseEntry() {
   }
 
-  public NetworkLists id(Long id) {
+  public NetworkListResponseEntry id(Long id) {
     
     this.id = id;
     return this;
@@ -106,7 +102,7 @@ public class NetworkLists {
   }
 
 
-  public NetworkLists lastEditor(String lastEditor) {
+  public NetworkListResponseEntry lastEditor(String lastEditor) {
     
     this.lastEditor = lastEditor;
     return this;
@@ -127,7 +123,7 @@ public class NetworkLists {
   }
 
 
-  public NetworkLists lastModified(String lastModified) {
+  public NetworkListResponseEntry lastModified(String lastModified) {
     
     this.lastModified = lastModified;
     return this;
@@ -148,7 +144,7 @@ public class NetworkLists {
   }
 
 
-  public NetworkLists listType(String listType) {
+  public NetworkListResponseEntry listType(String listType) {
     
     this.listType = listType;
     return this;
@@ -169,7 +165,7 @@ public class NetworkLists {
   }
 
 
-  public NetworkLists name(String name) {
+  public NetworkListResponseEntry name(String name) {
     
     this.name = name;
     return this;
@@ -190,61 +186,32 @@ public class NetworkLists {
   }
 
 
-  public NetworkLists countryList(List<String> countryList) {
+  public NetworkListResponseEntry itemsValues(List<String> itemsValues) {
     
-    this.countryList = countryList;
+    this.itemsValues = itemsValues;
     return this;
   }
 
-  public NetworkLists addCountryListItem(String countryListItem) {
-    if (this.countryList == null) {
-      this.countryList = new ArrayList<>();
+  public NetworkListResponseEntry addItemsValuesItem(String itemsValuesItem) {
+    if (this.itemsValues == null) {
+      this.itemsValues = new ArrayList<>();
     }
-    this.countryList.add(countryListItem);
+    this.itemsValues.add(itemsValuesItem);
     return this;
   }
 
    /**
-   * Get countryList
-   * @return countryList
+   * Get itemsValues
+   * @return itemsValues
   **/
   @javax.annotation.Nullable
-  public List<String> getCountryList() {
-    return countryList;
+  public List<String> getItemsValues() {
+    return itemsValues;
   }
 
 
-  public void setCountryList(List<String> countryList) {
-    this.countryList = countryList;
-  }
-
-
-  public NetworkLists ipList(List<String> ipList) {
-    
-    this.ipList = ipList;
-    return this;
-  }
-
-  public NetworkLists addIpListItem(String ipListItem) {
-    if (this.ipList == null) {
-      this.ipList = new ArrayList<>();
-    }
-    this.ipList.add(ipListItem);
-    return this;
-  }
-
-   /**
-   * Get ipList
-   * @return ipList
-  **/
-  @javax.annotation.Nullable
-  public List<String> getIpList() {
-    return ipList;
-  }
-
-
-  public void setIpList(List<String> ipList) {
-    this.ipList = ipList;
+  public void setItemsValues(List<String> itemsValues) {
+    this.itemsValues = itemsValues;
   }
 
 
@@ -257,32 +224,30 @@ public class NetworkLists {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    NetworkLists networkLists = (NetworkLists) o;
-    return Objects.equals(this.id, networkLists.id) &&
-        Objects.equals(this.lastEditor, networkLists.lastEditor) &&
-        Objects.equals(this.lastModified, networkLists.lastModified) &&
-        Objects.equals(this.listType, networkLists.listType) &&
-        Objects.equals(this.name, networkLists.name) &&
-        Objects.equals(this.countryList, networkLists.countryList) &&
-        Objects.equals(this.ipList, networkLists.ipList);
+    NetworkListResponseEntry networkListResponseEntry = (NetworkListResponseEntry) o;
+    return Objects.equals(this.id, networkListResponseEntry.id) &&
+        Objects.equals(this.lastEditor, networkListResponseEntry.lastEditor) &&
+        Objects.equals(this.lastModified, networkListResponseEntry.lastModified) &&
+        Objects.equals(this.listType, networkListResponseEntry.listType) &&
+        Objects.equals(this.name, networkListResponseEntry.name) &&
+        Objects.equals(this.itemsValues, networkListResponseEntry.itemsValues);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, lastEditor, lastModified, listType, name, countryList, ipList);
+    return Objects.hash(id, lastEditor, lastModified, listType, name, itemsValues);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class NetworkLists {\n");
+    sb.append("class NetworkListResponseEntry {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    lastEditor: ").append(toIndentedString(lastEditor)).append("\n");
     sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
     sb.append("    listType: ").append(toIndentedString(listType)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    countryList: ").append(toIndentedString(countryList)).append("\n");
-    sb.append("    ipList: ").append(toIndentedString(ipList)).append("\n");
+    sb.append("    itemsValues: ").append(toIndentedString(itemsValues)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -310,8 +275,7 @@ public class NetworkLists {
     openapiFields.add("last_modified");
     openapiFields.add("list_type");
     openapiFields.add("name");
-    openapiFields.add("country_list");
-    openapiFields.add("ip_list");
+    openapiFields.add("items_values");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -321,20 +285,20 @@ public class NetworkLists {
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to NetworkLists
+  * @throws IOException if the JSON Object is invalid with respect to NetworkListResponseEntry
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (!NetworkLists.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in NetworkLists is not found in the empty JSON string", NetworkLists.openapiRequiredFields.toString()));
+        if (!NetworkListResponseEntry.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in NetworkListResponseEntry is not found in the empty JSON string", NetworkListResponseEntry.openapiRequiredFields.toString()));
         }
       }
 
       Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
-        if (!NetworkLists.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `NetworkLists` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        if (!NetworkListResponseEntry.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `NetworkListResponseEntry` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
       if ((jsonObj.get("last_editor") != null && !jsonObj.get("last_editor").isJsonNull()) && !jsonObj.get("last_editor").isJsonPrimitive()) {
@@ -350,12 +314,8 @@ public class NetworkLists {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // ensure the optional json data is an array if present
-      if (jsonObj.get("country_list") != null && !jsonObj.get("country_list").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `country_list` to be an array in the JSON string but got `%s`", jsonObj.get("country_list").toString()));
-      }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("ip_list") != null && !jsonObj.get("ip_list").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ip_list` to be an array in the JSON string but got `%s`", jsonObj.get("ip_list").toString()));
+      if (jsonObj.get("items_values") != null && !jsonObj.get("items_values").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `items_values` to be an array in the JSON string but got `%s`", jsonObj.get("items_values").toString()));
       }
   }
 
@@ -363,22 +323,22 @@ public class NetworkLists {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!NetworkLists.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'NetworkLists' and its subtypes
+       if (!NetworkListResponseEntry.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'NetworkListResponseEntry' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<NetworkLists> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(NetworkLists.class));
+       final TypeAdapter<NetworkListResponseEntry> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(NetworkListResponseEntry.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<NetworkLists>() {
+       return (TypeAdapter<T>) new TypeAdapter<NetworkListResponseEntry>() {
            @Override
-           public void write(JsonWriter out, NetworkLists value) throws IOException {
+           public void write(JsonWriter out, NetworkListResponseEntry value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public NetworkLists read(JsonReader in) throws IOException {
+           public NetworkListResponseEntry read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              return thisAdapter.fromJsonTree(jsonObj);
@@ -389,18 +349,18 @@ public class NetworkLists {
   }
 
  /**
-  * Create an instance of NetworkLists given an JSON string
+  * Create an instance of NetworkListResponseEntry given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of NetworkLists
-  * @throws IOException if the JSON string is invalid with respect to NetworkLists
+  * @return An instance of NetworkListResponseEntry
+  * @throws IOException if the JSON string is invalid with respect to NetworkListResponseEntry
   */
-  public static NetworkLists fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, NetworkLists.class);
+  public static NetworkListResponseEntry fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, NetworkListResponseEntry.class);
   }
 
  /**
-  * Convert an instance of NetworkLists to an JSON string
+  * Convert an instance of NetworkListResponseEntry to an JSON string
   *
   * @return JSON string
   */

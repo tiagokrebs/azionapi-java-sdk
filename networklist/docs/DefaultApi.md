@@ -12,7 +12,7 @@ All URIs are relative to *https://api.azionapi.net*
 
 <a id="networkListsGet"></a>
 # **networkListsGet**
-> ListNetworkListsResponse networkListsGet(page)
+> ListNetworkListsResponse networkListsGet(page, pageSize, sort, orderBy)
 
 List all user Network Lists
 
@@ -39,8 +39,11 @@ public class Example {
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     Integer page = 56; // Integer | 
+    Integer pageSize = 56; // Integer | 
+    String sort = "sort_example"; // String | 
+    String orderBy = "orderBy_example"; // String | 
     try {
-      ListNetworkListsResponse result = apiInstance.networkListsGet(page);
+      ListNetworkListsResponse result = apiInstance.networkListsGet(page, pageSize, sort, orderBy);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#networkListsGet");
@@ -58,6 +61,9 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **page** | **Integer**|  | [optional] |
+| **pageSize** | **Integer**|  | [optional] |
+| **sort** | **String**|  | [optional] |
+| **orderBy** | **String**|  | [optional] |
 
 ### Return type
 
@@ -80,7 +86,7 @@ public class Example {
 
 <a id="networkListsPost"></a>
 # **networkListsPost**
-> networkListsPost(createNetworkListsRequest)
+> NetworkListsResponse networkListsPost(createNetworkListsRequest)
 
 Create a Network Lists
 
@@ -108,7 +114,8 @@ public class Example {
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     CreateNetworkListsRequest createNetworkListsRequest = new CreateNetworkListsRequest(); // CreateNetworkListsRequest | 
     try {
-      apiInstance.networkListsPost(createNetworkListsRequest);
+      NetworkListsResponse result = apiInstance.networkListsPost(createNetworkListsRequest);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#networkListsPost");
       System.err.println("Status code: " + e.getCode());
@@ -128,7 +135,7 @@ public class Example {
 
 ### Return type
 
-null (empty response body)
+[**NetworkListsResponse**](NetworkListsResponse.md)
 
 ### Authorization
 
@@ -142,14 +149,14 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Network Lists created |  -  |
+| **201** | A Network Lists object |  -  |
 | **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
 <a id="networkListsUuidGet"></a>
 # **networkListsUuidGet**
-> NetworkListsResponse networkListsUuidGet(uuid)
+> NetworkListUuidResponse networkListsUuidGet(uuid)
 
 Retrieve a Network Lists set by uuid
 
@@ -177,7 +184,7 @@ public class Example {
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String uuid = "uuid_example"; // String | 
     try {
-      NetworkListsResponse result = apiInstance.networkListsUuidGet(uuid);
+      NetworkListUuidResponse result = apiInstance.networkListsUuidGet(uuid);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#networkListsUuidGet");
@@ -198,7 +205,7 @@ public class Example {
 
 ### Return type
 
-[**NetworkListsResponse**](NetworkListsResponse.md)
+[**NetworkListUuidResponse**](NetworkListUuidResponse.md)
 
 ### Authorization
 
@@ -218,7 +225,7 @@ public class Example {
 
 <a id="networkListsUuidPut"></a>
 # **networkListsUuidPut**
-> ListNetworkListsResponse networkListsUuidPut(uuid, updateNetworkListsRequest)
+> NetworkListsResponse networkListsUuidPut(uuid, createNetworkListsRequest)
 
 Overwrite some Network Lists attributes
 
@@ -245,9 +252,9 @@ public class Example {
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String uuid = "uuid_example"; // String | 
-    UpdateNetworkListsRequest updateNetworkListsRequest = new UpdateNetworkListsRequest(); // UpdateNetworkListsRequest | 
+    CreateNetworkListsRequest createNetworkListsRequest = new CreateNetworkListsRequest(); // CreateNetworkListsRequest | 
     try {
-      ListNetworkListsResponse result = apiInstance.networkListsUuidPut(uuid, updateNetworkListsRequest);
+      NetworkListsResponse result = apiInstance.networkListsUuidPut(uuid, createNetworkListsRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#networkListsUuidPut");
@@ -265,11 +272,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **uuid** | **String**|  | |
-| **updateNetworkListsRequest** | [**UpdateNetworkListsRequest**](UpdateNetworkListsRequest.md)|  | |
+| **createNetworkListsRequest** | [**CreateNetworkListsRequest**](CreateNetworkListsRequest.md)|  | |
 
 ### Return type
 
-[**ListNetworkListsResponse**](ListNetworkListsResponse.md)
+[**NetworkListsResponse**](NetworkListsResponse.md)
 
 ### Authorization
 

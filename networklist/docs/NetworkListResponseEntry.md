@@ -1,6 +1,6 @@
 
 
-# NetworkLists
+# NetworkListResponseEntry
 
 
 ## Properties
@@ -12,8 +12,7 @@
 |**lastModified** | **String** |  |  [optional] |
 |**listType** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
-|**countryList** | **List&lt;String&gt;** |  |  [optional] |
-|**ipList** | **List&lt;String&gt;** |  |  [optional] |
+|**itemsValues** | **List&lt;String&gt;** |  |  [optional] |
 
 
 

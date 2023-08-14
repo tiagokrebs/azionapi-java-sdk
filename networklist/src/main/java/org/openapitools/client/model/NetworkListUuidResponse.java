@@ -21,8 +21,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.math.BigDecimal;
-import org.openapitools.client.model.NetworkListResponseEntry;
+import org.openapitools.client.model.NetworkListUuidResponseEntry;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,22 +49,22 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * NetworkListsResponse
+ * NetworkListUuidResponse
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-14T14:52:39.395602Z[GMT]")
-public class NetworkListsResponse {
+public class NetworkListUuidResponse {
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
-  private NetworkListResponseEntry results;
+  private NetworkListUuidResponseEntry results;
 
   public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
   @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)
-  private BigDecimal schemaVersion;
+  private Long schemaVersion;
 
-  public NetworkListsResponse() {
+  public NetworkListUuidResponse() {
   }
 
-  public NetworkListsResponse results(NetworkListResponseEntry results) {
+  public NetworkListUuidResponse results(NetworkListUuidResponseEntry results) {
     
     this.results = results;
     return this;
@@ -76,17 +75,17 @@ public class NetworkListsResponse {
    * @return results
   **/
   @javax.annotation.Nullable
-  public NetworkListResponseEntry getResults() {
+  public NetworkListUuidResponseEntry getResults() {
     return results;
   }
 
 
-  public void setResults(NetworkListResponseEntry results) {
+  public void setResults(NetworkListUuidResponseEntry results) {
     this.results = results;
   }
 
 
-  public NetworkListsResponse schemaVersion(BigDecimal schemaVersion) {
+  public NetworkListUuidResponse schemaVersion(Long schemaVersion) {
     
     this.schemaVersion = schemaVersion;
     return this;
@@ -97,12 +96,12 @@ public class NetworkListsResponse {
    * @return schemaVersion
   **/
   @javax.annotation.Nullable
-  public BigDecimal getSchemaVersion() {
+  public Long getSchemaVersion() {
     return schemaVersion;
   }
 
 
-  public void setSchemaVersion(BigDecimal schemaVersion) {
+  public void setSchemaVersion(Long schemaVersion) {
     this.schemaVersion = schemaVersion;
   }
 
@@ -116,9 +115,9 @@ public class NetworkListsResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    NetworkListsResponse networkListsResponse = (NetworkListsResponse) o;
-    return Objects.equals(this.results, networkListsResponse.results) &&
-        Objects.equals(this.schemaVersion, networkListsResponse.schemaVersion);
+    NetworkListUuidResponse networkListUuidResponse = (NetworkListUuidResponse) o;
+    return Objects.equals(this.results, networkListUuidResponse.results) &&
+        Objects.equals(this.schemaVersion, networkListUuidResponse.schemaVersion);
   }
 
   @Override
@@ -129,7 +128,7 @@ public class NetworkListsResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class NetworkListsResponse {\n");
+    sb.append("class NetworkListUuidResponse {\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("    schemaVersion: ").append(toIndentedString(schemaVersion)).append("\n");
     sb.append("}");
@@ -165,25 +164,25 @@ public class NetworkListsResponse {
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to NetworkListsResponse
+  * @throws IOException if the JSON Object is invalid with respect to NetworkListUuidResponse
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (!NetworkListsResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in NetworkListsResponse is not found in the empty JSON string", NetworkListsResponse.openapiRequiredFields.toString()));
+        if (!NetworkListUuidResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in NetworkListUuidResponse is not found in the empty JSON string", NetworkListUuidResponse.openapiRequiredFields.toString()));
         }
       }
 
       Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
-        if (!NetworkListsResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `NetworkListsResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        if (!NetworkListUuidResponse.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `NetworkListUuidResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
       // validate the optional field `results`
       if (jsonObj.get("results") != null && !jsonObj.get("results").isJsonNull()) {
-        NetworkListResponseEntry.validateJsonObject(jsonObj.getAsJsonObject("results"));
+        NetworkListUuidResponseEntry.validateJsonObject(jsonObj.getAsJsonObject("results"));
       }
   }
 
@@ -191,22 +190,22 @@ public class NetworkListsResponse {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!NetworkListsResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'NetworkListsResponse' and its subtypes
+       if (!NetworkListUuidResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'NetworkListUuidResponse' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<NetworkListsResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(NetworkListsResponse.class));
+       final TypeAdapter<NetworkListUuidResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(NetworkListUuidResponse.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<NetworkListsResponse>() {
+       return (TypeAdapter<T>) new TypeAdapter<NetworkListUuidResponse>() {
            @Override
-           public void write(JsonWriter out, NetworkListsResponse value) throws IOException {
+           public void write(JsonWriter out, NetworkListUuidResponse value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public NetworkListsResponse read(JsonReader in) throws IOException {
+           public NetworkListUuidResponse read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              return thisAdapter.fromJsonTree(jsonObj);
@@ -217,18 +216,18 @@ public class NetworkListsResponse {
   }
 
  /**
-  * Create an instance of NetworkListsResponse given an JSON string
+  * Create an instance of NetworkListUuidResponse given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of NetworkListsResponse
-  * @throws IOException if the JSON string is invalid with respect to NetworkListsResponse
+  * @return An instance of NetworkListUuidResponse
+  * @throws IOException if the JSON string is invalid with respect to NetworkListUuidResponse
   */
-  public static NetworkListsResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, NetworkListsResponse.class);
+  public static NetworkListUuidResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, NetworkListUuidResponse.class);
   }
 
  /**
-  * Convert an instance of NetworkListsResponse to an JSON string
+  * Convert an instance of NetworkListUuidResponse to an JSON string
   *
   * @return JSON string
   */

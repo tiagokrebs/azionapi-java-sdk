@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**results** | [**NetworkLists**](NetworkLists.md) |  |  [optional] |
+|**results** | [**NetworkListResponseEntry**](NetworkListResponseEntry.md) |  |  [optional] |
 |**schemaVersion** | **BigDecimal** |  |  [optional] |
 
 
