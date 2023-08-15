@@ -11,9 +11,11 @@ docs/DefaultApi.md
 docs/ErrorModel.md
 docs/Links.md
 docs/ListNetworkListsResponse.md
+docs/NetworkListResponseEntry.md
+docs/NetworkListUuidResponse.md
+docs/NetworkListUuidResponseEntry.md
 docs/NetworkLists.md
 docs/NetworkListsResponse.md
-docs/UpdateNetworkListsRequest.md
 git_push.sh
 gradle.properties
 gradle/wrapper/gradle-wrapper.jar
@@ -47,6 +49,11 @@ src/main/java/org/openapitools/client/model/CreateNetworkListsRequest.java
 src/main/java/org/openapitools/client/model/ErrorModel.java
 src/main/java/org/openapitools/client/model/Links.java
 src/main/java/org/openapitools/client/model/ListNetworkListsResponse.java
+src/main/java/org/openapitools/client/model/NetworkListResponseEntry.java
+src/main/java/org/openapitools/client/model/NetworkListUuidResponse.java
+src/main/java/org/openapitools/client/model/NetworkListUuidResponseEntry.java
 src/main/java/org/openapitools/client/model/NetworkLists.java
 src/main/java/org/openapitools/client/model/NetworkListsResponse.java
-src/main/java/org/openapitools/client/model/UpdateNetworkListsRequest.java
+src/test/java/org/openapitools/client/model/NetworkListResponseEntryTest.java
+src/test/java/org/openapitools/client/model/NetworkListUuidResponseEntryTest.java
+src/test/java/org/openapitools/client/model/NetworkListUuidResponseTest.java
