@@ -84,6 +84,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A list of Edge Functions Instances |  -  |
+| **404** | Not Found |  -  |
 
 <a id="edgeFirewallEdgeFirewallIdFunctionsInstancesPost"></a>
 # **edgeFirewallEdgeFirewallIdFunctionsInstancesPost**
@@ -151,6 +152,7 @@ null (empty response body)
 |-------------|-------------|------------------|
 | **201** | Edge Functions Instance created |  -  |
 | **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
 <a id="edgeFirewallEdgeFirewallIdFunctionsInstancesUuidDelete"></a>
@@ -218,6 +220,8 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successfully deleted |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
 
 <a id="edgeFirewallEdgeFirewallIdFunctionsInstancesUuidGet"></a>
 # **edgeFirewallEdgeFirewallIdFunctionsInstancesUuidGet**
@@ -285,6 +289,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | An Edge Functions Instance object |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
 
 <a id="edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch"></a>
 # **edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch**
@@ -355,6 +361,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Successfully updated |  -  |
 | **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
 <a id="edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPut"></a>
@@ -426,5 +433,6 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Successfully updated |  -  |
 | **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 

@@ -88,6 +88,7 @@ public class DefaultApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> A list of Edge Functions Instances </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesGetCall(Integer page, Integer pageSize, String sort, String orderBy, final ApiCallback _callback) throws ApiException {
@@ -169,6 +170,7 @@ public class DefaultApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> A list of Edge Functions Instances </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
     public ListEdgeFunctionsInstancesResponse edgeFirewallEdgeFirewallIdFunctionsInstancesGet(Integer page, Integer pageSize, String sort, String orderBy) throws ApiException {
@@ -189,6 +191,7 @@ public class DefaultApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> A list of Edge Functions Instances </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<ListEdgeFunctionsInstancesResponse> edgeFirewallEdgeFirewallIdFunctionsInstancesGetWithHttpInfo(Integer page, Integer pageSize, String sort, String orderBy) throws ApiException {
@@ -211,6 +214,7 @@ public class DefaultApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> A list of Edge Functions Instances </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesGetAsync(Integer page, Integer pageSize, String sort, String orderBy, final ApiCallback<ListEdgeFunctionsInstancesResponse> _callback) throws ApiException {
@@ -231,6 +235,7 @@ public class DefaultApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Edge Functions Instance created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
@@ -299,6 +304,7 @@ public class DefaultApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Edge Functions Instance created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
@@ -317,6 +323,7 @@ public class DefaultApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Edge Functions Instance created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
@@ -337,6 +344,7 @@ public class DefaultApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Edge Functions Instance created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
@@ -356,6 +364,8 @@ public class DefaultApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Successfully deleted </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesUuidDeleteCall(String uuid, final ApiCallback _callback) throws ApiException {
@@ -422,6 +432,8 @@ public class DefaultApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Successfully deleted </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
     public void edgeFirewallEdgeFirewallIdFunctionsInstancesUuidDelete(String uuid) throws ApiException {
@@ -438,6 +450,8 @@ public class DefaultApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Successfully deleted </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Void> edgeFirewallEdgeFirewallIdFunctionsInstancesUuidDeleteWithHttpInfo(String uuid) throws ApiException {
@@ -456,6 +470,8 @@ public class DefaultApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Successfully deleted </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesUuidDeleteAsync(String uuid, final ApiCallback<Void> _callback) throws ApiException {
@@ -474,6 +490,8 @@ public class DefaultApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An Edge Functions Instance object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesUuidGetCall(String uuid, final ApiCallback _callback) throws ApiException {
@@ -542,6 +560,8 @@ public class DefaultApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An Edge Functions Instance object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
     public EdgeFunctionsInstanceResponse edgeFirewallEdgeFirewallIdFunctionsInstancesUuidGet(String uuid) throws ApiException {
@@ -559,6 +579,8 @@ public class DefaultApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An Edge Functions Instance object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<EdgeFunctionsInstanceResponse> edgeFirewallEdgeFirewallIdFunctionsInstancesUuidGetWithHttpInfo(String uuid) throws ApiException {
@@ -578,6 +600,8 @@ public class DefaultApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An Edge Functions Instance object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesUuidGetAsync(String uuid, final ApiCallback<EdgeFunctionsInstanceResponse> _callback) throws ApiException {
@@ -599,6 +623,7 @@ public class DefaultApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
@@ -676,6 +701,7 @@ public class DefaultApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
@@ -696,6 +722,7 @@ public class DefaultApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
@@ -718,6 +745,7 @@ public class DefaultApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
@@ -740,6 +768,7 @@ public class DefaultApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
@@ -817,6 +846,7 @@ public class DefaultApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
@@ -837,6 +867,7 @@ public class DefaultApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
@@ -859,6 +890,7 @@ public class DefaultApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */

@@ -1,6 +1,5 @@
 .github/workflows/maven.yml
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -45,9 +44,3 @@ src/main/java/org/openapitools/client/model/EdgeFunctionsInstance.java
 src/main/java/org/openapitools/client/model/EdgeFunctionsInstanceResponse.java
 src/main/java/org/openapitools/client/model/Links.java
 src/main/java/org/openapitools/client/model/ListEdgeFunctionsInstancesResponse.java
-src/test/java/org/openapitools/client/api/DefaultApiTest.java
-src/test/java/org/openapitools/client/model/CreateEdgeFunctionsInstancesRequestTest.java
-src/test/java/org/openapitools/client/model/EdgeFunctionsInstanceResponseTest.java
-src/test/java/org/openapitools/client/model/EdgeFunctionsInstanceTest.java
-src/test/java/org/openapitools/client/model/LinksTest.java
-src/test/java/org/openapitools/client/model/ListEdgeFunctionsInstancesResponseTest.java
