@@ -1,6 +1,6 @@
 
 
-# NetworkListUuidResponseEntry
+# NetworkListUuidResponseEntryInt
 
 
 ## Properties
