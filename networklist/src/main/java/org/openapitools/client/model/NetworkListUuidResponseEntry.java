@@ -23,235 +23,214 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.client.model.NetworkListUuidResponseEntryInt;
+import org.openapitools.client.model.NetworkListUuidResponseEntryString;
+
+import javax.ws.rs.core.GenericType;
+
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.TypeAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
 
 import org.openapitools.client.JSON;
 
-/**
- * NetworkListUuidResponseEntry
- */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-14T14:52:39.395602Z[GMT]")
-public class NetworkListUuidResponseEntry {
-  public static final String SERIALIZED_NAME_LAST_EDITOR = "last_editor";
-  @SerializedName(SERIALIZED_NAME_LAST_EDITOR)
-  private String lastEditor;
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-16T13:40:50.657760Z[GMT]")
+public class NetworkListUuidResponseEntry extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(NetworkListUuidResponseEntry.class.getName());
 
-  public static final String SERIALIZED_NAME_LAST_MODIFIED = "last_modified";
-  @SerializedName(SERIALIZED_NAME_LAST_MODIFIED)
-  private String lastModified;
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!NetworkListUuidResponseEntry.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'NetworkListUuidResponseEntry' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<NetworkListUuidResponseEntryInt> adapterNetworkListUuidResponseEntryInt = gson.getDelegateAdapter(this, TypeToken.get(NetworkListUuidResponseEntryInt.class));
+            final TypeAdapter<NetworkListUuidResponseEntryString> adapterNetworkListUuidResponseEntryString = gson.getDelegateAdapter(this, TypeToken.get(NetworkListUuidResponseEntryString.class));
 
-  public static final String SERIALIZED_NAME_LIST_TYPE = "list_type";
-  @SerializedName(SERIALIZED_NAME_LIST_TYPE)
-  private String listType;
+            return (TypeAdapter<T>) new TypeAdapter<NetworkListUuidResponseEntry>() {
+                @Override
+                public void write(JsonWriter out, NetworkListUuidResponseEntry value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
+                    // check if the actual instance is of the type `NetworkListUuidResponseEntryInt`
+                    if (value.getActualInstance() instanceof NetworkListUuidResponseEntryInt) {
+                        JsonObject obj = adapterNetworkListUuidResponseEntryInt.toJsonTree((NetworkListUuidResponseEntryInt)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
-  public static final String SERIALIZED_NAME_ITEMS_VALUES = "items_values";
-  @SerializedName(SERIALIZED_NAME_ITEMS_VALUES)
-  private List<String> itemsValues;
+                    // check if the actual instance is of the type `NetworkListUuidResponseEntryString`
+                    if (value.getActualInstance() instanceof NetworkListUuidResponseEntryString) {
+                        JsonObject obj = adapterNetworkListUuidResponseEntryString.toJsonTree((NetworkListUuidResponseEntryString)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
-  public NetworkListUuidResponseEntry() {
-  }
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: NetworkListUuidResponseEntryInt, NetworkListUuidResponseEntryString");
+                }
 
-  public NetworkListUuidResponseEntry lastEditor(String lastEditor) {
-    
-    this.lastEditor = lastEditor;
-    return this;
-  }
+                @Override
+                public NetworkListUuidResponseEntry read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
-   /**
-   * Get lastEditor
-   * @return lastEditor
-  **/
-  @javax.annotation.Nullable
-  public String getLastEditor() {
-    return lastEditor;
-  }
+                    int match = 0;
+                    ArrayList<String> errorMessages = new ArrayList<>();
+                    TypeAdapter actualAdapter = elementAdapter;
 
+                    // deserialize NetworkListUuidResponseEntryInt
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        NetworkListUuidResponseEntryInt.validateJsonObject(jsonObject);
+                        actualAdapter = adapterNetworkListUuidResponseEntryInt;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'NetworkListUuidResponseEntryInt'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for NetworkListUuidResponseEntryInt failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'NetworkListUuidResponseEntryInt'", e);
+                    }
 
-  public void setLastEditor(String lastEditor) {
-    this.lastEditor = lastEditor;
-  }
+                    // deserialize NetworkListUuidResponseEntryString
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        NetworkListUuidResponseEntryString.validateJsonObject(jsonObject);
+                        actualAdapter = adapterNetworkListUuidResponseEntryString;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'NetworkListUuidResponseEntryString'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for NetworkListUuidResponseEntryString failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'NetworkListUuidResponseEntryString'", e);
+                    }
 
+                    if (match == 1) {
+                        NetworkListUuidResponseEntry ret = new NetworkListUuidResponseEntry();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        return ret;
+                    }
 
-  public NetworkListUuidResponseEntry lastModified(String lastModified) {
-    
-    this.lastModified = lastModified;
-    return this;
-  }
-
-   /**
-   * Get lastModified
-   * @return lastModified
-  **/
-  @javax.annotation.Nullable
-  public String getLastModified() {
-    return lastModified;
-  }
-
-
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-
-  public NetworkListUuidResponseEntry listType(String listType) {
-    
-    this.listType = listType;
-    return this;
-  }
-
-   /**
-   * Get listType
-   * @return listType
-  **/
-  @javax.annotation.Nullable
-  public String getListType() {
-    return listType;
-  }
-
-
-  public void setListType(String listType) {
-    this.listType = listType;
-  }
-
-
-  public NetworkListUuidResponseEntry name(String name) {
-    
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
-  **/
-  @javax.annotation.Nullable
-  public String getName() {
-    return name;
-  }
-
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
-  public NetworkListUuidResponseEntry itemsValues(List<String> itemsValues) {
-    
-    this.itemsValues = itemsValues;
-    return this;
-  }
-
-  public NetworkListUuidResponseEntry addItemsValuesItem(String itemsValuesItem) {
-    if (this.itemsValues == null) {
-      this.itemsValues = new ArrayList<>();
+                    throw new IOException(String.format("Failed deserialization for NetworkListUuidResponseEntry: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonObject.toString()));
+                }
+            }.nullSafe();
+        }
     }
-    this.itemsValues.add(itemsValuesItem);
-    return this;
-  }
 
-   /**
-   * Get itemsValues
-   * @return itemsValues
-  **/
-  @javax.annotation.Nullable
-  public List<String> getItemsValues() {
-    return itemsValues;
-  }
+    // store a list of schema names defined in oneOf
+    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
 
-
-  public void setItemsValues(List<String> itemsValues) {
-    this.itemsValues = itemsValues;
-  }
-
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+    public NetworkListUuidResponseEntry() {
+        super("oneOf", Boolean.FALSE);
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    public NetworkListUuidResponseEntry(NetworkListUuidResponseEntryInt o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    NetworkListUuidResponseEntry networkListUuidResponseEntry = (NetworkListUuidResponseEntry) o;
-    return Objects.equals(this.lastEditor, networkListUuidResponseEntry.lastEditor) &&
-        Objects.equals(this.lastModified, networkListUuidResponseEntry.lastModified) &&
-        Objects.equals(this.listType, networkListUuidResponseEntry.listType) &&
-        Objects.equals(this.name, networkListUuidResponseEntry.name) &&
-        Objects.equals(this.itemsValues, networkListUuidResponseEntry.itemsValues);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastEditor, lastModified, listType, name, itemsValues);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class NetworkListUuidResponseEntry {\n");
-    sb.append("    lastEditor: ").append(toIndentedString(lastEditor)).append("\n");
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    listType: ").append(toIndentedString(listType)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    itemsValues: ").append(toIndentedString(itemsValues)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public NetworkListUuidResponseEntry(NetworkListUuidResponseEntryString o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    return o.toString().replace("\n", "\n    ");
-  }
 
+    static {
+        schemas.put("NetworkListUuidResponseEntryInt", new GenericType<NetworkListUuidResponseEntryInt>() {
+        });
+        schemas.put("NetworkListUuidResponseEntryString", new GenericType<NetworkListUuidResponseEntryString>() {
+        });
+    }
 
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
+    @Override
+    public Map<String, GenericType> getSchemas() {
+        return NetworkListUuidResponseEntry.schemas;
+    }
 
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("last_editor");
-    openapiFields.add("last_modified");
-    openapiFields.add("list_type");
-    openapiFields.add("name");
-    openapiFields.add("items_values");
+    /**
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
+     * NetworkListUuidResponseEntryInt, NetworkListUuidResponseEntryString
+     *
+     * It could be an instance of the 'oneOf' schemas.
+     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof NetworkListUuidResponseEntryInt) {
+            super.setActualInstance(instance);
+            return;
+        }
 
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
+        if (instance instanceof NetworkListUuidResponseEntryString) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be NetworkListUuidResponseEntryInt, NetworkListUuidResponseEntryString");
+    }
+
+    /**
+     * Get the actual instance, which can be the following:
+     * NetworkListUuidResponseEntryInt, NetworkListUuidResponseEntryString
+     *
+     * @return The actual instance (NetworkListUuidResponseEntryInt, NetworkListUuidResponseEntryString)
+     */
+    @Override
+    public Object getActualInstance() {
+        return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `NetworkListUuidResponseEntryInt`. If the actual instance is not `NetworkListUuidResponseEntryInt`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `NetworkListUuidResponseEntryInt`
+     * @throws ClassCastException if the instance is not `NetworkListUuidResponseEntryInt`
+     */
+    public NetworkListUuidResponseEntryInt getNetworkListUuidResponseEntryInt() throws ClassCastException {
+        return (NetworkListUuidResponseEntryInt)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `NetworkListUuidResponseEntryString`. If the actual instance is not `NetworkListUuidResponseEntryString`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `NetworkListUuidResponseEntryString`
+     * @throws ClassCastException if the instance is not `NetworkListUuidResponseEntryString`
+     */
+    public NetworkListUuidResponseEntryString getNetworkListUuidResponseEntryString() throws ClassCastException {
+        return (NetworkListUuidResponseEntryString)super.getActualInstance();
+    }
+
 
  /**
   * Validates the JSON Object and throws an exception if issues found
@@ -260,63 +239,27 @@ public class NetworkListUuidResponseEntry {
   * @throws IOException if the JSON Object is invalid with respect to NetworkListUuidResponseEntry
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!NetworkListUuidResponseEntry.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in NetworkListUuidResponseEntry is not found in the empty JSON string", NetworkListUuidResponseEntry.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!NetworkListUuidResponseEntry.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `NetworkListUuidResponseEntry` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("last_editor") != null && !jsonObj.get("last_editor").isJsonNull()) && !jsonObj.get("last_editor").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `last_editor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_editor").toString()));
-      }
-      if ((jsonObj.get("last_modified") != null && !jsonObj.get("last_modified").isJsonNull()) && !jsonObj.get("last_modified").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `last_modified` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_modified").toString()));
-      }
-      if ((jsonObj.get("list_type") != null && !jsonObj.get("list_type").isJsonNull()) && !jsonObj.get("list_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `list_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("list_type").toString()));
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("items_values") != null && !jsonObj.get("items_values").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `items_values` to be an array in the JSON string but got `%s`", jsonObj.get("items_values").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!NetworkListUuidResponseEntry.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'NetworkListUuidResponseEntry' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<NetworkListUuidResponseEntry> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(NetworkListUuidResponseEntry.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<NetworkListUuidResponseEntry>() {
-           @Override
-           public void write(JsonWriter out, NetworkListUuidResponseEntry value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public NetworkListUuidResponseEntry read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
+    // validate oneOf schemas one by one
+    int validCount = 0;
+    ArrayList<String> errorMessages = new ArrayList<>();
+    // validate the json string with NetworkListUuidResponseEntryInt
+    try {
+      NetworkListUuidResponseEntryInt.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for NetworkListUuidResponseEntryInt failed with `%s`.", e.getMessage()));
+      // continue to the next one
+    }
+    // validate the json string with NetworkListUuidResponseEntryString
+    try {
+      NetworkListUuidResponseEntryString.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for NetworkListUuidResponseEntryString failed with `%s`.", e.getMessage()));
+      // continue to the next one
+    }
+    if (validCount != 1) {
+      throw new IOException(String.format("The JSON string is invalid for NetworkListUuidResponseEntry with oneOf schemas: NetworkListUuidResponseEntryInt, NetworkListUuidResponseEntryString. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonObj.toString()));
     }
   }
 
