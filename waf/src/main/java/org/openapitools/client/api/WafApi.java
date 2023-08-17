@@ -88,6 +88,8 @@ public class WafApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getWAFDomainsCall(Long wafId, String name, final ApiCallback _callback) throws ApiException {
@@ -161,6 +163,8 @@ public class WafApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
      </table>
      */
     public WAFDomains200 getWAFDomains(Long wafId, String name) throws ApiException {
@@ -179,6 +183,8 @@ public class WafApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<WAFDomains200> getWAFDomainsWithHttpInfo(Long wafId, String name) throws ApiException {
@@ -199,6 +205,8 @@ public class WafApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getWAFDomainsAsync(Long wafId, String name, final ApiCallback<WAFDomains200> _callback) throws ApiException {
@@ -222,8 +230,9 @@ public class WafApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> unauthorized operation </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getWAFEventsCall(Long wafId, Long hourRange, String domainsIds, Long networkListId, final ApiCallback _callback) throws ApiException {
@@ -318,8 +327,9 @@ public class WafApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> unauthorized operation </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
     public WAFEvents200 getWAFEvents(Long wafId, Long hourRange, String domainsIds, Long networkListId) throws ApiException {
@@ -341,8 +351,9 @@ public class WafApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> unauthorized operation </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<WAFEvents200> getWAFEventsWithHttpInfo(Long wafId, Long hourRange, String domainsIds, Long networkListId) throws ApiException {
@@ -366,8 +377,9 @@ public class WafApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> unauthorized operation </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getWAFEventsAsync(Long wafId, Long hourRange, String domainsIds, Long networkListId, final ApiCallback<WAFEvents200> _callback) throws ApiException {

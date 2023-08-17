@@ -1,6 +1,5 @@
 .github/workflows/maven.yml
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -45,9 +44,3 @@ src/main/java/org/openapitools/client/model/WAFEvents200.java
 src/main/java/org/openapitools/client/model/WAFEvents400.java
 src/main/java/org/openapitools/client/model/WAFEvents401.java
 src/main/java/org/openapitools/client/model/WAFEvents404.java
-src/test/java/org/openapitools/client/api/WafApiTest.java
-src/test/java/org/openapitools/client/model/WAFDomains200Test.java
-src/test/java/org/openapitools/client/model/WAFEvents200Test.java
-src/test/java/org/openapitools/client/model/WAFEvents400Test.java
-src/test/java/org/openapitools/client/model/WAFEvents401Test.java
-src/test/java/org/openapitools/client/model/WAFEvents404Test.java
