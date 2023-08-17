@@ -52,6 +52,13 @@ paths:
             application/json:
               schema: {}
           description: ""
+        "400":
+          description: Bad request
+        "404":
+          content:
+            application/json:
+              schema: {}
+          description: Resource not found
       summary: /storage/:version_id
       x-content-type: application/octet-stream
       x-accepts: application/json
@@ -72,6 +79,13 @@ paths:
       responses:
         "204":
           description: The resource was deleted successfully.
+        "400":
+          description: Bad request
+        "404":
+          content:
+            application/json:
+              schema: {}
+          description: Resource not found
       summary: /storage/:version_id/delete
       x-accepts: application/json
 components:

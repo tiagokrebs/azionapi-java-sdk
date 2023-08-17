@@ -69,12 +69,14 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | The resource was deleted successfully. |  -  |
+| **400** | Bad request |  -  |
+| **404** | Resource not found |  -  |
 
 <a id="storageVersionIdPost"></a>
 # **storageVersionIdPost**
@@ -150,4 +152,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** |  |  -  |
+| **400** | Bad request |  -  |
+| **404** | Resource not found |  -  |
 
