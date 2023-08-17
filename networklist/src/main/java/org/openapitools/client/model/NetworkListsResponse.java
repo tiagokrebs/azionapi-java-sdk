@@ -21,7 +21,6 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.math.BigDecimal;
 import org.openapitools.client.model.NetworkListResponseEntry;
 
 import com.google.gson.Gson;
@@ -52,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * NetworkListsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-16T13:40:50.657760Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T19:51:07.020836Z[GMT]")
 public class NetworkListsResponse {
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
@@ -60,7 +59,7 @@ public class NetworkListsResponse {
 
   public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
   @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)
-  private BigDecimal schemaVersion;
+  private Long schemaVersion;
 
   public NetworkListsResponse() {
   }
@@ -86,7 +85,7 @@ public class NetworkListsResponse {
   }
 
 
-  public NetworkListsResponse schemaVersion(BigDecimal schemaVersion) {
+  public NetworkListsResponse schemaVersion(Long schemaVersion) {
     
     this.schemaVersion = schemaVersion;
     return this;
@@ -97,12 +96,12 @@ public class NetworkListsResponse {
    * @return schemaVersion
   **/
   @javax.annotation.Nullable
-  public BigDecimal getSchemaVersion() {
+  public Long getSchemaVersion() {
     return schemaVersion;
   }
 
 
-  public void setSchemaVersion(BigDecimal schemaVersion) {
+  public void setSchemaVersion(Long schemaVersion) {
     this.schemaVersion = schemaVersion;
   }
 

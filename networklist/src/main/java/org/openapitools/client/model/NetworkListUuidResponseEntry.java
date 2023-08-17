@@ -59,7 +59,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-16T13:40:50.657760Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T19:51:07.020836Z[GMT]")
 public class NetworkListUuidResponseEntry extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(NetworkListUuidResponseEntry.class.getName());
 

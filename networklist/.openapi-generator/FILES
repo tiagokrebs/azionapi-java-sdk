@@ -58,5 +58,3 @@ src/main/java/org/openapitools/client/model/NetworkListUuidResponseEntryInt.java
 src/main/java/org/openapitools/client/model/NetworkListUuidResponseEntryString.java
 src/main/java/org/openapitools/client/model/NetworkLists.java
 src/main/java/org/openapitools/client/model/NetworkListsResponse.java
-src/test/java/org/openapitools/client/model/NetworkListUuidResponseEntryIntTest.java
-src/test/java/org/openapitools/client/model/NetworkListUuidResponseEntryStringTest.java
