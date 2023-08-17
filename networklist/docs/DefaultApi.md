@@ -6,6 +6,7 @@ All URIs are relative to *https://api.azionapi.net*
 |------------- | ------------- | -------------|
 | [**networkListsGet**](DefaultApi.md#networkListsGet) | **GET** /network_lists | List all user Network Lists |
 | [**networkListsPost**](DefaultApi.md#networkListsPost) | **POST** /network_lists | Create a Network Lists |
+| [**networkListsUuidDelete**](DefaultApi.md#networkListsUuidDelete) | **DELETE** /network_lists/{uuid} | Delete a Network Lists set by uuid |
 | [**networkListsUuidGet**](DefaultApi.md#networkListsUuidGet) | **GET** /network_lists/{uuid} | Retrieve a Network Lists set by uuid |
 | [**networkListsUuidPut**](DefaultApi.md#networkListsUuidPut) | **PUT** /network_lists/{uuid} | Overwrite some Network Lists attributes |
 
@@ -153,6 +154,79 @@ public class Example {
 | **201** | A Network Lists object |  -  |
 | **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+<a id="networkListsUuidDelete"></a>
+# **networkListsUuidDelete**
+> networkListsUuidDelete(uuid, accept)
+
+Delete a Network Lists set by uuid
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DefaultApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.azionapi.net");
+    
+    // Configure API key authorization: tokenAuth
+    ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
+    tokenAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //tokenAuth.setApiKeyPrefix("Token");
+
+    DefaultApi apiInstance = new DefaultApi(defaultClient);
+    String uuid = "uuid_example"; // String | The id of the networkList to be deleted. 
+    String accept = "application/json; version=3"; // String | 
+    try {
+      apiInstance.networkListsUuidDelete(uuid, accept);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DefaultApi#networkListsUuidDelete");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **uuid** | **String**| The id of the networkList to be deleted.  | |
+| **accept** | **String**|  | [optional] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **422** | Unprocessable Entity |  -  |
 | **500** | Internal Server Error |  -  |
 
 <a id="networkListsUuidGet"></a>
