@@ -76,6 +76,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
+| **400** | Bad request |  -  |
+| **404** | data not found |  -  |
 
 <a id="getWAFEvents"></a>
 # **getWAFEvents**
@@ -150,6 +152,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 | **400** | Bad request |  -  |
-| **404** | data not found |  -  |
 | **401** | unauthorized operation |  -  |
+| **404** | data not found |  -  |
+| **500** | Internal server error |  -  |
 
