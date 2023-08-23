@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationPutRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-07T17:10:43.172754Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-23T20:53:13.124416Z[GMT]")
 public class ApplicationPutRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -124,6 +124,10 @@ public class ApplicationPutRequest {
   public static final String SERIALIZED_NAME_HTTP3 = "http3";
   @SerializedName(SERIALIZED_NAME_HTTP3)
   private Boolean http3;
+
+  public static final String SERIALIZED_NAME_WEBSOCKET = "websocket";
+  @SerializedName(SERIALIZED_NAME_WEBSOCKET)
+  private Boolean websocket;
 
   public static final String SERIALIZED_NAME_SUPPORTED_CIPHERS = "supported_ciphers";
   @SerializedName(SERIALIZED_NAME_SUPPORTED_CIPHERS)
@@ -510,6 +514,27 @@ public class ApplicationPutRequest {
   }
 
 
+  public ApplicationPutRequest websocket(Boolean websocket) {
+    
+    this.websocket = websocket;
+    return this;
+  }
+
+   /**
+   * Get websocket
+   * @return websocket
+  **/
+  @javax.annotation.Nullable
+  public Boolean getWebsocket() {
+    return websocket;
+  }
+
+
+  public void setWebsocket(Boolean websocket) {
+    this.websocket = websocket;
+  }
+
+
   public ApplicationPutRequest supportedCiphers(String supportedCiphers) {
     
     this.supportedCiphers = supportedCiphers;
@@ -559,6 +584,7 @@ public class ApplicationPutRequest {
         Objects.equals(this.webApplicationFirewall, applicationPutRequest.webApplicationFirewall) &&
         Objects.equals(this.debugRules, applicationPutRequest.debugRules) &&
         Objects.equals(this.http3, applicationPutRequest.http3) &&
+        Objects.equals(this.websocket, applicationPutRequest.websocket) &&
         Objects.equals(this.supportedCiphers, applicationPutRequest.supportedCiphers);
   }
 
@@ -568,7 +594,7 @@ public class ApplicationPutRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, active, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, l2Caching, loadBalancer, rawLogs, webApplicationFirewall, debugRules, http3, supportedCiphers);
+    return Objects.hash(name, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, active, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, l2Caching, loadBalancer, rawLogs, webApplicationFirewall, debugRules, http3, websocket, supportedCiphers);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -600,6 +626,7 @@ public class ApplicationPutRequest {
     sb.append("    webApplicationFirewall: ").append(toIndentedString(webApplicationFirewall)).append("\n");
     sb.append("    debugRules: ").append(toIndentedString(debugRules)).append("\n");
     sb.append("    http3: ").append(toIndentedString(http3)).append("\n");
+    sb.append("    websocket: ").append(toIndentedString(websocket)).append("\n");
     sb.append("    supportedCiphers: ").append(toIndentedString(supportedCiphers)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -641,6 +668,7 @@ public class ApplicationPutRequest {
     openapiFields.add("web_application_firewall");
     openapiFields.add("debug_rules");
     openapiFields.add("http3");
+    openapiFields.add("websocket");
     openapiFields.add("supported_ciphers");
 
     // a set of required properties/fields (JSON key names)

@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationUpdateRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-07T17:10:43.172754Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-23T20:53:13.124416Z[GMT]")
 public class ApplicationUpdateRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -120,6 +120,10 @@ public class ApplicationUpdateRequest {
   public static final String SERIALIZED_NAME_WEB_APPLICATION_FIREWALL = "web_application_firewall";
   @SerializedName(SERIALIZED_NAME_WEB_APPLICATION_FIREWALL)
   private Boolean webApplicationFirewall;
+
+  public static final String SERIALIZED_NAME_WEBSOCKET = "websocket";
+  @SerializedName(SERIALIZED_NAME_WEBSOCKET)
+  private Boolean websocket;
 
   public ApplicationUpdateRequest() {
   }
@@ -481,6 +485,27 @@ public class ApplicationUpdateRequest {
   }
 
 
+  public ApplicationUpdateRequest websocket(Boolean websocket) {
+    
+    this.websocket = websocket;
+    return this;
+  }
+
+   /**
+   * Get websocket
+   * @return websocket
+  **/
+  @javax.annotation.Nullable
+  public Boolean getWebsocket() {
+    return websocket;
+  }
+
+
+  public void setWebsocket(Boolean websocket) {
+    this.websocket = websocket;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -507,7 +532,8 @@ public class ApplicationUpdateRequest {
         Objects.equals(this.l2Caching, applicationUpdateRequest.l2Caching) &&
         Objects.equals(this.loadBalancer, applicationUpdateRequest.loadBalancer) &&
         Objects.equals(this.rawLogs, applicationUpdateRequest.rawLogs) &&
-        Objects.equals(this.webApplicationFirewall, applicationUpdateRequest.webApplicationFirewall);
+        Objects.equals(this.webApplicationFirewall, applicationUpdateRequest.webApplicationFirewall) &&
+        Objects.equals(this.websocket, applicationUpdateRequest.websocket);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -516,7 +542,7 @@ public class ApplicationUpdateRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, active, debugRules, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, l2Caching, loadBalancer, rawLogs, webApplicationFirewall);
+    return Objects.hash(name, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, active, debugRules, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, l2Caching, loadBalancer, rawLogs, webApplicationFirewall, websocket);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -547,6 +573,7 @@ public class ApplicationUpdateRequest {
     sb.append("    loadBalancer: ").append(toIndentedString(loadBalancer)).append("\n");
     sb.append("    rawLogs: ").append(toIndentedString(rawLogs)).append("\n");
     sb.append("    webApplicationFirewall: ").append(toIndentedString(webApplicationFirewall)).append("\n");
+    sb.append("    websocket: ").append(toIndentedString(websocket)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -586,6 +613,7 @@ public class ApplicationUpdateRequest {
     openapiFields.add("load_balancer");
     openapiFields.add("raw_logs");
     openapiFields.add("web_application_firewall");
+    openapiFields.add("websocket");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

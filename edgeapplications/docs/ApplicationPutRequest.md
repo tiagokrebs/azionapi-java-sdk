@@ -25,6 +25,7 @@
 |**webApplicationFirewall** | **Boolean** |  |  [optional] |
 |**debugRules** | **Boolean** |  |  [optional] |
 |**http3** | **Boolean** |  |  [optional] |
+|**websocket** | **Boolean** |  |  [optional] |
 |**supportedCiphers** | **String** |  |  [optional] |
 
 
