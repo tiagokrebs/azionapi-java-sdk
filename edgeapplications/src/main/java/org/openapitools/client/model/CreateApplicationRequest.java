@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * CreateApplicationRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-07T17:10:43.172754Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-23T20:53:13.124416Z[GMT]")
 public class CreateApplicationRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -120,6 +120,10 @@ public class CreateApplicationRequest {
   public static final String SERIALIZED_NAME_HTTP3 = "http3";
   @SerializedName(SERIALIZED_NAME_HTTP3)
   private Boolean http3;
+
+  public static final String SERIALIZED_NAME_WEBSOCKET = "websocket";
+  @SerializedName(SERIALIZED_NAME_WEBSOCKET)
+  private Boolean websocket;
 
   public CreateApplicationRequest() {
   }
@@ -481,6 +485,27 @@ public class CreateApplicationRequest {
   }
 
 
+  public CreateApplicationRequest websocket(Boolean websocket) {
+    
+    this.websocket = websocket;
+    return this;
+  }
+
+   /**
+   * Get websocket
+   * @return websocket
+  **/
+  @javax.annotation.Nullable
+  public Boolean getWebsocket() {
+    return websocket;
+  }
+
+
+  public void setWebsocket(Boolean websocket) {
+    this.websocket = websocket;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -507,7 +532,8 @@ public class CreateApplicationRequest {
         Objects.equals(this.httpPort, createApplicationRequest.httpPort) &&
         Objects.equals(this.httpsPort, createApplicationRequest.httpsPort) &&
         Objects.equals(this.l2Caching, createApplicationRequest.l2Caching) &&
-        Objects.equals(this.http3, createApplicationRequest.http3);
+        Objects.equals(this.http3, createApplicationRequest.http3) &&
+        Objects.equals(this.websocket, createApplicationRequest.websocket);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -516,7 +542,7 @@ public class CreateApplicationRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, applicationAcceleration, deliveryProtocol, originType, address, originProtocolPolicy, hostHeader, browserCacheSettings, cdnCacheSettings, browserCacheSettingsMaximumTtl, cdnCacheSettingsMaximumTtl, debugRules, supportedCiphers, httpPort, httpsPort, l2Caching, http3);
+    return Objects.hash(name, applicationAcceleration, deliveryProtocol, originType, address, originProtocolPolicy, hostHeader, browserCacheSettings, cdnCacheSettings, browserCacheSettingsMaximumTtl, cdnCacheSettingsMaximumTtl, debugRules, supportedCiphers, httpPort, httpsPort, l2Caching, http3, websocket);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -547,6 +573,7 @@ public class CreateApplicationRequest {
     sb.append("    httpsPort: ").append(toIndentedString(httpsPort)).append("\n");
     sb.append("    l2Caching: ").append(toIndentedString(l2Caching)).append("\n");
     sb.append("    http3: ").append(toIndentedString(http3)).append("\n");
+    sb.append("    websocket: ").append(toIndentedString(websocket)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -586,6 +613,7 @@ public class CreateApplicationRequest {
     openapiFields.add("https_port");
     openapiFields.add("l2_caching");
     openapiFields.add("http3");
+    openapiFields.add("websocket");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

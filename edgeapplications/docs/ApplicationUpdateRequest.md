@@ -24,6 +24,7 @@
 |**loadBalancer** | **Boolean** |  |  [optional] |
 |**rawLogs** | **Boolean** |  |  [optional] |
 |**webApplicationFirewall** | **Boolean** |  |  [optional] |
+|**websocket** | **Boolean** |  |  [optional] |
 
 
 
