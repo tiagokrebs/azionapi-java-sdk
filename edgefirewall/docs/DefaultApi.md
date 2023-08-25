@@ -40,8 +40,8 @@ public class Example {
     //tokenAuth.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    Integer page = 56; // Integer | 
-    Integer pageSize = 56; // Integer | 
+    Long page = 56L; // Long | 
+    Long pageSize = 56L; // Long | 
     String sort = "sort_example"; // String | 
     String orderBy = "orderBy_example"; // String | 
     try {
@@ -62,8 +62,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **page** | **Integer**|  | [optional] |
-| **pageSize** | **Integer**|  | [optional] |
+| **page** | **Long**|  | [optional] |
+| **pageSize** | **Long**|  | [optional] |
 | **sort** | **String**|  | [optional] |
 | **orderBy** | **String**|  | [optional] |
 
@@ -84,10 +84,11 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A list of edge firewalls |  -  |
+| **404** | Not found |  -  |
 
 <a id="edgeFirewallPost"></a>
 # **edgeFirewallPost**
-> edgeFirewallPost(createEdgeFirewallRequest)
+> EdgeFirewallResponse edgeFirewallPost(createEdgeFirewallRequest)
 
 Create a edge firewall
 
@@ -115,7 +116,8 @@ public class Example {
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     CreateEdgeFirewallRequest createEdgeFirewallRequest = new CreateEdgeFirewallRequest(); // CreateEdgeFirewallRequest | 
     try {
-      apiInstance.edgeFirewallPost(createEdgeFirewallRequest);
+      EdgeFirewallResponse result = apiInstance.edgeFirewallPost(createEdgeFirewallRequest);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#edgeFirewallPost");
       System.err.println("Status code: " + e.getCode());
@@ -135,7 +137,7 @@ public class Example {
 
 ### Return type
 
-null (empty response body)
+[**EdgeFirewallResponse**](EdgeFirewallResponse.md)
 
 ### Authorization
 
@@ -144,13 +146,13 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Edge firewall created |  -  |
-| **400** | Internal Server Error |  -  |
+| **400** | Bad Request |  -  |
 | **500** | Internal Server Error |  -  |
 
 <a id="edgeFirewallUuidDelete"></a>
@@ -218,6 +220,8 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successfully deleted |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not found |  -  |
 
 <a id="edgeFirewallUuidGet"></a>
 # **edgeFirewallUuidGet**
@@ -285,10 +289,12 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | An edge firewall object |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not found |  -  |
 
 <a id="edgeFirewallUuidPatch"></a>
 # **edgeFirewallUuidPatch**
-> ListEdgeFirewallResponse edgeFirewallUuidPatch(uuid, body)
+> EdgeFirewallResponse edgeFirewallUuidPatch(uuid, updateEdgeFirewallRequest)
 
 Update some edge firewall attributes, like \&quot;active\&quot;
 
@@ -315,9 +321,9 @@ public class Example {
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String uuid = "uuid_example"; // String | 
-    ListEdgeFirewallResponse body = new ListEdgeFirewallResponse(); // ListEdgeFirewallResponse | 
+    UpdateEdgeFirewallRequest updateEdgeFirewallRequest = new UpdateEdgeFirewallRequest(); // UpdateEdgeFirewallRequest | 
     try {
-      ListEdgeFirewallResponse result = apiInstance.edgeFirewallUuidPatch(uuid, body);
+      EdgeFirewallResponse result = apiInstance.edgeFirewallUuidPatch(uuid, updateEdgeFirewallRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#edgeFirewallUuidPatch");
@@ -335,11 +341,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **uuid** | **String**|  | |
-| **body** | **ListEdgeFirewallResponse**|  | |
+| **updateEdgeFirewallRequest** | [**UpdateEdgeFirewallRequest**](UpdateEdgeFirewallRequest.md)|  | |
 
 ### Return type
 
-[**ListEdgeFirewallResponse**](ListEdgeFirewallResponse.md)
+[**EdgeFirewallResponse**](EdgeFirewallResponse.md)
 
 ### Authorization
 
@@ -355,11 +361,12 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Successfully updated |  -  |
 | **400** | Bad Request |  -  |
+| **404** | Not found |  -  |
 | **500** | Internal Server Error |  -  |
 
 <a id="edgeFirewallUuidPut"></a>
 # **edgeFirewallUuidPut**
-> ListEdgeFirewallResponse edgeFirewallUuidPut(uuid, body)
+> EdgeFirewallResponse edgeFirewallUuidPut(uuid, updateEdgeFirewallRequest)
 
 Overwrite some edge firewall attributes, like \&quot;active\&quot;
 
@@ -386,9 +393,9 @@ public class Example {
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String uuid = "uuid_example"; // String | 
-    ListEdgeFirewallResponse body = new ListEdgeFirewallResponse(); // ListEdgeFirewallResponse | 
+    UpdateEdgeFirewallRequest updateEdgeFirewallRequest = new UpdateEdgeFirewallRequest(); // UpdateEdgeFirewallRequest | 
     try {
-      ListEdgeFirewallResponse result = apiInstance.edgeFirewallUuidPut(uuid, body);
+      EdgeFirewallResponse result = apiInstance.edgeFirewallUuidPut(uuid, updateEdgeFirewallRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#edgeFirewallUuidPut");
@@ -406,11 +413,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **uuid** | **String**|  | |
-| **body** | **ListEdgeFirewallResponse**|  | |
+| **updateEdgeFirewallRequest** | [**UpdateEdgeFirewallRequest**](UpdateEdgeFirewallRequest.md)|  | |
 
 ### Return type
 
-[**ListEdgeFirewallResponse**](ListEdgeFirewallResponse.md)
+[**EdgeFirewallResponse**](EdgeFirewallResponse.md)
 
 ### Authorization
 
@@ -426,5 +433,6 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Successfully updated |  -  |
 | **400** | Bad Request |  -  |
+| **404** | Not found |  -  |
 | **500** | Internal Server Error |  -  |
 

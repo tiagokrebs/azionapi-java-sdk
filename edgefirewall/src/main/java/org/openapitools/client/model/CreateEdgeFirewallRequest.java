@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * CreateEdgeFirewallRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-22T21:01:37.943873Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-25T11:47:14.763206Z[GMT]")
 public class CreateEdgeFirewallRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -60,7 +60,7 @@ public class CreateEdgeFirewallRequest {
 
   public static final String SERIALIZED_NAME_DOMAINS = "domains";
   @SerializedName(SERIALIZED_NAME_DOMAINS)
-  private List<Integer> domains;
+  private List<Long> domains;
 
   public static final String SERIALIZED_NAME_IS_ACTIVE = "is_active";
   @SerializedName(SERIALIZED_NAME_IS_ACTIVE)
@@ -102,13 +102,13 @@ public class CreateEdgeFirewallRequest {
   }
 
 
-  public CreateEdgeFirewallRequest domains(List<Integer> domains) {
+  public CreateEdgeFirewallRequest domains(List<Long> domains) {
     
     this.domains = domains;
     return this;
   }
 
-  public CreateEdgeFirewallRequest addDomainsItem(Integer domainsItem) {
+  public CreateEdgeFirewallRequest addDomainsItem(Long domainsItem) {
     if (this.domains == null) {
       this.domains = new ArrayList<>();
     }
@@ -121,12 +121,12 @@ public class CreateEdgeFirewallRequest {
    * @return domains
   **/
   @javax.annotation.Nullable
-  public List<Integer> getDomains() {
+  public List<Long> getDomains() {
     return domains;
   }
 
 
-  public void setDomains(List<Integer> domains) {
+  public void setDomains(List<Long> domains) {
     this.domains = domains;
   }
 

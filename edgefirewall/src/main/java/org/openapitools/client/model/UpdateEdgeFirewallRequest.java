@@ -50,29 +50,21 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * EdgeFirewall
+ * UpdateEdgeFirewallRequest
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-25T11:47:14.763206Z[GMT]")
-public class EdgeFirewall {
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
-  private Long id;
-
+public class UpdateEdgeFirewallRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
+  public static final String SERIALIZED_NAME_DOMAINS = "domains";
+  @SerializedName(SERIALIZED_NAME_DOMAINS)
+  private List<Long> domains;
+
   public static final String SERIALIZED_NAME_IS_ACTIVE = "is_active";
   @SerializedName(SERIALIZED_NAME_IS_ACTIVE)
   private Boolean isActive;
-
-  public static final String SERIALIZED_NAME_LAST_EDITOR = "last_editor";
-  @SerializedName(SERIALIZED_NAME_LAST_EDITOR)
-  private String lastEditor;
-
-  public static final String SERIALIZED_NAME_LAST_MODIFIED = "last_modified";
-  @SerializedName(SERIALIZED_NAME_LAST_MODIFIED)
-  private String lastModified;
 
   public static final String SERIALIZED_NAME_EDGE_FUNCTIONS_ENABLED = "edge_functions_enabled";
   @SerializedName(SERIALIZED_NAME_EDGE_FUNCTIONS_ENABLED)
@@ -86,39 +78,10 @@ public class EdgeFirewall {
   @SerializedName(SERIALIZED_NAME_WAF_ENABLED)
   private Boolean wafEnabled;
 
-  public static final String SERIALIZED_NAME_DEBUG_RULES = "debug_rules";
-  @SerializedName(SERIALIZED_NAME_DEBUG_RULES)
-  private Boolean debugRules;
-
-  public static final String SERIALIZED_NAME_DOMAINS = "domains";
-  @SerializedName(SERIALIZED_NAME_DOMAINS)
-  private List<Long> domains;
-
-  public EdgeFirewall() {
+  public UpdateEdgeFirewallRequest() {
   }
 
-  public EdgeFirewall id(Long id) {
-    
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Get id
-   * @return id
-  **/
-  @javax.annotation.Nullable
-  public Long getId() {
-    return id;
-  }
-
-
-  public void setId(Long id) {
-    this.id = id;
-  }
-
-
-  public EdgeFirewall name(String name) {
+  public UpdateEdgeFirewallRequest name(String name) {
     
     this.name = name;
     return this;
@@ -139,160 +102,13 @@ public class EdgeFirewall {
   }
 
 
-  public EdgeFirewall isActive(Boolean isActive) {
-    
-    this.isActive = isActive;
-    return this;
-  }
-
-   /**
-   * Get isActive
-   * @return isActive
-  **/
-  @javax.annotation.Nullable
-  public Boolean getIsActive() {
-    return isActive;
-  }
-
-
-  public void setIsActive(Boolean isActive) {
-    this.isActive = isActive;
-  }
-
-
-  public EdgeFirewall lastEditor(String lastEditor) {
-    
-    this.lastEditor = lastEditor;
-    return this;
-  }
-
-   /**
-   * Get lastEditor
-   * @return lastEditor
-  **/
-  @javax.annotation.Nullable
-  public String getLastEditor() {
-    return lastEditor;
-  }
-
-
-  public void setLastEditor(String lastEditor) {
-    this.lastEditor = lastEditor;
-  }
-
-
-  public EdgeFirewall lastModified(String lastModified) {
-    
-    this.lastModified = lastModified;
-    return this;
-  }
-
-   /**
-   * Get lastModified
-   * @return lastModified
-  **/
-  @javax.annotation.Nullable
-  public String getLastModified() {
-    return lastModified;
-  }
-
-
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-
-  public EdgeFirewall edgeFunctionsEnabled(Boolean edgeFunctionsEnabled) {
-    
-    this.edgeFunctionsEnabled = edgeFunctionsEnabled;
-    return this;
-  }
-
-   /**
-   * Get edgeFunctionsEnabled
-   * @return edgeFunctionsEnabled
-  **/
-  @javax.annotation.Nullable
-  public Boolean getEdgeFunctionsEnabled() {
-    return edgeFunctionsEnabled;
-  }
-
-
-  public void setEdgeFunctionsEnabled(Boolean edgeFunctionsEnabled) {
-    this.edgeFunctionsEnabled = edgeFunctionsEnabled;
-  }
-
-
-  public EdgeFirewall networkProtectionEnabled(Boolean networkProtectionEnabled) {
-    
-    this.networkProtectionEnabled = networkProtectionEnabled;
-    return this;
-  }
-
-   /**
-   * Get networkProtectionEnabled
-   * @return networkProtectionEnabled
-  **/
-  @javax.annotation.Nullable
-  public Boolean getNetworkProtectionEnabled() {
-    return networkProtectionEnabled;
-  }
-
-
-  public void setNetworkProtectionEnabled(Boolean networkProtectionEnabled) {
-    this.networkProtectionEnabled = networkProtectionEnabled;
-  }
-
-
-  public EdgeFirewall wafEnabled(Boolean wafEnabled) {
-    
-    this.wafEnabled = wafEnabled;
-    return this;
-  }
-
-   /**
-   * Get wafEnabled
-   * @return wafEnabled
-  **/
-  @javax.annotation.Nullable
-  public Boolean getWafEnabled() {
-    return wafEnabled;
-  }
-
-
-  public void setWafEnabled(Boolean wafEnabled) {
-    this.wafEnabled = wafEnabled;
-  }
-
-
-  public EdgeFirewall debugRules(Boolean debugRules) {
-    
-    this.debugRules = debugRules;
-    return this;
-  }
-
-   /**
-   * Get debugRules
-   * @return debugRules
-  **/
-  @javax.annotation.Nullable
-  public Boolean getDebugRules() {
-    return debugRules;
-  }
-
-
-  public void setDebugRules(Boolean debugRules) {
-    this.debugRules = debugRules;
-  }
-
-
-  public EdgeFirewall domains(List<Long> domains) {
+  public UpdateEdgeFirewallRequest domains(List<Long> domains) {
     
     this.domains = domains;
     return this;
   }
 
-  public EdgeFirewall addDomainsItem(Long domainsItem) {
+  public UpdateEdgeFirewallRequest addDomainsItem(Long domainsItem) {
     if (this.domains == null) {
       this.domains = new ArrayList<>();
     }
@@ -315,6 +131,90 @@ public class EdgeFirewall {
   }
 
 
+  public UpdateEdgeFirewallRequest isActive(Boolean isActive) {
+    
+    this.isActive = isActive;
+    return this;
+  }
+
+   /**
+   * Get isActive
+   * @return isActive
+  **/
+  @javax.annotation.Nullable
+  public Boolean getIsActive() {
+    return isActive;
+  }
+
+
+  public void setIsActive(Boolean isActive) {
+    this.isActive = isActive;
+  }
+
+
+  public UpdateEdgeFirewallRequest edgeFunctionsEnabled(Boolean edgeFunctionsEnabled) {
+    
+    this.edgeFunctionsEnabled = edgeFunctionsEnabled;
+    return this;
+  }
+
+   /**
+   * Get edgeFunctionsEnabled
+   * @return edgeFunctionsEnabled
+  **/
+  @javax.annotation.Nullable
+  public Boolean getEdgeFunctionsEnabled() {
+    return edgeFunctionsEnabled;
+  }
+
+
+  public void setEdgeFunctionsEnabled(Boolean edgeFunctionsEnabled) {
+    this.edgeFunctionsEnabled = edgeFunctionsEnabled;
+  }
+
+
+  public UpdateEdgeFirewallRequest networkProtectionEnabled(Boolean networkProtectionEnabled) {
+    
+    this.networkProtectionEnabled = networkProtectionEnabled;
+    return this;
+  }
+
+   /**
+   * Get networkProtectionEnabled
+   * @return networkProtectionEnabled
+  **/
+  @javax.annotation.Nullable
+  public Boolean getNetworkProtectionEnabled() {
+    return networkProtectionEnabled;
+  }
+
+
+  public void setNetworkProtectionEnabled(Boolean networkProtectionEnabled) {
+    this.networkProtectionEnabled = networkProtectionEnabled;
+  }
+
+
+  public UpdateEdgeFirewallRequest wafEnabled(Boolean wafEnabled) {
+    
+    this.wafEnabled = wafEnabled;
+    return this;
+  }
+
+   /**
+   * Get wafEnabled
+   * @return wafEnabled
+  **/
+  @javax.annotation.Nullable
+  public Boolean getWafEnabled() {
+    return wafEnabled;
+  }
+
+
+  public void setWafEnabled(Boolean wafEnabled) {
+    this.wafEnabled = wafEnabled;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -324,38 +224,30 @@ public class EdgeFirewall {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    EdgeFirewall edgeFirewall = (EdgeFirewall) o;
-    return Objects.equals(this.id, edgeFirewall.id) &&
-        Objects.equals(this.name, edgeFirewall.name) &&
-        Objects.equals(this.isActive, edgeFirewall.isActive) &&
-        Objects.equals(this.lastEditor, edgeFirewall.lastEditor) &&
-        Objects.equals(this.lastModified, edgeFirewall.lastModified) &&
-        Objects.equals(this.edgeFunctionsEnabled, edgeFirewall.edgeFunctionsEnabled) &&
-        Objects.equals(this.networkProtectionEnabled, edgeFirewall.networkProtectionEnabled) &&
-        Objects.equals(this.wafEnabled, edgeFirewall.wafEnabled) &&
-        Objects.equals(this.debugRules, edgeFirewall.debugRules) &&
-        Objects.equals(this.domains, edgeFirewall.domains);
+    UpdateEdgeFirewallRequest updateEdgeFirewallRequest = (UpdateEdgeFirewallRequest) o;
+    return Objects.equals(this.name, updateEdgeFirewallRequest.name) &&
+        Objects.equals(this.domains, updateEdgeFirewallRequest.domains) &&
+        Objects.equals(this.isActive, updateEdgeFirewallRequest.isActive) &&
+        Objects.equals(this.edgeFunctionsEnabled, updateEdgeFirewallRequest.edgeFunctionsEnabled) &&
+        Objects.equals(this.networkProtectionEnabled, updateEdgeFirewallRequest.networkProtectionEnabled) &&
+        Objects.equals(this.wafEnabled, updateEdgeFirewallRequest.wafEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, isActive, lastEditor, lastModified, edgeFunctionsEnabled, networkProtectionEnabled, wafEnabled, debugRules, domains);
+    return Objects.hash(name, domains, isActive, edgeFunctionsEnabled, networkProtectionEnabled, wafEnabled);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class EdgeFirewall {\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("class UpdateEdgeFirewallRequest {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    domains: ").append(toIndentedString(domains)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
-    sb.append("    lastEditor: ").append(toIndentedString(lastEditor)).append("\n");
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
     sb.append("    edgeFunctionsEnabled: ").append(toIndentedString(edgeFunctionsEnabled)).append("\n");
     sb.append("    networkProtectionEnabled: ").append(toIndentedString(networkProtectionEnabled)).append("\n");
     sb.append("    wafEnabled: ").append(toIndentedString(wafEnabled)).append("\n");
-    sb.append("    debugRules: ").append(toIndentedString(debugRules)).append("\n");
-    sb.append("    domains: ").append(toIndentedString(domains)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -378,16 +270,12 @@ public class EdgeFirewall {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("id");
     openapiFields.add("name");
+    openapiFields.add("domains");
     openapiFields.add("is_active");
-    openapiFields.add("last_editor");
-    openapiFields.add("last_modified");
     openapiFields.add("edge_functions_enabled");
     openapiFields.add("network_protection_enabled");
     openapiFields.add("waf_enabled");
-    openapiFields.add("debug_rules");
-    openapiFields.add("domains");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -397,30 +285,24 @@ public class EdgeFirewall {
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to EdgeFirewall
+  * @throws IOException if the JSON Object is invalid with respect to UpdateEdgeFirewallRequest
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (!EdgeFirewall.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in EdgeFirewall is not found in the empty JSON string", EdgeFirewall.openapiRequiredFields.toString()));
+        if (!UpdateEdgeFirewallRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateEdgeFirewallRequest is not found in the empty JSON string", UpdateEdgeFirewallRequest.openapiRequiredFields.toString()));
         }
       }
 
       Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
-        if (!EdgeFirewall.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `EdgeFirewall` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        if (!UpdateEdgeFirewallRequest.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdateEdgeFirewallRequest` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("last_editor") != null && !jsonObj.get("last_editor").isJsonNull()) && !jsonObj.get("last_editor").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `last_editor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_editor").toString()));
-      }
-      if ((jsonObj.get("last_modified") != null && !jsonObj.get("last_modified").isJsonNull()) && !jsonObj.get("last_modified").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `last_modified` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_modified").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("domains") != null && !jsonObj.get("domains").isJsonArray()) {
@@ -432,22 +314,22 @@ public class EdgeFirewall {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!EdgeFirewall.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'EdgeFirewall' and its subtypes
+       if (!UpdateEdgeFirewallRequest.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'UpdateEdgeFirewallRequest' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<EdgeFirewall> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(EdgeFirewall.class));
+       final TypeAdapter<UpdateEdgeFirewallRequest> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateEdgeFirewallRequest.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<EdgeFirewall>() {
+       return (TypeAdapter<T>) new TypeAdapter<UpdateEdgeFirewallRequest>() {
            @Override
-           public void write(JsonWriter out, EdgeFirewall value) throws IOException {
+           public void write(JsonWriter out, UpdateEdgeFirewallRequest value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public EdgeFirewall read(JsonReader in) throws IOException {
+           public UpdateEdgeFirewallRequest read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              return thisAdapter.fromJsonTree(jsonObj);
@@ -458,18 +340,18 @@ public class EdgeFirewall {
   }
 
  /**
-  * Create an instance of EdgeFirewall given an JSON string
+  * Create an instance of UpdateEdgeFirewallRequest given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of EdgeFirewall
-  * @throws IOException if the JSON string is invalid with respect to EdgeFirewall
+  * @return An instance of UpdateEdgeFirewallRequest
+  * @throws IOException if the JSON string is invalid with respect to UpdateEdgeFirewallRequest
   */
-  public static EdgeFirewall fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, EdgeFirewall.class);
+  public static UpdateEdgeFirewallRequest fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, UpdateEdgeFirewallRequest.class);
   }
 
  /**
-  * Convert an instance of EdgeFirewall to an JSON string
+  * Convert an instance of UpdateEdgeFirewallRequest to an JSON string
   *
   * @return JSON string
   */
