@@ -60,11 +60,11 @@ import org.openapitools.client.auth.ApiKeyAuth;
  */
 public class ApiClient {
 
-    private String basePath = "https://stage-api.azion.net/variables";
+    private String basePath = "https://api.azionapi.net/variables";
     protected List<ServerConfiguration> servers = new ArrayList<ServerConfiguration>(Arrays.asList(
     new ServerConfiguration(
-      "https://stage-api.azion.net/variables",
-      "Stage",
+      "https://api.azionapi.net/variables",
+      "Production",
       new HashMap<String, ServerVariable>()
     )
   ));
@@ -157,7 +157,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g https://stage-api.azion.net/variables
+     * @param basePath Base path of the URL (e.g https://api.azionapi.net/variables
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {
@@ -1168,12 +1168,15 @@ public class ApiClient {
         // prepare HTTP request body
         RequestBody reqBody;
         String contentType = headerParams.get("Content-Type");
-
+        String contentTypePure = contentType;
+        if (contentTypePure != null && contentTypePure.contains(";")) {
+            contentTypePure = contentType.substring(0, contentType.indexOf(";"));
+        }
         if (!HttpMethod.permitsRequestBody(method)) {
             reqBody = null;
-        } else if ("application/x-www-form-urlencoded".equals(contentType)) {
+        } else if ("application/x-www-form-urlencoded".equals(contentTypePure)) {
             reqBody = buildRequestBodyFormEncoding(formParams);
-        } else if ("multipart/form-data".equals(contentType)) {
+        } else if ("multipart/form-data".equals(contentTypePure)) {
             reqBody = buildRequestBodyMultipart(formParams);
         } else if (body == null) {
             if ("DELETE".equals(method)) {
