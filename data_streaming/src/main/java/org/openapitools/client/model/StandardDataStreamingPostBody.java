@@ -14,7 +14,6 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.DataStreamingEndpointTypeStandard;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -54,7 +54,7 @@ import org.openapitools.client.JSON;
 /**
  * StandardDataStreamingPostBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-22T12:30:18.138783Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-01T19:02:16.279151Z[GMT]")
 public class StandardDataStreamingPostBody {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -427,25 +427,26 @@ public class StandardDataStreamingPostBody {
   }
 
  /**
-  * Validates the JSON Object and throws an exception if issues found
+  * Validates the JSON Element and throws an exception if issues found
   *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to StandardDataStreamingPostBody
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to StandardDataStreamingPostBody
   */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!StandardDataStreamingPostBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!StandardDataStreamingPostBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in StandardDataStreamingPostBody is not found in the empty JSON string", StandardDataStreamingPostBody.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
         if (!StandardDataStreamingPostBody.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `StandardDataStreamingPostBody` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `StandardDataStreamingPostBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
@@ -454,10 +455,10 @@ public class StandardDataStreamingPostBody {
       }
       // validate the optional field `endpoint`
       if (jsonObj.get("endpoint") != null && !jsonObj.get("endpoint").isJsonNull()) {
-        DataStreamingEndpointTypeStandard.validateJsonObject(jsonObj.getAsJsonObject("endpoint"));
+        DataStreamingEndpointTypeStandard.validateJsonElement(jsonObj.get("endpoint"));
       }
       // ensure the optional json data is an array if present
-      if (jsonObj.get("domains_ids") != null && !jsonObj.get("domains_ids").isJsonArray()) {
+      if (jsonObj.get("domains_ids") != null && !jsonObj.get("domains_ids").isJsonNull() && !jsonObj.get("domains_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `domains_ids` to be an array in the JSON string but got `%s`", jsonObj.get("domains_ids").toString()));
       }
   }
@@ -482,9 +483,9 @@ public class StandardDataStreamingPostBody {
 
            @Override
            public StandardDataStreamingPostBody read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();

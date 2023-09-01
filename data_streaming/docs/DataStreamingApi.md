@@ -18,7 +18,7 @@ All URIs are relative to *https://api.azionapi.net*
 
 Create a new data streaming
 
-
+Create a new data streaming.
 
 ### Example
 ```java

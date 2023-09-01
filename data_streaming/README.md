@@ -2,7 +2,7 @@
 
 Data Streaming - OpenAPI
 - API version: 1.0.0
-  - Build date: 2023-08-22T12:30:18.138783Z[GMT]
+  - Build date: 2023-09-01T19:02:16.279151Z[GMT]
 
 The Data Streaming API allows you to manage your existing data streamings and templates.
 Data Streaming allows you to feed your stream processing, SIEM, and big data platforms with the event logs from your applications on Azion in real time.

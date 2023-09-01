@@ -37,7 +37,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class DataStreamingApi {
     private ApiClient localVarApiClient;
@@ -153,7 +152,7 @@ public class DataStreamingApi {
 
     /**
      * Create a new data streaming
-     * 
+     * Create a new data streaming.
      * @param createNewDataStreamingRequest  (required)
      * @return CreateNewDataStreaming201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -177,7 +176,7 @@ public class DataStreamingApi {
 
     /**
      * Create a new data streaming
-     * 
+     * Create a new data streaming.
      * @param createNewDataStreamingRequest  (required)
      * @return ApiResponse&lt;CreateNewDataStreaming201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -202,7 +201,7 @@ public class DataStreamingApi {
 
     /**
      * Create a new data streaming (asynchronously)
-     * 
+     * Create a new data streaming.
      * @param createNewDataStreamingRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
