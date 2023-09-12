@@ -16,18 +16,17 @@ package org.openapitools.client;
 import java.util.Map;
 import java.util.List;
 
-import javax.ws.rs.core.GenericType;
 
 /**
  * <p>ApiException class.</p>
  */
 @SuppressWarnings("serial")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-22T12:30:18.138783Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-01T19:02:16.279151Z[GMT]")
 public class ApiException extends Exception {
     private int code = 0;
     private Map<String, List<String>> responseHeaders = null;
     private String responseBody = null;
- 
+
     /**
      * <p>Constructor for ApiException.</p>
      */

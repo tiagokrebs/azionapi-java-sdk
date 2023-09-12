@@ -14,7 +14,6 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.CustomDataStreamingPostBody;
 import org.openapitools.client.model.DataStreamingEndpointTypeStandard;
@@ -29,7 +29,7 @@ import org.openapitools.client.model.DataStreamingPostBody;
 import org.openapitools.client.model.StandardDataStreamingPostBody;
 import org.openapitools.jackson.nullable.JsonNullable;
 
-import javax.ws.rs.core.GenericType;
+
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -39,6 +39,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.google.gson.Gson;
@@ -58,11 +59,12 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-22T12:30:18.138783Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-01T19:02:16.279151Z[GMT]")
 public class CreateNewDataStreamingRequest extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(CreateNewDataStreamingRequest.class.getName());
 
@@ -74,9 +76,9 @@ public class CreateNewDataStreamingRequest extends AbstractOpenApiSchema {
                 return null; // this class only serializes 'CreateNewDataStreamingRequest' and its subtypes
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<CustomDataStreamingPostBody> adapterCustomDataStreamingPostBody = gson.getDelegateAdapter(this, TypeToken.get(CustomDataStreamingPostBody.class));
             final TypeAdapter<DataStreamingPostBody> adapterDataStreamingPostBody = gson.getDelegateAdapter(this, TypeToken.get(DataStreamingPostBody.class));
             final TypeAdapter<StandardDataStreamingPostBody> adapterStandardDataStreamingPostBody = gson.getDelegateAdapter(this, TypeToken.get(StandardDataStreamingPostBody.class));
+            final TypeAdapter<CustomDataStreamingPostBody> adapterCustomDataStreamingPostBody = gson.getDelegateAdapter(this, TypeToken.get(CustomDataStreamingPostBody.class));
 
             return (TypeAdapter<T>) new TypeAdapter<CreateNewDataStreamingRequest>() {
                 @Override
@@ -86,92 +88,87 @@ public class CreateNewDataStreamingRequest extends AbstractOpenApiSchema {
                         return;
                     }
 
-                    // check if the actual instance is of the type `CustomDataStreamingPostBody`
-                    if (value.getActualInstance() instanceof CustomDataStreamingPostBody) {
-                        JsonObject obj = adapterCustomDataStreamingPostBody.toJsonTree((CustomDataStreamingPostBody)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
-                        return;
-                    }
-
                     // check if the actual instance is of the type `DataStreamingPostBody`
                     if (value.getActualInstance() instanceof DataStreamingPostBody) {
-                        JsonObject obj = adapterDataStreamingPostBody.toJsonTree((DataStreamingPostBody)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
-                        return;
+                      JsonElement element = adapterDataStreamingPostBody.toJsonTree((DataStreamingPostBody)value.getActualInstance());
+                      elementAdapter.write(out, element);
+                      return;
                     }
-
                     // check if the actual instance is of the type `StandardDataStreamingPostBody`
                     if (value.getActualInstance() instanceof StandardDataStreamingPostBody) {
-                        JsonObject obj = adapterStandardDataStreamingPostBody.toJsonTree((StandardDataStreamingPostBody)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
-                        return;
+                      JsonElement element = adapterStandardDataStreamingPostBody.toJsonTree((StandardDataStreamingPostBody)value.getActualInstance());
+                      elementAdapter.write(out, element);
+                      return;
                     }
-
+                    // check if the actual instance is of the type `CustomDataStreamingPostBody`
+                    if (value.getActualInstance() instanceof CustomDataStreamingPostBody) {
+                      JsonElement element = adapterCustomDataStreamingPostBody.toJsonTree((CustomDataStreamingPostBody)value.getActualInstance());
+                      elementAdapter.write(out, element);
+                      return;
+                    }
                     throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: CustomDataStreamingPostBody, DataStreamingPostBody, StandardDataStreamingPostBody");
                 }
 
                 @Override
                 public CreateNewDataStreamingRequest read(JsonReader in) throws IOException {
                     Object deserialized = null;
-                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
+                    JsonElement jsonElement = elementAdapter.read(in);
 
                     int match = 0;
                     ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
-                    // deserialize CustomDataStreamingPostBody
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        CustomDataStreamingPostBody.validateJsonObject(jsonObject);
-                        actualAdapter = adapterCustomDataStreamingPostBody;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'CustomDataStreamingPostBody'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for CustomDataStreamingPostBody failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'CustomDataStreamingPostBody'", e);
-                    }
-
                     // deserialize DataStreamingPostBody
                     try {
-                        // validate the JSON object to see if any exception is thrown
-                        DataStreamingPostBody.validateJsonObject(jsonObject);
-                        actualAdapter = adapterDataStreamingPostBody;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'DataStreamingPostBody'");
+                      // validate the JSON object to see if any exception is thrown
+                      DataStreamingPostBody.validateJsonElement(jsonElement);
+                      actualAdapter = adapterDataStreamingPostBody;
+                      match++;
+                      log.log(Level.FINER, "Input data matches schema 'DataStreamingPostBody'");
                     } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for DataStreamingPostBody failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'DataStreamingPostBody'", e);
+                      // deserialization failed, continue
+                      errorMessages.add(String.format("Deserialization for DataStreamingPostBody failed with `%s`.", e.getMessage()));
+                      log.log(Level.FINER, "Input data does not match schema 'DataStreamingPostBody'", e);
                     }
-
                     // deserialize StandardDataStreamingPostBody
                     try {
-                        // validate the JSON object to see if any exception is thrown
-                        StandardDataStreamingPostBody.validateJsonObject(jsonObject);
-                        actualAdapter = adapterStandardDataStreamingPostBody;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'StandardDataStreamingPostBody'");
+                      // validate the JSON object to see if any exception is thrown
+                      StandardDataStreamingPostBody.validateJsonElement(jsonElement);
+                      actualAdapter = adapterStandardDataStreamingPostBody;
+                      match++;
+                      log.log(Level.FINER, "Input data matches schema 'StandardDataStreamingPostBody'");
                     } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for StandardDataStreamingPostBody failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'StandardDataStreamingPostBody'", e);
+                      // deserialization failed, continue
+                      errorMessages.add(String.format("Deserialization for StandardDataStreamingPostBody failed with `%s`.", e.getMessage()));
+                      log.log(Level.FINER, "Input data does not match schema 'StandardDataStreamingPostBody'", e);
+                    }
+                    // deserialize CustomDataStreamingPostBody
+                    try {
+                      // validate the JSON object to see if any exception is thrown
+                      CustomDataStreamingPostBody.validateJsonElement(jsonElement);
+                      actualAdapter = adapterCustomDataStreamingPostBody;
+                      match++;
+                      log.log(Level.FINER, "Input data matches schema 'CustomDataStreamingPostBody'");
+                    } catch (Exception e) {
+                      // deserialization failed, continue
+                      errorMessages.add(String.format("Deserialization for CustomDataStreamingPostBody failed with `%s`.", e.getMessage()));
+                      log.log(Level.FINER, "Input data does not match schema 'CustomDataStreamingPostBody'", e);
                     }
 
                     if (match == 1) {
                         CreateNewDataStreamingRequest ret = new CreateNewDataStreamingRequest();
-                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for CreateNewDataStreamingRequest: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for CreateNewDataStreamingRequest: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
     }
 
     // store a list of schema names defined in oneOf
-    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+    public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
 
     public CreateNewDataStreamingRequest() {
         super("oneOf", Boolean.FALSE);
@@ -193,16 +190,13 @@ public class CreateNewDataStreamingRequest extends AbstractOpenApiSchema {
     }
 
     static {
-        schemas.put("CustomDataStreamingPostBody", new GenericType<CustomDataStreamingPostBody>() {
-        });
-        schemas.put("DataStreamingPostBody", new GenericType<DataStreamingPostBody>() {
-        });
-        schemas.put("StandardDataStreamingPostBody", new GenericType<StandardDataStreamingPostBody>() {
-        });
+        schemas.put("DataStreamingPostBody", DataStreamingPostBody.class);
+        schemas.put("StandardDataStreamingPostBody", StandardDataStreamingPostBody.class);
+        schemas.put("CustomDataStreamingPostBody", CustomDataStreamingPostBody.class);
     }
 
     @Override
-    public Map<String, GenericType> getSchemas() {
+    public Map<String, Class<?>> getSchemas() {
         return CreateNewDataStreamingRequest.schemas;
     }
 
@@ -212,21 +206,20 @@ public class CreateNewDataStreamingRequest extends AbstractOpenApiSchema {
      * CustomDataStreamingPostBody, DataStreamingPostBody, StandardDataStreamingPostBody
      *
      * It could be an instance of the 'oneOf' schemas.
-     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
      */
     @Override
     public void setActualInstance(Object instance) {
-        if (instance instanceof CustomDataStreamingPostBody) {
-            super.setActualInstance(instance);
-            return;
-        }
-
         if (instance instanceof DataStreamingPostBody) {
             super.setActualInstance(instance);
             return;
         }
 
         if (instance instanceof StandardDataStreamingPostBody) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof CustomDataStreamingPostBody) {
             super.setActualInstance(instance);
             return;
         }
@@ -246,17 +239,6 @@ public class CreateNewDataStreamingRequest extends AbstractOpenApiSchema {
     }
 
     /**
-     * Get the actual instance of `CustomDataStreamingPostBody`. If the actual instance is not `CustomDataStreamingPostBody`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `CustomDataStreamingPostBody`
-     * @throws ClassCastException if the instance is not `CustomDataStreamingPostBody`
-     */
-    public CustomDataStreamingPostBody getCustomDataStreamingPostBody() throws ClassCastException {
-        return (CustomDataStreamingPostBody)super.getActualInstance();
-    }
-
-    /**
      * Get the actual instance of `DataStreamingPostBody`. If the actual instance is not `DataStreamingPostBody`,
      * the ClassCastException will be thrown.
      *
@@ -266,7 +248,6 @@ public class CreateNewDataStreamingRequest extends AbstractOpenApiSchema {
     public DataStreamingPostBody getDataStreamingPostBody() throws ClassCastException {
         return (DataStreamingPostBody)super.getActualInstance();
     }
-
     /**
      * Get the actual instance of `StandardDataStreamingPostBody`. If the actual instance is not `StandardDataStreamingPostBody`,
      * the ClassCastException will be thrown.
@@ -277,29 +258,30 @@ public class CreateNewDataStreamingRequest extends AbstractOpenApiSchema {
     public StandardDataStreamingPostBody getStandardDataStreamingPostBody() throws ClassCastException {
         return (StandardDataStreamingPostBody)super.getActualInstance();
     }
-
+    /**
+     * Get the actual instance of `CustomDataStreamingPostBody`. If the actual instance is not `CustomDataStreamingPostBody`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `CustomDataStreamingPostBody`
+     * @throws ClassCastException if the instance is not `CustomDataStreamingPostBody`
+     */
+    public CustomDataStreamingPostBody getCustomDataStreamingPostBody() throws ClassCastException {
+        return (CustomDataStreamingPostBody)super.getActualInstance();
+    }
 
  /**
-  * Validates the JSON Object and throws an exception if issues found
+  * Validates the JSON Element and throws an exception if issues found
   *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to CreateNewDataStreamingRequest
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to CreateNewDataStreamingRequest
   */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     // validate oneOf schemas one by one
     int validCount = 0;
     ArrayList<String> errorMessages = new ArrayList<>();
-    // validate the json string with CustomDataStreamingPostBody
-    try {
-      CustomDataStreamingPostBody.validateJsonObject(jsonObj);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for CustomDataStreamingPostBody failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
     // validate the json string with DataStreamingPostBody
     try {
-      DataStreamingPostBody.validateJsonObject(jsonObj);
+      DataStreamingPostBody.validateJsonElement(jsonElement);
       validCount++;
     } catch (Exception e) {
       errorMessages.add(String.format("Deserialization for DataStreamingPostBody failed with `%s`.", e.getMessage()));
@@ -307,14 +289,22 @@ public class CreateNewDataStreamingRequest extends AbstractOpenApiSchema {
     }
     // validate the json string with StandardDataStreamingPostBody
     try {
-      StandardDataStreamingPostBody.validateJsonObject(jsonObj);
+      StandardDataStreamingPostBody.validateJsonElement(jsonElement);
       validCount++;
     } catch (Exception e) {
       errorMessages.add(String.format("Deserialization for StandardDataStreamingPostBody failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
+    // validate the json string with CustomDataStreamingPostBody
+    try {
+      CustomDataStreamingPostBody.validateJsonElement(jsonElement);
+      validCount++;
+    } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for CustomDataStreamingPostBody failed with `%s`.", e.getMessage()));
+      // continue to the next one
+    }
     if (validCount != 1) {
-      throw new IOException(String.format("The JSON string is invalid for CreateNewDataStreamingRequest with oneOf schemas: CustomDataStreamingPostBody, DataStreamingPostBody, StandardDataStreamingPostBody. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonObj.toString()));
+      throw new IOException(String.format("The JSON string is invalid for CreateNewDataStreamingRequest with oneOf schemas: CustomDataStreamingPostBody, DataStreamingPostBody, StandardDataStreamingPostBody. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
     }
   }
 
