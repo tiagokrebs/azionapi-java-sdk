@@ -12,6 +12,7 @@
 |**deliveryProtocol** | **String** |  |  [optional] |
 |**originType** | **String** |  |  [optional] |
 |**address** | **String** |  |  [optional] |
+|**minimumTlsVersion** | **String** |  |  [optional] |
 |**originProtocolPolicy** | **String** |  |  [optional] |
 |**hostHeader** | **String** |  |  [optional] |
 |**browserCacheSettings** | **String** |  |  [optional] |

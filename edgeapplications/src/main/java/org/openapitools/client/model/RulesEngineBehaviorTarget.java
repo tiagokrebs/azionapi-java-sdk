@@ -14,7 +14,6 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,9 +21,10 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Arrays;
 import org.openapitools.client.model.RulesEngineBehaviorTargetOneOf;
 
-import javax.ws.rs.core.GenericType;
+
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -34,6 +34,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.google.gson.Gson;
@@ -53,11 +54,12 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-23T20:53:13.124416Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-12T14:42:28.109450Z[GMT]")
 public class RulesEngineBehaviorTarget extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(RulesEngineBehaviorTarget.class.getName());
 
@@ -69,9 +71,9 @@ public class RulesEngineBehaviorTarget extends AbstractOpenApiSchema {
                 return null; // this class only serializes 'RulesEngineBehaviorTarget' and its subtypes
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<String> adapterString = gson.getDelegateAdapter(this, TypeToken.get(String.class));
             final TypeAdapter<BigDecimal> adapterBigDecimal = gson.getDelegateAdapter(this, TypeToken.get(BigDecimal.class));
             final TypeAdapter<RulesEngineBehaviorTargetOneOf> adapterRulesEngineBehaviorTargetOneOf = gson.getDelegateAdapter(this, TypeToken.get(RulesEngineBehaviorTargetOneOf.class));
-            final TypeAdapter<String> adapterString = gson.getDelegateAdapter(this, TypeToken.get(String.class));
 
             return (TypeAdapter<T>) new TypeAdapter<RulesEngineBehaviorTarget>() {
                 @Override
@@ -81,92 +83,91 @@ public class RulesEngineBehaviorTarget extends AbstractOpenApiSchema {
                         return;
                     }
 
-                    // check if the actual instance is of the type `BigDecimal`
-                    if (value.getActualInstance() instanceof BigDecimal) {
-                        JsonObject obj = adapterBigDecimal.toJsonTree((BigDecimal)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
-                        return;
-                    }
-
-                    // check if the actual instance is of the type `RulesEngineBehaviorTargetOneOf`
-                    if (value.getActualInstance() instanceof RulesEngineBehaviorTargetOneOf) {
-                        JsonObject obj = adapterRulesEngineBehaviorTargetOneOf.toJsonTree((RulesEngineBehaviorTargetOneOf)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
-                        return;
-                    }
-
                     // check if the actual instance is of the type `String`
                     if (value.getActualInstance() instanceof String) {
-                        JsonObject obj = adapterString.toJsonTree((String)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
-                        return;
+                      JsonPrimitive primitive = adapterString.toJsonTree((String)value.getActualInstance()).getAsJsonPrimitive();
+                      elementAdapter.write(out, primitive);
+                      return;
                     }
-
+                    // check if the actual instance is of the type `BigDecimal`
+                    if (value.getActualInstance() instanceof BigDecimal) {
+                      JsonElement element = adapterBigDecimal.toJsonTree((BigDecimal)value.getActualInstance());
+                      elementAdapter.write(out, element);
+                      return;
+                    }
+                    // check if the actual instance is of the type `RulesEngineBehaviorTargetOneOf`
+                    if (value.getActualInstance() instanceof RulesEngineBehaviorTargetOneOf) {
+                      JsonElement element = adapterRulesEngineBehaviorTargetOneOf.toJsonTree((RulesEngineBehaviorTargetOneOf)value.getActualInstance());
+                      elementAdapter.write(out, element);
+                      return;
+                    }
                     throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: BigDecimal, RulesEngineBehaviorTargetOneOf, String");
                 }
 
                 @Override
                 public RulesEngineBehaviorTarget read(JsonReader in) throws IOException {
                     Object deserialized = null;
-                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
+                    JsonElement jsonElement = elementAdapter.read(in);
 
                     int match = 0;
                     ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
-                    // deserialize BigDecimal
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        BigDecimal.validateJsonObject(jsonObject);
-                        actualAdapter = adapterBigDecimal;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'BigDecimal'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for BigDecimal failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'BigDecimal'", e);
-                    }
-
-                    // deserialize RulesEngineBehaviorTargetOneOf
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        RulesEngineBehaviorTargetOneOf.validateJsonObject(jsonObject);
-                        actualAdapter = adapterRulesEngineBehaviorTargetOneOf;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'RulesEngineBehaviorTargetOneOf'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for RulesEngineBehaviorTargetOneOf failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'RulesEngineBehaviorTargetOneOf'", e);
-                    }
-
                     // deserialize String
                     try {
-                        // validate the JSON object to see if any exception is thrown
-                        String.validateJsonObject(jsonObject);
-                        actualAdapter = adapterString;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'String'");
+                      // validate the JSON object to see if any exception is thrown
+                      if(!jsonElement.getAsJsonPrimitive().isString()) {
+                        throw new IllegalArgumentException(String.format("Expected json element to be of type String in the JSON string but got `%s`", jsonElement.toString()));
+                      }
+                      actualAdapter = adapterString;
+                      match++;
+                      log.log(Level.FINER, "Input data matches schema 'String'");
                     } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for String failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'String'", e);
+                      // deserialization failed, continue
+                      errorMessages.add(String.format("Deserialization for String failed with `%s`.", e.getMessage()));
+                      log.log(Level.FINER, "Input data does not match schema 'String'", e);
+                    }
+                    // deserialize BigDecimal
+                    try {
+                      // validate the JSON object to see if any exception is thrown
+                      if(!jsonElement.getAsJsonPrimitive().isNumber()) {
+                        throw new IllegalArgumentException(String.format("Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
+                      }
+                      actualAdapter = adapterBigDecimal;
+                      match++;
+                      log.log(Level.FINER, "Input data matches schema 'BigDecimal'");
+                    } catch (Exception e) {
+                      // deserialization failed, continue
+                      errorMessages.add(String.format("Deserialization for BigDecimal failed with `%s`.", e.getMessage()));
+                      log.log(Level.FINER, "Input data does not match schema 'BigDecimal'", e);
+                    }
+                    // deserialize RulesEngineBehaviorTargetOneOf
+                    try {
+                      // validate the JSON object to see if any exception is thrown
+                      RulesEngineBehaviorTargetOneOf.validateJsonElement(jsonElement);
+                      actualAdapter = adapterRulesEngineBehaviorTargetOneOf;
+                      match++;
+                      log.log(Level.FINER, "Input data matches schema 'RulesEngineBehaviorTargetOneOf'");
+                    } catch (Exception e) {
+                      // deserialization failed, continue
+                      errorMessages.add(String.format("Deserialization for RulesEngineBehaviorTargetOneOf failed with `%s`.", e.getMessage()));
+                      log.log(Level.FINER, "Input data does not match schema 'RulesEngineBehaviorTargetOneOf'", e);
                     }
 
                     if (match == 1) {
                         RulesEngineBehaviorTarget ret = new RulesEngineBehaviorTarget();
-                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for RulesEngineBehaviorTarget: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for RulesEngineBehaviorTarget: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
     }
 
     // store a list of schema names defined in oneOf
-    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+    public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
 
     public RulesEngineBehaviorTarget() {
         super("oneOf", Boolean.FALSE);
@@ -188,16 +189,13 @@ public class RulesEngineBehaviorTarget extends AbstractOpenApiSchema {
     }
 
     static {
-        schemas.put("BigDecimal", new GenericType<BigDecimal>() {
-        });
-        schemas.put("RulesEngineBehaviorTargetOneOf", new GenericType<RulesEngineBehaviorTargetOneOf>() {
-        });
-        schemas.put("String", new GenericType<String>() {
-        });
+        schemas.put("String", String.class);
+        schemas.put("BigDecimal", BigDecimal.class);
+        schemas.put("RulesEngineBehaviorTargetOneOf", RulesEngineBehaviorTargetOneOf.class);
     }
 
     @Override
-    public Map<String, GenericType> getSchemas() {
+    public Map<String, Class<?>> getSchemas() {
         return RulesEngineBehaviorTarget.schemas;
     }
 
@@ -207,21 +205,20 @@ public class RulesEngineBehaviorTarget extends AbstractOpenApiSchema {
      * BigDecimal, RulesEngineBehaviorTargetOneOf, String
      *
      * It could be an instance of the 'oneOf' schemas.
-     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
      */
     @Override
     public void setActualInstance(Object instance) {
+        if (instance instanceof String) {
+            super.setActualInstance(instance);
+            return;
+        }
+
         if (instance instanceof BigDecimal) {
             super.setActualInstance(instance);
             return;
         }
 
         if (instance instanceof RulesEngineBehaviorTargetOneOf) {
-            super.setActualInstance(instance);
-            return;
-        }
-
-        if (instance instanceof String) {
             super.setActualInstance(instance);
             return;
         }
@@ -241,6 +238,16 @@ public class RulesEngineBehaviorTarget extends AbstractOpenApiSchema {
     }
 
     /**
+     * Get the actual instance of `String`. If the actual instance is not `String`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `String`
+     * @throws ClassCastException if the instance is not `String`
+     */
+    public String getString() throws ClassCastException {
+        return (String)super.getActualInstance();
+    }
+    /**
      * Get the actual instance of `BigDecimal`. If the actual instance is not `BigDecimal`,
      * the ClassCastException will be thrown.
      *
@@ -250,7 +257,6 @@ public class RulesEngineBehaviorTarget extends AbstractOpenApiSchema {
     public BigDecimal getBigDecimal() throws ClassCastException {
         return (BigDecimal)super.getActualInstance();
     }
-
     /**
      * Get the actual instance of `RulesEngineBehaviorTargetOneOf`. If the actual instance is not `RulesEngineBehaviorTargetOneOf`,
      * the ClassCastException will be thrown.
@@ -262,31 +268,31 @@ public class RulesEngineBehaviorTarget extends AbstractOpenApiSchema {
         return (RulesEngineBehaviorTargetOneOf)super.getActualInstance();
     }
 
-    /**
-     * Get the actual instance of `String`. If the actual instance is not `String`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `String`
-     * @throws ClassCastException if the instance is not `String`
-     */
-    public String getString() throws ClassCastException {
-        return (String)super.getActualInstance();
-    }
-
-
  /**
-  * Validates the JSON Object and throws an exception if issues found
+  * Validates the JSON Element and throws an exception if issues found
   *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to RulesEngineBehaviorTarget
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to RulesEngineBehaviorTarget
   */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     // validate oneOf schemas one by one
     int validCount = 0;
     ArrayList<String> errorMessages = new ArrayList<>();
+    // validate the json string with String
+    try {
+      if(!jsonElement.getAsJsonPrimitive().isString()) {
+        throw new IllegalArgumentException(String.format("Expected json element to be of type String in the JSON string but got `%s`", jsonElement.toString()));
+      }
+      validCount++;
+    } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for String failed with `%s`.", e.getMessage()));
+      // continue to the next one
+    }
     // validate the json string with BigDecimal
     try {
-      BigDecimal.validateJsonObject(jsonObj);
+      if(!jsonElement.getAsJsonPrimitive().isNumber()) {
+        throw new IllegalArgumentException(String.format("Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
+      }
       validCount++;
     } catch (Exception e) {
       errorMessages.add(String.format("Deserialization for BigDecimal failed with `%s`.", e.getMessage()));
@@ -294,22 +300,14 @@ public class RulesEngineBehaviorTarget extends AbstractOpenApiSchema {
     }
     // validate the json string with RulesEngineBehaviorTargetOneOf
     try {
-      RulesEngineBehaviorTargetOneOf.validateJsonObject(jsonObj);
+      RulesEngineBehaviorTargetOneOf.validateJsonElement(jsonElement);
       validCount++;
     } catch (Exception e) {
       errorMessages.add(String.format("Deserialization for RulesEngineBehaviorTargetOneOf failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
-    // validate the json string with String
-    try {
-      String.validateJsonObject(jsonObj);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for String failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
     if (validCount != 1) {
-      throw new IOException(String.format("The JSON string is invalid for RulesEngineBehaviorTarget with oneOf schemas: BigDecimal, RulesEngineBehaviorTargetOneOf, String. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonObj.toString()));
+      throw new IOException(String.format("The JSON string is invalid for RulesEngineBehaviorTarget with oneOf schemas: BigDecimal, RulesEngineBehaviorTargetOneOf, String. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
     }
   }
 

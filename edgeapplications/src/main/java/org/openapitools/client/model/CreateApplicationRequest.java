@@ -14,13 +14,13 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * CreateApplicationRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-23T20:53:13.124416Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-12T14:42:28.109450Z[GMT]")
 public class CreateApplicationRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -72,6 +72,10 @@ public class CreateApplicationRequest {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
   private String address;
+
+  public static final String SERIALIZED_NAME_MINIMUM_TLS_VERSION = "minimum_tls_version";
+  @SerializedName(SERIALIZED_NAME_MINIMUM_TLS_VERSION)
+  private String minimumTlsVersion;
 
   public static final String SERIALIZED_NAME_ORIGIN_PROTOCOL_POLICY = "origin_protocol_policy";
   @SerializedName(SERIALIZED_NAME_ORIGIN_PROTOCOL_POLICY)
@@ -230,6 +234,27 @@ public class CreateApplicationRequest {
 
   public void setAddress(String address) {
     this.address = address;
+  }
+
+
+  public CreateApplicationRequest minimumTlsVersion(String minimumTlsVersion) {
+    
+    this.minimumTlsVersion = minimumTlsVersion;
+    return this;
+  }
+
+   /**
+   * Get minimumTlsVersion
+   * @return minimumTlsVersion
+  **/
+  @javax.annotation.Nullable
+  public String getMinimumTlsVersion() {
+    return minimumTlsVersion;
+  }
+
+
+  public void setMinimumTlsVersion(String minimumTlsVersion) {
+    this.minimumTlsVersion = minimumTlsVersion;
   }
 
 
@@ -521,6 +546,7 @@ public class CreateApplicationRequest {
         Objects.equals(this.deliveryProtocol, createApplicationRequest.deliveryProtocol) &&
         Objects.equals(this.originType, createApplicationRequest.originType) &&
         Objects.equals(this.address, createApplicationRequest.address) &&
+        Objects.equals(this.minimumTlsVersion, createApplicationRequest.minimumTlsVersion) &&
         Objects.equals(this.originProtocolPolicy, createApplicationRequest.originProtocolPolicy) &&
         Objects.equals(this.hostHeader, createApplicationRequest.hostHeader) &&
         Objects.equals(this.browserCacheSettings, createApplicationRequest.browserCacheSettings) &&
@@ -542,7 +568,7 @@ public class CreateApplicationRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, applicationAcceleration, deliveryProtocol, originType, address, originProtocolPolicy, hostHeader, browserCacheSettings, cdnCacheSettings, browserCacheSettingsMaximumTtl, cdnCacheSettingsMaximumTtl, debugRules, supportedCiphers, httpPort, httpsPort, l2Caching, http3, websocket);
+    return Objects.hash(name, applicationAcceleration, deliveryProtocol, originType, address, minimumTlsVersion, originProtocolPolicy, hostHeader, browserCacheSettings, cdnCacheSettings, browserCacheSettingsMaximumTtl, cdnCacheSettingsMaximumTtl, debugRules, supportedCiphers, httpPort, httpsPort, l2Caching, http3, websocket);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -561,6 +587,7 @@ public class CreateApplicationRequest {
     sb.append("    deliveryProtocol: ").append(toIndentedString(deliveryProtocol)).append("\n");
     sb.append("    originType: ").append(toIndentedString(originType)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    minimumTlsVersion: ").append(toIndentedString(minimumTlsVersion)).append("\n");
     sb.append("    originProtocolPolicy: ").append(toIndentedString(originProtocolPolicy)).append("\n");
     sb.append("    hostHeader: ").append(toIndentedString(hostHeader)).append("\n");
     sb.append("    browserCacheSettings: ").append(toIndentedString(browserCacheSettings)).append("\n");
@@ -601,6 +628,7 @@ public class CreateApplicationRequest {
     openapiFields.add("delivery_protocol");
     openapiFields.add("origin_type");
     openapiFields.add("address");
+    openapiFields.add("minimum_tls_version");
     openapiFields.add("origin_protocol_policy");
     openapiFields.add("host_header");
     openapiFields.add("browser_cache_settings");
@@ -621,32 +649,33 @@ public class CreateApplicationRequest {
   }
 
  /**
-  * Validates the JSON Object and throws an exception if issues found
+  * Validates the JSON Element and throws an exception if issues found
   *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to CreateApplicationRequest
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to CreateApplicationRequest
   */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!CreateApplicationRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!CreateApplicationRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in CreateApplicationRequest is not found in the empty JSON string", CreateApplicationRequest.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
         if (!CreateApplicationRequest.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CreateApplicationRequest` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CreateApplicationRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : CreateApplicationRequest.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
@@ -658,6 +687,9 @@ public class CreateApplicationRequest {
       }
       if ((jsonObj.get("address") != null && !jsonObj.get("address").isJsonNull()) && !jsonObj.get("address").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `address` to be a primitive type in the JSON string but got `%s`", jsonObj.get("address").toString()));
+      }
+      if ((jsonObj.get("minimum_tls_version") != null && !jsonObj.get("minimum_tls_version").isJsonNull()) && !jsonObj.get("minimum_tls_version").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `minimum_tls_version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("minimum_tls_version").toString()));
       }
       if ((jsonObj.get("origin_protocol_policy") != null && !jsonObj.get("origin_protocol_policy").isJsonNull()) && !jsonObj.get("origin_protocol_policy").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `origin_protocol_policy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("origin_protocol_policy").toString()));
@@ -696,9 +728,9 @@ public class CreateApplicationRequest {
 
            @Override
            public CreateApplicationRequest read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
