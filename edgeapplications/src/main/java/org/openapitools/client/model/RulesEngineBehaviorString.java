@@ -47,26 +47,22 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * ApplicationCreateInstanceRequest
+ * RulesEngineBehaviorString
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-21T15:03:44.471951Z[GMT]")
-public class ApplicationCreateInstanceRequest {
+public class RulesEngineBehaviorString {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String SERIALIZED_NAME_EDGE_FUNCTION_ID = "edge_function_id";
-  @SerializedName(SERIALIZED_NAME_EDGE_FUNCTION_ID)
-  private Long edgeFunctionId;
+  public static final String SERIALIZED_NAME_TARGET = "target";
+  @SerializedName(SERIALIZED_NAME_TARGET)
+  private String target;
 
-  public static final String SERIALIZED_NAME_ARGS = "args";
-  @SerializedName(SERIALIZED_NAME_ARGS)
-  private Object args = null;
-
-  public ApplicationCreateInstanceRequest() {
+  public RulesEngineBehaviorString() {
   }
 
-  public ApplicationCreateInstanceRequest name(String name) {
+  public RulesEngineBehaviorString name(String name) {
     
     this.name = name;
     return this;
@@ -87,45 +83,24 @@ public class ApplicationCreateInstanceRequest {
   }
 
 
-  public ApplicationCreateInstanceRequest edgeFunctionId(Long edgeFunctionId) {
+  public RulesEngineBehaviorString target(String target) {
     
-    this.edgeFunctionId = edgeFunctionId;
+    this.target = target;
     return this;
   }
 
    /**
-   * Get edgeFunctionId
-   * @return edgeFunctionId
+   * Get target
+   * @return target
   **/
   @javax.annotation.Nonnull
-  public Long getEdgeFunctionId() {
-    return edgeFunctionId;
+  public String getTarget() {
+    return target;
   }
 
 
-  public void setEdgeFunctionId(Long edgeFunctionId) {
-    this.edgeFunctionId = edgeFunctionId;
-  }
-
-
-  public ApplicationCreateInstanceRequest args(Object args) {
-    
-    this.args = args;
-    return this;
-  }
-
-   /**
-   * Get args
-   * @return args
-  **/
-  @javax.annotation.Nullable
-  public Object getArgs() {
-    return args;
-  }
-
-
-  public void setArgs(Object args) {
-    this.args = args;
+  public void setTarget(String target) {
+    this.target = target;
   }
 
 
@@ -138,24 +113,22 @@ public class ApplicationCreateInstanceRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ApplicationCreateInstanceRequest applicationCreateInstanceRequest = (ApplicationCreateInstanceRequest) o;
-    return Objects.equals(this.name, applicationCreateInstanceRequest.name) &&
-        Objects.equals(this.edgeFunctionId, applicationCreateInstanceRequest.edgeFunctionId) &&
-        Objects.equals(this.args, applicationCreateInstanceRequest.args);
+    RulesEngineBehaviorString rulesEngineBehaviorString = (RulesEngineBehaviorString) o;
+    return Objects.equals(this.name, rulesEngineBehaviorString.name) &&
+        Objects.equals(this.target, rulesEngineBehaviorString.target);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, edgeFunctionId, args);
+    return Objects.hash(name, target);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ApplicationCreateInstanceRequest {\n");
+    sb.append("class RulesEngineBehaviorString {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    edgeFunctionId: ").append(toIndentedString(edgeFunctionId)).append("\n");
-    sb.append("    args: ").append(toIndentedString(args)).append("\n");
+    sb.append("    target: ").append(toIndentedString(target)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -179,39 +152,37 @@ public class ApplicationCreateInstanceRequest {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("name");
-    openapiFields.add("edge_function_id");
-    openapiFields.add("args");
+    openapiFields.add("target");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("name");
-    openapiRequiredFields.add("edge_function_id");
-    openapiRequiredFields.add("args");
+    openapiRequiredFields.add("target");
   }
 
  /**
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApplicationCreateInstanceRequest
+  * @throws IOException if the JSON Element is invalid with respect to RulesEngineBehaviorString
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!ApplicationCreateInstanceRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ApplicationCreateInstanceRequest is not found in the empty JSON string", ApplicationCreateInstanceRequest.openapiRequiredFields.toString()));
+        if (!RulesEngineBehaviorString.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in RulesEngineBehaviorString is not found in the empty JSON string", RulesEngineBehaviorString.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!ApplicationCreateInstanceRequest.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ApplicationCreateInstanceRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!RulesEngineBehaviorString.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `RulesEngineBehaviorString` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : ApplicationCreateInstanceRequest.openapiRequiredFields) {
+      for (String requiredField : RulesEngineBehaviorString.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
@@ -220,28 +191,31 @@ public class ApplicationCreateInstanceRequest {
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
+      if (!jsonObj.get("target").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `target` to be a primitive type in the JSON string but got `%s`", jsonObj.get("target").toString()));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ApplicationCreateInstanceRequest.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ApplicationCreateInstanceRequest' and its subtypes
+       if (!RulesEngineBehaviorString.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'RulesEngineBehaviorString' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ApplicationCreateInstanceRequest> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ApplicationCreateInstanceRequest.class));
+       final TypeAdapter<RulesEngineBehaviorString> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(RulesEngineBehaviorString.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ApplicationCreateInstanceRequest>() {
+       return (TypeAdapter<T>) new TypeAdapter<RulesEngineBehaviorString>() {
            @Override
-           public void write(JsonWriter out, ApplicationCreateInstanceRequest value) throws IOException {
+           public void write(JsonWriter out, RulesEngineBehaviorString value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public ApplicationCreateInstanceRequest read(JsonReader in) throws IOException {
+           public RulesEngineBehaviorString read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -252,18 +226,18 @@ public class ApplicationCreateInstanceRequest {
   }
 
  /**
-  * Create an instance of ApplicationCreateInstanceRequest given an JSON string
+  * Create an instance of RulesEngineBehaviorString given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of ApplicationCreateInstanceRequest
-  * @throws IOException if the JSON string is invalid with respect to ApplicationCreateInstanceRequest
+  * @return An instance of RulesEngineBehaviorString
+  * @throws IOException if the JSON string is invalid with respect to RulesEngineBehaviorString
   */
-  public static ApplicationCreateInstanceRequest fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ApplicationCreateInstanceRequest.class);
+  public static RulesEngineBehaviorString fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, RulesEngineBehaviorString.class);
   }
 
  /**
-  * Convert an instance of ApplicationCreateInstanceRequest to an JSON string
+  * Convert an instance of RulesEngineBehaviorString to an JSON string
   *
   * @return JSON string
   */
