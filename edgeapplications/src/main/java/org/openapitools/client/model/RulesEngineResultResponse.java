@@ -23,8 +23,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.RulesEngineBehaviorEntry;
 import org.openapitools.client.model.RulesEngineCriteria;
-import org.openapitools.client.model.RulesEngineResultResponseBehaviors;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -46,7 +46,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -54,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * RulesEngineResultResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-12T14:42:28.109450Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-21T15:03:44.471951Z[GMT]")
 public class RulesEngineResultResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -74,7 +73,7 @@ public class RulesEngineResultResponse {
 
   public static final String SERIALIZED_NAME_BEHAVIORS = "behaviors";
   @SerializedName(SERIALIZED_NAME_BEHAVIORS)
-  private List<RulesEngineResultResponseBehaviors> behaviors;
+  private List<RulesEngineBehaviorEntry> behaviors;
 
   public static final String SERIALIZED_NAME_CRITERIA = "criteria";
   @SerializedName(SERIALIZED_NAME_CRITERIA)
@@ -175,13 +174,13 @@ public class RulesEngineResultResponse {
   }
 
 
-  public RulesEngineResultResponse behaviors(List<RulesEngineResultResponseBehaviors> behaviors) {
+  public RulesEngineResultResponse behaviors(List<RulesEngineBehaviorEntry> behaviors) {
     
     this.behaviors = behaviors;
     return this;
   }
 
-  public RulesEngineResultResponse addBehaviorsItem(RulesEngineResultResponseBehaviors behaviorsItem) {
+  public RulesEngineResultResponse addBehaviorsItem(RulesEngineBehaviorEntry behaviorsItem) {
     if (this.behaviors == null) {
       this.behaviors = new ArrayList<>();
     }
@@ -194,12 +193,12 @@ public class RulesEngineResultResponse {
    * @return behaviors
   **/
   @javax.annotation.Nullable
-  public List<RulesEngineResultResponseBehaviors> getBehaviors() {
+  public List<RulesEngineBehaviorEntry> getBehaviors() {
     return behaviors;
   }
 
 
-  public void setBehaviors(List<RulesEngineResultResponseBehaviors> behaviors) {
+  public void setBehaviors(List<RulesEngineBehaviorEntry> behaviors) {
     this.behaviors = behaviors;
   }
 
@@ -366,9 +365,9 @@ public class RulesEngineResultResponse {
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!RulesEngineResultResponse.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `RulesEngineResultResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
@@ -400,7 +399,7 @@ public class RulesEngineResultResponse {
 
           // validate the optional field `behaviors` (array)
           for (int i = 0; i < jsonArraybehaviors.size(); i++) {
-            RulesEngineResultResponseBehaviors.validateJsonElement(jsonArraybehaviors.get(i));
+            RulesEngineBehaviorEntry.validateJsonElement(jsonArraybehaviors.get(i));
           };
         }
       }

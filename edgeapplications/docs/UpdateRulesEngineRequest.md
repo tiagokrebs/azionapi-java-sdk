@@ -10,7 +10,7 @@
 |**name** | **String** |  |  |
 |**description** | **String** |  |  [optional] |
 |**criteria** | **List&lt;List&lt;RulesEngineCriteria&gt;&gt;** |  |  |
-|**behaviors** | [**List&lt;RulesEngineBehavior&gt;**](RulesEngineBehavior.md) |  |  |
+|**behaviors** | [**List&lt;RulesEngineBehaviorEntry&gt;**](RulesEngineBehaviorEntry.md) |  |  |
 
 
 
