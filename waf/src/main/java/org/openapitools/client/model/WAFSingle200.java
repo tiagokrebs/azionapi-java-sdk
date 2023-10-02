@@ -20,9 +20,8 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import org.openapitools.client.model.SingleWAF;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,32 +48,24 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * WAFDomains200
+ * WAFSingle200
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-02T15:18:24.198821Z[GMT]")
-public class WAFDomains200 {
+public class WAFSingle200 {
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
-  private List<Object> results;
+  private SingleWAF results;
 
   public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
   @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)
   private Long schemaVersion;
 
-  public WAFDomains200() {
+  public WAFSingle200() {
   }
 
-  public WAFDomains200 results(List<Object> results) {
+  public WAFSingle200 results(SingleWAF results) {
     
     this.results = results;
-    return this;
-  }
-
-  public WAFDomains200 addResultsItem(Object resultsItem) {
-    if (this.results == null) {
-      this.results = new ArrayList<>();
-    }
-    this.results.add(resultsItem);
     return this;
   }
 
@@ -83,17 +74,17 @@ public class WAFDomains200 {
    * @return results
   **/
   @javax.annotation.Nullable
-  public List<Object> getResults() {
+  public SingleWAF getResults() {
     return results;
   }
 
 
-  public void setResults(List<Object> results) {
+  public void setResults(SingleWAF results) {
     this.results = results;
   }
 
 
-  public WAFDomains200 schemaVersion(Long schemaVersion) {
+  public WAFSingle200 schemaVersion(Long schemaVersion) {
     
     this.schemaVersion = schemaVersion;
     return this;
@@ -123,9 +114,9 @@ public class WAFDomains200 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    WAFDomains200 waFDomains200 = (WAFDomains200) o;
-    return Objects.equals(this.results, waFDomains200.results) &&
-        Objects.equals(this.schemaVersion, waFDomains200.schemaVersion);
+    WAFSingle200 waFSingle200 = (WAFSingle200) o;
+    return Objects.equals(this.results, waFSingle200.results) &&
+        Objects.equals(this.schemaVersion, waFSingle200.schemaVersion);
   }
 
   @Override
@@ -136,7 +127,7 @@ public class WAFDomains200 {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class WAFDomains200 {\n");
+    sb.append("class WAFSingle200 {\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("    schemaVersion: ").append(toIndentedString(schemaVersion)).append("\n");
     sb.append("}");
@@ -172,26 +163,26 @@ public class WAFDomains200 {
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WAFDomains200
+  * @throws IOException if the JSON Element is invalid with respect to WAFSingle200
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!WAFDomains200.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WAFDomains200 is not found in the empty JSON string", WAFDomains200.openapiRequiredFields.toString()));
+        if (!WAFSingle200.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in WAFSingle200 is not found in the empty JSON string", WAFSingle200.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!WAFDomains200.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `WAFDomains200` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!WAFSingle200.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `WAFSingle200` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("results") != null && !jsonObj.get("results").isJsonNull() && !jsonObj.get("results").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `results` to be an array in the JSON string but got `%s`", jsonObj.get("results").toString()));
+      // validate the optional field `results`
+      if (jsonObj.get("results") != null && !jsonObj.get("results").isJsonNull()) {
+        SingleWAF.validateJsonElement(jsonObj.get("results"));
       }
   }
 
@@ -199,22 +190,22 @@ public class WAFDomains200 {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!WAFDomains200.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'WAFDomains200' and its subtypes
+       if (!WAFSingle200.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'WAFSingle200' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<WAFDomains200> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(WAFDomains200.class));
+       final TypeAdapter<WAFSingle200> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(WAFSingle200.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<WAFDomains200>() {
+       return (TypeAdapter<T>) new TypeAdapter<WAFSingle200>() {
            @Override
-           public void write(JsonWriter out, WAFDomains200 value) throws IOException {
+           public void write(JsonWriter out, WAFSingle200 value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public WAFDomains200 read(JsonReader in) throws IOException {
+           public WAFSingle200 read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -225,18 +216,18 @@ public class WAFDomains200 {
   }
 
  /**
-  * Create an instance of WAFDomains200 given an JSON string
+  * Create an instance of WAFSingle200 given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of WAFDomains200
-  * @throws IOException if the JSON string is invalid with respect to WAFDomains200
+  * @return An instance of WAFSingle200
+  * @throws IOException if the JSON string is invalid with respect to WAFSingle200
   */
-  public static WAFDomains200 fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, WAFDomains200.class);
+  public static WAFSingle200 fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, WAFSingle200.class);
   }
 
  /**
-  * Convert an instance of WAFDomains200 to an JSON string
+  * Convert an instance of WAFSingle200 to an JSON string
   *
   * @return JSON string
   */

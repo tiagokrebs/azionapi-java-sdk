@@ -1,13 +1,15 @@
 
 
-# WAFEvents200
+# WAFList200
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**results** | **List&lt;Object&gt;** |  |  [optional] |
+|**count** | **Long** |  |  [optional] |
+|**totalPages** | **Long** |  |  [optional] |
+|**links** | [**SingleWAF**](SingleWAF.md) |  |  [optional] |
 |**schemaVersion** | **Long** |  |  [optional] |
 
 

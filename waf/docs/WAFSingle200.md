@@ -1,13 +1,13 @@
 
 
-# WAFEvents200
+# WAFSingle200
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**results** | **List&lt;Object&gt;** |  |  [optional] |
+|**results** | [**SingleWAF**](SingleWAF.md) |  |  [optional] |
 |**schemaVersion** | **Long** |  |  [optional] |
 
 
