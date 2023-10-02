@@ -27,18 +27,21 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.CreateNewWAFRulesetRequest;
+import org.openapitools.client.model.SingleWAF;
 import org.openapitools.client.model.WAFDomains200;
 import org.openapitools.client.model.WAFEvents200;
 import org.openapitools.client.model.WAFEvents400;
 import org.openapitools.client.model.WAFEvents401;
 import org.openapitools.client.model.WAFEvents404;
+import org.openapitools.client.model.WAFList200;
+import org.openapitools.client.model.WAFSingle200;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class WafApi {
     private ApiClient localVarApiClient;
@@ -77,6 +80,294 @@ public class WafApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
+    /**
+     * Build call for createNewWAFRuleset
+     * @param createNewWAFRulesetRequest  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createNewWAFRulesetCall(CreateNewWAFRulesetRequest createNewWAFRulesetRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = createNewWAFRulesetRequest;
+
+        // create path and map variables
+        String localVarPath = "/waf/rulesets";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json; version=3"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json; version=3"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "tokenAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createNewWAFRulesetValidateBeforeCall(CreateNewWAFRulesetRequest createNewWAFRulesetRequest, final ApiCallback _callback) throws ApiException {
+        return createNewWAFRulesetCall(createNewWAFRulesetRequest, _callback);
+
+    }
+
+    /**
+     * Create a new WAF Rule Set in an account.
+     * 
+     * @param createNewWAFRulesetRequest  (optional)
+     * @return SingleWAF
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public SingleWAF createNewWAFRuleset(CreateNewWAFRulesetRequest createNewWAFRulesetRequest) throws ApiException {
+        ApiResponse<SingleWAF> localVarResp = createNewWAFRulesetWithHttpInfo(createNewWAFRulesetRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Create a new WAF Rule Set in an account.
+     * 
+     * @param createNewWAFRulesetRequest  (optional)
+     * @return ApiResponse&lt;SingleWAF&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<SingleWAF> createNewWAFRulesetWithHttpInfo(CreateNewWAFRulesetRequest createNewWAFRulesetRequest) throws ApiException {
+        okhttp3.Call localVarCall = createNewWAFRulesetValidateBeforeCall(createNewWAFRulesetRequest, null);
+        Type localVarReturnType = new TypeToken<SingleWAF>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Create a new WAF Rule Set in an account. (asynchronously)
+     * 
+     * @param createNewWAFRulesetRequest  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createNewWAFRulesetAsync(CreateNewWAFRulesetRequest createNewWAFRulesetRequest, final ApiCallback<SingleWAF> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = createNewWAFRulesetValidateBeforeCall(createNewWAFRulesetRequest, _callback);
+        Type localVarReturnType = new TypeToken<SingleWAF>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for deleteWAFRuleset
+     * @param wafRuleSetId  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 405 </td><td> Method Not Allowed </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteWAFRulesetCall(String wafRuleSetId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/waf/rulesets/{waf_rule_set_id}"
+            .replace("{" + "waf_rule_set_id" + "}", localVarApiClient.escapeString(wafRuleSetId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "tokenAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deleteWAFRulesetValidateBeforeCall(String wafRuleSetId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'wafRuleSetId' is set
+        if (wafRuleSetId == null) {
+            throw new ApiException("Missing the required parameter 'wafRuleSetId' when calling deleteWAFRuleset(Async)");
+        }
+
+        return deleteWAFRulesetCall(wafRuleSetId, _callback);
+
+    }
+
+    /**
+     * Remove an WAF Rule Set from an account. Warning: this action cannot be undone.
+     * 
+     * @param wafRuleSetId  (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 405 </td><td> Method Not Allowed </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public void deleteWAFRuleset(String wafRuleSetId) throws ApiException {
+        deleteWAFRulesetWithHttpInfo(wafRuleSetId);
+    }
+
+    /**
+     * Remove an WAF Rule Set from an account. Warning: this action cannot be undone.
+     * 
+     * @param wafRuleSetId  (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 405 </td><td> Method Not Allowed </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> deleteWAFRulesetWithHttpInfo(String wafRuleSetId) throws ApiException {
+        okhttp3.Call localVarCall = deleteWAFRulesetValidateBeforeCall(wafRuleSetId, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Remove an WAF Rule Set from an account. Warning: this action cannot be undone. (asynchronously)
+     * 
+     * @param wafRuleSetId  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 405 </td><td> Method Not Allowed </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteWAFRulesetAsync(String wafRuleSetId, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = deleteWAFRulesetValidateBeforeCall(wafRuleSetId, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
     /**
      * Build call for getWAFDomains
      * @param wafId ID of WAF to return (required)
@@ -153,7 +444,7 @@ public class WafApi {
     }
 
     /**
-     * Find domains attached to a WAF
+     * List all domains attached to a Web Application Firewall (WAF) in an account.
      * 
      * @param wafId ID of WAF to return (required)
      * @param name searches WAF for name (optional)
@@ -173,7 +464,7 @@ public class WafApi {
     }
 
     /**
-     * Find domains attached to a WAF
+     * List all domains attached to a Web Application Firewall (WAF) in an account.
      * 
      * @param wafId ID of WAF to return (required)
      * @param name searches WAF for name (optional)
@@ -194,7 +485,7 @@ public class WafApi {
     }
 
     /**
-     * Find domains attached to a WAF (asynchronously)
+     * List all domains attached to a Web Application Firewall (WAF) in an account. (asynchronously)
      * 
      * @param wafId ID of WAF to return (required)
      * @param name searches WAF for name (optional)
@@ -386,6 +677,579 @@ public class WafApi {
 
         okhttp3.Call localVarCall = getWAFEventsValidateBeforeCall(wafId, hourRange, domainsIds, networkListId, _callback);
         Type localVarReturnType = new TypeToken<WAFEvents200>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getWAFRuleset
+     * @param wafRuleSetId ID of WAF Ruleset to return (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getWAFRulesetCall(Long wafRuleSetId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/waf/rulesets/{waf_rule_set_id}"
+            .replace("{" + "waf_rule_set_id" + "}", localVarApiClient.escapeString(wafRuleSetId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json; version=3"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "tokenAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getWAFRulesetValidateBeforeCall(Long wafRuleSetId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'wafRuleSetId' is set
+        if (wafRuleSetId == null) {
+            throw new ApiException("Missing the required parameter 'wafRuleSetId' when calling getWAFRuleset(Async)");
+        }
+
+        return getWAFRulesetCall(wafRuleSetId, _callback);
+
+    }
+
+    /**
+     * List a specific Rule Set associated to a Web Application Firewall (WAF) in an account.
+     * 
+     * @param wafRuleSetId ID of WAF Ruleset to return (required)
+     * @return WAFSingle200
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public WAFSingle200 getWAFRuleset(Long wafRuleSetId) throws ApiException {
+        ApiResponse<WAFSingle200> localVarResp = getWAFRulesetWithHttpInfo(wafRuleSetId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List a specific Rule Set associated to a Web Application Firewall (WAF) in an account.
+     * 
+     * @param wafRuleSetId ID of WAF Ruleset to return (required)
+     * @return ApiResponse&lt;WAFSingle200&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<WAFSingle200> getWAFRulesetWithHttpInfo(Long wafRuleSetId) throws ApiException {
+        okhttp3.Call localVarCall = getWAFRulesetValidateBeforeCall(wafRuleSetId, null);
+        Type localVarReturnType = new TypeToken<WAFSingle200>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List a specific Rule Set associated to a Web Application Firewall (WAF) in an account. (asynchronously)
+     * 
+     * @param wafRuleSetId ID of WAF Ruleset to return (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getWAFRulesetAsync(Long wafRuleSetId, final ApiCallback<WAFSingle200> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getWAFRulesetValidateBeforeCall(wafRuleSetId, _callback);
+        Type localVarReturnType = new TypeToken<WAFSingle200>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listAllWAF
+     * @param page Identifies which page should be returned, if the return is paginated. (optional, default to 1)
+     * @param pageSize Identifies how many items should be returned per page. (optional, default to 10)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listAllWAFCall(Long page, Long pageSize, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/waf";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (page != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page_size", pageSize));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json; version=3"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "tokenAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listAllWAFValidateBeforeCall(Long page, Long pageSize, final ApiCallback _callback) throws ApiException {
+        return listAllWAFCall(page, pageSize, _callback);
+
+    }
+
+    /**
+     * List all Web Application Firewalls (WAFs) created in an account
+     * 
+     * @param page Identifies which page should be returned, if the return is paginated. (optional, default to 1)
+     * @param pageSize Identifies how many items should be returned per page. (optional, default to 10)
+     * @return WAFList200
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public WAFList200 listAllWAF(Long page, Long pageSize) throws ApiException {
+        ApiResponse<WAFList200> localVarResp = listAllWAFWithHttpInfo(page, pageSize);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List all Web Application Firewalls (WAFs) created in an account
+     * 
+     * @param page Identifies which page should be returned, if the return is paginated. (optional, default to 1)
+     * @param pageSize Identifies how many items should be returned per page. (optional, default to 10)
+     * @return ApiResponse&lt;WAFList200&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<WAFList200> listAllWAFWithHttpInfo(Long page, Long pageSize) throws ApiException {
+        okhttp3.Call localVarCall = listAllWAFValidateBeforeCall(page, pageSize, null);
+        Type localVarReturnType = new TypeToken<WAFList200>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List all Web Application Firewalls (WAFs) created in an account (asynchronously)
+     * 
+     * @param page Identifies which page should be returned, if the return is paginated. (optional, default to 1)
+     * @param pageSize Identifies how many items should be returned per page. (optional, default to 10)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listAllWAFAsync(Long page, Long pageSize, final ApiCallback<WAFList200> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listAllWAFValidateBeforeCall(page, pageSize, _callback);
+        Type localVarReturnType = new TypeToken<WAFList200>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listAllWAFRulesets
+     * @param orderBy Identifies which property the return should be sorted by. (optional, default to name)
+     * @param sort Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)
+     * @param page Identifies which page should be returned, if the return is paginated. (optional, default to 1)
+     * @param pageSize Identifies how many items should be returned per page. (optional, default to 10)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listAllWAFRulesetsCall(String orderBy, String sort, Long page, Long pageSize, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/waf/rulesets";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (orderBy != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("order_by", orderBy));
+        }
+
+        if (sort != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
+        }
+
+        if (page != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page_size", pageSize));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json; version=3"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "tokenAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listAllWAFRulesetsValidateBeforeCall(String orderBy, String sort, Long page, Long pageSize, final ApiCallback _callback) throws ApiException {
+        return listAllWAFRulesetsCall(orderBy, sort, page, pageSize, _callback);
+
+    }
+
+    /**
+     * list all Rule Sets associated to a Web Application Firewall (WAF) in an account.
+     * 
+     * @param orderBy Identifies which property the return should be sorted by. (optional, default to name)
+     * @param sort Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)
+     * @param page Identifies which page should be returned, if the return is paginated. (optional, default to 1)
+     * @param pageSize Identifies how many items should be returned per page. (optional, default to 10)
+     * @return WAFList200
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public WAFList200 listAllWAFRulesets(String orderBy, String sort, Long page, Long pageSize) throws ApiException {
+        ApiResponse<WAFList200> localVarResp = listAllWAFRulesetsWithHttpInfo(orderBy, sort, page, pageSize);
+        return localVarResp.getData();
+    }
+
+    /**
+     * list all Rule Sets associated to a Web Application Firewall (WAF) in an account.
+     * 
+     * @param orderBy Identifies which property the return should be sorted by. (optional, default to name)
+     * @param sort Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)
+     * @param page Identifies which page should be returned, if the return is paginated. (optional, default to 1)
+     * @param pageSize Identifies how many items should be returned per page. (optional, default to 10)
+     * @return ApiResponse&lt;WAFList200&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<WAFList200> listAllWAFRulesetsWithHttpInfo(String orderBy, String sort, Long page, Long pageSize) throws ApiException {
+        okhttp3.Call localVarCall = listAllWAFRulesetsValidateBeforeCall(orderBy, sort, page, pageSize, null);
+        Type localVarReturnType = new TypeToken<WAFList200>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * list all Rule Sets associated to a Web Application Firewall (WAF) in an account. (asynchronously)
+     * 
+     * @param orderBy Identifies which property the return should be sorted by. (optional, default to name)
+     * @param sort Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)
+     * @param page Identifies which page should be returned, if the return is paginated. (optional, default to 1)
+     * @param pageSize Identifies how many items should be returned per page. (optional, default to 10)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listAllWAFRulesetsAsync(String orderBy, String sort, Long page, Long pageSize, final ApiCallback<WAFList200> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listAllWAFRulesetsValidateBeforeCall(orderBy, sort, page, pageSize, _callback);
+        Type localVarReturnType = new TypeToken<WAFList200>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for updateWAFRuleset
+     * @param wafRuleSetId  (required)
+     * @param singleWAF  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 405 </td><td> Method Not Allowed </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateWAFRulesetCall(String wafRuleSetId, SingleWAF singleWAF, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = singleWAF;
+
+        // create path and map variables
+        String localVarPath = "/waf/rulesets/{waf_rule_set_id}"
+            .replace("{" + "waf_rule_set_id" + "}", localVarApiClient.escapeString(wafRuleSetId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json; version=3"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json; version=3"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "tokenAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call updateWAFRulesetValidateBeforeCall(String wafRuleSetId, SingleWAF singleWAF, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'wafRuleSetId' is set
+        if (wafRuleSetId == null) {
+            throw new ApiException("Missing the required parameter 'wafRuleSetId' when calling updateWAFRuleset(Async)");
+        }
+
+        return updateWAFRulesetCall(wafRuleSetId, singleWAF, _callback);
+
+    }
+
+    /**
+     * Change only select settings of a WAF Rule Set
+     * 
+     * @param wafRuleSetId  (required)
+     * @param singleWAF  (optional)
+     * @return SingleWAF
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 405 </td><td> Method Not Allowed </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public SingleWAF updateWAFRuleset(String wafRuleSetId, SingleWAF singleWAF) throws ApiException {
+        ApiResponse<SingleWAF> localVarResp = updateWAFRulesetWithHttpInfo(wafRuleSetId, singleWAF);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Change only select settings of a WAF Rule Set
+     * 
+     * @param wafRuleSetId  (required)
+     * @param singleWAF  (optional)
+     * @return ApiResponse&lt;SingleWAF&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 405 </td><td> Method Not Allowed </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<SingleWAF> updateWAFRulesetWithHttpInfo(String wafRuleSetId, SingleWAF singleWAF) throws ApiException {
+        okhttp3.Call localVarCall = updateWAFRulesetValidateBeforeCall(wafRuleSetId, singleWAF, null);
+        Type localVarReturnType = new TypeToken<SingleWAF>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Change only select settings of a WAF Rule Set (asynchronously)
+     * 
+     * @param wafRuleSetId  (required)
+     * @param singleWAF  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 405 </td><td> Method Not Allowed </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable Entity </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateWAFRulesetAsync(String wafRuleSetId, SingleWAF singleWAF, final ApiCallback<SingleWAF> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = updateWAFRulesetValidateBeforeCall(wafRuleSetId, singleWAF, _callback);
+        Type localVarReturnType = new TypeToken<SingleWAF>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
