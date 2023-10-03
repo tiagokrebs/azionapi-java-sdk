@@ -21,7 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
+import org.openapitools.client.model.RuleSetResultResults;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,60 +48,61 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * Links
+ * RuleSetResult
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-02T16:40:46.291492Z[GMT]")
-public class Links {
-  public static final String SERIALIZED_NAME_PREVIOUS = "previous";
-  @SerializedName(SERIALIZED_NAME_PREVIOUS)
-  private String previous;
+public class RuleSetResult {
+  public static final String SERIALIZED_NAME_RESULTS = "results";
+  @SerializedName(SERIALIZED_NAME_RESULTS)
+  private RuleSetResultResults results;
 
-  public static final String SERIALIZED_NAME_NEXT = "next";
-  @SerializedName(SERIALIZED_NAME_NEXT)
-  private String next;
+  public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
+  @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)
+  private Integer schemaVersion;
 
-  public Links() {
+  public RuleSetResult() {
   }
 
-  public Links previous(String previous) {
+  public RuleSetResult results(RuleSetResultResults results) {
     
-    this.previous = previous;
+    this.results = results;
     return this;
   }
 
    /**
-   * Get previous
-   * @return previous
+   * Get results
+   * @return results
   **/
   @javax.annotation.Nullable
-  public String getPrevious() {
-    return previous;
+  public RuleSetResultResults getResults() {
+    return results;
   }
 
 
-  public void setPrevious(String previous) {
-    this.previous = previous;
+  public void setResults(RuleSetResultResults results) {
+    this.results = results;
   }
 
 
-  public Links next(String next) {
+  public RuleSetResult schemaVersion(Integer schemaVersion) {
     
-    this.next = next;
+    this.schemaVersion = schemaVersion;
     return this;
   }
 
    /**
-   * Get next
-   * @return next
+   * Get schemaVersion
+   * minimum: 1
+   * @return schemaVersion
   **/
   @javax.annotation.Nullable
-  public String getNext() {
-    return next;
+  public Integer getSchemaVersion() {
+    return schemaVersion;
   }
 
 
-  public void setNext(String next) {
-    this.next = next;
+  public void setSchemaVersion(Integer schemaVersion) {
+    this.schemaVersion = schemaVersion;
   }
 
 
@@ -114,33 +115,22 @@ public class Links {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Links links = (Links) o;
-    return Objects.equals(this.previous, links.previous) &&
-        Objects.equals(this.next, links.next);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+    RuleSetResult ruleSetResult = (RuleSetResult) o;
+    return Objects.equals(this.results, ruleSetResult.results) &&
+        Objects.equals(this.schemaVersion, ruleSetResult.schemaVersion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(previous, next);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(results, schemaVersion);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Links {\n");
-    sb.append("    previous: ").append(toIndentedString(previous)).append("\n");
-    sb.append("    next: ").append(toIndentedString(next)).append("\n");
+    sb.append("class RuleSetResult {\n");
+    sb.append("    results: ").append(toIndentedString(results)).append("\n");
+    sb.append("    schemaVersion: ").append(toIndentedString(schemaVersion)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -163,8 +153,8 @@ public class Links {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("previous");
-    openapiFields.add("next");
+    openapiFields.add("results");
+    openapiFields.add("schema_version");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -174,28 +164,26 @@ public class Links {
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Links
+  * @throws IOException if the JSON Element is invalid with respect to RuleSetResult
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!Links.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Links is not found in the empty JSON string", Links.openapiRequiredFields.toString()));
+        if (!RuleSetResult.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in RuleSetResult is not found in the empty JSON string", RuleSetResult.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!Links.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Links` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!RuleSetResult.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `RuleSetResult` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("previous") != null && !jsonObj.get("previous").isJsonNull()) && !jsonObj.get("previous").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `previous` to be a primitive type in the JSON string but got `%s`", jsonObj.get("previous").toString()));
-      }
-      if ((jsonObj.get("next") != null && !jsonObj.get("next").isJsonNull()) && !jsonObj.get("next").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `next` to be a primitive type in the JSON string but got `%s`", jsonObj.get("next").toString()));
+      // validate the optional field `results`
+      if (jsonObj.get("results") != null && !jsonObj.get("results").isJsonNull()) {
+        RuleSetResultResults.validateJsonElement(jsonObj.get("results"));
       }
   }
 
@@ -203,22 +191,22 @@ public class Links {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Links.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Links' and its subtypes
+       if (!RuleSetResult.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'RuleSetResult' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Links> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Links.class));
+       final TypeAdapter<RuleSetResult> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(RuleSetResult.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<Links>() {
+       return (TypeAdapter<T>) new TypeAdapter<RuleSetResult>() {
            @Override
-           public void write(JsonWriter out, Links value) throws IOException {
+           public void write(JsonWriter out, RuleSetResult value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public Links read(JsonReader in) throws IOException {
+           public RuleSetResult read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -229,18 +217,18 @@ public class Links {
   }
 
  /**
-  * Create an instance of Links given an JSON string
+  * Create an instance of RuleSetResult given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of Links
-  * @throws IOException if the JSON string is invalid with respect to Links
+  * @return An instance of RuleSetResult
+  * @throws IOException if the JSON string is invalid with respect to RuleSetResult
   */
-  public static Links fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, Links.class);
+  public static RuleSetResult fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, RuleSetResult.class);
   }
 
  /**
-  * Convert an instance of Links to an JSON string
+  * Convert an instance of RuleSetResult to an JSON string
   *
   * @return JSON string
   */
