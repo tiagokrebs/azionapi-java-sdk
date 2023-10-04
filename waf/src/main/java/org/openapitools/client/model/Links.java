@@ -20,9 +20,8 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,68 +48,60 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * WAFEvents200
+ * Links
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-04T23:52:29.772282Z[GMT]")
-public class WAFEvents200 {
-  public static final String SERIALIZED_NAME_RESULTS = "results";
-  @SerializedName(SERIALIZED_NAME_RESULTS)
-  private List<Object> results;
+public class Links {
+  public static final String SERIALIZED_NAME_PREVIOUS = "previous";
+  @SerializedName(SERIALIZED_NAME_PREVIOUS)
+  private String previous;
 
-  public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
-  @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)
-  private Long schemaVersion;
+  public static final String SERIALIZED_NAME_NEXT = "next";
+  @SerializedName(SERIALIZED_NAME_NEXT)
+  private String next;
 
-  public WAFEvents200() {
+  public Links() {
   }
 
-  public WAFEvents200 results(List<Object> results) {
+  public Links previous(String previous) {
     
-    this.results = results;
-    return this;
-  }
-
-  public WAFEvents200 addResultsItem(Object resultsItem) {
-    if (this.results == null) {
-      this.results = new ArrayList<>();
-    }
-    this.results.add(resultsItem);
+    this.previous = previous;
     return this;
   }
 
    /**
-   * Get results
-   * @return results
+   * Get previous
+   * @return previous
   **/
   @javax.annotation.Nullable
-  public List<Object> getResults() {
-    return results;
+  public String getPrevious() {
+    return previous;
   }
 
 
-  public void setResults(List<Object> results) {
-    this.results = results;
+  public void setPrevious(String previous) {
+    this.previous = previous;
   }
 
 
-  public WAFEvents200 schemaVersion(Long schemaVersion) {
+  public Links next(String next) {
     
-    this.schemaVersion = schemaVersion;
+    this.next = next;
     return this;
   }
 
    /**
-   * Get schemaVersion
-   * @return schemaVersion
+   * Get next
+   * @return next
   **/
   @javax.annotation.Nullable
-  public Long getSchemaVersion() {
-    return schemaVersion;
+  public String getNext() {
+    return next;
   }
 
 
-  public void setSchemaVersion(Long schemaVersion) {
-    this.schemaVersion = schemaVersion;
+  public void setNext(String next) {
+    this.next = next;
   }
 
 
@@ -123,22 +114,33 @@ public class WAFEvents200 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    WAFEvents200 waFEvents200 = (WAFEvents200) o;
-    return Objects.equals(this.results, waFEvents200.results) &&
-        Objects.equals(this.schemaVersion, waFEvents200.schemaVersion);
+    Links links = (Links) o;
+    return Objects.equals(this.previous, links.previous) &&
+        Objects.equals(this.next, links.next);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(results, schemaVersion);
+    return Objects.hash(previous, next);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class WAFEvents200 {\n");
-    sb.append("    results: ").append(toIndentedString(results)).append("\n");
-    sb.append("    schemaVersion: ").append(toIndentedString(schemaVersion)).append("\n");
+    sb.append("class Links {\n");
+    sb.append("    previous: ").append(toIndentedString(previous)).append("\n");
+    sb.append("    next: ").append(toIndentedString(next)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -161,8 +163,8 @@ public class WAFEvents200 {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("results");
-    openapiFields.add("schema_version");
+    openapiFields.add("previous");
+    openapiFields.add("next");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -172,26 +174,28 @@ public class WAFEvents200 {
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WAFEvents200
+  * @throws IOException if the JSON Element is invalid with respect to Links
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!WAFEvents200.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WAFEvents200 is not found in the empty JSON string", WAFEvents200.openapiRequiredFields.toString()));
+        if (!Links.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in Links is not found in the empty JSON string", Links.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!WAFEvents200.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `WAFEvents200` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!Links.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Links` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("results") != null && !jsonObj.get("results").isJsonNull() && !jsonObj.get("results").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `results` to be an array in the JSON string but got `%s`", jsonObj.get("results").toString()));
+      if ((jsonObj.get("previous") != null && !jsonObj.get("previous").isJsonNull()) && !jsonObj.get("previous").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `previous` to be a primitive type in the JSON string but got `%s`", jsonObj.get("previous").toString()));
+      }
+      if ((jsonObj.get("next") != null && !jsonObj.get("next").isJsonNull()) && !jsonObj.get("next").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `next` to be a primitive type in the JSON string but got `%s`", jsonObj.get("next").toString()));
       }
   }
 
@@ -199,22 +203,22 @@ public class WAFEvents200 {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!WAFEvents200.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'WAFEvents200' and its subtypes
+       if (!Links.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'Links' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<WAFEvents200> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(WAFEvents200.class));
+       final TypeAdapter<Links> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(Links.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<WAFEvents200>() {
+       return (TypeAdapter<T>) new TypeAdapter<Links>() {
            @Override
-           public void write(JsonWriter out, WAFEvents200 value) throws IOException {
+           public void write(JsonWriter out, Links value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public WAFEvents200 read(JsonReader in) throws IOException {
+           public Links read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -225,18 +229,18 @@ public class WAFEvents200 {
   }
 
  /**
-  * Create an instance of WAFEvents200 given an JSON string
+  * Create an instance of Links given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of WAFEvents200
-  * @throws IOException if the JSON string is invalid with respect to WAFEvents200
+  * @return An instance of Links
+  * @throws IOException if the JSON string is invalid with respect to Links
   */
-  public static WAFEvents200 fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, WAFEvents200.class);
+  public static Links fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, Links.class);
   }
 
  /**
-  * Convert an instance of WAFEvents200 to an JSON string
+  * Convert an instance of Links to an JSON string
   *
   * @return JSON string
   */
