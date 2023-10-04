@@ -70,15 +70,3 @@ src/main/java/org/openapitools/client/model/SSLVerificationStatusCriteria.java
 src/main/java/org/openapitools/client/model/SSLVerificationStatusOperators.java
 src/main/java/org/openapitools/client/model/UpdateEdgeFirewallRequest.java
 src/main/java/org/openapitools/client/model/Variables.java
-src/test/java/org/openapitools/client/model/BehaviorsTest.java
-src/test/java/org/openapitools/client/model/ConditionalsTest.java
-src/test/java/org/openapitools/client/model/CreateRuleSetRequestTest.java
-src/test/java/org/openapitools/client/model/RuleSetResponseAllTest.java
-src/test/java/org/openapitools/client/model/RuleSetResponseTest.java
-src/test/java/org/openapitools/client/model/RuleSetResultAllTest.java
-src/test/java/org/openapitools/client/model/RuleSetResultResultsTest.java
-src/test/java/org/openapitools/client/model/RuleSetResultTest.java
-src/test/java/org/openapitools/client/model/SSLVerificationStatusArgumentsTest.java
-src/test/java/org/openapitools/client/model/SSLVerificationStatusCriteriaTest.java
-src/test/java/org/openapitools/client/model/SSLVerificationStatusOperatorsTest.java
-src/test/java/org/openapitools/client/model/VariablesTest.java
