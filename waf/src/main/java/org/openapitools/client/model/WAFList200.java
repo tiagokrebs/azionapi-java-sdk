@@ -20,7 +20,10 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import org.openapitools.client.model.Links;
 import org.openapitools.client.model.SingleWAF;
 
 import com.google.gson.Gson;
@@ -50,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * WAFList200
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-02T15:18:24.198821Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-04T23:52:29.772282Z[GMT]")
 public class WAFList200 {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
@@ -62,7 +65,11 @@ public class WAFList200 {
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private SingleWAF links;
+  private Links links;
+
+  public static final String SERIALIZED_NAME_RESULTS = "results";
+  @SerializedName(SERIALIZED_NAME_RESULTS)
+  private List<SingleWAF> results;
 
   public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
   @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)
@@ -113,7 +120,7 @@ public class WAFList200 {
   }
 
 
-  public WAFList200 links(SingleWAF links) {
+  public WAFList200 links(Links links) {
     
     this.links = links;
     return this;
@@ -124,13 +131,42 @@ public class WAFList200 {
    * @return links
   **/
   @javax.annotation.Nullable
-  public SingleWAF getLinks() {
+  public Links getLinks() {
     return links;
   }
 
 
-  public void setLinks(SingleWAF links) {
+  public void setLinks(Links links) {
     this.links = links;
+  }
+
+
+  public WAFList200 results(List<SingleWAF> results) {
+    
+    this.results = results;
+    return this;
+  }
+
+  public WAFList200 addResultsItem(SingleWAF resultsItem) {
+    if (this.results == null) {
+      this.results = new ArrayList<>();
+    }
+    this.results.add(resultsItem);
+    return this;
+  }
+
+   /**
+   * Get results
+   * @return results
+  **/
+  @javax.annotation.Nullable
+  public List<SingleWAF> getResults() {
+    return results;
+  }
+
+
+  public void setResults(List<SingleWAF> results) {
+    this.results = results;
   }
 
 
@@ -168,12 +204,13 @@ public class WAFList200 {
     return Objects.equals(this.count, waFList200.count) &&
         Objects.equals(this.totalPages, waFList200.totalPages) &&
         Objects.equals(this.links, waFList200.links) &&
+        Objects.equals(this.results, waFList200.results) &&
         Objects.equals(this.schemaVersion, waFList200.schemaVersion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(count, totalPages, links, schemaVersion);
+    return Objects.hash(count, totalPages, links, results, schemaVersion);
   }
 
   @Override
@@ -183,6 +220,7 @@ public class WAFList200 {
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
     sb.append("    totalPages: ").append(toIndentedString(totalPages)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("    schemaVersion: ").append(toIndentedString(schemaVersion)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -209,6 +247,7 @@ public class WAFList200 {
     openapiFields.add("count");
     openapiFields.add("total_pages");
     openapiFields.add("links");
+    openapiFields.add("results");
     openapiFields.add("schema_version");
 
     // a set of required properties/fields (JSON key names)
@@ -238,7 +277,21 @@ public class WAFList200 {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the optional field `links`
       if (jsonObj.get("links") != null && !jsonObj.get("links").isJsonNull()) {
-        SingleWAF.validateJsonElement(jsonObj.get("links"));
+        Links.validateJsonElement(jsonObj.get("links"));
+      }
+      if (jsonObj.get("results") != null && !jsonObj.get("results").isJsonNull()) {
+        JsonArray jsonArrayresults = jsonObj.getAsJsonArray("results");
+        if (jsonArrayresults != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("results").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `results` to be an array in the JSON string but got `%s`", jsonObj.get("results").toString()));
+          }
+
+          // validate the optional field `results` (array)
+          for (int i = 0; i < jsonArrayresults.size(); i++) {
+            SingleWAF.validateJsonElement(jsonArrayresults.get(i));
+          };
+        }
       }
   }
 

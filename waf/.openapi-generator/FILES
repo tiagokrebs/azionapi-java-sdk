@@ -6,6 +6,7 @@ api/openapi.yaml
 build.gradle
 build.sbt
 docs/CreateNewWAFRulesetRequest.md
+docs/Links.md
 docs/SingleWAF.md
 docs/WAFDomains200.md
 docs/WAFEvents200.md
@@ -45,6 +46,7 @@ src/main/java/org/openapitools/client/auth/HttpBasicAuth.java
 src/main/java/org/openapitools/client/auth/HttpBearerAuth.java
 src/main/java/org/openapitools/client/model/AbstractOpenApiSchema.java
 src/main/java/org/openapitools/client/model/CreateNewWAFRulesetRequest.java
+src/main/java/org/openapitools/client/model/Links.java
 src/main/java/org/openapitools/client/model/SingleWAF.java
 src/main/java/org/openapitools/client/model/WAFDomains200.java
 src/main/java/org/openapitools/client/model/WAFEvents200.java
@@ -54,8 +56,4 @@ src/main/java/org/openapitools/client/model/WAFEvents404.java
 src/main/java/org/openapitools/client/model/WAFList200.java
 src/main/java/org/openapitools/client/model/WAFSensitivityChoices.java
 src/main/java/org/openapitools/client/model/WAFSingle200.java
-src/test/java/org/openapitools/client/model/CreateNewWAFRulesetRequestTest.java
-src/test/java/org/openapitools/client/model/SingleWAFTest.java
-src/test/java/org/openapitools/client/model/WAFList200Test.java
-src/test/java/org/openapitools/client/model/WAFSensitivityChoicesTest.java
-src/test/java/org/openapitools/client/model/WAFSingle200Test.java
+src/test/java/org/openapitools/client/model/LinksTest.java

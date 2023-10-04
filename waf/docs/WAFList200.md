@@ -9,7 +9,8 @@
 |------------ | ------------- | ------------- | -------------|
 |**count** | **Long** |  |  [optional] |
 |**totalPages** | **Long** |  |  [optional] |
-|**links** | [**SingleWAF**](SingleWAF.md) |  |  [optional] |
+|**links** | [**Links**](Links.md) |  |  [optional] |
+|**results** | [**List&lt;SingleWAF&gt;**](SingleWAF.md) |  |  [optional] |
 |**schemaVersion** | **Long** |  |  [optional] |
 
 
