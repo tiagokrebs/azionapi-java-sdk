@@ -216,6 +216,8 @@ public class RecordsApi {
     /**
      * Build call for getZoneRecords
      * @param zoneId The hosted zone id (required)
+     * @param page Identifies which page should be returned, if the return is paginated. (optional, default to 1)
+     * @param pageSize Identifies how many items should be returned per page. (optional, default to 10)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -227,7 +229,7 @@ public class RecordsApi {
         <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getZoneRecordsCall(Integer zoneId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getZoneRecordsCall(Integer zoneId, Long page, Long pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -253,6 +255,14 @@ public class RecordsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (page != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page_size", pageSize));
+        }
+
         final String[] localVarAccepts = {
             "application/json; version=3"
         };
@@ -273,13 +283,13 @@ public class RecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getZoneRecordsValidateBeforeCall(Integer zoneId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getZoneRecordsValidateBeforeCall(Integer zoneId, Long page, Long pageSize, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'zoneId' is set
         if (zoneId == null) {
             throw new ApiException("Missing the required parameter 'zoneId' when calling getZoneRecords(Async)");
         }
 
-        return getZoneRecordsCall(zoneId, _callback);
+        return getZoneRecordsCall(zoneId, page, pageSize, _callback);
 
     }
 
@@ -287,6 +297,8 @@ public class RecordsApi {
      * Get a collection of Intelligent DNS zone records
      * 
      * @param zoneId The hosted zone id (required)
+     * @param page Identifies which page should be returned, if the return is paginated. (optional, default to 1)
+     * @param pageSize Identifies how many items should be returned per page. (optional, default to 10)
      * @return GetRecordsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -297,8 +309,8 @@ public class RecordsApi {
         <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
-    public GetRecordsResponse getZoneRecords(Integer zoneId) throws ApiException {
-        ApiResponse<GetRecordsResponse> localVarResp = getZoneRecordsWithHttpInfo(zoneId);
+    public GetRecordsResponse getZoneRecords(Integer zoneId, Long page, Long pageSize) throws ApiException {
+        ApiResponse<GetRecordsResponse> localVarResp = getZoneRecordsWithHttpInfo(zoneId, page, pageSize);
         return localVarResp.getData();
     }
 
@@ -306,6 +318,8 @@ public class RecordsApi {
      * Get a collection of Intelligent DNS zone records
      * 
      * @param zoneId The hosted zone id (required)
+     * @param page Identifies which page should be returned, if the return is paginated. (optional, default to 1)
+     * @param pageSize Identifies how many items should be returned per page. (optional, default to 10)
      * @return ApiResponse&lt;GetRecordsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -316,8 +330,8 @@ public class RecordsApi {
         <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetRecordsResponse> getZoneRecordsWithHttpInfo(Integer zoneId) throws ApiException {
-        okhttp3.Call localVarCall = getZoneRecordsValidateBeforeCall(zoneId, null);
+    public ApiResponse<GetRecordsResponse> getZoneRecordsWithHttpInfo(Integer zoneId, Long page, Long pageSize) throws ApiException {
+        okhttp3.Call localVarCall = getZoneRecordsValidateBeforeCall(zoneId, page, pageSize, null);
         Type localVarReturnType = new TypeToken<GetRecordsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -326,6 +340,8 @@ public class RecordsApi {
      * Get a collection of Intelligent DNS zone records (asynchronously)
      * 
      * @param zoneId The hosted zone id (required)
+     * @param page Identifies which page should be returned, if the return is paginated. (optional, default to 1)
+     * @param pageSize Identifies how many items should be returned per page. (optional, default to 10)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -337,9 +353,9 @@ public class RecordsApi {
         <tr><td> 404 </td><td> Zone not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getZoneRecordsAsync(Integer zoneId, final ApiCallback<GetRecordsResponse> _callback) throws ApiException {
+    public okhttp3.Call getZoneRecordsAsync(Integer zoneId, Long page, Long pageSize, final ApiCallback<GetRecordsResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getZoneRecordsValidateBeforeCall(zoneId, _callback);
+        okhttp3.Call localVarCall = getZoneRecordsValidateBeforeCall(zoneId, page, pageSize, _callback);
         Type localVarReturnType = new TypeToken<GetRecordsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

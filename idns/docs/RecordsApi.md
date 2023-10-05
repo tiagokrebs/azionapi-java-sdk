@@ -82,7 +82,7 @@ public class Example {
 
 <a id="getZoneRecords"></a>
 # **getZoneRecords**
-> GetRecordsResponse getZoneRecords(zoneId)
+> GetRecordsResponse getZoneRecords(zoneId, page, pageSize)
 
 Get a collection of Intelligent DNS zone records
 
@@ -109,8 +109,10 @@ public class Example {
 
     RecordsApi apiInstance = new RecordsApi(defaultClient);
     Integer zoneId = 56; // Integer | The hosted zone id
+    Long page = 1L; // Long | Identifies which page should be returned, if the return is paginated.
+    Long pageSize = 10L; // Long | Identifies how many items should be returned per page.
     try {
-      GetRecordsResponse result = apiInstance.getZoneRecords(zoneId);
+      GetRecordsResponse result = apiInstance.getZoneRecords(zoneId, page, pageSize);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RecordsApi#getZoneRecords");
@@ -128,6 +130,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **zoneId** | **Integer**| The hosted zone id | |
+| **page** | **Long**| Identifies which page should be returned, if the return is paginated. | [optional] [default to 1] |
+| **pageSize** | **Long**| Identifies how many items should be returned per page. | [optional] [default to 10] |
 
 ### Return type
 
