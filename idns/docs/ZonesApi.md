@@ -149,7 +149,7 @@ public class Example {
 
 <a id="getZones"></a>
 # **getZones**
-> GetZonesResponse getZones()
+> GetZonesResponse getZones(orderBy, sort, page, pageSize)
 
 Get a collection of Intelligent DNS zones
 
@@ -175,8 +175,12 @@ public class Example {
     //tokenAuth.setApiKeyPrefix("Token");
 
     ZonesApi apiInstance = new ZonesApi(defaultClient);
+    String orderBy = "id"; // String | Identifies which property the return should be sorted by.
+    String sort = "asc"; // String | Defines whether objects are shown in ascending or descending order depending on the value set in order_by.
+    Long page = 1L; // Long | Identifies which page should be returned, if the return is paginated.
+    Long pageSize = 10L; // Long | Identifies how many items should be returned per page.
     try {
-      GetZonesResponse result = apiInstance.getZones();
+      GetZonesResponse result = apiInstance.getZones(orderBy, sort, page, pageSize);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ZonesApi#getZones");
@@ -190,7 +194,13 @@ public class Example {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **orderBy** | **String**| Identifies which property the return should be sorted by. | [optional] [default to name] [enum: id, name, domain, is_active] |
+| **sort** | **String**| Defines whether objects are shown in ascending or descending order depending on the value set in order_by. | [optional] [default to asc] [enum: asc, desc] |
+| **page** | **Long**| Identifies which page should be returned, if the return is paginated. | [optional] [default to 1] |
+| **pageSize** | **Long**| Identifies how many items should be returned per page. | [optional] [default to 10] |
 
 ### Return type
 

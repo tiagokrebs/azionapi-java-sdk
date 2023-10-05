@@ -39,7 +39,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class ZonesApi {
     private ApiClient localVarApiClient;
@@ -334,6 +333,10 @@ public class ZonesApi {
     }
     /**
      * Build call for getZones
+     * @param orderBy Identifies which property the return should be sorted by. (optional, default to name)
+     * @param sort Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)
+     * @param page Identifies which page should be returned, if the return is paginated. (optional, default to 1)
+     * @param pageSize Identifies how many items should be returned per page. (optional, default to 10)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -344,7 +347,7 @@ public class ZonesApi {
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getZonesCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getZonesCall(String orderBy, String sort, Long page, Long pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -369,6 +372,22 @@ public class ZonesApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (orderBy != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("order_by", orderBy));
+        }
+
+        if (sort != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
+        }
+
+        if (page != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page_size", pageSize));
+        }
+
         final String[] localVarAccepts = {
             "application/json",
             "application/json; version=3"
@@ -390,14 +409,18 @@ public class ZonesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getZonesValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return getZonesCall(_callback);
+    private okhttp3.Call getZonesValidateBeforeCall(String orderBy, String sort, Long page, Long pageSize, final ApiCallback _callback) throws ApiException {
+        return getZonesCall(orderBy, sort, page, pageSize, _callback);
 
     }
 
     /**
      * Get a collection of Intelligent DNS zones
      * 
+     * @param orderBy Identifies which property the return should be sorted by. (optional, default to name)
+     * @param sort Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)
+     * @param page Identifies which page should be returned, if the return is paginated. (optional, default to 1)
+     * @param pageSize Identifies how many items should be returned per page. (optional, default to 10)
      * @return GetZonesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -407,14 +430,18 @@ public class ZonesApi {
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
      </table>
      */
-    public GetZonesResponse getZones() throws ApiException {
-        ApiResponse<GetZonesResponse> localVarResp = getZonesWithHttpInfo();
+    public GetZonesResponse getZones(String orderBy, String sort, Long page, Long pageSize) throws ApiException {
+        ApiResponse<GetZonesResponse> localVarResp = getZonesWithHttpInfo(orderBy, sort, page, pageSize);
         return localVarResp.getData();
     }
 
     /**
      * Get a collection of Intelligent DNS zones
      * 
+     * @param orderBy Identifies which property the return should be sorted by. (optional, default to name)
+     * @param sort Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)
+     * @param page Identifies which page should be returned, if the return is paginated. (optional, default to 1)
+     * @param pageSize Identifies how many items should be returned per page. (optional, default to 10)
      * @return ApiResponse&lt;GetZonesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -424,8 +451,8 @@ public class ZonesApi {
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetZonesResponse> getZonesWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = getZonesValidateBeforeCall(null);
+    public ApiResponse<GetZonesResponse> getZonesWithHttpInfo(String orderBy, String sort, Long page, Long pageSize) throws ApiException {
+        okhttp3.Call localVarCall = getZonesValidateBeforeCall(orderBy, sort, page, pageSize, null);
         Type localVarReturnType = new TypeToken<GetZonesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -433,6 +460,10 @@ public class ZonesApi {
     /**
      * Get a collection of Intelligent DNS zones (asynchronously)
      * 
+     * @param orderBy Identifies which property the return should be sorted by. (optional, default to name)
+     * @param sort Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)
+     * @param page Identifies which page should be returned, if the return is paginated. (optional, default to 1)
+     * @param pageSize Identifies how many items should be returned per page. (optional, default to 10)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -443,9 +474,9 @@ public class ZonesApi {
         <tr><td> 400 </td><td> Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getZonesAsync(final ApiCallback<GetZonesResponse> _callback) throws ApiException {
+    public okhttp3.Call getZonesAsync(String orderBy, String sort, Long page, Long pageSize, final ApiCallback<GetZonesResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getZonesValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = getZonesValidateBeforeCall(orderBy, sort, page, pageSize, _callback);
         Type localVarReturnType = new TypeToken<GetZonesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
