@@ -40,8 +40,8 @@ public class Example {
     //tokenAuth.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    Integer page = 56; // Integer | 
-    Integer pageSize = 56; // Integer | 
+    Long page = 56L; // Long | 
+    Long pageSize = 56L; // Long | 
     String sort = "sort_example"; // String | 
     String orderBy = "orderBy_example"; // String | 
     try {
@@ -62,8 +62,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **page** | **Integer**|  | [optional] |
-| **pageSize** | **Integer**|  | [optional] |
+| **page** | **Long**|  | [optional] |
+| **pageSize** | **Long**|  | [optional] |
 | **sort** | **String**|  | [optional] |
 | **orderBy** | **String**|  | [optional] |
 
@@ -84,11 +84,12 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A list of Edge Functions Instances |  -  |
+| **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
 
 <a id="edgeFirewallEdgeFirewallIdFunctionsInstancesPost"></a>
 # **edgeFirewallEdgeFirewallIdFunctionsInstancesPost**
-> edgeFirewallEdgeFirewallIdFunctionsInstancesPost(createEdgeFunctionsInstancesRequest)
+> EdgeFunctionsInstanceResponse edgeFirewallEdgeFirewallIdFunctionsInstancesPost(createEdgeFunctionsInstancesRequest)
 
 Create an Edge Functions Instance
 
@@ -116,7 +117,8 @@ public class Example {
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest = new CreateEdgeFunctionsInstancesRequest(); // CreateEdgeFunctionsInstancesRequest | 
     try {
-      apiInstance.edgeFirewallEdgeFirewallIdFunctionsInstancesPost(createEdgeFunctionsInstancesRequest);
+      EdgeFunctionsInstanceResponse result = apiInstance.edgeFirewallEdgeFirewallIdFunctionsInstancesPost(createEdgeFunctionsInstancesRequest);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#edgeFirewallEdgeFirewallIdFunctionsInstancesPost");
       System.err.println("Status code: " + e.getCode());
@@ -136,7 +138,7 @@ public class Example {
 
 ### Return type
 
-null (empty response body)
+[**EdgeFunctionsInstanceResponse**](EdgeFunctionsInstanceResponse.md)
 
 ### Authorization
 
@@ -145,7 +147,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -294,7 +296,7 @@ public class Example {
 
 <a id="edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch"></a>
 # **edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch**
-> ListEdgeFunctionsInstancesResponse edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch(uuid, body)
+> EdgeFunctionsInstanceResponse edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch(uuid, body)
 
 Update some Edge Functions Instance attributes
 
@@ -323,7 +325,7 @@ public class Example {
     String uuid = "uuid_example"; // String | 
     CreateEdgeFunctionsInstancesRequest body = new CreateEdgeFunctionsInstancesRequest(); // CreateEdgeFunctionsInstancesRequest | 
     try {
-      ListEdgeFunctionsInstancesResponse result = apiInstance.edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch(uuid, body);
+      EdgeFunctionsInstanceResponse result = apiInstance.edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch(uuid, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch");
@@ -345,7 +347,7 @@ public class Example {
 
 ### Return type
 
-[**ListEdgeFunctionsInstancesResponse**](ListEdgeFunctionsInstancesResponse.md)
+[**EdgeFunctionsInstanceResponse**](EdgeFunctionsInstanceResponse.md)
 
 ### Authorization
 
@@ -366,7 +368,7 @@ public class Example {
 
 <a id="edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPut"></a>
 # **edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPut**
-> ListEdgeFunctionsInstancesResponse edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPut(uuid, body)
+> EdgeFunctionsInstanceResponse edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPut(uuid, body)
 
 Overwrite some Edge Functions Instance attributes
 
@@ -395,7 +397,7 @@ public class Example {
     String uuid = "uuid_example"; // String | 
     CreateEdgeFunctionsInstancesRequest body = new CreateEdgeFunctionsInstancesRequest(); // CreateEdgeFunctionsInstancesRequest | 
     try {
-      ListEdgeFunctionsInstancesResponse result = apiInstance.edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPut(uuid, body);
+      EdgeFunctionsInstanceResponse result = apiInstance.edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPut(uuid, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPut");
@@ -417,7 +419,7 @@ public class Example {
 
 ### Return type
 
-[**ListEdgeFunctionsInstancesResponse**](ListEdgeFunctionsInstancesResponse.md)
+[**EdgeFunctionsInstanceResponse**](EdgeFunctionsInstanceResponse.md)
 
 ### Authorization
 
