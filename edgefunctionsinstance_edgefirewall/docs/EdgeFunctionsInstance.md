@@ -7,10 +7,12 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**id** | **Integer** |  |  [optional] |
+|**id** | **Long** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
+|**lastEditor** | **String** |  |  [optional] |
+|**lastModified** | **String** |  |  [optional] |
 |**jsonArgs** | **Object** |  |  [optional] |
-|**edgeFunction** | **Integer** |  |  [optional] |
+|**edgeFunction** | **Long** |  |  [optional] |
 
 
 

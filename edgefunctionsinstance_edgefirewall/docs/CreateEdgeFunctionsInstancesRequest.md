@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** |  |  [optional] |
-|**edgeFunction** | **Integer** |  |  [optional] |
+|**edgeFunction** | **Long** |  |  [optional] |
 |**jsonArgs** | **Object** |  |  [optional] |
 
 

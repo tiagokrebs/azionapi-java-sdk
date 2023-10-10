@@ -14,13 +14,14 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -42,7 +43,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -50,28 +50,36 @@ import org.openapitools.client.JSON;
 /**
  * EdgeFunctionsInstance
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T20:08:38.004515Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-10T17:45:38.602598Z[GMT]")
 public class EdgeFunctionsInstance {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private Integer id;
+  private Long id;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
+  public static final String SERIALIZED_NAME_LAST_EDITOR = "last_editor";
+  @SerializedName(SERIALIZED_NAME_LAST_EDITOR)
+  private String lastEditor;
+
+  public static final String SERIALIZED_NAME_LAST_MODIFIED = "last_modified";
+  @SerializedName(SERIALIZED_NAME_LAST_MODIFIED)
+  private String lastModified;
+
   public static final String SERIALIZED_NAME_JSON_ARGS = "json_args";
   @SerializedName(SERIALIZED_NAME_JSON_ARGS)
-  private Object jsonArgs;
+  private Object jsonArgs = null;
 
   public static final String SERIALIZED_NAME_EDGE_FUNCTION = "edge_function";
   @SerializedName(SERIALIZED_NAME_EDGE_FUNCTION)
-  private Integer edgeFunction;
+  private Long edgeFunction;
 
   public EdgeFunctionsInstance() {
   }
 
-  public EdgeFunctionsInstance id(Integer id) {
+  public EdgeFunctionsInstance id(Long id) {
     
     this.id = id;
     return this;
@@ -82,12 +90,12 @@ public class EdgeFunctionsInstance {
    * @return id
   **/
   @javax.annotation.Nullable
-  public Integer getId() {
+  public Long getId() {
     return id;
   }
 
 
-  public void setId(Integer id) {
+  public void setId(Long id) {
     this.id = id;
   }
 
@@ -113,6 +121,48 @@ public class EdgeFunctionsInstance {
   }
 
 
+  public EdgeFunctionsInstance lastEditor(String lastEditor) {
+    
+    this.lastEditor = lastEditor;
+    return this;
+  }
+
+   /**
+   * Get lastEditor
+   * @return lastEditor
+  **/
+  @javax.annotation.Nullable
+  public String getLastEditor() {
+    return lastEditor;
+  }
+
+
+  public void setLastEditor(String lastEditor) {
+    this.lastEditor = lastEditor;
+  }
+
+
+  public EdgeFunctionsInstance lastModified(String lastModified) {
+    
+    this.lastModified = lastModified;
+    return this;
+  }
+
+   /**
+   * Get lastModified
+   * @return lastModified
+  **/
+  @javax.annotation.Nullable
+  public String getLastModified() {
+    return lastModified;
+  }
+
+
+  public void setLastModified(String lastModified) {
+    this.lastModified = lastModified;
+  }
+
+
   public EdgeFunctionsInstance jsonArgs(Object jsonArgs) {
     
     this.jsonArgs = jsonArgs;
@@ -134,7 +184,7 @@ public class EdgeFunctionsInstance {
   }
 
 
-  public EdgeFunctionsInstance edgeFunction(Integer edgeFunction) {
+  public EdgeFunctionsInstance edgeFunction(Long edgeFunction) {
     
     this.edgeFunction = edgeFunction;
     return this;
@@ -145,12 +195,12 @@ public class EdgeFunctionsInstance {
    * @return edgeFunction
   **/
   @javax.annotation.Nullable
-  public Integer getEdgeFunction() {
+  public Long getEdgeFunction() {
     return edgeFunction;
   }
 
 
-  public void setEdgeFunction(Integer edgeFunction) {
+  public void setEdgeFunction(Long edgeFunction) {
     this.edgeFunction = edgeFunction;
   }
 
@@ -167,13 +217,26 @@ public class EdgeFunctionsInstance {
     EdgeFunctionsInstance edgeFunctionsInstance = (EdgeFunctionsInstance) o;
     return Objects.equals(this.id, edgeFunctionsInstance.id) &&
         Objects.equals(this.name, edgeFunctionsInstance.name) &&
+        Objects.equals(this.lastEditor, edgeFunctionsInstance.lastEditor) &&
+        Objects.equals(this.lastModified, edgeFunctionsInstance.lastModified) &&
         Objects.equals(this.jsonArgs, edgeFunctionsInstance.jsonArgs) &&
         Objects.equals(this.edgeFunction, edgeFunctionsInstance.edgeFunction);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, jsonArgs, edgeFunction);
+    return Objects.hash(id, name, lastEditor, lastModified, jsonArgs, edgeFunction);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -182,6 +245,8 @@ public class EdgeFunctionsInstance {
     sb.append("class EdgeFunctionsInstance {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    lastEditor: ").append(toIndentedString(lastEditor)).append("\n");
+    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
     sb.append("    jsonArgs: ").append(toIndentedString(jsonArgs)).append("\n");
     sb.append("    edgeFunction: ").append(toIndentedString(edgeFunction)).append("\n");
     sb.append("}");
@@ -208,6 +273,8 @@ public class EdgeFunctionsInstance {
     openapiFields = new HashSet<String>();
     openapiFields.add("id");
     openapiFields.add("name");
+    openapiFields.add("last_editor");
+    openapiFields.add("last_modified");
     openapiFields.add("json_args");
     openapiFields.add("edge_function");
 
@@ -216,27 +283,34 @@ public class EdgeFunctionsInstance {
   }
 
  /**
-  * Validates the JSON Object and throws an exception if issues found
+  * Validates the JSON Element and throws an exception if issues found
   *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to EdgeFunctionsInstance
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to EdgeFunctionsInstance
   */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!EdgeFunctionsInstance.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!EdgeFunctionsInstance.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in EdgeFunctionsInstance is not found in the empty JSON string", EdgeFunctionsInstance.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!EdgeFunctionsInstance.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `EdgeFunctionsInstance` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `EdgeFunctionsInstance` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("last_editor") != null && !jsonObj.get("last_editor").isJsonNull()) && !jsonObj.get("last_editor").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `last_editor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_editor").toString()));
+      }
+      if ((jsonObj.get("last_modified") != null && !jsonObj.get("last_modified").isJsonNull()) && !jsonObj.get("last_modified").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `last_modified` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_modified").toString()));
       }
   }
 
@@ -260,9 +334,9 @@ public class EdgeFunctionsInstance {
 
            @Override
            public EdgeFunctionsInstance read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
