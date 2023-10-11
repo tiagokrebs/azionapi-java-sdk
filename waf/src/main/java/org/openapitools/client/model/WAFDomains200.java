@@ -23,6 +23,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.Links;
+import org.openapitools.client.model.WAFDomainList200;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,11 +53,23 @@ import org.openapitools.client.JSON;
 /**
  * WAFDomains200
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-04T23:52:29.772282Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-11T12:39:47.281276Z[GMT]")
 public class WAFDomains200 {
+  public static final String SERIALIZED_NAME_COUNT = "count";
+  @SerializedName(SERIALIZED_NAME_COUNT)
+  private Long count;
+
+  public static final String SERIALIZED_NAME_TOTAL_PAGES = "total_pages";
+  @SerializedName(SERIALIZED_NAME_TOTAL_PAGES)
+  private Long totalPages;
+
+  public static final String SERIALIZED_NAME_LINKS = "links";
+  @SerializedName(SERIALIZED_NAME_LINKS)
+  private Links links;
+
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
-  private List<Object> results;
+  private List<WAFDomainList200> results;
 
   public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
   @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)
@@ -64,13 +78,76 @@ public class WAFDomains200 {
   public WAFDomains200() {
   }
 
-  public WAFDomains200 results(List<Object> results) {
+  public WAFDomains200 count(Long count) {
+    
+    this.count = count;
+    return this;
+  }
+
+   /**
+   * Get count
+   * @return count
+  **/
+  @javax.annotation.Nullable
+  public Long getCount() {
+    return count;
+  }
+
+
+  public void setCount(Long count) {
+    this.count = count;
+  }
+
+
+  public WAFDomains200 totalPages(Long totalPages) {
+    
+    this.totalPages = totalPages;
+    return this;
+  }
+
+   /**
+   * Get totalPages
+   * @return totalPages
+  **/
+  @javax.annotation.Nullable
+  public Long getTotalPages() {
+    return totalPages;
+  }
+
+
+  public void setTotalPages(Long totalPages) {
+    this.totalPages = totalPages;
+  }
+
+
+  public WAFDomains200 links(Links links) {
+    
+    this.links = links;
+    return this;
+  }
+
+   /**
+   * Get links
+   * @return links
+  **/
+  @javax.annotation.Nullable
+  public Links getLinks() {
+    return links;
+  }
+
+
+  public void setLinks(Links links) {
+    this.links = links;
+  }
+
+
+  public WAFDomains200 results(List<WAFDomainList200> results) {
     
     this.results = results;
     return this;
   }
 
-  public WAFDomains200 addResultsItem(Object resultsItem) {
+  public WAFDomains200 addResultsItem(WAFDomainList200 resultsItem) {
     if (this.results == null) {
       this.results = new ArrayList<>();
     }
@@ -83,12 +160,12 @@ public class WAFDomains200 {
    * @return results
   **/
   @javax.annotation.Nullable
-  public List<Object> getResults() {
+  public List<WAFDomainList200> getResults() {
     return results;
   }
 
 
-  public void setResults(List<Object> results) {
+  public void setResults(List<WAFDomainList200> results) {
     this.results = results;
   }
 
@@ -124,19 +201,25 @@ public class WAFDomains200 {
       return false;
     }
     WAFDomains200 waFDomains200 = (WAFDomains200) o;
-    return Objects.equals(this.results, waFDomains200.results) &&
+    return Objects.equals(this.count, waFDomains200.count) &&
+        Objects.equals(this.totalPages, waFDomains200.totalPages) &&
+        Objects.equals(this.links, waFDomains200.links) &&
+        Objects.equals(this.results, waFDomains200.results) &&
         Objects.equals(this.schemaVersion, waFDomains200.schemaVersion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(results, schemaVersion);
+    return Objects.hash(count, totalPages, links, results, schemaVersion);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class WAFDomains200 {\n");
+    sb.append("    count: ").append(toIndentedString(count)).append("\n");
+    sb.append("    totalPages: ").append(toIndentedString(totalPages)).append("\n");
+    sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("    schemaVersion: ").append(toIndentedString(schemaVersion)).append("\n");
     sb.append("}");
@@ -161,6 +244,9 @@ public class WAFDomains200 {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("count");
+    openapiFields.add("total_pages");
+    openapiFields.add("links");
     openapiFields.add("results");
     openapiFields.add("schema_version");
 
@@ -189,9 +275,23 @@ public class WAFDomains200 {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("results") != null && !jsonObj.get("results").isJsonNull() && !jsonObj.get("results").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `results` to be an array in the JSON string but got `%s`", jsonObj.get("results").toString()));
+      // validate the optional field `links`
+      if (jsonObj.get("links") != null && !jsonObj.get("links").isJsonNull()) {
+        Links.validateJsonElement(jsonObj.get("links"));
+      }
+      if (jsonObj.get("results") != null && !jsonObj.get("results").isJsonNull()) {
+        JsonArray jsonArrayresults = jsonObj.getAsJsonArray("results");
+        if (jsonArrayresults != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("results").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `results` to be an array in the JSON string but got `%s`", jsonObj.get("results").toString()));
+          }
+
+          // validate the optional field `results` (array)
+          for (int i = 0; i < jsonArrayresults.size(); i++) {
+            WAFDomainList200.validateJsonElement(jsonArrayresults.get(i));
+          };
+        }
       }
   }
 

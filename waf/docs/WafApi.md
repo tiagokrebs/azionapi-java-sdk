@@ -6,8 +6,8 @@ All URIs are relative to *https://api.azionapi.net*
 |------------- | ------------- | -------------|
 | [**createNewWAFRuleset**](WafApi.md#createNewWAFRuleset) | **POST** /waf/rulesets | Create a new WAF Rule Set in an account. |
 | [**deleteWAFRuleset**](WafApi.md#deleteWAFRuleset) | **DELETE** /waf/rulesets/{waf_rule_set_id} | Remove an WAF Rule Set from an account. Warning: this action cannot be undone. |
-| [**getWAFDomains**](WafApi.md#getWAFDomains) | **GET** /waf/{wafId}/domains | List all domains attached to a Web Application Firewall (WAF) in an account. |
-| [**getWAFEvents**](WafApi.md#getWAFEvents) | **GET** /waf/{wafId}/waf_events | Find WAF log events |
+| [**getWAFDomains**](WafApi.md#getWAFDomains) | **GET** /waf/{waf_id}/domains | List all domains attached to a Web Application Firewall (WAF) in an account. |
+| [**getWAFEvents**](WafApi.md#getWAFEvents) | **GET** /waf/{waf_id}/waf_events | Find WAF log events |
 | [**getWAFRuleset**](WafApi.md#getWAFRuleset) | **GET** /waf/rulesets/{waf_rule_set_id} | List a specific Rule Set associated to a Web Application Firewall (WAF) in an account. |
 | [**listAllWAF**](WafApi.md#listAllWAF) | **GET** /waf | List all Web Application Firewalls (WAFs) created in an account |
 | [**listAllWAFRulesets**](WafApi.md#listAllWAFRulesets) | **GET** /waf/rulesets | list all Rule Sets associated to a Web Application Firewall (WAF) in an account. |
@@ -233,7 +233,7 @@ public class Example {
 
 <a id="getWAFEvents"></a>
 # **getWAFEvents**
-> WAFEvents200 getWAFEvents(wafId, hourRange, domainsIds, networkListId)
+> WAFEvents200 getWAFEvents(wafId, hourRange, domainsIds, networkListId, sort, page, pageSize)
 
 Find WAF log events
 
@@ -263,8 +263,11 @@ public class Example {
     Long hourRange = 56L; // Long | Last log hours since now (it must be a integer number ranging between 1 and 72)
     String domainsIds = "domainsIds_example"; // String | Multiple domain's id (they must be separated by comma like 1233,1234)
     Long networkListId = 56L; // Long | Id of a network list
+    String sort = "asc"; // String | 
+    Long page = 1L; // Long | 
+    Long pageSize = 10L; // Long | 
     try {
-      WAFEvents200 result = apiInstance.getWAFEvents(wafId, hourRange, domainsIds, networkListId);
+      WAFEvents200 result = apiInstance.getWAFEvents(wafId, hourRange, domainsIds, networkListId, sort, page, pageSize);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WafApi#getWAFEvents");
@@ -285,6 +288,9 @@ public class Example {
 | **hourRange** | **Long**| Last log hours since now (it must be a integer number ranging between 1 and 72) | |
 | **domainsIds** | **String**| Multiple domain&#39;s id (they must be separated by comma like 1233,1234) | |
 | **networkListId** | **Long**| Id of a network list | [optional] |
+| **sort** | **String**|  | [optional] [default to asc] [enum: asc, desc] |
+| **page** | **Long**|  | [optional] [default to 1] |
+| **pageSize** | **Long**|  | [optional] [default to 10] |
 
 ### Return type
 

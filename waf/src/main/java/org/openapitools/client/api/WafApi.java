@@ -400,8 +400,8 @@ public class WafApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/waf/{wafId}/domains"
-            .replace("{" + "wafId" + "}", localVarApiClient.escapeString(wafId.toString()));
+        String localVarPath = "/waf/{waf_id}/domains"
+            .replace("{" + "waf_id" + "}", localVarApiClient.escapeString(wafId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -513,6 +513,9 @@ public class WafApi {
      * @param hourRange Last log hours since now (it must be a integer number ranging between 1 and 72) (required)
      * @param domainsIds Multiple domain&#39;s id (they must be separated by comma like 1233,1234) (required)
      * @param networkListId Id of a network list (optional)
+     * @param sort  (optional, default to asc)
+     * @param page  (optional, default to 1)
+     * @param pageSize  (optional, default to 10)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -526,7 +529,7 @@ public class WafApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWAFEventsCall(Long wafId, Long hourRange, String domainsIds, Long networkListId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getWAFEventsCall(Long wafId, Long hourRange, String domainsIds, Long networkListId, String sort, Long page, Long pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -543,8 +546,8 @@ public class WafApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/waf/{wafId}/waf_events"
-            .replace("{" + "wafId" + "}", localVarApiClient.escapeString(wafId.toString()));
+        String localVarPath = "/waf/{waf_id}/waf_events"
+            .replace("{" + "waf_id" + "}", localVarApiClient.escapeString(wafId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -562,6 +565,18 @@ public class WafApi {
 
         if (domainsIds != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("domains_ids", domainsIds));
+        }
+
+        if (sort != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
+        }
+
+        if (page != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page_size", pageSize));
         }
 
         final String[] localVarAccepts = {
@@ -584,7 +599,7 @@ public class WafApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWAFEventsValidateBeforeCall(Long wafId, Long hourRange, String domainsIds, Long networkListId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWAFEventsValidateBeforeCall(Long wafId, Long hourRange, String domainsIds, Long networkListId, String sort, Long page, Long pageSize, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'wafId' is set
         if (wafId == null) {
             throw new ApiException("Missing the required parameter 'wafId' when calling getWAFEvents(Async)");
@@ -600,7 +615,7 @@ public class WafApi {
             throw new ApiException("Missing the required parameter 'domainsIds' when calling getWAFEvents(Async)");
         }
 
-        return getWAFEventsCall(wafId, hourRange, domainsIds, networkListId, _callback);
+        return getWAFEventsCall(wafId, hourRange, domainsIds, networkListId, sort, page, pageSize, _callback);
 
     }
 
@@ -611,6 +626,9 @@ public class WafApi {
      * @param hourRange Last log hours since now (it must be a integer number ranging between 1 and 72) (required)
      * @param domainsIds Multiple domain&#39;s id (they must be separated by comma like 1233,1234) (required)
      * @param networkListId Id of a network list (optional)
+     * @param sort  (optional, default to asc)
+     * @param page  (optional, default to 1)
+     * @param pageSize  (optional, default to 10)
      * @return WAFEvents200
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -623,8 +641,8 @@ public class WafApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public WAFEvents200 getWAFEvents(Long wafId, Long hourRange, String domainsIds, Long networkListId) throws ApiException {
-        ApiResponse<WAFEvents200> localVarResp = getWAFEventsWithHttpInfo(wafId, hourRange, domainsIds, networkListId);
+    public WAFEvents200 getWAFEvents(Long wafId, Long hourRange, String domainsIds, Long networkListId, String sort, Long page, Long pageSize) throws ApiException {
+        ApiResponse<WAFEvents200> localVarResp = getWAFEventsWithHttpInfo(wafId, hourRange, domainsIds, networkListId, sort, page, pageSize);
         return localVarResp.getData();
     }
 
@@ -635,6 +653,9 @@ public class WafApi {
      * @param hourRange Last log hours since now (it must be a integer number ranging between 1 and 72) (required)
      * @param domainsIds Multiple domain&#39;s id (they must be separated by comma like 1233,1234) (required)
      * @param networkListId Id of a network list (optional)
+     * @param sort  (optional, default to asc)
+     * @param page  (optional, default to 1)
+     * @param pageSize  (optional, default to 10)
      * @return ApiResponse&lt;WAFEvents200&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -647,8 +668,8 @@ public class WafApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WAFEvents200> getWAFEventsWithHttpInfo(Long wafId, Long hourRange, String domainsIds, Long networkListId) throws ApiException {
-        okhttp3.Call localVarCall = getWAFEventsValidateBeforeCall(wafId, hourRange, domainsIds, networkListId, null);
+    public ApiResponse<WAFEvents200> getWAFEventsWithHttpInfo(Long wafId, Long hourRange, String domainsIds, Long networkListId, String sort, Long page, Long pageSize) throws ApiException {
+        okhttp3.Call localVarCall = getWAFEventsValidateBeforeCall(wafId, hourRange, domainsIds, networkListId, sort, page, pageSize, null);
         Type localVarReturnType = new TypeToken<WAFEvents200>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -660,6 +681,9 @@ public class WafApi {
      * @param hourRange Last log hours since now (it must be a integer number ranging between 1 and 72) (required)
      * @param domainsIds Multiple domain&#39;s id (they must be separated by comma like 1233,1234) (required)
      * @param networkListId Id of a network list (optional)
+     * @param sort  (optional, default to asc)
+     * @param page  (optional, default to 1)
+     * @param pageSize  (optional, default to 10)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -673,9 +697,9 @@ public class WafApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWAFEventsAsync(Long wafId, Long hourRange, String domainsIds, Long networkListId, final ApiCallback<WAFEvents200> _callback) throws ApiException {
+    public okhttp3.Call getWAFEventsAsync(Long wafId, Long hourRange, String domainsIds, Long networkListId, String sort, Long page, Long pageSize, final ApiCallback<WAFEvents200> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getWAFEventsValidateBeforeCall(wafId, hourRange, domainsIds, networkListId, _callback);
+        okhttp3.Call localVarCall = getWAFEventsValidateBeforeCall(wafId, hourRange, domainsIds, networkListId, sort, page, pageSize, _callback);
         Type localVarReturnType = new TypeToken<WAFEvents200>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

@@ -8,8 +8,10 @@ build.sbt
 docs/CreateNewWAFRulesetRequest.md
 docs/Links.md
 docs/SingleWAF.md
+docs/WAFDomainList200.md
 docs/WAFDomains200.md
 docs/WAFEvents200.md
+docs/WAFEvents200ResultsInner.md
 docs/WAFEvents400.md
 docs/WAFEvents401.md
 docs/WAFEvents404.md
@@ -48,12 +50,15 @@ src/main/java/org/openapitools/client/model/AbstractOpenApiSchema.java
 src/main/java/org/openapitools/client/model/CreateNewWAFRulesetRequest.java
 src/main/java/org/openapitools/client/model/Links.java
 src/main/java/org/openapitools/client/model/SingleWAF.java
+src/main/java/org/openapitools/client/model/WAFDomainList200.java
 src/main/java/org/openapitools/client/model/WAFDomains200.java
 src/main/java/org/openapitools/client/model/WAFEvents200.java
+src/main/java/org/openapitools/client/model/WAFEvents200ResultsInner.java
 src/main/java/org/openapitools/client/model/WAFEvents400.java
 src/main/java/org/openapitools/client/model/WAFEvents401.java
 src/main/java/org/openapitools/client/model/WAFEvents404.java
 src/main/java/org/openapitools/client/model/WAFList200.java
 src/main/java/org/openapitools/client/model/WAFSensitivityChoices.java
 src/main/java/org/openapitools/client/model/WAFSingle200.java
-src/test/java/org/openapitools/client/model/LinksTest.java
+src/test/java/org/openapitools/client/model/WAFDomainList200Test.java
+src/test/java/org/openapitools/client/model/WAFEvents200ResultsInnerTest.java

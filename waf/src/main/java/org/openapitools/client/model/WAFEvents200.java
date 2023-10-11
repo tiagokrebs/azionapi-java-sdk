@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.WAFEvents200ResultsInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,11 +52,11 @@ import org.openapitools.client.JSON;
 /**
  * WAFEvents200
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-04T23:52:29.772282Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-11T12:39:47.281276Z[GMT]")
 public class WAFEvents200 {
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
-  private List<Object> results;
+  private List<WAFEvents200ResultsInner> results;
 
   public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
   @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)
@@ -64,13 +65,13 @@ public class WAFEvents200 {
   public WAFEvents200() {
   }
 
-  public WAFEvents200 results(List<Object> results) {
+  public WAFEvents200 results(List<WAFEvents200ResultsInner> results) {
     
     this.results = results;
     return this;
   }
 
-  public WAFEvents200 addResultsItem(Object resultsItem) {
+  public WAFEvents200 addResultsItem(WAFEvents200ResultsInner resultsItem) {
     if (this.results == null) {
       this.results = new ArrayList<>();
     }
@@ -83,12 +84,12 @@ public class WAFEvents200 {
    * @return results
   **/
   @javax.annotation.Nullable
-  public List<Object> getResults() {
+  public List<WAFEvents200ResultsInner> getResults() {
     return results;
   }
 
 
-  public void setResults(List<Object> results) {
+  public void setResults(List<WAFEvents200ResultsInner> results) {
     this.results = results;
   }
 
@@ -189,9 +190,19 @@ public class WAFEvents200 {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("results") != null && !jsonObj.get("results").isJsonNull() && !jsonObj.get("results").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `results` to be an array in the JSON string but got `%s`", jsonObj.get("results").toString()));
+      if (jsonObj.get("results") != null && !jsonObj.get("results").isJsonNull()) {
+        JsonArray jsonArrayresults = jsonObj.getAsJsonArray("results");
+        if (jsonArrayresults != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("results").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `results` to be an array in the JSON string but got `%s`", jsonObj.get("results").toString()));
+          }
+
+          // validate the optional field `results` (array)
+          for (int i = 0; i < jsonArrayresults.size(); i++) {
+            WAFEvents200ResultsInner.validateJsonElement(jsonArrayresults.get(i));
+          };
+        }
       }
   }
 
