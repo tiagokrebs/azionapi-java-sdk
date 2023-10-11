@@ -75,23 +75,21 @@ public class DefaultApi {
     }
 
     /**
-     * Build call for edgeFirewallEdgeFirewallIdFunctionsInstancesGet
-     * @param page  (optional)
-     * @param pageSize  (optional)
-     * @param sort  (optional)
-     * @param orderBy  (optional)
+     * Build call for edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdDelete
+     * @param edgeFirewallId  (required)
+     * @param edgeFunctionInstanceId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A list of Edge Functions Instances </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Successfully deleted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesGetCall(Long page, Long pageSize, String sort, String orderBy, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdDeleteCall(Long edgeFirewallId, Long edgeFunctionInstanceId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -108,7 +106,598 @@ public class DefaultApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/edge_firewall/:edge_firewall_id:/functions_instances";
+        String localVarPath = "/edge_firewall/{edge_firewall_id}/functions_instances/{edge_function_instance_id}"
+            .replace("{" + "edge_firewall_id" + "}", localVarApiClient.escapeString(edgeFirewallId.toString()))
+            .replace("{" + "edge_function_instance_id" + "}", localVarApiClient.escapeString(edgeFunctionInstanceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "tokenAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdDeleteValidateBeforeCall(Long edgeFirewallId, Long edgeFunctionInstanceId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'edgeFirewallId' is set
+        if (edgeFirewallId == null) {
+            throw new ApiException("Missing the required parameter 'edgeFirewallId' when calling edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdDelete(Async)");
+        }
+
+        // verify the required parameter 'edgeFunctionInstanceId' is set
+        if (edgeFunctionInstanceId == null) {
+            throw new ApiException("Missing the required parameter 'edgeFunctionInstanceId' when calling edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdDelete(Async)");
+        }
+
+        return edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdDeleteCall(edgeFirewallId, edgeFunctionInstanceId, _callback);
+
+    }
+
+    /**
+     * Delete an Edge Functions Instance by uuid
+     * 
+     * @param edgeFirewallId  (required)
+     * @param edgeFunctionInstanceId  (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Successfully deleted </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public void edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdDelete(Long edgeFirewallId, Long edgeFunctionInstanceId) throws ApiException {
+        edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdDeleteWithHttpInfo(edgeFirewallId, edgeFunctionInstanceId);
+    }
+
+    /**
+     * Delete an Edge Functions Instance by uuid
+     * 
+     * @param edgeFirewallId  (required)
+     * @param edgeFunctionInstanceId  (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Successfully deleted </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdDeleteWithHttpInfo(Long edgeFirewallId, Long edgeFunctionInstanceId) throws ApiException {
+        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdDeleteValidateBeforeCall(edgeFirewallId, edgeFunctionInstanceId, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Delete an Edge Functions Instance by uuid (asynchronously)
+     * 
+     * @param edgeFirewallId  (required)
+     * @param edgeFunctionInstanceId  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Successfully deleted </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdDeleteAsync(Long edgeFirewallId, Long edgeFunctionInstanceId, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdDeleteValidateBeforeCall(edgeFirewallId, edgeFunctionInstanceId, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdGet
+     * @param edgeFirewallId  (required)
+     * @param edgeFunctionInstanceId  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> An Edge Functions Instance object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdGetCall(Long edgeFirewallId, Long edgeFunctionInstanceId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/edge_firewall/{edge_firewall_id}/functions_instances/{edge_function_instance_id}"
+            .replace("{" + "edge_firewall_id" + "}", localVarApiClient.escapeString(edgeFirewallId.toString()))
+            .replace("{" + "edge_function_instance_id" + "}", localVarApiClient.escapeString(edgeFunctionInstanceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "tokenAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdGetValidateBeforeCall(Long edgeFirewallId, Long edgeFunctionInstanceId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'edgeFirewallId' is set
+        if (edgeFirewallId == null) {
+            throw new ApiException("Missing the required parameter 'edgeFirewallId' when calling edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdGet(Async)");
+        }
+
+        // verify the required parameter 'edgeFunctionInstanceId' is set
+        if (edgeFunctionInstanceId == null) {
+            throw new ApiException("Missing the required parameter 'edgeFunctionInstanceId' when calling edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdGet(Async)");
+        }
+
+        return edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdGetCall(edgeFirewallId, edgeFunctionInstanceId, _callback);
+
+    }
+
+    /**
+     * Retrieve an Edge Functions Instance set by uuid
+     * 
+     * @param edgeFirewallId  (required)
+     * @param edgeFunctionInstanceId  (required)
+     * @return EdgeFunctionsInstanceResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> An Edge Functions Instance object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public EdgeFunctionsInstanceResponse edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdGet(Long edgeFirewallId, Long edgeFunctionInstanceId) throws ApiException {
+        ApiResponse<EdgeFunctionsInstanceResponse> localVarResp = edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdGetWithHttpInfo(edgeFirewallId, edgeFunctionInstanceId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Retrieve an Edge Functions Instance set by uuid
+     * 
+     * @param edgeFirewallId  (required)
+     * @param edgeFunctionInstanceId  (required)
+     * @return ApiResponse&lt;EdgeFunctionsInstanceResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> An Edge Functions Instance object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<EdgeFunctionsInstanceResponse> edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdGetWithHttpInfo(Long edgeFirewallId, Long edgeFunctionInstanceId) throws ApiException {
+        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdGetValidateBeforeCall(edgeFirewallId, edgeFunctionInstanceId, null);
+        Type localVarReturnType = new TypeToken<EdgeFunctionsInstanceResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Retrieve an Edge Functions Instance set by uuid (asynchronously)
+     * 
+     * @param edgeFirewallId  (required)
+     * @param edgeFunctionInstanceId  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> An Edge Functions Instance object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdGetAsync(Long edgeFirewallId, Long edgeFunctionInstanceId, final ApiCallback<EdgeFunctionsInstanceResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdGetValidateBeforeCall(edgeFirewallId, edgeFunctionInstanceId, _callback);
+        Type localVarReturnType = new TypeToken<EdgeFunctionsInstanceResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPatch
+     * @param edgeFirewallId  (required)
+     * @param edgeFunctionInstanceId  (required)
+     * @param body  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPatchCall(Long edgeFirewallId, Long edgeFunctionInstanceId, CreateEdgeFunctionsInstancesRequest body, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/edge_firewall/{edge_firewall_id}/functions_instances/{edge_function_instance_id}"
+            .replace("{" + "edge_firewall_id" + "}", localVarApiClient.escapeString(edgeFirewallId.toString()))
+            .replace("{" + "edge_function_instance_id" + "}", localVarApiClient.escapeString(edgeFunctionInstanceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "tokenAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPatchValidateBeforeCall(Long edgeFirewallId, Long edgeFunctionInstanceId, CreateEdgeFunctionsInstancesRequest body, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'edgeFirewallId' is set
+        if (edgeFirewallId == null) {
+            throw new ApiException("Missing the required parameter 'edgeFirewallId' when calling edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPatch(Async)");
+        }
+
+        // verify the required parameter 'edgeFunctionInstanceId' is set
+        if (edgeFunctionInstanceId == null) {
+            throw new ApiException("Missing the required parameter 'edgeFunctionInstanceId' when calling edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPatch(Async)");
+        }
+
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPatch(Async)");
+        }
+
+        return edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPatchCall(edgeFirewallId, edgeFunctionInstanceId, body, _callback);
+
+    }
+
+    /**
+     * Update some Edge Functions Instance attributes
+     * 
+     * @param edgeFirewallId  (required)
+     * @param edgeFunctionInstanceId  (required)
+     * @param body  (required)
+     * @return EdgeFunctionsInstanceResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public EdgeFunctionsInstanceResponse edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPatch(Long edgeFirewallId, Long edgeFunctionInstanceId, CreateEdgeFunctionsInstancesRequest body) throws ApiException {
+        ApiResponse<EdgeFunctionsInstanceResponse> localVarResp = edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPatchWithHttpInfo(edgeFirewallId, edgeFunctionInstanceId, body);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update some Edge Functions Instance attributes
+     * 
+     * @param edgeFirewallId  (required)
+     * @param edgeFunctionInstanceId  (required)
+     * @param body  (required)
+     * @return ApiResponse&lt;EdgeFunctionsInstanceResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<EdgeFunctionsInstanceResponse> edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPatchWithHttpInfo(Long edgeFirewallId, Long edgeFunctionInstanceId, CreateEdgeFunctionsInstancesRequest body) throws ApiException {
+        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPatchValidateBeforeCall(edgeFirewallId, edgeFunctionInstanceId, body, null);
+        Type localVarReturnType = new TypeToken<EdgeFunctionsInstanceResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update some Edge Functions Instance attributes (asynchronously)
+     * 
+     * @param edgeFirewallId  (required)
+     * @param edgeFunctionInstanceId  (required)
+     * @param body  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPatchAsync(Long edgeFirewallId, Long edgeFunctionInstanceId, CreateEdgeFunctionsInstancesRequest body, final ApiCallback<EdgeFunctionsInstanceResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPatchValidateBeforeCall(edgeFirewallId, edgeFunctionInstanceId, body, _callback);
+        Type localVarReturnType = new TypeToken<EdgeFunctionsInstanceResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPut
+     * @param edgeFirewallId  (required)
+     * @param edgeFunctionInstanceId  (required)
+     * @param body  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPutCall(Long edgeFirewallId, Long edgeFunctionInstanceId, CreateEdgeFunctionsInstancesRequest body, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/edge_firewall/{edge_firewall_id}/functions_instances/{edge_function_instance_id}"
+            .replace("{" + "edge_firewall_id" + "}", localVarApiClient.escapeString(edgeFirewallId.toString()))
+            .replace("{" + "edge_function_instance_id" + "}", localVarApiClient.escapeString(edgeFunctionInstanceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "tokenAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPutValidateBeforeCall(Long edgeFirewallId, Long edgeFunctionInstanceId, CreateEdgeFunctionsInstancesRequest body, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'edgeFirewallId' is set
+        if (edgeFirewallId == null) {
+            throw new ApiException("Missing the required parameter 'edgeFirewallId' when calling edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPut(Async)");
+        }
+
+        // verify the required parameter 'edgeFunctionInstanceId' is set
+        if (edgeFunctionInstanceId == null) {
+            throw new ApiException("Missing the required parameter 'edgeFunctionInstanceId' when calling edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPut(Async)");
+        }
+
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPut(Async)");
+        }
+
+        return edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPutCall(edgeFirewallId, edgeFunctionInstanceId, body, _callback);
+
+    }
+
+    /**
+     * Overwrite some Edge Functions Instance attributes
+     * 
+     * @param edgeFirewallId  (required)
+     * @param edgeFunctionInstanceId  (required)
+     * @param body  (required)
+     * @return EdgeFunctionsInstanceResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public EdgeFunctionsInstanceResponse edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPut(Long edgeFirewallId, Long edgeFunctionInstanceId, CreateEdgeFunctionsInstancesRequest body) throws ApiException {
+        ApiResponse<EdgeFunctionsInstanceResponse> localVarResp = edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPutWithHttpInfo(edgeFirewallId, edgeFunctionInstanceId, body);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Overwrite some Edge Functions Instance attributes
+     * 
+     * @param edgeFirewallId  (required)
+     * @param edgeFunctionInstanceId  (required)
+     * @param body  (required)
+     * @return ApiResponse&lt;EdgeFunctionsInstanceResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<EdgeFunctionsInstanceResponse> edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPutWithHttpInfo(Long edgeFirewallId, Long edgeFunctionInstanceId, CreateEdgeFunctionsInstancesRequest body) throws ApiException {
+        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPutValidateBeforeCall(edgeFirewallId, edgeFunctionInstanceId, body, null);
+        Type localVarReturnType = new TypeToken<EdgeFunctionsInstanceResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Overwrite some Edge Functions Instance attributes (asynchronously)
+     * 
+     * @param edgeFirewallId  (required)
+     * @param edgeFunctionInstanceId  (required)
+     * @param body  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPutAsync(Long edgeFirewallId, Long edgeFunctionInstanceId, CreateEdgeFunctionsInstancesRequest body, final ApiCallback<EdgeFunctionsInstanceResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPutValidateBeforeCall(edgeFirewallId, edgeFunctionInstanceId, body, _callback);
+        Type localVarReturnType = new TypeToken<EdgeFunctionsInstanceResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for edgeFirewallEdgeFirewallIdFunctionsInstancesGet
+     * @param edgeFirewallId  (required)
+     * @param page  (optional)
+     * @param pageSize  (optional)
+     * @param sort  (optional)
+     * @param orderBy  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A list of Edge Functions Instances </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesGetCall(Long edgeFirewallId, Long page, Long pageSize, String sort, String orderBy, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/edge_firewall/{edge_firewall_id}/functions_instances"
+            .replace("{" + "edge_firewall_id" + "}", localVarApiClient.escapeString(edgeFirewallId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -152,14 +741,20 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesGetValidateBeforeCall(Long page, Long pageSize, String sort, String orderBy, final ApiCallback _callback) throws ApiException {
-        return edgeFirewallEdgeFirewallIdFunctionsInstancesGetCall(page, pageSize, sort, orderBy, _callback);
+    private okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesGetValidateBeforeCall(Long edgeFirewallId, Long page, Long pageSize, String sort, String orderBy, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'edgeFirewallId' is set
+        if (edgeFirewallId == null) {
+            throw new ApiException("Missing the required parameter 'edgeFirewallId' when calling edgeFirewallEdgeFirewallIdFunctionsInstancesGet(Async)");
+        }
+
+        return edgeFirewallEdgeFirewallIdFunctionsInstancesGetCall(edgeFirewallId, page, pageSize, sort, orderBy, _callback);
 
     }
 
     /**
      * List all user Edge Functions Instances
      * 
+     * @param edgeFirewallId  (required)
      * @param page  (optional)
      * @param pageSize  (optional)
      * @param sort  (optional)
@@ -174,14 +769,15 @@ public class DefaultApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ListEdgeFunctionsInstancesResponse edgeFirewallEdgeFirewallIdFunctionsInstancesGet(Long page, Long pageSize, String sort, String orderBy) throws ApiException {
-        ApiResponse<ListEdgeFunctionsInstancesResponse> localVarResp = edgeFirewallEdgeFirewallIdFunctionsInstancesGetWithHttpInfo(page, pageSize, sort, orderBy);
+    public ListEdgeFunctionsInstancesResponse edgeFirewallEdgeFirewallIdFunctionsInstancesGet(Long edgeFirewallId, Long page, Long pageSize, String sort, String orderBy) throws ApiException {
+        ApiResponse<ListEdgeFunctionsInstancesResponse> localVarResp = edgeFirewallEdgeFirewallIdFunctionsInstancesGetWithHttpInfo(edgeFirewallId, page, pageSize, sort, orderBy);
         return localVarResp.getData();
     }
 
     /**
      * List all user Edge Functions Instances
      * 
+     * @param edgeFirewallId  (required)
      * @param page  (optional)
      * @param pageSize  (optional)
      * @param sort  (optional)
@@ -196,8 +792,8 @@ public class DefaultApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListEdgeFunctionsInstancesResponse> edgeFirewallEdgeFirewallIdFunctionsInstancesGetWithHttpInfo(Long page, Long pageSize, String sort, String orderBy) throws ApiException {
-        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesGetValidateBeforeCall(page, pageSize, sort, orderBy, null);
+    public ApiResponse<ListEdgeFunctionsInstancesResponse> edgeFirewallEdgeFirewallIdFunctionsInstancesGetWithHttpInfo(Long edgeFirewallId, Long page, Long pageSize, String sort, String orderBy) throws ApiException {
+        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesGetValidateBeforeCall(edgeFirewallId, page, pageSize, sort, orderBy, null);
         Type localVarReturnType = new TypeToken<ListEdgeFunctionsInstancesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -205,6 +801,7 @@ public class DefaultApi {
     /**
      * List all user Edge Functions Instances (asynchronously)
      * 
+     * @param edgeFirewallId  (required)
      * @param page  (optional)
      * @param pageSize  (optional)
      * @param sort  (optional)
@@ -220,15 +817,16 @@ public class DefaultApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesGetAsync(Long page, Long pageSize, String sort, String orderBy, final ApiCallback<ListEdgeFunctionsInstancesResponse> _callback) throws ApiException {
+    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesGetAsync(Long edgeFirewallId, Long page, Long pageSize, String sort, String orderBy, final ApiCallback<ListEdgeFunctionsInstancesResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesGetValidateBeforeCall(page, pageSize, sort, orderBy, _callback);
+        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesGetValidateBeforeCall(edgeFirewallId, page, pageSize, sort, orderBy, _callback);
         Type localVarReturnType = new TypeToken<ListEdgeFunctionsInstancesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for edgeFirewallEdgeFirewallIdFunctionsInstancesPost
+     * @param edgeFirewallId  (required)
      * @param createEdgeFunctionsInstancesRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -242,7 +840,7 @@ public class DefaultApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesPostCall(CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesPostCall(Long edgeFirewallId, CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -259,7 +857,8 @@ public class DefaultApi {
         Object localVarPostBody = createEdgeFunctionsInstancesRequest;
 
         // create path and map variables
-        String localVarPath = "/edge_firewall/:edge_firewall_id:/functions_instances";
+        String localVarPath = "/edge_firewall/{edge_firewall_id}/functions_instances"
+            .replace("{" + "edge_firewall_id" + "}", localVarApiClient.escapeString(edgeFirewallId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -288,19 +887,25 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesPostValidateBeforeCall(CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesPostValidateBeforeCall(Long edgeFirewallId, CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'edgeFirewallId' is set
+        if (edgeFirewallId == null) {
+            throw new ApiException("Missing the required parameter 'edgeFirewallId' when calling edgeFirewallEdgeFirewallIdFunctionsInstancesPost(Async)");
+        }
+
         // verify the required parameter 'createEdgeFunctionsInstancesRequest' is set
         if (createEdgeFunctionsInstancesRequest == null) {
             throw new ApiException("Missing the required parameter 'createEdgeFunctionsInstancesRequest' when calling edgeFirewallEdgeFirewallIdFunctionsInstancesPost(Async)");
         }
 
-        return edgeFirewallEdgeFirewallIdFunctionsInstancesPostCall(createEdgeFunctionsInstancesRequest, _callback);
+        return edgeFirewallEdgeFirewallIdFunctionsInstancesPostCall(edgeFirewallId, createEdgeFunctionsInstancesRequest, _callback);
 
     }
 
     /**
      * Create an Edge Functions Instance
      * 
+     * @param edgeFirewallId  (required)
      * @param createEdgeFunctionsInstancesRequest  (required)
      * @return EdgeFunctionsInstanceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -313,14 +918,15 @@ public class DefaultApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public EdgeFunctionsInstanceResponse edgeFirewallEdgeFirewallIdFunctionsInstancesPost(CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest) throws ApiException {
-        ApiResponse<EdgeFunctionsInstanceResponse> localVarResp = edgeFirewallEdgeFirewallIdFunctionsInstancesPostWithHttpInfo(createEdgeFunctionsInstancesRequest);
+    public EdgeFunctionsInstanceResponse edgeFirewallEdgeFirewallIdFunctionsInstancesPost(Long edgeFirewallId, CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest) throws ApiException {
+        ApiResponse<EdgeFunctionsInstanceResponse> localVarResp = edgeFirewallEdgeFirewallIdFunctionsInstancesPostWithHttpInfo(edgeFirewallId, createEdgeFunctionsInstancesRequest);
         return localVarResp.getData();
     }
 
     /**
      * Create an Edge Functions Instance
      * 
+     * @param edgeFirewallId  (required)
      * @param createEdgeFunctionsInstancesRequest  (required)
      * @return ApiResponse&lt;EdgeFunctionsInstanceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -333,8 +939,8 @@ public class DefaultApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<EdgeFunctionsInstanceResponse> edgeFirewallEdgeFirewallIdFunctionsInstancesPostWithHttpInfo(CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest) throws ApiException {
-        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesPostValidateBeforeCall(createEdgeFunctionsInstancesRequest, null);
+    public ApiResponse<EdgeFunctionsInstanceResponse> edgeFirewallEdgeFirewallIdFunctionsInstancesPostWithHttpInfo(Long edgeFirewallId, CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest) throws ApiException {
+        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesPostValidateBeforeCall(edgeFirewallId, createEdgeFunctionsInstancesRequest, null);
         Type localVarReturnType = new TypeToken<EdgeFunctionsInstanceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -342,6 +948,7 @@ public class DefaultApi {
     /**
      * Create an Edge Functions Instance (asynchronously)
      * 
+     * @param edgeFirewallId  (required)
      * @param createEdgeFunctionsInstancesRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -355,556 +962,9 @@ public class DefaultApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesPostAsync(CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest, final ApiCallback<EdgeFunctionsInstanceResponse> _callback) throws ApiException {
+    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesPostAsync(Long edgeFirewallId, CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest, final ApiCallback<EdgeFunctionsInstanceResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesPostValidateBeforeCall(createEdgeFunctionsInstancesRequest, _callback);
-        Type localVarReturnType = new TypeToken<EdgeFunctionsInstanceResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for edgeFirewallEdgeFirewallIdFunctionsInstancesUuidDelete
-     * @param uuid  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successfully deleted </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesUuidDeleteCall(String uuid, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/edge_firewall/:edge_firewall_id:/functions_instances/{uuid}"
-            .replace("{" + "uuid" + "}", localVarApiClient.escapeString(uuid.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "tokenAuth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesUuidDeleteValidateBeforeCall(String uuid, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'uuid' is set
-        if (uuid == null) {
-            throw new ApiException("Missing the required parameter 'uuid' when calling edgeFirewallEdgeFirewallIdFunctionsInstancesUuidDelete(Async)");
-        }
-
-        return edgeFirewallEdgeFirewallIdFunctionsInstancesUuidDeleteCall(uuid, _callback);
-
-    }
-
-    /**
-     * Delete an Edge Functions Instance by uuid
-     * 
-     * @param uuid  (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successfully deleted </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
-     */
-    public void edgeFirewallEdgeFirewallIdFunctionsInstancesUuidDelete(String uuid) throws ApiException {
-        edgeFirewallEdgeFirewallIdFunctionsInstancesUuidDeleteWithHttpInfo(uuid);
-    }
-
-    /**
-     * Delete an Edge Functions Instance by uuid
-     * 
-     * @param uuid  (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successfully deleted </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> edgeFirewallEdgeFirewallIdFunctionsInstancesUuidDeleteWithHttpInfo(String uuid) throws ApiException {
-        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesUuidDeleteValidateBeforeCall(uuid, null);
-        return localVarApiClient.execute(localVarCall);
-    }
-
-    /**
-     * Delete an Edge Functions Instance by uuid (asynchronously)
-     * 
-     * @param uuid  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Successfully deleted </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesUuidDeleteAsync(String uuid, final ApiCallback<Void> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesUuidDeleteValidateBeforeCall(uuid, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for edgeFirewallEdgeFirewallIdFunctionsInstancesUuidGet
-     * @param uuid  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An Edge Functions Instance object </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesUuidGetCall(String uuid, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/edge_firewall/:edge_firewall_id:/functions_instances/{uuid}"
-            .replace("{" + "uuid" + "}", localVarApiClient.escapeString(uuid.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "tokenAuth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesUuidGetValidateBeforeCall(String uuid, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'uuid' is set
-        if (uuid == null) {
-            throw new ApiException("Missing the required parameter 'uuid' when calling edgeFirewallEdgeFirewallIdFunctionsInstancesUuidGet(Async)");
-        }
-
-        return edgeFirewallEdgeFirewallIdFunctionsInstancesUuidGetCall(uuid, _callback);
-
-    }
-
-    /**
-     * Retrieve an Edge Functions Instance set by uuid
-     * 
-     * @param uuid  (required)
-     * @return EdgeFunctionsInstanceResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An Edge Functions Instance object </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
-     */
-    public EdgeFunctionsInstanceResponse edgeFirewallEdgeFirewallIdFunctionsInstancesUuidGet(String uuid) throws ApiException {
-        ApiResponse<EdgeFunctionsInstanceResponse> localVarResp = edgeFirewallEdgeFirewallIdFunctionsInstancesUuidGetWithHttpInfo(uuid);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Retrieve an Edge Functions Instance set by uuid
-     * 
-     * @param uuid  (required)
-     * @return ApiResponse&lt;EdgeFunctionsInstanceResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An Edge Functions Instance object </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<EdgeFunctionsInstanceResponse> edgeFirewallEdgeFirewallIdFunctionsInstancesUuidGetWithHttpInfo(String uuid) throws ApiException {
-        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesUuidGetValidateBeforeCall(uuid, null);
-        Type localVarReturnType = new TypeToken<EdgeFunctionsInstanceResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Retrieve an Edge Functions Instance set by uuid (asynchronously)
-     * 
-     * @param uuid  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An Edge Functions Instance object </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesUuidGetAsync(String uuid, final ApiCallback<EdgeFunctionsInstanceResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesUuidGetValidateBeforeCall(uuid, _callback);
-        Type localVarReturnType = new TypeToken<EdgeFunctionsInstanceResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch
-     * @param uuid  (required)
-     * @param body  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchCall(String uuid, CreateEdgeFunctionsInstancesRequest body, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = body;
-
-        // create path and map variables
-        String localVarPath = "/edge_firewall/:edge_firewall_id:/functions_instances/{uuid}"
-            .replace("{" + "uuid" + "}", localVarApiClient.escapeString(uuid.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "tokenAuth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchValidateBeforeCall(String uuid, CreateEdgeFunctionsInstancesRequest body, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'uuid' is set
-        if (uuid == null) {
-            throw new ApiException("Missing the required parameter 'uuid' when calling edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch(Async)");
-        }
-
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch(Async)");
-        }
-
-        return edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchCall(uuid, body, _callback);
-
-    }
-
-    /**
-     * Update some Edge Functions Instance attributes
-     * 
-     * @param uuid  (required)
-     * @param body  (required)
-     * @return EdgeFunctionsInstanceResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public EdgeFunctionsInstanceResponse edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch(String uuid, CreateEdgeFunctionsInstancesRequest body) throws ApiException {
-        ApiResponse<EdgeFunctionsInstanceResponse> localVarResp = edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchWithHttpInfo(uuid, body);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Update some Edge Functions Instance attributes
-     * 
-     * @param uuid  (required)
-     * @param body  (required)
-     * @return ApiResponse&lt;EdgeFunctionsInstanceResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<EdgeFunctionsInstanceResponse> edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchWithHttpInfo(String uuid, CreateEdgeFunctionsInstancesRequest body) throws ApiException {
-        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchValidateBeforeCall(uuid, body, null);
-        Type localVarReturnType = new TypeToken<EdgeFunctionsInstanceResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Update some Edge Functions Instance attributes (asynchronously)
-     * 
-     * @param uuid  (required)
-     * @param body  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchAsync(String uuid, CreateEdgeFunctionsInstancesRequest body, final ApiCallback<EdgeFunctionsInstanceResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchValidateBeforeCall(uuid, body, _callback);
-        Type localVarReturnType = new TypeToken<EdgeFunctionsInstanceResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPut
-     * @param uuid  (required)
-     * @param body  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutCall(String uuid, CreateEdgeFunctionsInstancesRequest body, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = body;
-
-        // create path and map variables
-        String localVarPath = "/edge_firewall/:edge_firewall_id:/functions_instances/{uuid}"
-            .replace("{" + "uuid" + "}", localVarApiClient.escapeString(uuid.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "tokenAuth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutValidateBeforeCall(String uuid, CreateEdgeFunctionsInstancesRequest body, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'uuid' is set
-        if (uuid == null) {
-            throw new ApiException("Missing the required parameter 'uuid' when calling edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPut(Async)");
-        }
-
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPut(Async)");
-        }
-
-        return edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutCall(uuid, body, _callback);
-
-    }
-
-    /**
-     * Overwrite some Edge Functions Instance attributes
-     * 
-     * @param uuid  (required)
-     * @param body  (required)
-     * @return EdgeFunctionsInstanceResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public EdgeFunctionsInstanceResponse edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPut(String uuid, CreateEdgeFunctionsInstancesRequest body) throws ApiException {
-        ApiResponse<EdgeFunctionsInstanceResponse> localVarResp = edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutWithHttpInfo(uuid, body);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Overwrite some Edge Functions Instance attributes
-     * 
-     * @param uuid  (required)
-     * @param body  (required)
-     * @return ApiResponse&lt;EdgeFunctionsInstanceResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<EdgeFunctionsInstanceResponse> edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutWithHttpInfo(String uuid, CreateEdgeFunctionsInstancesRequest body) throws ApiException {
-        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutValidateBeforeCall(uuid, body, null);
-        Type localVarReturnType = new TypeToken<EdgeFunctionsInstanceResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Overwrite some Edge Functions Instance attributes (asynchronously)
-     * 
-     * @param uuid  (required)
-     * @param body  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successfully updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutAsync(String uuid, CreateEdgeFunctionsInstancesRequest body, final ApiCallback<EdgeFunctionsInstanceResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutValidateBeforeCall(uuid, body, _callback);
+        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdFunctionsInstancesPostValidateBeforeCall(edgeFirewallId, createEdgeFunctionsInstancesRequest, _callback);
         Type localVarReturnType = new TypeToken<EdgeFunctionsInstanceResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
