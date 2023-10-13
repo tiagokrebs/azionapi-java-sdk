@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.BehaviorsArgument;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,77 +47,18 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * Behaviors
+ * GenericBehaviorDetails
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-13T11:40:32.253694Z[GMT]")
-public class Behaviors {
-  /**
-   * Gets or Sets name
-   */
-  @JsonAdapter(NameEnum.Adapter.class)
-  public enum NameEnum {
-    DENY("deny"),
-    
-    DROP("drop"),
-    
-    SET_RATE_LIMIT("set_rate_limit"),
-    
-    SET_WAF_RULESET("set_waf_ruleset"),
-    
-    RUN_FUNCTION("run_function"),
-    
-    TAG_EVENT("tag_event");
-
-    private String value;
-
-    NameEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static NameEnum fromValue(String value) {
-      for (NameEnum b : NameEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<NameEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final NameEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public NameEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return NameEnum.fromValue(value);
-      }
-    }
-  }
-
+public class GenericBehaviorDetails {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  private NameEnum name;
+  private String name;
 
-  public static final String SERIALIZED_NAME_ARGUMENT = "argument";
-  @SerializedName(SERIALIZED_NAME_ARGUMENT)
-  private BehaviorsArgument argument;
-
-  public Behaviors() {
+  public GenericBehaviorDetails() {
   }
 
-  public Behaviors name(NameEnum name) {
+  public GenericBehaviorDetails name(String name) {
     
     this.name = name;
     return this;
@@ -129,34 +69,13 @@ public class Behaviors {
    * @return name
   **/
   @javax.annotation.Nullable
-  public NameEnum getName() {
+  public String getName() {
     return name;
   }
 
 
-  public void setName(NameEnum name) {
+  public void setName(String name) {
     this.name = name;
-  }
-
-
-  public Behaviors argument(BehaviorsArgument argument) {
-    
-    this.argument = argument;
-    return this;
-  }
-
-   /**
-   * Get argument
-   * @return argument
-  **/
-  @javax.annotation.Nullable
-  public BehaviorsArgument getArgument() {
-    return argument;
-  }
-
-
-  public void setArgument(BehaviorsArgument argument) {
-    this.argument = argument;
   }
 
 
@@ -169,22 +88,20 @@ public class Behaviors {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Behaviors behaviors = (Behaviors) o;
-    return Objects.equals(this.name, behaviors.name) &&
-        Objects.equals(this.argument, behaviors.argument);
+    GenericBehaviorDetails genericBehaviorDetails = (GenericBehaviorDetails) o;
+    return Objects.equals(this.name, genericBehaviorDetails.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, argument);
+    return Objects.hash(name);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Behaviors {\n");
+    sb.append("class GenericBehaviorDetails {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    argument: ").append(toIndentedString(argument)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -208,7 +125,6 @@ public class Behaviors {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("name");
-    openapiFields.add("argument");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -218,29 +134,25 @@ public class Behaviors {
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Behaviors
+  * @throws IOException if the JSON Element is invalid with respect to GenericBehaviorDetails
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!Behaviors.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Behaviors is not found in the empty JSON string", Behaviors.openapiRequiredFields.toString()));
+        if (!GenericBehaviorDetails.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in GenericBehaviorDetails is not found in the empty JSON string", GenericBehaviorDetails.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!Behaviors.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Behaviors` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!GenericBehaviorDetails.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GenericBehaviorDetails` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      // validate the optional field `argument`
-      if (jsonObj.get("argument") != null && !jsonObj.get("argument").isJsonNull()) {
-        BehaviorsArgument.validateJsonElement(jsonObj.get("argument"));
       }
   }
 
@@ -248,22 +160,22 @@ public class Behaviors {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Behaviors.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Behaviors' and its subtypes
+       if (!GenericBehaviorDetails.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GenericBehaviorDetails' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Behaviors> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Behaviors.class));
+       final TypeAdapter<GenericBehaviorDetails> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GenericBehaviorDetails.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<Behaviors>() {
+       return (TypeAdapter<T>) new TypeAdapter<GenericBehaviorDetails>() {
            @Override
-           public void write(JsonWriter out, Behaviors value) throws IOException {
+           public void write(JsonWriter out, GenericBehaviorDetails value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public Behaviors read(JsonReader in) throws IOException {
+           public GenericBehaviorDetails read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -274,18 +186,18 @@ public class Behaviors {
   }
 
  /**
-  * Create an instance of Behaviors given an JSON string
+  * Create an instance of GenericBehaviorDetails given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of Behaviors
-  * @throws IOException if the JSON string is invalid with respect to Behaviors
+  * @return An instance of GenericBehaviorDetails
+  * @throws IOException if the JSON string is invalid with respect to GenericBehaviorDetails
   */
-  public static Behaviors fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, Behaviors.class);
+  public static GenericBehaviorDetails fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GenericBehaviorDetails.class);
   }
 
  /**
-  * Convert an instance of Behaviors to an JSON string
+  * Convert an instance of GenericBehaviorDetails to an JSON string
   *
   * @return JSON string
   */

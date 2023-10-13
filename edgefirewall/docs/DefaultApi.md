@@ -20,7 +20,7 @@ All URIs are relative to *https://api.azionapi.net*
 
 <a id="edgeFirewallEdgeFirewallIdRulesEngineGet"></a>
 # **edgeFirewallEdgeFirewallIdRulesEngineGet**
-> RuleSetResponseAll edgeFirewallEdgeFirewallIdRulesEngineGet(edgeFirewallId)
+> RuleSetResponseAll edgeFirewallEdgeFirewallIdRulesEngineGet(edgeFirewallId, page, pageSize, sort, orderBy)
 
 List all rule sets.
 
@@ -47,8 +47,12 @@ public class Example {
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     Long edgeFirewallId = 56L; // Long | 
+    Long page = 56L; // Long | 
+    Long pageSize = 56L; // Long | 
+    String sort = "sort_example"; // String | 
+    String orderBy = "orderBy_example"; // String | 
     try {
-      RuleSetResponseAll result = apiInstance.edgeFirewallEdgeFirewallIdRulesEngineGet(edgeFirewallId);
+      RuleSetResponseAll result = apiInstance.edgeFirewallEdgeFirewallIdRulesEngineGet(edgeFirewallId, page, pageSize, sort, orderBy);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#edgeFirewallEdgeFirewallIdRulesEngineGet");
@@ -66,6 +70,10 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **edgeFirewallId** | **Long**|  | |
+| **page** | **Long**|  | [optional] |
+| **pageSize** | **Long**|  | [optional] |
+| **sort** | **String**|  | [optional] |
+| **orderBy** | **String**|  | [optional] |
 
 ### Return type
 
