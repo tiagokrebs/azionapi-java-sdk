@@ -82,6 +82,10 @@ public class DefaultApi {
     /**
      * Build call for edgeFirewallEdgeFirewallIdRulesEngineGet
      * @param edgeFirewallId  (required)
+     * @param page  (optional)
+     * @param pageSize  (optional)
+     * @param sort  (optional)
+     * @param orderBy  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -95,7 +99,7 @@ public class DefaultApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call edgeFirewallEdgeFirewallIdRulesEngineGetCall(Long edgeFirewallId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call edgeFirewallEdgeFirewallIdRulesEngineGetCall(Long edgeFirewallId, Long page, Long pageSize, String sort, String orderBy, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -121,6 +125,22 @@ public class DefaultApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (page != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page_size", pageSize));
+        }
+
+        if (sort != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
+        }
+
+        if (orderBy != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("order_by", orderBy));
+        }
+
         final String[] localVarAccepts = {
             "application/json; version=3"
         };
@@ -141,13 +161,13 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call edgeFirewallEdgeFirewallIdRulesEngineGetValidateBeforeCall(Long edgeFirewallId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call edgeFirewallEdgeFirewallIdRulesEngineGetValidateBeforeCall(Long edgeFirewallId, Long page, Long pageSize, String sort, String orderBy, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'edgeFirewallId' is set
         if (edgeFirewallId == null) {
             throw new ApiException("Missing the required parameter 'edgeFirewallId' when calling edgeFirewallEdgeFirewallIdRulesEngineGet(Async)");
         }
 
-        return edgeFirewallEdgeFirewallIdRulesEngineGetCall(edgeFirewallId, _callback);
+        return edgeFirewallEdgeFirewallIdRulesEngineGetCall(edgeFirewallId, page, pageSize, sort, orderBy, _callback);
 
     }
 
@@ -155,6 +175,10 @@ public class DefaultApi {
      * List all rule sets.
      * 
      * @param edgeFirewallId  (required)
+     * @param page  (optional)
+     * @param pageSize  (optional)
+     * @param sort  (optional)
+     * @param orderBy  (optional)
      * @return RuleSetResponseAll
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -167,8 +191,8 @@ public class DefaultApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public RuleSetResponseAll edgeFirewallEdgeFirewallIdRulesEngineGet(Long edgeFirewallId) throws ApiException {
-        ApiResponse<RuleSetResponseAll> localVarResp = edgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfo(edgeFirewallId);
+    public RuleSetResponseAll edgeFirewallEdgeFirewallIdRulesEngineGet(Long edgeFirewallId, Long page, Long pageSize, String sort, String orderBy) throws ApiException {
+        ApiResponse<RuleSetResponseAll> localVarResp = edgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfo(edgeFirewallId, page, pageSize, sort, orderBy);
         return localVarResp.getData();
     }
 
@@ -176,6 +200,10 @@ public class DefaultApi {
      * List all rule sets.
      * 
      * @param edgeFirewallId  (required)
+     * @param page  (optional)
+     * @param pageSize  (optional)
+     * @param sort  (optional)
+     * @param orderBy  (optional)
      * @return ApiResponse&lt;RuleSetResponseAll&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -188,8 +216,8 @@ public class DefaultApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RuleSetResponseAll> edgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfo(Long edgeFirewallId) throws ApiException {
-        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdRulesEngineGetValidateBeforeCall(edgeFirewallId, null);
+    public ApiResponse<RuleSetResponseAll> edgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfo(Long edgeFirewallId, Long page, Long pageSize, String sort, String orderBy) throws ApiException {
+        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdRulesEngineGetValidateBeforeCall(edgeFirewallId, page, pageSize, sort, orderBy, null);
         Type localVarReturnType = new TypeToken<RuleSetResponseAll>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -198,6 +226,10 @@ public class DefaultApi {
      * List all rule sets. (asynchronously)
      * 
      * @param edgeFirewallId  (required)
+     * @param page  (optional)
+     * @param pageSize  (optional)
+     * @param sort  (optional)
+     * @param orderBy  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -211,9 +243,9 @@ public class DefaultApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call edgeFirewallEdgeFirewallIdRulesEngineGetAsync(Long edgeFirewallId, final ApiCallback<RuleSetResponseAll> _callback) throws ApiException {
+    public okhttp3.Call edgeFirewallEdgeFirewallIdRulesEngineGetAsync(Long edgeFirewallId, Long page, Long pageSize, String sort, String orderBy, final ApiCallback<RuleSetResponseAll> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdRulesEngineGetValidateBeforeCall(edgeFirewallId, _callback);
+        okhttp3.Call localVarCall = edgeFirewallEdgeFirewallIdRulesEngineGetValidateBeforeCall(edgeFirewallId, page, pageSize, sort, orderBy, _callback);
         Type localVarReturnType = new TypeToken<RuleSetResponseAll>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

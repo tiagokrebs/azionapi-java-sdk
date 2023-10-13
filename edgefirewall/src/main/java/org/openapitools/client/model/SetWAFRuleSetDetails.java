@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.BehaviorsArgument;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,30 +47,26 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * Behaviors
+ * SetWAFRuleSetDetails
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-13T11:40:32.253694Z[GMT]")
-public class Behaviors {
+public class SetWAFRuleSetDetails {
+  public static final String SERIALIZED_NAME_WAF_ID = "waf_id";
+  @SerializedName(SERIALIZED_NAME_WAF_ID)
+  private Integer wafId;
+
   /**
-   * Gets or Sets name
+   * Gets or Sets mode
    */
-  @JsonAdapter(NameEnum.Adapter.class)
-  public enum NameEnum {
-    DENY("deny"),
+  @JsonAdapter(ModeEnum.Adapter.class)
+  public enum ModeEnum {
+    LEARNING("Learning"),
     
-    DROP("drop"),
-    
-    SET_RATE_LIMIT("set_rate_limit"),
-    
-    SET_WAF_RULESET("set_waf_ruleset"),
-    
-    RUN_FUNCTION("run_function"),
-    
-    TAG_EVENT("tag_event");
+    BLOCKING("Blocking");
 
     private String value;
 
-    NameEnum(String value) {
+    ModeEnum(String value) {
       this.value = value;
     }
 
@@ -84,8 +79,8 @@ public class Behaviors {
       return String.valueOf(value);
     }
 
-    public static NameEnum fromValue(String value) {
-      for (NameEnum b : NameEnum.values()) {
+    public static ModeEnum fromValue(String value) {
+      for (ModeEnum b : ModeEnum.values()) {
         if (b.value.equals(value)) {
           return b;
         }
@@ -93,70 +88,67 @@ public class Behaviors {
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
-    public static class Adapter extends TypeAdapter<NameEnum> {
+    public static class Adapter extends TypeAdapter<ModeEnum> {
       @Override
-      public void write(final JsonWriter jsonWriter, final NameEnum enumeration) throws IOException {
+      public void write(final JsonWriter jsonWriter, final ModeEnum enumeration) throws IOException {
         jsonWriter.value(enumeration.getValue());
       }
 
       @Override
-      public NameEnum read(final JsonReader jsonReader) throws IOException {
+      public ModeEnum read(final JsonReader jsonReader) throws IOException {
         String value =  jsonReader.nextString();
-        return NameEnum.fromValue(value);
+        return ModeEnum.fromValue(value);
       }
     }
   }
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private NameEnum name;
+  public static final String SERIALIZED_NAME_MODE = "mode";
+  @SerializedName(SERIALIZED_NAME_MODE)
+  private ModeEnum mode;
 
-  public static final String SERIALIZED_NAME_ARGUMENT = "argument";
-  @SerializedName(SERIALIZED_NAME_ARGUMENT)
-  private BehaviorsArgument argument;
-
-  public Behaviors() {
+  public SetWAFRuleSetDetails() {
   }
 
-  public Behaviors name(NameEnum name) {
+  public SetWAFRuleSetDetails wafId(Integer wafId) {
     
-    this.name = name;
+    this.wafId = wafId;
     return this;
   }
 
    /**
-   * Get name
-   * @return name
+   * Get wafId
+   * minimum: 1
+   * @return wafId
   **/
   @javax.annotation.Nullable
-  public NameEnum getName() {
-    return name;
+  public Integer getWafId() {
+    return wafId;
   }
 
 
-  public void setName(NameEnum name) {
-    this.name = name;
+  public void setWafId(Integer wafId) {
+    this.wafId = wafId;
   }
 
 
-  public Behaviors argument(BehaviorsArgument argument) {
+  public SetWAFRuleSetDetails mode(ModeEnum mode) {
     
-    this.argument = argument;
+    this.mode = mode;
     return this;
   }
 
    /**
-   * Get argument
-   * @return argument
+   * Get mode
+   * @return mode
   **/
   @javax.annotation.Nullable
-  public BehaviorsArgument getArgument() {
-    return argument;
+  public ModeEnum getMode() {
+    return mode;
   }
 
 
-  public void setArgument(BehaviorsArgument argument) {
-    this.argument = argument;
+  public void setMode(ModeEnum mode) {
+    this.mode = mode;
   }
 
 
@@ -169,22 +161,22 @@ public class Behaviors {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Behaviors behaviors = (Behaviors) o;
-    return Objects.equals(this.name, behaviors.name) &&
-        Objects.equals(this.argument, behaviors.argument);
+    SetWAFRuleSetDetails setWAFRuleSetDetails = (SetWAFRuleSetDetails) o;
+    return Objects.equals(this.wafId, setWAFRuleSetDetails.wafId) &&
+        Objects.equals(this.mode, setWAFRuleSetDetails.mode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, argument);
+    return Objects.hash(wafId, mode);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Behaviors {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    argument: ").append(toIndentedString(argument)).append("\n");
+    sb.append("class SetWAFRuleSetDetails {\n");
+    sb.append("    wafId: ").append(toIndentedString(wafId)).append("\n");
+    sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -207,8 +199,8 @@ public class Behaviors {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("argument");
+    openapiFields.add("waf_id");
+    openapiFields.add("mode");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -218,29 +210,25 @@ public class Behaviors {
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Behaviors
+  * @throws IOException if the JSON Element is invalid with respect to SetWAFRuleSetDetails
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!Behaviors.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Behaviors is not found in the empty JSON string", Behaviors.openapiRequiredFields.toString()));
+        if (!SetWAFRuleSetDetails.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in SetWAFRuleSetDetails is not found in the empty JSON string", SetWAFRuleSetDetails.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!Behaviors.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Behaviors` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!SetWAFRuleSetDetails.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SetWAFRuleSetDetails` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      // validate the optional field `argument`
-      if (jsonObj.get("argument") != null && !jsonObj.get("argument").isJsonNull()) {
-        BehaviorsArgument.validateJsonElement(jsonObj.get("argument"));
+      if ((jsonObj.get("mode") != null && !jsonObj.get("mode").isJsonNull()) && !jsonObj.get("mode").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mode").toString()));
       }
   }
 
@@ -248,22 +236,22 @@ public class Behaviors {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Behaviors.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Behaviors' and its subtypes
+       if (!SetWAFRuleSetDetails.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'SetWAFRuleSetDetails' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Behaviors> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Behaviors.class));
+       final TypeAdapter<SetWAFRuleSetDetails> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(SetWAFRuleSetDetails.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<Behaviors>() {
+       return (TypeAdapter<T>) new TypeAdapter<SetWAFRuleSetDetails>() {
            @Override
-           public void write(JsonWriter out, Behaviors value) throws IOException {
+           public void write(JsonWriter out, SetWAFRuleSetDetails value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public Behaviors read(JsonReader in) throws IOException {
+           public SetWAFRuleSetDetails read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -274,18 +262,18 @@ public class Behaviors {
   }
 
  /**
-  * Create an instance of Behaviors given an JSON string
+  * Create an instance of SetWAFRuleSetDetails given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of Behaviors
-  * @throws IOException if the JSON string is invalid with respect to Behaviors
+  * @return An instance of SetWAFRuleSetDetails
+  * @throws IOException if the JSON string is invalid with respect to SetWAFRuleSetDetails
   */
-  public static Behaviors fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, Behaviors.class);
+  public static SetWAFRuleSetDetails fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, SetWAFRuleSetDetails.class);
   }
 
  /**
-  * Convert an instance of Behaviors to an JSON string
+  * Convert an instance of SetWAFRuleSetDetails to an JSON string
   *
   * @return JSON string
   */

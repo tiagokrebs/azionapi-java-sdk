@@ -191,6 +191,36 @@ paths:
           minimum: 1
           type: integer
         style: simple
+      - explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          format: int64
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: page_size
+        required: false
+        schema:
+          format: int64
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: sort
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: order_by
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -678,8 +708,20 @@ components:
       type: object
     Behaviors:
       example:
-        name: deny
-        target: target
+        behavior_example_1:
+          name: deny
+        behavior_example_2:
+          name: set_rate_limit
+          argument:
+            type: second
+            limit_by: client_ip
+            average_rate_limit: 100
+            maximum_burst_size: 10
+        behavior_example_3:
+          name: set_waf_ruleset
+          argument:
+            waf_id: 1
+            mode: Learning
       properties:
         name:
           enum:
@@ -690,8 +732,52 @@ components:
           - run_function
           - tag_event
           type: string
-        target:
+        argument:
+          $ref: '#/components/schemas/Behaviors_argument'
+      type: object
+    GenericBehaviorDetails:
+      properties:
+        name:
           type: string
+      type: object
+    SetRateLimitDetails:
+      example:
+        type: second
+        limit_by: client_ip
+        average_rate_limit: 100
+        maximum_burst_size: 10
+      properties:
+        type:
+          enum:
+          - second
+          - minute
+          type: string
+        limit_by:
+          enum:
+          - client_ip
+          - global
+          type: string
+        average_rate_limit:
+          minimum: 1
+          type: integer
+        maximum_burst_size:
+          minimum: 1
+          type: integer
+      type: object
+    SetWAFRuleSetDetails:
+      example:
+        waf_id: 1
+        mode: Blocking
+      properties:
+        waf_id:
+          minimum: 1
+          type: integer
+        mode:
+          enum:
+          - Learning
+          - Blocking
+          type: string
+      type: object
     Variables:
       enum:
       - header_accept
@@ -748,10 +834,34 @@ components:
         results:
           is_active: true
           behaviors:
-          - name: deny
-            target: target
-          - name: deny
-            target: target
+          - behavior_example_1:
+              name: deny
+            behavior_example_2:
+              name: set_rate_limit
+              argument:
+                type: second
+                limit_by: client_ip
+                average_rate_limit: 100
+                maximum_burst_size: 10
+            behavior_example_3:
+              name: set_waf_ruleset
+              argument:
+                waf_id: 1
+                mode: Learning
+          - behavior_example_1:
+              name: deny
+            behavior_example_2:
+              name: set_rate_limit
+              argument:
+                type: second
+                limit_by: client_ip
+                average_rate_limit: 100
+                maximum_burst_size: 10
+            behavior_example_3:
+              name: set_waf_ruleset
+              argument:
+                waf_id: 1
+                mode: Learning
           criteria:
           - - conditional: null
               variable: null
@@ -786,10 +896,34 @@ components:
       example:
         is_active: true
         behaviors:
-        - name: deny
-          target: target
-        - name: deny
-          target: target
+        - behavior_example_1:
+            name: deny
+          behavior_example_2:
+            name: set_rate_limit
+            argument:
+              type: second
+              limit_by: client_ip
+              average_rate_limit: 100
+              maximum_burst_size: 10
+          behavior_example_3:
+            name: set_waf_ruleset
+            argument:
+              waf_id: 1
+              mode: Learning
+        - behavior_example_1:
+            name: deny
+          behavior_example_2:
+            name: set_rate_limit
+            argument:
+              type: second
+              limit_by: client_ip
+              average_rate_limit: 100
+              maximum_burst_size: 10
+          behavior_example_3:
+            name: set_waf_ruleset
+            argument:
+              waf_id: 1
+              mode: Learning
         criteria:
         - - conditional: null
             variable: null
@@ -848,10 +982,34 @@ components:
       example:
         is_active: true
         behaviors:
-        - name: deny
-          target: target
-        - name: deny
-          target: target
+        - behavior_example_1:
+            name: deny
+          behavior_example_2:
+            name: set_rate_limit
+            argument:
+              type: second
+              limit_by: client_ip
+              average_rate_limit: 100
+              maximum_burst_size: 10
+          behavior_example_3:
+            name: set_waf_ruleset
+            argument:
+              waf_id: 1
+              mode: Learning
+        - behavior_example_1:
+            name: deny
+          behavior_example_2:
+            name: set_rate_limit
+            argument:
+              type: second
+              limit_by: client_ip
+              average_rate_limit: 100
+              maximum_burst_size: 10
+          behavior_example_3:
+            name: set_waf_ruleset
+            argument:
+              waf_id: 1
+              mode: Learning
         criteria:
         - - conditional: null
             variable: null
@@ -890,10 +1048,34 @@ components:
       example:
         is_active: true
         behaviors:
-        - name: deny
-          target: target
-        - name: deny
-          target: target
+        - behavior_example_1:
+            name: deny
+          behavior_example_2:
+            name: set_rate_limit
+            argument:
+              type: second
+              limit_by: client_ip
+              average_rate_limit: 100
+              maximum_burst_size: 10
+          behavior_example_3:
+            name: set_waf_ruleset
+            argument:
+              waf_id: 1
+              mode: Learning
+        - behavior_example_1:
+            name: deny
+          behavior_example_2:
+            name: set_rate_limit
+            argument:
+              type: second
+              limit_by: client_ip
+              average_rate_limit: 100
+              maximum_burst_size: 10
+          behavior_example_3:
+            name: set_waf_ruleset
+            argument:
+              waf_id: 1
+              mode: Learning
         criteria:
         - - conditional: null
             variable: null
@@ -957,10 +1139,34 @@ components:
         results:
         - is_active: true
           behaviors:
-          - name: deny
-            target: target
-          - name: deny
-            target: target
+          - behavior_example_1:
+              name: deny
+            behavior_example_2:
+              name: set_rate_limit
+              argument:
+                type: second
+                limit_by: client_ip
+                average_rate_limit: 100
+                maximum_burst_size: 10
+            behavior_example_3:
+              name: set_waf_ruleset
+              argument:
+                waf_id: 1
+                mode: Learning
+          - behavior_example_1:
+              name: deny
+            behavior_example_2:
+              name: set_rate_limit
+              argument:
+                type: second
+                limit_by: client_ip
+                average_rate_limit: 100
+                maximum_burst_size: 10
+            behavior_example_3:
+              name: set_waf_ruleset
+              argument:
+                waf_id: 1
+                mode: Learning
           criteria:
           - - conditional: null
               variable: null
@@ -986,10 +1192,34 @@ components:
           order: 0
         - is_active: true
           behaviors:
-          - name: deny
-            target: target
-          - name: deny
-            target: target
+          - behavior_example_1:
+              name: deny
+            behavior_example_2:
+              name: set_rate_limit
+              argument:
+                type: second
+                limit_by: client_ip
+                average_rate_limit: 100
+                maximum_burst_size: 10
+            behavior_example_3:
+              name: set_waf_ruleset
+              argument:
+                waf_id: 1
+                mode: Learning
+          - behavior_example_1:
+              name: deny
+            behavior_example_2:
+              name: set_rate_limit
+              argument:
+                type: second
+                limit_by: client_ip
+                average_rate_limit: 100
+                maximum_burst_size: 10
+            behavior_example_3:
+              name: set_waf_ruleset
+              argument:
+                waf_id: 1
+                mode: Learning
           criteria:
           - - conditional: null
               variable: null
@@ -1033,14 +1263,43 @@ components:
             $ref: '#/components/schemas/RuleSetResultAll'
           type: array
       type: object
+    Behaviors_argument:
+      oneOf:
+      - $ref: '#/components/schemas/GenericBehaviorDetails'
+      - $ref: '#/components/schemas/SetRateLimitDetails'
+      - $ref: '#/components/schemas/SetWAFRuleSetDetails'
     RuleSetResult_results:
       example:
         is_active: true
         behaviors:
-        - name: deny
-          target: target
-        - name: deny
-          target: target
+        - behavior_example_1:
+            name: deny
+          behavior_example_2:
+            name: set_rate_limit
+            argument:
+              type: second
+              limit_by: client_ip
+              average_rate_limit: 100
+              maximum_burst_size: 10
+          behavior_example_3:
+            name: set_waf_ruleset
+            argument:
+              waf_id: 1
+              mode: Learning
+        - behavior_example_1:
+            name: deny
+          behavior_example_2:
+            name: set_rate_limit
+            argument:
+              type: second
+              limit_by: client_ip
+              average_rate_limit: 100
+              maximum_burst_size: 10
+          behavior_example_3:
+            name: set_waf_ruleset
+            argument:
+              waf_id: 1
+              mode: Learning
         criteria:
         - - conditional: null
             variable: null
