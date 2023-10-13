@@ -162,7 +162,7 @@ null (empty response body)
 
 <a id="getWAFDomains"></a>
 # **getWAFDomains**
-> WAFDomains200 getWAFDomains(wafId, name)
+> WAFDomains200 getWAFDomains(wafId, name, page, pageSize)
 
 List all domains attached to a Web Application Firewall (WAF) in an account.
 
@@ -190,8 +190,10 @@ public class Example {
     WafApi apiInstance = new WafApi(defaultClient);
     Long wafId = 56L; // Long | ID of WAF to return
     String name = "name_example"; // String | searches WAF for name
+    Long page = 1L; // Long | Identifies which page should be returned, if the return is paginated.
+    Long pageSize = 10L; // Long | Identifies how many items should be returned per page.
     try {
-      WAFDomains200 result = apiInstance.getWAFDomains(wafId, name);
+      WAFDomains200 result = apiInstance.getWAFDomains(wafId, name, page, pageSize);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WafApi#getWAFDomains");
@@ -210,6 +212,8 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **wafId** | **Long**| ID of WAF to return | |
 | **name** | **String**| searches WAF for name | [optional] |
+| **page** | **Long**| Identifies which page should be returned, if the return is paginated. | [optional] [default to 1] |
+| **pageSize** | **Long**| Identifies how many items should be returned per page. | [optional] [default to 10] |
 
 ### Return type
 
@@ -229,11 +233,12 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 | **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | data not found |  -  |
 
 <a id="getWAFEvents"></a>
 # **getWAFEvents**
-> WAFEvents200 getWAFEvents(wafId, hourRange, domainsIds, networkListId, sort, page, pageSize)
+> WAFEvents200 getWAFEvents(wafId, hourRange, domainsIds, networkListId, sort)
 
 Find WAF log events
 
@@ -261,13 +266,11 @@ public class Example {
     WafApi apiInstance = new WafApi(defaultClient);
     Long wafId = 56L; // Long | ID of WAF to return
     Long hourRange = 56L; // Long | Last log hours since now (it must be a integer number ranging between 1 and 72)
-    String domainsIds = "domainsIds_example"; // String | Multiple domain's id (they must be separated by comma like 1233,1234)
+    List<Long> domainsIds = Arrays.asList(); // List<Long> | Multiple domain's id (they must be separated by comma like 1233,1234)
     Long networkListId = 56L; // Long | Id of a network list
     String sort = "asc"; // String | 
-    Long page = 1L; // Long | 
-    Long pageSize = 10L; // Long | 
     try {
-      WAFEvents200 result = apiInstance.getWAFEvents(wafId, hourRange, domainsIds, networkListId, sort, page, pageSize);
+      WAFEvents200 result = apiInstance.getWAFEvents(wafId, hourRange, domainsIds, networkListId, sort);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WafApi#getWAFEvents");
@@ -286,11 +289,9 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **wafId** | **Long**| ID of WAF to return | |
 | **hourRange** | **Long**| Last log hours since now (it must be a integer number ranging between 1 and 72) | |
-| **domainsIds** | **String**| Multiple domain&#39;s id (they must be separated by comma like 1233,1234) | |
+| **domainsIds** | [**List&lt;Long&gt;**](Long.md)| Multiple domain&#39;s id (they must be separated by comma like 1233,1234) | |
 | **networkListId** | **Long**| Id of a network list | [optional] |
 | **sort** | **String**|  | [optional] [default to asc] [enum: asc, desc] |
-| **page** | **Long**|  | [optional] [default to 1] |
-| **pageSize** | **Long**|  | [optional] [default to 10] |
 
 ### Return type
 
@@ -311,6 +312,7 @@ public class Example {
 | **200** | successful operation |  -  |
 | **400** | Bad request |  -  |
 | **401** | unauthorized operation |  -  |
+| **403** | Forbidden |  -  |
 | **404** | data not found |  -  |
 | **500** | Internal server error |  -  |
 
@@ -381,6 +383,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 | **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | data not found |  -  |
 
 <a id="listAllWAF"></a>
@@ -452,6 +455,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 | **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | data not found |  -  |
 
 <a id="listAllWAFRulesets"></a>
@@ -527,6 +531,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 | **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | data not found |  -  |
 
 <a id="updateWAFRuleset"></a>

@@ -8,8 +8,8 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**countryCount** | **Long** |  |  [optional] |
-|**top10Countries** | **List&lt;String&gt;** |  |  [optional] |
-|**top10Ips** | **List&lt;String&gt;** |  |  [optional] |
+|**top10Countries** | [**List&lt;WAFEvents200ResultsInnerTop10CountriesInner&gt;**](WAFEvents200ResultsInnerTop10CountriesInner.md) |  |  [optional] |
+|**top10Ips** | [**List&lt;WAFEvents200ResultsInnerTop10CountriesInner&gt;**](WAFEvents200ResultsInnerTop10CountriesInner.md) |  |  [optional] |
 |**hitCount** | **Long** |  |  [optional] |
 |**ruleId** | **Long** |  |  [optional] |
 |**ipCount** | **Long** |  |  [optional] |

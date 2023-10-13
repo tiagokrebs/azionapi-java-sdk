@@ -372,6 +372,8 @@ public class WafApi {
      * Build call for getWAFDomains
      * @param wafId ID of WAF to return (required)
      * @param name searches WAF for name (optional)
+     * @param page Identifies which page should be returned, if the return is paginated. (optional, default to 1)
+     * @param pageSize Identifies how many items should be returned per page. (optional, default to 10)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -380,10 +382,11 @@ public class WafApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWAFDomainsCall(Long wafId, String name, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getWAFDomainsCall(Long wafId, String name, Long page, Long pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -413,6 +416,14 @@ public class WafApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("name", name));
         }
 
+        if (page != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page_size", pageSize));
+        }
+
         final String[] localVarAccepts = {
             "application/json; version=3"
         };
@@ -433,13 +444,13 @@ public class WafApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWAFDomainsValidateBeforeCall(Long wafId, String name, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWAFDomainsValidateBeforeCall(Long wafId, String name, Long page, Long pageSize, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'wafId' is set
         if (wafId == null) {
             throw new ApiException("Missing the required parameter 'wafId' when calling getWAFDomains(Async)");
         }
 
-        return getWAFDomainsCall(wafId, name, _callback);
+        return getWAFDomainsCall(wafId, name, page, pageSize, _callback);
 
     }
 
@@ -448,6 +459,8 @@ public class WafApi {
      * 
      * @param wafId ID of WAF to return (required)
      * @param name searches WAF for name (optional)
+     * @param page Identifies which page should be returned, if the return is paginated. (optional, default to 1)
+     * @param pageSize Identifies how many items should be returned per page. (optional, default to 10)
      * @return WAFDomains200
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -455,11 +468,12 @@ public class WafApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
      </table>
      */
-    public WAFDomains200 getWAFDomains(Long wafId, String name) throws ApiException {
-        ApiResponse<WAFDomains200> localVarResp = getWAFDomainsWithHttpInfo(wafId, name);
+    public WAFDomains200 getWAFDomains(Long wafId, String name, Long page, Long pageSize) throws ApiException {
+        ApiResponse<WAFDomains200> localVarResp = getWAFDomainsWithHttpInfo(wafId, name, page, pageSize);
         return localVarResp.getData();
     }
 
@@ -468,6 +482,8 @@ public class WafApi {
      * 
      * @param wafId ID of WAF to return (required)
      * @param name searches WAF for name (optional)
+     * @param page Identifies which page should be returned, if the return is paginated. (optional, default to 1)
+     * @param pageSize Identifies how many items should be returned per page. (optional, default to 10)
      * @return ApiResponse&lt;WAFDomains200&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -475,11 +491,12 @@ public class WafApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WAFDomains200> getWAFDomainsWithHttpInfo(Long wafId, String name) throws ApiException {
-        okhttp3.Call localVarCall = getWAFDomainsValidateBeforeCall(wafId, name, null);
+    public ApiResponse<WAFDomains200> getWAFDomainsWithHttpInfo(Long wafId, String name, Long page, Long pageSize) throws ApiException {
+        okhttp3.Call localVarCall = getWAFDomainsValidateBeforeCall(wafId, name, page, pageSize, null);
         Type localVarReturnType = new TypeToken<WAFDomains200>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -489,6 +506,8 @@ public class WafApi {
      * 
      * @param wafId ID of WAF to return (required)
      * @param name searches WAF for name (optional)
+     * @param page Identifies which page should be returned, if the return is paginated. (optional, default to 1)
+     * @param pageSize Identifies how many items should be returned per page. (optional, default to 10)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -497,12 +516,13 @@ public class WafApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWAFDomainsAsync(Long wafId, String name, final ApiCallback<WAFDomains200> _callback) throws ApiException {
+    public okhttp3.Call getWAFDomainsAsync(Long wafId, String name, Long page, Long pageSize, final ApiCallback<WAFDomains200> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getWAFDomainsValidateBeforeCall(wafId, name, _callback);
+        okhttp3.Call localVarCall = getWAFDomainsValidateBeforeCall(wafId, name, page, pageSize, _callback);
         Type localVarReturnType = new TypeToken<WAFDomains200>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -514,8 +534,6 @@ public class WafApi {
      * @param domainsIds Multiple domain&#39;s id (they must be separated by comma like 1233,1234) (required)
      * @param networkListId Id of a network list (optional)
      * @param sort  (optional, default to asc)
-     * @param page  (optional, default to 1)
-     * @param pageSize  (optional, default to 10)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -525,11 +543,12 @@ public class WafApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> unauthorized operation </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWAFEventsCall(Long wafId, Long hourRange, String domainsIds, Long networkListId, String sort, Long page, Long pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getWAFEventsCall(Long wafId, Long hourRange, List<Long> domainsIds, Long networkListId, String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -564,19 +583,11 @@ public class WafApi {
         }
 
         if (domainsIds != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("domains_ids", domainsIds));
+            localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "domains_ids", domainsIds));
         }
 
         if (sort != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
-        }
-
-        if (page != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
-        }
-
-        if (pageSize != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page_size", pageSize));
         }
 
         final String[] localVarAccepts = {
@@ -599,7 +610,7 @@ public class WafApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWAFEventsValidateBeforeCall(Long wafId, Long hourRange, String domainsIds, Long networkListId, String sort, Long page, Long pageSize, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWAFEventsValidateBeforeCall(Long wafId, Long hourRange, List<Long> domainsIds, Long networkListId, String sort, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'wafId' is set
         if (wafId == null) {
             throw new ApiException("Missing the required parameter 'wafId' when calling getWAFEvents(Async)");
@@ -615,7 +626,7 @@ public class WafApi {
             throw new ApiException("Missing the required parameter 'domainsIds' when calling getWAFEvents(Async)");
         }
 
-        return getWAFEventsCall(wafId, hourRange, domainsIds, networkListId, sort, page, pageSize, _callback);
+        return getWAFEventsCall(wafId, hourRange, domainsIds, networkListId, sort, _callback);
 
     }
 
@@ -627,8 +638,6 @@ public class WafApi {
      * @param domainsIds Multiple domain&#39;s id (they must be separated by comma like 1233,1234) (required)
      * @param networkListId Id of a network list (optional)
      * @param sort  (optional, default to asc)
-     * @param page  (optional, default to 1)
-     * @param pageSize  (optional, default to 10)
      * @return WAFEvents200
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -637,12 +646,13 @@ public class WafApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> unauthorized operation </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public WAFEvents200 getWAFEvents(Long wafId, Long hourRange, String domainsIds, Long networkListId, String sort, Long page, Long pageSize) throws ApiException {
-        ApiResponse<WAFEvents200> localVarResp = getWAFEventsWithHttpInfo(wafId, hourRange, domainsIds, networkListId, sort, page, pageSize);
+    public WAFEvents200 getWAFEvents(Long wafId, Long hourRange, List<Long> domainsIds, Long networkListId, String sort) throws ApiException {
+        ApiResponse<WAFEvents200> localVarResp = getWAFEventsWithHttpInfo(wafId, hourRange, domainsIds, networkListId, sort);
         return localVarResp.getData();
     }
 
@@ -654,8 +664,6 @@ public class WafApi {
      * @param domainsIds Multiple domain&#39;s id (they must be separated by comma like 1233,1234) (required)
      * @param networkListId Id of a network list (optional)
      * @param sort  (optional, default to asc)
-     * @param page  (optional, default to 1)
-     * @param pageSize  (optional, default to 10)
      * @return ApiResponse&lt;WAFEvents200&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -664,12 +672,13 @@ public class WafApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> unauthorized operation </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WAFEvents200> getWAFEventsWithHttpInfo(Long wafId, Long hourRange, String domainsIds, Long networkListId, String sort, Long page, Long pageSize) throws ApiException {
-        okhttp3.Call localVarCall = getWAFEventsValidateBeforeCall(wafId, hourRange, domainsIds, networkListId, sort, page, pageSize, null);
+    public ApiResponse<WAFEvents200> getWAFEventsWithHttpInfo(Long wafId, Long hourRange, List<Long> domainsIds, Long networkListId, String sort) throws ApiException {
+        okhttp3.Call localVarCall = getWAFEventsValidateBeforeCall(wafId, hourRange, domainsIds, networkListId, sort, null);
         Type localVarReturnType = new TypeToken<WAFEvents200>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -682,8 +691,6 @@ public class WafApi {
      * @param domainsIds Multiple domain&#39;s id (they must be separated by comma like 1233,1234) (required)
      * @param networkListId Id of a network list (optional)
      * @param sort  (optional, default to asc)
-     * @param page  (optional, default to 1)
-     * @param pageSize  (optional, default to 10)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -693,13 +700,14 @@ public class WafApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> unauthorized operation </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWAFEventsAsync(Long wafId, Long hourRange, String domainsIds, Long networkListId, String sort, Long page, Long pageSize, final ApiCallback<WAFEvents200> _callback) throws ApiException {
+    public okhttp3.Call getWAFEventsAsync(Long wafId, Long hourRange, List<Long> domainsIds, Long networkListId, String sort, final ApiCallback<WAFEvents200> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getWAFEventsValidateBeforeCall(wafId, hourRange, domainsIds, networkListId, sort, page, pageSize, _callback);
+        okhttp3.Call localVarCall = getWAFEventsValidateBeforeCall(wafId, hourRange, domainsIds, networkListId, sort, _callback);
         Type localVarReturnType = new TypeToken<WAFEvents200>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -715,6 +723,7 @@ public class WafApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
      </table>
      */
@@ -785,6 +794,7 @@ public class WafApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
      </table>
      */
@@ -804,6 +814,7 @@ public class WafApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
      </table>
      */
@@ -825,6 +836,7 @@ public class WafApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
      </table>
      */
@@ -847,6 +859,7 @@ public class WafApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
      </table>
      */
@@ -920,6 +933,7 @@ public class WafApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
      </table>
      */
@@ -940,6 +954,7 @@ public class WafApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
      </table>
      */
@@ -962,6 +977,7 @@ public class WafApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
      </table>
      */
@@ -986,6 +1002,7 @@ public class WafApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
      </table>
      */
@@ -1069,6 +1086,7 @@ public class WafApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
      </table>
      */
@@ -1091,6 +1109,7 @@ public class WafApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
      </table>
      */
@@ -1115,6 +1134,7 @@ public class WafApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> data not found </td><td>  -  </td></tr>
      </table>
      */

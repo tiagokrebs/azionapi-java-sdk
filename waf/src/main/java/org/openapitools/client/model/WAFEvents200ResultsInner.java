@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.WAFEvents200ResultsInnerTop10CountriesInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * WAFEvents200ResultsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-11T12:39:47.281276Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-13T18:56:32.630440Z[GMT]")
 public class WAFEvents200ResultsInner {
   public static final String SERIALIZED_NAME_COUNTRY_COUNT = "country_count";
   @SerializedName(SERIALIZED_NAME_COUNTRY_COUNT)
@@ -59,11 +60,11 @@ public class WAFEvents200ResultsInner {
 
   public static final String SERIALIZED_NAME_TOP10_COUNTRIES = "top_10_countries";
   @SerializedName(SERIALIZED_NAME_TOP10_COUNTRIES)
-  private List<String> top10Countries;
+  private List<WAFEvents200ResultsInnerTop10CountriesInner> top10Countries;
 
   public static final String SERIALIZED_NAME_TOP10_IPS = "top_10_ips";
   @SerializedName(SERIALIZED_NAME_TOP10_IPS)
-  private List<String> top10Ips;
+  private List<WAFEvents200ResultsInnerTop10CountriesInner> top10Ips;
 
   public static final String SERIALIZED_NAME_HIT_COUNT = "hit_count";
   @SerializedName(SERIALIZED_NAME_HIT_COUNT)
@@ -221,13 +222,13 @@ public class WAFEvents200ResultsInner {
   }
 
 
-  public WAFEvents200ResultsInner top10Countries(List<String> top10Countries) {
+  public WAFEvents200ResultsInner top10Countries(List<WAFEvents200ResultsInnerTop10CountriesInner> top10Countries) {
     
     this.top10Countries = top10Countries;
     return this;
   }
 
-  public WAFEvents200ResultsInner addTop10CountriesItem(String top10CountriesItem) {
+  public WAFEvents200ResultsInner addTop10CountriesItem(WAFEvents200ResultsInnerTop10CountriesInner top10CountriesItem) {
     if (this.top10Countries == null) {
       this.top10Countries = new ArrayList<>();
     }
@@ -240,23 +241,23 @@ public class WAFEvents200ResultsInner {
    * @return top10Countries
   **/
   @javax.annotation.Nullable
-  public List<String> getTop10Countries() {
+  public List<WAFEvents200ResultsInnerTop10CountriesInner> getTop10Countries() {
     return top10Countries;
   }
 
 
-  public void setTop10Countries(List<String> top10Countries) {
+  public void setTop10Countries(List<WAFEvents200ResultsInnerTop10CountriesInner> top10Countries) {
     this.top10Countries = top10Countries;
   }
 
 
-  public WAFEvents200ResultsInner top10Ips(List<String> top10Ips) {
+  public WAFEvents200ResultsInner top10Ips(List<WAFEvents200ResultsInnerTop10CountriesInner> top10Ips) {
     
     this.top10Ips = top10Ips;
     return this;
   }
 
-  public WAFEvents200ResultsInner addTop10IpsItem(String top10IpsItem) {
+  public WAFEvents200ResultsInner addTop10IpsItem(WAFEvents200ResultsInnerTop10CountriesInner top10IpsItem) {
     if (this.top10Ips == null) {
       this.top10Ips = new ArrayList<>();
     }
@@ -269,12 +270,12 @@ public class WAFEvents200ResultsInner {
    * @return top10Ips
   **/
   @javax.annotation.Nullable
-  public List<String> getTop10Ips() {
+  public List<WAFEvents200ResultsInnerTop10CountriesInner> getTop10Ips() {
     return top10Ips;
   }
 
 
-  public void setTop10Ips(List<String> top10Ips) {
+  public void setTop10Ips(List<WAFEvents200ResultsInnerTop10CountriesInner> top10Ips) {
     this.top10Ips = top10Ips;
   }
 
@@ -525,13 +526,33 @@ public class WAFEvents200ResultsInner {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("top_10_countries") != null && !jsonObj.get("top_10_countries").isJsonNull() && !jsonObj.get("top_10_countries").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `top_10_countries` to be an array in the JSON string but got `%s`", jsonObj.get("top_10_countries").toString()));
+      if (jsonObj.get("top_10_countries") != null && !jsonObj.get("top_10_countries").isJsonNull()) {
+        JsonArray jsonArraytop10Countries = jsonObj.getAsJsonArray("top_10_countries");
+        if (jsonArraytop10Countries != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("top_10_countries").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `top_10_countries` to be an array in the JSON string but got `%s`", jsonObj.get("top_10_countries").toString()));
+          }
+
+          // validate the optional field `top_10_countries` (array)
+          for (int i = 0; i < jsonArraytop10Countries.size(); i++) {
+            WAFEvents200ResultsInnerTop10CountriesInner.validateJsonElement(jsonArraytop10Countries.get(i));
+          };
+        }
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("top_10_ips") != null && !jsonObj.get("top_10_ips").isJsonNull() && !jsonObj.get("top_10_ips").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `top_10_ips` to be an array in the JSON string but got `%s`", jsonObj.get("top_10_ips").toString()));
+      if (jsonObj.get("top_10_ips") != null && !jsonObj.get("top_10_ips").isJsonNull()) {
+        JsonArray jsonArraytop10Ips = jsonObj.getAsJsonArray("top_10_ips");
+        if (jsonArraytop10Ips != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("top_10_ips").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `top_10_ips` to be an array in the JSON string but got `%s`", jsonObj.get("top_10_ips").toString()));
+          }
+
+          // validate the optional field `top_10_ips` (array)
+          for (int i = 0; i < jsonArraytop10Ips.size(); i++) {
+            WAFEvents200ResultsInnerTop10CountriesInner.validateJsonElement(jsonArraytop10Ips.get(i));
+          };
+        }
       }
       if ((jsonObj.get("match_zone") != null && !jsonObj.get("match_zone").isJsonNull()) && !jsonObj.get("match_zone").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `match_zone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("match_zone").toString()));
