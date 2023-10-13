@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * WAFEvents200ResultsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-11T12:39:47.281276Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-13T11:56:11.864845Z[GMT]")
 public class WAFEvents200ResultsInner {
   public static final String SERIALIZED_NAME_COUNTRY_COUNT = "country_count";
   @SerializedName(SERIALIZED_NAME_COUNTRY_COUNT)

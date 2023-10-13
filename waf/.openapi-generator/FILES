@@ -60,5 +60,3 @@ src/main/java/org/openapitools/client/model/WAFEvents404.java
 src/main/java/org/openapitools/client/model/WAFList200.java
 src/main/java/org/openapitools/client/model/WAFSensitivityChoices.java
 src/main/java/org/openapitools/client/model/WAFSingle200.java
-src/test/java/org/openapitools/client/model/WAFDomainList200Test.java
-src/test/java/org/openapitools/client/model/WAFEvents200ResultsInnerTest.java

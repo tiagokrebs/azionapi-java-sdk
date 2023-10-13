@@ -48,6 +48,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/WAFEvents400'
           description: Bad request
+        "403":
+          description: Forbidden
         "404":
           content:
             application/json; version=3:
@@ -92,6 +94,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/WAFEvents400'
           description: Bad request
+        "403":
+          description: Forbidden
         "404":
           content:
             application/json; version=3:
@@ -191,6 +195,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/WAFEvents401'
           description: unauthorized operation
+        "403":
+          description: Forbidden
         "404":
           content:
             application/json; version=3:
@@ -283,6 +289,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/WAFEvents400'
           description: Bad request
+        "403":
+          description: Forbidden
         "404":
           content:
             application/json; version=3:
@@ -387,6 +395,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/WAFEvents400'
           description: Bad request
+        "403":
+          description: Forbidden
         "404":
           content:
             application/json; version=3:

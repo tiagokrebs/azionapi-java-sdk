@@ -229,6 +229,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 | **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | data not found |  -  |
 
 <a id="getWAFEvents"></a>
@@ -311,6 +312,7 @@ public class Example {
 | **200** | successful operation |  -  |
 | **400** | Bad request |  -  |
 | **401** | unauthorized operation |  -  |
+| **403** | Forbidden |  -  |
 | **404** | data not found |  -  |
 | **500** | Internal server error |  -  |
 
@@ -381,6 +383,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 | **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | data not found |  -  |
 
 <a id="listAllWAF"></a>
@@ -452,6 +455,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 | **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | data not found |  -  |
 
 <a id="listAllWAFRulesets"></a>
@@ -527,6 +531,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 | **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | data not found |  -  |
 
 <a id="updateWAFRuleset"></a>
