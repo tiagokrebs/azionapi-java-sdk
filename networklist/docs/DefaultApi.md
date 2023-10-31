@@ -84,6 +84,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | A list of Network Lists |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 
 <a id="networkListsPost"></a>
@@ -153,6 +154,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **201** | A Network Lists object |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
@@ -296,6 +298,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | A Network Lists object |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 
 <a id="networkListsUuidPut"></a>
@@ -367,6 +370,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Successfully updated |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
