@@ -544,6 +544,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A list of edge firewalls |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not found |  -  |
 
 <a id="edgeFirewallPost"></a>
@@ -613,6 +614,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **201** | Edge firewall created |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **500** | Internal Server Error |  -  |
 
 <a id="edgeFirewallUuidDelete"></a>
@@ -681,6 +683,7 @@ null (empty response body)
 |-------------|-------------|------------------|
 | **204** | Successfully deleted |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not found |  -  |
 
 <a id="edgeFirewallUuidGet"></a>
@@ -750,6 +753,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | An edge firewall object |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not found |  -  |
 
 <a id="edgeFirewallUuidPatch"></a>
@@ -821,6 +825,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Successfully updated |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not found |  -  |
 | **500** | Internal Server Error |  -  |
 
@@ -893,6 +898,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Successfully updated |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not found |  -  |
 | **500** | Internal Server Error |  -  |
 

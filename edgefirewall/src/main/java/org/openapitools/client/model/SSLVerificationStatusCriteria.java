@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * SSLVerificationStatusCriteria
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-16T15:06:58.871978Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-31T14:32:19.765188Z[GMT]")
 public class SSLVerificationStatusCriteria {
   public static final String SERIALIZED_NAME_VARIABLE = "variable";
   @SerializedName(SERIALIZED_NAME_VARIABLE)

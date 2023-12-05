@@ -96,16 +96,3 @@ src/main/java/org/openapitools/client/model/SimpleArgumentBehavior.java
 src/main/java/org/openapitools/client/model/SimpleArgumentBehaviorArgument.java
 src/main/java/org/openapitools/client/model/UpdateEdgeFirewallRequest.java
 src/main/java/org/openapitools/client/model/Variables.java
-src/test/java/org/openapitools/client/model/NullArgumentBehaviorTest.java
-src/test/java/org/openapitools/client/model/SetCustomResponseArgumentStatusCodeTest.java
-src/test/java/org/openapitools/client/model/SetCustomResponseArgumentTest.java
-src/test/java/org/openapitools/client/model/SetCustomResponseTest.java
-src/test/java/org/openapitools/client/model/SetRateLimitBehaviorArgumentAverageRateLimitTest.java
-src/test/java/org/openapitools/client/model/SetRateLimitBehaviorArgumentTest.java
-src/test/java/org/openapitools/client/model/SetRateLimitBehaviorTest.java
-src/test/java/org/openapitools/client/model/SetWAFRuleSetAndWafModeBehaviorArgumentTest.java
-src/test/java/org/openapitools/client/model/SetWAFRuleSetAndWafModeBehaviorTest.java
-src/test/java/org/openapitools/client/model/SetWAFRuleSetBehaviorArgumentTest.java
-src/test/java/org/openapitools/client/model/SetWAFRuleSetBehaviorTest.java
-src/test/java/org/openapitools/client/model/SimpleArgumentBehaviorArgumentTest.java
-src/test/java/org/openapitools/client/model/SimpleArgumentBehaviorTest.java

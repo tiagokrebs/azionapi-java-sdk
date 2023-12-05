@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * SetCustomResponseArgument
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-16T15:06:58.871978Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-31T14:32:19.765188Z[GMT]")
 public class SetCustomResponseArgument {
   public static final String SERIALIZED_NAME_STATUS_CODE = "status_code";
   @SerializedName(SERIALIZED_NAME_STATUS_CODE)

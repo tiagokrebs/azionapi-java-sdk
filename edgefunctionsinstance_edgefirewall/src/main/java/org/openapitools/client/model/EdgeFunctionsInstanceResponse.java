@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * EdgeFunctionsInstanceResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-11T11:44:01.462294Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-31T14:32:24.302174Z[GMT]")
 public class EdgeFunctionsInstanceResponse {
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)

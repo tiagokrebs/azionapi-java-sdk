@@ -80,6 +80,7 @@ null (empty response body)
 |-------------|-------------|------------------|
 | **204** | Successfully deleted |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 
 <a id="edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdGet"></a>
@@ -151,6 +152,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | An Edge Functions Instance object |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 
 <a id="edgeFirewallEdgeFirewallIdFunctionsInstancesEdgeFunctionInstanceIdPatch"></a>
@@ -224,6 +226,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Successfully updated |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
@@ -298,6 +301,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Successfully updated |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
@@ -376,6 +380,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | A list of Edge Functions Instances |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 
 <a id="edgeFirewallEdgeFirewallIdFunctionsInstancesPost"></a>
@@ -447,6 +452,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **201** | Edge Functions Instance created |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 

@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * SetWAFRuleSetAndWafModeBehaviorArgument
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-16T15:06:58.871978Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-31T14:32:19.765188Z[GMT]")
 public class SetWAFRuleSetAndWafModeBehaviorArgument {
   public static final String SERIALIZED_NAME_SET_WAF_RULESET_AND_WAF_MODE = "set_waf_ruleset_and_waf_mode";
   @SerializedName(SERIALIZED_NAME_SET_WAF_RULESET_AND_WAF_MODE)
