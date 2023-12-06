@@ -17,6 +17,8 @@
 |**hmacRegionName** | **String** |  |  [optional] |
 |**hmacAccessKey** | **String** |  |  [optional] |
 |**hmacSecretKey** | **String** |  |  [optional] |
+|**bucket** | **String** |  |  [optional] |
+|**prefix** | **String** |  |  [optional] |
 
 
 
