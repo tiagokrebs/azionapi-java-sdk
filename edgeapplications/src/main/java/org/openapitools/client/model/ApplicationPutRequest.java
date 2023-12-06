@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationPutRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-06T16:49:01.374097Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-06T18:34:11.962660Z[GMT]")
 public class ApplicationPutRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -79,10 +79,6 @@ public class ApplicationPutRequest {
   public static final String SERIALIZED_NAME_APPLICATION_ACCELERATION = "application_acceleration";
   @SerializedName(SERIALIZED_NAME_APPLICATION_ACCELERATION)
   private Boolean applicationAcceleration;
-
-  public static final String SERIALIZED_NAME_CACHING = "caching";
-  @SerializedName(SERIALIZED_NAME_CACHING)
-  private Boolean caching;
 
   public static final String SERIALIZED_NAME_DEVICE_DETECTION = "device_detection";
   @SerializedName(SERIALIZED_NAME_DEVICE_DETECTION)
@@ -279,27 +275,6 @@ public class ApplicationPutRequest {
 
   public void setApplicationAcceleration(Boolean applicationAcceleration) {
     this.applicationAcceleration = applicationAcceleration;
-  }
-
-
-  public ApplicationPutRequest caching(Boolean caching) {
-    
-    this.caching = caching;
-    return this;
-  }
-
-   /**
-   * Get caching
-   * @return caching
-  **/
-  @javax.annotation.Nullable
-  public Boolean getCaching() {
-    return caching;
-  }
-
-
-  public void setCaching(Boolean caching) {
-    this.caching = caching;
   }
 
 
@@ -572,7 +547,6 @@ public class ApplicationPutRequest {
         Objects.equals(this.minimumTlsVersion, applicationPutRequest.minimumTlsVersion) &&
         Objects.equals(this.active, applicationPutRequest.active) &&
         Objects.equals(this.applicationAcceleration, applicationPutRequest.applicationAcceleration) &&
-        Objects.equals(this.caching, applicationPutRequest.caching) &&
         Objects.equals(this.deviceDetection, applicationPutRequest.deviceDetection) &&
         Objects.equals(this.edgeFirewall, applicationPutRequest.edgeFirewall) &&
         Objects.equals(this.edgeFunctions, applicationPutRequest.edgeFunctions) &&
@@ -593,7 +567,7 @@ public class ApplicationPutRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, active, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, l2Caching, loadBalancer, rawLogs, webApplicationFirewall, debugRules, http3, websocket, supportedCiphers);
+    return Objects.hash(name, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, active, applicationAcceleration, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, l2Caching, loadBalancer, rawLogs, webApplicationFirewall, debugRules, http3, websocket, supportedCiphers);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -614,7 +588,6 @@ public class ApplicationPutRequest {
     sb.append("    minimumTlsVersion: ").append(toIndentedString(minimumTlsVersion)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    applicationAcceleration: ").append(toIndentedString(applicationAcceleration)).append("\n");
-    sb.append("    caching: ").append(toIndentedString(caching)).append("\n");
     sb.append("    deviceDetection: ").append(toIndentedString(deviceDetection)).append("\n");
     sb.append("    edgeFirewall: ").append(toIndentedString(edgeFirewall)).append("\n");
     sb.append("    edgeFunctions: ").append(toIndentedString(edgeFunctions)).append("\n");
@@ -656,7 +629,6 @@ public class ApplicationPutRequest {
     openapiFields.add("minimum_tls_version");
     openapiFields.add("active");
     openapiFields.add("application_acceleration");
-    openapiFields.add("caching");
     openapiFields.add("device_detection");
     openapiFields.add("edge_firewall");
     openapiFields.add("edge_functions");
