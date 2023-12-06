@@ -2648,7 +2648,6 @@ components:
         debug_rules: false
         delivery_protocol: delivery_protocol
         edge_firewall: true
-        caching: true
         http_port:
         - 0
         https_port:
@@ -2672,8 +2671,6 @@ components:
         debug_rules:
           type: boolean
         application_acceleration:
-          type: boolean
-        caching:
           type: boolean
         device_detection:
           type: boolean
@@ -2829,7 +2826,6 @@ components:
         active: true
         delivery_protocol: delivery_protocol
         edge_firewall: true
-        caching: true
         http_port:
         - 0
         https_port:
@@ -2851,8 +2847,6 @@ components:
         active:
           type: boolean
         application_acceleration:
-          type: boolean
-        caching:
           type: boolean
         device_detection:
           type: boolean

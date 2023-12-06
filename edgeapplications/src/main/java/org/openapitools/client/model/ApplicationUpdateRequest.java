@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationUpdateRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-06T16:49:01.374097Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-06T18:34:11.962660Z[GMT]")
 public class ApplicationUpdateRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -83,10 +83,6 @@ public class ApplicationUpdateRequest {
   public static final String SERIALIZED_NAME_APPLICATION_ACCELERATION = "application_acceleration";
   @SerializedName(SERIALIZED_NAME_APPLICATION_ACCELERATION)
   private Boolean applicationAcceleration;
-
-  public static final String SERIALIZED_NAME_CACHING = "caching";
-  @SerializedName(SERIALIZED_NAME_CACHING)
-  private Boolean caching;
 
   public static final String SERIALIZED_NAME_DEVICE_DETECTION = "device_detection";
   @SerializedName(SERIALIZED_NAME_DEVICE_DETECTION)
@@ -292,27 +288,6 @@ public class ApplicationUpdateRequest {
 
   public void setApplicationAcceleration(Boolean applicationAcceleration) {
     this.applicationAcceleration = applicationAcceleration;
-  }
-
-
-  public ApplicationUpdateRequest caching(Boolean caching) {
-    
-    this.caching = caching;
-    return this;
-  }
-
-   /**
-   * Get caching
-   * @return caching
-  **/
-  @javax.annotation.Nullable
-  public Boolean getCaching() {
-    return caching;
-  }
-
-
-  public void setCaching(Boolean caching) {
-    this.caching = caching;
   }
 
 
@@ -523,7 +498,6 @@ public class ApplicationUpdateRequest {
         Objects.equals(this.active, applicationUpdateRequest.active) &&
         Objects.equals(this.debugRules, applicationUpdateRequest.debugRules) &&
         Objects.equals(this.applicationAcceleration, applicationUpdateRequest.applicationAcceleration) &&
-        Objects.equals(this.caching, applicationUpdateRequest.caching) &&
         Objects.equals(this.deviceDetection, applicationUpdateRequest.deviceDetection) &&
         Objects.equals(this.edgeFirewall, applicationUpdateRequest.edgeFirewall) &&
         Objects.equals(this.edgeFunctions, applicationUpdateRequest.edgeFunctions) &&
@@ -541,7 +515,7 @@ public class ApplicationUpdateRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, active, debugRules, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, l2Caching, loadBalancer, rawLogs, webApplicationFirewall, websocket);
+    return Objects.hash(name, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, active, debugRules, applicationAcceleration, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, l2Caching, loadBalancer, rawLogs, webApplicationFirewall, websocket);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -563,7 +537,6 @@ public class ApplicationUpdateRequest {
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    debugRules: ").append(toIndentedString(debugRules)).append("\n");
     sb.append("    applicationAcceleration: ").append(toIndentedString(applicationAcceleration)).append("\n");
-    sb.append("    caching: ").append(toIndentedString(caching)).append("\n");
     sb.append("    deviceDetection: ").append(toIndentedString(deviceDetection)).append("\n");
     sb.append("    edgeFirewall: ").append(toIndentedString(edgeFirewall)).append("\n");
     sb.append("    edgeFunctions: ").append(toIndentedString(edgeFunctions)).append("\n");
@@ -603,7 +576,6 @@ public class ApplicationUpdateRequest {
     openapiFields.add("active");
     openapiFields.add("debug_rules");
     openapiFields.add("application_acceleration");
-    openapiFields.add("caching");
     openapiFields.add("device_detection");
     openapiFields.add("edge_firewall");
     openapiFields.add("edge_functions");
