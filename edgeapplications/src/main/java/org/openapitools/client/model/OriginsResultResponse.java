@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * OriginsResultResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-31T14:32:14.434306Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-06T16:49:01.374097Z[GMT]")
 public class OriginsResultResponse {
   public static final String SERIALIZED_NAME_ORIGIN_ID = "origin_id";
   @SerializedName(SERIALIZED_NAME_ORIGIN_ID)
@@ -117,6 +117,14 @@ public class OriginsResultResponse {
   public static final String SERIALIZED_NAME_HMAC_SECRET_KEY = "hmac_secret_key";
   @SerializedName(SERIALIZED_NAME_HMAC_SECRET_KEY)
   private String hmacSecretKey;
+
+  public static final String SERIALIZED_NAME_BUCKET = "bucket";
+  @SerializedName(SERIALIZED_NAME_BUCKET)
+  private String bucket;
+
+  public static final String SERIALIZED_NAME_PREFIX = "prefix";
+  @SerializedName(SERIALIZED_NAME_PREFIX)
+  private String prefix;
 
   public OriginsResultResponse() {
   }
@@ -465,6 +473,48 @@ public class OriginsResultResponse {
   }
 
 
+  public OriginsResultResponse bucket(String bucket) {
+    
+    this.bucket = bucket;
+    return this;
+  }
+
+   /**
+   * Get bucket
+   * @return bucket
+  **/
+  @javax.annotation.Nullable
+  public String getBucket() {
+    return bucket;
+  }
+
+
+  public void setBucket(String bucket) {
+    this.bucket = bucket;
+  }
+
+
+  public OriginsResultResponse prefix(String prefix) {
+    
+    this.prefix = prefix;
+    return this;
+  }
+
+   /**
+   * Get prefix
+   * @return prefix
+  **/
+  @javax.annotation.Nullable
+  public String getPrefix() {
+    return prefix;
+  }
+
+
+  public void setPrefix(String prefix) {
+    this.prefix = prefix;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -490,12 +540,14 @@ public class OriginsResultResponse {
         Objects.equals(this.hmacAuthentication, originsResultResponse.hmacAuthentication) &&
         Objects.equals(this.hmacRegionName, originsResultResponse.hmacRegionName) &&
         Objects.equals(this.hmacAccessKey, originsResultResponse.hmacAccessKey) &&
-        Objects.equals(this.hmacSecretKey, originsResultResponse.hmacSecretKey);
+        Objects.equals(this.hmacSecretKey, originsResultResponse.hmacSecretKey) &&
+        Objects.equals(this.bucket, originsResultResponse.bucket) &&
+        Objects.equals(this.prefix, originsResultResponse.prefix);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(originId, originKey, name, originType, addresses, originProtocolPolicy, isOriginRedirectionEnabled, hostHeader, method, originPath, connectionTimeout, timeoutBetweenBytes, hmacAuthentication, hmacRegionName, hmacAccessKey, hmacSecretKey);
+    return Objects.hash(originId, originKey, name, originType, addresses, originProtocolPolicy, isOriginRedirectionEnabled, hostHeader, method, originPath, connectionTimeout, timeoutBetweenBytes, hmacAuthentication, hmacRegionName, hmacAccessKey, hmacSecretKey, bucket, prefix);
   }
 
   @Override
@@ -518,6 +570,8 @@ public class OriginsResultResponse {
     sb.append("    hmacRegionName: ").append(toIndentedString(hmacRegionName)).append("\n");
     sb.append("    hmacAccessKey: ").append(toIndentedString(hmacAccessKey)).append("\n");
     sb.append("    hmacSecretKey: ").append(toIndentedString(hmacSecretKey)).append("\n");
+    sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");
+    sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -556,6 +610,8 @@ public class OriginsResultResponse {
     openapiFields.add("hmac_region_name");
     openapiFields.add("hmac_access_key");
     openapiFields.add("hmac_secret_key");
+    openapiFields.add("bucket");
+    openapiFields.add("prefix");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -644,6 +700,12 @@ public class OriginsResultResponse {
       }
       if (!jsonObj.get("hmac_secret_key").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `hmac_secret_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hmac_secret_key").toString()));
+      }
+      if ((jsonObj.get("bucket") != null && !jsonObj.get("bucket").isJsonNull()) && !jsonObj.get("bucket").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `bucket` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucket").toString()));
+      }
+      if ((jsonObj.get("prefix") != null && !jsonObj.get("prefix").isJsonNull()) && !jsonObj.get("prefix").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));
       }
   }
 
