@@ -20,8 +20,8 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
-import org.openapitools.client.model.EdgeAccessEnum;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,60 +48,89 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * Bucket
+ * BucketObject
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-15T14:58:01.416543Z[GMT]")
-public class Bucket {
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
+public class BucketObject {
+  public static final String SERIALIZED_NAME_KEY = "key";
+  @SerializedName(SERIALIZED_NAME_KEY)
+  private String key;
 
-  public static final String SERIALIZED_NAME_EDGE_ACCESS = "edge_access";
-  @SerializedName(SERIALIZED_NAME_EDGE_ACCESS)
-  private EdgeAccessEnum edgeAccess;
+  public static final String SERIALIZED_NAME_LAST_MODIFIED = "last_modified";
+  @SerializedName(SERIALIZED_NAME_LAST_MODIFIED)
+  private OffsetDateTime lastModified;
 
-  public Bucket() {
+  public static final String SERIALIZED_NAME_SIZE = "size";
+  @SerializedName(SERIALIZED_NAME_SIZE)
+  private Integer size;
+
+  public static final String SERIALIZED_NAME_ETAG = "etag";
+  @SerializedName(SERIALIZED_NAME_ETAG)
+  private String etag;
+
+  public BucketObject() {
   }
 
   
-  public Bucket(
-     String name
+  public BucketObject(
+     String key, 
+     OffsetDateTime lastModified, 
+     Integer size, 
+     String etag
   ) {
     this();
-    this.name = name;
+    this.key = key;
+    this.lastModified = lastModified;
+    this.size = size;
+    this.etag = etag;
   }
 
    /**
-   * Get name
-   * @return name
+   * Get key
+   * @return key
   **/
   @javax.annotation.Nonnull
-  public String getName() {
-    return name;
+  public String getKey() {
+    return key;
   }
 
 
 
-
-  public Bucket edgeAccess(EdgeAccessEnum edgeAccess) {
-    
-    this.edgeAccess = edgeAccess;
-    return this;
-  }
 
    /**
-   * Get edgeAccess
-   * @return edgeAccess
+   * Get lastModified
+   * @return lastModified
   **/
   @javax.annotation.Nonnull
-  public EdgeAccessEnum getEdgeAccess() {
-    return edgeAccess;
+  public OffsetDateTime getLastModified() {
+    return lastModified;
   }
 
 
-  public void setEdgeAccess(EdgeAccessEnum edgeAccess) {
-    this.edgeAccess = edgeAccess;
+
+
+   /**
+   * Get size
+   * @return size
+  **/
+  @javax.annotation.Nonnull
+  public Integer getSize() {
+    return size;
   }
+
+
+
+
+   /**
+   * Get etag
+   * @return etag
+  **/
+  @javax.annotation.Nonnull
+  public String getEtag() {
+    return etag;
+  }
+
+
 
 
 
@@ -113,22 +142,26 @@ public class Bucket {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Bucket bucket = (Bucket) o;
-    return Objects.equals(this.name, bucket.name) &&
-        Objects.equals(this.edgeAccess, bucket.edgeAccess);
+    BucketObject bucketObject = (BucketObject) o;
+    return Objects.equals(this.key, bucketObject.key) &&
+        Objects.equals(this.lastModified, bucketObject.lastModified) &&
+        Objects.equals(this.size, bucketObject.size) &&
+        Objects.equals(this.etag, bucketObject.etag);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, edgeAccess);
+    return Objects.hash(key, lastModified, size, etag);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Bucket {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    edgeAccess: ").append(toIndentedString(edgeAccess)).append("\n");
+    sb.append("class BucketObject {\n");
+    sb.append("    key: ").append(toIndentedString(key)).append("\n");
+    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
+    sb.append("    size: ").append(toIndentedString(size)).append("\n");
+    sb.append("    etag: ").append(toIndentedString(etag)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -151,70 +184,75 @@ public class Bucket {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("edge_access");
+    openapiFields.add("key");
+    openapiFields.add("last_modified");
+    openapiFields.add("size");
+    openapiFields.add("etag");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("edge_access");
+    openapiRequiredFields.add("key");
+    openapiRequiredFields.add("last_modified");
+    openapiRequiredFields.add("size");
+    openapiRequiredFields.add("etag");
   }
 
  /**
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Bucket
+  * @throws IOException if the JSON Element is invalid with respect to BucketObject
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!Bucket.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Bucket is not found in the empty JSON string", Bucket.openapiRequiredFields.toString()));
+        if (!BucketObject.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in BucketObject is not found in the empty JSON string", BucketObject.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!Bucket.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Bucket` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!BucketObject.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `BucketObject` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : Bucket.openapiRequiredFields) {
+      for (String requiredField : BucketObject.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      if (!jsonObj.get("key").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
-      // validate the required field `edge_access`
-      EdgeAccessEnum.validateJsonElement(jsonObj.get("edge_access"));
+      if (!jsonObj.get("etag").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `etag` to be a primitive type in the JSON string but got `%s`", jsonObj.get("etag").toString()));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Bucket.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Bucket' and its subtypes
+       if (!BucketObject.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'BucketObject' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Bucket> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Bucket.class));
+       final TypeAdapter<BucketObject> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(BucketObject.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<Bucket>() {
+       return (TypeAdapter<T>) new TypeAdapter<BucketObject>() {
            @Override
-           public void write(JsonWriter out, Bucket value) throws IOException {
+           public void write(JsonWriter out, BucketObject value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public Bucket read(JsonReader in) throws IOException {
+           public BucketObject read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -225,18 +263,18 @@ public class Bucket {
   }
 
  /**
-  * Create an instance of Bucket given an JSON string
+  * Create an instance of BucketObject given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of Bucket
-  * @throws IOException if the JSON string is invalid with respect to Bucket
+  * @return An instance of BucketObject
+  * @throws IOException if the JSON string is invalid with respect to BucketObject
   */
-  public static Bucket fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, Bucket.class);
+  public static BucketObject fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, BucketObject.class);
   }
 
  /**
-  * Convert an instance of Bucket to an JSON string
+  * Convert an instance of BucketObject to an JSON string
   *
   * @return JSON string
   */
