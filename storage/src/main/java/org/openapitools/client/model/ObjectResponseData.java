@@ -21,8 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.Bucket;
-import org.openapitools.client.model.StateEnum;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,60 +47,35 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * ResponseBucket
+ * ObjectResponseData
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-15T14:58:01.416543Z[GMT]")
-public class ResponseBucket {
-  public static final String SERIALIZED_NAME_STATE = "state";
-  @SerializedName(SERIALIZED_NAME_STATE)
-  private StateEnum state;
+public class ObjectResponseData {
+  public static final String SERIALIZED_NAME_OBJECT_KEY = "object_key";
+  @SerializedName(SERIALIZED_NAME_OBJECT_KEY)
+  private String objectKey;
 
-  public static final String SERIALIZED_NAME_DATA = "data";
-  @SerializedName(SERIALIZED_NAME_DATA)
-  private Bucket data;
-
-  public ResponseBucket() {
+  public ObjectResponseData() {
   }
 
-  public ResponseBucket state(StateEnum state) {
+  public ObjectResponseData objectKey(String objectKey) {
     
-    this.state = state;
+    this.objectKey = objectKey;
     return this;
   }
 
    /**
-   * Get state
-   * @return state
+   * Get objectKey
+   * @return objectKey
   **/
   @javax.annotation.Nonnull
-  public StateEnum getState() {
-    return state;
+  public String getObjectKey() {
+    return objectKey;
   }
 
 
-  public void setState(StateEnum state) {
-    this.state = state;
-  }
-
-
-  public ResponseBucket data(Bucket data) {
-    
-    this.data = data;
-    return this;
-  }
-
-   /**
-   * Get data
-   * @return data
-  **/
-  @javax.annotation.Nonnull
-  public Bucket getData() {
-    return data;
-  }
-
-
-  public void setData(Bucket data) {
-    this.data = data;
+  public void setObjectKey(String objectKey) {
+    this.objectKey = objectKey;
   }
 
 
@@ -115,22 +88,20 @@ public class ResponseBucket {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResponseBucket responseBucket = (ResponseBucket) o;
-    return Objects.equals(this.state, responseBucket.state) &&
-        Objects.equals(this.data, responseBucket.data);
+    ObjectResponseData objectResponseData = (ObjectResponseData) o;
+    return Objects.equals(this.objectKey, objectResponseData.objectKey);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, data);
+    return Objects.hash(objectKey);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResponseBucket {\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("class ObjectResponseData {\n");
+    sb.append("    objectKey: ").append(toIndentedString(objectKey)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -153,69 +124,66 @@ public class ResponseBucket {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("state");
-    openapiFields.add("data");
+    openapiFields.add("object_key");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("state");
-    openapiRequiredFields.add("data");
+    openapiRequiredFields.add("object_key");
   }
 
  /**
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ResponseBucket
+  * @throws IOException if the JSON Element is invalid with respect to ObjectResponseData
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!ResponseBucket.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ResponseBucket is not found in the empty JSON string", ResponseBucket.openapiRequiredFields.toString()));
+        if (!ObjectResponseData.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ObjectResponseData is not found in the empty JSON string", ObjectResponseData.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!ResponseBucket.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ResponseBucket` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!ObjectResponseData.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ObjectResponseData` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : ResponseBucket.openapiRequiredFields) {
+      for (String requiredField : ObjectResponseData.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the required field `state`
-      StateEnum.validateJsonElement(jsonObj.get("state"));
-      // validate the required field `data`
-      Bucket.validateJsonElement(jsonObj.get("data"));
+      if (!jsonObj.get("object_key").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `object_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("object_key").toString()));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ResponseBucket.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ResponseBucket' and its subtypes
+       if (!ObjectResponseData.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ObjectResponseData' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ResponseBucket> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ResponseBucket.class));
+       final TypeAdapter<ObjectResponseData> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ObjectResponseData.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ResponseBucket>() {
+       return (TypeAdapter<T>) new TypeAdapter<ObjectResponseData>() {
            @Override
-           public void write(JsonWriter out, ResponseBucket value) throws IOException {
+           public void write(JsonWriter out, ObjectResponseData value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public ResponseBucket read(JsonReader in) throws IOException {
+           public ObjectResponseData read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -226,18 +194,18 @@ public class ResponseBucket {
   }
 
  /**
-  * Create an instance of ResponseBucket given an JSON string
+  * Create an instance of ObjectResponseData given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of ResponseBucket
-  * @throws IOException if the JSON string is invalid with respect to ResponseBucket
+  * @return An instance of ObjectResponseData
+  * @throws IOException if the JSON string is invalid with respect to ObjectResponseData
   */
-  public static ResponseBucket fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ResponseBucket.class);
+  public static ObjectResponseData fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ObjectResponseData.class);
   }
 
  /**
-  * Convert an instance of ResponseBucket to an JSON string
+  * Convert an instance of ObjectResponseData to an JSON string
   *
   * @return JSON string
   */

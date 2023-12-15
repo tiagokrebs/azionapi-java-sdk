@@ -24,7 +24,7 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.Bucket;
+import org.openapitools.client.model.BucketObject;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -52,10 +52,10 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * PaginatedBucketList
+ * PaginatedBucketObjectList
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-15T14:58:01.416543Z[GMT]")
-public class PaginatedBucketList {
+public class PaginatedBucketObjectList {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
   private Integer count;
@@ -70,12 +70,12 @@ public class PaginatedBucketList {
 
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
-  private List<Bucket> results;
+  private List<BucketObject> results;
 
-  public PaginatedBucketList() {
+  public PaginatedBucketObjectList() {
   }
 
-  public PaginatedBucketList count(Integer count) {
+  public PaginatedBucketObjectList count(Integer count) {
     
     this.count = count;
     return this;
@@ -96,7 +96,7 @@ public class PaginatedBucketList {
   }
 
 
-  public PaginatedBucketList next(URI next) {
+  public PaginatedBucketObjectList next(URI next) {
     
     this.next = next;
     return this;
@@ -117,7 +117,7 @@ public class PaginatedBucketList {
   }
 
 
-  public PaginatedBucketList previous(URI previous) {
+  public PaginatedBucketObjectList previous(URI previous) {
     
     this.previous = previous;
     return this;
@@ -138,13 +138,13 @@ public class PaginatedBucketList {
   }
 
 
-  public PaginatedBucketList results(List<Bucket> results) {
+  public PaginatedBucketObjectList results(List<BucketObject> results) {
     
     this.results = results;
     return this;
   }
 
-  public PaginatedBucketList addResultsItem(Bucket resultsItem) {
+  public PaginatedBucketObjectList addResultsItem(BucketObject resultsItem) {
     if (this.results == null) {
       this.results = new ArrayList<>();
     }
@@ -157,12 +157,12 @@ public class PaginatedBucketList {
    * @return results
   **/
   @javax.annotation.Nullable
-  public List<Bucket> getResults() {
+  public List<BucketObject> getResults() {
     return results;
   }
 
 
-  public void setResults(List<Bucket> results) {
+  public void setResults(List<BucketObject> results) {
     this.results = results;
   }
 
@@ -176,11 +176,11 @@ public class PaginatedBucketList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PaginatedBucketList paginatedBucketList = (PaginatedBucketList) o;
-    return Objects.equals(this.count, paginatedBucketList.count) &&
-        Objects.equals(this.next, paginatedBucketList.next) &&
-        Objects.equals(this.previous, paginatedBucketList.previous) &&
-        Objects.equals(this.results, paginatedBucketList.results);
+    PaginatedBucketObjectList paginatedBucketObjectList = (PaginatedBucketObjectList) o;
+    return Objects.equals(this.count, paginatedBucketObjectList.count) &&
+        Objects.equals(this.next, paginatedBucketObjectList.next) &&
+        Objects.equals(this.previous, paginatedBucketObjectList.previous) &&
+        Objects.equals(this.results, paginatedBucketObjectList.results);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -202,7 +202,7 @@ public class PaginatedBucketList {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PaginatedBucketList {\n");
+    sb.append("class PaginatedBucketObjectList {\n");
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
     sb.append("    next: ").append(toIndentedString(next)).append("\n");
     sb.append("    previous: ").append(toIndentedString(previous)).append("\n");
@@ -242,20 +242,20 @@ public class PaginatedBucketList {
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to PaginatedBucketList
+  * @throws IOException if the JSON Element is invalid with respect to PaginatedBucketObjectList
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!PaginatedBucketList.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PaginatedBucketList is not found in the empty JSON string", PaginatedBucketList.openapiRequiredFields.toString()));
+        if (!PaginatedBucketObjectList.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in PaginatedBucketObjectList is not found in the empty JSON string", PaginatedBucketObjectList.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!PaginatedBucketList.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `PaginatedBucketList` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!PaginatedBucketObjectList.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `PaginatedBucketObjectList` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -275,7 +275,7 @@ public class PaginatedBucketList {
 
           // validate the optional field `results` (array)
           for (int i = 0; i < jsonArrayresults.size(); i++) {
-            Bucket.validateJsonElement(jsonArrayresults.get(i));
+            BucketObject.validateJsonElement(jsonArrayresults.get(i));
           };
         }
       }
@@ -285,22 +285,22 @@ public class PaginatedBucketList {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!PaginatedBucketList.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'PaginatedBucketList' and its subtypes
+       if (!PaginatedBucketObjectList.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'PaginatedBucketObjectList' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<PaginatedBucketList> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(PaginatedBucketList.class));
+       final TypeAdapter<PaginatedBucketObjectList> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(PaginatedBucketObjectList.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<PaginatedBucketList>() {
+       return (TypeAdapter<T>) new TypeAdapter<PaginatedBucketObjectList>() {
            @Override
-           public void write(JsonWriter out, PaginatedBucketList value) throws IOException {
+           public void write(JsonWriter out, PaginatedBucketObjectList value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public PaginatedBucketList read(JsonReader in) throws IOException {
+           public PaginatedBucketObjectList read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -311,18 +311,18 @@ public class PaginatedBucketList {
   }
 
  /**
-  * Create an instance of PaginatedBucketList given an JSON string
+  * Create an instance of PaginatedBucketObjectList given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of PaginatedBucketList
-  * @throws IOException if the JSON string is invalid with respect to PaginatedBucketList
+  * @return An instance of PaginatedBucketObjectList
+  * @throws IOException if the JSON string is invalid with respect to PaginatedBucketObjectList
   */
-  public static PaginatedBucketList fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, PaginatedBucketList.class);
+  public static PaginatedBucketObjectList fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, PaginatedBucketObjectList.class);
   }
 
  /**
-  * Convert an instance of PaginatedBucketList to an JSON string
+  * Convert an instance of PaginatedBucketObjectList to an JSON string
   *
   * @return JSON string
   */

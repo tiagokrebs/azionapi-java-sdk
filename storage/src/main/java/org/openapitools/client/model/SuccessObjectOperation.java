@@ -21,7 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.Bucket;
+import org.openapitools.client.model.ObjectResponseData;
 import org.openapitools.client.model.StateEnum;
 
 import com.google.gson.Gson;
@@ -49,22 +49,22 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * ResponseBucket
+ * SuccessObjectOperation
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-15T14:58:01.416543Z[GMT]")
-public class ResponseBucket {
+public class SuccessObjectOperation {
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
   private StateEnum state;
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private Bucket data;
+  private ObjectResponseData data;
 
-  public ResponseBucket() {
+  public SuccessObjectOperation() {
   }
 
-  public ResponseBucket state(StateEnum state) {
+  public SuccessObjectOperation state(StateEnum state) {
     
     this.state = state;
     return this;
@@ -85,7 +85,7 @@ public class ResponseBucket {
   }
 
 
-  public ResponseBucket data(Bucket data) {
+  public SuccessObjectOperation data(ObjectResponseData data) {
     
     this.data = data;
     return this;
@@ -96,12 +96,12 @@ public class ResponseBucket {
    * @return data
   **/
   @javax.annotation.Nonnull
-  public Bucket getData() {
+  public ObjectResponseData getData() {
     return data;
   }
 
 
-  public void setData(Bucket data) {
+  public void setData(ObjectResponseData data) {
     this.data = data;
   }
 
@@ -115,9 +115,9 @@ public class ResponseBucket {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResponseBucket responseBucket = (ResponseBucket) o;
-    return Objects.equals(this.state, responseBucket.state) &&
-        Objects.equals(this.data, responseBucket.data);
+    SuccessObjectOperation successObjectOperation = (SuccessObjectOperation) o;
+    return Objects.equals(this.state, successObjectOperation.state) &&
+        Objects.equals(this.data, successObjectOperation.data);
   }
 
   @Override
@@ -128,7 +128,7 @@ public class ResponseBucket {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResponseBucket {\n");
+    sb.append("class SuccessObjectOperation {\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");
@@ -166,25 +166,25 @@ public class ResponseBucket {
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ResponseBucket
+  * @throws IOException if the JSON Element is invalid with respect to SuccessObjectOperation
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!ResponseBucket.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ResponseBucket is not found in the empty JSON string", ResponseBucket.openapiRequiredFields.toString()));
+        if (!SuccessObjectOperation.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in SuccessObjectOperation is not found in the empty JSON string", SuccessObjectOperation.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!ResponseBucket.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ResponseBucket` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!SuccessObjectOperation.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SuccessObjectOperation` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : ResponseBucket.openapiRequiredFields) {
+      for (String requiredField : SuccessObjectOperation.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
@@ -193,29 +193,29 @@ public class ResponseBucket {
       // validate the required field `state`
       StateEnum.validateJsonElement(jsonObj.get("state"));
       // validate the required field `data`
-      Bucket.validateJsonElement(jsonObj.get("data"));
+      ObjectResponseData.validateJsonElement(jsonObj.get("data"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ResponseBucket.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ResponseBucket' and its subtypes
+       if (!SuccessObjectOperation.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'SuccessObjectOperation' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ResponseBucket> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ResponseBucket.class));
+       final TypeAdapter<SuccessObjectOperation> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(SuccessObjectOperation.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ResponseBucket>() {
+       return (TypeAdapter<T>) new TypeAdapter<SuccessObjectOperation>() {
            @Override
-           public void write(JsonWriter out, ResponseBucket value) throws IOException {
+           public void write(JsonWriter out, SuccessObjectOperation value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public ResponseBucket read(JsonReader in) throws IOException {
+           public SuccessObjectOperation read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -226,18 +226,18 @@ public class ResponseBucket {
   }
 
  /**
-  * Create an instance of ResponseBucket given an JSON string
+  * Create an instance of SuccessObjectOperation given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of ResponseBucket
-  * @throws IOException if the JSON string is invalid with respect to ResponseBucket
+  * @return An instance of SuccessObjectOperation
+  * @throws IOException if the JSON string is invalid with respect to SuccessObjectOperation
   */
-  public static ResponseBucket fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ResponseBucket.class);
+  public static SuccessObjectOperation fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, SuccessObjectOperation.class);
   }
 
  /**
-  * Convert an instance of ResponseBucket to an JSON string
+  * Convert an instance of SuccessObjectOperation to an JSON string
   *
   * @return JSON string
   */

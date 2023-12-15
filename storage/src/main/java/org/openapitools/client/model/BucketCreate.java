@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * BucketCreate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-07T13:20:43.595938Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-15T14:58:01.416543Z[GMT]")
 public class BucketCreate {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

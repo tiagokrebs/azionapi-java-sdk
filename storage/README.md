@@ -2,7 +2,7 @@
 
 Object Storage
 - API version: 1.0.0 (v1)
-  - Build date: 2023-12-07T13:20:43.595938Z[GMT]
+  - Build date: 2023-12-15T14:58:01.416543Z[GMT]
 
 REST API OpenAPI documentation for the Object Storage
 
@@ -85,7 +85,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.BucketsApi;
+import org.openapitools.client.api.StorageApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -98,13 +98,13 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //tokenAuth.setApiKeyPrefix("Token");
 
-    BucketsApi apiInstance = new BucketsApi(defaultClient);
+    StorageApi apiInstance = new StorageApi(defaultClient);
     BucketCreate bucketCreate = new BucketCreate(); // BucketCreate | 
     try {
-      ResponseBucket result = apiInstance.apiV1StorageBucketsCreate(bucketCreate);
+      ResponseBucket result = apiInstance.storageApiBucketsCreate(bucketCreate);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BucketsApi#apiV1StorageBucketsCreate");
+      System.err.println("Exception when calling StorageApi#storageApiBucketsCreate");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -121,23 +121,30 @@ All URIs are relative to *https://api.azion.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*BucketsApi* | [**apiV1StorageBucketsCreate**](docs/BucketsApi.md#apiV1StorageBucketsCreate) | **POST** /v4/storage/buckets | /v4/storage/buckets
-*BucketsApi* | [**apiV1StorageBucketsDestroy**](docs/BucketsApi.md#apiV1StorageBucketsDestroy) | **DELETE** /v4/storage/buckets/{name} | /v4/storage/buckets/:name
-*BucketsApi* | [**apiV1StorageBucketsList**](docs/BucketsApi.md#apiV1StorageBucketsList) | **GET** /v4/storage/buckets | /v4/storage/buckets
-*BucketsApi* | [**apiV1StorageBucketsPartialUpdate**](docs/BucketsApi.md#apiV1StorageBucketsPartialUpdate) | **PATCH** /v4/storage/buckets/{name} | /v4/storage/buckets/:name
+*StorageApi* | [**storageApiBucketsCreate**](docs/StorageApi.md#storageApiBucketsCreate) | **POST** /v4/storage/buckets | Create a new bucket
+*StorageApi* | [**storageApiBucketsDestroy**](docs/StorageApi.md#storageApiBucketsDestroy) | **DELETE** /v4/storage/buckets/{name} | Delete a bucket
+*StorageApi* | [**storageApiBucketsList**](docs/StorageApi.md#storageApiBucketsList) | **GET** /v4/storage/buckets | List buckets
+*StorageApi* | [**storageApiBucketsObjectsCreate**](docs/StorageApi.md#storageApiBucketsObjectsCreate) | **POST** /v4/storage/buckets/{bucket_name}/objects/{object_key} | Create new object key
+*StorageApi* | [**storageApiBucketsObjectsDestroy**](docs/StorageApi.md#storageApiBucketsObjectsDestroy) | **DELETE** /v4/storage/buckets/{bucket_name}/objects/{object_key} | Delete object key
+*StorageApi* | [**storageApiBucketsObjectsList**](docs/StorageApi.md#storageApiBucketsObjectsList) | **GET** /v4/storage/buckets/{bucket_name}/objects | List buckets objects
+*StorageApi* | [**storageApiBucketsObjectsRetrieve**](docs/StorageApi.md#storageApiBucketsObjectsRetrieve) | **GET** /v4/storage/buckets/{bucket_name}/objects/{object_key} | Download object
+*StorageApi* | [**storageApiBucketsObjectsUpdate**](docs/StorageApi.md#storageApiBucketsObjectsUpdate) | **PUT** /v4/storage/buckets/{bucket_name}/objects/{object_key} | Update the object key
+*StorageApi* | [**storageApiBucketsPartialUpdate**](docs/StorageApi.md#storageApiBucketsPartialUpdate) | **PATCH** /v4/storage/buckets/{name} | Update bucket info
 
 
 ## Documentation for Models
 
  - [Bucket](docs/Bucket.md)
  - [BucketCreate](docs/BucketCreate.md)
+ - [BucketObject](docs/BucketObject.md)
  - [EdgeAccessEnum](docs/EdgeAccessEnum.md)
+ - [ObjectResponseData](docs/ObjectResponseData.md)
  - [PaginatedBucketList](docs/PaginatedBucketList.md)
- - [PatchedBucket](docs/PatchedBucket.md)
+ - [PaginatedBucketObjectList](docs/PaginatedBucketObjectList.md)
  - [ResponseBucket](docs/ResponseBucket.md)
- - [ResponseDeleteBucket](docs/ResponseDeleteBucket.md)
- - [ResponseDeleteBucketData](docs/ResponseDeleteBucketData.md)
  - [StateEnum](docs/StateEnum.md)
+ - [SuccessBucketOperation](docs/SuccessBucketOperation.md)
+ - [SuccessObjectOperation](docs/SuccessObjectOperation.md)
 
 
 <a id="documentation-for-authorization"></a>
