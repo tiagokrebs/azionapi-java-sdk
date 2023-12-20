@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * UpdateOriginsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T14:08:03.415191Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
 public class UpdateOriginsRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -64,7 +64,7 @@ public class UpdateOriginsRequest {
 
   public static final String SERIALIZED_NAME_ADDRESSES = "addresses";
   @SerializedName(SERIALIZED_NAME_ADDRESSES)
-  private List<CreateOriginsRequestAddresses> addresses = new ArrayList<>();
+  private List<CreateOriginsRequestAddresses> addresses;
 
   public static final String SERIALIZED_NAME_ORIGIN_PROTOCOL_POLICY = "origin_protocol_policy";
   @SerializedName(SERIALIZED_NAME_ORIGIN_PROTOCOL_POLICY)
@@ -165,7 +165,7 @@ public class UpdateOriginsRequest {
    * Get addresses
    * @return addresses
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public List<CreateOriginsRequestAddresses> getAddresses() {
     return addresses;
   }
@@ -207,7 +207,7 @@ public class UpdateOriginsRequest {
    * Get hostHeader
    * @return hostHeader
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getHostHeader() {
     return hostHeader;
   }
@@ -448,8 +448,6 @@ public class UpdateOriginsRequest {
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("name");
-    openapiRequiredFields.add("addresses");
-    openapiRequiredFields.add("host_header");
   }
 
  /**
@@ -486,20 +484,24 @@ public class UpdateOriginsRequest {
       if ((jsonObj.get("origin_type") != null && !jsonObj.get("origin_type").isJsonNull()) && !jsonObj.get("origin_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `origin_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("origin_type").toString()));
       }
-      // ensure the json data is an array
-      if (!jsonObj.get("addresses").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `addresses` to be an array in the JSON string but got `%s`", jsonObj.get("addresses").toString()));
-      }
+      if (jsonObj.get("addresses") != null && !jsonObj.get("addresses").isJsonNull()) {
+        JsonArray jsonArrayaddresses = jsonObj.getAsJsonArray("addresses");
+        if (jsonArrayaddresses != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("addresses").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `addresses` to be an array in the JSON string but got `%s`", jsonObj.get("addresses").toString()));
+          }
 
-      JsonArray jsonArrayaddresses = jsonObj.getAsJsonArray("addresses");
-      // validate the required field `addresses` (array)
-      for (int i = 0; i < jsonArrayaddresses.size(); i++) {
-        CreateOriginsRequestAddresses.validateJsonElement(jsonArrayaddresses.get(i));
-      };
+          // validate the optional field `addresses` (array)
+          for (int i = 0; i < jsonArrayaddresses.size(); i++) {
+            CreateOriginsRequestAddresses.validateJsonElement(jsonArrayaddresses.get(i));
+          };
+        }
+      }
       if ((jsonObj.get("origin_protocol_policy") != null && !jsonObj.get("origin_protocol_policy").isJsonNull()) && !jsonObj.get("origin_protocol_policy").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `origin_protocol_policy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("origin_protocol_policy").toString()));
       }
-      if (!jsonObj.get("host_header").isJsonPrimitive()) {
+      if ((jsonObj.get("host_header") != null && !jsonObj.get("host_header").isJsonNull()) && !jsonObj.get("host_header").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `host_header` to be a primitive type in the JSON string but got `%s`", jsonObj.get("host_header").toString()));
       }
       if ((jsonObj.get("origin_path") != null && !jsonObj.get("origin_path").isJsonNull()) && !jsonObj.get("origin_path").isJsonPrimitive()) {

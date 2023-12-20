@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * CreateOriginsRequestAddresses
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T14:08:03.415191Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
 public class CreateOriginsRequestAddresses {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)

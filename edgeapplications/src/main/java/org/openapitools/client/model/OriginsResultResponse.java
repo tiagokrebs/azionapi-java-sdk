@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * OriginsResultResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T14:08:03.415191Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
 public class OriginsResultResponse {
   public static final String SERIALIZED_NAME_ORIGIN_ID = "origin_id";
   @SerializedName(SERIALIZED_NAME_ORIGIN_ID)
@@ -72,7 +72,7 @@ public class OriginsResultResponse {
 
   public static final String SERIALIZED_NAME_ADDRESSES = "addresses";
   @SerializedName(SERIALIZED_NAME_ADDRESSES)
-  private List<OriginsResultResponseAddresses> addresses = new ArrayList<>();
+  private List<OriginsResultResponseAddresses> addresses;
 
   public static final String SERIALIZED_NAME_ORIGIN_PROTOCOL_POLICY = "origin_protocol_policy";
   @SerializedName(SERIALIZED_NAME_ORIGIN_PROTOCOL_POLICY)
@@ -139,7 +139,7 @@ public class OriginsResultResponse {
    * Get originId
    * @return originId
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Long getOriginId() {
     return originId;
   }
@@ -160,7 +160,7 @@ public class OriginsResultResponse {
    * Get originKey
    * @return originKey
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getOriginKey() {
     return originKey;
   }
@@ -202,7 +202,7 @@ public class OriginsResultResponse {
    * Get originType
    * @return originType
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getOriginType() {
     return originType;
   }
@@ -231,7 +231,7 @@ public class OriginsResultResponse {
    * Get addresses
    * @return addresses
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public List<OriginsResultResponseAddresses> getAddresses() {
     return addresses;
   }
@@ -252,7 +252,7 @@ public class OriginsResultResponse {
    * Get originProtocolPolicy
    * @return originProtocolPolicy
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getOriginProtocolPolicy() {
     return originProtocolPolicy;
   }
@@ -273,7 +273,7 @@ public class OriginsResultResponse {
    * Get isOriginRedirectionEnabled
    * @return isOriginRedirectionEnabled
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Boolean getIsOriginRedirectionEnabled() {
     return isOriginRedirectionEnabled;
   }
@@ -294,7 +294,7 @@ public class OriginsResultResponse {
    * Get hostHeader
    * @return hostHeader
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getHostHeader() {
     return hostHeader;
   }
@@ -315,7 +315,7 @@ public class OriginsResultResponse {
    * Get method
    * @return method
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getMethod() {
     return method;
   }
@@ -336,7 +336,7 @@ public class OriginsResultResponse {
    * Get originPath
    * @return originPath
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getOriginPath() {
     return originPath;
   }
@@ -357,7 +357,7 @@ public class OriginsResultResponse {
    * Get connectionTimeout
    * @return connectionTimeout
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Long getConnectionTimeout() {
     return connectionTimeout;
   }
@@ -378,7 +378,7 @@ public class OriginsResultResponse {
    * Get timeoutBetweenBytes
    * @return timeoutBetweenBytes
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Long getTimeoutBetweenBytes() {
     return timeoutBetweenBytes;
   }
@@ -399,7 +399,7 @@ public class OriginsResultResponse {
    * Get hmacAuthentication
    * @return hmacAuthentication
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Boolean getHmacAuthentication() {
     return hmacAuthentication;
   }
@@ -420,7 +420,7 @@ public class OriginsResultResponse {
    * Get hmacRegionName
    * @return hmacRegionName
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getHmacRegionName() {
     return hmacRegionName;
   }
@@ -441,7 +441,7 @@ public class OriginsResultResponse {
    * Get hmacAccessKey
    * @return hmacAccessKey
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getHmacAccessKey() {
     return hmacAccessKey;
   }
@@ -462,7 +462,7 @@ public class OriginsResultResponse {
    * Get hmacSecretKey
    * @return hmacSecretKey
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getHmacSecretKey() {
     return hmacSecretKey;
   }
@@ -615,22 +615,7 @@ public class OriginsResultResponse {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("origin_id");
-    openapiRequiredFields.add("origin_key");
     openapiRequiredFields.add("name");
-    openapiRequiredFields.add("origin_type");
-    openapiRequiredFields.add("addresses");
-    openapiRequiredFields.add("origin_protocol_policy");
-    openapiRequiredFields.add("is_origin_redirection_enabled");
-    openapiRequiredFields.add("host_header");
-    openapiRequiredFields.add("method");
-    openapiRequiredFields.add("origin_path");
-    openapiRequiredFields.add("connection_timeout");
-    openapiRequiredFields.add("timeout_between_bytes");
-    openapiRequiredFields.add("hmac_authentication");
-    openapiRequiredFields.add("hmac_region_name");
-    openapiRequiredFields.add("hmac_access_key");
-    openapiRequiredFields.add("hmac_secret_key");
   }
 
  /**
@@ -661,44 +646,48 @@ public class OriginsResultResponse {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("origin_key").isJsonPrimitive()) {
+      if ((jsonObj.get("origin_key") != null && !jsonObj.get("origin_key").isJsonNull()) && !jsonObj.get("origin_key").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `origin_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("origin_key").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if (!jsonObj.get("origin_type").isJsonPrimitive()) {
+      if ((jsonObj.get("origin_type") != null && !jsonObj.get("origin_type").isJsonNull()) && !jsonObj.get("origin_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `origin_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("origin_type").toString()));
       }
-      // ensure the json data is an array
-      if (!jsonObj.get("addresses").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `addresses` to be an array in the JSON string but got `%s`", jsonObj.get("addresses").toString()));
-      }
+      if (jsonObj.get("addresses") != null && !jsonObj.get("addresses").isJsonNull()) {
+        JsonArray jsonArrayaddresses = jsonObj.getAsJsonArray("addresses");
+        if (jsonArrayaddresses != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("addresses").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `addresses` to be an array in the JSON string but got `%s`", jsonObj.get("addresses").toString()));
+          }
 
-      JsonArray jsonArrayaddresses = jsonObj.getAsJsonArray("addresses");
-      // validate the required field `addresses` (array)
-      for (int i = 0; i < jsonArrayaddresses.size(); i++) {
-        OriginsResultResponseAddresses.validateJsonElement(jsonArrayaddresses.get(i));
-      };
-      if (!jsonObj.get("origin_protocol_policy").isJsonPrimitive()) {
+          // validate the optional field `addresses` (array)
+          for (int i = 0; i < jsonArrayaddresses.size(); i++) {
+            OriginsResultResponseAddresses.validateJsonElement(jsonArrayaddresses.get(i));
+          };
+        }
+      }
+      if ((jsonObj.get("origin_protocol_policy") != null && !jsonObj.get("origin_protocol_policy").isJsonNull()) && !jsonObj.get("origin_protocol_policy").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `origin_protocol_policy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("origin_protocol_policy").toString()));
       }
-      if (!jsonObj.get("host_header").isJsonPrimitive()) {
+      if ((jsonObj.get("host_header") != null && !jsonObj.get("host_header").isJsonNull()) && !jsonObj.get("host_header").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `host_header` to be a primitive type in the JSON string but got `%s`", jsonObj.get("host_header").toString()));
       }
-      if (!jsonObj.get("method").isJsonPrimitive()) {
+      if ((jsonObj.get("method") != null && !jsonObj.get("method").isJsonNull()) && !jsonObj.get("method").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `method` to be a primitive type in the JSON string but got `%s`", jsonObj.get("method").toString()));
       }
-      if (!jsonObj.get("origin_path").isJsonPrimitive()) {
+      if ((jsonObj.get("origin_path") != null && !jsonObj.get("origin_path").isJsonNull()) && !jsonObj.get("origin_path").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `origin_path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("origin_path").toString()));
       }
-      if (!jsonObj.get("hmac_region_name").isJsonPrimitive()) {
+      if ((jsonObj.get("hmac_region_name") != null && !jsonObj.get("hmac_region_name").isJsonNull()) && !jsonObj.get("hmac_region_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `hmac_region_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hmac_region_name").toString()));
       }
-      if (!jsonObj.get("hmac_access_key").isJsonPrimitive()) {
+      if ((jsonObj.get("hmac_access_key") != null && !jsonObj.get("hmac_access_key").isJsonNull()) && !jsonObj.get("hmac_access_key").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `hmac_access_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hmac_access_key").toString()));
       }
-      if (!jsonObj.get("hmac_secret_key").isJsonPrimitive()) {
+      if ((jsonObj.get("hmac_secret_key") != null && !jsonObj.get("hmac_secret_key").isJsonNull()) && !jsonObj.get("hmac_secret_key").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `hmac_secret_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hmac_secret_key").toString()));
       }
       if ((jsonObj.get("bucket") != null && !jsonObj.get("bucket").isJsonNull()) && !jsonObj.get("bucket").isJsonPrimitive()) {
