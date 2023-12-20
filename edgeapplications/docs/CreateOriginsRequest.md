@@ -9,9 +9,9 @@
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** |  |  |
 |**originType** | **String** |  |  [optional] |
-|**addresses** | [**List&lt;CreateOriginsRequestAddresses&gt;**](CreateOriginsRequestAddresses.md) |  |  |
+|**addresses** | [**List&lt;CreateOriginsRequestAddresses&gt;**](CreateOriginsRequestAddresses.md) |  |  [optional] |
 |**originProtocolPolicy** | **String** |  |  [optional] |
-|**hostHeader** | **String** |  |  |
+|**hostHeader** | **String** |  |  [optional] |
 |**originPath** | **String** |  |  [optional] |
 |**hmacAuthentication** | **Boolean** |  |  [optional] |
 |**hmacRegionName** | **String** |  |  [optional] |

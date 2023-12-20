@@ -3903,8 +3903,6 @@ components:
         prefix:
           type: string
       required:
-      - addresses
-      - host_header
       - name
       type: object
     UpdateOriginsRequest:
