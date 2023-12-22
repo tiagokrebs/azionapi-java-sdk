@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ObjectResponseData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-15T14:58:01.416543Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-22T15:35:58.403741Z[GMT]")
 public class ObjectResponseData {
   public static final String SERIALIZED_NAME_OBJECT_KEY = "object_key";
   @SerializedName(SERIALIZED_NAME_OBJECT_KEY)
@@ -59,7 +59,6 @@ public class ObjectResponseData {
   }
 
   public ObjectResponseData objectKey(String objectKey) {
-    
     this.objectKey = objectKey;
     return this;
   }
@@ -72,7 +71,6 @@ public class ObjectResponseData {
   public String getObjectKey() {
     return objectKey;
   }
-
 
   public void setObjectKey(String objectKey) {
     this.objectKey = objectKey;
