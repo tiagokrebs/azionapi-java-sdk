@@ -266,9 +266,8 @@ paths:
         content:
           application/octet-stream:
             schema:
-              additionalProperties: {}
-              description: Unspecified request body
-              type: object
+              format: binary
+              type: string
       responses:
         "200":
           content:
@@ -276,6 +275,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SuccessObjectOperation'
           description: ""
+        "201":
+          description: Created
         "400":
           description: Bad Request
         "404":
@@ -317,9 +318,8 @@ paths:
         content:
           application/octet-stream:
             schema:
-              additionalProperties: {}
-              description: Unspecified request body
-              type: object
+              format: binary
+              type: string
       responses:
         "200":
           content:

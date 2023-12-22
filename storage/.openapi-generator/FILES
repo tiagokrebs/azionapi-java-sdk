@@ -56,9 +56,3 @@ src/main/java/org/openapitools/client/model/ResponseBucket.java
 src/main/java/org/openapitools/client/model/StateEnum.java
 src/main/java/org/openapitools/client/model/SuccessBucketOperation.java
 src/main/java/org/openapitools/client/model/SuccessObjectOperation.java
-src/test/java/org/openapitools/client/api/StorageApiTest.java
-src/test/java/org/openapitools/client/model/BucketObjectTest.java
-src/test/java/org/openapitools/client/model/ObjectResponseDataTest.java
-src/test/java/org/openapitools/client/model/PaginatedBucketObjectListTest.java
-src/test/java/org/openapitools/client/model/SuccessBucketOperationTest.java
-src/test/java/org/openapitools/client/model/SuccessObjectOperationTest.java

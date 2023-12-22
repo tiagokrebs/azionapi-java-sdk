@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Bucket
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-15T14:58:01.416543Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-22T15:35:58.403741Z[GMT]")
 public class Bucket {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -63,7 +63,6 @@ public class Bucket {
   public Bucket() {
   }
 
-  
   public Bucket(
      String name
   ) {
@@ -82,9 +81,7 @@ public class Bucket {
 
 
 
-
   public Bucket edgeAccess(EdgeAccessEnum edgeAccess) {
-    
     this.edgeAccess = edgeAccess;
     return this;
   }
@@ -97,7 +94,6 @@ public class Bucket {
   public EdgeAccessEnum getEdgeAccess() {
     return edgeAccess;
   }
-
 
   public void setEdgeAccess(EdgeAccessEnum edgeAccess) {
     this.edgeAccess = edgeAccess;

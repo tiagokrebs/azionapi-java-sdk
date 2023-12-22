@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * SuccessBucketOperation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-15T14:58:01.416543Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-22T15:35:58.403741Z[GMT]")
 public class SuccessBucketOperation {
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
@@ -65,7 +65,6 @@ public class SuccessBucketOperation {
   }
 
   public SuccessBucketOperation state(StateEnum state) {
-    
     this.state = state;
     return this;
   }
@@ -79,14 +78,12 @@ public class SuccessBucketOperation {
     return state;
   }
 
-
   public void setState(StateEnum state) {
     this.state = state;
   }
 
 
   public SuccessBucketOperation data(Bucket data) {
-    
     this.data = data;
     return this;
   }
@@ -99,7 +96,6 @@ public class SuccessBucketOperation {
   public Bucket getData() {
     return data;
   }
-
 
   public void setData(Bucket data) {
     this.data = data;

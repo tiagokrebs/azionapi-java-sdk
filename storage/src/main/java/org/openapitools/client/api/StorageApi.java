@@ -535,7 +535,7 @@ public class StorageApi {
      * Build call for storageApiBucketsObjectsCreate
      * @param bucketName  (required)
      * @param objectKey  (required)
-     * @param requestBody  (optional)
+     * @param body  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -543,6 +543,7 @@ public class StorageApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 406 </td><td> Not Acceptable </td><td>  -  </td></tr>
@@ -551,7 +552,7 @@ public class StorageApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call storageApiBucketsObjectsCreateCall(String bucketName, String objectKey, Map<String, Object> requestBody, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call storageApiBucketsObjectsCreateCall(String bucketName, String objectKey, File body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -565,7 +566,7 @@ public class StorageApi {
             basePath = null;
         }
 
-        Object localVarPostBody = requestBody;
+        Object localVarPostBody = body;
 
         // create path and map variables
         String localVarPath = "/v4/storage/buckets/{bucket_name}/objects/{object_key}"
@@ -599,7 +600,7 @@ public class StorageApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call storageApiBucketsObjectsCreateValidateBeforeCall(String bucketName, String objectKey, Map<String, Object> requestBody, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call storageApiBucketsObjectsCreateValidateBeforeCall(String bucketName, String objectKey, File body, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'bucketName' is set
         if (bucketName == null) {
             throw new ApiException("Missing the required parameter 'bucketName' when calling storageApiBucketsObjectsCreate(Async)");
@@ -610,7 +611,7 @@ public class StorageApi {
             throw new ApiException("Missing the required parameter 'objectKey' when calling storageApiBucketsObjectsCreate(Async)");
         }
 
-        return storageApiBucketsObjectsCreateCall(bucketName, objectKey, requestBody, _callback);
+        return storageApiBucketsObjectsCreateCall(bucketName, objectKey, body, _callback);
 
     }
 
@@ -619,13 +620,14 @@ public class StorageApi {
      * Create a new object key in the bucket.
      * @param bucketName  (required)
      * @param objectKey  (required)
-     * @param requestBody  (optional)
+     * @param body  (optional)
      * @return SuccessObjectOperation
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 406 </td><td> Not Acceptable </td><td>  -  </td></tr>
@@ -634,8 +636,8 @@ public class StorageApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public SuccessObjectOperation storageApiBucketsObjectsCreate(String bucketName, String objectKey, Map<String, Object> requestBody) throws ApiException {
-        ApiResponse<SuccessObjectOperation> localVarResp = storageApiBucketsObjectsCreateWithHttpInfo(bucketName, objectKey, requestBody);
+    public SuccessObjectOperation storageApiBucketsObjectsCreate(String bucketName, String objectKey, File body) throws ApiException {
+        ApiResponse<SuccessObjectOperation> localVarResp = storageApiBucketsObjectsCreateWithHttpInfo(bucketName, objectKey, body);
         return localVarResp.getData();
     }
 
@@ -644,13 +646,14 @@ public class StorageApi {
      * Create a new object key in the bucket.
      * @param bucketName  (required)
      * @param objectKey  (required)
-     * @param requestBody  (optional)
+     * @param body  (optional)
      * @return ApiResponse&lt;SuccessObjectOperation&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 406 </td><td> Not Acceptable </td><td>  -  </td></tr>
@@ -659,8 +662,8 @@ public class StorageApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SuccessObjectOperation> storageApiBucketsObjectsCreateWithHttpInfo(String bucketName, String objectKey, Map<String, Object> requestBody) throws ApiException {
-        okhttp3.Call localVarCall = storageApiBucketsObjectsCreateValidateBeforeCall(bucketName, objectKey, requestBody, null);
+    public ApiResponse<SuccessObjectOperation> storageApiBucketsObjectsCreateWithHttpInfo(String bucketName, String objectKey, File body) throws ApiException {
+        okhttp3.Call localVarCall = storageApiBucketsObjectsCreateValidateBeforeCall(bucketName, objectKey, body, null);
         Type localVarReturnType = new TypeToken<SuccessObjectOperation>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -670,7 +673,7 @@ public class StorageApi {
      * Create a new object key in the bucket.
      * @param bucketName  (required)
      * @param objectKey  (required)
-     * @param requestBody  (optional)
+     * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -678,6 +681,7 @@ public class StorageApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 406 </td><td> Not Acceptable </td><td>  -  </td></tr>
@@ -686,9 +690,9 @@ public class StorageApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call storageApiBucketsObjectsCreateAsync(String bucketName, String objectKey, Map<String, Object> requestBody, final ApiCallback<SuccessObjectOperation> _callback) throws ApiException {
+    public okhttp3.Call storageApiBucketsObjectsCreateAsync(String bucketName, String objectKey, File body, final ApiCallback<SuccessObjectOperation> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = storageApiBucketsObjectsCreateValidateBeforeCall(bucketName, objectKey, requestBody, _callback);
+        okhttp3.Call localVarCall = storageApiBucketsObjectsCreateValidateBeforeCall(bucketName, objectKey, body, _callback);
         Type localVarReturnType = new TypeToken<SuccessObjectOperation>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1174,7 +1178,7 @@ public class StorageApi {
      * Build call for storageApiBucketsObjectsUpdate
      * @param bucketName  (required)
      * @param objectKey  (required)
-     * @param requestBody  (optional)
+     * @param body  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1190,7 +1194,7 @@ public class StorageApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call storageApiBucketsObjectsUpdateCall(String bucketName, String objectKey, Map<String, Object> requestBody, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call storageApiBucketsObjectsUpdateCall(String bucketName, String objectKey, File body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1204,7 +1208,7 @@ public class StorageApi {
             basePath = null;
         }
 
-        Object localVarPostBody = requestBody;
+        Object localVarPostBody = body;
 
         // create path and map variables
         String localVarPath = "/v4/storage/buckets/{bucket_name}/objects/{object_key}"
@@ -1238,7 +1242,7 @@ public class StorageApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call storageApiBucketsObjectsUpdateValidateBeforeCall(String bucketName, String objectKey, Map<String, Object> requestBody, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call storageApiBucketsObjectsUpdateValidateBeforeCall(String bucketName, String objectKey, File body, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'bucketName' is set
         if (bucketName == null) {
             throw new ApiException("Missing the required parameter 'bucketName' when calling storageApiBucketsObjectsUpdate(Async)");
@@ -1249,7 +1253,7 @@ public class StorageApi {
             throw new ApiException("Missing the required parameter 'objectKey' when calling storageApiBucketsObjectsUpdate(Async)");
         }
 
-        return storageApiBucketsObjectsUpdateCall(bucketName, objectKey, requestBody, _callback);
+        return storageApiBucketsObjectsUpdateCall(bucketName, objectKey, body, _callback);
 
     }
 
@@ -1258,7 +1262,7 @@ public class StorageApi {
      * Update the object key from bucket.
      * @param bucketName  (required)
      * @param objectKey  (required)
-     * @param requestBody  (optional)
+     * @param body  (optional)
      * @return SuccessObjectOperation
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1273,8 +1277,8 @@ public class StorageApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public SuccessObjectOperation storageApiBucketsObjectsUpdate(String bucketName, String objectKey, Map<String, Object> requestBody) throws ApiException {
-        ApiResponse<SuccessObjectOperation> localVarResp = storageApiBucketsObjectsUpdateWithHttpInfo(bucketName, objectKey, requestBody);
+    public SuccessObjectOperation storageApiBucketsObjectsUpdate(String bucketName, String objectKey, File body) throws ApiException {
+        ApiResponse<SuccessObjectOperation> localVarResp = storageApiBucketsObjectsUpdateWithHttpInfo(bucketName, objectKey, body);
         return localVarResp.getData();
     }
 
@@ -1283,7 +1287,7 @@ public class StorageApi {
      * Update the object key from bucket.
      * @param bucketName  (required)
      * @param objectKey  (required)
-     * @param requestBody  (optional)
+     * @param body  (optional)
      * @return ApiResponse&lt;SuccessObjectOperation&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1298,8 +1302,8 @@ public class StorageApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SuccessObjectOperation> storageApiBucketsObjectsUpdateWithHttpInfo(String bucketName, String objectKey, Map<String, Object> requestBody) throws ApiException {
-        okhttp3.Call localVarCall = storageApiBucketsObjectsUpdateValidateBeforeCall(bucketName, objectKey, requestBody, null);
+    public ApiResponse<SuccessObjectOperation> storageApiBucketsObjectsUpdateWithHttpInfo(String bucketName, String objectKey, File body) throws ApiException {
+        okhttp3.Call localVarCall = storageApiBucketsObjectsUpdateValidateBeforeCall(bucketName, objectKey, body, null);
         Type localVarReturnType = new TypeToken<SuccessObjectOperation>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1309,7 +1313,7 @@ public class StorageApi {
      * Update the object key from bucket.
      * @param bucketName  (required)
      * @param objectKey  (required)
-     * @param requestBody  (optional)
+     * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1325,9 +1329,9 @@ public class StorageApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call storageApiBucketsObjectsUpdateAsync(String bucketName, String objectKey, Map<String, Object> requestBody, final ApiCallback<SuccessObjectOperation> _callback) throws ApiException {
+    public okhttp3.Call storageApiBucketsObjectsUpdateAsync(String bucketName, String objectKey, File body, final ApiCallback<SuccessObjectOperation> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = storageApiBucketsObjectsUpdateValidateBeforeCall(bucketName, objectKey, requestBody, _callback);
+        okhttp3.Call localVarCall = storageApiBucketsObjectsUpdateValidateBeforeCall(bucketName, objectKey, body, _callback);
         Type localVarReturnType = new TypeToken<SuccessObjectOperation>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

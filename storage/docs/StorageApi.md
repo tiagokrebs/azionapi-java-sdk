@@ -245,7 +245,7 @@ public class Example {
 
 <a id="storageApiBucketsObjectsCreate"></a>
 # **storageApiBucketsObjectsCreate**
-> SuccessObjectOperation storageApiBucketsObjectsCreate(bucketName, objectKey, requestBody)
+> SuccessObjectOperation storageApiBucketsObjectsCreate(bucketName, objectKey, body)
 
 Create new object key
 
@@ -275,9 +275,9 @@ public class Example {
     StorageApi apiInstance = new StorageApi(defaultClient);
     String bucketName = "bucketName_example"; // String | 
     String objectKey = "objectKey_example"; // String | 
-    Map<String, Object> requestBody = null; // Map<String, Object> | 
+    File body = new File("/path/to/file"); // File | 
     try {
-      SuccessObjectOperation result = apiInstance.storageApiBucketsObjectsCreate(bucketName, objectKey, requestBody);
+      SuccessObjectOperation result = apiInstance.storageApiBucketsObjectsCreate(bucketName, objectKey, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StorageApi#storageApiBucketsObjectsCreate");
@@ -296,7 +296,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bucketName** | **String**|  | |
 | **objectKey** | **String**|  | |
-| **requestBody** | [**Map&lt;String, Object&gt;**](Object.md)|  | [optional] |
+| **body** | **File**|  | [optional] |
 
 ### Return type
 
@@ -315,6 +315,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
+| **201** | Created |  -  |
 | **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
 | **406** | Not Acceptable |  -  |
@@ -557,7 +558,7 @@ public class Example {
 
 <a id="storageApiBucketsObjectsUpdate"></a>
 # **storageApiBucketsObjectsUpdate**
-> SuccessObjectOperation storageApiBucketsObjectsUpdate(bucketName, objectKey, requestBody)
+> SuccessObjectOperation storageApiBucketsObjectsUpdate(bucketName, objectKey, body)
 
 Update the object key
 
@@ -587,9 +588,9 @@ public class Example {
     StorageApi apiInstance = new StorageApi(defaultClient);
     String bucketName = "bucketName_example"; // String | 
     String objectKey = "objectKey_example"; // String | 
-    Map<String, Object> requestBody = null; // Map<String, Object> | 
+    File body = new File("/path/to/file"); // File | 
     try {
-      SuccessObjectOperation result = apiInstance.storageApiBucketsObjectsUpdate(bucketName, objectKey, requestBody);
+      SuccessObjectOperation result = apiInstance.storageApiBucketsObjectsUpdate(bucketName, objectKey, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StorageApi#storageApiBucketsObjectsUpdate");
@@ -608,7 +609,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bucketName** | **String**|  | |
 | **objectKey** | **String**|  | |
-| **requestBody** | [**Map&lt;String, Object&gt;**](Object.md)|  | [optional] |
+| **body** | **File**|  | [optional] |
 
 ### Return type
 

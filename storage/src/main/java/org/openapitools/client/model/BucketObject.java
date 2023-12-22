@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * BucketObject
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-15T14:58:01.416543Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-22T15:35:58.403741Z[GMT]")
 public class BucketObject {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
@@ -71,7 +71,6 @@ public class BucketObject {
   public BucketObject() {
   }
 
-  
   public BucketObject(
      String key, 
      OffsetDateTime lastModified, 
@@ -96,7 +95,6 @@ public class BucketObject {
 
 
 
-
    /**
    * Get lastModified
    * @return lastModified
@@ -105,7 +103,6 @@ public class BucketObject {
   public OffsetDateTime getLastModified() {
     return lastModified;
   }
-
 
 
 
@@ -120,7 +117,6 @@ public class BucketObject {
 
 
 
-
    /**
    * Get etag
    * @return etag
@@ -129,7 +125,6 @@ public class BucketObject {
   public String getEtag() {
     return etag;
   }
-
 
 
 
