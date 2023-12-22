@@ -2,7 +2,7 @@
 
 Object Storage
 - API version: 1.0.0 (v1)
-  - Build date: 2023-12-22T15:35:58.403741Z[GMT]
+  - Build date: 2023-12-22T17:29:26.845645Z[GMT]
 
 REST API OpenAPI documentation for the Object Storage
 

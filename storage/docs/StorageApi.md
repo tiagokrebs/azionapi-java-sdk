@@ -245,7 +245,7 @@ public class Example {
 
 <a id="storageApiBucketsObjectsCreate"></a>
 # **storageApiBucketsObjectsCreate**
-> SuccessObjectOperation storageApiBucketsObjectsCreate(bucketName, objectKey, body)
+> SuccessObjectOperation storageApiBucketsObjectsCreate(bucketName, objectKey, contentType, body)
 
 Create new object key
 
@@ -275,9 +275,10 @@ public class Example {
     StorageApi apiInstance = new StorageApi(defaultClient);
     String bucketName = "bucketName_example"; // String | 
     String objectKey = "objectKey_example"; // String | 
+    String contentType = "contentType_example"; // String | The content type of the file (Example: text/plain).
     File body = new File("/path/to/file"); // File | 
     try {
-      SuccessObjectOperation result = apiInstance.storageApiBucketsObjectsCreate(bucketName, objectKey, body);
+      SuccessObjectOperation result = apiInstance.storageApiBucketsObjectsCreate(bucketName, objectKey, contentType, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StorageApi#storageApiBucketsObjectsCreate");
@@ -296,6 +297,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bucketName** | **String**|  | |
 | **objectKey** | **String**|  | |
+| **contentType** | **String**| The content type of the file (Example: text/plain). | [optional] |
 | **body** | **File**|  | [optional] |
 
 ### Return type
@@ -558,7 +560,7 @@ public class Example {
 
 <a id="storageApiBucketsObjectsUpdate"></a>
 # **storageApiBucketsObjectsUpdate**
-> SuccessObjectOperation storageApiBucketsObjectsUpdate(bucketName, objectKey, body)
+> SuccessObjectOperation storageApiBucketsObjectsUpdate(bucketName, objectKey, contentType, body)
 
 Update the object key
 
@@ -588,9 +590,10 @@ public class Example {
     StorageApi apiInstance = new StorageApi(defaultClient);
     String bucketName = "bucketName_example"; // String | 
     String objectKey = "objectKey_example"; // String | 
+    String contentType = "contentType_example"; // String | The content type of the file (Example: text/plain).
     File body = new File("/path/to/file"); // File | 
     try {
-      SuccessObjectOperation result = apiInstance.storageApiBucketsObjectsUpdate(bucketName, objectKey, body);
+      SuccessObjectOperation result = apiInstance.storageApiBucketsObjectsUpdate(bucketName, objectKey, contentType, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StorageApi#storageApiBucketsObjectsUpdate");
@@ -609,6 +612,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bucketName** | **String**|  | |
 | **objectKey** | **String**|  | |
+| **contentType** | **String**| The content type of the file (Example: text/plain). | [optional] |
 | **body** | **File**|  | [optional] |
 
 ### Return type
