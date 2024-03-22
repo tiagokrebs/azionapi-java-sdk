@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ResponseBucket
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-22T17:29:26.845645Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-22T15:16:49.821541Z[GMT]", comments = "Generator version: 7.4.0")
 public class ResponseBucket {
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)

@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * BucketObject
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-22T17:29:26.845645Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-22T15:16:49.821541Z[GMT]", comments = "Generator version: 7.4.0")
 public class BucketObject {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
@@ -121,7 +121,7 @@ public class BucketObject {
    * Get etag
    * @return etag
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getEtag() {
     return etag;
   }
@@ -189,7 +189,6 @@ public class BucketObject {
     openapiRequiredFields.add("key");
     openapiRequiredFields.add("last_modified");
     openapiRequiredFields.add("size");
-    openapiRequiredFields.add("etag");
   }
 
  /**
@@ -223,7 +222,7 @@ public class BucketObject {
       if (!jsonObj.get("key").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
-      if (!jsonObj.get("etag").isJsonPrimitive()) {
+      if ((jsonObj.get("etag") != null && !jsonObj.get("etag").isJsonNull()) && !jsonObj.get("etag").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `etag` to be a primitive type in the JSON string but got `%s`", jsonObj.get("etag").toString()));
       }
   }
