@@ -10,7 +10,7 @@
 |**key** | **String** |  |  [readonly] |
 |**lastModified** | **OffsetDateTime** |  |  [readonly] |
 |**size** | **Integer** |  |  [readonly] |
-|**etag** | **String** |  |  [readonly] |
+|**etag** | **String** |  |  [optional] [readonly] |
 
 
 
