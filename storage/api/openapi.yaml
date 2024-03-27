@@ -115,18 +115,18 @@ paths:
         schema:
           type: string
         style: simple
-      - description: A page number within the paginated result set.
+      - description: Token for next page.
         explode: true
         in: query
-        name: page
+        name: continuation_token
         required: false
         schema:
-          type: integer
+          type: string
         style: form
       - description: Number of results to return per page.
         explode: true
         in: query
-        name: page_size
+        name: max_object_count
         required: false
         schema:
           type: integer
@@ -221,10 +221,19 @@ paths:
       responses:
         "200":
           content:
-            application/octet-stream:
-              schema:
-                format: binary
-                type: string
+            text/html: {}
+            application/json: {}
+            application/xml: {}
+            text/plain: {}
+            image/jpeg: {}
+            image/png: {}
+            image/gif: {}
+            video/mp4: {}
+            audio/mpeg: {}
+            application/pdf: {}
+            application/javascript: {}
+            text/css: {}
+            application/octet-stream: {}
           description: ""
         "400":
           description: Bad Request
@@ -243,7 +252,7 @@ paths:
       summary: Download object
       tags:
       - storage
-      x-accepts: application/octet-stream
+      x-accepts: "application/javascript,application/json,application/octet-stream,application/pdf,application/xml,audio/mpeg,image/gif,image/jpeg,image/png,text/css,text/html,text/plain,video/mp4"
     post:
       description: Create a new object key in the bucket.
       operationId: storage_api_buckets_objects_create
@@ -410,6 +419,11 @@ paths:
         schema:
           type: string
         style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BucketUpdate'
       responses:
         "200":
           content:
@@ -440,6 +454,7 @@ paths:
       summary: Update bucket info
       tags:
       - storage
+      x-content-type: application/json
       x-accepts: application/json
 components:
   schemas:
@@ -473,6 +488,15 @@ components:
       required:
       - edge_access
       - name
+      type: object
+    BucketUpdate:
+      example:
+        edge_access: null
+      properties:
+        edge_access:
+          $ref: '#/components/schemas/EdgeAccessEnum'
+      required:
+      - edge_access
       type: object
     BucketObject:
       example:
@@ -546,6 +570,7 @@ components:
     PaginatedBucketObjectList:
       example:
         next: http://api.example.org/accounts/?page=4
+        continuation_token: continuation_token
         previous: http://api.example.org/accounts/?page=2
         count: 123
         results:
@@ -570,6 +595,12 @@ components:
           example: http://api.example.org/accounts/?page=2
           format: uri
           nullable: true
+          type: string
+        continuation_token:
+          maxLength: 200
+          minLength: 10
+          nullable: true
+          pattern: .*
           type: string
         results:
           items:

@@ -21,8 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.ObjectResponseData;
-import org.openapitools.client.model.StateEnum;
+import org.openapitools.client.model.EdgeAccessEnum;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,56 +48,33 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * SuccessObjectOperation
+ * BucketUpdate
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-27T13:50:44.870784Z[GMT]", comments = "Generator version: 7.4.0")
-public class SuccessObjectOperation {
-  public static final String SERIALIZED_NAME_STATE = "state";
-  @SerializedName(SERIALIZED_NAME_STATE)
-  private StateEnum state;
+public class BucketUpdate {
+  public static final String SERIALIZED_NAME_EDGE_ACCESS = "edge_access";
+  @SerializedName(SERIALIZED_NAME_EDGE_ACCESS)
+  private EdgeAccessEnum edgeAccess;
 
-  public static final String SERIALIZED_NAME_DATA = "data";
-  @SerializedName(SERIALIZED_NAME_DATA)
-  private ObjectResponseData data;
-
-  public SuccessObjectOperation() {
+  public BucketUpdate() {
   }
 
-  public SuccessObjectOperation state(StateEnum state) {
-    this.state = state;
+  public BucketUpdate edgeAccess(EdgeAccessEnum edgeAccess) {
+    this.edgeAccess = edgeAccess;
     return this;
   }
 
    /**
-   * Get state
-   * @return state
+   * Get edgeAccess
+   * @return edgeAccess
   **/
   @javax.annotation.Nonnull
-  public StateEnum getState() {
-    return state;
+  public EdgeAccessEnum getEdgeAccess() {
+    return edgeAccess;
   }
 
-  public void setState(StateEnum state) {
-    this.state = state;
-  }
-
-
-  public SuccessObjectOperation data(ObjectResponseData data) {
-    this.data = data;
-    return this;
-  }
-
-   /**
-   * Get data
-   * @return data
-  **/
-  @javax.annotation.Nonnull
-  public ObjectResponseData getData() {
-    return data;
-  }
-
-  public void setData(ObjectResponseData data) {
-    this.data = data;
+  public void setEdgeAccess(EdgeAccessEnum edgeAccess) {
+    this.edgeAccess = edgeAccess;
   }
 
 
@@ -111,22 +87,20 @@ public class SuccessObjectOperation {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SuccessObjectOperation successObjectOperation = (SuccessObjectOperation) o;
-    return Objects.equals(this.state, successObjectOperation.state) &&
-        Objects.equals(this.data, successObjectOperation.data);
+    BucketUpdate bucketUpdate = (BucketUpdate) o;
+    return Objects.equals(this.edgeAccess, bucketUpdate.edgeAccess);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, data);
+    return Objects.hash(edgeAccess);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SuccessObjectOperation {\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("class BucketUpdate {\n");
+    sb.append("    edgeAccess: ").append(toIndentedString(edgeAccess)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -149,69 +123,65 @@ public class SuccessObjectOperation {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("state");
-    openapiFields.add("data");
+    openapiFields.add("edge_access");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("state");
-    openapiRequiredFields.add("data");
+    openapiRequiredFields.add("edge_access");
   }
 
  /**
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to SuccessObjectOperation
+  * @throws IOException if the JSON Element is invalid with respect to BucketUpdate
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!SuccessObjectOperation.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SuccessObjectOperation is not found in the empty JSON string", SuccessObjectOperation.openapiRequiredFields.toString()));
+        if (!BucketUpdate.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in BucketUpdate is not found in the empty JSON string", BucketUpdate.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!SuccessObjectOperation.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SuccessObjectOperation` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!BucketUpdate.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `BucketUpdate` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : SuccessObjectOperation.openapiRequiredFields) {
+      for (String requiredField : BucketUpdate.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the required field `state`
-      StateEnum.validateJsonElement(jsonObj.get("state"));
-      // validate the required field `data`
-      ObjectResponseData.validateJsonElement(jsonObj.get("data"));
+      // validate the required field `edge_access`
+      EdgeAccessEnum.validateJsonElement(jsonObj.get("edge_access"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SuccessObjectOperation.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SuccessObjectOperation' and its subtypes
+       if (!BucketUpdate.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'BucketUpdate' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SuccessObjectOperation> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SuccessObjectOperation.class));
+       final TypeAdapter<BucketUpdate> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(BucketUpdate.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<SuccessObjectOperation>() {
+       return (TypeAdapter<T>) new TypeAdapter<BucketUpdate>() {
            @Override
-           public void write(JsonWriter out, SuccessObjectOperation value) throws IOException {
+           public void write(JsonWriter out, BucketUpdate value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public SuccessObjectOperation read(JsonReader in) throws IOException {
+           public BucketUpdate read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -222,18 +192,18 @@ public class SuccessObjectOperation {
   }
 
  /**
-  * Create an instance of SuccessObjectOperation given an JSON string
+  * Create an instance of BucketUpdate given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of SuccessObjectOperation
-  * @throws IOException if the JSON string is invalid with respect to SuccessObjectOperation
+  * @return An instance of BucketUpdate
+  * @throws IOException if the JSON string is invalid with respect to BucketUpdate
   */
-  public static SuccessObjectOperation fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SuccessObjectOperation.class);
+  public static BucketUpdate fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, BucketUpdate.class);
   }
 
  /**
-  * Convert an instance of SuccessObjectOperation to an JSON string
+  * Convert an instance of BucketUpdate to an JSON string
   *
   * @return JSON string
   */

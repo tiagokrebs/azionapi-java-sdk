@@ -2,7 +2,7 @@
 
 Object Storage
 - API version: 1.0.0 (v1)
-  - Build date: 2024-03-22T15:16:49.821541Z[GMT]
+  - Build date: 2024-03-27T13:50:44.870784Z[GMT]
   - Generator version: 7.4.0
 
 REST API OpenAPI documentation for the Object Storage
@@ -138,6 +138,7 @@ Class | Method | HTTP request | Description
  - [Bucket](docs/Bucket.md)
  - [BucketCreate](docs/BucketCreate.md)
  - [BucketObject](docs/BucketObject.md)
+ - [BucketUpdate](docs/BucketUpdate.md)
  - [EdgeAccessEnum](docs/EdgeAccessEnum.md)
  - [ObjectResponseData](docs/ObjectResponseData.md)
  - [PaginatedBucketList](docs/PaginatedBucketList.md)

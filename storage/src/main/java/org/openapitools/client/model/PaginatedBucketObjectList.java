@@ -54,7 +54,7 @@ import org.openapitools.client.JSON;
 /**
  * PaginatedBucketObjectList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-22T15:16:49.821541Z[GMT]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-27T13:50:44.870784Z[GMT]", comments = "Generator version: 7.4.0")
 public class PaginatedBucketObjectList {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
@@ -67,6 +67,10 @@ public class PaginatedBucketObjectList {
   public static final String SERIALIZED_NAME_PREVIOUS = "previous";
   @SerializedName(SERIALIZED_NAME_PREVIOUS)
   private URI previous;
+
+  public static final String SERIALIZED_NAME_CONTINUATION_TOKEN = "continuation_token";
+  @SerializedName(SERIALIZED_NAME_CONTINUATION_TOKEN)
+  private String continuationToken;
 
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
@@ -132,6 +136,25 @@ public class PaginatedBucketObjectList {
   }
 
 
+  public PaginatedBucketObjectList continuationToken(String continuationToken) {
+    this.continuationToken = continuationToken;
+    return this;
+  }
+
+   /**
+   * Get continuationToken
+   * @return continuationToken
+  **/
+  @javax.annotation.Nullable
+  public String getContinuationToken() {
+    return continuationToken;
+  }
+
+  public void setContinuationToken(String continuationToken) {
+    this.continuationToken = continuationToken;
+  }
+
+
   public PaginatedBucketObjectList results(List<BucketObject> results) {
     this.results = results;
     return this;
@@ -172,6 +195,7 @@ public class PaginatedBucketObjectList {
     return Objects.equals(this.count, paginatedBucketObjectList.count) &&
         Objects.equals(this.next, paginatedBucketObjectList.next) &&
         Objects.equals(this.previous, paginatedBucketObjectList.previous) &&
+        Objects.equals(this.continuationToken, paginatedBucketObjectList.continuationToken) &&
         Objects.equals(this.results, paginatedBucketObjectList.results);
   }
 
@@ -181,7 +205,7 @@ public class PaginatedBucketObjectList {
 
   @Override
   public int hashCode() {
-    return Objects.hash(count, next, previous, results);
+    return Objects.hash(count, next, previous, continuationToken, results);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -198,6 +222,7 @@ public class PaginatedBucketObjectList {
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
     sb.append("    next: ").append(toIndentedString(next)).append("\n");
     sb.append("    previous: ").append(toIndentedString(previous)).append("\n");
+    sb.append("    continuationToken: ").append(toIndentedString(continuationToken)).append("\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -224,6 +249,7 @@ public class PaginatedBucketObjectList {
     openapiFields.add("count");
     openapiFields.add("next");
     openapiFields.add("previous");
+    openapiFields.add("continuation_token");
     openapiFields.add("results");
 
     // a set of required properties/fields (JSON key names)
@@ -256,6 +282,9 @@ public class PaginatedBucketObjectList {
       }
       if ((jsonObj.get("previous") != null && !jsonObj.get("previous").isJsonNull()) && !jsonObj.get("previous").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `previous` to be a primitive type in the JSON string but got `%s`", jsonObj.get("previous").toString()));
+      }
+      if ((jsonObj.get("continuation_token") != null && !jsonObj.get("continuation_token").isJsonNull()) && !jsonObj.get("continuation_token").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `continuation_token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("continuation_token").toString()));
       }
       if (jsonObj.get("results") != null && !jsonObj.get("results").isJsonNull()) {
         JsonArray jsonArrayresults = jsonObj.getAsJsonArray("results");
