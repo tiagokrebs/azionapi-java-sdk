@@ -8,6 +8,7 @@ build.sbt
 docs/Bucket.md
 docs/BucketCreate.md
 docs/BucketObject.md
+docs/BucketUpdate.md
 docs/EdgeAccessEnum.md
 docs/ObjectResponseData.md
 docs/PaginatedBucketList.md
@@ -48,6 +49,7 @@ src/main/java/org/openapitools/client/model/AbstractOpenApiSchema.java
 src/main/java/org/openapitools/client/model/Bucket.java
 src/main/java/org/openapitools/client/model/BucketCreate.java
 src/main/java/org/openapitools/client/model/BucketObject.java
+src/main/java/org/openapitools/client/model/BucketUpdate.java
 src/main/java/org/openapitools/client/model/EdgeAccessEnum.java
 src/main/java/org/openapitools/client/model/ObjectResponseData.java
 src/main/java/org/openapitools/client/model/PaginatedBucketList.java
@@ -56,3 +58,4 @@ src/main/java/org/openapitools/client/model/ResponseBucket.java
 src/main/java/org/openapitools/client/model/StateEnum.java
 src/main/java/org/openapitools/client/model/SuccessBucketOperation.java
 src/main/java/org/openapitools/client/model/SuccessObjectOperation.java
+src/test/java/org/openapitools/client/model/BucketUpdateTest.java

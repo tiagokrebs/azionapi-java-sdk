@@ -404,7 +404,7 @@ public class Example {
 
 <a id="storageApiBucketsObjectsList"></a>
 # **storageApiBucketsObjectsList**
-> PaginatedBucketObjectList storageApiBucketsObjectsList(bucketName, page, pageSize)
+> PaginatedBucketObjectList storageApiBucketsObjectsList(bucketName, continuationToken, maxObjectCount)
 
 List buckets objects
 
@@ -433,10 +433,10 @@ public class Example {
 
     StorageApi apiInstance = new StorageApi(defaultClient);
     String bucketName = "bucketName_example"; // String | 
-    Integer page = 56; // Integer | A page number within the paginated result set.
-    Integer pageSize = 56; // Integer | Number of results to return per page.
+    String continuationToken = "continuationToken_example"; // String | Token for next page.
+    Integer maxObjectCount = 56; // Integer | Number of results to return per page.
     try {
-      PaginatedBucketObjectList result = apiInstance.storageApiBucketsObjectsList(bucketName, page, pageSize);
+      PaginatedBucketObjectList result = apiInstance.storageApiBucketsObjectsList(bucketName, continuationToken, maxObjectCount);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StorageApi#storageApiBucketsObjectsList");
@@ -454,8 +454,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bucketName** | **String**|  | |
-| **page** | **Integer**| A page number within the paginated result set. | [optional] |
-| **pageSize** | **Integer**| Number of results to return per page. | [optional] |
+| **continuationToken** | **String**| Token for next page. | [optional] |
+| **maxObjectCount** | **Integer**| Number of results to return per page. | [optional] |
 
 ### Return type
 
@@ -483,7 +483,7 @@ public class Example {
 
 <a id="storageApiBucketsObjectsRetrieve"></a>
 # **storageApiBucketsObjectsRetrieve**
-> File storageApiBucketsObjectsRetrieve(bucketName, objectKey)
+> storageApiBucketsObjectsRetrieve(bucketName, objectKey)
 
 Download object
 
@@ -514,8 +514,7 @@ public class Example {
     String bucketName = "bucketName_example"; // String | 
     String objectKey = "objectKey_example"; // String | 
     try {
-      File result = apiInstance.storageApiBucketsObjectsRetrieve(bucketName, objectKey);
-      System.out.println(result);
+      apiInstance.storageApiBucketsObjectsRetrieve(bucketName, objectKey);
     } catch (ApiException e) {
       System.err.println("Exception when calling StorageApi#storageApiBucketsObjectsRetrieve");
       System.err.println("Status code: " + e.getCode());
@@ -536,7 +535,7 @@ public class Example {
 
 ### Return type
 
-[**File**](File.md)
+null (empty response body)
 
 ### Authorization
 
@@ -545,7 +544,7 @@ public class Example {
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream
+ - **Accept**: text/html, application/json, application/xml, text/plain, image/jpeg, image/png, image/gif, video/mp4, audio/mpeg, application/pdf, application/javascript, text/css, application/octet-stream
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -641,7 +640,7 @@ public class Example {
 
 <a id="storageApiBucketsPartialUpdate"></a>
 # **storageApiBucketsPartialUpdate**
-> ResponseBucket storageApiBucketsPartialUpdate(name)
+> ResponseBucket storageApiBucketsPartialUpdate(name, bucketUpdate)
 
 Update bucket info
 
@@ -670,8 +669,9 @@ public class Example {
 
     StorageApi apiInstance = new StorageApi(defaultClient);
     String name = "name_example"; // String | 
+    BucketUpdate bucketUpdate = new BucketUpdate(); // BucketUpdate | 
     try {
-      ResponseBucket result = apiInstance.storageApiBucketsPartialUpdate(name);
+      ResponseBucket result = apiInstance.storageApiBucketsPartialUpdate(name, bucketUpdate);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StorageApi#storageApiBucketsPartialUpdate");
@@ -689,6 +689,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **name** | **String**|  | |
+| **bucketUpdate** | [**BucketUpdate**](BucketUpdate.md)|  | [optional] |
 
 ### Return type
 
@@ -700,7 +701,7 @@ public class Example {
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

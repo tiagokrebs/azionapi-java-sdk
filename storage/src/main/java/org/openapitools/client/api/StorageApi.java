@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.BucketCreate;
+import org.openapitools.client.model.BucketUpdate;
 import java.io.File;
 import org.openapitools.client.model.PaginatedBucketList;
 import org.openapitools.client.model.PaginatedBucketObjectList;
@@ -865,8 +866,8 @@ public class StorageApi {
     /**
      * Build call for storageApiBucketsObjectsList
      * @param bucketName  (required)
-     * @param page A page number within the paginated result set. (optional)
-     * @param pageSize Number of results to return per page. (optional)
+     * @param continuationToken Token for next page. (optional)
+     * @param maxObjectCount Number of results to return per page. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -882,7 +883,7 @@ public class StorageApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call storageApiBucketsObjectsListCall(String bucketName, Integer page, Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call storageApiBucketsObjectsListCall(String bucketName, String continuationToken, Integer maxObjectCount, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -908,12 +909,12 @@ public class StorageApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (page != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
+        if (continuationToken != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("continuation_token", continuationToken));
         }
 
-        if (pageSize != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page_size", pageSize));
+        if (maxObjectCount != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("max_object_count", maxObjectCount));
         }
 
         final String[] localVarAccepts = {
@@ -936,13 +937,13 @@ public class StorageApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call storageApiBucketsObjectsListValidateBeforeCall(String bucketName, Integer page, Integer pageSize, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call storageApiBucketsObjectsListValidateBeforeCall(String bucketName, String continuationToken, Integer maxObjectCount, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'bucketName' is set
         if (bucketName == null) {
             throw new ApiException("Missing the required parameter 'bucketName' when calling storageApiBucketsObjectsList(Async)");
         }
 
-        return storageApiBucketsObjectsListCall(bucketName, page, pageSize, _callback);
+        return storageApiBucketsObjectsListCall(bucketName, continuationToken, maxObjectCount, _callback);
 
     }
 
@@ -950,8 +951,8 @@ public class StorageApi {
      * List buckets objects
      * 
      * @param bucketName  (required)
-     * @param page A page number within the paginated result set. (optional)
-     * @param pageSize Number of results to return per page. (optional)
+     * @param continuationToken Token for next page. (optional)
+     * @param maxObjectCount Number of results to return per page. (optional)
      * @return PaginatedBucketObjectList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -966,8 +967,8 @@ public class StorageApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public PaginatedBucketObjectList storageApiBucketsObjectsList(String bucketName, Integer page, Integer pageSize) throws ApiException {
-        ApiResponse<PaginatedBucketObjectList> localVarResp = storageApiBucketsObjectsListWithHttpInfo(bucketName, page, pageSize);
+    public PaginatedBucketObjectList storageApiBucketsObjectsList(String bucketName, String continuationToken, Integer maxObjectCount) throws ApiException {
+        ApiResponse<PaginatedBucketObjectList> localVarResp = storageApiBucketsObjectsListWithHttpInfo(bucketName, continuationToken, maxObjectCount);
         return localVarResp.getData();
     }
 
@@ -975,8 +976,8 @@ public class StorageApi {
      * List buckets objects
      * 
      * @param bucketName  (required)
-     * @param page A page number within the paginated result set. (optional)
-     * @param pageSize Number of results to return per page. (optional)
+     * @param continuationToken Token for next page. (optional)
+     * @param maxObjectCount Number of results to return per page. (optional)
      * @return ApiResponse&lt;PaginatedBucketObjectList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -991,8 +992,8 @@ public class StorageApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PaginatedBucketObjectList> storageApiBucketsObjectsListWithHttpInfo(String bucketName, Integer page, Integer pageSize) throws ApiException {
-        okhttp3.Call localVarCall = storageApiBucketsObjectsListValidateBeforeCall(bucketName, page, pageSize, null);
+    public ApiResponse<PaginatedBucketObjectList> storageApiBucketsObjectsListWithHttpInfo(String bucketName, String continuationToken, Integer maxObjectCount) throws ApiException {
+        okhttp3.Call localVarCall = storageApiBucketsObjectsListValidateBeforeCall(bucketName, continuationToken, maxObjectCount, null);
         Type localVarReturnType = new TypeToken<PaginatedBucketObjectList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1001,8 +1002,8 @@ public class StorageApi {
      * List buckets objects (asynchronously)
      * 
      * @param bucketName  (required)
-     * @param page A page number within the paginated result set. (optional)
-     * @param pageSize Number of results to return per page. (optional)
+     * @param continuationToken Token for next page. (optional)
+     * @param maxObjectCount Number of results to return per page. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1018,9 +1019,9 @@ public class StorageApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call storageApiBucketsObjectsListAsync(String bucketName, Integer page, Integer pageSize, final ApiCallback<PaginatedBucketObjectList> _callback) throws ApiException {
+    public okhttp3.Call storageApiBucketsObjectsListAsync(String bucketName, String continuationToken, Integer maxObjectCount, final ApiCallback<PaginatedBucketObjectList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = storageApiBucketsObjectsListValidateBeforeCall(bucketName, page, pageSize, _callback);
+        okhttp3.Call localVarCall = storageApiBucketsObjectsListValidateBeforeCall(bucketName, continuationToken, maxObjectCount, _callback);
         Type localVarReturnType = new TypeToken<PaginatedBucketObjectList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1072,6 +1073,18 @@ public class StorageApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
+            "text/html",
+            "application/json",
+            "application/xml",
+            "text/plain",
+            "image/jpeg",
+            "image/png",
+            "image/gif",
+            "video/mp4",
+            "audio/mpeg",
+            "application/pdf",
+            "application/javascript",
+            "text/css",
             "application/octet-stream"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
@@ -1111,7 +1124,6 @@ public class StorageApi {
      * Download the object key from bucket.
      * @param bucketName  (required)
      * @param objectKey  (required)
-     * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1125,9 +1137,8 @@ public class StorageApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public File storageApiBucketsObjectsRetrieve(String bucketName, String objectKey) throws ApiException {
-        ApiResponse<File> localVarResp = storageApiBucketsObjectsRetrieveWithHttpInfo(bucketName, objectKey);
-        return localVarResp.getData();
+    public void storageApiBucketsObjectsRetrieve(String bucketName, String objectKey) throws ApiException {
+        storageApiBucketsObjectsRetrieveWithHttpInfo(bucketName, objectKey);
     }
 
     /**
@@ -1135,7 +1146,7 @@ public class StorageApi {
      * Download the object key from bucket.
      * @param bucketName  (required)
      * @param objectKey  (required)
-     * @return ApiResponse&lt;File&gt;
+     * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1149,10 +1160,9 @@ public class StorageApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<File> storageApiBucketsObjectsRetrieveWithHttpInfo(String bucketName, String objectKey) throws ApiException {
+    public ApiResponse<Void> storageApiBucketsObjectsRetrieveWithHttpInfo(String bucketName, String objectKey) throws ApiException {
         okhttp3.Call localVarCall = storageApiBucketsObjectsRetrieveValidateBeforeCall(bucketName, objectKey, null);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
+        return localVarApiClient.execute(localVarCall);
     }
 
     /**
@@ -1175,11 +1185,10 @@ public class StorageApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call storageApiBucketsObjectsRetrieveAsync(String bucketName, String objectKey, final ApiCallback<File> _callback) throws ApiException {
+    public okhttp3.Call storageApiBucketsObjectsRetrieveAsync(String bucketName, String objectKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = storageApiBucketsObjectsRetrieveValidateBeforeCall(bucketName, objectKey, _callback);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
@@ -1355,6 +1364,7 @@ public class StorageApi {
     /**
      * Build call for storageApiBucketsPartialUpdate
      * @param name  (required)
+     * @param bucketUpdate  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1371,7 +1381,7 @@ public class StorageApi {
         <tr><td> 202 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call storageApiBucketsPartialUpdateCall(String name, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call storageApiBucketsPartialUpdateCall(String name, BucketUpdate bucketUpdate, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1385,7 +1395,7 @@ public class StorageApi {
             basePath = null;
         }
 
-        Object localVarPostBody = null;
+        Object localVarPostBody = bucketUpdate;
 
         // create path and map variables
         String localVarPath = "/v4/storage/buckets/{name}"
@@ -1406,6 +1416,7 @@ public class StorageApi {
         }
 
         final String[] localVarContentTypes = {
+            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -1417,13 +1428,13 @@ public class StorageApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call storageApiBucketsPartialUpdateValidateBeforeCall(String name, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call storageApiBucketsPartialUpdateValidateBeforeCall(String name, BucketUpdate bucketUpdate, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling storageApiBucketsPartialUpdate(Async)");
         }
 
-        return storageApiBucketsPartialUpdateCall(name, _callback);
+        return storageApiBucketsPartialUpdateCall(name, bucketUpdate, _callback);
 
     }
 
@@ -1431,6 +1442,7 @@ public class StorageApi {
      * Update bucket info
      * 
      * @param name  (required)
+     * @param bucketUpdate  (optional)
      * @return ResponseBucket
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1446,8 +1458,8 @@ public class StorageApi {
         <tr><td> 202 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ResponseBucket storageApiBucketsPartialUpdate(String name) throws ApiException {
-        ApiResponse<ResponseBucket> localVarResp = storageApiBucketsPartialUpdateWithHttpInfo(name);
+    public ResponseBucket storageApiBucketsPartialUpdate(String name, BucketUpdate bucketUpdate) throws ApiException {
+        ApiResponse<ResponseBucket> localVarResp = storageApiBucketsPartialUpdateWithHttpInfo(name, bucketUpdate);
         return localVarResp.getData();
     }
 
@@ -1455,6 +1467,7 @@ public class StorageApi {
      * Update bucket info
      * 
      * @param name  (required)
+     * @param bucketUpdate  (optional)
      * @return ApiResponse&lt;ResponseBucket&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1470,8 +1483,8 @@ public class StorageApi {
         <tr><td> 202 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ResponseBucket> storageApiBucketsPartialUpdateWithHttpInfo(String name) throws ApiException {
-        okhttp3.Call localVarCall = storageApiBucketsPartialUpdateValidateBeforeCall(name, null);
+    public ApiResponse<ResponseBucket> storageApiBucketsPartialUpdateWithHttpInfo(String name, BucketUpdate bucketUpdate) throws ApiException {
+        okhttp3.Call localVarCall = storageApiBucketsPartialUpdateValidateBeforeCall(name, bucketUpdate, null);
         Type localVarReturnType = new TypeToken<ResponseBucket>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1480,6 +1493,7 @@ public class StorageApi {
      * Update bucket info (asynchronously)
      * 
      * @param name  (required)
+     * @param bucketUpdate  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1496,9 +1510,9 @@ public class StorageApi {
         <tr><td> 202 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call storageApiBucketsPartialUpdateAsync(String name, final ApiCallback<ResponseBucket> _callback) throws ApiException {
+    public okhttp3.Call storageApiBucketsPartialUpdateAsync(String name, BucketUpdate bucketUpdate, final ApiCallback<ResponseBucket> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = storageApiBucketsPartialUpdateValidateBeforeCall(name, _callback);
+        okhttp3.Call localVarCall = storageApiBucketsPartialUpdateValidateBeforeCall(name, bucketUpdate, _callback);
         Type localVarReturnType = new TypeToken<ResponseBucket>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
