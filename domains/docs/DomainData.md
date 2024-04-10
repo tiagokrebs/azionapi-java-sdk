@@ -1,17 +1,17 @@
 
 
-# CreateDomainRequest
+# DomainData
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**name** | **String** |  |  |
-|**cnames** | **List&lt;String&gt;** |  |  |
+|**name** | **String** |  |  [optional] |
+|**cnames** | **List&lt;String&gt;** |  |  [optional] |
 |**cnameAccessOnly** | **Boolean** |  |  [optional] |
 |**isActive** | **Boolean** |  |  [optional] |
-|**edgeApplicationId** | **Long** |  |  |
+|**edgeApplicationId** | **Long** |  |  [optional] |
 |**digitalCertificateId** | **Long** |  |  [optional] |
 |**environment** | [**EnvironmentEnum**](#EnvironmentEnum) |  |  [optional] |
 |**isMtlsEnabled** | **Boolean** |  |  [optional] |

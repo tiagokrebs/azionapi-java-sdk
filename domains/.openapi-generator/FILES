@@ -6,10 +6,11 @@ api/openapi.yaml
 build.gradle
 build.sbt
 docs/CreateDomainRequest.md
+docs/DomainData.md
+docs/DomainEntity.md
 docs/DomainLinks.md
 docs/DomainResponseWithResult.md
 docs/DomainResponseWithResults.md
-docs/DomainResults.md
 docs/DomainsApi.md
 docs/PutDomainRequest.md
 docs/UpdateDomainRequest.md
@@ -42,9 +43,12 @@ src/main/java/org/openapitools/client/auth/HttpBasicAuth.java
 src/main/java/org/openapitools/client/auth/HttpBearerAuth.java
 src/main/java/org/openapitools/client/model/AbstractOpenApiSchema.java
 src/main/java/org/openapitools/client/model/CreateDomainRequest.java
+src/main/java/org/openapitools/client/model/DomainData.java
+src/main/java/org/openapitools/client/model/DomainEntity.java
 src/main/java/org/openapitools/client/model/DomainLinks.java
 src/main/java/org/openapitools/client/model/DomainResponseWithResult.java
 src/main/java/org/openapitools/client/model/DomainResponseWithResults.java
-src/main/java/org/openapitools/client/model/DomainResults.java
 src/main/java/org/openapitools/client/model/PutDomainRequest.java
 src/main/java/org/openapitools/client/model/UpdateDomainRequest.java
+src/test/java/org/openapitools/client/model/DomainDataTest.java
+src/test/java/org/openapitools/client/model/DomainEntityTest.java

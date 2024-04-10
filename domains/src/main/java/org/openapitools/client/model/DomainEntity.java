@@ -50,10 +50,10 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * UpdateDomainRequest
+ * DomainEntity
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-10T14:02:22.954763Z[GMT]", comments = "Generator version: 7.4.0")
-public class UpdateDomainRequest {
+public class DomainEntity {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
@@ -202,10 +202,18 @@ public class UpdateDomainRequest {
   @SerializedName(SERIALIZED_NAME_CRL_LIST)
   private List<Long> crlList;
 
-  public UpdateDomainRequest() {
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  private Long id;
+
+  public static final String SERIALIZED_NAME_DOMAIN_NAME = "domain_name";
+  @SerializedName(SERIALIZED_NAME_DOMAIN_NAME)
+  private String domainName;
+
+  public DomainEntity() {
   }
 
-  public UpdateDomainRequest name(String name) {
+  public DomainEntity name(String name) {
     this.name = name;
     return this;
   }
@@ -224,12 +232,12 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest cnames(List<String> cnames) {
+  public DomainEntity cnames(List<String> cnames) {
     this.cnames = cnames;
     return this;
   }
 
-  public UpdateDomainRequest addCnamesItem(String cnamesItem) {
+  public DomainEntity addCnamesItem(String cnamesItem) {
     if (this.cnames == null) {
       this.cnames = new ArrayList<>();
     }
@@ -251,7 +259,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest cnameAccessOnly(Boolean cnameAccessOnly) {
+  public DomainEntity cnameAccessOnly(Boolean cnameAccessOnly) {
     this.cnameAccessOnly = cnameAccessOnly;
     return this;
   }
@@ -270,7 +278,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest isActive(Boolean isActive) {
+  public DomainEntity isActive(Boolean isActive) {
     this.isActive = isActive;
     return this;
   }
@@ -289,7 +297,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest edgeApplicationId(Long edgeApplicationId) {
+  public DomainEntity edgeApplicationId(Long edgeApplicationId) {
     this.edgeApplicationId = edgeApplicationId;
     return this;
   }
@@ -310,7 +318,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest digitalCertificateId(Long digitalCertificateId) {
+  public DomainEntity digitalCertificateId(Long digitalCertificateId) {
     this.digitalCertificateId = digitalCertificateId;
     return this;
   }
@@ -329,7 +337,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest environment(EnvironmentEnum environment) {
+  public DomainEntity environment(EnvironmentEnum environment) {
     this.environment = environment;
     return this;
   }
@@ -348,7 +356,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest isMtlsEnabled(Boolean isMtlsEnabled) {
+  public DomainEntity isMtlsEnabled(Boolean isMtlsEnabled) {
     this.isMtlsEnabled = isMtlsEnabled;
     return this;
   }
@@ -367,7 +375,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest mtlsTrustedCaCertificateId(Long mtlsTrustedCaCertificateId) {
+  public DomainEntity mtlsTrustedCaCertificateId(Long mtlsTrustedCaCertificateId) {
     this.mtlsTrustedCaCertificateId = mtlsTrustedCaCertificateId;
     return this;
   }
@@ -386,7 +394,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest mtlsVerification(MtlsVerificationEnum mtlsVerification) {
+  public DomainEntity mtlsVerification(MtlsVerificationEnum mtlsVerification) {
     this.mtlsVerification = mtlsVerification;
     return this;
   }
@@ -405,12 +413,12 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest crlList(List<Long> crlList) {
+  public DomainEntity crlList(List<Long> crlList) {
     this.crlList = crlList;
     return this;
   }
 
-  public UpdateDomainRequest addCrlListItem(Long crlListItem) {
+  public DomainEntity addCrlListItem(Long crlListItem) {
     if (this.crlList == null) {
       this.crlList = new ArrayList<>();
     }
@@ -432,6 +440,44 @@ public class UpdateDomainRequest {
   }
 
 
+  public DomainEntity id(Long id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Get id
+   * @return id
+  **/
+  @javax.annotation.Nullable
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+
+  public DomainEntity domainName(String domainName) {
+    this.domainName = domainName;
+    return this;
+  }
+
+   /**
+   * Get domainName
+   * @return domainName
+  **/
+  @javax.annotation.Nullable
+  public String getDomainName() {
+    return domainName;
+  }
+
+  public void setDomainName(String domainName) {
+    this.domainName = domainName;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -441,18 +487,20 @@ public class UpdateDomainRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UpdateDomainRequest updateDomainRequest = (UpdateDomainRequest) o;
-    return Objects.equals(this.name, updateDomainRequest.name) &&
-        Objects.equals(this.cnames, updateDomainRequest.cnames) &&
-        Objects.equals(this.cnameAccessOnly, updateDomainRequest.cnameAccessOnly) &&
-        Objects.equals(this.isActive, updateDomainRequest.isActive) &&
-        Objects.equals(this.edgeApplicationId, updateDomainRequest.edgeApplicationId) &&
-        Objects.equals(this.digitalCertificateId, updateDomainRequest.digitalCertificateId) &&
-        Objects.equals(this.environment, updateDomainRequest.environment) &&
-        Objects.equals(this.isMtlsEnabled, updateDomainRequest.isMtlsEnabled) &&
-        Objects.equals(this.mtlsTrustedCaCertificateId, updateDomainRequest.mtlsTrustedCaCertificateId) &&
-        Objects.equals(this.mtlsVerification, updateDomainRequest.mtlsVerification) &&
-        Objects.equals(this.crlList, updateDomainRequest.crlList);
+    DomainEntity domainEntity = (DomainEntity) o;
+    return Objects.equals(this.name, domainEntity.name) &&
+        Objects.equals(this.cnames, domainEntity.cnames) &&
+        Objects.equals(this.cnameAccessOnly, domainEntity.cnameAccessOnly) &&
+        Objects.equals(this.isActive, domainEntity.isActive) &&
+        Objects.equals(this.edgeApplicationId, domainEntity.edgeApplicationId) &&
+        Objects.equals(this.digitalCertificateId, domainEntity.digitalCertificateId) &&
+        Objects.equals(this.environment, domainEntity.environment) &&
+        Objects.equals(this.isMtlsEnabled, domainEntity.isMtlsEnabled) &&
+        Objects.equals(this.mtlsTrustedCaCertificateId, domainEntity.mtlsTrustedCaCertificateId) &&
+        Objects.equals(this.mtlsVerification, domainEntity.mtlsVerification) &&
+        Objects.equals(this.crlList, domainEntity.crlList) &&
+        Objects.equals(this.id, domainEntity.id) &&
+        Objects.equals(this.domainName, domainEntity.domainName);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -461,7 +509,7 @@ public class UpdateDomainRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, cnames, cnameAccessOnly, isActive, edgeApplicationId, digitalCertificateId, environment, isMtlsEnabled, mtlsTrustedCaCertificateId, mtlsVerification, crlList);
+    return Objects.hash(name, cnames, cnameAccessOnly, isActive, edgeApplicationId, digitalCertificateId, environment, isMtlsEnabled, mtlsTrustedCaCertificateId, mtlsVerification, crlList, id, domainName);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -474,7 +522,7 @@ public class UpdateDomainRequest {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UpdateDomainRequest {\n");
+    sb.append("class DomainEntity {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    cnames: ").append(toIndentedString(cnames)).append("\n");
     sb.append("    cnameAccessOnly: ").append(toIndentedString(cnameAccessOnly)).append("\n");
@@ -486,6 +534,8 @@ public class UpdateDomainRequest {
     sb.append("    mtlsTrustedCaCertificateId: ").append(toIndentedString(mtlsTrustedCaCertificateId)).append("\n");
     sb.append("    mtlsVerification: ").append(toIndentedString(mtlsVerification)).append("\n");
     sb.append("    crlList: ").append(toIndentedString(crlList)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -519,6 +569,8 @@ public class UpdateDomainRequest {
     openapiFields.add("mtls_trusted_ca_certificate_id");
     openapiFields.add("mtls_verification");
     openapiFields.add("crl_list");
+    openapiFields.add("id");
+    openapiFields.add("domain_name");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -528,20 +580,20 @@ public class UpdateDomainRequest {
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to UpdateDomainRequest
+  * @throws IOException if the JSON Element is invalid with respect to DomainEntity
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!UpdateDomainRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateDomainRequest is not found in the empty JSON string", UpdateDomainRequest.openapiRequiredFields.toString()));
+        if (!DomainEntity.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in DomainEntity is not found in the empty JSON string", DomainEntity.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!UpdateDomainRequest.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdateDomainRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!DomainEntity.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `DomainEntity` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -570,28 +622,31 @@ public class UpdateDomainRequest {
       if (jsonObj.get("crl_list") != null && !jsonObj.get("crl_list").isJsonNull() && !jsonObj.get("crl_list").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `crl_list` to be an array in the JSON string but got `%s`", jsonObj.get("crl_list").toString()));
       }
+      if ((jsonObj.get("domain_name") != null && !jsonObj.get("domain_name").isJsonNull()) && !jsonObj.get("domain_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `domain_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("domain_name").toString()));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UpdateDomainRequest.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UpdateDomainRequest' and its subtypes
+       if (!DomainEntity.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DomainEntity' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UpdateDomainRequest> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateDomainRequest.class));
+       final TypeAdapter<DomainEntity> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DomainEntity.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<UpdateDomainRequest>() {
+       return (TypeAdapter<T>) new TypeAdapter<DomainEntity>() {
            @Override
-           public void write(JsonWriter out, UpdateDomainRequest value) throws IOException {
+           public void write(JsonWriter out, DomainEntity value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public UpdateDomainRequest read(JsonReader in) throws IOException {
+           public DomainEntity read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -602,18 +657,18 @@ public class UpdateDomainRequest {
   }
 
  /**
-  * Create an instance of UpdateDomainRequest given an JSON string
+  * Create an instance of DomainEntity given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of UpdateDomainRequest
-  * @throws IOException if the JSON string is invalid with respect to UpdateDomainRequest
+  * @return An instance of DomainEntity
+  * @throws IOException if the JSON string is invalid with respect to DomainEntity
   */
-  public static UpdateDomainRequest fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UpdateDomainRequest.class);
+  public static DomainEntity fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DomainEntity.class);
   }
 
  /**
-  * Convert an instance of UpdateDomainRequest to an JSON string
+  * Convert an instance of DomainEntity to an JSON string
   *
   * @return JSON string
   */

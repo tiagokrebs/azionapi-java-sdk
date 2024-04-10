@@ -14,14 +14,15 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import org.openapitools.client.model.DomainResults;
+import java.util.Arrays;
+import org.openapitools.client.model.DomainEntity;
+import org.openapitools.client.model.DomainLinks;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -43,7 +44,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -51,21 +51,108 @@ import org.openapitools.client.JSON;
 /**
  * DomainResponseWithResult
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-22T21:01:29.854303Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-10T14:02:22.954763Z[GMT]", comments = "Generator version: 7.4.0")
 public class DomainResponseWithResult {
+  public static final String SERIALIZED_NAME_COUNT = "count";
+  @SerializedName(SERIALIZED_NAME_COUNT)
+  private Long count;
+
+  public static final String SERIALIZED_NAME_LINKS = "links";
+  @SerializedName(SERIALIZED_NAME_LINKS)
+  private DomainLinks links;
+
+  public static final String SERIALIZED_NAME_RESULTS = "results";
+  @SerializedName(SERIALIZED_NAME_RESULTS)
+  private DomainEntity results;
+
+  public static final String SERIALIZED_NAME_TOTAL_PAGES = "total_pages";
+  @SerializedName(SERIALIZED_NAME_TOTAL_PAGES)
+  private Long totalPages;
+
   public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
   @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)
   private Long schemaVersion;
 
-  public static final String SERIALIZED_NAME_RESULTS = "results";
-  @SerializedName(SERIALIZED_NAME_RESULTS)
-  private DomainResults results;
-
   public DomainResponseWithResult() {
   }
 
+  public DomainResponseWithResult count(Long count) {
+    this.count = count;
+    return this;
+  }
+
+   /**
+   * Get count
+   * @return count
+  **/
+  @javax.annotation.Nullable
+  public Long getCount() {
+    return count;
+  }
+
+  public void setCount(Long count) {
+    this.count = count;
+  }
+
+
+  public DomainResponseWithResult links(DomainLinks links) {
+    this.links = links;
+    return this;
+  }
+
+   /**
+   * Get links
+   * @return links
+  **/
+  @javax.annotation.Nullable
+  public DomainLinks getLinks() {
+    return links;
+  }
+
+  public void setLinks(DomainLinks links) {
+    this.links = links;
+  }
+
+
+  public DomainResponseWithResult results(DomainEntity results) {
+    this.results = results;
+    return this;
+  }
+
+   /**
+   * Get results
+   * @return results
+  **/
+  @javax.annotation.Nonnull
+  public DomainEntity getResults() {
+    return results;
+  }
+
+  public void setResults(DomainEntity results) {
+    this.results = results;
+  }
+
+
+  public DomainResponseWithResult totalPages(Long totalPages) {
+    this.totalPages = totalPages;
+    return this;
+  }
+
+   /**
+   * Get totalPages
+   * @return totalPages
+  **/
+  @javax.annotation.Nullable
+  public Long getTotalPages() {
+    return totalPages;
+  }
+
+  public void setTotalPages(Long totalPages) {
+    this.totalPages = totalPages;
+  }
+
+
   public DomainResponseWithResult schemaVersion(Long schemaVersion) {
-    
     this.schemaVersion = schemaVersion;
     return this;
   }
@@ -79,30 +166,8 @@ public class DomainResponseWithResult {
     return schemaVersion;
   }
 
-
   public void setSchemaVersion(Long schemaVersion) {
     this.schemaVersion = schemaVersion;
-  }
-
-
-  public DomainResponseWithResult results(DomainResults results) {
-    
-    this.results = results;
-    return this;
-  }
-
-   /**
-   * Get results
-   * @return results
-  **/
-  @javax.annotation.Nonnull
-  public DomainResults getResults() {
-    return results;
-  }
-
-
-  public void setResults(DomainResults results) {
-    this.results = results;
   }
 
 
@@ -116,21 +181,27 @@ public class DomainResponseWithResult {
       return false;
     }
     DomainResponseWithResult domainResponseWithResult = (DomainResponseWithResult) o;
-    return Objects.equals(this.schemaVersion, domainResponseWithResult.schemaVersion) &&
-        Objects.equals(this.results, domainResponseWithResult.results);
+    return Objects.equals(this.count, domainResponseWithResult.count) &&
+        Objects.equals(this.links, domainResponseWithResult.links) &&
+        Objects.equals(this.results, domainResponseWithResult.results) &&
+        Objects.equals(this.totalPages, domainResponseWithResult.totalPages) &&
+        Objects.equals(this.schemaVersion, domainResponseWithResult.schemaVersion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(schemaVersion, results);
+    return Objects.hash(count, links, results, totalPages, schemaVersion);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DomainResponseWithResult {\n");
-    sb.append("    schemaVersion: ").append(toIndentedString(schemaVersion)).append("\n");
+    sb.append("    count: ").append(toIndentedString(count)).append("\n");
+    sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
+    sb.append("    totalPages: ").append(toIndentedString(totalPages)).append("\n");
+    sb.append("    schemaVersion: ").append(toIndentedString(schemaVersion)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -153,44 +224,52 @@ public class DomainResponseWithResult {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("schema_version");
+    openapiFields.add("count");
+    openapiFields.add("links");
     openapiFields.add("results");
+    openapiFields.add("total_pages");
+    openapiFields.add("schema_version");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("schema_version");
     openapiRequiredFields.add("results");
+    openapiRequiredFields.add("schema_version");
   }
 
  /**
-  * Validates the JSON Object and throws an exception if issues found
+  * Validates the JSON Element and throws an exception if issues found
   *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to DomainResponseWithResult
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to DomainResponseWithResult
   */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!DomainResponseWithResult.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!DomainResponseWithResult.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in DomainResponseWithResult is not found in the empty JSON string", DomainResponseWithResult.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!DomainResponseWithResult.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `DomainResponseWithResult` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `DomainResponseWithResult` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : DomainResponseWithResult.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `links`
+      if (jsonObj.get("links") != null && !jsonObj.get("links").isJsonNull()) {
+        DomainLinks.validateJsonElement(jsonObj.get("links"));
+      }
       // validate the required field `results`
-      DomainResults.validateJsonObject(jsonObj.getAsJsonObject("results"));
+      DomainEntity.validateJsonElement(jsonObj.get("results"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -213,9 +292,9 @@ public class DomainResponseWithResult {
 
            @Override
            public DomainResponseWithResult read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
