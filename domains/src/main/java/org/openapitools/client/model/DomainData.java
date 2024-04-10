@@ -50,10 +50,10 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * UpdateDomainRequest
+ * DomainData
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-10T14:02:22.954763Z[GMT]", comments = "Generator version: 7.4.0")
-public class UpdateDomainRequest {
+public class DomainData {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
@@ -202,10 +202,10 @@ public class UpdateDomainRequest {
   @SerializedName(SERIALIZED_NAME_CRL_LIST)
   private List<Long> crlList;
 
-  public UpdateDomainRequest() {
+  public DomainData() {
   }
 
-  public UpdateDomainRequest name(String name) {
+  public DomainData name(String name) {
     this.name = name;
     return this;
   }
@@ -224,12 +224,12 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest cnames(List<String> cnames) {
+  public DomainData cnames(List<String> cnames) {
     this.cnames = cnames;
     return this;
   }
 
-  public UpdateDomainRequest addCnamesItem(String cnamesItem) {
+  public DomainData addCnamesItem(String cnamesItem) {
     if (this.cnames == null) {
       this.cnames = new ArrayList<>();
     }
@@ -251,7 +251,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest cnameAccessOnly(Boolean cnameAccessOnly) {
+  public DomainData cnameAccessOnly(Boolean cnameAccessOnly) {
     this.cnameAccessOnly = cnameAccessOnly;
     return this;
   }
@@ -270,7 +270,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest isActive(Boolean isActive) {
+  public DomainData isActive(Boolean isActive) {
     this.isActive = isActive;
     return this;
   }
@@ -289,7 +289,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest edgeApplicationId(Long edgeApplicationId) {
+  public DomainData edgeApplicationId(Long edgeApplicationId) {
     this.edgeApplicationId = edgeApplicationId;
     return this;
   }
@@ -310,7 +310,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest digitalCertificateId(Long digitalCertificateId) {
+  public DomainData digitalCertificateId(Long digitalCertificateId) {
     this.digitalCertificateId = digitalCertificateId;
     return this;
   }
@@ -329,7 +329,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest environment(EnvironmentEnum environment) {
+  public DomainData environment(EnvironmentEnum environment) {
     this.environment = environment;
     return this;
   }
@@ -348,7 +348,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest isMtlsEnabled(Boolean isMtlsEnabled) {
+  public DomainData isMtlsEnabled(Boolean isMtlsEnabled) {
     this.isMtlsEnabled = isMtlsEnabled;
     return this;
   }
@@ -367,7 +367,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest mtlsTrustedCaCertificateId(Long mtlsTrustedCaCertificateId) {
+  public DomainData mtlsTrustedCaCertificateId(Long mtlsTrustedCaCertificateId) {
     this.mtlsTrustedCaCertificateId = mtlsTrustedCaCertificateId;
     return this;
   }
@@ -386,7 +386,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest mtlsVerification(MtlsVerificationEnum mtlsVerification) {
+  public DomainData mtlsVerification(MtlsVerificationEnum mtlsVerification) {
     this.mtlsVerification = mtlsVerification;
     return this;
   }
@@ -405,12 +405,12 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest crlList(List<Long> crlList) {
+  public DomainData crlList(List<Long> crlList) {
     this.crlList = crlList;
     return this;
   }
 
-  public UpdateDomainRequest addCrlListItem(Long crlListItem) {
+  public DomainData addCrlListItem(Long crlListItem) {
     if (this.crlList == null) {
       this.crlList = new ArrayList<>();
     }
@@ -441,18 +441,18 @@ public class UpdateDomainRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UpdateDomainRequest updateDomainRequest = (UpdateDomainRequest) o;
-    return Objects.equals(this.name, updateDomainRequest.name) &&
-        Objects.equals(this.cnames, updateDomainRequest.cnames) &&
-        Objects.equals(this.cnameAccessOnly, updateDomainRequest.cnameAccessOnly) &&
-        Objects.equals(this.isActive, updateDomainRequest.isActive) &&
-        Objects.equals(this.edgeApplicationId, updateDomainRequest.edgeApplicationId) &&
-        Objects.equals(this.digitalCertificateId, updateDomainRequest.digitalCertificateId) &&
-        Objects.equals(this.environment, updateDomainRequest.environment) &&
-        Objects.equals(this.isMtlsEnabled, updateDomainRequest.isMtlsEnabled) &&
-        Objects.equals(this.mtlsTrustedCaCertificateId, updateDomainRequest.mtlsTrustedCaCertificateId) &&
-        Objects.equals(this.mtlsVerification, updateDomainRequest.mtlsVerification) &&
-        Objects.equals(this.crlList, updateDomainRequest.crlList);
+    DomainData domainData = (DomainData) o;
+    return Objects.equals(this.name, domainData.name) &&
+        Objects.equals(this.cnames, domainData.cnames) &&
+        Objects.equals(this.cnameAccessOnly, domainData.cnameAccessOnly) &&
+        Objects.equals(this.isActive, domainData.isActive) &&
+        Objects.equals(this.edgeApplicationId, domainData.edgeApplicationId) &&
+        Objects.equals(this.digitalCertificateId, domainData.digitalCertificateId) &&
+        Objects.equals(this.environment, domainData.environment) &&
+        Objects.equals(this.isMtlsEnabled, domainData.isMtlsEnabled) &&
+        Objects.equals(this.mtlsTrustedCaCertificateId, domainData.mtlsTrustedCaCertificateId) &&
+        Objects.equals(this.mtlsVerification, domainData.mtlsVerification) &&
+        Objects.equals(this.crlList, domainData.crlList);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -474,7 +474,7 @@ public class UpdateDomainRequest {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UpdateDomainRequest {\n");
+    sb.append("class DomainData {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    cnames: ").append(toIndentedString(cnames)).append("\n");
     sb.append("    cnameAccessOnly: ").append(toIndentedString(cnameAccessOnly)).append("\n");
@@ -528,20 +528,20 @@ public class UpdateDomainRequest {
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to UpdateDomainRequest
+  * @throws IOException if the JSON Element is invalid with respect to DomainData
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!UpdateDomainRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateDomainRequest is not found in the empty JSON string", UpdateDomainRequest.openapiRequiredFields.toString()));
+        if (!DomainData.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in DomainData is not found in the empty JSON string", DomainData.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!UpdateDomainRequest.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdateDomainRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!DomainData.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `DomainData` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -576,22 +576,22 @@ public class UpdateDomainRequest {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UpdateDomainRequest.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UpdateDomainRequest' and its subtypes
+       if (!DomainData.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DomainData' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UpdateDomainRequest> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateDomainRequest.class));
+       final TypeAdapter<DomainData> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DomainData.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<UpdateDomainRequest>() {
+       return (TypeAdapter<T>) new TypeAdapter<DomainData>() {
            @Override
-           public void write(JsonWriter out, UpdateDomainRequest value) throws IOException {
+           public void write(JsonWriter out, DomainData value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public UpdateDomainRequest read(JsonReader in) throws IOException {
+           public DomainData read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -602,18 +602,18 @@ public class UpdateDomainRequest {
   }
 
  /**
-  * Create an instance of UpdateDomainRequest given an JSON string
+  * Create an instance of DomainData given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of UpdateDomainRequest
-  * @throws IOException if the JSON string is invalid with respect to UpdateDomainRequest
+  * @return An instance of DomainData
+  * @throws IOException if the JSON string is invalid with respect to DomainData
   */
-  public static UpdateDomainRequest fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UpdateDomainRequest.class);
+  public static DomainData fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DomainData.class);
   }
 
  /**
-  * Convert an instance of UpdateDomainRequest to an JSON string
+  * Convert an instance of DomainData to an JSON string
   *
   * @return JSON string
   */

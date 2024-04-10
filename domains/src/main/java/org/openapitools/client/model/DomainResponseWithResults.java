@@ -14,7 +14,6 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,9 +21,10 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.DomainEntity;
 import org.openapitools.client.model.DomainLinks;
-import org.openapitools.client.model.DomainResults;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -46,7 +46,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -54,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * DomainResponseWithResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-22T21:01:29.854303Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-10T14:02:22.954763Z[GMT]", comments = "Generator version: 7.4.0")
 public class DomainResponseWithResults {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
@@ -74,13 +73,12 @@ public class DomainResponseWithResults {
 
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
-  private List<DomainResults> results = new ArrayList<>();
+  private List<DomainEntity> results = new ArrayList<>();
 
   public DomainResponseWithResults() {
   }
 
   public DomainResponseWithResults count(Long count) {
-    
     this.count = count;
     return this;
   }
@@ -94,14 +92,12 @@ public class DomainResponseWithResults {
     return count;
   }
 
-
   public void setCount(Long count) {
     this.count = count;
   }
 
 
   public DomainResponseWithResults totalPages(Long totalPages) {
-    
     this.totalPages = totalPages;
     return this;
   }
@@ -115,14 +111,12 @@ public class DomainResponseWithResults {
     return totalPages;
   }
 
-
   public void setTotalPages(Long totalPages) {
     this.totalPages = totalPages;
   }
 
 
   public DomainResponseWithResults schemaVersion(Long schemaVersion) {
-    
     this.schemaVersion = schemaVersion;
     return this;
   }
@@ -136,14 +130,12 @@ public class DomainResponseWithResults {
     return schemaVersion;
   }
 
-
   public void setSchemaVersion(Long schemaVersion) {
     this.schemaVersion = schemaVersion;
   }
 
 
   public DomainResponseWithResults links(DomainLinks links) {
-    
     this.links = links;
     return this;
   }
@@ -157,19 +149,17 @@ public class DomainResponseWithResults {
     return links;
   }
 
-
   public void setLinks(DomainLinks links) {
     this.links = links;
   }
 
 
-  public DomainResponseWithResults results(List<DomainResults> results) {
-    
+  public DomainResponseWithResults results(List<DomainEntity> results) {
     this.results = results;
     return this;
   }
 
-  public DomainResponseWithResults addResultsItem(DomainResults resultsItem) {
+  public DomainResponseWithResults addResultsItem(DomainEntity resultsItem) {
     if (this.results == null) {
       this.results = new ArrayList<>();
     }
@@ -182,12 +172,11 @@ public class DomainResponseWithResults {
    * @return results
   **/
   @javax.annotation.Nonnull
-  public List<DomainResults> getResults() {
+  public List<DomainEntity> getResults() {
     return results;
   }
 
-
-  public void setResults(List<DomainResults> results) {
+  public void setResults(List<DomainEntity> results) {
     this.results = results;
   }
 
@@ -261,34 +250,35 @@ public class DomainResponseWithResults {
   }
 
  /**
-  * Validates the JSON Object and throws an exception if issues found
+  * Validates the JSON Element and throws an exception if issues found
   *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to DomainResponseWithResults
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to DomainResponseWithResults
   */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!DomainResponseWithResults.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!DomainResponseWithResults.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in DomainResponseWithResults is not found in the empty JSON string", DomainResponseWithResults.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!DomainResponseWithResults.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `DomainResponseWithResults` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `DomainResponseWithResults` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : DomainResponseWithResults.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the required field `links`
-      DomainLinks.validateJsonObject(jsonObj.getAsJsonObject("links"));
+      DomainLinks.validateJsonElement(jsonObj.get("links"));
       // ensure the json data is an array
       if (!jsonObj.get("results").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `results` to be an array in the JSON string but got `%s`", jsonObj.get("results").toString()));
@@ -297,7 +287,7 @@ public class DomainResponseWithResults {
       JsonArray jsonArrayresults = jsonObj.getAsJsonArray("results");
       // validate the required field `results` (array)
       for (int i = 0; i < jsonArrayresults.size(); i++) {
-        DomainResults.validateJsonObject(jsonArrayresults.get(i).getAsJsonObject());
+        DomainEntity.validateJsonElement(jsonArrayresults.get(i));
       };
   }
 
@@ -321,9 +311,9 @@ public class DomainResponseWithResults {
 
            @Override
            public DomainResponseWithResults read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();

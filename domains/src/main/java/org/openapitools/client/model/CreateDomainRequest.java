@@ -14,7 +14,6 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,7 +21,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -44,7 +45,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -52,8 +52,12 @@ import org.openapitools.client.JSON;
 /**
  * CreateDomainRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-22T21:01:29.854303Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-10T14:02:22.954763Z[GMT]", comments = "Generator version: 7.4.0")
 public class CreateDomainRequest {
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
+
   public static final String SERIALIZED_NAME_CNAMES = "cnames";
   @SerializedName(SERIALIZED_NAME_CNAMES)
   private List<String> cnames = new ArrayList<>();
@@ -61,10 +65,6 @@ public class CreateDomainRequest {
   public static final String SERIALIZED_NAME_CNAME_ACCESS_ONLY = "cname_access_only";
   @SerializedName(SERIALIZED_NAME_CNAME_ACCESS_ONLY)
   private Boolean cnameAccessOnly;
-
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
 
   public static final String SERIALIZED_NAME_IS_ACTIVE = "is_active";
   @SerializedName(SERIALIZED_NAME_IS_ACTIVE)
@@ -78,11 +78,153 @@ public class CreateDomainRequest {
   @SerializedName(SERIALIZED_NAME_DIGITAL_CERTIFICATE_ID)
   private Long digitalCertificateId;
 
+  /**
+   * Gets or Sets environment
+   */
+  @JsonAdapter(EnvironmentEnum.Adapter.class)
+  public enum EnvironmentEnum {
+    PRODUCTION("production"),
+    
+    PREVIEW("preview");
+
+    private String value;
+
+    EnvironmentEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static EnvironmentEnum fromValue(String value) {
+      for (EnvironmentEnum b : EnvironmentEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<EnvironmentEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final EnvironmentEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public EnvironmentEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return EnvironmentEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      EnvironmentEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_ENVIRONMENT = "environment";
+  @SerializedName(SERIALIZED_NAME_ENVIRONMENT)
+  private EnvironmentEnum environment;
+
+  public static final String SERIALIZED_NAME_IS_MTLS_ENABLED = "is_mtls_enabled";
+  @SerializedName(SERIALIZED_NAME_IS_MTLS_ENABLED)
+  private Boolean isMtlsEnabled;
+
+  public static final String SERIALIZED_NAME_MTLS_TRUSTED_CA_CERTIFICATE_ID = "mtls_trusted_ca_certificate_id";
+  @SerializedName(SERIALIZED_NAME_MTLS_TRUSTED_CA_CERTIFICATE_ID)
+  private Long mtlsTrustedCaCertificateId;
+
+  /**
+   * Gets or Sets mtlsVerification
+   */
+  @JsonAdapter(MtlsVerificationEnum.Adapter.class)
+  public enum MtlsVerificationEnum {
+    ENFORCE("enforce"),
+    
+    PERMISSIVE("permissive");
+
+    private String value;
+
+    MtlsVerificationEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static MtlsVerificationEnum fromValue(String value) {
+      for (MtlsVerificationEnum b : MtlsVerificationEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<MtlsVerificationEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final MtlsVerificationEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public MtlsVerificationEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return MtlsVerificationEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      MtlsVerificationEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_MTLS_VERIFICATION = "mtls_verification";
+  @SerializedName(SERIALIZED_NAME_MTLS_VERIFICATION)
+  private MtlsVerificationEnum mtlsVerification;
+
+  public static final String SERIALIZED_NAME_CRL_LIST = "crl_list";
+  @SerializedName(SERIALIZED_NAME_CRL_LIST)
+  private List<Long> crlList;
+
   public CreateDomainRequest() {
   }
 
+  public CreateDomainRequest name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Get name
+   * @return name
+  **/
+  @javax.annotation.Nonnull
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+
   public CreateDomainRequest cnames(List<String> cnames) {
-    
     this.cnames = cnames;
     return this;
   }
@@ -104,14 +246,12 @@ public class CreateDomainRequest {
     return cnames;
   }
 
-
   public void setCnames(List<String> cnames) {
     this.cnames = cnames;
   }
 
 
   public CreateDomainRequest cnameAccessOnly(Boolean cnameAccessOnly) {
-    
     this.cnameAccessOnly = cnameAccessOnly;
     return this;
   }
@@ -120,40 +260,17 @@ public class CreateDomainRequest {
    * Get cnameAccessOnly
    * @return cnameAccessOnly
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Boolean getCnameAccessOnly() {
     return cnameAccessOnly;
   }
-
 
   public void setCnameAccessOnly(Boolean cnameAccessOnly) {
     this.cnameAccessOnly = cnameAccessOnly;
   }
 
 
-  public CreateDomainRequest name(String name) {
-    
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
-  **/
-  @javax.annotation.Nonnull
-  public String getName() {
-    return name;
-  }
-
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
   public CreateDomainRequest isActive(Boolean isActive) {
-    
     this.isActive = isActive;
     return this;
   }
@@ -162,11 +279,10 @@ public class CreateDomainRequest {
    * Get isActive
    * @return isActive
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Boolean getIsActive() {
     return isActive;
   }
-
 
   public void setIsActive(Boolean isActive) {
     this.isActive = isActive;
@@ -174,13 +290,14 @@ public class CreateDomainRequest {
 
 
   public CreateDomainRequest edgeApplicationId(Long edgeApplicationId) {
-    
     this.edgeApplicationId = edgeApplicationId;
     return this;
   }
 
    /**
    * Get edgeApplicationId
+   * minimum: 1
+   * maximum: -8446744073709551616
    * @return edgeApplicationId
   **/
   @javax.annotation.Nonnull
@@ -188,14 +305,12 @@ public class CreateDomainRequest {
     return edgeApplicationId;
   }
 
-
   public void setEdgeApplicationId(Long edgeApplicationId) {
     this.edgeApplicationId = edgeApplicationId;
   }
 
 
   public CreateDomainRequest digitalCertificateId(Long digitalCertificateId) {
-    
     this.digitalCertificateId = digitalCertificateId;
     return this;
   }
@@ -209,9 +324,111 @@ public class CreateDomainRequest {
     return digitalCertificateId;
   }
 
-
   public void setDigitalCertificateId(Long digitalCertificateId) {
     this.digitalCertificateId = digitalCertificateId;
+  }
+
+
+  public CreateDomainRequest environment(EnvironmentEnum environment) {
+    this.environment = environment;
+    return this;
+  }
+
+   /**
+   * Get environment
+   * @return environment
+  **/
+  @javax.annotation.Nullable
+  public EnvironmentEnum getEnvironment() {
+    return environment;
+  }
+
+  public void setEnvironment(EnvironmentEnum environment) {
+    this.environment = environment;
+  }
+
+
+  public CreateDomainRequest isMtlsEnabled(Boolean isMtlsEnabled) {
+    this.isMtlsEnabled = isMtlsEnabled;
+    return this;
+  }
+
+   /**
+   * Get isMtlsEnabled
+   * @return isMtlsEnabled
+  **/
+  @javax.annotation.Nullable
+  public Boolean getIsMtlsEnabled() {
+    return isMtlsEnabled;
+  }
+
+  public void setIsMtlsEnabled(Boolean isMtlsEnabled) {
+    this.isMtlsEnabled = isMtlsEnabled;
+  }
+
+
+  public CreateDomainRequest mtlsTrustedCaCertificateId(Long mtlsTrustedCaCertificateId) {
+    this.mtlsTrustedCaCertificateId = mtlsTrustedCaCertificateId;
+    return this;
+  }
+
+   /**
+   * Get mtlsTrustedCaCertificateId
+   * @return mtlsTrustedCaCertificateId
+  **/
+  @javax.annotation.Nullable
+  public Long getMtlsTrustedCaCertificateId() {
+    return mtlsTrustedCaCertificateId;
+  }
+
+  public void setMtlsTrustedCaCertificateId(Long mtlsTrustedCaCertificateId) {
+    this.mtlsTrustedCaCertificateId = mtlsTrustedCaCertificateId;
+  }
+
+
+  public CreateDomainRequest mtlsVerification(MtlsVerificationEnum mtlsVerification) {
+    this.mtlsVerification = mtlsVerification;
+    return this;
+  }
+
+   /**
+   * Get mtlsVerification
+   * @return mtlsVerification
+  **/
+  @javax.annotation.Nullable
+  public MtlsVerificationEnum getMtlsVerification() {
+    return mtlsVerification;
+  }
+
+  public void setMtlsVerification(MtlsVerificationEnum mtlsVerification) {
+    this.mtlsVerification = mtlsVerification;
+  }
+
+
+  public CreateDomainRequest crlList(List<Long> crlList) {
+    this.crlList = crlList;
+    return this;
+  }
+
+  public CreateDomainRequest addCrlListItem(Long crlListItem) {
+    if (this.crlList == null) {
+      this.crlList = new ArrayList<>();
+    }
+    this.crlList.add(crlListItem);
+    return this;
+  }
+
+   /**
+   * Get crlList
+   * @return crlList
+  **/
+  @javax.annotation.Nullable
+  public List<Long> getCrlList() {
+    return crlList;
+  }
+
+  public void setCrlList(List<Long> crlList) {
+    this.crlList = crlList;
   }
 
 
@@ -225,29 +442,50 @@ public class CreateDomainRequest {
       return false;
     }
     CreateDomainRequest createDomainRequest = (CreateDomainRequest) o;
-    return Objects.equals(this.cnames, createDomainRequest.cnames) &&
+    return Objects.equals(this.name, createDomainRequest.name) &&
+        Objects.equals(this.cnames, createDomainRequest.cnames) &&
         Objects.equals(this.cnameAccessOnly, createDomainRequest.cnameAccessOnly) &&
-        Objects.equals(this.name, createDomainRequest.name) &&
         Objects.equals(this.isActive, createDomainRequest.isActive) &&
         Objects.equals(this.edgeApplicationId, createDomainRequest.edgeApplicationId) &&
-        Objects.equals(this.digitalCertificateId, createDomainRequest.digitalCertificateId);
+        Objects.equals(this.digitalCertificateId, createDomainRequest.digitalCertificateId) &&
+        Objects.equals(this.environment, createDomainRequest.environment) &&
+        Objects.equals(this.isMtlsEnabled, createDomainRequest.isMtlsEnabled) &&
+        Objects.equals(this.mtlsTrustedCaCertificateId, createDomainRequest.mtlsTrustedCaCertificateId) &&
+        Objects.equals(this.mtlsVerification, createDomainRequest.mtlsVerification) &&
+        Objects.equals(this.crlList, createDomainRequest.crlList);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cnames, cnameAccessOnly, name, isActive, edgeApplicationId, digitalCertificateId);
+    return Objects.hash(name, cnames, cnameAccessOnly, isActive, edgeApplicationId, digitalCertificateId, environment, isMtlsEnabled, mtlsTrustedCaCertificateId, mtlsVerification, crlList);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateDomainRequest {\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    cnames: ").append(toIndentedString(cnames)).append("\n");
     sb.append("    cnameAccessOnly: ").append(toIndentedString(cnameAccessOnly)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    edgeApplicationId: ").append(toIndentedString(edgeApplicationId)).append("\n");
     sb.append("    digitalCertificateId: ").append(toIndentedString(digitalCertificateId)).append("\n");
+    sb.append("    environment: ").append(toIndentedString(environment)).append("\n");
+    sb.append("    isMtlsEnabled: ").append(toIndentedString(isMtlsEnabled)).append("\n");
+    sb.append("    mtlsTrustedCaCertificateId: ").append(toIndentedString(mtlsTrustedCaCertificateId)).append("\n");
+    sb.append("    mtlsVerification: ").append(toIndentedString(mtlsVerification)).append("\n");
+    sb.append("    crlList: ").append(toIndentedString(crlList)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -270,49 +508,55 @@ public class CreateDomainRequest {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("name");
     openapiFields.add("cnames");
     openapiFields.add("cname_access_only");
-    openapiFields.add("name");
     openapiFields.add("is_active");
     openapiFields.add("edge_application_id");
     openapiFields.add("digital_certificate_id");
+    openapiFields.add("environment");
+    openapiFields.add("is_mtls_enabled");
+    openapiFields.add("mtls_trusted_ca_certificate_id");
+    openapiFields.add("mtls_verification");
+    openapiFields.add("crl_list");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("cnames");
-    openapiRequiredFields.add("cname_access_only");
     openapiRequiredFields.add("name");
-    openapiRequiredFields.add("is_active");
+    openapiRequiredFields.add("cnames");
     openapiRequiredFields.add("edge_application_id");
-    openapiRequiredFields.add("digital_certificate_id");
   }
 
  /**
-  * Validates the JSON Object and throws an exception if issues found
+  * Validates the JSON Element and throws an exception if issues found
   *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to CreateDomainRequest
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to CreateDomainRequest
   */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!CreateDomainRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!CreateDomainRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in CreateDomainRequest is not found in the empty JSON string", CreateDomainRequest.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!CreateDomainRequest.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CreateDomainRequest` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CreateDomainRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : CreateDomainRequest.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("cnames") == null) {
@@ -320,8 +564,23 @@ public class CreateDomainRequest {
       } else if (!jsonObj.get("cnames").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `cnames` to be an array in the JSON string but got `%s`", jsonObj.get("cnames").toString()));
       }
-      if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      if ((jsonObj.get("environment") != null && !jsonObj.get("environment").isJsonNull()) && !jsonObj.get("environment").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `environment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environment").toString()));
+      }
+      // validate the optional field `environment`
+      if (jsonObj.get("environment") != null && !jsonObj.get("environment").isJsonNull()) {
+        EnvironmentEnum.validateJsonElement(jsonObj.get("environment"));
+      }
+      if ((jsonObj.get("mtls_verification") != null && !jsonObj.get("mtls_verification").isJsonNull()) && !jsonObj.get("mtls_verification").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mtls_verification` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mtls_verification").toString()));
+      }
+      // validate the optional field `mtls_verification`
+      if (jsonObj.get("mtls_verification") != null && !jsonObj.get("mtls_verification").isJsonNull()) {
+        MtlsVerificationEnum.validateJsonElement(jsonObj.get("mtls_verification"));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("crl_list") != null && !jsonObj.get("crl_list").isJsonNull() && !jsonObj.get("crl_list").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `crl_list` to be an array in the JSON string but got `%s`", jsonObj.get("crl_list").toString()));
       }
   }
 
@@ -345,9 +604,9 @@ public class CreateDomainRequest {
 
            @Override
            public CreateDomainRequest read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();

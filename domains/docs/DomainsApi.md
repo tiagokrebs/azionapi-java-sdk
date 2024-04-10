@@ -87,6 +87,7 @@ public class Example {
 | **400** | Bad Request |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
 | **500** | Internal Server Error |  -  |
 
@@ -319,6 +320,7 @@ public class Example {
 | **200** | Successful response |  -  |
 | **400** | Bad Request |  -  |
 | **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
 | **422** | Unprocessable Entity |  -  |
 | **500** | Internal Server Error |  -  |
 
@@ -399,6 +401,7 @@ public class Example {
 | **400** | Bad Request |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
+| **405** | Method Not Allowed |  -  |
 | **422** | Unprocessable Entity |  -  |
 | **500** | Internal Server Error |  -  |
 
@@ -479,6 +482,7 @@ public class Example {
 | **400** | Bad Request |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
+| **405** | Method Not Allowed |  -  |
 | **422** | Unprocessable Entity |  -  |
 | **500** | Internal Server Error |  -  |
 
