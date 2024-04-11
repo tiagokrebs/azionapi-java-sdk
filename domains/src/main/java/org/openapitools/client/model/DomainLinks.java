@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * DomainLinks
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-10T14:02:22.954763Z[GMT]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-11T12:32:59.809674Z[GMT]", comments = "Generator version: 7.4.0")
 public class DomainLinks {
   public static final String SERIALIZED_NAME_PREVIOUS = "previous";
   @SerializedName(SERIALIZED_NAME_PREVIOUS)

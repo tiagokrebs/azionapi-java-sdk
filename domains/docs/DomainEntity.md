@@ -16,6 +16,7 @@
 |**environment** | [**EnvironmentEnum**](#EnvironmentEnum) |  |  [optional] |
 |**isMtlsEnabled** | **Boolean** |  |  [optional] |
 |**mtlsTrustedCaCertificateId** | **Long** |  |  [optional] |
+|**edgeFirewallId** | **Long** |  |  [optional] |
 |**mtlsVerification** | [**MtlsVerificationEnum**](#MtlsVerificationEnum) |  |  [optional] |
 |**crlList** | **List&lt;Long&gt;** |  |  [optional] |
 |**id** | **Long** |  |  [optional] |

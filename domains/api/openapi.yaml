@@ -356,6 +356,10 @@ components:
           format: int64
           nullable: true
           type: integer
+        edge_firewall_id:
+          format: int64
+          nullable: true
+          type: integer
         mtls_verification:
           enum:
           - enforce
@@ -380,6 +384,7 @@ components:
       - $ref: '#/components/schemas/DomainData'
       example:
         edge_application_id: 5637376656633328640
+        edge_firewall_id: 9
         is_active: true
         cnames:
         - cnames
@@ -390,8 +395,8 @@ components:
         mtls_trusted_ca_certificate_id: 7
         digital_certificate_id: 2
         crl_list:
-        - 9
-        - 9
+        - 3
+        - 3
         cname_access_only: true
         name: name
         is_mtls_enabled: true
@@ -404,6 +409,7 @@ components:
         edge_application_id: 800828190461011456
         environment: production
         mtls_trusted_ca_certificate_id: 1
+        edge_firewall_id: 5
         is_active: true
         digital_certificate_id: 6
         crl_list:
@@ -427,6 +433,7 @@ components:
         edge_application_id: 800828190461011456
         environment: production
         mtls_trusted_ca_certificate_id: 1
+        edge_firewall_id: 5
         is_active: true
         digital_certificate_id: 6
         crl_list:
@@ -447,6 +454,7 @@ components:
         edge_application_id: 800828190461011456
         environment: production
         mtls_trusted_ca_certificate_id: 1
+        edge_firewall_id: 5
         is_active: true
         digital_certificate_id: 6
         crl_list:
@@ -490,6 +498,7 @@ components:
         total_pages: 6
         results:
         - edge_application_id: 5637376656633328640
+          edge_firewall_id: 9
           is_active: true
           cnames:
           - cnames
@@ -500,13 +509,14 @@ components:
           mtls_trusted_ca_certificate_id: 7
           digital_certificate_id: 2
           crl_list:
-          - 9
-          - 9
+          - 3
+          - 3
           cname_access_only: true
           name: name
           is_mtls_enabled: true
           id: 5
         - edge_application_id: 5637376656633328640
+          edge_firewall_id: 9
           is_active: true
           cnames:
           - cnames
@@ -517,8 +527,8 @@ components:
           mtls_trusted_ca_certificate_id: 7
           digital_certificate_id: 2
           crl_list:
-          - 9
-          - 9
+          - 3
+          - 3
           cname_access_only: true
           name: name
           is_mtls_enabled: true
@@ -557,6 +567,7 @@ components:
         total_pages: 6
         results:
           edge_application_id: 5637376656633328640
+          edge_firewall_id: 9
           is_active: true
           cnames:
           - cnames
@@ -567,8 +578,8 @@ components:
           mtls_trusted_ca_certificate_id: 7
           digital_certificate_id: 2
           crl_list:
-          - 9
-          - 9
+          - 3
+          - 3
           cname_access_only: true
           name: name
           is_mtls_enabled: true
@@ -593,7 +604,7 @@ components:
       type: object
   securitySchemes:
     tokenAuth:
-      description: |-
+      description: |
         You must inform a token to auth.
         Usage format: `Token <TOKEN>`
       in: header

@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * DomainData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-10T14:02:22.954763Z[GMT]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-11T12:32:59.809674Z[GMT]", comments = "Generator version: 7.4.0")
 public class DomainData {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -141,6 +141,10 @@ public class DomainData {
   public static final String SERIALIZED_NAME_MTLS_TRUSTED_CA_CERTIFICATE_ID = "mtls_trusted_ca_certificate_id";
   @SerializedName(SERIALIZED_NAME_MTLS_TRUSTED_CA_CERTIFICATE_ID)
   private Long mtlsTrustedCaCertificateId;
+
+  public static final String SERIALIZED_NAME_EDGE_FIREWALL_ID = "edge_firewall_id";
+  @SerializedName(SERIALIZED_NAME_EDGE_FIREWALL_ID)
+  private Long edgeFirewallId;
 
   /**
    * Gets or Sets mtlsVerification
@@ -386,6 +390,25 @@ public class DomainData {
   }
 
 
+  public DomainData edgeFirewallId(Long edgeFirewallId) {
+    this.edgeFirewallId = edgeFirewallId;
+    return this;
+  }
+
+   /**
+   * Get edgeFirewallId
+   * @return edgeFirewallId
+  **/
+  @javax.annotation.Nullable
+  public Long getEdgeFirewallId() {
+    return edgeFirewallId;
+  }
+
+  public void setEdgeFirewallId(Long edgeFirewallId) {
+    this.edgeFirewallId = edgeFirewallId;
+  }
+
+
   public DomainData mtlsVerification(MtlsVerificationEnum mtlsVerification) {
     this.mtlsVerification = mtlsVerification;
     return this;
@@ -451,6 +474,7 @@ public class DomainData {
         Objects.equals(this.environment, domainData.environment) &&
         Objects.equals(this.isMtlsEnabled, domainData.isMtlsEnabled) &&
         Objects.equals(this.mtlsTrustedCaCertificateId, domainData.mtlsTrustedCaCertificateId) &&
+        Objects.equals(this.edgeFirewallId, domainData.edgeFirewallId) &&
         Objects.equals(this.mtlsVerification, domainData.mtlsVerification) &&
         Objects.equals(this.crlList, domainData.crlList);
   }
@@ -461,7 +485,7 @@ public class DomainData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, cnames, cnameAccessOnly, isActive, edgeApplicationId, digitalCertificateId, environment, isMtlsEnabled, mtlsTrustedCaCertificateId, mtlsVerification, crlList);
+    return Objects.hash(name, cnames, cnameAccessOnly, isActive, edgeApplicationId, digitalCertificateId, environment, isMtlsEnabled, mtlsTrustedCaCertificateId, edgeFirewallId, mtlsVerification, crlList);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -484,6 +508,7 @@ public class DomainData {
     sb.append("    environment: ").append(toIndentedString(environment)).append("\n");
     sb.append("    isMtlsEnabled: ").append(toIndentedString(isMtlsEnabled)).append("\n");
     sb.append("    mtlsTrustedCaCertificateId: ").append(toIndentedString(mtlsTrustedCaCertificateId)).append("\n");
+    sb.append("    edgeFirewallId: ").append(toIndentedString(edgeFirewallId)).append("\n");
     sb.append("    mtlsVerification: ").append(toIndentedString(mtlsVerification)).append("\n");
     sb.append("    crlList: ").append(toIndentedString(crlList)).append("\n");
     sb.append("}");
@@ -517,6 +542,7 @@ public class DomainData {
     openapiFields.add("environment");
     openapiFields.add("is_mtls_enabled");
     openapiFields.add("mtls_trusted_ca_certificate_id");
+    openapiFields.add("edge_firewall_id");
     openapiFields.add("mtls_verification");
     openapiFields.add("crl_list");
 
