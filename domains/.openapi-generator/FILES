@@ -50,5 +50,3 @@ src/main/java/org/openapitools/client/model/DomainResponseWithResult.java
 src/main/java/org/openapitools/client/model/DomainResponseWithResults.java
 src/main/java/org/openapitools/client/model/PutDomainRequest.java
 src/main/java/org/openapitools/client/model/UpdateDomainRequest.java
-src/test/java/org/openapitools/client/model/DomainDataTest.java
-src/test/java/org/openapitools/client/model/DomainEntityTest.java
