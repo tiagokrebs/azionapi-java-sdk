@@ -74,7 +74,8 @@ paths:
       summary: /domains
       tags:
       - Domains
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
     post:
       description: It enables you to include a new domain into an account.
       operationId: createDomain
@@ -123,7 +124,8 @@ paths:
       tags:
       - Domains
       x-content-type: application/json; version=3
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
   /domains/{id}:
     delete:
       description: It enables you to delete a domain.
@@ -161,7 +163,8 @@ paths:
       summary: /domains/:id
       tags:
       - Domains
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       description: It returns details of a domain.
       operationId: getDomain
@@ -202,7 +205,8 @@ paths:
       summary: /domains/:id
       tags:
       - Domains
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
     patch:
       description: "It updates one or more fields in a Domain, preserving the value\
         \ of the fields not informed."
@@ -259,7 +263,8 @@ paths:
       tags:
       - Domains
       x-content-type: application/json; version=3
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
     put:
       description: |-
         It overwrites all fields of a domain, while preserving the id. Optional fields not filled in will be replaced by the default values.
@@ -318,7 +323,8 @@ paths:
       tags:
       - Domains
       x-content-type: application/json; version=3
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
 components:
   schemas:
     DomainData:
@@ -342,9 +348,7 @@ components:
           minimum: 1
           type: integer
         digital_certificate_id:
-          format: int64
-          nullable: true
-          type: integer
+          $ref: '#/components/schemas/DomainData_digital_certificate_id'
         environment:
           enum:
           - production
@@ -602,6 +606,15 @@ components:
       - results
       - schema_version
       type: object
+    DomainData_digital_certificate_id:
+      anyOf:
+      - format: int64
+        nullable: true
+        type: integer
+      - enum:
+        - lets_encrypt
+        nullable: true
+        type: string
   securitySchemes:
     tokenAuth:
       description: |

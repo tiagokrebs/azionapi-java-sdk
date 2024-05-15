@@ -12,7 +12,7 @@
 |**cnameAccessOnly** | **Boolean** |  |  [optional] |
 |**isActive** | **Boolean** |  |  [optional] |
 |**edgeApplicationId** | **Long** |  |  [optional] |
-|**digitalCertificateId** | **Long** |  |  [optional] |
+|**digitalCertificateId** | [**DomainDataDigitalCertificateId**](DomainDataDigitalCertificateId.md) |  |  [optional] |
 |**environment** | [**EnvironmentEnum**](#EnvironmentEnum) |  |  [optional] |
 |**isMtlsEnabled** | **Boolean** |  |  [optional] |
 |**mtlsTrustedCaCertificateId** | **Long** |  |  [optional] |
