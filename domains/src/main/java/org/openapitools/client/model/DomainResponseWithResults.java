@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.DomainEntity;
+import org.openapitools.client.model.DomainEntityResponse;
 import org.openapitools.client.model.DomainLinks;
 
 import com.google.gson.Gson;
@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * DomainResponseWithResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-17T17:14:08.327853Z[GMT]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-17T18:47:35.947192Z[GMT]", comments = "Generator version: 7.5.0")
 public class DomainResponseWithResults {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
@@ -73,7 +73,7 @@ public class DomainResponseWithResults {
 
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
-  private List<DomainEntity> results = new ArrayList<>();
+  private List<DomainEntityResponse> results = new ArrayList<>();
 
   public DomainResponseWithResults() {
   }
@@ -154,12 +154,12 @@ public class DomainResponseWithResults {
   }
 
 
-  public DomainResponseWithResults results(List<DomainEntity> results) {
+  public DomainResponseWithResults results(List<DomainEntityResponse> results) {
     this.results = results;
     return this;
   }
 
-  public DomainResponseWithResults addResultsItem(DomainEntity resultsItem) {
+  public DomainResponseWithResults addResultsItem(DomainEntityResponse resultsItem) {
     if (this.results == null) {
       this.results = new ArrayList<>();
     }
@@ -172,11 +172,11 @@ public class DomainResponseWithResults {
    * @return results
   **/
   @javax.annotation.Nonnull
-  public List<DomainEntity> getResults() {
+  public List<DomainEntityResponse> getResults() {
     return results;
   }
 
-  public void setResults(List<DomainEntity> results) {
+  public void setResults(List<DomainEntityResponse> results) {
     this.results = results;
   }
 
@@ -287,7 +287,7 @@ public class DomainResponseWithResults {
       JsonArray jsonArrayresults = jsonObj.getAsJsonArray("results");
       // validate the required field `results` (array)
       for (int i = 0; i < jsonArrayresults.size(); i++) {
-        DomainEntity.validateJsonElement(jsonArrayresults.get(i));
+        DomainEntityResponse.validateJsonElement(jsonArrayresults.get(i));
       };
   }
 
