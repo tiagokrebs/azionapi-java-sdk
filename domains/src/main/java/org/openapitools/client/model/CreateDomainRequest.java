@@ -23,7 +23,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.DomainDataDigitalCertificateId;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -53,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * CreateDomainRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-15T12:58:40.845540Z[GMT]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-17T17:14:08.327853Z[GMT]", comments = "Generator version: 7.5.0")
 public class CreateDomainRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -77,7 +76,7 @@ public class CreateDomainRequest {
 
   public static final String SERIALIZED_NAME_DIGITAL_CERTIFICATE_ID = "digital_certificate_id";
   @SerializedName(SERIALIZED_NAME_DIGITAL_CERTIFICATE_ID)
-  private DomainDataDigitalCertificateId digitalCertificateId;
+  private String digitalCertificateId;
 
   /**
    * Gets or Sets environment
@@ -315,7 +314,7 @@ public class CreateDomainRequest {
   }
 
 
-  public CreateDomainRequest digitalCertificateId(DomainDataDigitalCertificateId digitalCertificateId) {
+  public CreateDomainRequest digitalCertificateId(String digitalCertificateId) {
     this.digitalCertificateId = digitalCertificateId;
     return this;
   }
@@ -325,11 +324,11 @@ public class CreateDomainRequest {
    * @return digitalCertificateId
   **/
   @javax.annotation.Nullable
-  public DomainDataDigitalCertificateId getDigitalCertificateId() {
+  public String getDigitalCertificateId() {
     return digitalCertificateId;
   }
 
-  public void setDigitalCertificateId(DomainDataDigitalCertificateId digitalCertificateId) {
+  public void setDigitalCertificateId(String digitalCertificateId) {
     this.digitalCertificateId = digitalCertificateId;
   }
 
@@ -591,9 +590,8 @@ public class CreateDomainRequest {
       } else if (!jsonObj.get("cnames").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `cnames` to be an array in the JSON string but got `%s`", jsonObj.get("cnames").toString()));
       }
-      // validate the optional field `digital_certificate_id`
-      if (jsonObj.get("digital_certificate_id") != null && !jsonObj.get("digital_certificate_id").isJsonNull()) {
-        DomainDataDigitalCertificateId.validateJsonElement(jsonObj.get("digital_certificate_id"));
+      if ((jsonObj.get("digital_certificate_id") != null && !jsonObj.get("digital_certificate_id").isJsonNull()) && !jsonObj.get("digital_certificate_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `digital_certificate_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("digital_certificate_id").toString()));
       }
       if ((jsonObj.get("environment") != null && !jsonObj.get("environment").isJsonNull()) && !jsonObj.get("environment").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `environment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environment").toString()));
