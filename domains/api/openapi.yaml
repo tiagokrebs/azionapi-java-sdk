@@ -379,6 +379,58 @@ components:
           nullable: true
           type: array
       type: object
+    DomainDataResponse:
+      properties:
+        name:
+          maxLength: 100
+          minLength: 1
+          pattern: "[a-zA-Z0-9$%^&*()-+=\\[\\]{};:?><,|/]+"
+          type: string
+        cnames:
+          items:
+            type: string
+          type: array
+        cname_access_only:
+          type: boolean
+        is_active:
+          type: boolean
+        edge_application_id:
+          format: int64
+          maximum: 10000000000000000000
+          minimum: 1
+          type: integer
+        digital_certificate_id:
+          format: int64
+          maximum: 10000000000000000000
+          minimum: 1
+          type: integer
+        environment:
+          enum:
+          - production
+          - preview
+          type: string
+        is_mtls_enabled:
+          type: boolean
+        mtls_trusted_ca_certificate_id:
+          format: int64
+          nullable: true
+          type: integer
+        edge_firewall_id:
+          format: int64
+          nullable: true
+          type: integer
+        mtls_verification:
+          enum:
+          - enforce
+          - permissive
+          type: string
+        crl_list:
+          items:
+            format: int64
+            type: integer
+          nullable: true
+          type: array
+      type: object
     DomainEntity:
       allOf:
       - properties:
@@ -389,9 +441,19 @@ components:
             type: string
         type: object
       - $ref: '#/components/schemas/DomainData'
+    DomainEntityResponse:
+      allOf:
+      - properties:
+          id:
+            format: int64
+            type: integer
+          domain_name:
+            type: string
+        type: object
+      - $ref: '#/components/schemas/DomainDataResponse'
       example:
         edge_application_id: 5637376656633328640
-        edge_firewall_id: 7
+        edge_firewall_id: 9
         is_active: true
         cnames:
         - cnames
@@ -399,11 +461,11 @@ components:
         mtls_verification: enforce
         domain_name: domain_name
         environment: production
-        mtls_trusted_ca_certificate_id: 2
-        digital_certificate_id: digital_certificate_id
+        mtls_trusted_ca_certificate_id: 7
+        digital_certificate_id: 2302135886934765312
         crl_list:
-        - 9
-        - 9
+        - 3
+        - 3
         cname_access_only: true
         name: name
         is_mtls_enabled: true
@@ -505,7 +567,7 @@ components:
         total_pages: 6
         results:
         - edge_application_id: 5637376656633328640
-          edge_firewall_id: 7
+          edge_firewall_id: 9
           is_active: true
           cnames:
           - cnames
@@ -513,17 +575,17 @@ components:
           mtls_verification: enforce
           domain_name: domain_name
           environment: production
-          mtls_trusted_ca_certificate_id: 2
-          digital_certificate_id: digital_certificate_id
+          mtls_trusted_ca_certificate_id: 7
+          digital_certificate_id: 2302135886934765312
           crl_list:
-          - 9
-          - 9
+          - 3
+          - 3
           cname_access_only: true
           name: name
           is_mtls_enabled: true
           id: 5
         - edge_application_id: 5637376656633328640
-          edge_firewall_id: 7
+          edge_firewall_id: 9
           is_active: true
           cnames:
           - cnames
@@ -531,11 +593,11 @@ components:
           mtls_verification: enforce
           domain_name: domain_name
           environment: production
-          mtls_trusted_ca_certificate_id: 2
-          digital_certificate_id: digital_certificate_id
+          mtls_trusted_ca_certificate_id: 7
+          digital_certificate_id: 2302135886934765312
           crl_list:
-          - 9
-          - 9
+          - 3
+          - 3
           cname_access_only: true
           name: name
           is_mtls_enabled: true
@@ -554,7 +616,7 @@ components:
           $ref: '#/components/schemas/DomainLinks'
         results:
           items:
-            $ref: '#/components/schemas/DomainEntity'
+            $ref: '#/components/schemas/DomainEntityResponse'
           type: array
       required:
       - count
@@ -574,7 +636,7 @@ components:
         total_pages: 6
         results:
           edge_application_id: 5637376656633328640
-          edge_firewall_id: 7
+          edge_firewall_id: 9
           is_active: true
           cnames:
           - cnames
@@ -582,11 +644,11 @@ components:
           mtls_verification: enforce
           domain_name: domain_name
           environment: production
-          mtls_trusted_ca_certificate_id: 2
-          digital_certificate_id: digital_certificate_id
+          mtls_trusted_ca_certificate_id: 7
+          digital_certificate_id: 2302135886934765312
           crl_list:
-          - 9
-          - 9
+          - 3
+          - 3
           cname_access_only: true
           name: name
           is_mtls_enabled: true
@@ -598,7 +660,7 @@ components:
         links:
           $ref: '#/components/schemas/DomainLinks'
         results:
-          $ref: '#/components/schemas/DomainEntity'
+          $ref: '#/components/schemas/DomainEntityResponse'
         total_pages:
           format: int64
           type: integer

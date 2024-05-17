@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * CreateDomainRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-17T17:14:08.327853Z[GMT]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-17T18:47:35.947192Z[GMT]", comments = "Generator version: 7.5.0")
 public class CreateDomainRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

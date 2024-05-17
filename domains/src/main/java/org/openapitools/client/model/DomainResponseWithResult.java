@@ -21,7 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.DomainEntity;
+import org.openapitools.client.model.DomainEntityResponse;
 import org.openapitools.client.model.DomainLinks;
 
 import com.google.gson.Gson;
@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * DomainResponseWithResult
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-17T17:14:08.327853Z[GMT]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-17T18:47:35.947192Z[GMT]", comments = "Generator version: 7.5.0")
 public class DomainResponseWithResult {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
@@ -63,7 +63,7 @@ public class DomainResponseWithResult {
 
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
-  private DomainEntity results;
+  private DomainEntityResponse results;
 
   public static final String SERIALIZED_NAME_TOTAL_PAGES = "total_pages";
   @SerializedName(SERIALIZED_NAME_TOTAL_PAGES)
@@ -114,7 +114,7 @@ public class DomainResponseWithResult {
   }
 
 
-  public DomainResponseWithResult results(DomainEntity results) {
+  public DomainResponseWithResult results(DomainEntityResponse results) {
     this.results = results;
     return this;
   }
@@ -124,11 +124,11 @@ public class DomainResponseWithResult {
    * @return results
   **/
   @javax.annotation.Nonnull
-  public DomainEntity getResults() {
+  public DomainEntityResponse getResults() {
     return results;
   }
 
-  public void setResults(DomainEntity results) {
+  public void setResults(DomainEntityResponse results) {
     this.results = results;
   }
 
@@ -269,7 +269,7 @@ public class DomainResponseWithResult {
         DomainLinks.validateJsonElement(jsonObj.get("links"));
       }
       // validate the required field `results`
-      DomainEntity.validateJsonElement(jsonObj.get("results"));
+      DomainEntityResponse.validateJsonElement(jsonObj.get("results"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

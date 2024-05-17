@@ -50,10 +50,10 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * UpdateDomainRequest
+ * DomainEntityResponse
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-17T18:47:35.947192Z[GMT]", comments = "Generator version: 7.5.0")
-public class UpdateDomainRequest {
+public class DomainEntityResponse {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
@@ -76,7 +76,7 @@ public class UpdateDomainRequest {
 
   public static final String SERIALIZED_NAME_DIGITAL_CERTIFICATE_ID = "digital_certificate_id";
   @SerializedName(SERIALIZED_NAME_DIGITAL_CERTIFICATE_ID)
-  private String digitalCertificateId;
+  private Long digitalCertificateId;
 
   /**
    * Gets or Sets environment
@@ -206,10 +206,18 @@ public class UpdateDomainRequest {
   @SerializedName(SERIALIZED_NAME_CRL_LIST)
   private List<Long> crlList;
 
-  public UpdateDomainRequest() {
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  private Long id;
+
+  public static final String SERIALIZED_NAME_DOMAIN_NAME = "domain_name";
+  @SerializedName(SERIALIZED_NAME_DOMAIN_NAME)
+  private String domainName;
+
+  public DomainEntityResponse() {
   }
 
-  public UpdateDomainRequest name(String name) {
+  public DomainEntityResponse name(String name) {
     this.name = name;
     return this;
   }
@@ -228,12 +236,12 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest cnames(List<String> cnames) {
+  public DomainEntityResponse cnames(List<String> cnames) {
     this.cnames = cnames;
     return this;
   }
 
-  public UpdateDomainRequest addCnamesItem(String cnamesItem) {
+  public DomainEntityResponse addCnamesItem(String cnamesItem) {
     if (this.cnames == null) {
       this.cnames = new ArrayList<>();
     }
@@ -255,7 +263,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest cnameAccessOnly(Boolean cnameAccessOnly) {
+  public DomainEntityResponse cnameAccessOnly(Boolean cnameAccessOnly) {
     this.cnameAccessOnly = cnameAccessOnly;
     return this;
   }
@@ -274,7 +282,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest isActive(Boolean isActive) {
+  public DomainEntityResponse isActive(Boolean isActive) {
     this.isActive = isActive;
     return this;
   }
@@ -293,7 +301,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest edgeApplicationId(Long edgeApplicationId) {
+  public DomainEntityResponse edgeApplicationId(Long edgeApplicationId) {
     this.edgeApplicationId = edgeApplicationId;
     return this;
   }
@@ -314,26 +322,28 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest digitalCertificateId(String digitalCertificateId) {
+  public DomainEntityResponse digitalCertificateId(Long digitalCertificateId) {
     this.digitalCertificateId = digitalCertificateId;
     return this;
   }
 
    /**
    * Get digitalCertificateId
+   * minimum: 1
+   * maximum: -8446744073709551616
    * @return digitalCertificateId
   **/
   @javax.annotation.Nullable
-  public String getDigitalCertificateId() {
+  public Long getDigitalCertificateId() {
     return digitalCertificateId;
   }
 
-  public void setDigitalCertificateId(String digitalCertificateId) {
+  public void setDigitalCertificateId(Long digitalCertificateId) {
     this.digitalCertificateId = digitalCertificateId;
   }
 
 
-  public UpdateDomainRequest environment(EnvironmentEnum environment) {
+  public DomainEntityResponse environment(EnvironmentEnum environment) {
     this.environment = environment;
     return this;
   }
@@ -352,7 +362,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest isMtlsEnabled(Boolean isMtlsEnabled) {
+  public DomainEntityResponse isMtlsEnabled(Boolean isMtlsEnabled) {
     this.isMtlsEnabled = isMtlsEnabled;
     return this;
   }
@@ -371,7 +381,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest mtlsTrustedCaCertificateId(Long mtlsTrustedCaCertificateId) {
+  public DomainEntityResponse mtlsTrustedCaCertificateId(Long mtlsTrustedCaCertificateId) {
     this.mtlsTrustedCaCertificateId = mtlsTrustedCaCertificateId;
     return this;
   }
@@ -390,7 +400,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest edgeFirewallId(Long edgeFirewallId) {
+  public DomainEntityResponse edgeFirewallId(Long edgeFirewallId) {
     this.edgeFirewallId = edgeFirewallId;
     return this;
   }
@@ -409,7 +419,7 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest mtlsVerification(MtlsVerificationEnum mtlsVerification) {
+  public DomainEntityResponse mtlsVerification(MtlsVerificationEnum mtlsVerification) {
     this.mtlsVerification = mtlsVerification;
     return this;
   }
@@ -428,12 +438,12 @@ public class UpdateDomainRequest {
   }
 
 
-  public UpdateDomainRequest crlList(List<Long> crlList) {
+  public DomainEntityResponse crlList(List<Long> crlList) {
     this.crlList = crlList;
     return this;
   }
 
-  public UpdateDomainRequest addCrlListItem(Long crlListItem) {
+  public DomainEntityResponse addCrlListItem(Long crlListItem) {
     if (this.crlList == null) {
       this.crlList = new ArrayList<>();
     }
@@ -455,6 +465,44 @@ public class UpdateDomainRequest {
   }
 
 
+  public DomainEntityResponse id(Long id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Get id
+   * @return id
+  **/
+  @javax.annotation.Nullable
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+
+  public DomainEntityResponse domainName(String domainName) {
+    this.domainName = domainName;
+    return this;
+  }
+
+   /**
+   * Get domainName
+   * @return domainName
+  **/
+  @javax.annotation.Nullable
+  public String getDomainName() {
+    return domainName;
+  }
+
+  public void setDomainName(String domainName) {
+    this.domainName = domainName;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -464,19 +512,21 @@ public class UpdateDomainRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UpdateDomainRequest updateDomainRequest = (UpdateDomainRequest) o;
-    return Objects.equals(this.name, updateDomainRequest.name) &&
-        Objects.equals(this.cnames, updateDomainRequest.cnames) &&
-        Objects.equals(this.cnameAccessOnly, updateDomainRequest.cnameAccessOnly) &&
-        Objects.equals(this.isActive, updateDomainRequest.isActive) &&
-        Objects.equals(this.edgeApplicationId, updateDomainRequest.edgeApplicationId) &&
-        Objects.equals(this.digitalCertificateId, updateDomainRequest.digitalCertificateId) &&
-        Objects.equals(this.environment, updateDomainRequest.environment) &&
-        Objects.equals(this.isMtlsEnabled, updateDomainRequest.isMtlsEnabled) &&
-        Objects.equals(this.mtlsTrustedCaCertificateId, updateDomainRequest.mtlsTrustedCaCertificateId) &&
-        Objects.equals(this.edgeFirewallId, updateDomainRequest.edgeFirewallId) &&
-        Objects.equals(this.mtlsVerification, updateDomainRequest.mtlsVerification) &&
-        Objects.equals(this.crlList, updateDomainRequest.crlList);
+    DomainEntityResponse domainEntityResponse = (DomainEntityResponse) o;
+    return Objects.equals(this.name, domainEntityResponse.name) &&
+        Objects.equals(this.cnames, domainEntityResponse.cnames) &&
+        Objects.equals(this.cnameAccessOnly, domainEntityResponse.cnameAccessOnly) &&
+        Objects.equals(this.isActive, domainEntityResponse.isActive) &&
+        Objects.equals(this.edgeApplicationId, domainEntityResponse.edgeApplicationId) &&
+        Objects.equals(this.digitalCertificateId, domainEntityResponse.digitalCertificateId) &&
+        Objects.equals(this.environment, domainEntityResponse.environment) &&
+        Objects.equals(this.isMtlsEnabled, domainEntityResponse.isMtlsEnabled) &&
+        Objects.equals(this.mtlsTrustedCaCertificateId, domainEntityResponse.mtlsTrustedCaCertificateId) &&
+        Objects.equals(this.edgeFirewallId, domainEntityResponse.edgeFirewallId) &&
+        Objects.equals(this.mtlsVerification, domainEntityResponse.mtlsVerification) &&
+        Objects.equals(this.crlList, domainEntityResponse.crlList) &&
+        Objects.equals(this.id, domainEntityResponse.id) &&
+        Objects.equals(this.domainName, domainEntityResponse.domainName);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -485,7 +535,7 @@ public class UpdateDomainRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, cnames, cnameAccessOnly, isActive, edgeApplicationId, digitalCertificateId, environment, isMtlsEnabled, mtlsTrustedCaCertificateId, edgeFirewallId, mtlsVerification, crlList);
+    return Objects.hash(name, cnames, cnameAccessOnly, isActive, edgeApplicationId, digitalCertificateId, environment, isMtlsEnabled, mtlsTrustedCaCertificateId, edgeFirewallId, mtlsVerification, crlList, id, domainName);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -498,7 +548,7 @@ public class UpdateDomainRequest {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UpdateDomainRequest {\n");
+    sb.append("class DomainEntityResponse {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    cnames: ").append(toIndentedString(cnames)).append("\n");
     sb.append("    cnameAccessOnly: ").append(toIndentedString(cnameAccessOnly)).append("\n");
@@ -511,6 +561,8 @@ public class UpdateDomainRequest {
     sb.append("    edgeFirewallId: ").append(toIndentedString(edgeFirewallId)).append("\n");
     sb.append("    mtlsVerification: ").append(toIndentedString(mtlsVerification)).append("\n");
     sb.append("    crlList: ").append(toIndentedString(crlList)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -545,6 +597,8 @@ public class UpdateDomainRequest {
     openapiFields.add("edge_firewall_id");
     openapiFields.add("mtls_verification");
     openapiFields.add("crl_list");
+    openapiFields.add("id");
+    openapiFields.add("domain_name");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -554,20 +608,20 @@ public class UpdateDomainRequest {
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to UpdateDomainRequest
+  * @throws IOException if the JSON Element is invalid with respect to DomainEntityResponse
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!UpdateDomainRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateDomainRequest is not found in the empty JSON string", UpdateDomainRequest.openapiRequiredFields.toString()));
+        if (!DomainEntityResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in DomainEntityResponse is not found in the empty JSON string", DomainEntityResponse.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!UpdateDomainRequest.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdateDomainRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!DomainEntityResponse.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `DomainEntityResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -577,9 +631,6 @@ public class UpdateDomainRequest {
       // ensure the optional json data is an array if present
       if (jsonObj.get("cnames") != null && !jsonObj.get("cnames").isJsonNull() && !jsonObj.get("cnames").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `cnames` to be an array in the JSON string but got `%s`", jsonObj.get("cnames").toString()));
-      }
-      if ((jsonObj.get("digital_certificate_id") != null && !jsonObj.get("digital_certificate_id").isJsonNull()) && !jsonObj.get("digital_certificate_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `digital_certificate_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("digital_certificate_id").toString()));
       }
       if ((jsonObj.get("environment") != null && !jsonObj.get("environment").isJsonNull()) && !jsonObj.get("environment").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `environment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environment").toString()));
@@ -599,28 +650,31 @@ public class UpdateDomainRequest {
       if (jsonObj.get("crl_list") != null && !jsonObj.get("crl_list").isJsonNull() && !jsonObj.get("crl_list").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `crl_list` to be an array in the JSON string but got `%s`", jsonObj.get("crl_list").toString()));
       }
+      if ((jsonObj.get("domain_name") != null && !jsonObj.get("domain_name").isJsonNull()) && !jsonObj.get("domain_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `domain_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("domain_name").toString()));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UpdateDomainRequest.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UpdateDomainRequest' and its subtypes
+       if (!DomainEntityResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DomainEntityResponse' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UpdateDomainRequest> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateDomainRequest.class));
+       final TypeAdapter<DomainEntityResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DomainEntityResponse.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<UpdateDomainRequest>() {
+       return (TypeAdapter<T>) new TypeAdapter<DomainEntityResponse>() {
            @Override
-           public void write(JsonWriter out, UpdateDomainRequest value) throws IOException {
+           public void write(JsonWriter out, DomainEntityResponse value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public UpdateDomainRequest read(JsonReader in) throws IOException {
+           public DomainEntityResponse read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -631,18 +685,18 @@ public class UpdateDomainRequest {
   }
 
  /**
-  * Create an instance of UpdateDomainRequest given an JSON string
+  * Create an instance of DomainEntityResponse given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of UpdateDomainRequest
-  * @throws IOException if the JSON string is invalid with respect to UpdateDomainRequest
+  * @return An instance of DomainEntityResponse
+  * @throws IOException if the JSON string is invalid with respect to DomainEntityResponse
   */
-  public static UpdateDomainRequest fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UpdateDomainRequest.class);
+  public static DomainEntityResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DomainEntityResponse.class);
   }
 
  /**
-  * Convert an instance of UpdateDomainRequest to an JSON string
+  * Convert an instance of DomainEntityResponse to an JSON string
   *
   * @return JSON string
   */
