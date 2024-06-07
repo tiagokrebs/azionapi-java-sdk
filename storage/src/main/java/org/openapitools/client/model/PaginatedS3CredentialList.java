@@ -24,7 +24,7 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.Bucket;
+import org.openapitools.client.model.S3Credential;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -52,10 +52,10 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * PaginatedBucketList
+ * PaginatedS3CredentialList
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-07T13:18:40.529196Z[GMT]", comments = "Generator version: 7.6.0")
-public class PaginatedBucketList {
+public class PaginatedS3CredentialList {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
   private Integer count;
@@ -70,18 +70,20 @@ public class PaginatedBucketList {
 
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
-  private List<Bucket> results = new ArrayList<>();
+  private List<S3Credential> results = new ArrayList<>();
 
-  public PaginatedBucketList() {
+  public PaginatedS3CredentialList() {
   }
 
-  public PaginatedBucketList count(Integer count) {
+  public PaginatedS3CredentialList count(Integer count) {
     this.count = count;
     return this;
   }
 
    /**
    * Get count
+   * minimum: 0
+   * maximum: 1000
    * @return count
   **/
   @javax.annotation.Nullable
@@ -94,7 +96,7 @@ public class PaginatedBucketList {
   }
 
 
-  public PaginatedBucketList next(URI next) {
+  public PaginatedS3CredentialList next(URI next) {
     this.next = next;
     return this;
   }
@@ -113,7 +115,7 @@ public class PaginatedBucketList {
   }
 
 
-  public PaginatedBucketList previous(URI previous) {
+  public PaginatedS3CredentialList previous(URI previous) {
     this.previous = previous;
     return this;
   }
@@ -132,12 +134,12 @@ public class PaginatedBucketList {
   }
 
 
-  public PaginatedBucketList results(List<Bucket> results) {
+  public PaginatedS3CredentialList results(List<S3Credential> results) {
     this.results = results;
     return this;
   }
 
-  public PaginatedBucketList addResultsItem(Bucket resultsItem) {
+  public PaginatedS3CredentialList addResultsItem(S3Credential resultsItem) {
     if (this.results == null) {
       this.results = new ArrayList<>();
     }
@@ -150,11 +152,11 @@ public class PaginatedBucketList {
    * @return results
   **/
   @javax.annotation.Nullable
-  public List<Bucket> getResults() {
+  public List<S3Credential> getResults() {
     return results;
   }
 
-  public void setResults(List<Bucket> results) {
+  public void setResults(List<S3Credential> results) {
     this.results = results;
   }
 
@@ -168,11 +170,11 @@ public class PaginatedBucketList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PaginatedBucketList paginatedBucketList = (PaginatedBucketList) o;
-    return Objects.equals(this.count, paginatedBucketList.count) &&
-        Objects.equals(this.next, paginatedBucketList.next) &&
-        Objects.equals(this.previous, paginatedBucketList.previous) &&
-        Objects.equals(this.results, paginatedBucketList.results);
+    PaginatedS3CredentialList paginatedS3CredentialList = (PaginatedS3CredentialList) o;
+    return Objects.equals(this.count, paginatedS3CredentialList.count) &&
+        Objects.equals(this.next, paginatedS3CredentialList.next) &&
+        Objects.equals(this.previous, paginatedS3CredentialList.previous) &&
+        Objects.equals(this.results, paginatedS3CredentialList.results);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -194,7 +196,7 @@ public class PaginatedBucketList {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PaginatedBucketList {\n");
+    sb.append("class PaginatedS3CredentialList {\n");
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
     sb.append("    next: ").append(toIndentedString(next)).append("\n");
     sb.append("    previous: ").append(toIndentedString(previous)).append("\n");
@@ -234,20 +236,20 @@ public class PaginatedBucketList {
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to PaginatedBucketList
+  * @throws IOException if the JSON Element is invalid with respect to PaginatedS3CredentialList
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!PaginatedBucketList.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PaginatedBucketList is not found in the empty JSON string", PaginatedBucketList.openapiRequiredFields.toString()));
+        if (!PaginatedS3CredentialList.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in PaginatedS3CredentialList is not found in the empty JSON string", PaginatedS3CredentialList.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!PaginatedBucketList.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `PaginatedBucketList` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!PaginatedS3CredentialList.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `PaginatedS3CredentialList` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -267,7 +269,7 @@ public class PaginatedBucketList {
 
           // validate the optional field `results` (array)
           for (int i = 0; i < jsonArrayresults.size(); i++) {
-            Bucket.validateJsonElement(jsonArrayresults.get(i));
+            S3Credential.validateJsonElement(jsonArrayresults.get(i));
           };
         }
       }
@@ -277,22 +279,22 @@ public class PaginatedBucketList {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!PaginatedBucketList.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'PaginatedBucketList' and its subtypes
+       if (!PaginatedS3CredentialList.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'PaginatedS3CredentialList' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<PaginatedBucketList> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(PaginatedBucketList.class));
+       final TypeAdapter<PaginatedS3CredentialList> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(PaginatedS3CredentialList.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<PaginatedBucketList>() {
+       return (TypeAdapter<T>) new TypeAdapter<PaginatedS3CredentialList>() {
            @Override
-           public void write(JsonWriter out, PaginatedBucketList value) throws IOException {
+           public void write(JsonWriter out, PaginatedS3CredentialList value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public PaginatedBucketList read(JsonReader in) throws IOException {
+           public PaginatedS3CredentialList read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -303,18 +305,18 @@ public class PaginatedBucketList {
   }
 
  /**
-  * Create an instance of PaginatedBucketList given an JSON string
+  * Create an instance of PaginatedS3CredentialList given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of PaginatedBucketList
-  * @throws IOException if the JSON string is invalid with respect to PaginatedBucketList
+  * @return An instance of PaginatedS3CredentialList
+  * @throws IOException if the JSON string is invalid with respect to PaginatedS3CredentialList
   */
-  public static PaginatedBucketList fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, PaginatedBucketList.class);
+  public static PaginatedS3CredentialList fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, PaginatedS3CredentialList.class);
   }
 
  /**
-  * Convert an instance of PaginatedBucketList to an JSON string
+  * Convert an instance of PaginatedS3CredentialList to an JSON string
   *
   * @return JSON string
   */

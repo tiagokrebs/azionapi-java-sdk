@@ -54,7 +54,7 @@ import org.openapitools.client.JSON;
 /**
  * PaginatedBucketObjectList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-27T13:50:44.870784Z[GMT]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-07T13:18:40.529196Z[GMT]", comments = "Generator version: 7.6.0")
 public class PaginatedBucketObjectList {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
@@ -74,7 +74,7 @@ public class PaginatedBucketObjectList {
 
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
-  private List<BucketObject> results;
+  private List<BucketObject> results = new ArrayList<>();
 
   public PaginatedBucketObjectList() {
   }

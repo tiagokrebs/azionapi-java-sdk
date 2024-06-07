@@ -32,7 +32,10 @@ import org.openapitools.client.model.BucketUpdate;
 import java.io.File;
 import org.openapitools.client.model.PaginatedBucketList;
 import org.openapitools.client.model.PaginatedBucketObjectList;
+import org.openapitools.client.model.PaginatedS3CredentialList;
 import org.openapitools.client.model.ResponseBucket;
+import org.openapitools.client.model.ResponseS3Credential;
+import org.openapitools.client.model.S3CredentialCreate;
 import org.openapitools.client.model.SuccessBucketOperation;
 import org.openapitools.client.model.SuccessObjectOperation;
 
@@ -1085,7 +1088,9 @@ public class StorageApi {
             "application/pdf",
             "application/javascript",
             "text/css",
-            "application/octet-stream"
+            "application/octet-stream",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -1514,6 +1519,616 @@ public class StorageApi {
 
         okhttp3.Call localVarCall = storageApiBucketsPartialUpdateValidateBeforeCall(name, bucketUpdate, _callback);
         Type localVarReturnType = new TypeToken<ResponseBucket>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for storageApiS3CredentialsByAccessKey
+     * @param s3CredentialAccessKey  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 406 </td><td> Not Acceptable </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call storageApiS3CredentialsByAccessKeyCall(String s3CredentialAccessKey, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v4/storage/s3-credentials/{s3_credential_access_key}"
+            .replace("{" + "s3_credential_access_key" + "}", localVarApiClient.escapeString(s3CredentialAccessKey.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "tokenAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call storageApiS3CredentialsByAccessKeyValidateBeforeCall(String s3CredentialAccessKey, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 's3CredentialAccessKey' is set
+        if (s3CredentialAccessKey == null) {
+            throw new ApiException("Missing the required parameter 's3CredentialAccessKey' when calling storageApiS3CredentialsByAccessKey(Async)");
+        }
+
+        return storageApiS3CredentialsByAccessKeyCall(s3CredentialAccessKey, _callback);
+
+    }
+
+    /**
+     * get by s3 credentials by access key
+     * 
+     * @param s3CredentialAccessKey  (required)
+     * @return ResponseS3Credential
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 406 </td><td> Not Acceptable </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+     </table>
+     */
+    public ResponseS3Credential storageApiS3CredentialsByAccessKey(String s3CredentialAccessKey) throws ApiException {
+        ApiResponse<ResponseS3Credential> localVarResp = storageApiS3CredentialsByAccessKeyWithHttpInfo(s3CredentialAccessKey);
+        return localVarResp.getData();
+    }
+
+    /**
+     * get by s3 credentials by access key
+     * 
+     * @param s3CredentialAccessKey  (required)
+     * @return ApiResponse&lt;ResponseS3Credential&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 406 </td><td> Not Acceptable </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ResponseS3Credential> storageApiS3CredentialsByAccessKeyWithHttpInfo(String s3CredentialAccessKey) throws ApiException {
+        okhttp3.Call localVarCall = storageApiS3CredentialsByAccessKeyValidateBeforeCall(s3CredentialAccessKey, null);
+        Type localVarReturnType = new TypeToken<ResponseS3Credential>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * get by s3 credentials by access key (asynchronously)
+     * 
+     * @param s3CredentialAccessKey  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 406 </td><td> Not Acceptable </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call storageApiS3CredentialsByAccessKeyAsync(String s3CredentialAccessKey, final ApiCallback<ResponseS3Credential> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = storageApiS3CredentialsByAccessKeyValidateBeforeCall(s3CredentialAccessKey, _callback);
+        Type localVarReturnType = new TypeToken<ResponseS3Credential>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for storageApiS3CredentialsCreate
+     * @param s3CredentialCreate  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 406 </td><td> Not Acceptable </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call storageApiS3CredentialsCreateCall(S3CredentialCreate s3CredentialCreate, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = s3CredentialCreate;
+
+        // create path and map variables
+        String localVarPath = "/v4/storage/s3-credentials";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "tokenAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call storageApiS3CredentialsCreateValidateBeforeCall(S3CredentialCreate s3CredentialCreate, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 's3CredentialCreate' is set
+        if (s3CredentialCreate == null) {
+            throw new ApiException("Missing the required parameter 's3CredentialCreate' when calling storageApiS3CredentialsCreate(Async)");
+        }
+
+        return storageApiS3CredentialsCreateCall(s3CredentialCreate, _callback);
+
+    }
+
+    /**
+     * create s3 credentials
+     * 
+     * @param s3CredentialCreate  (required)
+     * @return ResponseS3Credential
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 406 </td><td> Not Acceptable </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+     </table>
+     */
+    public ResponseS3Credential storageApiS3CredentialsCreate(S3CredentialCreate s3CredentialCreate) throws ApiException {
+        ApiResponse<ResponseS3Credential> localVarResp = storageApiS3CredentialsCreateWithHttpInfo(s3CredentialCreate);
+        return localVarResp.getData();
+    }
+
+    /**
+     * create s3 credentials
+     * 
+     * @param s3CredentialCreate  (required)
+     * @return ApiResponse&lt;ResponseS3Credential&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 406 </td><td> Not Acceptable </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ResponseS3Credential> storageApiS3CredentialsCreateWithHttpInfo(S3CredentialCreate s3CredentialCreate) throws ApiException {
+        okhttp3.Call localVarCall = storageApiS3CredentialsCreateValidateBeforeCall(s3CredentialCreate, null);
+        Type localVarReturnType = new TypeToken<ResponseS3Credential>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * create s3 credentials (asynchronously)
+     * 
+     * @param s3CredentialCreate  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 406 </td><td> Not Acceptable </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call storageApiS3CredentialsCreateAsync(S3CredentialCreate s3CredentialCreate, final ApiCallback<ResponseS3Credential> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = storageApiS3CredentialsCreateValidateBeforeCall(s3CredentialCreate, _callback);
+        Type localVarReturnType = new TypeToken<ResponseS3Credential>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for storageApiS3CredentialsDelete
+     * @param s3CredentialAccessKey  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 406 </td><td> Not Acceptable </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call storageApiS3CredentialsDeleteCall(String s3CredentialAccessKey, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v4/storage/s3-credentials/{s3_credential_access_key}"
+            .replace("{" + "s3_credential_access_key" + "}", localVarApiClient.escapeString(s3CredentialAccessKey.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "tokenAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call storageApiS3CredentialsDeleteValidateBeforeCall(String s3CredentialAccessKey, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 's3CredentialAccessKey' is set
+        if (s3CredentialAccessKey == null) {
+            throw new ApiException("Missing the required parameter 's3CredentialAccessKey' when calling storageApiS3CredentialsDelete(Async)");
+        }
+
+        return storageApiS3CredentialsDeleteCall(s3CredentialAccessKey, _callback);
+
+    }
+
+    /**
+     * delete by s3 credentials
+     * 
+     * @param s3CredentialAccessKey  (required)
+     * @return ResponseS3Credential
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 406 </td><td> Not Acceptable </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+     </table>
+     */
+    public ResponseS3Credential storageApiS3CredentialsDelete(String s3CredentialAccessKey) throws ApiException {
+        ApiResponse<ResponseS3Credential> localVarResp = storageApiS3CredentialsDeleteWithHttpInfo(s3CredentialAccessKey);
+        return localVarResp.getData();
+    }
+
+    /**
+     * delete by s3 credentials
+     * 
+     * @param s3CredentialAccessKey  (required)
+     * @return ApiResponse&lt;ResponseS3Credential&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 406 </td><td> Not Acceptable </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ResponseS3Credential> storageApiS3CredentialsDeleteWithHttpInfo(String s3CredentialAccessKey) throws ApiException {
+        okhttp3.Call localVarCall = storageApiS3CredentialsDeleteValidateBeforeCall(s3CredentialAccessKey, null);
+        Type localVarReturnType = new TypeToken<ResponseS3Credential>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * delete by s3 credentials (asynchronously)
+     * 
+     * @param s3CredentialAccessKey  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 406 </td><td> Not Acceptable </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call storageApiS3CredentialsDeleteAsync(String s3CredentialAccessKey, final ApiCallback<ResponseS3Credential> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = storageApiS3CredentialsDeleteValidateBeforeCall(s3CredentialAccessKey, _callback);
+        Type localVarReturnType = new TypeToken<ResponseS3Credential>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for storageApiS3CredentialsList
+     * @param key Object key. Used to identify the object for requests. Sent in POST requests as a path variable. (optional)
+     * @param lastModified Timestamp of the last modification to the object. (optional)
+     * @param size Size of file in bytes. (optional)
+     * @param continuationToken Hash that can be added to the continuation_token query to skip list to the next page. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 406 </td><td> Not Acceptable </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call storageApiS3CredentialsListCall(String key, String lastModified, Integer size, String continuationToken, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v4/storage/s3-credentials";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (key != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("key", key));
+        }
+
+        if (lastModified != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("last_modified", lastModified));
+        }
+
+        if (size != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("size", size));
+        }
+
+        if (continuationToken != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("continuation_token", continuationToken));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "tokenAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call storageApiS3CredentialsListValidateBeforeCall(String key, String lastModified, Integer size, String continuationToken, final ApiCallback _callback) throws ApiException {
+        return storageApiS3CredentialsListCall(key, lastModified, size, continuationToken, _callback);
+
+    }
+
+    /**
+     * List s3 credentials
+     * 
+     * @param key Object key. Used to identify the object for requests. Sent in POST requests as a path variable. (optional)
+     * @param lastModified Timestamp of the last modification to the object. (optional)
+     * @param size Size of file in bytes. (optional)
+     * @param continuationToken Hash that can be added to the continuation_token query to skip list to the next page. (optional)
+     * @return PaginatedS3CredentialList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 406 </td><td> Not Acceptable </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+     </table>
+     */
+    public PaginatedS3CredentialList storageApiS3CredentialsList(String key, String lastModified, Integer size, String continuationToken) throws ApiException {
+        ApiResponse<PaginatedS3CredentialList> localVarResp = storageApiS3CredentialsListWithHttpInfo(key, lastModified, size, continuationToken);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List s3 credentials
+     * 
+     * @param key Object key. Used to identify the object for requests. Sent in POST requests as a path variable. (optional)
+     * @param lastModified Timestamp of the last modification to the object. (optional)
+     * @param size Size of file in bytes. (optional)
+     * @param continuationToken Hash that can be added to the continuation_token query to skip list to the next page. (optional)
+     * @return ApiResponse&lt;PaginatedS3CredentialList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 406 </td><td> Not Acceptable </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<PaginatedS3CredentialList> storageApiS3CredentialsListWithHttpInfo(String key, String lastModified, Integer size, String continuationToken) throws ApiException {
+        okhttp3.Call localVarCall = storageApiS3CredentialsListValidateBeforeCall(key, lastModified, size, continuationToken, null);
+        Type localVarReturnType = new TypeToken<PaginatedS3CredentialList>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List s3 credentials (asynchronously)
+     * 
+     * @param key Object key. Used to identify the object for requests. Sent in POST requests as a path variable. (optional)
+     * @param lastModified Timestamp of the last modification to the object. (optional)
+     * @param size Size of file in bytes. (optional)
+     * @param continuationToken Hash that can be added to the continuation_token query to skip list to the next page. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 406 </td><td> Not Acceptable </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call storageApiS3CredentialsListAsync(String key, String lastModified, Integer size, String continuationToken, final ApiCallback<PaginatedS3CredentialList> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = storageApiS3CredentialsListValidateBeforeCall(key, lastModified, size, continuationToken, _callback);
+        Type localVarReturnType = new TypeToken<PaginatedS3CredentialList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
