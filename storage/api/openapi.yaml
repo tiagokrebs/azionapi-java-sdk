@@ -55,7 +55,8 @@ paths:
       summary: List buckets
       tags:
       - storage
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       description: ""
       operationId: storage_api_buckets_create
@@ -102,7 +103,8 @@ paths:
       tags:
       - storage
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v4/storage/buckets/{bucket_name}/objects:
     get:
       description: ""
@@ -155,7 +157,8 @@ paths:
       summary: List buckets objects
       tags:
       - storage
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v4/storage/buckets/{bucket_name}/objects/{object_key}:
     delete:
       description: Delete an object key from bucket
@@ -199,7 +202,8 @@ paths:
       summary: Delete object key
       tags:
       - storage
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       description: Download the object key from bucket.
       operationId: storage_api_buckets_objects_retrieve
@@ -234,6 +238,8 @@ paths:
             application/javascript: {}
             text/css: {}
             application/octet-stream: {}
+            multipart/form-data: {}
+            application/x-www-form-urlencoded: {}
           description: ""
         "400":
           description: Bad Request
@@ -252,7 +258,22 @@ paths:
       summary: Download object
       tags:
       - storage
-      x-accepts: "application/javascript,application/json,application/octet-stream,application/pdf,application/xml,audio/mpeg,image/gif,image/jpeg,image/png,text/css,text/html,text/plain,video/mp4"
+      x-accepts:
+      - application/javascript
+      - application/json
+      - application/octet-stream
+      - application/pdf
+      - application/x-www-form-urlencoded
+      - application/xml
+      - audio/mpeg
+      - image/gif
+      - image/jpeg
+      - image/png
+      - multipart/form-data
+      - text/css
+      - text/html
+      - text/plain
+      - video/mp4
     post:
       description: Create a new object key in the bucket.
       operationId: storage_api_buckets_objects_create
@@ -312,7 +333,8 @@ paths:
       tags:
       - storage
       x-content-type: application/octet-stream
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     put:
       description: Update the object key from bucket.
       operationId: storage_api_buckets_objects_update
@@ -370,7 +392,8 @@ paths:
       tags:
       - storage
       x-content-type: application/octet-stream
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /v4/storage/buckets/{name}:
     delete:
       description: ""
@@ -407,7 +430,8 @@ paths:
       summary: Delete a bucket
       tags:
       - storage
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     patch:
       description: ""
       operationId: storage_api_buckets_partial_update
@@ -455,12 +479,189 @@ paths:
       tags:
       - storage
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
+  /v4/storage/s3-credentials:
+    get:
+      description: ""
+      operationId: storage_api_s3_credentials_list
+      parameters:
+      - description: Object key. Used to identify the object for requests. Sent in
+          POST requests as a path variable.
+        explode: true
+        in: query
+        name: key
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Timestamp of the last modification to the object.
+        explode: true
+        in: query
+        name: last_modified
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Size of file in bytes.
+        explode: true
+        in: query
+        name: size
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: Hash that can be added to the continuation_token query to skip
+          list to the next page.
+        explode: true
+        in: query
+        name: continuation_token
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedS3CredentialList'
+          description: ""
+        "400":
+          description: Bad Request
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - tokenAuth: []
+      summary: List s3 credentials
+      tags:
+      - storage
+      x-accepts:
+      - application/json
+    post:
+      description: ""
+      operationId: storage_api_s3_credentials_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/S3CredentialCreate'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseS3Credential'
+          description: ""
+        "400":
+          description: Bad Request
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - tokenAuth: []
+      summary: create s3 credentials
+      tags:
+      - storage
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v4/storage/s3-credentials/{s3_credential_access_key}:
+    delete:
+      description: ""
+      operationId: storage_api_s3_credentials_delete
+      parameters:
+      - explode: false
+        in: path
+        name: s3_credential_access_key
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseS3Credential'
+          description: ""
+        "400":
+          description: Bad Request
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - tokenAuth: []
+      summary: delete by s3 credentials
+      tags:
+      - storage
+      x-accepts:
+      - application/json
+    get:
+      description: ""
+      operationId: storage_api_s3_credentials_by_access_key
+      parameters:
+      - explode: false
+        in: path
+        name: s3_credential_access_key
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseS3Credential'
+          description: ""
+        "400":
+          description: Bad Request
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - tokenAuth: []
+      summary: get by s3 credentials by access key
+      tags:
+      - storage
+      x-accepts:
+      - application/json
 components:
   schemas:
     Bucket:
       example:
-        edge_access: null
+        edge_access: read_only
         name: name
       properties:
         name:
@@ -476,7 +677,7 @@ components:
       type: object
     BucketCreate:
       example:
-        edge_access: null
+        edge_access: read_only
         name: name
       properties:
         name:
@@ -491,7 +692,7 @@ components:
       type: object
     BucketUpdate:
       example:
-        edge_access: null
+        edge_access: read_only
       properties:
         edge_access:
           $ref: '#/components/schemas/EdgeAccessEnum'
@@ -523,6 +724,116 @@ components:
       - last_modified
       - size
       type: object
+    S3Credential:
+      example:
+        bucket: s3-credentials-bucket
+        secret_key: s3_credential_secret_key
+        capabilities:
+        - listAllBucketNames
+        - listBuckets
+        - listFiles
+        - readFiles
+        - writeFiles
+        - deleteFiles
+        access_key: s3_credential_access_key
+        name: my-s3-credential-all-permissions
+        created_at: 2024-03-04T16:54:14.782211Z
+        expiration_date: 2025-01-31T10:57:00Z
+      properties:
+        name:
+          example: my-s3-credential-all-permissions
+          maxLength: 200
+          minLength: 1
+          pattern: .*
+          type: string
+        access_key:
+          example: s3_credential_access_key
+          maxLength: 200
+          minLength: 1
+          pattern: .*
+          type: string
+        secret_key:
+          example: s3_credential_secret_key
+          maxLength: 200
+          minLength: 1
+          pattern: .*
+          type: string
+        capabilities:
+          example:
+          - listAllBucketNames
+          - listBuckets
+          - listFiles
+          - readFiles
+          - writeFiles
+          - deleteFiles
+          items:
+            type: string
+          type: array
+        bucket:
+          example: s3-credentials-bucket
+          maxLength: 200
+          minLength: 1
+          pattern: .*
+          type: string
+        expiration_date:
+          example: 2025-01-31T10:57:00Z
+          format: date-time
+          maxLength: 30
+          minLength: 10
+          pattern: .*
+          type: string
+        created_at:
+          example: 2024-03-04T16:54:14.782211Z
+          format: date-time
+          maxLength: 30
+          minLength: 10
+          pattern: .*
+          type: string
+      type: object
+    S3CredentialCreate:
+      example:
+        bucket: s3-credentials-bucket
+        capabilities:
+        - listAllBucketNames
+        - listBuckets
+        - listFiles
+        - readFiles
+        - writeFiles
+        - deleteFiles
+        name: my-s3-credential-all-permissions
+        expiration_date: 2025-01-31T10:57:00Z
+      properties:
+        name:
+          example: my-s3-credential-all-permissions
+          maxLength: 200
+          minLength: 1
+          pattern: .*
+          type: string
+        capabilities:
+          example:
+          - listAllBucketNames
+          - listBuckets
+          - listFiles
+          - readFiles
+          - writeFiles
+          - deleteFiles
+          items:
+            type: string
+          type: array
+        bucket:
+          example: s3-credentials-bucket
+          maxLength: 200
+          minLength: 1
+          pattern: .*
+          type: string
+        expiration_date:
+          example: 2025-01-31T10:57:00Z
+          format: date-time
+          maxLength: 30
+          minLength: 10
+          pattern: .*
+          type: string
+      type: object
     EdgeAccessEnum:
       enum:
       - read_only
@@ -544,9 +855,9 @@ components:
         previous: http://api.example.org/accounts/?page=2
         count: 123
         results:
-        - edge_access: null
+        - edge_access: read_only
           name: name
-        - edge_access: null
+        - edge_access: read_only
           name: name
       properties:
         count:
@@ -607,12 +918,92 @@ components:
             $ref: '#/components/schemas/BucketObject'
           type: array
       type: object
+    PaginatedS3CredentialList:
+      example:
+        next: http://api.example.org/accounts/?page=4
+        previous: http://api.example.org/accounts/?page=2
+        count: 123
+        results:
+        - bucket: s3-credentials-bucket
+          secret_key: s3_credential_secret_key
+          capabilities:
+          - listAllBucketNames
+          - listBuckets
+          - listFiles
+          - readFiles
+          - writeFiles
+          - deleteFiles
+          access_key: s3_credential_access_key
+          name: my-s3-credential-all-permissions
+          created_at: 2024-03-04T16:54:14.782211Z
+          expiration_date: 2025-01-31T10:57:00Z
+        - bucket: s3-credentials-bucket
+          secret_key: s3_credential_secret_key
+          capabilities:
+          - listAllBucketNames
+          - listBuckets
+          - listFiles
+          - readFiles
+          - writeFiles
+          - deleteFiles
+          access_key: s3_credential_access_key
+          name: my-s3-credential-all-permissions
+          created_at: 2024-03-04T16:54:14.782211Z
+          expiration_date: 2025-01-31T10:57:00Z
+      properties:
+        count:
+          example: 123
+          maximum: 1000
+          minimum: 0
+          type: integer
+        next:
+          example: http://api.example.org/accounts/?page=4
+          format: uri
+          nullable: true
+          type: string
+        previous:
+          example: http://api.example.org/accounts/?page=2
+          format: uri
+          nullable: true
+          type: string
+        results:
+          items:
+            $ref: '#/components/schemas/S3Credential'
+          type: array
+      type: object
+    ResponseS3Credential:
+      example:
+        data:
+          bucket: s3-credentials-bucket
+          secret_key: s3_credential_secret_key
+          capabilities:
+          - listAllBucketNames
+          - listBuckets
+          - listFiles
+          - readFiles
+          - writeFiles
+          - deleteFiles
+          access_key: s3_credential_access_key
+          name: my-s3-credential-all-permissions
+          created_at: 2024-03-04T16:54:14.782211Z
+          expiration_date: 2025-01-31T10:57:00Z
+        state: executed
+      properties:
+        state:
+          example: executed
+          maxLength: 30
+          minLength: 1
+          pattern: .*
+          type: string
+        data:
+          $ref: '#/components/schemas/S3Credential'
+      type: object
     ResponseBucket:
       example:
         data:
-          edge_access: null
+          edge_access: read_only
           name: name
-        state: null
+        state: pending
       properties:
         state:
           $ref: '#/components/schemas/StateEnum'
@@ -630,7 +1021,7 @@ components:
     SuccessBucketOperation:
       example:
         data:
-          edge_access: null
+          edge_access: read_only
           name: name
         state: ""
       properties:

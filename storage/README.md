@@ -2,8 +2,8 @@
 
 Object Storage
 - API version: 1.0.0 (v1)
-  - Build date: 2024-03-27T13:50:44.870784Z[GMT]
-  - Generator version: 7.4.0
+  - Build date: 2024-06-07T13:18:40.529196Z[GMT]
+  - Generator version: 7.6.0
 
 REST API OpenAPI documentation for the Object Storage
 
@@ -131,6 +131,10 @@ Class | Method | HTTP request | Description
 *StorageApi* | [**storageApiBucketsObjectsRetrieve**](docs/StorageApi.md#storageApiBucketsObjectsRetrieve) | **GET** /v4/storage/buckets/{bucket_name}/objects/{object_key} | Download object
 *StorageApi* | [**storageApiBucketsObjectsUpdate**](docs/StorageApi.md#storageApiBucketsObjectsUpdate) | **PUT** /v4/storage/buckets/{bucket_name}/objects/{object_key} | Update the object key
 *StorageApi* | [**storageApiBucketsPartialUpdate**](docs/StorageApi.md#storageApiBucketsPartialUpdate) | **PATCH** /v4/storage/buckets/{name} | Update bucket info
+*StorageApi* | [**storageApiS3CredentialsByAccessKey**](docs/StorageApi.md#storageApiS3CredentialsByAccessKey) | **GET** /v4/storage/s3-credentials/{s3_credential_access_key} | get by s3 credentials by access key
+*StorageApi* | [**storageApiS3CredentialsCreate**](docs/StorageApi.md#storageApiS3CredentialsCreate) | **POST** /v4/storage/s3-credentials | create s3 credentials
+*StorageApi* | [**storageApiS3CredentialsDelete**](docs/StorageApi.md#storageApiS3CredentialsDelete) | **DELETE** /v4/storage/s3-credentials/{s3_credential_access_key} | delete by s3 credentials
+*StorageApi* | [**storageApiS3CredentialsList**](docs/StorageApi.md#storageApiS3CredentialsList) | **GET** /v4/storage/s3-credentials | List s3 credentials
 
 
 ## Documentation for Models
@@ -143,7 +147,11 @@ Class | Method | HTTP request | Description
  - [ObjectResponseData](docs/ObjectResponseData.md)
  - [PaginatedBucketList](docs/PaginatedBucketList.md)
  - [PaginatedBucketObjectList](docs/PaginatedBucketObjectList.md)
+ - [PaginatedS3CredentialList](docs/PaginatedS3CredentialList.md)
  - [ResponseBucket](docs/ResponseBucket.md)
+ - [ResponseS3Credential](docs/ResponseS3Credential.md)
+ - [S3Credential](docs/S3Credential.md)
+ - [S3CredentialCreate](docs/S3CredentialCreate.md)
  - [StateEnum](docs/StateEnum.md)
  - [SuccessBucketOperation](docs/SuccessBucketOperation.md)
  - [SuccessObjectOperation](docs/SuccessObjectOperation.md)

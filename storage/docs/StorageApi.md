@@ -13,6 +13,10 @@ All URIs are relative to *https://api.azion.com*
 | [**storageApiBucketsObjectsRetrieve**](StorageApi.md#storageApiBucketsObjectsRetrieve) | **GET** /v4/storage/buckets/{bucket_name}/objects/{object_key} | Download object |
 | [**storageApiBucketsObjectsUpdate**](StorageApi.md#storageApiBucketsObjectsUpdate) | **PUT** /v4/storage/buckets/{bucket_name}/objects/{object_key} | Update the object key |
 | [**storageApiBucketsPartialUpdate**](StorageApi.md#storageApiBucketsPartialUpdate) | **PATCH** /v4/storage/buckets/{name} | Update bucket info |
+| [**storageApiS3CredentialsByAccessKey**](StorageApi.md#storageApiS3CredentialsByAccessKey) | **GET** /v4/storage/s3-credentials/{s3_credential_access_key} | get by s3 credentials by access key |
+| [**storageApiS3CredentialsCreate**](StorageApi.md#storageApiS3CredentialsCreate) | **POST** /v4/storage/s3-credentials | create s3 credentials |
+| [**storageApiS3CredentialsDelete**](StorageApi.md#storageApiS3CredentialsDelete) | **DELETE** /v4/storage/s3-credentials/{s3_credential_access_key} | delete by s3 credentials |
+| [**storageApiS3CredentialsList**](StorageApi.md#storageApiS3CredentialsList) | **GET** /v4/storage/s3-credentials | List s3 credentials |
 
 
 <a id="storageApiBucketsCreate"></a>
@@ -544,7 +548,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/html, application/json, application/xml, text/plain, image/jpeg, image/png, image/gif, video/mp4, audio/mpeg, application/pdf, application/javascript, text/css, application/octet-stream
+ - **Accept**: text/html, application/json, application/xml, text/plain, image/jpeg, image/png, image/gif, video/mp4, audio/mpeg, application/pdf, application/javascript, text/css, application/octet-stream, multipart/form-data, application/x-www-form-urlencoded
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -715,4 +719,310 @@ public class Example {
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
 | **202** |  |  -  |
+
+<a id="storageApiS3CredentialsByAccessKey"></a>
+# **storageApiS3CredentialsByAccessKey**
+> ResponseS3Credential storageApiS3CredentialsByAccessKey(s3CredentialAccessKey)
+
+get by s3 credentials by access key
+
+
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StorageApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.azion.com");
+    
+    // Configure API key authorization: tokenAuth
+    ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
+    tokenAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //tokenAuth.setApiKeyPrefix("Token");
+
+    StorageApi apiInstance = new StorageApi(defaultClient);
+    String s3CredentialAccessKey = "s3CredentialAccessKey_example"; // String | 
+    try {
+      ResponseS3Credential result = apiInstance.storageApiS3CredentialsByAccessKey(s3CredentialAccessKey);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling StorageApi#storageApiS3CredentialsByAccessKey");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **s3CredentialAccessKey** | **String**|  | |
+
+### Return type
+
+[**ResponseS3Credential**](ResponseS3Credential.md)
+
+### Authorization
+
+[tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+
+<a id="storageApiS3CredentialsCreate"></a>
+# **storageApiS3CredentialsCreate**
+> ResponseS3Credential storageApiS3CredentialsCreate(s3CredentialCreate)
+
+create s3 credentials
+
+
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StorageApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.azion.com");
+    
+    // Configure API key authorization: tokenAuth
+    ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
+    tokenAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //tokenAuth.setApiKeyPrefix("Token");
+
+    StorageApi apiInstance = new StorageApi(defaultClient);
+    S3CredentialCreate s3CredentialCreate = new S3CredentialCreate(); // S3CredentialCreate | 
+    try {
+      ResponseS3Credential result = apiInstance.storageApiS3CredentialsCreate(s3CredentialCreate);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling StorageApi#storageApiS3CredentialsCreate");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **s3CredentialCreate** | [**S3CredentialCreate**](S3CredentialCreate.md)|  | |
+
+### Return type
+
+[**ResponseS3Credential**](ResponseS3Credential.md)
+
+### Authorization
+
+[tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** |  |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+
+<a id="storageApiS3CredentialsDelete"></a>
+# **storageApiS3CredentialsDelete**
+> ResponseS3Credential storageApiS3CredentialsDelete(s3CredentialAccessKey)
+
+delete by s3 credentials
+
+
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StorageApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.azion.com");
+    
+    // Configure API key authorization: tokenAuth
+    ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
+    tokenAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //tokenAuth.setApiKeyPrefix("Token");
+
+    StorageApi apiInstance = new StorageApi(defaultClient);
+    String s3CredentialAccessKey = "s3CredentialAccessKey_example"; // String | 
+    try {
+      ResponseS3Credential result = apiInstance.storageApiS3CredentialsDelete(s3CredentialAccessKey);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling StorageApi#storageApiS3CredentialsDelete");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **s3CredentialAccessKey** | **String**|  | |
+
+### Return type
+
+[**ResponseS3Credential**](ResponseS3Credential.md)
+
+### Authorization
+
+[tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+
+<a id="storageApiS3CredentialsList"></a>
+# **storageApiS3CredentialsList**
+> PaginatedS3CredentialList storageApiS3CredentialsList(key, lastModified, size, continuationToken)
+
+List s3 credentials
+
+
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StorageApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.azion.com");
+    
+    // Configure API key authorization: tokenAuth
+    ApiKeyAuth tokenAuth = (ApiKeyAuth) defaultClient.getAuthentication("tokenAuth");
+    tokenAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //tokenAuth.setApiKeyPrefix("Token");
+
+    StorageApi apiInstance = new StorageApi(defaultClient);
+    String key = "key_example"; // String | Object key. Used to identify the object for requests. Sent in POST requests as a path variable.
+    String lastModified = "lastModified_example"; // String | Timestamp of the last modification to the object.
+    Integer size = 56; // Integer | Size of file in bytes.
+    String continuationToken = "continuationToken_example"; // String | Hash that can be added to the continuation_token query to skip list to the next page.
+    try {
+      PaginatedS3CredentialList result = apiInstance.storageApiS3CredentialsList(key, lastModified, size, continuationToken);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling StorageApi#storageApiS3CredentialsList");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **key** | **String**| Object key. Used to identify the object for requests. Sent in POST requests as a path variable. | [optional] |
+| **lastModified** | **String**| Timestamp of the last modification to the object. | [optional] |
+| **size** | **Integer**| Size of file in bytes. | [optional] |
+| **continuationToken** | **String**| Hash that can be added to the continuation_token query to skip list to the next page. | [optional] |
+
+### Return type
+
+[**PaginatedS3CredentialList**](PaginatedS3CredentialList.md)
+
+### Authorization
+
+[tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
 
