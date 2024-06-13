@@ -53,11 +53,19 @@ import org.openapitools.client.JSON;
 /**
  * CreateRulesEngineRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class CreateRulesEngineRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_ORDER = "order";
+  @SerializedName(SERIALIZED_NAME_ORDER)
+  private Long order;
+
+  public static final String SERIALIZED_NAME_IS_ACTIVE = "is_active";
+  @SerializedName(SERIALIZED_NAME_IS_ACTIVE)
+  private Boolean isActive;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -75,7 +83,6 @@ public class CreateRulesEngineRequest {
   }
 
   public CreateRulesEngineRequest name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -89,14 +96,52 @@ public class CreateRulesEngineRequest {
     return name;
   }
 
-
   public void setName(String name) {
     this.name = name;
   }
 
 
+  public CreateRulesEngineRequest order(Long order) {
+    this.order = order;
+    return this;
+  }
+
+   /**
+   * Get order
+   * minimum: 1
+   * maximum: 10000
+   * @return order
+  **/
+  @javax.annotation.Nullable
+  public Long getOrder() {
+    return order;
+  }
+
+  public void setOrder(Long order) {
+    this.order = order;
+  }
+
+
+  public CreateRulesEngineRequest isActive(Boolean isActive) {
+    this.isActive = isActive;
+    return this;
+  }
+
+   /**
+   * Get isActive
+   * @return isActive
+  **/
+  @javax.annotation.Nullable
+  public Boolean getIsActive() {
+    return isActive;
+  }
+
+  public void setIsActive(Boolean isActive) {
+    this.isActive = isActive;
+  }
+
+
   public CreateRulesEngineRequest description(String description) {
-    
     this.description = description;
     return this;
   }
@@ -110,14 +155,12 @@ public class CreateRulesEngineRequest {
     return description;
   }
 
-
   public void setDescription(String description) {
     this.description = description;
   }
 
 
   public CreateRulesEngineRequest criteria(List<List<RulesEngineCriteria>> criteria) {
-    
     this.criteria = criteria;
     return this;
   }
@@ -139,14 +182,12 @@ public class CreateRulesEngineRequest {
     return criteria;
   }
 
-
   public void setCriteria(List<List<RulesEngineCriteria>> criteria) {
     this.criteria = criteria;
   }
 
 
   public CreateRulesEngineRequest behaviors(List<RulesEngineBehaviorEntry> behaviors) {
-    
     this.behaviors = behaviors;
     return this;
   }
@@ -168,7 +209,6 @@ public class CreateRulesEngineRequest {
     return behaviors;
   }
 
-
   public void setBehaviors(List<RulesEngineBehaviorEntry> behaviors) {
     this.behaviors = behaviors;
   }
@@ -185,6 +225,8 @@ public class CreateRulesEngineRequest {
     }
     CreateRulesEngineRequest createRulesEngineRequest = (CreateRulesEngineRequest) o;
     return Objects.equals(this.name, createRulesEngineRequest.name) &&
+        Objects.equals(this.order, createRulesEngineRequest.order) &&
+        Objects.equals(this.isActive, createRulesEngineRequest.isActive) &&
         Objects.equals(this.description, createRulesEngineRequest.description) &&
         Objects.equals(this.criteria, createRulesEngineRequest.criteria) &&
         Objects.equals(this.behaviors, createRulesEngineRequest.behaviors);
@@ -192,7 +234,7 @@ public class CreateRulesEngineRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, criteria, behaviors);
+    return Objects.hash(name, order, isActive, description, criteria, behaviors);
   }
 
   @Override
@@ -200,6 +242,8 @@ public class CreateRulesEngineRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateRulesEngineRequest {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    order: ").append(toIndentedString(order)).append("\n");
+    sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    criteria: ").append(toIndentedString(criteria)).append("\n");
     sb.append("    behaviors: ").append(toIndentedString(behaviors)).append("\n");
@@ -226,6 +270,8 @@ public class CreateRulesEngineRequest {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("name");
+    openapiFields.add("order");
+    openapiFields.add("is_active");
     openapiFields.add("description");
     openapiFields.add("criteria");
     openapiFields.add("behaviors");

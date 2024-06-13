@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationCreateInstanceRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class ApplicationCreateInstanceRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -67,7 +67,6 @@ public class ApplicationCreateInstanceRequest {
   }
 
   public ApplicationCreateInstanceRequest name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -81,14 +80,12 @@ public class ApplicationCreateInstanceRequest {
     return name;
   }
 
-
   public void setName(String name) {
     this.name = name;
   }
 
 
   public ApplicationCreateInstanceRequest edgeFunctionId(Long edgeFunctionId) {
-    
     this.edgeFunctionId = edgeFunctionId;
     return this;
   }
@@ -102,14 +99,12 @@ public class ApplicationCreateInstanceRequest {
     return edgeFunctionId;
   }
 
-
   public void setEdgeFunctionId(Long edgeFunctionId) {
     this.edgeFunctionId = edgeFunctionId;
   }
 
 
   public ApplicationCreateInstanceRequest args(Object args) {
-    
     this.args = args;
     return this;
   }
@@ -122,7 +117,6 @@ public class ApplicationCreateInstanceRequest {
   public Object getArgs() {
     return args;
   }
-
 
   public void setArgs(Object args) {
     this.args = args;

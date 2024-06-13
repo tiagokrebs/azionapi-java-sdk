@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * OriginsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class OriginsResponse {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
@@ -79,7 +79,6 @@ public class OriginsResponse {
   }
 
   public OriginsResponse count(Long count) {
-    
     this.count = count;
     return this;
   }
@@ -93,14 +92,12 @@ public class OriginsResponse {
     return count;
   }
 
-
   public void setCount(Long count) {
     this.count = count;
   }
 
 
   public OriginsResponse totalPages(Long totalPages) {
-    
     this.totalPages = totalPages;
     return this;
   }
@@ -114,14 +111,12 @@ public class OriginsResponse {
     return totalPages;
   }
 
-
   public void setTotalPages(Long totalPages) {
     this.totalPages = totalPages;
   }
 
 
   public OriginsResponse schemaVersion(Long schemaVersion) {
-    
     this.schemaVersion = schemaVersion;
     return this;
   }
@@ -135,14 +130,12 @@ public class OriginsResponse {
     return schemaVersion;
   }
 
-
   public void setSchemaVersion(Long schemaVersion) {
     this.schemaVersion = schemaVersion;
   }
 
 
   public OriginsResponse links(OriginsResponseLinks links) {
-    
     this.links = links;
     return this;
   }
@@ -156,14 +149,12 @@ public class OriginsResponse {
     return links;
   }
 
-
   public void setLinks(OriginsResponseLinks links) {
     this.links = links;
   }
 
 
   public OriginsResponse results(List<OriginsResultResponse> results) {
-    
     this.results = results;
     return this;
   }
@@ -184,7 +175,6 @@ public class OriginsResponse {
   public List<OriginsResultResponse> getResults() {
     return results;
   }
-
 
   public void setResults(List<OriginsResultResponse> results) {
     this.results = results;

@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * DeviceGroupsResponseLinks
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class DeviceGroupsResponseLinks {
   public static final String SERIALIZED_NAME_PREVIOUS = "previous";
   @SerializedName(SERIALIZED_NAME_PREVIOUS)
@@ -64,7 +64,6 @@ public class DeviceGroupsResponseLinks {
   }
 
   public DeviceGroupsResponseLinks previous(String previous) {
-    
     this.previous = previous;
     return this;
   }
@@ -78,14 +77,12 @@ public class DeviceGroupsResponseLinks {
     return previous;
   }
 
-
   public void setPrevious(String previous) {
     this.previous = previous;
   }
 
 
   public DeviceGroupsResponseLinks next(String next) {
-    
     this.next = next;
     return this;
   }
@@ -98,7 +95,6 @@ public class DeviceGroupsResponseLinks {
   public String getNext() {
     return next;
   }
-
 
   public void setNext(String next) {
     this.next = next;

@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RulesEngineCriteria
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class RulesEngineCriteria {
   public static final String SERIALIZED_NAME_CONDITIONAL = "conditional";
   @SerializedName(SERIALIZED_NAME_CONDITIONAL)
@@ -71,7 +71,6 @@ public class RulesEngineCriteria {
   }
 
   public RulesEngineCriteria conditional(String conditional) {
-    
     this.conditional = conditional;
     return this;
   }
@@ -85,14 +84,12 @@ public class RulesEngineCriteria {
     return conditional;
   }
 
-
   public void setConditional(String conditional) {
     this.conditional = conditional;
   }
 
 
   public RulesEngineCriteria variable(String variable) {
-    
     this.variable = variable;
     return this;
   }
@@ -106,14 +103,12 @@ public class RulesEngineCriteria {
     return variable;
   }
 
-
   public void setVariable(String variable) {
     this.variable = variable;
   }
 
 
   public RulesEngineCriteria operator(String operator) {
-    
     this.operator = operator;
     return this;
   }
@@ -127,14 +122,12 @@ public class RulesEngineCriteria {
     return operator;
   }
 
-
   public void setOperator(String operator) {
     this.operator = operator;
   }
 
 
   public RulesEngineCriteria inputValue(String inputValue) {
-    
     this.inputValue = inputValue;
     return this;
   }
@@ -147,7 +140,6 @@ public class RulesEngineCriteria {
   public String getInputValue() {
     return inputValue;
   }
-
 
   public void setInputValue(String inputValue) {
     this.inputValue = inputValue;

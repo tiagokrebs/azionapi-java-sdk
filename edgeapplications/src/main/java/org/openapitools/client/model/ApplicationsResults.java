@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationsResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class ApplicationsResults {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -86,7 +86,6 @@ public class ApplicationsResults {
   }
 
   public ApplicationsResults id(Long id) {
-    
     this.id = id;
     return this;
   }
@@ -100,14 +99,12 @@ public class ApplicationsResults {
     return id;
   }
 
-
   public void setId(Long id) {
     this.id = id;
   }
 
 
   public ApplicationsResults name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -121,14 +118,12 @@ public class ApplicationsResults {
     return name;
   }
 
-
   public void setName(String name) {
     this.name = name;
   }
 
 
   public ApplicationsResults debugRules(Boolean debugRules) {
-    
     this.debugRules = debugRules;
     return this;
   }
@@ -142,14 +137,12 @@ public class ApplicationsResults {
     return debugRules;
   }
 
-
   public void setDebugRules(Boolean debugRules) {
     this.debugRules = debugRules;
   }
 
 
   public ApplicationsResults lastEditor(String lastEditor) {
-    
     this.lastEditor = lastEditor;
     return this;
   }
@@ -163,14 +156,12 @@ public class ApplicationsResults {
     return lastEditor;
   }
 
-
   public void setLastEditor(String lastEditor) {
     this.lastEditor = lastEditor;
   }
 
 
   public ApplicationsResults lastModified(String lastModified) {
-    
     this.lastModified = lastModified;
     return this;
   }
@@ -184,14 +175,12 @@ public class ApplicationsResults {
     return lastModified;
   }
 
-
   public void setLastModified(String lastModified) {
     this.lastModified = lastModified;
   }
 
 
   public ApplicationsResults active(Boolean active) {
-    
     this.active = active;
     return this;
   }
@@ -205,14 +194,12 @@ public class ApplicationsResults {
     return active;
   }
 
-
   public void setActive(Boolean active) {
     this.active = active;
   }
 
 
   public ApplicationsResults origins(List<ApplicationOrigins> origins) {
-    
     this.origins = origins;
     return this;
   }
@@ -233,7 +220,6 @@ public class ApplicationsResults {
   public List<ApplicationOrigins> getOrigins() {
     return origins;
   }
-
 
   public void setOrigins(List<ApplicationOrigins> origins) {
     this.origins = origins;

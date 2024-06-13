@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationCacheResponseDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class ApplicationCacheResponseDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -104,7 +104,7 @@ public class ApplicationCacheResponseDetails {
 
   public static final String SERIALIZED_NAME_DEVICE_GROUP = "device_group";
   @SerializedName(SERIALIZED_NAME_DEVICE_GROUP)
-  private List<Integer> deviceGroup;
+  private List<Integer> deviceGroup = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ENABLE_CACHING_FOR_POST = "enable_caching_for_post";
   @SerializedName(SERIALIZED_NAME_ENABLE_CACHING_FOR_POST)
@@ -146,7 +146,6 @@ public class ApplicationCacheResponseDetails {
   }
 
   public ApplicationCacheResponseDetails id(Long id) {
-    
     this.id = id;
     return this;
   }
@@ -160,14 +159,12 @@ public class ApplicationCacheResponseDetails {
     return id;
   }
 
-
   public void setId(Long id) {
     this.id = id;
   }
 
 
   public ApplicationCacheResponseDetails name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -181,14 +178,12 @@ public class ApplicationCacheResponseDetails {
     return name;
   }
 
-
   public void setName(String name) {
     this.name = name;
   }
 
 
   public ApplicationCacheResponseDetails browserCacheSettings(String browserCacheSettings) {
-    
     this.browserCacheSettings = browserCacheSettings;
     return this;
   }
@@ -202,14 +197,12 @@ public class ApplicationCacheResponseDetails {
     return browserCacheSettings;
   }
 
-
   public void setBrowserCacheSettings(String browserCacheSettings) {
     this.browserCacheSettings = browserCacheSettings;
   }
 
 
   public ApplicationCacheResponseDetails browserCacheSettingsMaximumTtl(Long browserCacheSettingsMaximumTtl) {
-    
     this.browserCacheSettingsMaximumTtl = browserCacheSettingsMaximumTtl;
     return this;
   }
@@ -223,14 +216,12 @@ public class ApplicationCacheResponseDetails {
     return browserCacheSettingsMaximumTtl;
   }
 
-
   public void setBrowserCacheSettingsMaximumTtl(Long browserCacheSettingsMaximumTtl) {
     this.browserCacheSettingsMaximumTtl = browserCacheSettingsMaximumTtl;
   }
 
 
   public ApplicationCacheResponseDetails cdnCacheSettings(String cdnCacheSettings) {
-    
     this.cdnCacheSettings = cdnCacheSettings;
     return this;
   }
@@ -244,14 +235,12 @@ public class ApplicationCacheResponseDetails {
     return cdnCacheSettings;
   }
 
-
   public void setCdnCacheSettings(String cdnCacheSettings) {
     this.cdnCacheSettings = cdnCacheSettings;
   }
 
 
   public ApplicationCacheResponseDetails cdnCacheSettingsMaximumTtl(Long cdnCacheSettingsMaximumTtl) {
-    
     this.cdnCacheSettingsMaximumTtl = cdnCacheSettingsMaximumTtl;
     return this;
   }
@@ -265,14 +254,12 @@ public class ApplicationCacheResponseDetails {
     return cdnCacheSettingsMaximumTtl;
   }
 
-
   public void setCdnCacheSettingsMaximumTtl(Long cdnCacheSettingsMaximumTtl) {
     this.cdnCacheSettingsMaximumTtl = cdnCacheSettingsMaximumTtl;
   }
 
 
   public ApplicationCacheResponseDetails cacheByQueryString(String cacheByQueryString) {
-    
     this.cacheByQueryString = cacheByQueryString;
     return this;
   }
@@ -286,14 +273,12 @@ public class ApplicationCacheResponseDetails {
     return cacheByQueryString;
   }
 
-
   public void setCacheByQueryString(String cacheByQueryString) {
     this.cacheByQueryString = cacheByQueryString;
   }
 
 
   public ApplicationCacheResponseDetails queryStringFields(List<String> queryStringFields) {
-    
     this.queryStringFields = queryStringFields;
     return this;
   }
@@ -315,14 +300,12 @@ public class ApplicationCacheResponseDetails {
     return queryStringFields;
   }
 
-
   public void setQueryStringFields(List<String> queryStringFields) {
     this.queryStringFields = queryStringFields;
   }
 
 
   public ApplicationCacheResponseDetails enableQueryStringSort(Boolean enableQueryStringSort) {
-    
     this.enableQueryStringSort = enableQueryStringSort;
     return this;
   }
@@ -336,14 +319,12 @@ public class ApplicationCacheResponseDetails {
     return enableQueryStringSort;
   }
 
-
   public void setEnableQueryStringSort(Boolean enableQueryStringSort) {
     this.enableQueryStringSort = enableQueryStringSort;
   }
 
 
   public ApplicationCacheResponseDetails cacheByCookies(String cacheByCookies) {
-    
     this.cacheByCookies = cacheByCookies;
     return this;
   }
@@ -357,14 +338,12 @@ public class ApplicationCacheResponseDetails {
     return cacheByCookies;
   }
 
-
   public void setCacheByCookies(String cacheByCookies) {
     this.cacheByCookies = cacheByCookies;
   }
 
 
   public ApplicationCacheResponseDetails cookieNames(List<String> cookieNames) {
-    
     this.cookieNames = cookieNames;
     return this;
   }
@@ -386,14 +365,12 @@ public class ApplicationCacheResponseDetails {
     return cookieNames;
   }
 
-
   public void setCookieNames(List<String> cookieNames) {
     this.cookieNames = cookieNames;
   }
 
 
   public ApplicationCacheResponseDetails adaptiveDeliveryAction(String adaptiveDeliveryAction) {
-    
     this.adaptiveDeliveryAction = adaptiveDeliveryAction;
     return this;
   }
@@ -407,14 +384,12 @@ public class ApplicationCacheResponseDetails {
     return adaptiveDeliveryAction;
   }
 
-
   public void setAdaptiveDeliveryAction(String adaptiveDeliveryAction) {
     this.adaptiveDeliveryAction = adaptiveDeliveryAction;
   }
 
 
   public ApplicationCacheResponseDetails deviceGroup(List<Integer> deviceGroup) {
-    
     this.deviceGroup = deviceGroup;
     return this;
   }
@@ -436,14 +411,12 @@ public class ApplicationCacheResponseDetails {
     return deviceGroup;
   }
 
-
   public void setDeviceGroup(List<Integer> deviceGroup) {
     this.deviceGroup = deviceGroup;
   }
 
 
   public ApplicationCacheResponseDetails enableCachingForPost(Boolean enableCachingForPost) {
-    
     this.enableCachingForPost = enableCachingForPost;
     return this;
   }
@@ -457,14 +430,12 @@ public class ApplicationCacheResponseDetails {
     return enableCachingForPost;
   }
 
-
   public void setEnableCachingForPost(Boolean enableCachingForPost) {
     this.enableCachingForPost = enableCachingForPost;
   }
 
 
   public ApplicationCacheResponseDetails enableCachingForOptions(Boolean enableCachingForOptions) {
-    
     this.enableCachingForOptions = enableCachingForOptions;
     return this;
   }
@@ -478,14 +449,12 @@ public class ApplicationCacheResponseDetails {
     return enableCachingForOptions;
   }
 
-
   public void setEnableCachingForOptions(Boolean enableCachingForOptions) {
     this.enableCachingForOptions = enableCachingForOptions;
   }
 
 
   public ApplicationCacheResponseDetails l2CachingEnabled(Boolean l2CachingEnabled) {
-    
     this.l2CachingEnabled = l2CachingEnabled;
     return this;
   }
@@ -499,14 +468,12 @@ public class ApplicationCacheResponseDetails {
     return l2CachingEnabled;
   }
 
-
   public void setL2CachingEnabled(Boolean l2CachingEnabled) {
     this.l2CachingEnabled = l2CachingEnabled;
   }
 
 
   public ApplicationCacheResponseDetails isSliceConfigurationEnabled(Boolean isSliceConfigurationEnabled) {
-    
     this.isSliceConfigurationEnabled = isSliceConfigurationEnabled;
     return this;
   }
@@ -520,14 +487,12 @@ public class ApplicationCacheResponseDetails {
     return isSliceConfigurationEnabled;
   }
 
-
   public void setIsSliceConfigurationEnabled(Boolean isSliceConfigurationEnabled) {
     this.isSliceConfigurationEnabled = isSliceConfigurationEnabled;
   }
 
 
   public ApplicationCacheResponseDetails isSliceEdgeCachingEnabled(Boolean isSliceEdgeCachingEnabled) {
-    
     this.isSliceEdgeCachingEnabled = isSliceEdgeCachingEnabled;
     return this;
   }
@@ -541,14 +506,12 @@ public class ApplicationCacheResponseDetails {
     return isSliceEdgeCachingEnabled;
   }
 
-
   public void setIsSliceEdgeCachingEnabled(Boolean isSliceEdgeCachingEnabled) {
     this.isSliceEdgeCachingEnabled = isSliceEdgeCachingEnabled;
   }
 
 
   public ApplicationCacheResponseDetails isSliceL2CachingEnabled(Boolean isSliceL2CachingEnabled) {
-    
     this.isSliceL2CachingEnabled = isSliceL2CachingEnabled;
     return this;
   }
@@ -562,14 +525,12 @@ public class ApplicationCacheResponseDetails {
     return isSliceL2CachingEnabled;
   }
 
-
   public void setIsSliceL2CachingEnabled(Boolean isSliceL2CachingEnabled) {
     this.isSliceL2CachingEnabled = isSliceL2CachingEnabled;
   }
 
 
   public ApplicationCacheResponseDetails sliceConfigurationRange(Long sliceConfigurationRange) {
-    
     this.sliceConfigurationRange = sliceConfigurationRange;
     return this;
   }
@@ -583,14 +544,12 @@ public class ApplicationCacheResponseDetails {
     return sliceConfigurationRange;
   }
 
-
   public void setSliceConfigurationRange(Long sliceConfigurationRange) {
     this.sliceConfigurationRange = sliceConfigurationRange;
   }
 
 
   public ApplicationCacheResponseDetails enableStaleCache(Boolean enableStaleCache) {
-    
     this.enableStaleCache = enableStaleCache;
     return this;
   }
@@ -604,14 +563,12 @@ public class ApplicationCacheResponseDetails {
     return enableStaleCache;
   }
 
-
   public void setEnableStaleCache(Boolean enableStaleCache) {
     this.enableStaleCache = enableStaleCache;
   }
 
 
   public ApplicationCacheResponseDetails l2Region(String l2Region) {
-    
     this.l2Region = l2Region;
     return this;
   }
@@ -624,7 +581,6 @@ public class ApplicationCacheResponseDetails {
   public String getL2Region() {
     return l2Region;
   }
-
 
   public void setL2Region(String l2Region) {
     this.l2Region = l2Region;

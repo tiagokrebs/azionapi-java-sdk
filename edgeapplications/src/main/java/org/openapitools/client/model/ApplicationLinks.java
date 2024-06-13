@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationLinks
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class ApplicationLinks {
   public static final String SERIALIZED_NAME_PREVIOUS = "previous";
   @SerializedName(SERIALIZED_NAME_PREVIOUS)
@@ -63,7 +63,6 @@ public class ApplicationLinks {
   }
 
   public ApplicationLinks previous(String previous) {
-    
     this.previous = previous;
     return this;
   }
@@ -77,14 +76,12 @@ public class ApplicationLinks {
     return previous;
   }
 
-
   public void setPrevious(String previous) {
     this.previous = previous;
   }
 
 
   public ApplicationLinks next(String next) {
-    
     this.next = next;
     return this;
   }
@@ -97,7 +94,6 @@ public class ApplicationLinks {
   public String getNext() {
     return next;
   }
-
 
   public void setNext(String next) {
     this.next = next;

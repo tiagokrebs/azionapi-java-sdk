@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * CreateApplicationRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class CreateApplicationRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -132,7 +132,6 @@ public class CreateApplicationRequest {
   }
 
   public CreateApplicationRequest name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -146,14 +145,12 @@ public class CreateApplicationRequest {
     return name;
   }
 
-
   public void setName(String name) {
     this.name = name;
   }
 
 
   public CreateApplicationRequest applicationAcceleration(Boolean applicationAcceleration) {
-    
     this.applicationAcceleration = applicationAcceleration;
     return this;
   }
@@ -167,14 +164,12 @@ public class CreateApplicationRequest {
     return applicationAcceleration;
   }
 
-
   public void setApplicationAcceleration(Boolean applicationAcceleration) {
     this.applicationAcceleration = applicationAcceleration;
   }
 
 
   public CreateApplicationRequest deliveryProtocol(String deliveryProtocol) {
-    
     this.deliveryProtocol = deliveryProtocol;
     return this;
   }
@@ -188,14 +183,12 @@ public class CreateApplicationRequest {
     return deliveryProtocol;
   }
 
-
   public void setDeliveryProtocol(String deliveryProtocol) {
     this.deliveryProtocol = deliveryProtocol;
   }
 
 
   public CreateApplicationRequest originType(String originType) {
-    
     this.originType = originType;
     return this;
   }
@@ -209,14 +202,12 @@ public class CreateApplicationRequest {
     return originType;
   }
 
-
   public void setOriginType(String originType) {
     this.originType = originType;
   }
 
 
   public CreateApplicationRequest address(String address) {
-    
     this.address = address;
     return this;
   }
@@ -230,14 +221,12 @@ public class CreateApplicationRequest {
     return address;
   }
 
-
   public void setAddress(String address) {
     this.address = address;
   }
 
 
   public CreateApplicationRequest minimumTlsVersion(String minimumTlsVersion) {
-    
     this.minimumTlsVersion = minimumTlsVersion;
     return this;
   }
@@ -251,14 +240,12 @@ public class CreateApplicationRequest {
     return minimumTlsVersion;
   }
 
-
   public void setMinimumTlsVersion(String minimumTlsVersion) {
     this.minimumTlsVersion = minimumTlsVersion;
   }
 
 
   public CreateApplicationRequest originProtocolPolicy(String originProtocolPolicy) {
-    
     this.originProtocolPolicy = originProtocolPolicy;
     return this;
   }
@@ -272,14 +259,12 @@ public class CreateApplicationRequest {
     return originProtocolPolicy;
   }
 
-
   public void setOriginProtocolPolicy(String originProtocolPolicy) {
     this.originProtocolPolicy = originProtocolPolicy;
   }
 
 
   public CreateApplicationRequest hostHeader(String hostHeader) {
-    
     this.hostHeader = hostHeader;
     return this;
   }
@@ -293,14 +278,12 @@ public class CreateApplicationRequest {
     return hostHeader;
   }
 
-
   public void setHostHeader(String hostHeader) {
     this.hostHeader = hostHeader;
   }
 
 
   public CreateApplicationRequest browserCacheSettings(String browserCacheSettings) {
-    
     this.browserCacheSettings = browserCacheSettings;
     return this;
   }
@@ -314,14 +297,12 @@ public class CreateApplicationRequest {
     return browserCacheSettings;
   }
 
-
   public void setBrowserCacheSettings(String browserCacheSettings) {
     this.browserCacheSettings = browserCacheSettings;
   }
 
 
   public CreateApplicationRequest cdnCacheSettings(String cdnCacheSettings) {
-    
     this.cdnCacheSettings = cdnCacheSettings;
     return this;
   }
@@ -335,14 +316,12 @@ public class CreateApplicationRequest {
     return cdnCacheSettings;
   }
 
-
   public void setCdnCacheSettings(String cdnCacheSettings) {
     this.cdnCacheSettings = cdnCacheSettings;
   }
 
 
   public CreateApplicationRequest browserCacheSettingsMaximumTtl(Long browserCacheSettingsMaximumTtl) {
-    
     this.browserCacheSettingsMaximumTtl = browserCacheSettingsMaximumTtl;
     return this;
   }
@@ -356,14 +335,12 @@ public class CreateApplicationRequest {
     return browserCacheSettingsMaximumTtl;
   }
 
-
   public void setBrowserCacheSettingsMaximumTtl(Long browserCacheSettingsMaximumTtl) {
     this.browserCacheSettingsMaximumTtl = browserCacheSettingsMaximumTtl;
   }
 
 
   public CreateApplicationRequest cdnCacheSettingsMaximumTtl(Long cdnCacheSettingsMaximumTtl) {
-    
     this.cdnCacheSettingsMaximumTtl = cdnCacheSettingsMaximumTtl;
     return this;
   }
@@ -377,14 +354,12 @@ public class CreateApplicationRequest {
     return cdnCacheSettingsMaximumTtl;
   }
 
-
   public void setCdnCacheSettingsMaximumTtl(Long cdnCacheSettingsMaximumTtl) {
     this.cdnCacheSettingsMaximumTtl = cdnCacheSettingsMaximumTtl;
   }
 
 
   public CreateApplicationRequest debugRules(Boolean debugRules) {
-    
     this.debugRules = debugRules;
     return this;
   }
@@ -398,14 +373,12 @@ public class CreateApplicationRequest {
     return debugRules;
   }
 
-
   public void setDebugRules(Boolean debugRules) {
     this.debugRules = debugRules;
   }
 
 
   public CreateApplicationRequest supportedCiphers(String supportedCiphers) {
-    
     this.supportedCiphers = supportedCiphers;
     return this;
   }
@@ -419,14 +392,12 @@ public class CreateApplicationRequest {
     return supportedCiphers;
   }
 
-
   public void setSupportedCiphers(String supportedCiphers) {
     this.supportedCiphers = supportedCiphers;
   }
 
 
   public CreateApplicationRequest httpPort(Object httpPort) {
-    
     this.httpPort = httpPort;
     return this;
   }
@@ -440,14 +411,12 @@ public class CreateApplicationRequest {
     return httpPort;
   }
 
-
   public void setHttpPort(Object httpPort) {
     this.httpPort = httpPort;
   }
 
 
   public CreateApplicationRequest httpsPort(Object httpsPort) {
-    
     this.httpsPort = httpsPort;
     return this;
   }
@@ -461,14 +430,12 @@ public class CreateApplicationRequest {
     return httpsPort;
   }
 
-
   public void setHttpsPort(Object httpsPort) {
     this.httpsPort = httpsPort;
   }
 
 
   public CreateApplicationRequest l2Caching(Boolean l2Caching) {
-    
     this.l2Caching = l2Caching;
     return this;
   }
@@ -482,14 +449,12 @@ public class CreateApplicationRequest {
     return l2Caching;
   }
 
-
   public void setL2Caching(Boolean l2Caching) {
     this.l2Caching = l2Caching;
   }
 
 
   public CreateApplicationRequest http3(Boolean http3) {
-    
     this.http3 = http3;
     return this;
   }
@@ -503,14 +468,12 @@ public class CreateApplicationRequest {
     return http3;
   }
 
-
   public void setHttp3(Boolean http3) {
     this.http3 = http3;
   }
 
 
   public CreateApplicationRequest websocket(Boolean websocket) {
-    
     this.websocket = websocket;
     return this;
   }
@@ -523,7 +486,6 @@ public class CreateApplicationRequest {
   public Boolean getWebsocket() {
     return websocket;
   }
-
 
   public void setWebsocket(Boolean websocket) {
     this.websocket = websocket;

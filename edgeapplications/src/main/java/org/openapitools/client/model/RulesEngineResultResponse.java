@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * RulesEngineResultResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class RulesEngineResultResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -73,7 +73,7 @@ public class RulesEngineResultResponse {
 
   public static final String SERIALIZED_NAME_BEHAVIORS = "behaviors";
   @SerializedName(SERIALIZED_NAME_BEHAVIORS)
-  private List<RulesEngineBehaviorEntry> behaviors;
+  private List<RulesEngineBehaviorEntry> behaviors = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CRITERIA = "criteria";
   @SerializedName(SERIALIZED_NAME_CRITERIA)
@@ -91,7 +91,6 @@ public class RulesEngineResultResponse {
   }
 
   public RulesEngineResultResponse id(Long id) {
-    
     this.id = id;
     return this;
   }
@@ -105,14 +104,12 @@ public class RulesEngineResultResponse {
     return id;
   }
 
-
   public void setId(Long id) {
     this.id = id;
   }
 
 
   public RulesEngineResultResponse name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -126,14 +123,12 @@ public class RulesEngineResultResponse {
     return name;
   }
 
-
   public void setName(String name) {
     this.name = name;
   }
 
 
   public RulesEngineResultResponse description(String description) {
-    
     this.description = description;
     return this;
   }
@@ -147,14 +142,12 @@ public class RulesEngineResultResponse {
     return description;
   }
 
-
   public void setDescription(String description) {
     this.description = description;
   }
 
 
   public RulesEngineResultResponse phase(String phase) {
-    
     this.phase = phase;
     return this;
   }
@@ -168,14 +161,12 @@ public class RulesEngineResultResponse {
     return phase;
   }
 
-
   public void setPhase(String phase) {
     this.phase = phase;
   }
 
 
   public RulesEngineResultResponse behaviors(List<RulesEngineBehaviorEntry> behaviors) {
-    
     this.behaviors = behaviors;
     return this;
   }
@@ -197,14 +188,12 @@ public class RulesEngineResultResponse {
     return behaviors;
   }
 
-
   public void setBehaviors(List<RulesEngineBehaviorEntry> behaviors) {
     this.behaviors = behaviors;
   }
 
 
   public RulesEngineResultResponse criteria(List<List<RulesEngineCriteria>> criteria) {
-    
     this.criteria = criteria;
     return this;
   }
@@ -226,14 +215,12 @@ public class RulesEngineResultResponse {
     return criteria;
   }
 
-
   public void setCriteria(List<List<RulesEngineCriteria>> criteria) {
     this.criteria = criteria;
   }
 
 
   public RulesEngineResultResponse isActive(Boolean isActive) {
-    
     this.isActive = isActive;
     return this;
   }
@@ -247,14 +234,12 @@ public class RulesEngineResultResponse {
     return isActive;
   }
 
-
   public void setIsActive(Boolean isActive) {
     this.isActive = isActive;
   }
 
 
   public RulesEngineResultResponse order(Long order) {
-    
     this.order = order;
     return this;
   }
@@ -267,7 +252,6 @@ public class RulesEngineResultResponse {
   public Long getOrder() {
     return order;
   }
-
 
   public void setOrder(Long order) {
     this.order = order;

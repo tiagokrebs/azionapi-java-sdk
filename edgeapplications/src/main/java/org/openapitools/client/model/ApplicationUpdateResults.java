@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationUpdateResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class ApplicationUpdateResults {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -135,7 +135,6 @@ public class ApplicationUpdateResults {
   }
 
   public ApplicationUpdateResults id(Long id) {
-    
     this.id = id;
     return this;
   }
@@ -149,14 +148,12 @@ public class ApplicationUpdateResults {
     return id;
   }
 
-
   public void setId(Long id) {
     this.id = id;
   }
 
 
   public ApplicationUpdateResults name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -170,14 +167,12 @@ public class ApplicationUpdateResults {
     return name;
   }
 
-
   public void setName(String name) {
     this.name = name;
   }
 
 
   public ApplicationUpdateResults deliveryProtocol(String deliveryProtocol) {
-    
     this.deliveryProtocol = deliveryProtocol;
     return this;
   }
@@ -191,14 +186,12 @@ public class ApplicationUpdateResults {
     return deliveryProtocol;
   }
 
-
   public void setDeliveryProtocol(String deliveryProtocol) {
     this.deliveryProtocol = deliveryProtocol;
   }
 
 
   public ApplicationUpdateResults httpPort(Object httpPort) {
-    
     this.httpPort = httpPort;
     return this;
   }
@@ -212,14 +205,12 @@ public class ApplicationUpdateResults {
     return httpPort;
   }
 
-
   public void setHttpPort(Object httpPort) {
     this.httpPort = httpPort;
   }
 
 
   public ApplicationUpdateResults httpsPort(Object httpsPort) {
-    
     this.httpsPort = httpsPort;
     return this;
   }
@@ -233,14 +224,12 @@ public class ApplicationUpdateResults {
     return httpsPort;
   }
 
-
   public void setHttpsPort(Object httpsPort) {
     this.httpsPort = httpsPort;
   }
 
 
   public ApplicationUpdateResults minimumTlsVersion(String minimumTlsVersion) {
-    
     this.minimumTlsVersion = minimumTlsVersion;
     return this;
   }
@@ -254,14 +243,12 @@ public class ApplicationUpdateResults {
     return minimumTlsVersion;
   }
 
-
   public void setMinimumTlsVersion(String minimumTlsVersion) {
     this.minimumTlsVersion = minimumTlsVersion;
   }
 
 
   public ApplicationUpdateResults active(Boolean active) {
-    
     this.active = active;
     return this;
   }
@@ -275,14 +262,12 @@ public class ApplicationUpdateResults {
     return active;
   }
 
-
   public void setActive(Boolean active) {
     this.active = active;
   }
 
 
   public ApplicationUpdateResults debugRules(Boolean debugRules) {
-    
     this.debugRules = debugRules;
     return this;
   }
@@ -296,14 +281,12 @@ public class ApplicationUpdateResults {
     return debugRules;
   }
 
-
   public void setDebugRules(Boolean debugRules) {
     this.debugRules = debugRules;
   }
 
 
   public ApplicationUpdateResults http3(Boolean http3) {
-    
     this.http3 = http3;
     return this;
   }
@@ -317,14 +300,12 @@ public class ApplicationUpdateResults {
     return http3;
   }
 
-
   public void setHttp3(Boolean http3) {
     this.http3 = http3;
   }
 
 
   public ApplicationUpdateResults supportedCiphers(String supportedCiphers) {
-    
     this.supportedCiphers = supportedCiphers;
     return this;
   }
@@ -338,14 +319,12 @@ public class ApplicationUpdateResults {
     return supportedCiphers;
   }
 
-
   public void setSupportedCiphers(String supportedCiphers) {
     this.supportedCiphers = supportedCiphers;
   }
 
 
   public ApplicationUpdateResults applicationAcceleration(Boolean applicationAcceleration) {
-    
     this.applicationAcceleration = applicationAcceleration;
     return this;
   }
@@ -359,14 +338,12 @@ public class ApplicationUpdateResults {
     return applicationAcceleration;
   }
 
-
   public void setApplicationAcceleration(Boolean applicationAcceleration) {
     this.applicationAcceleration = applicationAcceleration;
   }
 
 
   public ApplicationUpdateResults caching(Boolean caching) {
-    
     this.caching = caching;
     return this;
   }
@@ -380,14 +357,12 @@ public class ApplicationUpdateResults {
     return caching;
   }
 
-
   public void setCaching(Boolean caching) {
     this.caching = caching;
   }
 
 
   public ApplicationUpdateResults deviceDetection(Boolean deviceDetection) {
-    
     this.deviceDetection = deviceDetection;
     return this;
   }
@@ -401,14 +376,12 @@ public class ApplicationUpdateResults {
     return deviceDetection;
   }
 
-
   public void setDeviceDetection(Boolean deviceDetection) {
     this.deviceDetection = deviceDetection;
   }
 
 
   public ApplicationUpdateResults edgeFirewall(Boolean edgeFirewall) {
-    
     this.edgeFirewall = edgeFirewall;
     return this;
   }
@@ -422,14 +395,12 @@ public class ApplicationUpdateResults {
     return edgeFirewall;
   }
 
-
   public void setEdgeFirewall(Boolean edgeFirewall) {
     this.edgeFirewall = edgeFirewall;
   }
 
 
   public ApplicationUpdateResults edgeFunctions(Boolean edgeFunctions) {
-    
     this.edgeFunctions = edgeFunctions;
     return this;
   }
@@ -443,14 +414,12 @@ public class ApplicationUpdateResults {
     return edgeFunctions;
   }
 
-
   public void setEdgeFunctions(Boolean edgeFunctions) {
     this.edgeFunctions = edgeFunctions;
   }
 
 
   public ApplicationUpdateResults imageOptimization(Boolean imageOptimization) {
-    
     this.imageOptimization = imageOptimization;
     return this;
   }
@@ -464,14 +433,12 @@ public class ApplicationUpdateResults {
     return imageOptimization;
   }
 
-
   public void setImageOptimization(Boolean imageOptimization) {
     this.imageOptimization = imageOptimization;
   }
 
 
   public ApplicationUpdateResults l2Caching(Boolean l2Caching) {
-    
     this.l2Caching = l2Caching;
     return this;
   }
@@ -485,14 +452,12 @@ public class ApplicationUpdateResults {
     return l2Caching;
   }
 
-
   public void setL2Caching(Boolean l2Caching) {
     this.l2Caching = l2Caching;
   }
 
 
   public ApplicationUpdateResults loadBalancer(Boolean loadBalancer) {
-    
     this.loadBalancer = loadBalancer;
     return this;
   }
@@ -506,14 +471,12 @@ public class ApplicationUpdateResults {
     return loadBalancer;
   }
 
-
   public void setLoadBalancer(Boolean loadBalancer) {
     this.loadBalancer = loadBalancer;
   }
 
 
   public ApplicationUpdateResults rawLogs(Boolean rawLogs) {
-    
     this.rawLogs = rawLogs;
     return this;
   }
@@ -527,14 +490,12 @@ public class ApplicationUpdateResults {
     return rawLogs;
   }
 
-
   public void setRawLogs(Boolean rawLogs) {
     this.rawLogs = rawLogs;
   }
 
 
   public ApplicationUpdateResults webApplicationFirewall(Boolean webApplicationFirewall) {
-    
     this.webApplicationFirewall = webApplicationFirewall;
     return this;
   }
@@ -547,7 +508,6 @@ public class ApplicationUpdateResults {
   public Boolean getWebApplicationFirewall() {
     return webApplicationFirewall;
   }
-
 
   public void setWebApplicationFirewall(Boolean webApplicationFirewall) {
     this.webApplicationFirewall = webApplicationFirewall;

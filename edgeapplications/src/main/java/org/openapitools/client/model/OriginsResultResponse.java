@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * OriginsResultResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class OriginsResultResponse {
   public static final String SERIALIZED_NAME_ORIGIN_ID = "origin_id";
   @SerializedName(SERIALIZED_NAME_ORIGIN_ID)
@@ -72,7 +72,7 @@ public class OriginsResultResponse {
 
   public static final String SERIALIZED_NAME_ADDRESSES = "addresses";
   @SerializedName(SERIALIZED_NAME_ADDRESSES)
-  private List<OriginsResultResponseAddresses> addresses;
+  private List<OriginsResultResponseAddresses> addresses = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ORIGIN_PROTOCOL_POLICY = "origin_protocol_policy";
   @SerializedName(SERIALIZED_NAME_ORIGIN_PROTOCOL_POLICY)
@@ -130,7 +130,6 @@ public class OriginsResultResponse {
   }
 
   public OriginsResultResponse originId(Long originId) {
-    
     this.originId = originId;
     return this;
   }
@@ -144,14 +143,12 @@ public class OriginsResultResponse {
     return originId;
   }
 
-
   public void setOriginId(Long originId) {
     this.originId = originId;
   }
 
 
   public OriginsResultResponse originKey(String originKey) {
-    
     this.originKey = originKey;
     return this;
   }
@@ -165,14 +162,12 @@ public class OriginsResultResponse {
     return originKey;
   }
 
-
   public void setOriginKey(String originKey) {
     this.originKey = originKey;
   }
 
 
   public OriginsResultResponse name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -186,14 +181,12 @@ public class OriginsResultResponse {
     return name;
   }
 
-
   public void setName(String name) {
     this.name = name;
   }
 
 
   public OriginsResultResponse originType(String originType) {
-    
     this.originType = originType;
     return this;
   }
@@ -207,14 +200,12 @@ public class OriginsResultResponse {
     return originType;
   }
 
-
   public void setOriginType(String originType) {
     this.originType = originType;
   }
 
 
   public OriginsResultResponse addresses(List<OriginsResultResponseAddresses> addresses) {
-    
     this.addresses = addresses;
     return this;
   }
@@ -236,14 +227,12 @@ public class OriginsResultResponse {
     return addresses;
   }
 
-
   public void setAddresses(List<OriginsResultResponseAddresses> addresses) {
     this.addresses = addresses;
   }
 
 
   public OriginsResultResponse originProtocolPolicy(String originProtocolPolicy) {
-    
     this.originProtocolPolicy = originProtocolPolicy;
     return this;
   }
@@ -257,14 +246,12 @@ public class OriginsResultResponse {
     return originProtocolPolicy;
   }
 
-
   public void setOriginProtocolPolicy(String originProtocolPolicy) {
     this.originProtocolPolicy = originProtocolPolicy;
   }
 
 
   public OriginsResultResponse isOriginRedirectionEnabled(Boolean isOriginRedirectionEnabled) {
-    
     this.isOriginRedirectionEnabled = isOriginRedirectionEnabled;
     return this;
   }
@@ -278,14 +265,12 @@ public class OriginsResultResponse {
     return isOriginRedirectionEnabled;
   }
 
-
   public void setIsOriginRedirectionEnabled(Boolean isOriginRedirectionEnabled) {
     this.isOriginRedirectionEnabled = isOriginRedirectionEnabled;
   }
 
 
   public OriginsResultResponse hostHeader(String hostHeader) {
-    
     this.hostHeader = hostHeader;
     return this;
   }
@@ -299,14 +284,12 @@ public class OriginsResultResponse {
     return hostHeader;
   }
 
-
   public void setHostHeader(String hostHeader) {
     this.hostHeader = hostHeader;
   }
 
 
   public OriginsResultResponse method(String method) {
-    
     this.method = method;
     return this;
   }
@@ -320,14 +303,12 @@ public class OriginsResultResponse {
     return method;
   }
 
-
   public void setMethod(String method) {
     this.method = method;
   }
 
 
   public OriginsResultResponse originPath(String originPath) {
-    
     this.originPath = originPath;
     return this;
   }
@@ -341,14 +322,12 @@ public class OriginsResultResponse {
     return originPath;
   }
 
-
   public void setOriginPath(String originPath) {
     this.originPath = originPath;
   }
 
 
   public OriginsResultResponse connectionTimeout(Long connectionTimeout) {
-    
     this.connectionTimeout = connectionTimeout;
     return this;
   }
@@ -362,14 +341,12 @@ public class OriginsResultResponse {
     return connectionTimeout;
   }
 
-
   public void setConnectionTimeout(Long connectionTimeout) {
     this.connectionTimeout = connectionTimeout;
   }
 
 
   public OriginsResultResponse timeoutBetweenBytes(Long timeoutBetweenBytes) {
-    
     this.timeoutBetweenBytes = timeoutBetweenBytes;
     return this;
   }
@@ -383,14 +360,12 @@ public class OriginsResultResponse {
     return timeoutBetweenBytes;
   }
 
-
   public void setTimeoutBetweenBytes(Long timeoutBetweenBytes) {
     this.timeoutBetweenBytes = timeoutBetweenBytes;
   }
 
 
   public OriginsResultResponse hmacAuthentication(Boolean hmacAuthentication) {
-    
     this.hmacAuthentication = hmacAuthentication;
     return this;
   }
@@ -404,14 +379,12 @@ public class OriginsResultResponse {
     return hmacAuthentication;
   }
 
-
   public void setHmacAuthentication(Boolean hmacAuthentication) {
     this.hmacAuthentication = hmacAuthentication;
   }
 
 
   public OriginsResultResponse hmacRegionName(String hmacRegionName) {
-    
     this.hmacRegionName = hmacRegionName;
     return this;
   }
@@ -425,14 +398,12 @@ public class OriginsResultResponse {
     return hmacRegionName;
   }
 
-
   public void setHmacRegionName(String hmacRegionName) {
     this.hmacRegionName = hmacRegionName;
   }
 
 
   public OriginsResultResponse hmacAccessKey(String hmacAccessKey) {
-    
     this.hmacAccessKey = hmacAccessKey;
     return this;
   }
@@ -446,14 +417,12 @@ public class OriginsResultResponse {
     return hmacAccessKey;
   }
 
-
   public void setHmacAccessKey(String hmacAccessKey) {
     this.hmacAccessKey = hmacAccessKey;
   }
 
 
   public OriginsResultResponse hmacSecretKey(String hmacSecretKey) {
-    
     this.hmacSecretKey = hmacSecretKey;
     return this;
   }
@@ -467,14 +436,12 @@ public class OriginsResultResponse {
     return hmacSecretKey;
   }
 
-
   public void setHmacSecretKey(String hmacSecretKey) {
     this.hmacSecretKey = hmacSecretKey;
   }
 
 
   public OriginsResultResponse bucket(String bucket) {
-    
     this.bucket = bucket;
     return this;
   }
@@ -488,14 +455,12 @@ public class OriginsResultResponse {
     return bucket;
   }
 
-
   public void setBucket(String bucket) {
     this.bucket = bucket;
   }
 
 
   public OriginsResultResponse prefix(String prefix) {
-    
     this.prefix = prefix;
     return this;
   }
@@ -508,7 +473,6 @@ public class OriginsResultResponse {
   public String getPrefix() {
     return prefix;
   }
-
 
   public void setPrefix(String prefix) {
     this.prefix = prefix;

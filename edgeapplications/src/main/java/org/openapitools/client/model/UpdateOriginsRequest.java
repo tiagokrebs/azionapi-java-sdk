@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * UpdateOriginsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class UpdateOriginsRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -64,7 +64,7 @@ public class UpdateOriginsRequest {
 
   public static final String SERIALIZED_NAME_ADDRESSES = "addresses";
   @SerializedName(SERIALIZED_NAME_ADDRESSES)
-  private List<CreateOriginsRequestAddresses> addresses;
+  private List<CreateOriginsRequestAddresses> addresses = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ORIGIN_PROTOCOL_POLICY = "origin_protocol_policy";
   @SerializedName(SERIALIZED_NAME_ORIGIN_PROTOCOL_POLICY)
@@ -106,7 +106,6 @@ public class UpdateOriginsRequest {
   }
 
   public UpdateOriginsRequest name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -120,14 +119,12 @@ public class UpdateOriginsRequest {
     return name;
   }
 
-
   public void setName(String name) {
     this.name = name;
   }
 
 
   public UpdateOriginsRequest originType(String originType) {
-    
     this.originType = originType;
     return this;
   }
@@ -141,14 +138,12 @@ public class UpdateOriginsRequest {
     return originType;
   }
 
-
   public void setOriginType(String originType) {
     this.originType = originType;
   }
 
 
   public UpdateOriginsRequest addresses(List<CreateOriginsRequestAddresses> addresses) {
-    
     this.addresses = addresses;
     return this;
   }
@@ -170,14 +165,12 @@ public class UpdateOriginsRequest {
     return addresses;
   }
 
-
   public void setAddresses(List<CreateOriginsRequestAddresses> addresses) {
     this.addresses = addresses;
   }
 
 
   public UpdateOriginsRequest originProtocolPolicy(String originProtocolPolicy) {
-    
     this.originProtocolPolicy = originProtocolPolicy;
     return this;
   }
@@ -191,14 +184,12 @@ public class UpdateOriginsRequest {
     return originProtocolPolicy;
   }
 
-
   public void setOriginProtocolPolicy(String originProtocolPolicy) {
     this.originProtocolPolicy = originProtocolPolicy;
   }
 
 
   public UpdateOriginsRequest hostHeader(String hostHeader) {
-    
     this.hostHeader = hostHeader;
     return this;
   }
@@ -212,14 +203,12 @@ public class UpdateOriginsRequest {
     return hostHeader;
   }
 
-
   public void setHostHeader(String hostHeader) {
     this.hostHeader = hostHeader;
   }
 
 
   public UpdateOriginsRequest originPath(String originPath) {
-    
     this.originPath = originPath;
     return this;
   }
@@ -233,14 +222,12 @@ public class UpdateOriginsRequest {
     return originPath;
   }
 
-
   public void setOriginPath(String originPath) {
     this.originPath = originPath;
   }
 
 
   public UpdateOriginsRequest hmacAuthentication(Boolean hmacAuthentication) {
-    
     this.hmacAuthentication = hmacAuthentication;
     return this;
   }
@@ -254,14 +241,12 @@ public class UpdateOriginsRequest {
     return hmacAuthentication;
   }
 
-
   public void setHmacAuthentication(Boolean hmacAuthentication) {
     this.hmacAuthentication = hmacAuthentication;
   }
 
 
   public UpdateOriginsRequest hmacRegionName(String hmacRegionName) {
-    
     this.hmacRegionName = hmacRegionName;
     return this;
   }
@@ -275,14 +260,12 @@ public class UpdateOriginsRequest {
     return hmacRegionName;
   }
 
-
   public void setHmacRegionName(String hmacRegionName) {
     this.hmacRegionName = hmacRegionName;
   }
 
 
   public UpdateOriginsRequest hmacAccessKey(String hmacAccessKey) {
-    
     this.hmacAccessKey = hmacAccessKey;
     return this;
   }
@@ -296,14 +279,12 @@ public class UpdateOriginsRequest {
     return hmacAccessKey;
   }
 
-
   public void setHmacAccessKey(String hmacAccessKey) {
     this.hmacAccessKey = hmacAccessKey;
   }
 
 
   public UpdateOriginsRequest hmacSecretKey(String hmacSecretKey) {
-    
     this.hmacSecretKey = hmacSecretKey;
     return this;
   }
@@ -317,14 +298,12 @@ public class UpdateOriginsRequest {
     return hmacSecretKey;
   }
 
-
   public void setHmacSecretKey(String hmacSecretKey) {
     this.hmacSecretKey = hmacSecretKey;
   }
 
 
   public UpdateOriginsRequest bucket(String bucket) {
-    
     this.bucket = bucket;
     return this;
   }
@@ -338,14 +317,12 @@ public class UpdateOriginsRequest {
     return bucket;
   }
 
-
   public void setBucket(String bucket) {
     this.bucket = bucket;
   }
 
 
   public UpdateOriginsRequest prefix(String prefix) {
-    
     this.prefix = prefix;
     return this;
   }
@@ -358,7 +335,6 @@ public class UpdateOriginsRequest {
   public String getPrefix() {
     return prefix;
   }
-
 
   public void setPrefix(String prefix) {
     this.prefix = prefix;
