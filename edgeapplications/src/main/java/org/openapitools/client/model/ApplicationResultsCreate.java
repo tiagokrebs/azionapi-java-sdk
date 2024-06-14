@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationResultsCreate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
 public class ApplicationResultsCreate {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -130,6 +130,10 @@ public class ApplicationResultsCreate {
   public static final String SERIALIZED_NAME_L2_CACHING = "l2_caching";
   @SerializedName(SERIALIZED_NAME_L2_CACHING)
   private Boolean l2Caching;
+
+  public static final String SERIALIZED_NAME_WEBSOCKET = "websocket";
+  @SerializedName(SERIALIZED_NAME_WEBSOCKET)
+  private Boolean websocket;
 
   public ApplicationResultsCreate() {
   }
@@ -514,6 +518,25 @@ public class ApplicationResultsCreate {
   }
 
 
+  public ApplicationResultsCreate websocket(Boolean websocket) {
+    this.websocket = websocket;
+    return this;
+  }
+
+   /**
+   * Get websocket
+   * @return websocket
+  **/
+  @javax.annotation.Nullable
+  public Boolean getWebsocket() {
+    return websocket;
+  }
+
+  public void setWebsocket(Boolean websocket) {
+    this.websocket = websocket;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -543,12 +566,13 @@ public class ApplicationResultsCreate {
         Objects.equals(this.loadBalancer, applicationResultsCreate.loadBalancer) &&
         Objects.equals(this.rawLogs, applicationResultsCreate.rawLogs) &&
         Objects.equals(this.webApplicationFirewall, applicationResultsCreate.webApplicationFirewall) &&
-        Objects.equals(this.l2Caching, applicationResultsCreate.l2Caching);
+        Objects.equals(this.l2Caching, applicationResultsCreate.l2Caching) &&
+        Objects.equals(this.websocket, applicationResultsCreate.websocket);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, active, debugRules, http3, supportedCiphers, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, loadBalancer, rawLogs, webApplicationFirewall, l2Caching);
+    return Objects.hash(id, name, active, debugRules, http3, supportedCiphers, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, loadBalancer, rawLogs, webApplicationFirewall, l2Caching, websocket);
   }
 
   @Override
@@ -575,6 +599,7 @@ public class ApplicationResultsCreate {
     sb.append("    rawLogs: ").append(toIndentedString(rawLogs)).append("\n");
     sb.append("    webApplicationFirewall: ").append(toIndentedString(webApplicationFirewall)).append("\n");
     sb.append("    l2Caching: ").append(toIndentedString(l2Caching)).append("\n");
+    sb.append("    websocket: ").append(toIndentedString(websocket)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -617,6 +642,7 @@ public class ApplicationResultsCreate {
     openapiFields.add("raw_logs");
     openapiFields.add("web_application_firewall");
     openapiFields.add("l2_caching");
+    openapiFields.add("websocket");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

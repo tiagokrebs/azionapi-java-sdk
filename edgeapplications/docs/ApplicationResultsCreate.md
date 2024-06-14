@@ -27,6 +27,7 @@
 |**rawLogs** | **Boolean** |  |  |
 |**webApplicationFirewall** | **Boolean** |  |  |
 |**l2Caching** | **Boolean** |  |  [optional] |
+|**websocket** | **Boolean** |  |  [optional] |
 
 
 

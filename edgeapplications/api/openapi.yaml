@@ -2473,6 +2473,8 @@ components:
           type: boolean
         web_application_firewall:
           type: boolean
+        websocket:
+          type: boolean
       required:
       - active
       - application_acceleration
@@ -2651,6 +2653,8 @@ components:
           type: boolean
         l2_caching:
           type: boolean
+        websocket:
+          type: boolean
       required:
       - active
       - application_acceleration
@@ -2828,6 +2832,8 @@ components:
         raw_logs:
           type: boolean
         web_application_firewall:
+          type: boolean
+        websocket:
           type: boolean
       required:
       - active
