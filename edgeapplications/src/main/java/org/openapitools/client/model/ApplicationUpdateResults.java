@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationUpdateResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
 public class ApplicationUpdateResults {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -130,6 +130,10 @@ public class ApplicationUpdateResults {
   public static final String SERIALIZED_NAME_WEB_APPLICATION_FIREWALL = "web_application_firewall";
   @SerializedName(SERIALIZED_NAME_WEB_APPLICATION_FIREWALL)
   private Boolean webApplicationFirewall;
+
+  public static final String SERIALIZED_NAME_WEBSOCKET = "websocket";
+  @SerializedName(SERIALIZED_NAME_WEBSOCKET)
+  private Boolean websocket;
 
   public ApplicationUpdateResults() {
   }
@@ -514,6 +518,25 @@ public class ApplicationUpdateResults {
   }
 
 
+  public ApplicationUpdateResults websocket(Boolean websocket) {
+    this.websocket = websocket;
+    return this;
+  }
+
+   /**
+   * Get websocket
+   * @return websocket
+  **/
+  @javax.annotation.Nullable
+  public Boolean getWebsocket() {
+    return websocket;
+  }
+
+  public void setWebsocket(Boolean websocket) {
+    this.websocket = websocket;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -543,12 +566,13 @@ public class ApplicationUpdateResults {
         Objects.equals(this.l2Caching, applicationUpdateResults.l2Caching) &&
         Objects.equals(this.loadBalancer, applicationUpdateResults.loadBalancer) &&
         Objects.equals(this.rawLogs, applicationUpdateResults.rawLogs) &&
-        Objects.equals(this.webApplicationFirewall, applicationUpdateResults.webApplicationFirewall);
+        Objects.equals(this.webApplicationFirewall, applicationUpdateResults.webApplicationFirewall) &&
+        Objects.equals(this.websocket, applicationUpdateResults.websocket);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, active, debugRules, http3, supportedCiphers, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, l2Caching, loadBalancer, rawLogs, webApplicationFirewall);
+    return Objects.hash(id, name, deliveryProtocol, httpPort, httpsPort, minimumTlsVersion, active, debugRules, http3, supportedCiphers, applicationAcceleration, caching, deviceDetection, edgeFirewall, edgeFunctions, imageOptimization, l2Caching, loadBalancer, rawLogs, webApplicationFirewall, websocket);
   }
 
   @Override
@@ -575,6 +599,7 @@ public class ApplicationUpdateResults {
     sb.append("    loadBalancer: ").append(toIndentedString(loadBalancer)).append("\n");
     sb.append("    rawLogs: ").append(toIndentedString(rawLogs)).append("\n");
     sb.append("    webApplicationFirewall: ").append(toIndentedString(webApplicationFirewall)).append("\n");
+    sb.append("    websocket: ").append(toIndentedString(websocket)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -617,6 +642,7 @@ public class ApplicationUpdateResults {
     openapiFields.add("load_balancer");
     openapiFields.add("raw_logs");
     openapiFields.add("web_application_firewall");
+    openapiFields.add("websocket");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
