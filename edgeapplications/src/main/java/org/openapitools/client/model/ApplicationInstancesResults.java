@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationInstancesResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class ApplicationInstancesResults {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -71,7 +71,6 @@ public class ApplicationInstancesResults {
   }
 
   public ApplicationInstancesResults id(Long id) {
-    
     this.id = id;
     return this;
   }
@@ -85,14 +84,12 @@ public class ApplicationInstancesResults {
     return id;
   }
 
-
   public void setId(Long id) {
     this.id = id;
   }
 
 
   public ApplicationInstancesResults edgeFunctionId(Long edgeFunctionId) {
-    
     this.edgeFunctionId = edgeFunctionId;
     return this;
   }
@@ -106,14 +103,12 @@ public class ApplicationInstancesResults {
     return edgeFunctionId;
   }
 
-
   public void setEdgeFunctionId(Long edgeFunctionId) {
     this.edgeFunctionId = edgeFunctionId;
   }
 
 
   public ApplicationInstancesResults name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -127,14 +122,12 @@ public class ApplicationInstancesResults {
     return name;
   }
 
-
   public void setName(String name) {
     this.name = name;
   }
 
 
   public ApplicationInstancesResults args(Object args) {
-    
     this.args = args;
     return this;
   }
@@ -147,7 +140,6 @@ public class ApplicationInstancesResults {
   public Object getArgs() {
     return args;
   }
-
 
   public void setArgs(Object args) {
     this.args = args;

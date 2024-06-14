@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RulesEngineBehaviorObjectTarget
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class RulesEngineBehaviorObjectTarget {
   public static final String SERIALIZED_NAME_CAPTURED_ARRAY = "captured_array";
   @SerializedName(SERIALIZED_NAME_CAPTURED_ARRAY)
@@ -67,7 +67,6 @@ public class RulesEngineBehaviorObjectTarget {
   }
 
   public RulesEngineBehaviorObjectTarget capturedArray(String capturedArray) {
-    
     this.capturedArray = capturedArray;
     return this;
   }
@@ -81,14 +80,12 @@ public class RulesEngineBehaviorObjectTarget {
     return capturedArray;
   }
 
-
   public void setCapturedArray(String capturedArray) {
     this.capturedArray = capturedArray;
   }
 
 
   public RulesEngineBehaviorObjectTarget subject(String subject) {
-    
     this.subject = subject;
     return this;
   }
@@ -102,14 +99,12 @@ public class RulesEngineBehaviorObjectTarget {
     return subject;
   }
 
-
   public void setSubject(String subject) {
     this.subject = subject;
   }
 
 
   public RulesEngineBehaviorObjectTarget regex(String regex) {
-    
     this.regex = regex;
     return this;
   }
@@ -122,7 +117,6 @@ public class RulesEngineBehaviorObjectTarget {
   public String getRegex() {
     return regex;
   }
-
 
   public void setRegex(String regex) {
     this.regex = regex;

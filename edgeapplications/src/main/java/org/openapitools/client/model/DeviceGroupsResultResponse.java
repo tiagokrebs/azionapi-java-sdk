@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * DeviceGroupsResultResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class DeviceGroupsResultResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -67,7 +67,6 @@ public class DeviceGroupsResultResponse {
   }
 
   public DeviceGroupsResultResponse id(Long id) {
-    
     this.id = id;
     return this;
   }
@@ -81,14 +80,12 @@ public class DeviceGroupsResultResponse {
     return id;
   }
 
-
   public void setId(Long id) {
     this.id = id;
   }
 
 
   public DeviceGroupsResultResponse name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -102,14 +99,12 @@ public class DeviceGroupsResultResponse {
     return name;
   }
 
-
   public void setName(String name) {
     this.name = name;
   }
 
 
   public DeviceGroupsResultResponse userAgent(String userAgent) {
-    
     this.userAgent = userAgent;
     return this;
   }
@@ -122,7 +117,6 @@ public class DeviceGroupsResultResponse {
   public String getUserAgent() {
     return userAgent;
   }
-
 
   public void setUserAgent(String userAgent) {
     this.userAgent = userAgent;

@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationCacheGetOneResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class ApplicationCacheGetOneResponse {
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
@@ -64,7 +64,6 @@ public class ApplicationCacheGetOneResponse {
   }
 
   public ApplicationCacheGetOneResponse results(ApplicationCacheResults results) {
-    
     this.results = results;
     return this;
   }
@@ -78,14 +77,12 @@ public class ApplicationCacheGetOneResponse {
     return results;
   }
 
-
   public void setResults(ApplicationCacheResults results) {
     this.results = results;
   }
 
 
   public ApplicationCacheGetOneResponse schemaVersion(Long schemaVersion) {
-    
     this.schemaVersion = schemaVersion;
     return this;
   }
@@ -98,7 +95,6 @@ public class ApplicationCacheGetOneResponse {
   public Long getSchemaVersion() {
     return schemaVersion;
   }
-
 
   public void setSchemaVersion(Long schemaVersion) {
     this.schemaVersion = schemaVersion;

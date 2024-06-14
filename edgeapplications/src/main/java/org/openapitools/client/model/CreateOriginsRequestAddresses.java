@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * CreateOriginsRequestAddresses
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class CreateOriginsRequestAddresses {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -59,7 +59,6 @@ public class CreateOriginsRequestAddresses {
   }
 
   public CreateOriginsRequestAddresses address(String address) {
-    
     this.address = address;
     return this;
   }
@@ -72,7 +71,6 @@ public class CreateOriginsRequestAddresses {
   public String getAddress() {
     return address;
   }
-
 
   public void setAddress(String address) {
     this.address = address;

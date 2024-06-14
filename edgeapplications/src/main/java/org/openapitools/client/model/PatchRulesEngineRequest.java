@@ -53,11 +53,19 @@ import org.openapitools.client.JSON;
 /**
  * PatchRulesEngineRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class PatchRulesEngineRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_ORDER = "order";
+  @SerializedName(SERIALIZED_NAME_ORDER)
+  private Long order;
+
+  public static final String SERIALIZED_NAME_IS_ACTIVE = "is_active";
+  @SerializedName(SERIALIZED_NAME_IS_ACTIVE)
+  private Boolean isActive;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -65,17 +73,16 @@ public class PatchRulesEngineRequest {
 
   public static final String SERIALIZED_NAME_CRITERIA = "criteria";
   @SerializedName(SERIALIZED_NAME_CRITERIA)
-  private List<List<RulesEngineCriteria>> criteria;
+  private List<List<RulesEngineCriteria>> criteria = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_BEHAVIORS = "behaviors";
   @SerializedName(SERIALIZED_NAME_BEHAVIORS)
-  private List<RulesEngineBehaviorEntry> behaviors;
+  private List<RulesEngineBehaviorEntry> behaviors = new ArrayList<>();
 
   public PatchRulesEngineRequest() {
   }
 
   public PatchRulesEngineRequest name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -89,14 +96,52 @@ public class PatchRulesEngineRequest {
     return name;
   }
 
-
   public void setName(String name) {
     this.name = name;
   }
 
 
+  public PatchRulesEngineRequest order(Long order) {
+    this.order = order;
+    return this;
+  }
+
+   /**
+   * Get order
+   * minimum: 1
+   * maximum: 10000
+   * @return order
+  **/
+  @javax.annotation.Nullable
+  public Long getOrder() {
+    return order;
+  }
+
+  public void setOrder(Long order) {
+    this.order = order;
+  }
+
+
+  public PatchRulesEngineRequest isActive(Boolean isActive) {
+    this.isActive = isActive;
+    return this;
+  }
+
+   /**
+   * Get isActive
+   * @return isActive
+  **/
+  @javax.annotation.Nullable
+  public Boolean getIsActive() {
+    return isActive;
+  }
+
+  public void setIsActive(Boolean isActive) {
+    this.isActive = isActive;
+  }
+
+
   public PatchRulesEngineRequest description(String description) {
-    
     this.description = description;
     return this;
   }
@@ -110,14 +155,12 @@ public class PatchRulesEngineRequest {
     return description;
   }
 
-
   public void setDescription(String description) {
     this.description = description;
   }
 
 
   public PatchRulesEngineRequest criteria(List<List<RulesEngineCriteria>> criteria) {
-    
     this.criteria = criteria;
     return this;
   }
@@ -139,14 +182,12 @@ public class PatchRulesEngineRequest {
     return criteria;
   }
 
-
   public void setCriteria(List<List<RulesEngineCriteria>> criteria) {
     this.criteria = criteria;
   }
 
 
   public PatchRulesEngineRequest behaviors(List<RulesEngineBehaviorEntry> behaviors) {
-    
     this.behaviors = behaviors;
     return this;
   }
@@ -168,7 +209,6 @@ public class PatchRulesEngineRequest {
     return behaviors;
   }
 
-
   public void setBehaviors(List<RulesEngineBehaviorEntry> behaviors) {
     this.behaviors = behaviors;
   }
@@ -185,6 +225,8 @@ public class PatchRulesEngineRequest {
     }
     PatchRulesEngineRequest patchRulesEngineRequest = (PatchRulesEngineRequest) o;
     return Objects.equals(this.name, patchRulesEngineRequest.name) &&
+        Objects.equals(this.order, patchRulesEngineRequest.order) &&
+        Objects.equals(this.isActive, patchRulesEngineRequest.isActive) &&
         Objects.equals(this.description, patchRulesEngineRequest.description) &&
         Objects.equals(this.criteria, patchRulesEngineRequest.criteria) &&
         Objects.equals(this.behaviors, patchRulesEngineRequest.behaviors);
@@ -192,7 +234,7 @@ public class PatchRulesEngineRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, criteria, behaviors);
+    return Objects.hash(name, order, isActive, description, criteria, behaviors);
   }
 
   @Override
@@ -200,6 +242,8 @@ public class PatchRulesEngineRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class PatchRulesEngineRequest {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    order: ").append(toIndentedString(order)).append("\n");
+    sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    criteria: ").append(toIndentedString(criteria)).append("\n");
     sb.append("    behaviors: ").append(toIndentedString(behaviors)).append("\n");
@@ -226,6 +270,8 @@ public class PatchRulesEngineRequest {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("name");
+    openapiFields.add("order");
+    openapiFields.add("is_active");
     openapiFields.add("description");
     openapiFields.add("criteria");
     openapiFields.add("behaviors");

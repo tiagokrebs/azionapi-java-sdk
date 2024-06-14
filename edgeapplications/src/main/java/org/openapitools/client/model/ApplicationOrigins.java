@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationOrigins
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class ApplicationOrigins {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -67,7 +67,6 @@ public class ApplicationOrigins {
   }
 
   public ApplicationOrigins name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -81,14 +80,12 @@ public class ApplicationOrigins {
     return name;
   }
 
-
   public void setName(String name) {
     this.name = name;
   }
 
 
   public ApplicationOrigins originType(String originType) {
-    
     this.originType = originType;
     return this;
   }
@@ -102,14 +99,12 @@ public class ApplicationOrigins {
     return originType;
   }
 
-
   public void setOriginType(String originType) {
     this.originType = originType;
   }
 
 
   public ApplicationOrigins originId(String originId) {
-    
     this.originId = originId;
     return this;
   }
@@ -122,7 +117,6 @@ public class ApplicationOrigins {
   public String getOriginId() {
     return originId;
   }
-
 
   public void setOriginId(String originId) {
     this.originId = originId;

@@ -79,7 +79,8 @@ paths:
       summary: /edge_applications
       tags:
       - Edge Applications > Main Settings
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
     post:
       parameters:
       - example: application/json; version=3
@@ -138,7 +139,8 @@ paths:
       tags:
       - Edge Applications > Main Settings
       x-content-type: application/json; version=3
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
   /edge_applications/{id}:
     delete:
       parameters:
@@ -174,7 +176,8 @@ paths:
       summary: /edge_applications/:id
       tags:
       - Edge Applications > Main Settings
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       parameters:
       - example: application/json; version=3
@@ -212,7 +215,8 @@ paths:
       summary: /edge_applications/:id
       tags:
       - Edge Applications > Main Settings
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
     patch:
       parameters:
       - example: application/json; version=3
@@ -272,7 +276,8 @@ paths:
       tags:
       - Edge Applications > Main Settings
       x-content-type: application/json; version=3
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
     put:
       parameters:
       - example: application/json; version=3
@@ -333,7 +338,8 @@ paths:
       tags:
       - Edge Applications > Main Settings
       x-content-type: application/json; version=3
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
   /edge_applications/{edge_application_id}/cache_settings:
     get:
       parameters:
@@ -410,7 +416,8 @@ paths:
       summary: "/edge_applications/{edge_application_id}/cache_settings"
       tags:
       - Edge Applications > Cache Settings
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
     post:
       parameters:
       - explode: false
@@ -469,7 +476,8 @@ paths:
       tags:
       - Edge Applications > Cache Settings
       x-content-type: application/json; version=3
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
   /edge_applications/{edge_application_id}/cache_settings/{cache_settings_id}:
     delete:
       parameters:
@@ -527,7 +535,8 @@ paths:
       summary: '/edge_applications/:edge_application_id:/cache_settings/:cache_settings_id:'
       tags:
       - Edge Applications > Cache Settings
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       parameters:
       - explode: false
@@ -574,7 +583,8 @@ paths:
       summary: '/edge_applications/:edge_application_id:/cache_settings/:cache_settings_id:'
       tags:
       - Edge Applications > Cache Settings
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
     patch:
       parameters:
       - explode: false
@@ -627,7 +637,8 @@ paths:
       tags:
       - Edge Applications > Cache Settings
       x-content-type: application/json; version=3
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
     put:
       parameters:
       - explode: false
@@ -694,7 +705,8 @@ paths:
       tags:
       - Edge Applications > Cache Settings
       x-content-type: application/json; version=3
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
   /edge_applications/{edge_application_id}/functions_instances:
     get:
       parameters:
@@ -771,7 +783,8 @@ paths:
       summary: /edge_applications/:edge_application_id:/functions_instances
       tags:
       - Edge Applications > Edge Functions Instances
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
     post:
       parameters:
       - explode: false
@@ -830,7 +843,8 @@ paths:
       tags:
       - Edge Applications > Edge Functions Instances
       x-content-type: application/json; version=3
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
   /edge_applications/{edge_application_id}/functions_instances/{functions_instances_id}:
     delete:
       parameters:
@@ -886,7 +900,8 @@ paths:
       summary: '/edge_applications/:edge_application_id:/functions_instances/:functions_instances_id:'
       tags:
       - Edge Applications > Edge Functions Instances
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       parameters:
       - explode: false
@@ -934,7 +949,8 @@ paths:
       summary: '/edge_applications/:edge_application_id:/functions_instances/:functions_instances_id:'
       tags:
       - Edge Applications > Edge Functions Instances
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
     patch:
       parameters:
       - example: application/json; version=3
@@ -1003,7 +1019,8 @@ paths:
       tags:
       - Edge Applications > Edge Functions Instances
       x-content-type: application/json; version=3
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
     put:
       parameters:
       - example: application/json; version=3
@@ -1072,7 +1089,8 @@ paths:
       tags:
       - Edge Applications > Edge Functions Instances
       x-content-type: application/json; version=3
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
   /edge_applications/{edge_application_id}/origins:
     get:
       parameters:
@@ -1149,7 +1167,8 @@ paths:
       summary: "/edge_applications/{edge_application_id}/origins"
       tags:
       - Edge Applications > Origins
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
     post:
       parameters:
       - explode: false
@@ -1208,7 +1227,8 @@ paths:
       tags:
       - Edge Applications > Origins
       x-content-type: application/json; version=3
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
   /edge_applications/{edge_application_id}/origins/{origin_key}:
     delete:
       parameters:
@@ -1252,7 +1272,8 @@ paths:
       summary: "/edge_applications/{edge_application_id}/origins/{origin_id}"
       tags:
       - Edge Applications > Origins
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       parameters:
       - explode: false
@@ -1299,7 +1320,8 @@ paths:
       summary: "/edge_applications/{edge_application_id}/origins/{origin_key}"
       tags:
       - Edge Applications > Origins
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
     patch:
       parameters:
       - explode: false
@@ -1365,7 +1387,8 @@ paths:
       tags:
       - Edge Applications > Origins
       x-content-type: application/json; version=3
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
     put:
       parameters:
       - explode: false
@@ -1431,7 +1454,8 @@ paths:
       tags:
       - Edge Applications > Origins
       x-content-type: application/json; version=3
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
   /edge_applications/{edge_application_id}/rules_engine/{phase}/rules:
     get:
       parameters:
@@ -1515,7 +1539,8 @@ paths:
       summary: "/edge_applications/{edge_application_id}/rules_engine/{phase}/rules"
       tags:
       - Edge Applications > Rules Engine
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
     post:
       description: |-
         Check below the list of behaviors that can be applied:
@@ -1609,7 +1634,8 @@ paths:
       tags:
       - Edge Applications > Rules Engine
       x-content-type: application/json; version=3
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
   /edge_applications/{edge_application_id}/rules_engine/{phase}/rules/{rule_id}:
     delete:
       parameters:
@@ -1662,7 +1688,8 @@ paths:
       summary: "/edge_applications/{edge_application_id}/rules_engine/{phase}/rules"
       tags:
       - Edge Applications > Rules Engine
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       parameters:
       - description: "The id of the edge application you want to get.\t"
@@ -1718,7 +1745,8 @@ paths:
       summary: "/edge_applications/{edge_application_id}/rules_engine/{phase}/rules"
       tags:
       - Edge Applications > Rules Engine
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
     patch:
       parameters:
       - explode: false
@@ -1792,7 +1820,8 @@ paths:
       tags:
       - Edge Applications > Rules Engine
       x-content-type: application/json; version=3
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
     put:
       parameters:
       - explode: false
@@ -1866,7 +1895,8 @@ paths:
       tags:
       - Edge Applications > Rules Engine
       x-content-type: application/json; version=3
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
   /edge_applications/{edge_application_id}/device_groups:
     get:
       parameters:
@@ -1943,7 +1973,8 @@ paths:
       summary: "/edge_applications/{edge_application_id}/device_groups"
       tags:
       - Edge Applications > Device Groups
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
     post:
       parameters:
       - explode: false
@@ -2004,7 +2035,8 @@ paths:
       tags:
       - Edge Applications > Device Groups
       x-content-type: application/json; version=3
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
   /edge_applications/{edge_application_id}/device_groups/{device_group_id}:
     delete:
       parameters:
@@ -2049,7 +2081,8 @@ paths:
       summary: "/edge_applications/{edge_application_id}/device_groups/{device_group_id}"
       tags:
       - Edge Applications > Device Groups
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       parameters:
       - explode: false
@@ -2097,7 +2130,8 @@ paths:
       summary: "/edge_applications/{edge_application_id}/device_groups/{device_group_id}"
       tags:
       - Edge Applications > Device Groups
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
     patch:
       parameters:
       - explode: false
@@ -2164,7 +2198,8 @@ paths:
       tags:
       - Edge Applications > Device Groups
       x-content-type: application/json; version=3
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
     put:
       parameters:
       - explode: false
@@ -2231,7 +2266,8 @@ paths:
       tags:
       - Edge Applications > Device Groups
       x-content-type: application/json; version=3
-      x-accepts: application/json; version=3
+      x-accepts:
+      - application/json; version=3
 components:
   schemas:
     GetApplicationsResponse:
@@ -4335,6 +4371,13 @@ components:
       properties:
         name:
           type: string
+        order:
+          format: int64
+          maximum: 10000
+          minimum: 1
+          type: integer
+        is_active:
+          type: boolean
         description:
           maxLength: 1000
           type: string
@@ -4383,6 +4426,13 @@ components:
       properties:
         name:
           type: string
+        order:
+          format: int64
+          maximum: 10000
+          minimum: 1
+          type: integer
+        is_active:
+          type: boolean
         description:
           maxLength: 1000
           type: string
@@ -4431,6 +4481,13 @@ components:
       properties:
         name:
           type: string
+        order:
+          format: int64
+          maximum: 10000
+          minimum: 1
+          type: integer
+        is_active:
+          type: boolean
         description:
           maxLength: 1000
           type: string

@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * OriginsResultResponseAddresses
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class OriginsResultResponseAddresses {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -71,7 +71,6 @@ public class OriginsResultResponseAddresses {
   }
 
   public OriginsResultResponseAddresses address(String address) {
-    
     this.address = address;
     return this;
   }
@@ -85,14 +84,12 @@ public class OriginsResultResponseAddresses {
     return address;
   }
 
-
   public void setAddress(String address) {
     this.address = address;
   }
 
 
   public OriginsResultResponseAddresses weight(String weight) {
-    
     this.weight = weight;
     return this;
   }
@@ -106,14 +103,12 @@ public class OriginsResultResponseAddresses {
     return weight;
   }
 
-
   public void setWeight(String weight) {
     this.weight = weight;
   }
 
 
   public OriginsResultResponseAddresses serverRole(String serverRole) {
-    
     this.serverRole = serverRole;
     return this;
   }
@@ -127,14 +122,12 @@ public class OriginsResultResponseAddresses {
     return serverRole;
   }
 
-
   public void setServerRole(String serverRole) {
     this.serverRole = serverRole;
   }
 
 
   public OriginsResultResponseAddresses isActive(Boolean isActive) {
-    
     this.isActive = isActive;
     return this;
   }
@@ -147,7 +140,6 @@ public class OriginsResultResponseAddresses {
   public Boolean getIsActive() {
     return isActive;
   }
-
 
   public void setIsActive(Boolean isActive) {
     this.isActive = isActive;

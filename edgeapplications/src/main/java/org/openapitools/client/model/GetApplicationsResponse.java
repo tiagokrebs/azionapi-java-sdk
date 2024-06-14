@@ -54,7 +54,7 @@ import org.openapitools.client.JSON;
 /**
  * GetApplicationsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class GetApplicationsResponse {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
@@ -88,7 +88,6 @@ public class GetApplicationsResponse {
   }
 
   public GetApplicationsResponse count(Long count) {
-    
     this.count = count;
     return this;
   }
@@ -102,14 +101,12 @@ public class GetApplicationsResponse {
     return count;
   }
 
-
   public void setCount(Long count) {
     this.count = count;
   }
 
 
   public GetApplicationsResponse totalPages(Long totalPages) {
-    
     this.totalPages = totalPages;
     return this;
   }
@@ -123,14 +120,12 @@ public class GetApplicationsResponse {
     return totalPages;
   }
 
-
   public void setTotalPages(Long totalPages) {
     this.totalPages = totalPages;
   }
 
 
   public GetApplicationsResponse schemaVersion(Long schemaVersion) {
-    
     this.schemaVersion = schemaVersion;
     return this;
   }
@@ -144,14 +139,12 @@ public class GetApplicationsResponse {
     return schemaVersion;
   }
 
-
   public void setSchemaVersion(Long schemaVersion) {
     this.schemaVersion = schemaVersion;
   }
 
 
   public GetApplicationsResponse links(ApplicationLinks links) {
-    
     this.links = links;
     return this;
   }
@@ -165,14 +158,12 @@ public class GetApplicationsResponse {
     return links;
   }
 
-
   public void setLinks(ApplicationLinks links) {
     this.links = links;
   }
 
 
   public GetApplicationsResponse results(List<ApplicationsResults> results) {
-    
     this.results = results;
     return this;
   }
@@ -194,14 +185,12 @@ public class GetApplicationsResponse {
     return results;
   }
 
-
   public void setResults(List<ApplicationsResults> results) {
     this.results = results;
   }
 
 
   public GetApplicationsResponse next(String next) {
-    
     this.next = next;
     return this;
   }
@@ -215,14 +204,12 @@ public class GetApplicationsResponse {
     return next;
   }
 
-
   public void setNext(String next) {
     this.next = next;
   }
 
 
   public GetApplicationsResponse previous(String previous) {
-    
     this.previous = previous;
     return this;
   }
@@ -235,7 +222,6 @@ public class GetApplicationsResponse {
   public String getPrevious() {
     return previous;
   }
-
 
   public void setPrevious(String previous) {
     this.previous = previous;

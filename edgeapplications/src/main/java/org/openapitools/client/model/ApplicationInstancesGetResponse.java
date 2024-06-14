@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationInstancesGetResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class ApplicationInstancesGetResponse {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
@@ -79,7 +79,6 @@ public class ApplicationInstancesGetResponse {
   }
 
   public ApplicationInstancesGetResponse count(Long count) {
-    
     this.count = count;
     return this;
   }
@@ -93,14 +92,12 @@ public class ApplicationInstancesGetResponse {
     return count;
   }
 
-
   public void setCount(Long count) {
     this.count = count;
   }
 
 
   public ApplicationInstancesGetResponse totalPages(Long totalPages) {
-    
     this.totalPages = totalPages;
     return this;
   }
@@ -114,14 +111,12 @@ public class ApplicationInstancesGetResponse {
     return totalPages;
   }
 
-
   public void setTotalPages(Long totalPages) {
     this.totalPages = totalPages;
   }
 
 
   public ApplicationInstancesGetResponse schemaVersion(Long schemaVersion) {
-    
     this.schemaVersion = schemaVersion;
     return this;
   }
@@ -135,14 +130,12 @@ public class ApplicationInstancesGetResponse {
     return schemaVersion;
   }
 
-
   public void setSchemaVersion(Long schemaVersion) {
     this.schemaVersion = schemaVersion;
   }
 
 
   public ApplicationInstancesGetResponse links(ApplicationLinks links) {
-    
     this.links = links;
     return this;
   }
@@ -156,14 +149,12 @@ public class ApplicationInstancesGetResponse {
     return links;
   }
 
-
   public void setLinks(ApplicationLinks links) {
     this.links = links;
   }
 
 
   public ApplicationInstancesGetResponse results(List<ApplicationInstancesResults> results) {
-    
     this.results = results;
     return this;
   }
@@ -184,7 +175,6 @@ public class ApplicationInstancesGetResponse {
   public List<ApplicationInstancesResults> getResults() {
     return results;
   }
-
 
   public void setResults(List<ApplicationInstancesResults> results) {
     this.results = results;

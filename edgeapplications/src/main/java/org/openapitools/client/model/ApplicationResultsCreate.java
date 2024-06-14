@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationResultsCreate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class ApplicationResultsCreate {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -135,7 +135,6 @@ public class ApplicationResultsCreate {
   }
 
   public ApplicationResultsCreate id(Long id) {
-    
     this.id = id;
     return this;
   }
@@ -149,14 +148,12 @@ public class ApplicationResultsCreate {
     return id;
   }
 
-
   public void setId(Long id) {
     this.id = id;
   }
 
 
   public ApplicationResultsCreate name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -170,14 +167,12 @@ public class ApplicationResultsCreate {
     return name;
   }
 
-
   public void setName(String name) {
     this.name = name;
   }
 
 
   public ApplicationResultsCreate active(Boolean active) {
-    
     this.active = active;
     return this;
   }
@@ -191,14 +186,12 @@ public class ApplicationResultsCreate {
     return active;
   }
 
-
   public void setActive(Boolean active) {
     this.active = active;
   }
 
 
   public ApplicationResultsCreate debugRules(Boolean debugRules) {
-    
     this.debugRules = debugRules;
     return this;
   }
@@ -212,14 +205,12 @@ public class ApplicationResultsCreate {
     return debugRules;
   }
 
-
   public void setDebugRules(Boolean debugRules) {
     this.debugRules = debugRules;
   }
 
 
   public ApplicationResultsCreate http3(Boolean http3) {
-    
     this.http3 = http3;
     return this;
   }
@@ -233,14 +224,12 @@ public class ApplicationResultsCreate {
     return http3;
   }
 
-
   public void setHttp3(Boolean http3) {
     this.http3 = http3;
   }
 
 
   public ApplicationResultsCreate supportedCiphers(String supportedCiphers) {
-    
     this.supportedCiphers = supportedCiphers;
     return this;
   }
@@ -254,14 +243,12 @@ public class ApplicationResultsCreate {
     return supportedCiphers;
   }
 
-
   public void setSupportedCiphers(String supportedCiphers) {
     this.supportedCiphers = supportedCiphers;
   }
 
 
   public ApplicationResultsCreate deliveryProtocol(String deliveryProtocol) {
-    
     this.deliveryProtocol = deliveryProtocol;
     return this;
   }
@@ -275,14 +262,12 @@ public class ApplicationResultsCreate {
     return deliveryProtocol;
   }
 
-
   public void setDeliveryProtocol(String deliveryProtocol) {
     this.deliveryProtocol = deliveryProtocol;
   }
 
 
   public ApplicationResultsCreate httpPort(Object httpPort) {
-    
     this.httpPort = httpPort;
     return this;
   }
@@ -296,14 +281,12 @@ public class ApplicationResultsCreate {
     return httpPort;
   }
 
-
   public void setHttpPort(Object httpPort) {
     this.httpPort = httpPort;
   }
 
 
   public ApplicationResultsCreate httpsPort(Object httpsPort) {
-    
     this.httpsPort = httpsPort;
     return this;
   }
@@ -317,14 +300,12 @@ public class ApplicationResultsCreate {
     return httpsPort;
   }
 
-
   public void setHttpsPort(Object httpsPort) {
     this.httpsPort = httpsPort;
   }
 
 
   public ApplicationResultsCreate minimumTlsVersion(String minimumTlsVersion) {
-    
     this.minimumTlsVersion = minimumTlsVersion;
     return this;
   }
@@ -338,14 +319,12 @@ public class ApplicationResultsCreate {
     return minimumTlsVersion;
   }
 
-
   public void setMinimumTlsVersion(String minimumTlsVersion) {
     this.minimumTlsVersion = minimumTlsVersion;
   }
 
 
   public ApplicationResultsCreate applicationAcceleration(Boolean applicationAcceleration) {
-    
     this.applicationAcceleration = applicationAcceleration;
     return this;
   }
@@ -359,14 +338,12 @@ public class ApplicationResultsCreate {
     return applicationAcceleration;
   }
 
-
   public void setApplicationAcceleration(Boolean applicationAcceleration) {
     this.applicationAcceleration = applicationAcceleration;
   }
 
 
   public ApplicationResultsCreate caching(Boolean caching) {
-    
     this.caching = caching;
     return this;
   }
@@ -380,14 +357,12 @@ public class ApplicationResultsCreate {
     return caching;
   }
 
-
   public void setCaching(Boolean caching) {
     this.caching = caching;
   }
 
 
   public ApplicationResultsCreate deviceDetection(Boolean deviceDetection) {
-    
     this.deviceDetection = deviceDetection;
     return this;
   }
@@ -401,14 +376,12 @@ public class ApplicationResultsCreate {
     return deviceDetection;
   }
 
-
   public void setDeviceDetection(Boolean deviceDetection) {
     this.deviceDetection = deviceDetection;
   }
 
 
   public ApplicationResultsCreate edgeFirewall(Boolean edgeFirewall) {
-    
     this.edgeFirewall = edgeFirewall;
     return this;
   }
@@ -422,14 +395,12 @@ public class ApplicationResultsCreate {
     return edgeFirewall;
   }
 
-
   public void setEdgeFirewall(Boolean edgeFirewall) {
     this.edgeFirewall = edgeFirewall;
   }
 
 
   public ApplicationResultsCreate edgeFunctions(Boolean edgeFunctions) {
-    
     this.edgeFunctions = edgeFunctions;
     return this;
   }
@@ -443,14 +414,12 @@ public class ApplicationResultsCreate {
     return edgeFunctions;
   }
 
-
   public void setEdgeFunctions(Boolean edgeFunctions) {
     this.edgeFunctions = edgeFunctions;
   }
 
 
   public ApplicationResultsCreate imageOptimization(Boolean imageOptimization) {
-    
     this.imageOptimization = imageOptimization;
     return this;
   }
@@ -464,14 +433,12 @@ public class ApplicationResultsCreate {
     return imageOptimization;
   }
 
-
   public void setImageOptimization(Boolean imageOptimization) {
     this.imageOptimization = imageOptimization;
   }
 
 
   public ApplicationResultsCreate loadBalancer(Boolean loadBalancer) {
-    
     this.loadBalancer = loadBalancer;
     return this;
   }
@@ -485,14 +452,12 @@ public class ApplicationResultsCreate {
     return loadBalancer;
   }
 
-
   public void setLoadBalancer(Boolean loadBalancer) {
     this.loadBalancer = loadBalancer;
   }
 
 
   public ApplicationResultsCreate rawLogs(Boolean rawLogs) {
-    
     this.rawLogs = rawLogs;
     return this;
   }
@@ -506,14 +471,12 @@ public class ApplicationResultsCreate {
     return rawLogs;
   }
 
-
   public void setRawLogs(Boolean rawLogs) {
     this.rawLogs = rawLogs;
   }
 
 
   public ApplicationResultsCreate webApplicationFirewall(Boolean webApplicationFirewall) {
-    
     this.webApplicationFirewall = webApplicationFirewall;
     return this;
   }
@@ -527,14 +490,12 @@ public class ApplicationResultsCreate {
     return webApplicationFirewall;
   }
 
-
   public void setWebApplicationFirewall(Boolean webApplicationFirewall) {
     this.webApplicationFirewall = webApplicationFirewall;
   }
 
 
   public ApplicationResultsCreate l2Caching(Boolean l2Caching) {
-    
     this.l2Caching = l2Caching;
     return this;
   }
@@ -547,7 +508,6 @@ public class ApplicationResultsCreate {
   public Boolean getL2Caching() {
     return l2Caching;
   }
-
 
   public void setL2Caching(Boolean l2Caching) {
     this.l2Caching = l2Caching;

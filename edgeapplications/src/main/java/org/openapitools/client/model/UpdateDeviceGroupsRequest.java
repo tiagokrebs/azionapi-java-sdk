@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * UpdateDeviceGroupsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class UpdateDeviceGroupsRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -63,7 +63,6 @@ public class UpdateDeviceGroupsRequest {
   }
 
   public UpdateDeviceGroupsRequest name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -77,14 +76,12 @@ public class UpdateDeviceGroupsRequest {
     return name;
   }
 
-
   public void setName(String name) {
     this.name = name;
   }
 
 
   public UpdateDeviceGroupsRequest userAgent(String userAgent) {
-    
     this.userAgent = userAgent;
     return this;
   }
@@ -97,7 +94,6 @@ public class UpdateDeviceGroupsRequest {
   public String getUserAgent() {
     return userAgent;
   }
-
 
   public void setUserAgent(String userAgent) {
     this.userAgent = userAgent;

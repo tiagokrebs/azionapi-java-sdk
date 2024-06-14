@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationUpdateRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class ApplicationUpdateRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -124,7 +124,6 @@ public class ApplicationUpdateRequest {
   }
 
   public ApplicationUpdateRequest name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -138,14 +137,12 @@ public class ApplicationUpdateRequest {
     return name;
   }
 
-
   public void setName(String name) {
     this.name = name;
   }
 
 
   public ApplicationUpdateRequest deliveryProtocol(String deliveryProtocol) {
-    
     this.deliveryProtocol = deliveryProtocol;
     return this;
   }
@@ -159,14 +156,12 @@ public class ApplicationUpdateRequest {
     return deliveryProtocol;
   }
 
-
   public void setDeliveryProtocol(String deliveryProtocol) {
     this.deliveryProtocol = deliveryProtocol;
   }
 
 
   public ApplicationUpdateRequest httpPort(Object httpPort) {
-    
     this.httpPort = httpPort;
     return this;
   }
@@ -180,14 +175,12 @@ public class ApplicationUpdateRequest {
     return httpPort;
   }
 
-
   public void setHttpPort(Object httpPort) {
     this.httpPort = httpPort;
   }
 
 
   public ApplicationUpdateRequest httpsPort(Object httpsPort) {
-    
     this.httpsPort = httpsPort;
     return this;
   }
@@ -201,14 +194,12 @@ public class ApplicationUpdateRequest {
     return httpsPort;
   }
 
-
   public void setHttpsPort(Object httpsPort) {
     this.httpsPort = httpsPort;
   }
 
 
   public ApplicationUpdateRequest minimumTlsVersion(String minimumTlsVersion) {
-    
     this.minimumTlsVersion = minimumTlsVersion;
     return this;
   }
@@ -222,14 +213,12 @@ public class ApplicationUpdateRequest {
     return minimumTlsVersion;
   }
 
-
   public void setMinimumTlsVersion(String minimumTlsVersion) {
     this.minimumTlsVersion = minimumTlsVersion;
   }
 
 
   public ApplicationUpdateRequest active(Boolean active) {
-    
     this.active = active;
     return this;
   }
@@ -243,14 +232,12 @@ public class ApplicationUpdateRequest {
     return active;
   }
 
-
   public void setActive(Boolean active) {
     this.active = active;
   }
 
 
   public ApplicationUpdateRequest debugRules(Boolean debugRules) {
-    
     this.debugRules = debugRules;
     return this;
   }
@@ -264,14 +251,12 @@ public class ApplicationUpdateRequest {
     return debugRules;
   }
 
-
   public void setDebugRules(Boolean debugRules) {
     this.debugRules = debugRules;
   }
 
 
   public ApplicationUpdateRequest applicationAcceleration(Boolean applicationAcceleration) {
-    
     this.applicationAcceleration = applicationAcceleration;
     return this;
   }
@@ -285,14 +270,12 @@ public class ApplicationUpdateRequest {
     return applicationAcceleration;
   }
 
-
   public void setApplicationAcceleration(Boolean applicationAcceleration) {
     this.applicationAcceleration = applicationAcceleration;
   }
 
 
   public ApplicationUpdateRequest deviceDetection(Boolean deviceDetection) {
-    
     this.deviceDetection = deviceDetection;
     return this;
   }
@@ -306,14 +289,12 @@ public class ApplicationUpdateRequest {
     return deviceDetection;
   }
 
-
   public void setDeviceDetection(Boolean deviceDetection) {
     this.deviceDetection = deviceDetection;
   }
 
 
   public ApplicationUpdateRequest edgeFirewall(Boolean edgeFirewall) {
-    
     this.edgeFirewall = edgeFirewall;
     return this;
   }
@@ -327,14 +308,12 @@ public class ApplicationUpdateRequest {
     return edgeFirewall;
   }
 
-
   public void setEdgeFirewall(Boolean edgeFirewall) {
     this.edgeFirewall = edgeFirewall;
   }
 
 
   public ApplicationUpdateRequest edgeFunctions(Boolean edgeFunctions) {
-    
     this.edgeFunctions = edgeFunctions;
     return this;
   }
@@ -348,14 +327,12 @@ public class ApplicationUpdateRequest {
     return edgeFunctions;
   }
 
-
   public void setEdgeFunctions(Boolean edgeFunctions) {
     this.edgeFunctions = edgeFunctions;
   }
 
 
   public ApplicationUpdateRequest imageOptimization(Boolean imageOptimization) {
-    
     this.imageOptimization = imageOptimization;
     return this;
   }
@@ -369,14 +346,12 @@ public class ApplicationUpdateRequest {
     return imageOptimization;
   }
 
-
   public void setImageOptimization(Boolean imageOptimization) {
     this.imageOptimization = imageOptimization;
   }
 
 
   public ApplicationUpdateRequest l2Caching(Boolean l2Caching) {
-    
     this.l2Caching = l2Caching;
     return this;
   }
@@ -390,14 +365,12 @@ public class ApplicationUpdateRequest {
     return l2Caching;
   }
 
-
   public void setL2Caching(Boolean l2Caching) {
     this.l2Caching = l2Caching;
   }
 
 
   public ApplicationUpdateRequest loadBalancer(Boolean loadBalancer) {
-    
     this.loadBalancer = loadBalancer;
     return this;
   }
@@ -411,14 +384,12 @@ public class ApplicationUpdateRequest {
     return loadBalancer;
   }
 
-
   public void setLoadBalancer(Boolean loadBalancer) {
     this.loadBalancer = loadBalancer;
   }
 
 
   public ApplicationUpdateRequest rawLogs(Boolean rawLogs) {
-    
     this.rawLogs = rawLogs;
     return this;
   }
@@ -432,14 +403,12 @@ public class ApplicationUpdateRequest {
     return rawLogs;
   }
 
-
   public void setRawLogs(Boolean rawLogs) {
     this.rawLogs = rawLogs;
   }
 
 
   public ApplicationUpdateRequest webApplicationFirewall(Boolean webApplicationFirewall) {
-    
     this.webApplicationFirewall = webApplicationFirewall;
     return this;
   }
@@ -453,14 +422,12 @@ public class ApplicationUpdateRequest {
     return webApplicationFirewall;
   }
 
-
   public void setWebApplicationFirewall(Boolean webApplicationFirewall) {
     this.webApplicationFirewall = webApplicationFirewall;
   }
 
 
   public ApplicationUpdateRequest websocket(Boolean websocket) {
-    
     this.websocket = websocket;
     return this;
   }
@@ -473,7 +440,6 @@ public class ApplicationUpdateRequest {
   public Boolean getWebsocket() {
     return websocket;
   }
-
 
   public void setWebsocket(Boolean websocket) {
     this.websocket = websocket;

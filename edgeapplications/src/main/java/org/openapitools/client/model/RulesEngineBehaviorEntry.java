@@ -60,7 +60,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T17:22:50.678011Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T19:25:12.368821Z[GMT]", comments = "Generator version: 7.6.0")
 public class RulesEngineBehaviorEntry extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(RulesEngineBehaviorEntry.class.getName());
 
@@ -85,17 +85,17 @@ public class RulesEngineBehaviorEntry extends AbstractOpenApiSchema {
 
                     // check if the actual instance is of the type `RulesEngineBehaviorString`
                     if (value.getActualInstance() instanceof RulesEngineBehaviorString) {
-                      JsonElement element = adapterRulesEngineBehaviorString.toJsonTree((RulesEngineBehaviorString)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterRulesEngineBehaviorString.toJsonTree((RulesEngineBehaviorString)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
                     // check if the actual instance is of the type `RulesEngineBehaviorObject`
                     if (value.getActualInstance() instanceof RulesEngineBehaviorObject) {
-                      JsonElement element = adapterRulesEngineBehaviorObject.toJsonTree((RulesEngineBehaviorObject)value.getActualInstance());
-                      elementAdapter.write(out, element);
-                      return;
+                        JsonElement element = adapterRulesEngineBehaviorObject.toJsonTree((RulesEngineBehaviorObject)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match anyOf schemae: RulesEngineBehaviorObject, RulesEngineBehaviorString");
+                    throw new IOException("Failed to serialize as the type doesn't match anyOf schemas: RulesEngineBehaviorObject, RulesEngineBehaviorString");
                 }
 
                 @Override
@@ -108,29 +108,29 @@ public class RulesEngineBehaviorEntry extends AbstractOpenApiSchema {
 
                     // deserialize RulesEngineBehaviorString
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      RulesEngineBehaviorString.validateJsonElement(jsonElement);
-                      actualAdapter = adapterRulesEngineBehaviorString;
-                      RulesEngineBehaviorEntry ret = new RulesEngineBehaviorEntry();
-                      ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
-                      return ret;
+                        // validate the JSON object to see if any exception is thrown
+                        RulesEngineBehaviorString.validateJsonElement(jsonElement);
+                        actualAdapter = adapterRulesEngineBehaviorString;
+                        RulesEngineBehaviorEntry ret = new RulesEngineBehaviorEntry();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for RulesEngineBehaviorString failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'RulesEngineBehaviorString'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for RulesEngineBehaviorString failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'RulesEngineBehaviorString'", e);
                     }
                     // deserialize RulesEngineBehaviorObject
                     try {
-                      // validate the JSON object to see if any exception is thrown
-                      RulesEngineBehaviorObject.validateJsonElement(jsonElement);
-                      actualAdapter = adapterRulesEngineBehaviorObject;
-                      RulesEngineBehaviorEntry ret = new RulesEngineBehaviorEntry();
-                      ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
-                      return ret;
+                        // validate the JSON object to see if any exception is thrown
+                        RulesEngineBehaviorObject.validateJsonElement(jsonElement);
+                        actualAdapter = adapterRulesEngineBehaviorObject;
+                        RulesEngineBehaviorEntry ret = new RulesEngineBehaviorEntry();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
                     } catch (Exception e) {
-                      // deserialization failed, continue
-                      errorMessages.add(String.format("Deserialization for RulesEngineBehaviorObject failed with `%s`.", e.getMessage()));
-                      log.log(Level.FINER, "Input data does not match schema 'RulesEngineBehaviorObject'", e);
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for RulesEngineBehaviorObject failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'RulesEngineBehaviorObject'", e);
                     }
 
                     throw new IOException(String.format("Failed deserialization for RulesEngineBehaviorEntry: no class matches result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
@@ -146,12 +146,7 @@ public class RulesEngineBehaviorEntry extends AbstractOpenApiSchema {
         super("anyOf", Boolean.FALSE);
     }
 
-    public RulesEngineBehaviorEntry(RulesEngineBehaviorObject o) {
-        super("anyOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public RulesEngineBehaviorEntry(RulesEngineBehaviorString o) {
+    public RulesEngineBehaviorEntry(Object o) {
         super("anyOf", Boolean.FALSE);
         setActualInstance(o);
     }
@@ -194,6 +189,7 @@ public class RulesEngineBehaviorEntry extends AbstractOpenApiSchema {
      *
      * @return The actual instance (RulesEngineBehaviorObject, RulesEngineBehaviorString)
      */
+    @SuppressWarnings("unchecked")
     @Override
     public Object getActualInstance() {
         return super.getActualInstance();
@@ -220,53 +216,52 @@ public class RulesEngineBehaviorEntry extends AbstractOpenApiSchema {
         return (RulesEngineBehaviorObject)super.getActualInstance();
     }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to RulesEngineBehaviorEntry
-  */
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    // validate anyOf schemas one by one
-    ArrayList<String> errorMessages = new ArrayList<>();
-    // validate the json string with RulesEngineBehaviorString
-    try {
-      RulesEngineBehaviorString.validateJsonElement(jsonElement);
-      return;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for RulesEngineBehaviorString failed with `%s`.", e.getMessage()));
-      // continue to the next one
+    /**
+     * Validates the JSON Element and throws an exception if issues found
+     *
+     * @param jsonElement JSON Element
+     * @throws IOException if the JSON Element is invalid with respect to RulesEngineBehaviorEntry
+     */
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+        // validate anyOf schemas one by one
+        ArrayList<String> errorMessages = new ArrayList<>();
+        // validate the json string with RulesEngineBehaviorString
+        try {
+            RulesEngineBehaviorString.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for RulesEngineBehaviorString failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with RulesEngineBehaviorObject
+        try {
+            RulesEngineBehaviorObject.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for RulesEngineBehaviorObject failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        throw new IOException(String.format("The JSON string is invalid for RulesEngineBehaviorEntry with anyOf schemas: RulesEngineBehaviorObject, RulesEngineBehaviorString. no class match the result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
     }
-    // validate the json string with RulesEngineBehaviorObject
-    try {
-      RulesEngineBehaviorObject.validateJsonElement(jsonElement);
-      return;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for RulesEngineBehaviorObject failed with `%s`.", e.getMessage()));
-      // continue to the next one
+
+    /**
+     * Create an instance of RulesEngineBehaviorEntry given an JSON string
+     *
+     * @param jsonString JSON string
+     * @return An instance of RulesEngineBehaviorEntry
+     * @throws IOException if the JSON string is invalid with respect to RulesEngineBehaviorEntry
+     */
+    public static RulesEngineBehaviorEntry fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, RulesEngineBehaviorEntry.class);
     }
-    throw new IOException(String.format("The JSON string is invalid for RulesEngineBehaviorEntry with anyOf schemas: RulesEngineBehaviorObject, RulesEngineBehaviorString. no class match the result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
-    
-  }
 
- /**
-  * Create an instance of RulesEngineBehaviorEntry given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RulesEngineBehaviorEntry
-  * @throws IOException if the JSON string is invalid with respect to RulesEngineBehaviorEntry
-  */
-  public static RulesEngineBehaviorEntry fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, RulesEngineBehaviorEntry.class);
-  }
-
- /**
-  * Convert an instance of RulesEngineBehaviorEntry to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
+    /**
+     * Convert an instance of RulesEngineBehaviorEntry to an JSON string
+     *
+     * @return JSON string
+     */
+    public String toJson() {
+        return JSON.getGson().toJson(this);
+    }
 }
 
