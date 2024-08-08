@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationCachePatchResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class ApplicationCachePatchResponse {
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
@@ -68,10 +68,10 @@ public class ApplicationCachePatchResponse {
     return this;
   }
 
-   /**
+  /**
    * Get results
    * @return results
-  **/
+   */
   @javax.annotation.Nullable
   public ApplicationCacheResponseDetails getResults() {
     return results;
@@ -87,10 +87,10 @@ public class ApplicationCachePatchResponse {
     return this;
   }
 
-   /**
+  /**
    * Get schemaVersion
    * @return schemaVersion
-  **/
+   */
   @javax.annotation.Nullable
   public Long getSchemaVersion() {
     return schemaVersion;
@@ -155,12 +155,12 @@ public class ApplicationCachePatchResponse {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApplicationCachePatchResponse
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApplicationCachePatchResponse
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApplicationCachePatchResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -211,22 +211,22 @@ public class ApplicationCachePatchResponse {
     }
   }
 
- /**
-  * Create an instance of ApplicationCachePatchResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApplicationCachePatchResponse
-  * @throws IOException if the JSON string is invalid with respect to ApplicationCachePatchResponse
-  */
+  /**
+   * Create an instance of ApplicationCachePatchResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApplicationCachePatchResponse
+   * @throws IOException if the JSON string is invalid with respect to ApplicationCachePatchResponse
+   */
   public static ApplicationCachePatchResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApplicationCachePatchResponse.class);
   }
 
- /**
-  * Convert an instance of ApplicationCachePatchResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApplicationCachePatchResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

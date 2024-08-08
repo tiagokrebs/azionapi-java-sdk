@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * OriginsResultResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class OriginsResultResponse {
   public static final String SERIALIZED_NAME_ORIGIN_ID = "origin_id";
   @SerializedName(SERIALIZED_NAME_ORIGIN_ID)
@@ -134,10 +134,10 @@ public class OriginsResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get originId
    * @return originId
-  **/
+   */
   @javax.annotation.Nullable
   public Long getOriginId() {
     return originId;
@@ -153,10 +153,10 @@ public class OriginsResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get originKey
    * @return originKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getOriginKey() {
     return originKey;
@@ -172,10 +172,10 @@ public class OriginsResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
@@ -191,10 +191,10 @@ public class OriginsResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get originType
    * @return originType
-  **/
+   */
   @javax.annotation.Nullable
   public String getOriginType() {
     return originType;
@@ -218,10 +218,10 @@ public class OriginsResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get addresses
    * @return addresses
-  **/
+   */
   @javax.annotation.Nullable
   public List<OriginsResultResponseAddresses> getAddresses() {
     return addresses;
@@ -237,10 +237,10 @@ public class OriginsResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get originProtocolPolicy
    * @return originProtocolPolicy
-  **/
+   */
   @javax.annotation.Nullable
   public String getOriginProtocolPolicy() {
     return originProtocolPolicy;
@@ -256,10 +256,10 @@ public class OriginsResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get isOriginRedirectionEnabled
    * @return isOriginRedirectionEnabled
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsOriginRedirectionEnabled() {
     return isOriginRedirectionEnabled;
@@ -275,10 +275,10 @@ public class OriginsResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get hostHeader
    * @return hostHeader
-  **/
+   */
   @javax.annotation.Nullable
   public String getHostHeader() {
     return hostHeader;
@@ -294,10 +294,10 @@ public class OriginsResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get method
    * @return method
-  **/
+   */
   @javax.annotation.Nullable
   public String getMethod() {
     return method;
@@ -313,10 +313,10 @@ public class OriginsResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get originPath
    * @return originPath
-  **/
+   */
   @javax.annotation.Nullable
   public String getOriginPath() {
     return originPath;
@@ -332,10 +332,10 @@ public class OriginsResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get connectionTimeout
    * @return connectionTimeout
-  **/
+   */
   @javax.annotation.Nullable
   public Long getConnectionTimeout() {
     return connectionTimeout;
@@ -351,10 +351,10 @@ public class OriginsResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get timeoutBetweenBytes
    * @return timeoutBetweenBytes
-  **/
+   */
   @javax.annotation.Nullable
   public Long getTimeoutBetweenBytes() {
     return timeoutBetweenBytes;
@@ -370,10 +370,10 @@ public class OriginsResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get hmacAuthentication
    * @return hmacAuthentication
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getHmacAuthentication() {
     return hmacAuthentication;
@@ -389,10 +389,10 @@ public class OriginsResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get hmacRegionName
    * @return hmacRegionName
-  **/
+   */
   @javax.annotation.Nullable
   public String getHmacRegionName() {
     return hmacRegionName;
@@ -408,10 +408,10 @@ public class OriginsResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get hmacAccessKey
    * @return hmacAccessKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getHmacAccessKey() {
     return hmacAccessKey;
@@ -427,10 +427,10 @@ public class OriginsResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get hmacSecretKey
    * @return hmacSecretKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getHmacSecretKey() {
     return hmacSecretKey;
@@ -446,10 +446,10 @@ public class OriginsResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get bucket
    * @return bucket
-  **/
+   */
   @javax.annotation.Nullable
   public String getBucket() {
     return bucket;
@@ -465,10 +465,10 @@ public class OriginsResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get prefix
    * @return prefix
-  **/
+   */
   @javax.annotation.Nullable
   public String getPrefix() {
     return prefix;
@@ -582,12 +582,12 @@ public class OriginsResultResponse {
     openapiRequiredFields.add("name");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to OriginsResultResponse
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to OriginsResultResponse
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!OriginsResultResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -691,22 +691,22 @@ public class OriginsResultResponse {
     }
   }
 
- /**
-  * Create an instance of OriginsResultResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of OriginsResultResponse
-  * @throws IOException if the JSON string is invalid with respect to OriginsResultResponse
-  */
+  /**
+   * Create an instance of OriginsResultResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of OriginsResultResponse
+   * @throws IOException if the JSON string is invalid with respect to OriginsResultResponse
+   */
   public static OriginsResultResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, OriginsResultResponse.class);
   }
 
- /**
-  * Convert an instance of OriginsResultResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of OriginsResultResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * CreateApplicationRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class CreateApplicationRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -136,10 +136,10 @@ public class CreateApplicationRequest {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
@@ -155,10 +155,10 @@ public class CreateApplicationRequest {
     return this;
   }
 
-   /**
+  /**
    * Get applicationAcceleration
    * @return applicationAcceleration
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getApplicationAcceleration() {
     return applicationAcceleration;
@@ -174,10 +174,10 @@ public class CreateApplicationRequest {
     return this;
   }
 
-   /**
+  /**
    * Get deliveryProtocol
    * @return deliveryProtocol
-  **/
+   */
   @javax.annotation.Nullable
   public String getDeliveryProtocol() {
     return deliveryProtocol;
@@ -193,10 +193,10 @@ public class CreateApplicationRequest {
     return this;
   }
 
-   /**
+  /**
    * Get originType
    * @return originType
-  **/
+   */
   @javax.annotation.Nullable
   public String getOriginType() {
     return originType;
@@ -212,10 +212,10 @@ public class CreateApplicationRequest {
     return this;
   }
 
-   /**
+  /**
    * Get address
    * @return address
-  **/
+   */
   @javax.annotation.Nullable
   public String getAddress() {
     return address;
@@ -231,10 +231,10 @@ public class CreateApplicationRequest {
     return this;
   }
 
-   /**
+  /**
    * Get minimumTlsVersion
    * @return minimumTlsVersion
-  **/
+   */
   @javax.annotation.Nullable
   public String getMinimumTlsVersion() {
     return minimumTlsVersion;
@@ -250,10 +250,10 @@ public class CreateApplicationRequest {
     return this;
   }
 
-   /**
+  /**
    * Get originProtocolPolicy
    * @return originProtocolPolicy
-  **/
+   */
   @javax.annotation.Nullable
   public String getOriginProtocolPolicy() {
     return originProtocolPolicy;
@@ -269,10 +269,10 @@ public class CreateApplicationRequest {
     return this;
   }
 
-   /**
+  /**
    * Get hostHeader
    * @return hostHeader
-  **/
+   */
   @javax.annotation.Nullable
   public String getHostHeader() {
     return hostHeader;
@@ -288,10 +288,10 @@ public class CreateApplicationRequest {
     return this;
   }
 
-   /**
+  /**
    * Get browserCacheSettings
    * @return browserCacheSettings
-  **/
+   */
   @javax.annotation.Nullable
   public String getBrowserCacheSettings() {
     return browserCacheSettings;
@@ -307,10 +307,10 @@ public class CreateApplicationRequest {
     return this;
   }
 
-   /**
+  /**
    * Get cdnCacheSettings
    * @return cdnCacheSettings
-  **/
+   */
   @javax.annotation.Nullable
   public String getCdnCacheSettings() {
     return cdnCacheSettings;
@@ -326,10 +326,10 @@ public class CreateApplicationRequest {
     return this;
   }
 
-   /**
+  /**
    * Get browserCacheSettingsMaximumTtl
    * @return browserCacheSettingsMaximumTtl
-  **/
+   */
   @javax.annotation.Nullable
   public Long getBrowserCacheSettingsMaximumTtl() {
     return browserCacheSettingsMaximumTtl;
@@ -345,10 +345,10 @@ public class CreateApplicationRequest {
     return this;
   }
 
-   /**
+  /**
    * Get cdnCacheSettingsMaximumTtl
    * @return cdnCacheSettingsMaximumTtl
-  **/
+   */
   @javax.annotation.Nullable
   public Long getCdnCacheSettingsMaximumTtl() {
     return cdnCacheSettingsMaximumTtl;
@@ -364,10 +364,10 @@ public class CreateApplicationRequest {
     return this;
   }
 
-   /**
+  /**
    * Get debugRules
    * @return debugRules
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getDebugRules() {
     return debugRules;
@@ -383,10 +383,10 @@ public class CreateApplicationRequest {
     return this;
   }
 
-   /**
+  /**
    * Get supportedCiphers
    * @return supportedCiphers
-  **/
+   */
   @javax.annotation.Nullable
   public String getSupportedCiphers() {
     return supportedCiphers;
@@ -402,10 +402,10 @@ public class CreateApplicationRequest {
     return this;
   }
 
-   /**
+  /**
    * Get httpPort
    * @return httpPort
-  **/
+   */
   @javax.annotation.Nullable
   public Object getHttpPort() {
     return httpPort;
@@ -421,10 +421,10 @@ public class CreateApplicationRequest {
     return this;
   }
 
-   /**
+  /**
    * Get httpsPort
    * @return httpsPort
-  **/
+   */
   @javax.annotation.Nullable
   public Object getHttpsPort() {
     return httpsPort;
@@ -440,10 +440,10 @@ public class CreateApplicationRequest {
     return this;
   }
 
-   /**
+  /**
    * Get l2Caching
    * @return l2Caching
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getL2Caching() {
     return l2Caching;
@@ -459,10 +459,10 @@ public class CreateApplicationRequest {
     return this;
   }
 
-   /**
+  /**
    * Get http3
    * @return http3
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getHttp3() {
     return http3;
@@ -478,10 +478,10 @@ public class CreateApplicationRequest {
     return this;
   }
 
-   /**
+  /**
    * Get websocket
    * @return websocket
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getWebsocket() {
     return websocket;
@@ -609,12 +609,12 @@ public class CreateApplicationRequest {
     openapiRequiredFields.add("name");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to CreateApplicationRequest
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CreateApplicationRequest
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CreateApplicationRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -698,22 +698,22 @@ public class CreateApplicationRequest {
     }
   }
 
- /**
-  * Create an instance of CreateApplicationRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CreateApplicationRequest
-  * @throws IOException if the JSON string is invalid with respect to CreateApplicationRequest
-  */
+  /**
+   * Create an instance of CreateApplicationRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CreateApplicationRequest
+   * @throws IOException if the JSON string is invalid with respect to CreateApplicationRequest
+   */
   public static CreateApplicationRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CreateApplicationRequest.class);
   }
 
- /**
-  * Convert an instance of CreateApplicationRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CreateApplicationRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

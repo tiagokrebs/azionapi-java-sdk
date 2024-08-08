@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationInstanceResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class ApplicationInstanceResults {
   public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
   @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)
@@ -68,10 +68,10 @@ public class ApplicationInstanceResults {
     return this;
   }
 
-   /**
+  /**
    * Get schemaVersion
    * @return schemaVersion
-  **/
+   */
   @javax.annotation.Nullable
   public Long getSchemaVersion() {
     return schemaVersion;
@@ -87,10 +87,10 @@ public class ApplicationInstanceResults {
     return this;
   }
 
-   /**
+  /**
    * Get results
    * @return results
-  **/
+   */
   @javax.annotation.Nullable
   public ApplicationInstancesResults getResults() {
     return results;
@@ -155,12 +155,12 @@ public class ApplicationInstanceResults {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApplicationInstanceResults
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApplicationInstanceResults
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApplicationInstanceResults.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -211,22 +211,22 @@ public class ApplicationInstanceResults {
     }
   }
 
- /**
-  * Create an instance of ApplicationInstanceResults given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApplicationInstanceResults
-  * @throws IOException if the JSON string is invalid with respect to ApplicationInstanceResults
-  */
+  /**
+   * Create an instance of ApplicationInstanceResults given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApplicationInstanceResults
+   * @throws IOException if the JSON string is invalid with respect to ApplicationInstanceResults
+   */
   public static ApplicationInstanceResults fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApplicationInstanceResults.class);
   }
 
- /**
-  * Convert an instance of ApplicationInstanceResults to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApplicationInstanceResults to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

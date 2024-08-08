@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * CreateOriginsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class CreateOriginsRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -110,10 +110,10 @@ public class CreateOriginsRequest {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
@@ -129,10 +129,10 @@ public class CreateOriginsRequest {
     return this;
   }
 
-   /**
+  /**
    * Get originType
    * @return originType
-  **/
+   */
   @javax.annotation.Nullable
   public String getOriginType() {
     return originType;
@@ -156,10 +156,10 @@ public class CreateOriginsRequest {
     return this;
   }
 
-   /**
+  /**
    * Get addresses
    * @return addresses
-  **/
+   */
   @javax.annotation.Nullable
   public List<CreateOriginsRequestAddresses> getAddresses() {
     return addresses;
@@ -175,10 +175,10 @@ public class CreateOriginsRequest {
     return this;
   }
 
-   /**
+  /**
    * Get originProtocolPolicy
    * @return originProtocolPolicy
-  **/
+   */
   @javax.annotation.Nullable
   public String getOriginProtocolPolicy() {
     return originProtocolPolicy;
@@ -194,10 +194,10 @@ public class CreateOriginsRequest {
     return this;
   }
 
-   /**
+  /**
    * Get hostHeader
    * @return hostHeader
-  **/
+   */
   @javax.annotation.Nullable
   public String getHostHeader() {
     return hostHeader;
@@ -213,10 +213,10 @@ public class CreateOriginsRequest {
     return this;
   }
 
-   /**
+  /**
    * Get originPath
    * @return originPath
-  **/
+   */
   @javax.annotation.Nullable
   public String getOriginPath() {
     return originPath;
@@ -232,10 +232,10 @@ public class CreateOriginsRequest {
     return this;
   }
 
-   /**
+  /**
    * Get hmacAuthentication
    * @return hmacAuthentication
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getHmacAuthentication() {
     return hmacAuthentication;
@@ -251,10 +251,10 @@ public class CreateOriginsRequest {
     return this;
   }
 
-   /**
+  /**
    * Get hmacRegionName
    * @return hmacRegionName
-  **/
+   */
   @javax.annotation.Nullable
   public String getHmacRegionName() {
     return hmacRegionName;
@@ -270,10 +270,10 @@ public class CreateOriginsRequest {
     return this;
   }
 
-   /**
+  /**
    * Get hmacAccessKey
    * @return hmacAccessKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getHmacAccessKey() {
     return hmacAccessKey;
@@ -289,10 +289,10 @@ public class CreateOriginsRequest {
     return this;
   }
 
-   /**
+  /**
    * Get hmacSecretKey
    * @return hmacSecretKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getHmacSecretKey() {
     return hmacSecretKey;
@@ -308,10 +308,10 @@ public class CreateOriginsRequest {
     return this;
   }
 
-   /**
+  /**
    * Get bucket
    * @return bucket
-  **/
+   */
   @javax.annotation.Nullable
   public String getBucket() {
     return bucket;
@@ -327,10 +327,10 @@ public class CreateOriginsRequest {
     return this;
   }
 
-   /**
+  /**
    * Get prefix
    * @return prefix
-  **/
+   */
   @javax.annotation.Nullable
   public String getPrefix() {
     return prefix;
@@ -426,12 +426,12 @@ public class CreateOriginsRequest {
     openapiRequiredFields.add("name");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to CreateOriginsRequest
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CreateOriginsRequest
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CreateOriginsRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -529,22 +529,22 @@ public class CreateOriginsRequest {
     }
   }
 
- /**
-  * Create an instance of CreateOriginsRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CreateOriginsRequest
-  * @throws IOException if the JSON string is invalid with respect to CreateOriginsRequest
-  */
+  /**
+   * Create an instance of CreateOriginsRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CreateOriginsRequest
+   * @throws IOException if the JSON string is invalid with respect to CreateOriginsRequest
+   */
   public static CreateOriginsRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CreateOriginsRequest.class);
   }
 
- /**
-  * Convert an instance of CreateOriginsRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CreateOriginsRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

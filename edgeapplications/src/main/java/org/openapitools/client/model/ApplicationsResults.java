@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationsResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class ApplicationsResults {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -90,10 +90,10 @@ public class ApplicationsResults {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getId() {
     return id;
@@ -109,10 +109,10 @@ public class ApplicationsResults {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
@@ -128,10 +128,10 @@ public class ApplicationsResults {
     return this;
   }
 
-   /**
+  /**
    * Get debugRules
    * @return debugRules
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getDebugRules() {
     return debugRules;
@@ -147,10 +147,10 @@ public class ApplicationsResults {
     return this;
   }
 
-   /**
+  /**
    * Get lastEditor
    * @return lastEditor
-  **/
+   */
   @javax.annotation.Nonnull
   public String getLastEditor() {
     return lastEditor;
@@ -166,10 +166,10 @@ public class ApplicationsResults {
     return this;
   }
 
-   /**
+  /**
    * Get lastModified
    * @return lastModified
-  **/
+   */
   @javax.annotation.Nonnull
   public String getLastModified() {
     return lastModified;
@@ -185,10 +185,10 @@ public class ApplicationsResults {
     return this;
   }
 
-   /**
+  /**
    * Get active
    * @return active
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getActive() {
     return active;
@@ -212,10 +212,10 @@ public class ApplicationsResults {
     return this;
   }
 
-   /**
+  /**
    * Get origins
    * @return origins
-  **/
+   */
   @javax.annotation.Nonnull
   public List<ApplicationOrigins> getOrigins() {
     return origins;
@@ -302,12 +302,12 @@ public class ApplicationsResults {
     openapiRequiredFields.add("origins");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApplicationsResults
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApplicationsResults
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApplicationsResults.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -380,22 +380,22 @@ public class ApplicationsResults {
     }
   }
 
- /**
-  * Create an instance of ApplicationsResults given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApplicationsResults
-  * @throws IOException if the JSON string is invalid with respect to ApplicationsResults
-  */
+  /**
+   * Create an instance of ApplicationsResults given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApplicationsResults
+   * @throws IOException if the JSON string is invalid with respect to ApplicationsResults
+   */
   public static ApplicationsResults fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApplicationsResults.class);
   }
 
- /**
-  * Convert an instance of ApplicationsResults to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApplicationsResults to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

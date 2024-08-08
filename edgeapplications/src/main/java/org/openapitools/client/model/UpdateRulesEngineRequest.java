@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * UpdateRulesEngineRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class UpdateRulesEngineRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -87,10 +87,10 @@ public class UpdateRulesEngineRequest {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
@@ -106,12 +106,12 @@ public class UpdateRulesEngineRequest {
     return this;
   }
 
-   /**
+  /**
    * Get order
    * minimum: 1
    * maximum: 10000
    * @return order
-  **/
+   */
   @javax.annotation.Nullable
   public Long getOrder() {
     return order;
@@ -127,10 +127,10 @@ public class UpdateRulesEngineRequest {
     return this;
   }
 
-   /**
+  /**
    * Get isActive
    * @return isActive
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsActive() {
     return isActive;
@@ -146,10 +146,10 @@ public class UpdateRulesEngineRequest {
     return this;
   }
 
-   /**
+  /**
    * Get description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
@@ -173,10 +173,10 @@ public class UpdateRulesEngineRequest {
     return this;
   }
 
-   /**
+  /**
    * Get criteria
    * @return criteria
-  **/
+   */
   @javax.annotation.Nonnull
   public List<List<RulesEngineCriteria>> getCriteria() {
     return criteria;
@@ -200,10 +200,10 @@ public class UpdateRulesEngineRequest {
     return this;
   }
 
-   /**
+  /**
    * Get behaviors
    * @return behaviors
-  **/
+   */
   @javax.annotation.Nonnull
   public List<RulesEngineBehaviorEntry> getBehaviors() {
     return behaviors;
@@ -283,12 +283,12 @@ public class UpdateRulesEngineRequest {
     openapiRequiredFields.add("behaviors");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to UpdateRulesEngineRequest
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to UpdateRulesEngineRequest
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UpdateRulesEngineRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -364,22 +364,22 @@ public class UpdateRulesEngineRequest {
     }
   }
 
- /**
-  * Create an instance of UpdateRulesEngineRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UpdateRulesEngineRequest
-  * @throws IOException if the JSON string is invalid with respect to UpdateRulesEngineRequest
-  */
+  /**
+   * Create an instance of UpdateRulesEngineRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of UpdateRulesEngineRequest
+   * @throws IOException if the JSON string is invalid with respect to UpdateRulesEngineRequest
+   */
   public static UpdateRulesEngineRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, UpdateRulesEngineRequest.class);
   }
 
- /**
-  * Convert an instance of UpdateRulesEngineRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of UpdateRulesEngineRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

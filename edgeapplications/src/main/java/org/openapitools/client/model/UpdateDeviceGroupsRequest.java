@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * UpdateDeviceGroupsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class UpdateDeviceGroupsRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -67,10 +67,10 @@ public class UpdateDeviceGroupsRequest {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
@@ -86,10 +86,10 @@ public class UpdateDeviceGroupsRequest {
     return this;
   }
 
-   /**
+  /**
    * Get userAgent
    * @return userAgent
-  **/
+   */
   @javax.annotation.Nullable
   public String getUserAgent() {
     return userAgent;
@@ -154,12 +154,12 @@ public class UpdateDeviceGroupsRequest {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to UpdateDeviceGroupsRequest
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to UpdateDeviceGroupsRequest
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UpdateDeviceGroupsRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -212,22 +212,22 @@ public class UpdateDeviceGroupsRequest {
     }
   }
 
- /**
-  * Create an instance of UpdateDeviceGroupsRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UpdateDeviceGroupsRequest
-  * @throws IOException if the JSON string is invalid with respect to UpdateDeviceGroupsRequest
-  */
+  /**
+   * Create an instance of UpdateDeviceGroupsRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of UpdateDeviceGroupsRequest
+   * @throws IOException if the JSON string is invalid with respect to UpdateDeviceGroupsRequest
+   */
   public static UpdateDeviceGroupsRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, UpdateDeviceGroupsRequest.class);
   }
 
- /**
-  * Convert an instance of UpdateDeviceGroupsRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of UpdateDeviceGroupsRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

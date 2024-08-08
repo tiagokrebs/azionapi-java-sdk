@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,11 +50,23 @@ import org.openapitools.client.JSON;
 /**
  * CreateOriginsRequestAddresses
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class CreateOriginsRequestAddresses {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
   private String address;
+
+  public static final String SERIALIZED_NAME_IS_ACTIVE = "is_active";
+  @SerializedName(SERIALIZED_NAME_IS_ACTIVE)
+  private Boolean isActive;
+
+  public static final String SERIALIZED_NAME_WEIGHT = "weight";
+  @SerializedName(SERIALIZED_NAME_WEIGHT)
+  private Long weight;
+
+  public static final String SERIALIZED_NAME_SERVER_ROLE = "server_role";
+  @SerializedName(SERIALIZED_NAME_SERVER_ROLE)
+  private String serverRole;
 
   public CreateOriginsRequestAddresses() {
   }
@@ -63,10 +76,10 @@ public class CreateOriginsRequestAddresses {
     return this;
   }
 
-   /**
+  /**
    * Get address
    * @return address
-  **/
+   */
   @javax.annotation.Nonnull
   public String getAddress() {
     return address;
@@ -74,6 +87,63 @@ public class CreateOriginsRequestAddresses {
 
   public void setAddress(String address) {
     this.address = address;
+  }
+
+
+  public CreateOriginsRequestAddresses isActive(Boolean isActive) {
+    this.isActive = isActive;
+    return this;
+  }
+
+  /**
+   * Get isActive
+   * @return isActive
+   */
+  @javax.annotation.Nullable
+  public Boolean getIsActive() {
+    return isActive;
+  }
+
+  public void setIsActive(Boolean isActive) {
+    this.isActive = isActive;
+  }
+
+
+  public CreateOriginsRequestAddresses weight(Long weight) {
+    this.weight = weight;
+    return this;
+  }
+
+  /**
+   * Get weight
+   * @return weight
+   */
+  @javax.annotation.Nullable
+  public Long getWeight() {
+    return weight;
+  }
+
+  public void setWeight(Long weight) {
+    this.weight = weight;
+  }
+
+
+  public CreateOriginsRequestAddresses serverRole(String serverRole) {
+    this.serverRole = serverRole;
+    return this;
+  }
+
+  /**
+   * Get serverRole
+   * @return serverRole
+   */
+  @javax.annotation.Nullable
+  public String getServerRole() {
+    return serverRole;
+  }
+
+  public void setServerRole(String serverRole) {
+    this.serverRole = serverRole;
   }
 
 
@@ -87,12 +157,26 @@ public class CreateOriginsRequestAddresses {
       return false;
     }
     CreateOriginsRequestAddresses createOriginsRequestAddresses = (CreateOriginsRequestAddresses) o;
-    return Objects.equals(this.address, createOriginsRequestAddresses.address);
+    return Objects.equals(this.address, createOriginsRequestAddresses.address) &&
+        Objects.equals(this.isActive, createOriginsRequestAddresses.isActive) &&
+        Objects.equals(this.weight, createOriginsRequestAddresses.weight) &&
+        Objects.equals(this.serverRole, createOriginsRequestAddresses.serverRole);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(address);
+    return Objects.hash(address, isActive, weight, serverRole);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -100,6 +184,9 @@ public class CreateOriginsRequestAddresses {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateOriginsRequestAddresses {\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
+    sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
+    sb.append("    serverRole: ").append(toIndentedString(serverRole)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -123,18 +210,21 @@ public class CreateOriginsRequestAddresses {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("address");
+    openapiFields.add("is_active");
+    openapiFields.add("weight");
+    openapiFields.add("server_role");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("address");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to CreateOriginsRequestAddresses
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CreateOriginsRequestAddresses
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CreateOriginsRequestAddresses.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -159,6 +249,9 @@ public class CreateOriginsRequestAddresses {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("address").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `address` to be a primitive type in the JSON string but got `%s`", jsonObj.get("address").toString()));
+      }
+      if ((jsonObj.get("server_role") != null && !jsonObj.get("server_role").isJsonNull()) && !jsonObj.get("server_role").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `server_role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("server_role").toString()));
       }
   }
 
@@ -191,22 +284,22 @@ public class CreateOriginsRequestAddresses {
     }
   }
 
- /**
-  * Create an instance of CreateOriginsRequestAddresses given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CreateOriginsRequestAddresses
-  * @throws IOException if the JSON string is invalid with respect to CreateOriginsRequestAddresses
-  */
+  /**
+   * Create an instance of CreateOriginsRequestAddresses given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CreateOriginsRequestAddresses
+   * @throws IOException if the JSON string is invalid with respect to CreateOriginsRequestAddresses
+   */
   public static CreateOriginsRequestAddresses fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CreateOriginsRequestAddresses.class);
   }
 
- /**
-  * Convert an instance of CreateOriginsRequestAddresses to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CreateOriginsRequestAddresses to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

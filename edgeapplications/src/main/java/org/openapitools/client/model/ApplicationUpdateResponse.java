@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationUpdateResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class ApplicationUpdateResponse {
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
@@ -68,10 +68,10 @@ public class ApplicationUpdateResponse {
     return this;
   }
 
-   /**
+  /**
    * Get results
    * @return results
-  **/
+   */
   @javax.annotation.Nonnull
   public ApplicationUpdateResults getResults() {
     return results;
@@ -87,10 +87,10 @@ public class ApplicationUpdateResponse {
     return this;
   }
 
-   /**
+  /**
    * Get schemaVersion
    * @return schemaVersion
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getSchemaVersion() {
     return schemaVersion;
@@ -157,12 +157,12 @@ public class ApplicationUpdateResponse {
     openapiRequiredFields.add("schema_version");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApplicationUpdateResponse
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApplicationUpdateResponse
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApplicationUpdateResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -218,22 +218,22 @@ public class ApplicationUpdateResponse {
     }
   }
 
- /**
-  * Create an instance of ApplicationUpdateResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApplicationUpdateResponse
-  * @throws IOException if the JSON string is invalid with respect to ApplicationUpdateResponse
-  */
+  /**
+   * Create an instance of ApplicationUpdateResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApplicationUpdateResponse
+   * @throws IOException if the JSON string is invalid with respect to ApplicationUpdateResponse
+   */
   public static ApplicationUpdateResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApplicationUpdateResponse.class);
   }
 
- /**
-  * Convert an instance of ApplicationUpdateResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApplicationUpdateResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

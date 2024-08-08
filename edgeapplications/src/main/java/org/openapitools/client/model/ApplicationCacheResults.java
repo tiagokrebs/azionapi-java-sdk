@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationCacheResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class ApplicationCacheResults {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -149,10 +149,10 @@ public class ApplicationCacheResults {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getId() {
     return id;
@@ -168,10 +168,10 @@ public class ApplicationCacheResults {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
@@ -187,10 +187,10 @@ public class ApplicationCacheResults {
     return this;
   }
 
-   /**
+  /**
    * Get browserCacheSettings
    * @return browserCacheSettings
-  **/
+   */
   @javax.annotation.Nonnull
   public String getBrowserCacheSettings() {
     return browserCacheSettings;
@@ -206,10 +206,10 @@ public class ApplicationCacheResults {
     return this;
   }
 
-   /**
+  /**
    * Get browserCacheSettingsMaximumTtl
    * @return browserCacheSettingsMaximumTtl
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getBrowserCacheSettingsMaximumTtl() {
     return browserCacheSettingsMaximumTtl;
@@ -225,10 +225,10 @@ public class ApplicationCacheResults {
     return this;
   }
 
-   /**
+  /**
    * Get cdnCacheSettings
    * @return cdnCacheSettings
-  **/
+   */
   @javax.annotation.Nonnull
   public String getCdnCacheSettings() {
     return cdnCacheSettings;
@@ -244,10 +244,10 @@ public class ApplicationCacheResults {
     return this;
   }
 
-   /**
+  /**
    * Get cdnCacheSettingsMaximumTtl
    * @return cdnCacheSettingsMaximumTtl
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCdnCacheSettingsMaximumTtl() {
     return cdnCacheSettingsMaximumTtl;
@@ -263,10 +263,10 @@ public class ApplicationCacheResults {
     return this;
   }
 
-   /**
+  /**
    * Get cacheByQueryString
    * @return cacheByQueryString
-  **/
+   */
   @javax.annotation.Nonnull
   public String getCacheByQueryString() {
     return cacheByQueryString;
@@ -290,10 +290,10 @@ public class ApplicationCacheResults {
     return this;
   }
 
-   /**
+  /**
    * Get queryStringFields
    * @return queryStringFields
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getQueryStringFields() {
     return queryStringFields;
@@ -309,10 +309,10 @@ public class ApplicationCacheResults {
     return this;
   }
 
-   /**
+  /**
    * Get enableQueryStringSort
    * @return enableQueryStringSort
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getEnableQueryStringSort() {
     return enableQueryStringSort;
@@ -328,10 +328,10 @@ public class ApplicationCacheResults {
     return this;
   }
 
-   /**
+  /**
    * Get cacheByCookies
    * @return cacheByCookies
-  **/
+   */
   @javax.annotation.Nonnull
   public String getCacheByCookies() {
     return cacheByCookies;
@@ -355,10 +355,10 @@ public class ApplicationCacheResults {
     return this;
   }
 
-   /**
+  /**
    * Get cookieNames
    * @return cookieNames
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getCookieNames() {
     return cookieNames;
@@ -374,10 +374,10 @@ public class ApplicationCacheResults {
     return this;
   }
 
-   /**
+  /**
    * Get adaptiveDeliveryAction
    * @return adaptiveDeliveryAction
-  **/
+   */
   @javax.annotation.Nonnull
   public String getAdaptiveDeliveryAction() {
     return adaptiveDeliveryAction;
@@ -401,10 +401,10 @@ public class ApplicationCacheResults {
     return this;
   }
 
-   /**
+  /**
    * Get deviceGroup
    * @return deviceGroup
-  **/
+   */
   @javax.annotation.Nonnull
   public List<Integer> getDeviceGroup() {
     return deviceGroup;
@@ -420,10 +420,10 @@ public class ApplicationCacheResults {
     return this;
   }
 
-   /**
+  /**
    * Get enableCachingForPost
    * @return enableCachingForPost
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getEnableCachingForPost() {
     return enableCachingForPost;
@@ -439,10 +439,10 @@ public class ApplicationCacheResults {
     return this;
   }
 
-   /**
+  /**
    * Get l2CachingEnabled
    * @return l2CachingEnabled
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getL2CachingEnabled() {
     return l2CachingEnabled;
@@ -458,10 +458,10 @@ public class ApplicationCacheResults {
     return this;
   }
 
-   /**
+  /**
    * Get isSliceConfigurationEnabled
    * @return isSliceConfigurationEnabled
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsSliceConfigurationEnabled() {
     return isSliceConfigurationEnabled;
@@ -477,10 +477,10 @@ public class ApplicationCacheResults {
     return this;
   }
 
-   /**
+  /**
    * Get isSliceEdgeCachingEnabled
    * @return isSliceEdgeCachingEnabled
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsSliceEdgeCachingEnabled() {
     return isSliceEdgeCachingEnabled;
@@ -496,10 +496,10 @@ public class ApplicationCacheResults {
     return this;
   }
 
-   /**
+  /**
    * Get isSliceL2CachingEnabled
    * @return isSliceL2CachingEnabled
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsSliceL2CachingEnabled() {
     return isSliceL2CachingEnabled;
@@ -515,10 +515,10 @@ public class ApplicationCacheResults {
     return this;
   }
 
-   /**
+  /**
    * Get sliceConfigurationRange
    * @return sliceConfigurationRange
-  **/
+   */
   @javax.annotation.Nullable
   public Long getSliceConfigurationRange() {
     return sliceConfigurationRange;
@@ -534,10 +534,10 @@ public class ApplicationCacheResults {
     return this;
   }
 
-   /**
+  /**
    * Get enableCachingForOptions
    * @return enableCachingForOptions
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getEnableCachingForOptions() {
     return enableCachingForOptions;
@@ -553,10 +553,10 @@ public class ApplicationCacheResults {
     return this;
   }
 
-   /**
+  /**
    * Get enableStaleCache
    * @return enableStaleCache
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getEnableStaleCache() {
     return enableStaleCache;
@@ -572,10 +572,10 @@ public class ApplicationCacheResults {
     return this;
   }
 
-   /**
+  /**
    * Get l2Region
    * @return l2Region
-  **/
+   */
   @javax.annotation.Nullable
   public String getL2Region() {
     return l2Region;
@@ -718,12 +718,12 @@ public class ApplicationCacheResults {
     openapiRequiredFields.add("l2_region");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApplicationCacheResults
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApplicationCacheResults
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApplicationCacheResults.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -816,22 +816,22 @@ public class ApplicationCacheResults {
     }
   }
 
- /**
-  * Create an instance of ApplicationCacheResults given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApplicationCacheResults
-  * @throws IOException if the JSON string is invalid with respect to ApplicationCacheResults
-  */
+  /**
+   * Create an instance of ApplicationCacheResults given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApplicationCacheResults
+   * @throws IOException if the JSON string is invalid with respect to ApplicationCacheResults
+   */
   public static ApplicationCacheResults fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApplicationCacheResults.class);
   }
 
- /**
-  * Convert an instance of ApplicationCacheResults to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApplicationCacheResults to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RulesEngineBehaviorString
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class RulesEngineBehaviorString {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -67,10 +67,10 @@ public class RulesEngineBehaviorString {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
@@ -86,10 +86,10 @@ public class RulesEngineBehaviorString {
     return this;
   }
 
-   /**
+  /**
    * Get target
    * @return target
-  **/
+   */
   @javax.annotation.Nonnull
   public String getTarget() {
     return target;
@@ -156,12 +156,12 @@ public class RulesEngineBehaviorString {
     openapiRequiredFields.add("target");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to RulesEngineBehaviorString
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to RulesEngineBehaviorString
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RulesEngineBehaviorString.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -221,22 +221,22 @@ public class RulesEngineBehaviorString {
     }
   }
 
- /**
-  * Create an instance of RulesEngineBehaviorString given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RulesEngineBehaviorString
-  * @throws IOException if the JSON string is invalid with respect to RulesEngineBehaviorString
-  */
+  /**
+   * Create an instance of RulesEngineBehaviorString given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of RulesEngineBehaviorString
+   * @throws IOException if the JSON string is invalid with respect to RulesEngineBehaviorString
+   */
   public static RulesEngineBehaviorString fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, RulesEngineBehaviorString.class);
   }
 
- /**
-  * Convert an instance of RulesEngineBehaviorString to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of RulesEngineBehaviorString to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

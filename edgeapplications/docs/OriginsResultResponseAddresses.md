@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**address** | **String** |  |  |
-|**weight** | **String** |  |  |
+|**weight** | **Long** |  |  |
 |**serverRole** | **String** |  |  |
 |**isActive** | **Boolean** |  |  |
 

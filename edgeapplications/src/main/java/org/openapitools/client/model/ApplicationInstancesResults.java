@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationInstancesResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class ApplicationInstancesResults {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -75,10 +75,10 @@ public class ApplicationInstancesResults {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getId() {
     return id;
@@ -94,10 +94,10 @@ public class ApplicationInstancesResults {
     return this;
   }
 
-   /**
+  /**
    * Get edgeFunctionId
    * @return edgeFunctionId
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getEdgeFunctionId() {
     return edgeFunctionId;
@@ -113,10 +113,10 @@ public class ApplicationInstancesResults {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
@@ -132,10 +132,10 @@ public class ApplicationInstancesResults {
     return this;
   }
 
-   /**
+  /**
    * Get args
    * @return args
-  **/
+   */
   @javax.annotation.Nullable
   public Object getArgs() {
     return args;
@@ -210,12 +210,12 @@ public class ApplicationInstancesResults {
     openapiRequiredFields.add("args");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApplicationInstancesResults
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApplicationInstancesResults
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApplicationInstancesResults.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -272,22 +272,22 @@ public class ApplicationInstancesResults {
     }
   }
 
- /**
-  * Create an instance of ApplicationInstancesResults given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApplicationInstancesResults
-  * @throws IOException if the JSON string is invalid with respect to ApplicationInstancesResults
-  */
+  /**
+   * Create an instance of ApplicationInstancesResults given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApplicationInstancesResults
+   * @throws IOException if the JSON string is invalid with respect to ApplicationInstancesResults
+   */
   public static ApplicationInstancesResults fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApplicationInstancesResults.class);
   }
 
- /**
-  * Convert an instance of ApplicationInstancesResults to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApplicationInstancesResults to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

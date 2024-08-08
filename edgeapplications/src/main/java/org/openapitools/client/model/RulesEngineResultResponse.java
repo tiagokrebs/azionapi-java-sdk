@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * RulesEngineResultResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class RulesEngineResultResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -95,10 +95,10 @@ public class RulesEngineResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getId() {
     return id;
@@ -114,10 +114,10 @@ public class RulesEngineResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
@@ -133,10 +133,10 @@ public class RulesEngineResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
@@ -152,10 +152,10 @@ public class RulesEngineResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get phase
    * @return phase
-  **/
+   */
   @javax.annotation.Nonnull
   public String getPhase() {
     return phase;
@@ -179,10 +179,10 @@ public class RulesEngineResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get behaviors
    * @return behaviors
-  **/
+   */
   @javax.annotation.Nullable
   public List<RulesEngineBehaviorEntry> getBehaviors() {
     return behaviors;
@@ -206,10 +206,10 @@ public class RulesEngineResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get criteria
    * @return criteria
-  **/
+   */
   @javax.annotation.Nonnull
   public List<List<RulesEngineCriteria>> getCriteria() {
     return criteria;
@@ -225,10 +225,10 @@ public class RulesEngineResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get isActive
    * @return isActive
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getIsActive() {
     return isActive;
@@ -244,10 +244,10 @@ public class RulesEngineResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get order
    * @return order
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getOrder() {
     return order;
@@ -336,12 +336,12 @@ public class RulesEngineResultResponse {
     openapiRequiredFields.add("order");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to RulesEngineResultResponse
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to RulesEngineResultResponse
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RulesEngineResultResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -424,22 +424,22 @@ public class RulesEngineResultResponse {
     }
   }
 
- /**
-  * Create an instance of RulesEngineResultResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RulesEngineResultResponse
-  * @throws IOException if the JSON string is invalid with respect to RulesEngineResultResponse
-  */
+  /**
+   * Create an instance of RulesEngineResultResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of RulesEngineResultResponse
+   * @throws IOException if the JSON string is invalid with respect to RulesEngineResultResponse
+   */
   public static RulesEngineResultResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, RulesEngineResultResponse.class);
   }
 
- /**
-  * Convert an instance of RulesEngineResultResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of RulesEngineResultResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -54,7 +54,7 @@ import org.openapitools.client.JSON;
 /**
  * GetApplicationsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class GetApplicationsResponse {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
@@ -92,10 +92,10 @@ public class GetApplicationsResponse {
     return this;
   }
 
-   /**
+  /**
    * Get count
    * @return count
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCount() {
     return count;
@@ -111,10 +111,10 @@ public class GetApplicationsResponse {
     return this;
   }
 
-   /**
+  /**
    * Get totalPages
    * @return totalPages
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getTotalPages() {
     return totalPages;
@@ -130,10 +130,10 @@ public class GetApplicationsResponse {
     return this;
   }
 
-   /**
+  /**
    * Get schemaVersion
    * @return schemaVersion
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getSchemaVersion() {
     return schemaVersion;
@@ -149,10 +149,10 @@ public class GetApplicationsResponse {
     return this;
   }
 
-   /**
+  /**
    * Get links
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public ApplicationLinks getLinks() {
     return links;
@@ -176,10 +176,10 @@ public class GetApplicationsResponse {
     return this;
   }
 
-   /**
+  /**
    * Get results
    * @return results
-  **/
+   */
   @javax.annotation.Nonnull
   public List<ApplicationsResults> getResults() {
     return results;
@@ -195,10 +195,10 @@ public class GetApplicationsResponse {
     return this;
   }
 
-   /**
+  /**
    * Get next
    * @return next
-  **/
+   */
   @javax.annotation.Nullable
   public String getNext() {
     return next;
@@ -214,10 +214,10 @@ public class GetApplicationsResponse {
     return this;
   }
 
-   /**
+  /**
    * Get previous
    * @return previous
-  **/
+   */
   @javax.annotation.Nullable
   public String getPrevious() {
     return previous;
@@ -313,12 +313,12 @@ public class GetApplicationsResponse {
     openapiRequiredFields.add("results");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to GetApplicationsResponse
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to GetApplicationsResponse
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!GetApplicationsResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -390,22 +390,22 @@ public class GetApplicationsResponse {
     }
   }
 
- /**
-  * Create an instance of GetApplicationsResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of GetApplicationsResponse
-  * @throws IOException if the JSON string is invalid with respect to GetApplicationsResponse
-  */
+  /**
+   * Create an instance of GetApplicationsResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of GetApplicationsResponse
+   * @throws IOException if the JSON string is invalid with respect to GetApplicationsResponse
+   */
   public static GetApplicationsResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, GetApplicationsResponse.class);
   }
 
- /**
-  * Convert an instance of GetApplicationsResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of GetApplicationsResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }
