@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationUpdateInstanceRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class ApplicationUpdateInstanceRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -71,10 +71,10 @@ public class ApplicationUpdateInstanceRequest {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
@@ -90,10 +90,10 @@ public class ApplicationUpdateInstanceRequest {
     return this;
   }
 
-   /**
+  /**
    * Get edgeFunctionId
    * @return edgeFunctionId
-  **/
+   */
   @javax.annotation.Nullable
   public Long getEdgeFunctionId() {
     return edgeFunctionId;
@@ -109,10 +109,10 @@ public class ApplicationUpdateInstanceRequest {
     return this;
   }
 
-   /**
+  /**
    * Get args
    * @return args
-  **/
+   */
   @javax.annotation.Nullable
   public Object getArgs() {
     return args;
@@ -183,12 +183,12 @@ public class ApplicationUpdateInstanceRequest {
     openapiRequiredFields.add("args");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApplicationUpdateInstanceRequest
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApplicationUpdateInstanceRequest
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApplicationUpdateInstanceRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -245,22 +245,22 @@ public class ApplicationUpdateInstanceRequest {
     }
   }
 
- /**
-  * Create an instance of ApplicationUpdateInstanceRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApplicationUpdateInstanceRequest
-  * @throws IOException if the JSON string is invalid with respect to ApplicationUpdateInstanceRequest
-  */
+  /**
+   * Create an instance of ApplicationUpdateInstanceRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApplicationUpdateInstanceRequest
+   * @throws IOException if the JSON string is invalid with respect to ApplicationUpdateInstanceRequest
+   */
   public static ApplicationUpdateInstanceRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApplicationUpdateInstanceRequest.class);
   }
 
- /**
-  * Convert an instance of ApplicationUpdateInstanceRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApplicationUpdateInstanceRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

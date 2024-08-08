@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationLinks
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class ApplicationLinks {
   public static final String SERIALIZED_NAME_PREVIOUS = "previous";
   @SerializedName(SERIALIZED_NAME_PREVIOUS)
@@ -67,10 +67,10 @@ public class ApplicationLinks {
     return this;
   }
 
-   /**
+  /**
    * Get previous
    * @return previous
-  **/
+   */
   @javax.annotation.Nullable
   public String getPrevious() {
     return previous;
@@ -86,10 +86,10 @@ public class ApplicationLinks {
     return this;
   }
 
-   /**
+  /**
    * Get next
    * @return next
-  **/
+   */
   @javax.annotation.Nullable
   public String getNext() {
     return next;
@@ -156,12 +156,12 @@ public class ApplicationLinks {
     openapiRequiredFields.add("next");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApplicationLinks
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApplicationLinks
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApplicationLinks.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -221,22 +221,22 @@ public class ApplicationLinks {
     }
   }
 
- /**
-  * Create an instance of ApplicationLinks given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApplicationLinks
-  * @throws IOException if the JSON string is invalid with respect to ApplicationLinks
-  */
+  /**
+   * Create an instance of ApplicationLinks given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApplicationLinks
+   * @throws IOException if the JSON string is invalid with respect to ApplicationLinks
+   */
   public static ApplicationLinks fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApplicationLinks.class);
   }
 
- /**
-  * Convert an instance of ApplicationLinks to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApplicationLinks to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

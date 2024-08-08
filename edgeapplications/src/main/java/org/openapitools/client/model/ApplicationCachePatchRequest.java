@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationCachePatchRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class ApplicationCachePatchRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -133,10 +133,10 @@ public class ApplicationCachePatchRequest {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
@@ -152,10 +152,10 @@ public class ApplicationCachePatchRequest {
     return this;
   }
 
-   /**
+  /**
    * Get browserCacheSettings
    * @return browserCacheSettings
-  **/
+   */
   @javax.annotation.Nullable
   public String getBrowserCacheSettings() {
     return browserCacheSettings;
@@ -171,10 +171,10 @@ public class ApplicationCachePatchRequest {
     return this;
   }
 
-   /**
+  /**
    * Get browserCacheSettingsMaximumTtl
    * @return browserCacheSettingsMaximumTtl
-  **/
+   */
   @javax.annotation.Nullable
   public Long getBrowserCacheSettingsMaximumTtl() {
     return browserCacheSettingsMaximumTtl;
@@ -190,10 +190,10 @@ public class ApplicationCachePatchRequest {
     return this;
   }
 
-   /**
+  /**
    * Get cdnCacheSettings
    * @return cdnCacheSettings
-  **/
+   */
   @javax.annotation.Nullable
   public String getCdnCacheSettings() {
     return cdnCacheSettings;
@@ -209,10 +209,10 @@ public class ApplicationCachePatchRequest {
     return this;
   }
 
-   /**
+  /**
    * Get adaptiveDeliveryAction
    * @return adaptiveDeliveryAction
-  **/
+   */
   @javax.annotation.Nullable
   public String getAdaptiveDeliveryAction() {
     return adaptiveDeliveryAction;
@@ -228,10 +228,10 @@ public class ApplicationCachePatchRequest {
     return this;
   }
 
-   /**
+  /**
    * Get enableCachingForOptions
    * @return enableCachingForOptions
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getEnableCachingForOptions() {
     return enableCachingForOptions;
@@ -247,10 +247,10 @@ public class ApplicationCachePatchRequest {
     return this;
   }
 
-   /**
+  /**
    * Get cdnCacheSettingsMaximumTtl
    * @return cdnCacheSettingsMaximumTtl
-  **/
+   */
   @javax.annotation.Nullable
   public Long getCdnCacheSettingsMaximumTtl() {
     return cdnCacheSettingsMaximumTtl;
@@ -266,10 +266,10 @@ public class ApplicationCachePatchRequest {
     return this;
   }
 
-   /**
+  /**
    * Get cacheByQueryString
    * @return cacheByQueryString
-  **/
+   */
   @javax.annotation.Nullable
   public String getCacheByQueryString() {
     return cacheByQueryString;
@@ -293,10 +293,10 @@ public class ApplicationCachePatchRequest {
     return this;
   }
 
-   /**
+  /**
    * Get queryStringFields
    * @return queryStringFields
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getQueryStringFields() {
     return queryStringFields;
@@ -312,10 +312,10 @@ public class ApplicationCachePatchRequest {
     return this;
   }
 
-   /**
+  /**
    * Get enableQueryStringSort
    * @return enableQueryStringSort
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getEnableQueryStringSort() {
     return enableQueryStringSort;
@@ -331,10 +331,10 @@ public class ApplicationCachePatchRequest {
     return this;
   }
 
-   /**
+  /**
    * Get cacheByCookies
    * @return cacheByCookies
-  **/
+   */
   @javax.annotation.Nullable
   public String getCacheByCookies() {
     return cacheByCookies;
@@ -358,10 +358,10 @@ public class ApplicationCachePatchRequest {
     return this;
   }
 
-   /**
+  /**
    * Get cookieNames
    * @return cookieNames
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getCookieNames() {
     return cookieNames;
@@ -377,10 +377,10 @@ public class ApplicationCachePatchRequest {
     return this;
   }
 
-   /**
+  /**
    * Get enableCachingForPost
    * @return enableCachingForPost
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getEnableCachingForPost() {
     return enableCachingForPost;
@@ -396,10 +396,10 @@ public class ApplicationCachePatchRequest {
     return this;
   }
 
-   /**
+  /**
    * Get l2CachingEnabled
    * @return l2CachingEnabled
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getL2CachingEnabled() {
     return l2CachingEnabled;
@@ -415,10 +415,10 @@ public class ApplicationCachePatchRequest {
     return this;
   }
 
-   /**
+  /**
    * Get isSliceConfigurationEnabled
    * @return isSliceConfigurationEnabled
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsSliceConfigurationEnabled() {
     return isSliceConfigurationEnabled;
@@ -434,10 +434,10 @@ public class ApplicationCachePatchRequest {
     return this;
   }
 
-   /**
+  /**
    * Get isSliceEdgeCachingEnabled
    * @return isSliceEdgeCachingEnabled
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsSliceEdgeCachingEnabled() {
     return isSliceEdgeCachingEnabled;
@@ -453,10 +453,10 @@ public class ApplicationCachePatchRequest {
     return this;
   }
 
-   /**
+  /**
    * Get isSliceL2CachingEnabled
    * @return isSliceL2CachingEnabled
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsSliceL2CachingEnabled() {
     return isSliceL2CachingEnabled;
@@ -472,10 +472,10 @@ public class ApplicationCachePatchRequest {
     return this;
   }
 
-   /**
+  /**
    * Get sliceConfigurationRange
    * @return sliceConfigurationRange
-  **/
+   */
   @javax.annotation.Nullable
   public Long getSliceConfigurationRange() {
     return sliceConfigurationRange;
@@ -588,12 +588,12 @@ public class ApplicationCachePatchRequest {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApplicationCachePatchRequest
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApplicationCachePatchRequest
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApplicationCachePatchRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -666,22 +666,22 @@ public class ApplicationCachePatchRequest {
     }
   }
 
- /**
-  * Create an instance of ApplicationCachePatchRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApplicationCachePatchRequest
-  * @throws IOException if the JSON string is invalid with respect to ApplicationCachePatchRequest
-  */
+  /**
+   * Create an instance of ApplicationCachePatchRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApplicationCachePatchRequest
+   * @throws IOException if the JSON string is invalid with respect to ApplicationCachePatchRequest
+   */
   public static ApplicationCachePatchRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApplicationCachePatchRequest.class);
   }
 
- /**
-  * Convert an instance of ApplicationCachePatchRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApplicationCachePatchRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationCacheGetResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class ApplicationCacheGetResponse {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
@@ -83,10 +83,10 @@ public class ApplicationCacheGetResponse {
     return this;
   }
 
-   /**
+  /**
    * Get count
    * @return count
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCount() {
     return count;
@@ -102,10 +102,10 @@ public class ApplicationCacheGetResponse {
     return this;
   }
 
-   /**
+  /**
    * Get totalPages
    * @return totalPages
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getTotalPages() {
     return totalPages;
@@ -121,10 +121,10 @@ public class ApplicationCacheGetResponse {
     return this;
   }
 
-   /**
+  /**
    * Get schemaVersion
    * @return schemaVersion
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getSchemaVersion() {
     return schemaVersion;
@@ -140,10 +140,10 @@ public class ApplicationCacheGetResponse {
     return this;
   }
 
-   /**
+  /**
    * Get links
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public ApplicationLinks getLinks() {
     return links;
@@ -167,10 +167,10 @@ public class ApplicationCacheGetResponse {
     return this;
   }
 
-   /**
+  /**
    * Get results
    * @return results
-  **/
+   */
   @javax.annotation.Nonnull
   public List<ApplicationCacheResults> getResults() {
     return results;
@@ -249,12 +249,12 @@ public class ApplicationCacheGetResponse {
     openapiRequiredFields.add("results");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApplicationCacheGetResponse
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApplicationCacheGetResponse
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApplicationCacheGetResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -320,22 +320,22 @@ public class ApplicationCacheGetResponse {
     }
   }
 
- /**
-  * Create an instance of ApplicationCacheGetResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApplicationCacheGetResponse
-  * @throws IOException if the JSON string is invalid with respect to ApplicationCacheGetResponse
-  */
+  /**
+   * Create an instance of ApplicationCacheGetResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApplicationCacheGetResponse
+   * @throws IOException if the JSON string is invalid with respect to ApplicationCacheGetResponse
+   */
   public static ApplicationCacheGetResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApplicationCacheGetResponse.class);
   }
 
- /**
-  * Convert an instance of ApplicationCacheGetResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApplicationCacheGetResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

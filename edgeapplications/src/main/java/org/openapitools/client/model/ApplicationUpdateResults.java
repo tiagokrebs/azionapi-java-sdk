@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationUpdateResults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class ApplicationUpdateResults {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -143,10 +143,10 @@ public class ApplicationUpdateResults {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getId() {
     return id;
@@ -162,10 +162,10 @@ public class ApplicationUpdateResults {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
@@ -181,10 +181,10 @@ public class ApplicationUpdateResults {
     return this;
   }
 
-   /**
+  /**
    * Get deliveryProtocol
    * @return deliveryProtocol
-  **/
+   */
   @javax.annotation.Nonnull
   public String getDeliveryProtocol() {
     return deliveryProtocol;
@@ -200,10 +200,10 @@ public class ApplicationUpdateResults {
     return this;
   }
 
-   /**
+  /**
    * Get httpPort
    * @return httpPort
-  **/
+   */
   @javax.annotation.Nullable
   public Object getHttpPort() {
     return httpPort;
@@ -219,10 +219,10 @@ public class ApplicationUpdateResults {
     return this;
   }
 
-   /**
+  /**
    * Get httpsPort
    * @return httpsPort
-  **/
+   */
   @javax.annotation.Nullable
   public Object getHttpsPort() {
     return httpsPort;
@@ -238,10 +238,10 @@ public class ApplicationUpdateResults {
     return this;
   }
 
-   /**
+  /**
    * Get minimumTlsVersion
    * @return minimumTlsVersion
-  **/
+   */
   @javax.annotation.Nonnull
   public String getMinimumTlsVersion() {
     return minimumTlsVersion;
@@ -257,10 +257,10 @@ public class ApplicationUpdateResults {
     return this;
   }
 
-   /**
+  /**
    * Get active
    * @return active
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getActive() {
     return active;
@@ -276,10 +276,10 @@ public class ApplicationUpdateResults {
     return this;
   }
 
-   /**
+  /**
    * Get debugRules
    * @return debugRules
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getDebugRules() {
     return debugRules;
@@ -295,10 +295,10 @@ public class ApplicationUpdateResults {
     return this;
   }
 
-   /**
+  /**
    * Get http3
    * @return http3
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getHttp3() {
     return http3;
@@ -314,10 +314,10 @@ public class ApplicationUpdateResults {
     return this;
   }
 
-   /**
+  /**
    * Get supportedCiphers
    * @return supportedCiphers
-  **/
+   */
   @javax.annotation.Nonnull
   public String getSupportedCiphers() {
     return supportedCiphers;
@@ -333,10 +333,10 @@ public class ApplicationUpdateResults {
     return this;
   }
 
-   /**
+  /**
    * Get applicationAcceleration
    * @return applicationAcceleration
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getApplicationAcceleration() {
     return applicationAcceleration;
@@ -352,10 +352,10 @@ public class ApplicationUpdateResults {
     return this;
   }
 
-   /**
+  /**
    * Get caching
    * @return caching
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getCaching() {
     return caching;
@@ -371,10 +371,10 @@ public class ApplicationUpdateResults {
     return this;
   }
 
-   /**
+  /**
    * Get deviceDetection
    * @return deviceDetection
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getDeviceDetection() {
     return deviceDetection;
@@ -390,10 +390,10 @@ public class ApplicationUpdateResults {
     return this;
   }
 
-   /**
+  /**
    * Get edgeFirewall
    * @return edgeFirewall
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getEdgeFirewall() {
     return edgeFirewall;
@@ -409,10 +409,10 @@ public class ApplicationUpdateResults {
     return this;
   }
 
-   /**
+  /**
    * Get edgeFunctions
    * @return edgeFunctions
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getEdgeFunctions() {
     return edgeFunctions;
@@ -428,10 +428,10 @@ public class ApplicationUpdateResults {
     return this;
   }
 
-   /**
+  /**
    * Get imageOptimization
    * @return imageOptimization
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getImageOptimization() {
     return imageOptimization;
@@ -447,10 +447,10 @@ public class ApplicationUpdateResults {
     return this;
   }
 
-   /**
+  /**
    * Get l2Caching
    * @return l2Caching
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getL2Caching() {
     return l2Caching;
@@ -466,10 +466,10 @@ public class ApplicationUpdateResults {
     return this;
   }
 
-   /**
+  /**
    * Get loadBalancer
    * @return loadBalancer
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getLoadBalancer() {
     return loadBalancer;
@@ -485,10 +485,10 @@ public class ApplicationUpdateResults {
     return this;
   }
 
-   /**
+  /**
    * Get rawLogs
    * @return rawLogs
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getRawLogs() {
     return rawLogs;
@@ -504,10 +504,10 @@ public class ApplicationUpdateResults {
     return this;
   }
 
-   /**
+  /**
    * Get webApplicationFirewall
    * @return webApplicationFirewall
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getWebApplicationFirewall() {
     return webApplicationFirewall;
@@ -523,10 +523,10 @@ public class ApplicationUpdateResults {
     return this;
   }
 
-   /**
+  /**
    * Get websocket
    * @return websocket
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getWebsocket() {
     return websocket;
@@ -668,12 +668,12 @@ public class ApplicationUpdateResults {
     openapiRequiredFields.add("web_application_firewall");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApplicationUpdateResults
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApplicationUpdateResults
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApplicationUpdateResults.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -739,22 +739,22 @@ public class ApplicationUpdateResults {
     }
   }
 
- /**
-  * Create an instance of ApplicationUpdateResults given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApplicationUpdateResults
-  * @throws IOException if the JSON string is invalid with respect to ApplicationUpdateResults
-  */
+  /**
+   * Create an instance of ApplicationUpdateResults given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApplicationUpdateResults
+   * @throws IOException if the JSON string is invalid with respect to ApplicationUpdateResults
+   */
   public static ApplicationUpdateResults fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApplicationUpdateResults.class);
   }
 
- /**
-  * Convert an instance of ApplicationUpdateResults to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApplicationUpdateResults to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

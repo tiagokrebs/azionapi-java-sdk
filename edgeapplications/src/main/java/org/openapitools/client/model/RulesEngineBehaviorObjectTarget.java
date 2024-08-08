@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RulesEngineBehaviorObjectTarget
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class RulesEngineBehaviorObjectTarget {
   public static final String SERIALIZED_NAME_CAPTURED_ARRAY = "captured_array";
   @SerializedName(SERIALIZED_NAME_CAPTURED_ARRAY)
@@ -71,10 +71,10 @@ public class RulesEngineBehaviorObjectTarget {
     return this;
   }
 
-   /**
+  /**
    * Get capturedArray
    * @return capturedArray
-  **/
+   */
   @javax.annotation.Nullable
   public String getCapturedArray() {
     return capturedArray;
@@ -90,10 +90,10 @@ public class RulesEngineBehaviorObjectTarget {
     return this;
   }
 
-   /**
+  /**
    * Get subject
    * @return subject
-  **/
+   */
   @javax.annotation.Nullable
   public String getSubject() {
     return subject;
@@ -109,10 +109,10 @@ public class RulesEngineBehaviorObjectTarget {
     return this;
   }
 
-   /**
+  /**
    * Get regex
    * @return regex
-  **/
+   */
   @javax.annotation.Nullable
   public String getRegex() {
     return regex;
@@ -180,12 +180,12 @@ public class RulesEngineBehaviorObjectTarget {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to RulesEngineBehaviorObjectTarget
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to RulesEngineBehaviorObjectTarget
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RulesEngineBehaviorObjectTarget.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -241,22 +241,22 @@ public class RulesEngineBehaviorObjectTarget {
     }
   }
 
- /**
-  * Create an instance of RulesEngineBehaviorObjectTarget given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RulesEngineBehaviorObjectTarget
-  * @throws IOException if the JSON string is invalid with respect to RulesEngineBehaviorObjectTarget
-  */
+  /**
+   * Create an instance of RulesEngineBehaviorObjectTarget given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of RulesEngineBehaviorObjectTarget
+   * @throws IOException if the JSON string is invalid with respect to RulesEngineBehaviorObjectTarget
+   */
   public static RulesEngineBehaviorObjectTarget fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, RulesEngineBehaviorObjectTarget.class);
   }
 
- /**
-  * Convert an instance of RulesEngineBehaviorObjectTarget to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of RulesEngineBehaviorObjectTarget to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

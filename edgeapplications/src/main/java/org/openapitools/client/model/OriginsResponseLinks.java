@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * OriginsResponseLinks
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class OriginsResponseLinks {
   public static final String SERIALIZED_NAME_PREVIOUS = "previous";
   @SerializedName(SERIALIZED_NAME_PREVIOUS)
@@ -68,10 +68,10 @@ public class OriginsResponseLinks {
     return this;
   }
 
-   /**
+  /**
    * Get previous
    * @return previous
-  **/
+   */
   @javax.annotation.Nullable
   public String getPrevious() {
     return previous;
@@ -87,10 +87,10 @@ public class OriginsResponseLinks {
     return this;
   }
 
-   /**
+  /**
    * Get next
    * @return next
-  **/
+   */
   @javax.annotation.Nullable
   public String getNext() {
     return next;
@@ -166,12 +166,12 @@ public class OriginsResponseLinks {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to OriginsResponseLinks
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to OriginsResponseLinks
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!OriginsResponseLinks.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -224,22 +224,22 @@ public class OriginsResponseLinks {
     }
   }
 
- /**
-  * Create an instance of OriginsResponseLinks given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of OriginsResponseLinks
-  * @throws IOException if the JSON string is invalid with respect to OriginsResponseLinks
-  */
+  /**
+   * Create an instance of OriginsResponseLinks given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of OriginsResponseLinks
+   * @throws IOException if the JSON string is invalid with respect to OriginsResponseLinks
+   */
   public static OriginsResponseLinks fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, OriginsResponseLinks.class);
   }
 
- /**
-  * Convert an instance of OriginsResponseLinks to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of OriginsResponseLinks to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

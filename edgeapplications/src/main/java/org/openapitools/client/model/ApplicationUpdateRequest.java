@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationUpdateRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class ApplicationUpdateRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -128,10 +128,10 @@ public class ApplicationUpdateRequest {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
@@ -147,10 +147,10 @@ public class ApplicationUpdateRequest {
     return this;
   }
 
-   /**
+  /**
    * Get deliveryProtocol
    * @return deliveryProtocol
-  **/
+   */
   @javax.annotation.Nullable
   public String getDeliveryProtocol() {
     return deliveryProtocol;
@@ -166,10 +166,10 @@ public class ApplicationUpdateRequest {
     return this;
   }
 
-   /**
+  /**
    * Get httpPort
    * @return httpPort
-  **/
+   */
   @javax.annotation.Nullable
   public Object getHttpPort() {
     return httpPort;
@@ -185,10 +185,10 @@ public class ApplicationUpdateRequest {
     return this;
   }
 
-   /**
+  /**
    * Get httpsPort
    * @return httpsPort
-  **/
+   */
   @javax.annotation.Nullable
   public Object getHttpsPort() {
     return httpsPort;
@@ -204,10 +204,10 @@ public class ApplicationUpdateRequest {
     return this;
   }
 
-   /**
+  /**
    * Get minimumTlsVersion
    * @return minimumTlsVersion
-  **/
+   */
   @javax.annotation.Nullable
   public String getMinimumTlsVersion() {
     return minimumTlsVersion;
@@ -223,10 +223,10 @@ public class ApplicationUpdateRequest {
     return this;
   }
 
-   /**
+  /**
    * Get active
    * @return active
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getActive() {
     return active;
@@ -242,10 +242,10 @@ public class ApplicationUpdateRequest {
     return this;
   }
 
-   /**
+  /**
    * Get debugRules
    * @return debugRules
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getDebugRules() {
     return debugRules;
@@ -261,10 +261,10 @@ public class ApplicationUpdateRequest {
     return this;
   }
 
-   /**
+  /**
    * Get applicationAcceleration
    * @return applicationAcceleration
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getApplicationAcceleration() {
     return applicationAcceleration;
@@ -280,10 +280,10 @@ public class ApplicationUpdateRequest {
     return this;
   }
 
-   /**
+  /**
    * Get deviceDetection
    * @return deviceDetection
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getDeviceDetection() {
     return deviceDetection;
@@ -299,10 +299,10 @@ public class ApplicationUpdateRequest {
     return this;
   }
 
-   /**
+  /**
    * Get edgeFirewall
    * @return edgeFirewall
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getEdgeFirewall() {
     return edgeFirewall;
@@ -318,10 +318,10 @@ public class ApplicationUpdateRequest {
     return this;
   }
 
-   /**
+  /**
    * Get edgeFunctions
    * @return edgeFunctions
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getEdgeFunctions() {
     return edgeFunctions;
@@ -337,10 +337,10 @@ public class ApplicationUpdateRequest {
     return this;
   }
 
-   /**
+  /**
    * Get imageOptimization
    * @return imageOptimization
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getImageOptimization() {
     return imageOptimization;
@@ -356,10 +356,10 @@ public class ApplicationUpdateRequest {
     return this;
   }
 
-   /**
+  /**
    * Get l2Caching
    * @return l2Caching
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getL2Caching() {
     return l2Caching;
@@ -375,10 +375,10 @@ public class ApplicationUpdateRequest {
     return this;
   }
 
-   /**
+  /**
    * Get loadBalancer
    * @return loadBalancer
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getLoadBalancer() {
     return loadBalancer;
@@ -394,10 +394,10 @@ public class ApplicationUpdateRequest {
     return this;
   }
 
-   /**
+  /**
    * Get rawLogs
    * @return rawLogs
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getRawLogs() {
     return rawLogs;
@@ -413,10 +413,10 @@ public class ApplicationUpdateRequest {
     return this;
   }
 
-   /**
+  /**
    * Get webApplicationFirewall
    * @return webApplicationFirewall
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getWebApplicationFirewall() {
     return webApplicationFirewall;
@@ -432,10 +432,10 @@ public class ApplicationUpdateRequest {
     return this;
   }
 
-   /**
+  /**
    * Get websocket
    * @return websocket
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getWebsocket() {
     return websocket;
@@ -556,12 +556,12 @@ public class ApplicationUpdateRequest {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApplicationUpdateRequest
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApplicationUpdateRequest
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApplicationUpdateRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -617,22 +617,22 @@ public class ApplicationUpdateRequest {
     }
   }
 
- /**
-  * Create an instance of ApplicationUpdateRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApplicationUpdateRequest
-  * @throws IOException if the JSON string is invalid with respect to ApplicationUpdateRequest
-  */
+  /**
+   * Create an instance of ApplicationUpdateRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApplicationUpdateRequest
+   * @throws IOException if the JSON string is invalid with respect to ApplicationUpdateRequest
+   */
   public static ApplicationUpdateRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApplicationUpdateRequest.class);
   }
 
- /**
-  * Convert an instance of ApplicationUpdateRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApplicationUpdateRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

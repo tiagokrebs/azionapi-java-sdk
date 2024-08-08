@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * DeviceGroupsResultResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class DeviceGroupsResultResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -71,10 +71,10 @@ public class DeviceGroupsResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   public Long getId() {
     return id;
@@ -90,10 +90,10 @@ public class DeviceGroupsResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
@@ -109,10 +109,10 @@ public class DeviceGroupsResultResponse {
     return this;
   }
 
-   /**
+  /**
    * Get userAgent
    * @return userAgent
-  **/
+   */
   @javax.annotation.Nonnull
   public String getUserAgent() {
     return userAgent;
@@ -182,12 +182,12 @@ public class DeviceGroupsResultResponse {
     openapiRequiredFields.add("user_agent");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DeviceGroupsResultResponse
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DeviceGroupsResultResponse
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DeviceGroupsResultResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -247,22 +247,22 @@ public class DeviceGroupsResultResponse {
     }
   }
 
- /**
-  * Create an instance of DeviceGroupsResultResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DeviceGroupsResultResponse
-  * @throws IOException if the JSON string is invalid with respect to DeviceGroupsResultResponse
-  */
+  /**
+   * Create an instance of DeviceGroupsResultResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DeviceGroupsResultResponse
+   * @throws IOException if the JSON string is invalid with respect to DeviceGroupsResultResponse
+   */
   public static DeviceGroupsResultResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DeviceGroupsResultResponse.class);
   }
 
- /**
-  * Convert an instance of DeviceGroupsResultResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DeviceGroupsResultResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

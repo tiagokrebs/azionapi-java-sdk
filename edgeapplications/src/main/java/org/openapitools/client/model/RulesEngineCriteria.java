@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RulesEngineCriteria
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class RulesEngineCriteria {
   public static final String SERIALIZED_NAME_CONDITIONAL = "conditional";
   @SerializedName(SERIALIZED_NAME_CONDITIONAL)
@@ -75,10 +75,10 @@ public class RulesEngineCriteria {
     return this;
   }
 
-   /**
+  /**
    * Get conditional
    * @return conditional
-  **/
+   */
   @javax.annotation.Nonnull
   public String getConditional() {
     return conditional;
@@ -94,10 +94,10 @@ public class RulesEngineCriteria {
     return this;
   }
 
-   /**
+  /**
    * Get variable
    * @return variable
-  **/
+   */
   @javax.annotation.Nonnull
   public String getVariable() {
     return variable;
@@ -113,10 +113,10 @@ public class RulesEngineCriteria {
     return this;
   }
 
-   /**
+  /**
    * Get operator
    * @return operator
-  **/
+   */
   @javax.annotation.Nonnull
   public String getOperator() {
     return operator;
@@ -132,10 +132,10 @@ public class RulesEngineCriteria {
     return this;
   }
 
-   /**
+  /**
    * Get inputValue
    * @return inputValue
-  **/
+   */
   @javax.annotation.Nullable
   public String getInputValue() {
     return inputValue;
@@ -209,12 +209,12 @@ public class RulesEngineCriteria {
     openapiRequiredFields.add("operator");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to RulesEngineCriteria
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to RulesEngineCriteria
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RulesEngineCriteria.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -280,22 +280,22 @@ public class RulesEngineCriteria {
     }
   }
 
- /**
-  * Create an instance of RulesEngineCriteria given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RulesEngineCriteria
-  * @throws IOException if the JSON string is invalid with respect to RulesEngineCriteria
-  */
+  /**
+   * Create an instance of RulesEngineCriteria given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of RulesEngineCriteria
+   * @throws IOException if the JSON string is invalid with respect to RulesEngineCriteria
+   */
   public static RulesEngineCriteria fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, RulesEngineCriteria.class);
   }
 
- /**
-  * Convert an instance of RulesEngineCriteria to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of RulesEngineCriteria to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

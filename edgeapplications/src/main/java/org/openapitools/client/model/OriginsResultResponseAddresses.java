@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * OriginsResultResponseAddresses
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class OriginsResultResponseAddresses {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -57,7 +57,7 @@ public class OriginsResultResponseAddresses {
 
   public static final String SERIALIZED_NAME_WEIGHT = "weight";
   @SerializedName(SERIALIZED_NAME_WEIGHT)
-  private String weight;
+  private Long weight;
 
   public static final String SERIALIZED_NAME_SERVER_ROLE = "server_role";
   @SerializedName(SERIALIZED_NAME_SERVER_ROLE)
@@ -75,10 +75,10 @@ public class OriginsResultResponseAddresses {
     return this;
   }
 
-   /**
+  /**
    * Get address
    * @return address
-  **/
+   */
   @javax.annotation.Nonnull
   public String getAddress() {
     return address;
@@ -89,21 +89,21 @@ public class OriginsResultResponseAddresses {
   }
 
 
-  public OriginsResultResponseAddresses weight(String weight) {
+  public OriginsResultResponseAddresses weight(Long weight) {
     this.weight = weight;
     return this;
   }
 
-   /**
+  /**
    * Get weight
    * @return weight
-  **/
+   */
   @javax.annotation.Nullable
-  public String getWeight() {
+  public Long getWeight() {
     return weight;
   }
 
-  public void setWeight(String weight) {
+  public void setWeight(Long weight) {
     this.weight = weight;
   }
 
@@ -113,10 +113,10 @@ public class OriginsResultResponseAddresses {
     return this;
   }
 
-   /**
+  /**
    * Get serverRole
    * @return serverRole
-  **/
+   */
   @javax.annotation.Nonnull
   public String getServerRole() {
     return serverRole;
@@ -132,10 +132,10 @@ public class OriginsResultResponseAddresses {
     return this;
   }
 
-   /**
+  /**
    * Get isActive
    * @return isActive
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getIsActive() {
     return isActive;
@@ -210,12 +210,12 @@ public class OriginsResultResponseAddresses {
     openapiRequiredFields.add("is_active");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to OriginsResultResponseAddresses
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to OriginsResultResponseAddresses
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!OriginsResultResponseAddresses.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -240,9 +240,6 @@ public class OriginsResultResponseAddresses {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("address").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `address` to be a primitive type in the JSON string but got `%s`", jsonObj.get("address").toString()));
-      }
-      if ((jsonObj.get("weight") != null && !jsonObj.get("weight").isJsonNull()) && !jsonObj.get("weight").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `weight` to be a primitive type in the JSON string but got `%s`", jsonObj.get("weight").toString()));
       }
       if (!jsonObj.get("server_role").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `server_role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("server_role").toString()));
@@ -278,22 +275,22 @@ public class OriginsResultResponseAddresses {
     }
   }
 
- /**
-  * Create an instance of OriginsResultResponseAddresses given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of OriginsResultResponseAddresses
-  * @throws IOException if the JSON string is invalid with respect to OriginsResultResponseAddresses
-  */
+  /**
+   * Create an instance of OriginsResultResponseAddresses given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of OriginsResultResponseAddresses
+   * @throws IOException if the JSON string is invalid with respect to OriginsResultResponseAddresses
+   */
   public static OriginsResultResponseAddresses fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, OriginsResultResponseAddresses.class);
   }
 
- /**
-  * Convert an instance of OriginsResultResponseAddresses to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of OriginsResultResponseAddresses to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

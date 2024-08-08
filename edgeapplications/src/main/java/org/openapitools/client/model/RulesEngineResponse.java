@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * RulesEngineResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-14T13:33:25.626884Z[GMT]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
 public class RulesEngineResponse {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
@@ -83,10 +83,10 @@ public class RulesEngineResponse {
     return this;
   }
 
-   /**
+  /**
    * Get count
    * @return count
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCount() {
     return count;
@@ -102,10 +102,10 @@ public class RulesEngineResponse {
     return this;
   }
 
-   /**
+  /**
    * Get totalPages
    * @return totalPages
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getTotalPages() {
     return totalPages;
@@ -121,10 +121,10 @@ public class RulesEngineResponse {
     return this;
   }
 
-   /**
+  /**
    * Get schemaVersion
    * @return schemaVersion
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getSchemaVersion() {
     return schemaVersion;
@@ -140,10 +140,10 @@ public class RulesEngineResponse {
     return this;
   }
 
-   /**
+  /**
    * Get links
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public OriginsResponseLinks getLinks() {
     return links;
@@ -167,10 +167,10 @@ public class RulesEngineResponse {
     return this;
   }
 
-   /**
+  /**
    * Get results
    * @return results
-  **/
+   */
   @javax.annotation.Nonnull
   public List<RulesEngineResultResponse> getResults() {
     return results;
@@ -249,12 +249,12 @@ public class RulesEngineResponse {
     openapiRequiredFields.add("results");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to RulesEngineResponse
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to RulesEngineResponse
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RulesEngineResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -320,22 +320,22 @@ public class RulesEngineResponse {
     }
   }
 
- /**
-  * Create an instance of RulesEngineResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RulesEngineResponse
-  * @throws IOException if the JSON string is invalid with respect to RulesEngineResponse
-  */
+  /**
+   * Create an instance of RulesEngineResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of RulesEngineResponse
+   * @throws IOException if the JSON string is invalid with respect to RulesEngineResponse
+   */
   public static RulesEngineResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, RulesEngineResponse.class);
   }
 
- /**
-  * Convert an instance of RulesEngineResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of RulesEngineResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }
