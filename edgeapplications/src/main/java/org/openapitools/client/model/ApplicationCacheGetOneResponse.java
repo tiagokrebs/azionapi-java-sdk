@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ApplicationCacheGetOneResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-12T18:12:04.014507Z[GMT]", comments = "Generator version: 7.7.0")
 public class ApplicationCacheGetOneResponse {
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
