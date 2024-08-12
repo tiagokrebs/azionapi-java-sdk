@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * OriginsResultResponseAddresses
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-08T19:34:26.205567Z[GMT]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-12T18:12:04.014507Z[GMT]", comments = "Generator version: 7.7.0")
 public class OriginsResultResponseAddresses {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -96,9 +96,11 @@ public class OriginsResultResponseAddresses {
 
   /**
    * Get weight
+   * minimum: 1
+   * maximum: 100
    * @return weight
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Long getWeight() {
     return weight;
   }
